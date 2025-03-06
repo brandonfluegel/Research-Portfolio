@@ -1,120 +1,120 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function AmazonProjectCard() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <>
-      <motion.div
-        onClick={() => setIsOpen(true)}
-        whileHover={{ scale: 1.03 }}
-        whileTap={{ scale: 0.98 }}
-        className="max-w-3xl mx-auto my-20 overflow-hidden rounded-lg shadow-xl bg-neutral-900 cursor-pointer p-6 sm:p-8"
+    <section className="max-w-4xl mx-auto py-24 px-4 sm:px-6">
+      <motion.h2
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-white mb-10 text-center"
       >
-        <div className="overflow-hidden h-[400px] relative rounded-md">
+        Amazon Devices Design Group
+      </motion.h2>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+        className="grid sm:grid-cols-2 gap-8 items-center mb-12"
+      >
+        <div className="text-gray-200 leading-relaxed text-left">
+          <p className="mb-4">
+            Designed and conducted <strong className="text-indigo-400">25+ mixed-methods studies</strong>, delivering actionable insights that informed <strong className="text-indigo-400">100+ design iterations</strong> across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV.
+          </p>
+
+          <p>
+            Strategically prioritized high-impact research programs, including a multi-year study that identified a <strong className="text-indigo-400">$1.5 billion opportunity</strong> by optimizing Alexa&apos;s response latency.
+          </p>
+
+          <p className="mt-4">
+            Insights from my research defined Alexa Core Engineering latency targets for over <strong className="text-indigo-400">3 years</strong>, significantly improving <strong className="text-indigo-400">customer satisfaction, engagement, and measurable revenue growth</strong>.
+          </p>
+
+          <p className="mt-4 text-gray-400 italic">(June 2020 – November 2024)</p>
+        </div>
+
+        <div className="overflow-hidden relative rounded-md shadow-xl h-[400px]">
           <Image
-            src="/assets/mobile.jpg"
-            alt="Amazon Devices Design Group"
+            src="/assets/Show10.jpg"
+            alt="Echo Show 10 Interface"
             fill
             className="object-cover"
-            loading="lazy"
           />
-        </div>
-        <div className="mt-4">
-          <h2 className="text-2xl font-semibold text-white mb-2">
-            Amazon Devices Design Group
-          </h2>
-          <p className="text-gray-300">
-            Conducted 25+ mixed-methods studies, prioritized strategic research initiatives, and identified a $1.5 billion opportunity optimizing Alexa's performance.
-          </p>
         </div>
       </motion.div>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-lg z-[9999] flex justify-center items-center overflow-y-auto py-12 px-4"
-            onClick={() => setIsOpen(false)}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl mx-auto bg-neutral-800 rounded-3xl p-8 sm:p-12 shadow-xl overflow-y-auto max-h-full"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-white">
-                Amazon Devices Design Group
-              </h2>
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="overflow-hidden rounded-md shadow-xl h-[400px] mb-12"
+      >
+        <Image
+          src="/assets/mobile.jpg"
+          alt="Amazon Mobile UX"
+          fill
+          className="object-contain object-top"
+        />
+      </motion.div>
 
-              <p className="text-gray-200 mb-6 leading-relaxed">
-                Designed and conducted <strong className="text-indigo-400">25+ mixed-methods studies</strong>, delivering actionable insights that informed <strong className="text-indigo-400">100+ design iterations</strong> across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV.
-              </p>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        viewport={{ once: true }}
+        className="overflow-hidden rounded-lg shadow-xl mb-12"
+      >
+        <Image
+          src="/assets/Glanceability Animation.gif"
+          alt="Alexa Glanceability Improvement"
+          width={1200}
+          height={700}
+          className="w-full h-auto object-cover"
+        />
+      </motion.div>
 
-              <p className="text-gray-200 mb-6 leading-relaxed">
-                Strategically prioritized high-impact research programs, including a multi-year study that identified a <strong className="text-indigo-400">$1.5 billion opportunity</strong> by optimizing Alexa’s response latency. Insights defined Alexa Core Engineering latency targets for over 3 years, driving increased customer satisfaction, engagement, and measurable revenue growth.
-              </p>
+      <motion.blockquote
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="italic border-l-4 border-indigo-500 pl-4 text-gray-300 text-xl"
+      >
+        &quot;Brandon&apos;s research directly translated to faster, more responsive interactions, significantly elevating the Alexa user experience and driving long-term product success.&quot;
+        <span className="block font-bold mt-2">– Alexa Product Team Lead</span>
+      </motion.blockquote>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                <Image
-                  src="/assets/colleagues.jpg"
-                  alt="Team Collaboration"
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-xl object-cover"
-                />
-                <Image
-                  src="/assets/mobile.jpg"
-                  alt="Mobile Interface Testing"
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-xl object-cover"
-                />
-              </div>
-
-              <div className="mb-8 rounded-lg overflow-hidden shadow-xl">
-                <Image
-                  src="/assets/Glanceability Animation.gif"
-                  alt="Glanceability Animation"
-                  width={1200}
-                  height={700}
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-
-              <div className="flex justify-center mb-8">
-                <Image
-                  src="/assets/Show10.jpg"
-                  alt="Echo Show 10 Interface"
-                  width={800}
-                  height={500}
-                  className="rounded-xl shadow-2xl"
-                />
-              </div>
-
-              <blockquote className="italic border-l-4 border-indigo-500 pl-4 text-gray-300">
-                "Brandon's research directly translated to faster, more responsive interactions, significantly elevating the Alexa user experience and driving long-term product success."
-                <span className="block font-bold mt-2">– Alexa Product Team Lead</span>
-              </blockquote>
-
-              <button
-                onClick={() => setIsOpen(false)}
-                className="mt-8 px-6 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition"
-              >
-                Close
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-center mt-16"
+      >
+        <div className="bg-neutral-800 rounded-xl p-4 shadow-xl">
+          <h3 className="text-indigo-400 text-2xl font-bold">25+</h3>
+          <p className="text-gray-300">Studies Conducted</p>
+        </div>
+        <div className="bg-neutral-800 rounded-xl p-4 shadow-xl">
+          <h3 className="text-indigo-400 text-2xl font-bold">100+</h3>
+          <p className="text-gray-300">Design Iterations</p>
+        </div>
+        <div className="bg-neutral-800 rounded-xl p-4 shadow-xl">
+          <h3 className="text-indigo-400 text-2xl font-bold">$1.5B</h3>
+          <p className="text-gray-300">Opportunity Unlocked</p>
+        </div>
+        <div className="bg-neutral-800 rounded-xl p-4 shadow-xl">
+          <h3 className="text-indigo-400 text-2xl font-bold">3+ years</h3>
+          <p className="text-gray-300">Latency Targets</p>
+        </div>
+      </motion.div>
+    </section>
   );
 }

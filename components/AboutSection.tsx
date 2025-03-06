@@ -15,6 +15,7 @@ export default function AboutSection() {
       >
         About Me
       </motion.h2>
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -22,9 +23,9 @@ export default function AboutSection() {
         viewport={{ once: true }}
         className="text-base sm:text-lg text-gray-300 leading-relaxed px-4"
       >
-        I'm Brandon, a UX & Human Factors researcher passionate about understanding users deeply to craft engaging experiences.{" "}
+        I&apos;m Brandon, a UX &amp; Human Factors researcher passionate about understanding users deeply to craft engaging experiences.{" "}
         <Link href="/about" className="underline text-white">
-          Learn more about me →
+          Learn more about me &rarr;
         </Link>
       </motion.p>
     </section>
