@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import Cursor from "@/components/Cursor";
-import ProjectCard from "@/components/ProjectCard";
 import Navbar from "@/components/Navbar";
 import AnimatedText from "@/components/AnimatedText";
 import AboutSection from "@/components/AboutSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import ProfileImage from "@/components/ProfileImage";
+import AmazonProjectSection from "@/components/AmazonProjectSection";
+import ProjectCard from "@/components/ProjectCard";
 
 const pageVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -34,17 +35,9 @@ export default function Home() {
 
         <ProfileImage />
 
-        <section className="max-w-2xl mx-auto text-center mb-12 text-gray-300">
-          <p>
-            My research explores the cognitive strengths and limitations of humans to inform the design of complex consumer products and technology. Currently, I'm a Managing Scientist within the Human Factors Research Group at J.S. Held.
-          </p>
-        </section>
+        <AboutSection />
 
-        <ProjectCard
-          title="Amazon Devices Design Group"
-          description="Conducted 25+ mixed-methods studies, prioritized strategic research initiatives, and identified a $1.5 billion opportunity optimizing Alexa's performance."
-          imageSrc="/assets/project-image-1.jpg"
-        />
+        <AmazonProjectSection />
 
         <ProjectCard
           title="Uber UX Research"
