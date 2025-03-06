@@ -2,16 +2,19 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import YearBadge from "@/components/YearBadge";
 
 export default function AmazonProjectSection() {
   return (
-    <section className="max-w-4xl mx-auto py-24 px-4 sm:px-6">
+    <section id="amazon" className="relative max-w-5xl mx-auto py-32 px-6">
+      <YearBadge year="2025" />
+
       <motion.h2
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold text-white mb-10 text-center"
+        className="text-4xl font-bold text-center mb-12 relative z-10"
       >
         Amazon Devices Design Group
       </motion.h2>
@@ -21,60 +24,66 @@ export default function AmazonProjectSection() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
-        className="grid sm:grid-cols-2 gap-8 items-center mb-12"
+        className="space-y-10 relative z-10"
       >
-        <div className="text-gray-200 text-left leading-relaxed">
-          <p className="mb-4">
-            Designed and conducted <strong className="text-indigo-400">25+ mixed-methods studies</strong>, delivering actionable insights that informed <strong className="text-indigo-400">100+ design iterations</strong> across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV.
-          </p>
+        {/* Glanceability Video */}
+        <video
+          src="/assets/Glanceability Animation.mp4"
+          autoPlay muted loop playsInline
+          className="rounded-xl shadow-xl w-full aspect-video object-cover"
+        />
 
-          <p>
-            Strategically prioritized high-impact research programs, including a multi-year study that identified a <strong className="text-indigo-400">$1.5 billion opportunity</strong> by optimizing Alexa’s response latency. Insights from my research defined Alexa Core Engineering latency targets for over <strong className="text-indigo-400">3 years</strong>, significantly improving <strong className="text-indigo-400">customer satisfaction, engagement, and measurable revenue growth</strong>.
-          </p>
-
-          <p className="mt-4 text-gray-400 italic">(June 2020 – November 2024)</p>
-        </div>
-
-        <div className="overflow-hidden relative rounded-md shadow-xl h-[400px]">
+        {/* Images Grid */}
+        <div className="grid md:grid-cols-2 gap-8">
+          <Image
+            src="/assets/fnirs.jpg"
+            alt="Amazon fNIRS Research"
+            width={600}
+            height={400}
+            className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
+          />
           <Image
             src="/assets/Show10.jpg"
-            alt="Echo Show 10 Interface"
-            fill
-            className="object-cover"
+            alt="Echo Show 10 Device"
+            width={600}
+            height={400}
+            className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
           />
         </div>
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="overflow-hidden relative rounded-md shadow-xl h-[400px] mb-12"
-      >
+        {/* Mobile UX Image */}
         <Image
           src="/assets/mobile.jpg"
           alt="Amazon Mobile UX"
-          fill
-          className="object-contain"
+          width={1200}
+          height={600}
+          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
+        />
+
+        {/* Project Image */}
+        <Image
+          src="/assets/project-image-1.jpg"
+          alt="Amazon Project Detail"
+          width={1200}
+          height={600}
+          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
         />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true }}
-        className="mb-12 rounded-lg overflow-hidden shadow-xl"
-      >
-        <Image
-          src="/assets/Glanceability Animation.gif"
-          alt="Alexa Glanceability Improvement"
-          width={1200}
-          height={700}
-          className="w-full h-auto object-cover"
-        />
-      </motion.div>
+      {/* Text Content and Methods */}
+      <div className="mt-12 text-gray-300 max-w-3xl mx-auto relative z-10">
+        <p className="mb-6">
+          Conducted extensive UX research for Amazon’s Alexa and Echo products, leading to significant reductions in response latency and greatly enhancing user satisfaction and product usability. My findings shaped strategic product improvements, revealing opportunities worth over $1.5 billion, and positively impacted millions of users worldwide.
+        </p>
+
+        <h3 className="font-bold mb-4">Research Methods Used:</h3>
+        <ul className="list-disc ml-8">
+          <li>Mixed-methods Studies</li>
+          <li>Usability Testing</li>
+          <li>Latency Analysis</li>
+          <li>Quantitative Data Analysis</li>
+        </ul>
+      </div>
     </section>
   );
 }

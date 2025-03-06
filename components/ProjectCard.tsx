@@ -8,15 +8,17 @@ interface ProjectCardProps {
   title: string;
   description: string;
   imageSrc: string;
+  sectionId: string;
 }
 
-export default function ProjectCard({ title, description, imageSrc }: ProjectCardProps) {
+export default function ProjectCard({ title, description, imageSrc, sectionId }: ProjectCardProps) {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [-40, 40]);
+
+  const scrollToSection = () => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <motion.div
@@ -28,16 +30,11 @@ export default function ProjectCard({ title, description, imageSrc }: ProjectCar
       whileHover={{ scale: 1.03 }}
       whileTap={{ scale: 0.98 }}
       className="max-w-3xl mx-auto my-20 overflow-hidden rounded-lg shadow-xl bg-neutral-900 cursor-pointer p-6 sm:p-8"
+      onClick={scrollToSection}
     >
       <div className="overflow-hidden h-[400px] relative rounded-md">
         <motion.div style={{ y }} className="absolute inset-0">
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            className="object-cover"
-            loading="lazy"
-          />
+          <Image src={imageSrc} alt={title} fill className="object-cover" loading="lazy" />
         </motion.div>
       </div>
       <div className="mt-4">

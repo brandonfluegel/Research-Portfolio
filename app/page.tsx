@@ -8,16 +8,14 @@ import AboutSection from "@/components/AboutSection";
 import ScrollToTop from "@/components/ScrollToTop";
 import ProfileImage from "@/components/ProfileImage";
 import AmazonProjectSection from "@/components/AmazonProjectSection";
-import ProjectCard from "@/components/ProjectCard";
-
-const pageVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-};
+import UberProjectSection from "@/components/UberProjectSection";
+import MercedesProjectSection from "@/components/MercedesProjectSection";
+import NASAProjectSection from "@/components/NASAProjectSection";
+import HarvardProjectSection from "@/components/HarvardProjectSection";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white min-h-screen cursor-none pt-20">
+    <main className="min-h-screen cursor-non pt-28 px-4 sm:px-8">
       <Cursor />
       <Navbar />
       <ScrollToTop />
@@ -25,7 +23,10 @@ export default function Home() {
       <motion.section
         initial="hidden"
         animate="visible"
-        variants={pageVariants}
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+        }}
         className="max-w-4xl mx-auto py-24"
       >
         <AnimatedText
@@ -37,31 +38,26 @@ export default function Home() {
 
         <AboutSection />
 
-        <AmazonProjectSection />
+        <section id="amazon">
+          <AmazonProjectSection />
+        </section>
 
-        <ProjectCard
-          title="Uber UX Research"
-          description="Conducted mixed-methods research informing iterative design for rental driver apps and payment experiences."
-          imageSrc="/assets/project-image-2.jpg"
-        />
+        <section id="uber">
+          <UberProjectSection />
+        </section>
 
-        <ProjectCard
-          title="NASA Langley UX Research"
-          description="Led research on astronaut medical workstation prototypes designed for Gateway, a lunar-orbiting space station."
-          imageSrc="/assets/project-image-3.jpg"
-        />
+        <section id="mercedes">
+          <MercedesProjectSection />
+        </section>
 
-        <ProjectCard
-          title="Mercedes-Benz R&D"
-          description="Conducted evaluative research on semi-autonomous vehicles, analyzing passenger experiences related to ambient noise and UX."
-          imageSrc="/assets/project-image-4.jpg"
-        />
+        <section id="nasa">
+          <NASAProjectSection />
+        </section>
 
-        <ProjectCard
-          title="Harvard Medical School"
-          description="Performed research evaluating the efficacy of tVNS therapy for major depression and anxiety disorders."
-          imageSrc="/assets/project-image-5.jpg"
-        />
+        <section id="harvard">
+          <HarvardProjectSection />
+        </section>
+
       </motion.section>
     </main>
   );

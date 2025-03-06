@@ -6,13 +6,6 @@
   --accent-color: #4f46e5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -25,11 +18,13 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(180deg, #0a0a0a, #ffffff, #0a0a0a);
   color: var(--foreground);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
   line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body,
