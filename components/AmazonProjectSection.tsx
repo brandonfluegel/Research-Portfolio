@@ -6,7 +6,7 @@ import YearBadge from "@/components/YearBadge";
 
 export default function AmazonProjectSection() {
   return (
-    <section id="amazon" className="relative max-w-6xl mx-auto py-32 px-6">
+    <section id="amazon" className="relative max-w-6xl mx-auto py-24 px-4">
       <YearBadge year="2025" />
 
       <motion.h2
@@ -14,87 +14,82 @@ export default function AmazonProjectSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold text-center mb-12 relative z-10"
+        className="text-4xl font-bold text-center mb-8"
       >
         Amazon Devices Design Group
       </motion.h2>
 
-      <div className="max-w-3xl mx-auto text-center text-gray-300 leading-relaxed mb-12 relative z-10">
-        <p className="mb-6">
-          At Amazon, I spearheaded extensive UX research using mixed-methods studies, detailed usability testing, latency analysis, and quantitative data analysis to dramatically improve the Alexa and Echo user experiences. My research identified key pain points related to device response times and user interactions, leading to innovative solutions that significantly enhanced product usability. The strategic insights derived from my findings unlocked over $1.5 billion in opportunities and directly informed crucial design and engineering decisions impacting millions of global users.
-        </p>
+      {/* Alternating Asymmetrical Grid clearly implemented */}
+      <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+        <div className="overflow-hidden rounded-xl shadow-xl">
+          <video
+            src="/assets/Glance.mp4"
+            autoPlay muted loop playsInline
+            className="w-full h-auto object-contain rounded-xl hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="overflow-hidden rounded-xl shadow-xl">
+          <Image
+            src="/assets/FinalWidgetViz.png"
+            alt="Final Widget Visualization"
+            width={600}
+            height={900}
+            className="object-contain w-full h-auto hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="overflow-hidden rounded-xl shadow-xl">
+          <Image
+            src="/assets/fnirs.jpg"
+            alt="fNIRS Brain Imaging"
+            width={450}
+            height={600}
+            className="object-cover w-full h-auto hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="overflow-hidden rounded-xl shadow-xl">
+          <Image
+            src="/assets/award.JPG"
+            alt="Receiving Award"
+            width={600}
+            height={400}
+            className="object-contain w-full h-auto hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="overflow-hidden rounded-xl shadow-xl">
+          <Image
+            src="/assets/Show10.jpg"
+            alt="Echo Show 10"
+            width={600}
+            height={400}
+            className="object-contain w-full h-auto hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div className="overflow-hidden rounded-xl shadow-xl">
+          <Image
+            src="/assets/app.jpeg"
+            alt="Amazon Mobile App"
+            width={600}
+            height={400}
+            className="object-contain w-full h-auto hover:scale-105 transition-transform duration-500"
+          />
+        </div>
       </div>
 
-      <div className="grid md:grid-cols-4 gap-4 items-center mb-12 relative z-10">
-        <Image
-          src="/assets/fnirs.jpg"
-          alt="fNIRS Brain Imaging Research"
-          width={900}
-          height={600}
-          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500 col-span-3"
-        />
-        <Image
-          src="/assets/award.JPG"
-          alt="Receiving Research Award"
-          width={300}
-          height={600}
-          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500 col-span-1"
-        />
-      </div>
-
-      <motion.p
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.3 }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto text-gray-300 my-12 text-center"
+        className="text-gray-300 text-justify max-w-3xl mx-auto"
       >
-        The goal of my research at Amazon was to deeply understand user behaviors and perceptions, enabling our teams to enhance interaction speed and overall user satisfaction. By integrating neuroscience and advanced usability techniques, our team delivered tangible improvements that refined both the technical performance and emotional appeal of Alexa and Echo devices.
-      </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        viewport={{ once: true }}
-        className="grid md:grid-cols-2 gap-8 items-center my-12 relative z-10"
-      >
-        <video
-          src="/assets/Glance.mp4"
-          autoPlay muted loop playsInline
-          className="rounded-xl shadow-xl w-full aspect-[9/16] object-cover"
-        />
-
-        <Image
-          src="/assets/FinalWidgetViz.png"
-          alt="Final Widget Visualization"
-          width={600}
-          height={1067}
-          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
-        />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        viewport={{ once: true }}
-        className="grid md:grid-cols-2 gap-8 relative z-10"
-      >
-        <Image
-          src="/assets/Show10.jpg"
-          alt="Echo Show 10 Device"
-          width={600}
-          height={400}
-          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
-        />
-        <Image
-          src="/assets/app.jpeg"
-          alt="Amazon Mobile App UX"
-          width={600}
-          height={400}
-          className="rounded-xl shadow-xl object-cover hover:scale-105 transition-transform duration-500"
-        />
+        <p className="mb-4">
+          At Amazon, I conducted extensive mixed-methods research to enhance Alexa and Echo device experiences. My research led to major usability improvements and unlocked $1.5B in strategic opportunities by identifying and addressing critical user pain points.
+        </p>
       </motion.div>
     </section>
   );

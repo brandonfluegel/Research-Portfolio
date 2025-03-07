@@ -1,44 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="max-w-4xl mx-auto my-32 px-6 text-center relative">
-      <motion.h2
+    <section id="about" className="max-w-4xl mx-auto my-32 px-6 relative -mt-10">
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold mb-6"
+        className="text-lg sm:text-xl text-gray-300 leading-relaxed text-justify space-y-6"
       >
-        About Me
-      </motion.h2>
+        <p>
+          Hey, I’m Brandon, thanks for being here!
+        </p>
 
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto"
-      >
-        I'm Brandon, a UX & Human Factors researcher passionate about deeply understanding users to craft engaging, intuitive, and impactful experiences. Over the past decade, I've collaborated with industry-leading organizations—including Amazon, Uber, NASA, Mercedes-Benz, and Harvard—transforming complex user challenges into actionable insights and delightful product designs. My research approach combines rigorous scientific methods with creative storytelling, consistently driving measurable improvements and innovation.
-      </motion.p>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.8 }}
-        viewport={{ once: true }}
-        className="mt-8"
-      >
-        <a
-          href="#contact"
-          className="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-3 rounded-lg transition duration-300 shadow-lg"
-        >
-          Get in Touch
-        </a>
+        <p>
+          I am passionate about creating experiences that society can enjoy. My research explores the cognitive strengths and limits of humans to help guide the design of complex consumer products and technology. Over the past 10 years, my experiences at Amazon, Uber, NASA, and Mercedes-Benz have allowed me to blend scientific rigor with creative storytelling, helping product and design teams uncover hidden opportunities and build delightful, impactful experiences. I earned my Ph.D. in Human Factors Psychology in 2020. My approach combines detailed, mixed-method research with a human touch, turning insights into actionable direction that enhance the lives of users and drive real business results.
+        </p>
       </motion.div>
     </section>
   );

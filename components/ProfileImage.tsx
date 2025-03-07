@@ -10,14 +10,15 @@ export default function ProfileImage() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="flex justify-center mb-8 px-4"
+      className="flex justify-center items-center px-4"
     >
       <Image
         src="/assets/brandon-fluegel.jpg"
         alt="Brandon Fluegel, Ph.D"
-        width={278}
-        height={278}
-        className="rounded-2xl object-cover shadow-lg w-[190px] sm:w-[278px] max-w-full h-auto"
+        width={348}
+        height={348}
+        className="rounded-full shadow-2xl object-contain w-[250px] sm:w-[348px] max-w-full h-auto"
+        style={{ boxShadow: "0 12px 24px rgba(0,0,0,0.35)" }}
       />
     </motion.div>
   );
