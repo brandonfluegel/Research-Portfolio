@@ -27,7 +27,7 @@ export default function NASAProjectSection() {
         className="grid md:grid-cols-2 gap-8 mb-12 relative z-10"
       >
         <Image
-          src="/assets/NASA.jpg"
+          src="/assets/nasa.jpg"
           alt="NASA Gateway Research"
           width={600}
           height={400}

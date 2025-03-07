@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
 export default function GradientTransition() {
@@ -11,15 +11,16 @@ export default function GradientTransition() {
     scrollYProgress,
     [0, 0.5, 1],
     [
-      "linear-gradient(180deg, #0a0a0a, #171717)",
-      "linear-gradient(180deg, #171717, #4f46e5)",
-      "linear-gradient(180deg, #4f46e5, #0a0a0a)"
+      "#0a0a0a",  // Initial color (black)
+      "#ffffff",  // Mid-transition color (white)
+      "#0a0a0a"   // Final color (black again)
     ]
   );
 
   return (
     <motion.div
-      className="fixed inset-0 -z-10"
+      ref={ref}
+      className="fixed inset-0 -z-50"
       style={{ background }}
     />
   );
