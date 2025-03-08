@@ -37,7 +37,7 @@ export default function Home() {
         <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/3 opacity-70 pointer-events-none">
           <ProfileImage />
         </div>
-      </section> {/* ✅ Corrected Closing Tag */}
+      </section>
 
       {/* Project Sections */}
       <section className="max-w-6xl mx-auto">
