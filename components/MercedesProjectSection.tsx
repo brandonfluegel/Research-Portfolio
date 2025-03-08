@@ -1,17 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import YearBadge from "@/components/YearBadge";
-import useParallax from "@/app/hooks/useParallax";
 import useDynamicTextColor from "@/app/hooks/useDynamicTextColor";
 
 export default function MercedesProjectSection() {
-  const { ref, y } = useParallax();
   const textColor = useDynamicTextColor();
 
   return (
-    <section id="mercedes" className="relative max-w-6xl mx-auto py-24 px-4" ref={ref}>
+    <section id="mercedes" className="relative max-w-6xl mx-auto py-24 px-4">
       <YearBadge year="2017" className="opacity-90 text-gray-900" />
 
       <motion.h2

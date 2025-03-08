@@ -12,7 +12,7 @@ export default function HarvardProjectSection() {
 
   return (
     <section id="harvard" className="relative max-w-6xl mx-auto py-24 px-4" ref={ref}>
-      <YearBadge year="2015" />
+      <YearBadge year="2015" className="opacity-90 text-gray-900" />
 
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ export default function HarvardProjectSection() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
         className="text-4xl font-bold text-center mb-12"
-        style={{ color: useDynamicTextColor() }}
+        style={{ color: textColor }}
       >
         Harvard Medical School
       </motion.h2>
