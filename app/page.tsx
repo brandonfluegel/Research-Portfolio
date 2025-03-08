@@ -32,7 +32,7 @@ export default function Home() {
               Hey, I’m Brandon, thanks for being here!
             </p>
             <p>
-              I am passionate about creating experiences that society can enjoy. My research explores the cognitive strengths and limits of humans to help guide the design of complex consumer products and technology. Over the past 10 years, my experiences at Amazon, Uber, NASA, and Mercedes-Benz have allowed me to blend scientific rigor with creative storytelling, helping product and design teams uncover hidden opportunities and build delightful, impactful products. Prior to entering tech, I earned my Ph.D. in Human Factors Psychology in 2020. My approach combines detailed, mixed-method research with a human touch, turning insights into actionable directions that enhance the lives of users and drive real business results.
+              I am passionate about creating experiences that society can enjoy. My research explores the cognitive strengths and limits of humans to help guide the design of complex consumer products and technology. Over the past 10 years, my experiences at Amazon, Uber, NASA, and Mercedes-Benz have allowed me to blend scientific rigor with creative storytelling, helping product and design teams uncover hidden opportunities and build delightful, impactful products. Prior to entering tech, I earned my Ph.D. in Human Factors Psychology.
             </p>
           </div>
         </div> {/* <-- Added this missing closing div clearly */}
