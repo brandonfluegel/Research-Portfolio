@@ -37,7 +37,7 @@ export default function NASAProjectSection() {
         >
           <h3 className="text-2xl font-bold">Overview</h3>
           <p>
-            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for use aboard Gateway, NASA's forthcoming lunar-orbiting space station. My findings ensured maximum usability, safety, and operational effectiveness.
+            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for use aboard Gateway, NASA&apos;s forthcoming lunar-orbiting space station.
           </p>
           <h4 className="font-semibold mt-4">Research Methods Used:</h4>
           <ul className="list-disc ml-6">

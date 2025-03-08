@@ -7,7 +7,7 @@ import useParallax from "@/app/hooks/useParallax";
 import useDynamicTextColor from "@/app/hooks/useDynamicTextColor";
 
 export default function UberProjectSection() {
-  const { ref, y } = useParallax();
+  const { ref } = useParallax();
   const textColor = useDynamicTextColor();
 
   return (
