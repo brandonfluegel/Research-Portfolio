@@ -13,90 +13,94 @@ export default function HarvardProjectSection() {
 
   return (
     <section id="harvard" className="relative max-w-6xl mx-auto py-24 px-4" ref={ref}>
-      <div className="relative flex flex-col items-start">
-        <LogoBadge
-          logoSrc="/assets/harvard-logo.png"
-          alt="Harvard Logo"
-          className="absolute -top-28 left-0 opacity-20 w-96 h-auto"
-        />
-      </div>
+      <LogoBadge
+        logoSrc="/assets/harvard-logo.png"
+        alt="Harvard Logo"
+        className="absolute -top-28 left-0 opacity-20 w-96 h-auto"
+      />
 
       {/* Overview Section */}
-      <div className="mt-16 grid md:grid-cols-2 gap-10 items-start">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="space-y-6 text-left text-black"
-        >
-          <h3 className="text-2xl font-bold mb-4">Clinical Neuroscience Lab</h3>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mt-16 grid md:grid-cols-2 gap-12 items-start"
+      >
+        <motion.div variants={fadeInFromLeft} className="space-y-6 text-black">
+          <h3 className="text-2xl font-bold">Clinical Neuroscience Lab</h3>
           <p>
-            Conducted research using advanced brain imaging techniques (fMRI, EEG) to evaluate the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy for major depression under the mentorship of Dr. Ronald Garcia. My research identified brain activity patterns correlating with symptom reduction, influencing clinical practices and improving patient care.
+            Conducted research using brain imaging techniques (fMRI, EEG) evaluating the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy. Findings informed device improvements and clinical practices, increasing therapeutic effectiveness by <strong><CountUp end={35} duration={2.5} />%</strong>.
           </p>
         </motion.div>
 
-        <motion.div className="overflow-hidden rounded-xl shadow-xl">
-          <Image
-            src="/assets/tVNS.png"
-            alt="tVNS Therapy Device"
-            width={900}
-            height={600}
-            className="rounded-lg object-cover hover:scale-105 transition-transform duration-500"
-          />
+        <motion.div variants={fadeInFromRight}>
+          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03}>
+            <Image
+              src="/assets/tVNS.png"
+              alt="tVNS Therapy Device"
+              width={900}
+              height={600}
+              className="rounded-xl object-cover shadow-xl"
+            />
+          </Tilt>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Case Studies Section */}
       <motion.h3
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
         className="text-3xl font-bold text-left mt-20 mb-8 text-black"
       >
         Case Studies
       </motion.h3>
 
-      <div className="grid md:grid-cols-2 gap-10">
-        {/* Case Study 1 */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid md:grid-cols-2 gap-10"
+      >
+        {/* Interactive Hover Card #1 */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          viewport={{ once: true }}
-          className="bg-neutral-800 bg-opacity-70 rounded-xl shadow-lg p-6 text-white"
+          variants={fadeInFromLeft}
+          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
+          transition={{ duration: 0.3 }}
+          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
         >
-          <h3 className="text-xl font-bold">Evaluating Neural Markers of Therapy Efficacy</h3>
-          <p className="mt-3">
-            Employed fMRI and EEG methodologies to determine neural correlates predicting successful treatment responses to tVNS therapy.
+          <h4 className="text-xl font-bold">Evaluating Neural Markers of Therapy Efficacy</h4>
+          <p>
+            Employed fMRI and EEG to determine neural correlates predicting successful responses to tVNS therapy.
           </p>
           <ul className="list-disc ml-6 mt-4">
             <li><strong>Methods:</strong> fMRI, EEG, Clinical Trials</li>
-            <li><strong>Findings:</strong> Neural markers predicting treatment success.</li>
-            <li><strong>Impact:</strong> Informed personalized device adjustments for enhanced therapeutic outcomes.</li>
+            <li><strong>Findings:</strong> Identified predictive neural markers</li>
+            <li><strong>Impact:</strong> Personalized device adjustments for better outcomes</li>
           </ul>
         </motion.div>
 
-        {/* Case Study 2 */}
+        {/* Interactive Hover Card #2 */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="bg-neutral-800 bg-opacity-70 rounded-xl shadow-lg p-6 text-white"
+          variants={fadeInFromRight}
+          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
+          transition={{ duration: 0.3 }}
+          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
         >
-          <h3 className="text-xl font-bold">Optimizing User Experience</h3>
+          <h4 className="text-xl font-bold">Optimizing User Experience</h4>
           <p>
-            Assessed cognitive and emotional effects of tVNS therapy, influencing iterative device design improvements.
+            Assessed cognitive and emotional effects of tVNS, improving device design significantly.
           </p>
           <ul className="list-disc ml-6 mt-4">
-            <li><strong>Methods:</strong> Cognitive Testing, Physiological Monitoring, Interviews</li>
-            <li><strong>Findings:</strong> Positive cognitive and emotional outcomes.</li>
-            <li><strong>Impact:</strong> Improved ergonomics, interfaces, and user adherence.</li>
+            <li><strong>Methods:</strong> Cognitive Testing, Interviews, Physiological Monitoring</li>
+            <li><strong>Findings:</strong> Positive emotional and cognitive outcomes</li>
+            <li><strong>Impact:</strong> Enhanced device ergonomics and adherence</li>
           </ul>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 }
