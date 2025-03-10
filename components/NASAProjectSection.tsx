@@ -2,42 +2,34 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import YearBadge from "@/components/YearBadge";
+import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import useDynamicTextColor from "@/app/hooks/useDynamicTextColor";
 
 export default function NASAProjectSection() {
-  const { ref, y } = useParallax();
-  const textColor = useDynamicTextColor();
+  const { ref } = useParallax();
 
   return (
     <section id="nasa" className="relative max-w-6xl mx-auto py-24 px-4" ref={ref}>
-      <YearBadge year="2018" className="opacity-100 text-black-900" />
-
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="text-4xl font-bold text-center mb-12"
-        style={{ color: textColor }}
-      >
-        NASA Langley UX Research
-      </motion.h2>
+      <div className="relative flex flex-col items-start">
+        <LogoBadge
+          logoSrc="/assets/nasa-logo.png"
+          alt="NASA Logo"
+          className="absolute -top-28 left-0 opacity-20 w-72 h-auto"
+        />
+      </div>
 
       {/* Overview Section */}
-      <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+      <div className="mt-16 grid md:grid-cols-2 gap-12 items-start">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="space-y-6"
-          style={{ color: '#222222' }}
+          className="space-y-6 text-left text-black"
         >
-          <h3 className="text-2xl font-bold">Overview</h3>
+          <h3 className="text-2xl font-bold">Astronaut Experience Research</h3>
           <p>
-            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for use aboard Gateway, NASA&apos;s forthcoming lunar-orbiting space station.
+            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for use aboard Gateway, NASA's forthcoming lunar-orbiting space station. My findings ensured maximum usability, safety, and operational effectiveness.
           </p>
           <h4 className="font-semibold mt-4">Research Methods Used:</h4>
           <ul className="list-disc ml-6">
@@ -47,15 +39,13 @@ export default function NASAProjectSection() {
           </ul>
         </motion.div>
 
-        <motion.div style={{ y }} className="overflow-hidden rounded-xl shadow-xl">
-          <Image
-            src="/assets/nasa.jpg"
-            alt="NASA Gateway Research"
-            width={1200}
-            height={700}
-            className="rounded-lg object-cover hover:scale-105 transition-transform duration-500"
-          />
-        </motion.div>
+        <Image
+          src="/assets/nasahab2.PNG"
+          alt="NASA Gateway Research"
+          width={1200}
+          height={700}
+          className="rounded-lg object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+        />
       </div>
 
       {/* Case Studies Section */}
@@ -64,8 +54,7 @@ export default function NASAProjectSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-3xl font-bold mb-8"
-        style={{ color: textColor }}
+        className="text-3xl font-bold text-left mt-20 mb-8 text-black"
       >
         Case Studies
       </motion.h3>
@@ -77,8 +66,7 @@ export default function NASAProjectSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="bg-neutral-800 bg-opacity-40 rounded-xl shadow-lg p-8 space-y-4"
-          style={{ color: textColor }}
+          className="bg-neutral-800 bg-opacity-70 rounded-xl shadow-lg p-8 space-y-4 text-white"
         >
           <h4 className="text-xl font-bold">Astronaut-Centered Medical Workstation Usability</h4>
           <p>
@@ -97,8 +85,7 @@ export default function NASAProjectSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-neutral-800 bg-opacity-40 rounded-xl shadow-lg p-8 space-y-4"
-          style={{ color: textColor }}
+          className="bg-neutral-800 bg-opacity-70 rounded-xl shadow-lg p-8 space-y-4 text-white"
         >
           <h4 className="text-xl font-bold">Medical Interface Optimization</h4>
           <p>

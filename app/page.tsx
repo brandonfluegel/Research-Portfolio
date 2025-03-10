@@ -11,6 +11,7 @@ import NASAProjectSection from "@/components/NASAProjectSection";
 import MercedesProjectSection from "@/components/MercedesProjectSection";
 import HarvardProjectSection from "@/components/HarvardProjectSection";
 
+
 export default function Home() {
   return (
     <main className="relative min-h-screen cursor-none px-4 sm:px-8 bg-gradient-to-b from-black via-white to-black overflow-hidden">
@@ -22,14 +23,13 @@ export default function Home() {
       <section className="relative flex flex-col justify-center items-center min-h-screen -mt-[90px]">
         <div className="max-w-4xl mx-auto relative z-10">
           <AnimatedText
-            text="Welcome to My Research Portfolio"
+            text="Hey, I’m Brandon, thanks for being here!"
             className="text-2xl md:text-4xl font-semibold text-center mb-6"
           />
 
-          <div className="text-gray-300 text-xl sm:text-2xl leading-relaxed text-justify space-y-4">
-            <p>Hey, I’m Brandon, thanks for being here!</p>
+          <div className="text-gray-700 text-xl sm:text-2xl leading-relaxed text-justify space-y-4">
             <p>
-              I am passionate about creating experiences that society can enjoy. My research explores the cognitive strengths and limits of humans to help guide the design of complex consumer products and technology. Over the past 10 years, my experiences at Amazon, Uber, NASA, and Mercedes-Benz have allowed me to blend scientific rigor with creative storytelling, helping product and design teams uncover hidden opportunities and build delightful, impactful products. Prior to entering tech, I earned my Ph.D. in Human Factors Psychology.
+              I am passionate about creating experiences that society can enjoy. My research explores human behavior help guide the design of complex consumer products and technology. Over the past 10 years, my experiences at Amazon, Uber, NASA, and Mercedes-Benz have allowed me to blend scientific rigor with creative storytelling, helping product and design teams uncover hidden opportunities and build delightful, impactful products. Prior to entering tech, I earned my Ph.D. in Human Factors Psychology.
             </p>
           </div>
         </div>
@@ -40,10 +40,8 @@ export default function Home() {
       </section>
 
       {/* Project Sections */}
-      <section className="max-w-6xl mx-auto">
-        <div className="my-24">
-          <AmazonProjectSection />
-        </div>
+      <section className="max-w-6xl mx-auto mt-8">
+        <AmazonProjectSection />
 
         <div className="my-24">
           <UberProjectSection />
@@ -61,6 +59,8 @@ export default function Home() {
           <HarvardProjectSection />
         </div>
       </section>
+
+      <ScrollToTop />
     </main>
   );
 }
