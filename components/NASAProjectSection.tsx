@@ -32,7 +32,7 @@ export default function NASAProjectSection() {
           <p>
             Led four rounds of usability testing with NASA astronauts,
             informing iterative design improvements of medical workstation prototypes
-            for Gateway, NASA's upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong><CountUp end={40} duration={2.5}/> %</strong>.
+            for Gateway, an upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong><CountUp end={40} duration={2.5}/> %</strong>.
           </p>
         </motion.div>
 
