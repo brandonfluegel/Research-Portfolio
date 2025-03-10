@@ -14,7 +14,9 @@
     "next": "15.2.1",
     "next-nprogress-bar": "^2.4.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-countup": "^6.5.3",
+    "react-dom": "^19.0.0",
+    "react-parallax-tilt": "^1.7.286"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

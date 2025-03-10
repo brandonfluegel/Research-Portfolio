@@ -18,11 +18,11 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #0a0a0a, #ffffff 50%, #0a0a0a);
+  background: transparent; /* Gradient managed by GradientBackground component */
   color: var(--foreground);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
-  line-height: 1.6;
+  line-height: 1.7;
   min-height: 100vh;
   overflow-x: hidden;
   padding: 0 1rem;
@@ -67,23 +67,51 @@ a:hover {
   color: var(--accent-color);
 }
 
-/* Subtle box shadow refinement */
+/* Subtle refined box shadow for depth consistency */
 .shadow-xl {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive typography adjustments for mobile */
-@media (max-width: 640px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.375rem; }
+/* Remove default video outline for polished look */
+video:focus {
+  outline: none;
+}
+
+/* Hide default cursor (custom cursor implemented) */
+body,
+a,
+button,
+[role='button'] {
+  cursor: none !important;
+}
+
+/* Responsive Typography Adjustments for Tablet */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
   p { font-size: 1.125rem; }
 }
 
-/* Responsive typography adjustments for mobile (globals.css) */
+/* Responsive typography adjustments for smaller mobile devices */
 @media (max-width: 640px) {
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
   p { font-size: 1rem; }
 }
+
+/* Interactive Link Styling */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Utility classes for enhanced UX consistency */
+.smooth-transition {
+  transition: all 0.3s ease-in-out;
+}
+
