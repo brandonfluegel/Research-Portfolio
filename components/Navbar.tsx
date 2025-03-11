@@ -30,8 +30,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", toggleScrollTop);
   }, []);
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black py-2 px-4 shadow-md md:py-3">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
