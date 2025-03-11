@@ -1,8 +1,7 @@
-// Simplified useParallax hook for mobile performance
 "use client";
 
 import { useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function useParallax() {
   const ref = useRef(null);
@@ -11,7 +10,11 @@ export default function useParallax() {
     offset: ["start end", "end start"],
   });
 
-  const isMobile = window.matchMedia("(max-width: 640px)").matches;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+  }, []);
 
   const y = useTransform(scrollYProgress, [0, 1], isMobile ? [0, 0] : [-30, 30]);
 
