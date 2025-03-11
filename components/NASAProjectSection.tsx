@@ -28,7 +28,7 @@ export default function NASAProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-6 text-black">
           <h3 className="text-2xl font-bold">Astronaut Experience Research</h3>
           <p>
-            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for Gateway, NASA's upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong>40%</strong>.
+            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for Gateway, an upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong>40%</strong>.
           </p>
         </motion.div>
 
