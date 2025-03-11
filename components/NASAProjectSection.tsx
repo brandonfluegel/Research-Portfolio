@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import Tilt from "react-parallax-tilt";
-import CountUp from "react-countup";
 import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function NASAProjectSection() {
@@ -16,7 +14,7 @@ export default function NASAProjectSection() {
       <LogoBadge
         logoSrc="/assets/nasa-logo.png"
         alt="NASA Logo"
-        className="absolute -top-28 left-0 opacity-20 w-72 h-auto"
+        className="absolute -top-28 left-0 opacity-50 w-72 h-auto"
       />
 
       {/* Overview Section */}
@@ -30,22 +28,19 @@ export default function NASAProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-6 text-black">
           <h3 className="text-2xl font-bold">Astronaut Experience Research</h3>
           <p>
-            Led four rounds of usability testing with NASA astronauts,
-            informing iterative design improvements of medical workstation prototypes
-            for Gateway, an upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong><CountUp end={40} duration={2.5}/> %</strong>.
+            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for Gateway, NASA's upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong>40%</strong>.
           </p>
         </motion.div>
 
         <motion.div variants={fadeInFromRight}>
-          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03}>
-            <Image
-              src="/assets/nasahab2.PNG"
-              alt="NASA Gateway Research"
-              width={1200}
-              height={700}
-              className="rounded-lg object-cover w-full shadow-xl"
-            />
-          </Tilt>
+          <Image
+            src="/assets/nasahab2.PNG"
+            alt="NASA Gateway Research"
+            width={1200}
+            height={700}
+            className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+          />
+          <span className="mt-4 text-center text-sm font-medium text-black"> Used VR to assess task performance in reaching and movement tasks.</span>
         </motion.div>
       </motion.div>
 
@@ -67,12 +62,12 @@ export default function NASAProjectSection() {
         viewport={{ once: true }}
         className="grid md:grid-cols-2 gap-10"
       >
-        {/* Interactive Hover Card #1 */}
+        {/* Case Study Card 1 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#e5e5e5", color: "#000000" }}
         >
           <h4 className="text-xl font-bold">Medical Workstation Usability</h4>
           <p>
@@ -80,17 +75,17 @@ export default function NASAProjectSection() {
           </p>
           <ul className="list-disc ml-6 mt-4">
             <li><strong>Methods:</strong> Usability Testing, Task Analysis</li>
-            <li><strong>Findings:</strong> Reduced astronaut cognitive load</li>
-            <li><strong>Impact:</strong> Increased operational efficiency and safety</li>
+            <li><strong>Findings:</strong> Reduced astronaut cognitive load significantly.</li>
+            <li><strong>Impact:</strong> Enhanced operational efficiency and safety.</li>
           </ul>
         </motion.div>
 
-        {/* Interactive Hover Card #2 */}
+        {/* Case Study Card 2 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#e5e5e5", color: "#000000" }}
         >
           <h4 className="text-xl font-bold">Medical Interface Optimization</h4>
           <p>
@@ -98,8 +93,8 @@ export default function NASAProjectSection() {
           </p>
           <ul className="list-disc ml-6 mt-4">
             <li><strong>Methods:</strong> Task Analysis, Interviews, Heuristic Evaluation</li>
-            <li><strong>Findings:</strong> Improved interface clarity</li>
-            <li><strong>Impact:</strong> Enhanced mission reliability and safety</li>
+            <li><strong>Findings:</strong> Improved interface clarity.</li>
+            <li><strong>Impact:</strong> Enhanced mission reliability and safety.</li>
           </ul>
         </motion.div>
       </motion.div>

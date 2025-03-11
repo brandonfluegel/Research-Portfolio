@@ -14,8 +14,8 @@ export default function LogoBadge({ logoSrc, alt, className = "" }: LogoBadgePro
       <Image
         src={logoSrc}
         alt={alt}
-        width={500}
-        height={500}
+        width={400}
+        height={400}
         className="object-contain w-full h-auto opacity-150"
       />
     </div>

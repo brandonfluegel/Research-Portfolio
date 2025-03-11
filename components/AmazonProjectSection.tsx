@@ -3,19 +3,17 @@
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import Tilt from "react-parallax-tilt";
-import CountUp from "react-countup";
 import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function AmazonProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section id="amazon" className="relative max-w-6xl mx-auto py-24 px-4" ref={ref}>
+    <section id="amazon" className="relative max-w-6xl mx-auto py-24 px-4 -mt-10" ref={ref}>
       <LogoBadge
         logoSrc="/assets/amazon-logo.png"
         alt="Amazon Logo"
-        className="absolute -top-28 left-1/2 transform -translate-x-1/2 opacity-20 w-96 h-auto"
+        className="absolute -top-14 left-0 opacity-20 w-72 h-auto"
       />
 
       {/* Overview Section */}
@@ -24,35 +22,25 @@ export default function AmazonProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-16 grid md:grid-cols-2 gap-12 items-start"
+        className="mt-8 grid md:grid-cols-2 gap-12 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-6 text-black">
+        <motion.div variants={fadeInFromLeft} className="space-y-6">
           <h3 className="text-2xl font-bold">Devices Design Group</h3>
           <p>
-            Designed and conducted <strong>25+</strong> mixed-methods studies,
-            delivering actionable insights that informed <strong>100+</strong>
-            design iterations across Echo Show, Echo Hub, Fire TV, Alexa Mobile
-            App, and Alexa+ Generative AI. Strategically prioritized high-impact
-            research programs, including a multi-year study identifying a significant
-            <strong>
-              ${""}
-              <CountUp end={1.7} decimals={1} duration={2.5} /> billion
-            </strong>{" "}
-            opportunity by optimizing Alexa’s response latency.
+            Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Echo Show, Echo Hub, Fire TV, Alexa Mobile App, and Alexa+ Generative AI. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.5 billion opportunity by optimizing Alexa’s response latency.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight}>
-          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03}>
-            <video
-              src="/assets/fnirs.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="rounded-xl object-cover w-full shadow-xl"
-            />
-          </Tilt>
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center">
+          <video
+            src="/assets/fnirs.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+          />
+          <span className="mt-4 text-center text-sm font-medium text-white">Functional Brain Imaging During Visual TV Search</span>
         </motion.div>
       </motion.div>
 
@@ -62,7 +50,7 @@ export default function AmazonProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-3xl font-bold text-left mt-20 mb-8 text-black"
+        className="text-3xl font-bold text-left mt-20 mb-8"
       >
         Case Studies
       </motion.h3>
@@ -74,12 +62,12 @@ export default function AmazonProjectSection() {
         viewport={{ once: true }}
         className="grid md:grid-cols-2 gap-10"
       >
-        {/* Interactive Hover Card #1 */}
+        {/* Case Study Card 1 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#333333", color: "#ffffff" }}
         >
           <h4 className="text-xl font-bold">Alexa Latency and Customer Experience</h4>
           <p>
@@ -92,12 +80,12 @@ export default function AmazonProjectSection() {
           </ul>
         </motion.div>
 
-        {/* Interactive Hover Card #2 */}
+        {/* Case Study Card 2 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#404040", color: "#ffffff" }}
         >
           <h4 className="text-xl font-bold">Customer Perceptions of UI Attractiveness</h4>
           <p>
@@ -113,3 +101,4 @@ export default function AmazonProjectSection() {
     </section>
   );
 }
+ 

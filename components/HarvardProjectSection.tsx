@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import Tilt from "react-parallax-tilt";
-import CountUp from "react-countup";
 import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function HarvardProjectSection() {
@@ -16,7 +14,7 @@ export default function HarvardProjectSection() {
       <LogoBadge
         logoSrc="/assets/harvard-logo.png"
         alt="Harvard Logo"
-        className="absolute -top-28 left-0 opacity-20 w-96 h-auto"
+        className="absolute -top-28 left-0 opacity-80 w-105 h-auto"
       />
 
       {/* Overview Section */}
@@ -27,23 +25,22 @@ export default function HarvardProjectSection() {
         viewport={{ once: true }}
         className="mt-16 grid md:grid-cols-2 gap-12 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-6 text-black">
+        <motion.div variants={fadeInFromLeft} className="space-y-6">
           <h3 className="text-2xl font-bold">Clinical Neuroscience Lab</h3>
           <p>
-            Conducted research using brain imaging techniques (fMRI, EEG) evaluating the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy. Findings informed device improvements and clinical practices, increasing therapeutic effectiveness by <strong><CountUp end={35} duration={2.5} />%</strong>.
+            Conducted research using advanced brain imaging techniques (fMRI, EEG) to evaluate the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy for major depression. Identified brain activity patterns correlating with symptom reduction, influencing clinical practices and improving patient care.
           </p>
         </motion.div>
 
         <motion.div variants={fadeInFromRight}>
-          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03}>
-            <Image
-              src="/assets/tVNS.png"
-              alt="tVNS Therapy Device"
-              width={900}
-              height={600}
-              className="rounded-xl object-cover shadow-xl"
-            />
-          </Tilt>
+          <Image
+            src="/assets/tVNS.png"
+            alt="tVNS Therapy Device"
+            width={900}
+            height={600}
+            className="rounded-lg object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+          />
+            <span className="mt-4 text-center text-sm font-medium text-white">Fixing tVNS Device on Patient (correct vs placebo)</span>
         </motion.div>
       </motion.div>
 
@@ -53,7 +50,7 @@ export default function HarvardProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-3xl font-bold text-left mt-20 mb-8 text-black"
+        className="text-3xl font-bold text-left mt-20 mb-8"
       >
         Case Studies
       </motion.h3>
@@ -65,12 +62,12 @@ export default function HarvardProjectSection() {
         viewport={{ once: true }}
         className="grid md:grid-cols-2 gap-10"
       >
-        {/* Interactive Hover Card #1 */}
+        {/* Case Study Card 1 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#262626", color: "#ffffff" }}
         >
           <h4 className="text-xl font-bold">Evaluating Neural Markers of Therapy Efficacy</h4>
           <p>
@@ -83,12 +80,12 @@ export default function HarvardProjectSection() {
           </ul>
         </motion.div>
 
-        {/* Interactive Hover Card #2 */}
+        {/* Case Study Card 2 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#262626", color: "#ffffff" }}
         >
           <h4 className="text-xl font-bold">Optimizing User Experience</h4>
           <p>

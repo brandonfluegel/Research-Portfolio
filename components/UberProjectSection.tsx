@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import Tilt from "react-parallax-tilt";
-import CountUp from "react-countup";
 import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function UberProjectSection() {
@@ -25,28 +23,24 @@ export default function UberProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-16 md:flex md:justify-between md:items-start gap-12"
+        className="mt-16 grid md:grid-cols-2 gap-12 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="md:w-1/2 space-y-6 text-black">
+        <motion.div variants={fadeInFromLeft} className="space-y-6">
           <h3 className="text-2xl font-bold">Driver Experience Research</h3>
           <p>
-            Conducted international ethnography and contextual inquiry research in Brazil
-            that informed the iterative design of the rental driver app and payments
-            experience. My research significantly improved driver satisfaction, increasing
-            retention by over <strong><CountUp end={30} duration={2.5} />%</strong>.
+            Conducted international ethnography and contextual inquiry research in Brazil that informed the iterative design of the rental driver app and payments experience. My research significantly improved driver satisfaction, increasing retention by over <strong>30%</strong>.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="md:w-1/2">
-          <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} scale={1.03} className="bg-transparent shadow-none">
-            <Image
-              src="/assets/project-image-2.jpg"
-              alt="Uber Research Fieldwork"
-              width={1200}
-              height={800}
-              className="rounded-xl object-cover w-full shadow-xl"
-            />
-          </Tilt>
+        <motion.div variants={fadeInFromRight}>
+          <Image
+            src="/assets/project-image-2.jpg"
+            alt="Uber Research Fieldwork"
+            width={1200}
+            height={800}
+            className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+          />
+           <span className="mt-4 text-center text-sm font-medium text-white"> Iterative Design of the Uber Driver App</span>
         </motion.div>
       </motion.div>
 
@@ -56,7 +50,7 @@ export default function UberProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-3xl font-bold text-left mt-20 mb-8 text-black"
+        className="text-3xl font-bold text-left mt-20 mb-8"
       >
         Case Studies
       </motion.h3>
@@ -68,41 +62,39 @@ export default function UberProjectSection() {
         viewport={{ once: true }}
         className="grid md:grid-cols-2 gap-10"
       >
-        {/* Interactive Hover Card #1 */}
+        {/* Case Study Card 1 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#9ca3af", color: "#ffffff" }}
         >
           <h4 className="text-xl font-bold">Improving Driver Payment Experience</h4>
           <p>
-            Investigated payment processing challenges, identifying key areas
-            for improvement to enhance driver satisfaction.
+            Investigated payment processing challenges, identifying key improvement areas.
           </p>
           <ul className="list-disc ml-6 mt-4">
-            <li><strong>Methods:</strong> Ethnography, Contextual Inquiry, Field Interviews</li>
-            <li><strong>Findings:</strong> Payment usability improvements needed</li>
-            <li><strong>Impact:</strong> Boosted driver retention significantly</li>
+            <li><strong>Methods:</strong> Ethnographic Research, Contextual Inquiry, Interviews</li>
+            <li><strong>Findings:</strong> Identified pain points in payment processing</li>
+            <li><strong>Impact:</strong> Enhanced app usability and increased driver satisfaction</li>
           </ul>
         </motion.div>
 
-        {/* Interactive Hover Card #2 */}
+        {/* Case Study Card 2 */}
         <motion.div
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -5, boxShadow: "0 20px 30px rgba(0,0,0,0.35)" }}
-          transition={{ duration: 0.3 }}
-          className="bg-neutral-800 rounded-xl shadow-lg p-8 text-white cursor-pointer"
+          whileHover={{ scale: 1.03, y: -5 }}
+          style={{ backgroundColor: "#9ca3af", color: "#ffffff" }}
         >
           <h4 className="text-xl font-bold">Rental App Usability Optimization</h4>
           <p>
-            Conducted contextual inquiries, substantially improving app usability,
-            engagement, and driver satisfaction.
+            Conducted research significantly improving app usability.
           </p>
           <ul className="list-disc ml-6 mt-4">
-            <li><strong>Methods:</strong> Contextual Inquiry, Usability Testing</li>
-            <li><strong>Findings:</strong> Key usability barriers identified</li>
-            <li><strong>Impact:</strong> Improved user efficiency and app engagement</li>
+            <li><strong>Methods:</strong> Contextual Inquiry, Usability Testing, Field Observations</li>
+            <li><strong>Findings:</strong> Identified critical usability challenges</li>
+            <li><strong>Impact:</strong> Improved user engagement and satisfaction</li>
           </ul>
         </motion.div>
       </motion.div>

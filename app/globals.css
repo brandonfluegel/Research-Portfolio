@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ffffff;
   --accent-color: #4f46e5;
 }
 
@@ -18,11 +18,11 @@ html {
 }
 
 body {
-  background: transparent; /* Gradient managed by GradientBackground component */
+  background: transparent; /* Managed by GradientBackground component */
   color: var(--foreground);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
-  line-height: 1.7;
+  line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
   padding: 0 1rem;
@@ -55,45 +55,20 @@ h3 {
 
 p {
   font-size: 1.25rem;
-  color: #e5e7eb;
+  color: #ffffff;
   line-height: 1.8;
+  opacity: 1 !important;
 }
 
-a {
-  transition: color 0.3s ease;
+a:hover { 
+  color: var(--accent-color); 
 }
 
-a:hover {
-  color: var(--accent-color);
-}
-
-/* Subtle refined box shadow for depth consistency */
 .shadow-xl {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Remove default video outline for polished look */
-video:focus {
-  outline: none;
-}
-
-/* Hide default cursor (custom cursor implemented) */
-body,
-a,
-button,
-[role='button'] {
-  cursor: none !important;
-}
-
-/* Responsive Typography Adjustments for Tablet */
-@media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.5rem; }
-  p { font-size: 1.125rem; }
-}
-
-/* Responsive typography adjustments for smaller mobile devices */
+/* Responsive typography adjustments for mobile */
 @media (max-width: 640px) {
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.5rem; }
@@ -101,17 +76,59 @@ button,
   p { font-size: 1rem; }
 }
 
-/* Interactive Link Styling */
-a {
-  transition: color 0.3s ease;
+/* Section-specific text colors (NASA & Mercedes) */
+#nasa,
+#mercedes {
+  color: #000000 !important;
 }
 
-a:hover {
-  color: var(--accent-color);
+#nasa h1, #nasa h2, #nasa h3, #nasa h4, #nasa h5,
+#mercedes h1, #mercedes h2, #mercedes h3, #mercedes h4, #mercedes h5,
+#nasa p, #mercedes p,
+#nasa ul, #mercedes ul,
+#nasa li, #mercedes li {
+  color: #000000 !important;
+  opacity: 1 !important;
 }
 
-/* Utility classes for enhanced UX consistency */
-.smooth-transition {
-  transition: all 0.3s ease-in-out;
+/* Customized Case Study Container Colors for Optimal Blending */
+
+#amazon .case-study-container {
+  background-color: #383838 !important;
+  color: #ffffff !important;
+}
+
+#uber .case-study-container {
+  background-color: rgba(23,23,23,0.9);
+  color: #ffffff !important;
+}
+
+#nasa .case-study-container {
+  background-color: #e5e5e5 !important;
+  color: #000000 !important;
+}
+
+#mercedes .case-study-container {
+  background-color: #404040 !important; /* Current optimal grey container color */
+  color: #FFFFFF !important; /* Pure white text for optimal readability */
+}
+
+#mercedes .case-study-container h4,
+#mercedes .case-study-container p,
+#mercedes .case-study-container li {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+}
+
+
+#harvard .case-study-container {
+  background-color: #262626 !important;
+  color: #ffffff !important;
+}
+
+.case-study-container h4,
+.case-study-container p,
+.case-study-container li {
+  opacity: 1 !important;
 }
 
