@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface AnimatedTextProps {
   text: string;
@@ -8,11 +9,19 @@ interface AnimatedTextProps {
 }
 
 export default function AnimatedText({ text, className }: AnimatedTextProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+  }, []);
+
   const letters = Array.from(text);
+
   const container = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+    visible: { opacity: 1, transition: { staggerChildren: isMobile ? 0.02 : 0.05 } },
   };
+
   const child = {
     visible: { opacity: 1, y: 0 },
     hidden: { opacity: 0, y: 20 },

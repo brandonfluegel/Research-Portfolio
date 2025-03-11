@@ -18,7 +18,7 @@ html {
 }
 
 body {
-  background: transparent; /* Managed by GradientBackground component */
+  background: transparent;
   color: var(--foreground);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: #ffffff;
+  margin-bottom: 1.5rem;
 }
 
 h1 {
@@ -68,67 +69,24 @@ a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Responsive typography adjustments for mobile */
+.case-study-container {
+  padding: 1.5rem;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+/* Responsive typography adjustments and layout improvements for mobile */
 @media (max-width: 640px) {
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
-  p { font-size: 1rem; }
+  h1 { font-size: 1.75rem; margin-bottom: 1rem; }
+  h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+  h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+  p, li {
+    font-size: 1rem;
+    line-height: 1.75;
+    letter-spacing: 0.01em;
+  }
+
+  .case-study-container {
+    padding: 1.25rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  }
 }
-
-/* Section-specific text colors (NASA & Mercedes) */
-#nasa,
-#mercedes {
-  color: #000000 !important;
-}
-
-#nasa h1, #nasa h2, #nasa h3, #nasa h4, #nasa h5,
-#mercedes h1, #mercedes h2, #mercedes h3, #mercedes h4, #mercedes h5,
-#nasa p, #mercedes p,
-#nasa ul, #mercedes ul,
-#nasa li, #mercedes li {
-  color: #000000 !important;
-  opacity: 1 !important;
-}
-
-/* Customized Case Study Container Colors for Optimal Blending */
-
-#amazon .case-study-container {
-  background-color: #383838 !important;
-  color: #ffffff !important;
-}
-
-#uber .case-study-container {
-  background-color: rgba(23,23,23,0.9);
-  color: #ffffff !important;
-}
-
-#nasa .case-study-container {
-  background-color: #e5e5e5 !important;
-  color: #000000 !important;
-}
-
-#mercedes .case-study-container {
-  background-color: #404040 !important; /* Current optimal grey container color */
-  color: #FFFFFF !important; /* Pure white text for optimal readability */
-}
-
-#mercedes .case-study-container h4,
-#mercedes .case-study-container p,
-#mercedes .case-study-container li {
-  color: #FFFFFF !important;
-  opacity: 1 !important;
-}
-
-
-#harvard .case-study-container {
-  background-color: #262626 !important;
-  color: #ffffff !important;
-}
-
-.case-study-container h4,
-.case-study-container p,
-.case-study-container li {
-  opacity: 1 !important;
-}
-

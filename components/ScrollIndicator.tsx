@@ -1,11 +1,10 @@
-// components/ScrollIndicator.tsx
 "use client";
 
 import { motion } from "framer-motion";
 
 export default function ScrollIndicator() {
   return (
-    <div className="flex justify-center my-4">
+    <div className="hidden sm:flex justify-center my-4">
       <motion.div
         animate={{ y: [0, 15, 0], opacity: [0.5, 1, 0.5] }}
         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
