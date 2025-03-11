@@ -6,15 +6,9 @@
   --accent-color: #4f46e5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html {
   scroll-behavior: smooth;
+  font-size: calc(1rem + 0.5vw); /* Adjust root font size based on viewport */
 }
 
 body {
@@ -23,70 +17,36 @@ body {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   letter-spacing: 0.02em;
   line-height: 1.6;
-  min-height: 100vh;
   overflow-x: hidden;
-  padding: 0 1rem;
-}
-
-body,
-a,
-button,
-[role='button'] {
-  cursor: none !important;
+  padding: 0 clamp(1rem, 2vw, 2rem); /* adaptive padding */
 }
 
 h1, h2, h3, h4, h5 {
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #ffffff;
   margin-bottom: 1.5rem;
 }
 
-h1 {
-  font-size: 3rem;
-}
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h3 { font-size: clamp(1.5rem, 2vw, 2rem); }
 
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1.25rem;
-  color: #ffffff;
+p, li {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   line-height: 1.8;
-  opacity: 1 !important;
-}
-
-a:hover { 
-  color: var(--accent-color); 
-}
-
-.shadow-xl {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .case-study-container {
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 2rem);
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 
-/* Responsive typography adjustments and layout improvements for mobile */
 @media (max-width: 640px) {
-  h1 { font-size: 1.75rem; margin-bottom: 1rem; }
-  h2 { font-size: 1.5rem; margin-bottom: 1rem; }
-  h3 { font-size: 1.25rem; margin-bottom: 1rem; }
-  p, li {
-    font-size: 1rem;
-    line-height: 1.75;
-    letter-spacing: 0.01em;
-  }
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
 
   .case-study-container {
     padding: 1.25rem;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   }
 }
