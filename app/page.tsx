@@ -18,20 +18,21 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-<section className="relative flex flex-col justify-center items-center min-h-screen pt-12 sm:pt-24">
-  <div className="max-w-4xl mx-auto px-4 relative z-10">
+<section className="relative flex flex-col justify-center items-center min-h-screen pt-24 sm:pt-32 -mt-[90px] px-4">
+  <div className="max-w-4xl mx-auto relative z-10">
     <AnimatedText
       text="Hey, thanks for being here!"
-      className="text-2xl md:text-4xl font-semibold text-center mb-6 text-white"
+      className="text-xl sm:text-3xl md:text-4xl font-semibold text-center mb-4 text-white"
     />
 
-    <div className="text-white text-base sm:text-xl leading-relaxed text-justify">
+    <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-center space-y-3">
       <p>
         Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Prior to entering tech, I earned my Ph.D. in Human Factors Psychology. This portfolio captures my research experiences:
       </p>
     </div>
   </div>
 </section>
+
 
 
 
