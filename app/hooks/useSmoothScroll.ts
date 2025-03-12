@@ -14,9 +14,12 @@ export default function useSmoothScroll(navbarSelector = 'nav') {
         const navbar = document.querySelector(navbarSelector);
 
         if (targetElement && navbar) {
-          const navbarHeight = navbar.getBoundingClientRect().height;
           const targetRect = targetElement.getBoundingClientRect();
-          const offsetTop = targetRect.top + window.scrollY - navbar.clientHeight - (targetElement.clientHeight * 0.3); // clearly adjusted to 30%
+          const offsetTop =
+            targetRect.top +
+            window.scrollY -
+            navbar.clientHeight -
+            targetElement.clientHeight * 0.3; // clearly 30% offset above LogoBadge
 
           window.scrollTo({
             top: offsetTop,
@@ -28,5 +31,5 @@ export default function useSmoothScroll(navbarSelector = 'nav') {
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, []);
+  }, [navbarSelector]); // added missing dependency clearly
 }
