@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-export default function useSmoothScroll(offsetExtra = 10) {
+export default function useSmoothScroll(navbarSelector = 'nav') {
   useEffect(() => {
     const handleAnchorClick = (event: MouseEvent) => {
       const anchor = (event.target as HTMLElement).closest('a[href^="#"]');
@@ -11,15 +11,16 @@ export default function useSmoothScroll(offsetExtra = 10) {
 
         const targetId = anchor.getAttribute('href')!.slice(1);
         const targetElement = document.getElementById(targetId);
-        const navbarHeight = document.querySelector('nav')?.clientHeight || 80; // measure dynamically if needed
+        const navbar = document.querySelector(navbarSelector);
 
-        if (targetElement) {
-          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-          const offsetPosition = elementPosition - navbarHeight - offsetExtra;
+        if (targetElement && navbar) {
+          const navbarHeight = navbar.getBoundingClientRect().height;
+          const targetRect = targetElement.getBoundingClientRect();
+          const offsetTop = targetRect.top + window.scrollY - navbar.clientHeight - (targetElement.clientHeight * 0.3); // clearly adjusted to 30%
 
           window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
+            top: offsetTop,
+            behavior: 'smooth',
           });
         }
       }
@@ -27,5 +28,5 @@ export default function useSmoothScroll(offsetExtra = 10) {
 
     document.addEventListener('click', handleAnchorClick);
     return () => document.removeEventListener('click', handleAnchorClick);
-  }, [offsetExtra]);
+  }, []);
 }

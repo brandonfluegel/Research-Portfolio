@@ -41,7 +41,10 @@ export default function AnimatedText({ text, className }: AnimatedTextProps) {
       animate="visible"
     >
       {text.split(" ").map((word, wordIndex) => (
-        <span key={wordIndex} className="inline-block mr-1">
+        <span
+          key={wordIndex}
+          className="inline-block mr-3 sm:mr-3 md:mr-3" // clearly increased word spacing
+        >
           {Array.from(word).map((letter, letterIndex) => (
             <motion.span key={letterIndex} variants={child}>
               {letter}

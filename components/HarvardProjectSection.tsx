@@ -38,8 +38,8 @@ export default function HarvardProjectSection() {
           <Image
             src="/assets/tVNS.png"
             alt="tVNS Therapy Device"
-            width={900}
-            height={600}
+            width={800}
+            height={400}
             className="rounded-lg object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
           />
           <span className="mt-3 text-center text-sm font-medium text-white">Fixing tVNS Device on Patient (correct vs placebo)</span>

@@ -12,8 +12,7 @@ import HarvardProjectSection from "@/components/HarvardProjectSection";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
 
 export default function Home() {
-  // Adjust offset value if Navbar height changes
-  useSmoothScroll(90); // navbar (~80px) + small gap (~10px)
+  useSmoothScroll('nav');
 
   return (
     <main className="relative min-h-screen cursor-none px-4 sm:px-8 bg-gradient-to-b from-black via-white to-black overflow-hidden">
@@ -31,7 +30,7 @@ export default function Home() {
 
     <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify mx-auto px-2 sm:px-4 md:px-8">
       <p>
-        Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. I also earned my Ph.D. in Human Factors Psychology in 2020.
+        Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with my ten years of experience in the tech industry, I earned my Ph.D. in Human Factors Psychology in 2020.
       </p>
     </div>
   </div>
