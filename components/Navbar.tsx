@@ -2,16 +2,18 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Navbar() {
-  const toggleMenu = () => {
-    document.getElementById('mobileMenu')!.classList.toggle('hidden');
-  };
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => setIsOpen(prev => !prev);
+  const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur px-4 py-3">
-      <div className="flex items-center justify-between max-w-6xl mx-auto">
-        <Link href="/" className="flex items-center space-x-2">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+        <Link href="/" className="flex items-center space-x-3">
           <Image
             src="/assets/me.jpg"
             alt="Profile Image"
@@ -22,34 +24,37 @@ export default function Navbar() {
           <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
         </Link>
 
-        <button
-          className="sm:hidden text-white focus:outline-none"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <div className="w-6 h-0.5 bg-white mb-1"></div>
-          <div className="w-6 h-0.5 bg-white mb-1"></div>
-          <div className="w-6 h-0.5 bg-white"></div>
+        <button className="sm:hidden flex flex-col space-y-1.5" onClick={handleToggle}>
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
         </button>
 
-        <ul className="hidden sm:flex space-x-6 text-white font-medium">
-          <li><Link href="#amazon">Amazon</Link></li>
-          <li><Link href="#uber">Uber</Link></li>
-          <li><Link href="#nasa">NASA</Link></li>
-          <li><Link href="#mercedes">Mercedes</Link></li>
-          <li><Link href="#harvard">Harvard</Link></li>
+        {/* Desktop Menu */}
+        <ul className="hidden sm:flex space-x-6 text-white">
+          {["amazon", "uber", "nasa", "mercedes", "harvard"].map((item) => (
+            <li key={item}>
+              <Link href={`#${item}`} className="capitalize hover:text-indigo-300">
+                {item}
+              </Link>
+            </li>
+          ))}
         </ul>
-      </div>
 
-      {/* Mobile Menu Dropdown */}
-      <div id="mobileMenu" className="hidden sm:hidden text-white pt-4">
-        <ul className="space-y-2 text-lg">
-          <li><Link href="#amazon">Amazon</Link></li>
-          <li><Link href="#uber">Uber</Link></li>
-          <li><Link href="#nasa">NASA</Link></li>
-          <li><Link href="#mercedes">Mercedes</Link></li>
-          <li><Link href="#harvard">Harvard</Link></li>
-        </ul>
+        {/* Mobile Menu Dropdown (Fixed positioning to prevent overflow) */}
+        {isOpen && (
+          <div className="absolute top-full left-0 w-full bg-black bg-opacity-95 shadow-xl py-4">
+            <ul className="flex flex-col space-y-4 text-white px-6">
+              {["amazon", "uber", "nasa", "mercedes", "harvard"].map((item) => (
+                <li key={item}>
+                  <Link href={`#${item}`} onClick={handleLinkClick} className="capitalize block text-lg">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
