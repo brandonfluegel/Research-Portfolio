@@ -18,7 +18,7 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding: 0 clamp(1rem, 2vw, 2rem); /* adaptive padding */
+  padding: 0 clamp(1rem, 2vw, 1.5rem); /* slightly reduced adaptive padding */
 }
 
 h1, h2, h3, h4, h5 {
