@@ -15,10 +15,10 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center space-x-3">
           <Image
-            src="/assets/me.jpg"
+            src="/assets/cowboy.jpg"
             alt="Profile Image"
-            width={40}
-            height={40}
+            width={55}
+            height={55}
             className="rounded-full"
           />
           <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
