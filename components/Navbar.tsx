@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    document.getElementById('mobileMenu')!.classList.toggle('hidden');
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur px-4 py-3">
@@ -24,7 +24,8 @@ export default function Navbar() {
 
         <button
           className="sm:hidden text-white focus:outline-none"
-          onClick={() => document.getElementById('mobileMenu')!.classList.toggle('hidden')}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
         >
           <div className="w-6 h-0.5 bg-white mb-1"></div>
           <div className="w-6 h-0.5 bg-white mb-1"></div>
