@@ -24,10 +24,11 @@ export default function Home() {
       {/* Hero Section */}
 <section className="relative flex flex-col justify-center items-start min-h-screen px-6 pt-32 pb-12 -mt-[90px]">
   <div className="max-w-3xl w-full mx-auto relative z-10 px-2 sm:px-4 md:px-8">
-    <AnimatedText
-      text="Thanks for being here!"
-      className="text-base sm:text-lg md:text-3xl font-semibold mb-4 text-white text-center whitespace-nowrap"
-    />
+  <AnimatedText
+  text="Thanks for being here!"
+  className="text-xl sm:text-2xl md:text-4xl font-semibold mb-4 text-white text-center"
+/>
+
 
     <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify">
       <p>

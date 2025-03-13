@@ -8,7 +8,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: calc(1rem + 0.5vw); /* Adjust root font size based on viewport */
+  font-size: calc(1rem + 0.5vw);
 }
 
 body {
@@ -18,37 +18,56 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding: 0 clamp(0.75rem, 2vw, 1.5rem); /* Improved adaptive padding for smaller screens */
-  
-  
+  padding: 0 clamp(0.75rem, 2vw, 1.5rem);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
-h1 { font-size: clamp(2rem, 4vw, 3rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
-h3 { font-size: clamp(1.5rem, 2vw, 2rem); }
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+h3 {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
 
-p, li {
+p,
+li {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   line-height: 1.8;
 }
 
 .case-study-container {
   padding: clamp(1rem, 3vw, 2rem);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 640px) {
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
 
   .case-study-container {
-    padding: 1.25rem;
+    padding: 1rem 0.5rem; /* Explicitly reduced horizontal padding for full width on mobile */
+  }
+
+  .hero-header {
+    font-size: 1.25rem !important; /* Explicitly smaller font for hero header on mobile */
   }
 }
