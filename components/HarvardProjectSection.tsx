@@ -36,7 +36,7 @@ export default function HarvardProjectSection() {
 
         <motion.div variants={fadeInFromRight} className="flex flex-col items-center">
           <Image
-            src="/assets/tVNS.png"
+            src="/assets/tVNs.png"
             alt="tVNS Therapy Device"
             width={800}
             height={400}
