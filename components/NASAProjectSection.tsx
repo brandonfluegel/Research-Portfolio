@@ -20,13 +20,13 @@ export default function NASAProjectSection() {
       ref={ref}
     >
       <div
-        id="NASA"
+        id="nasa"
         className="absolute -top-28 left-1/2 transform -translate-x-1/2"
       >
         <LogoBadge
           logoSrc="/assets/nasa-logo.png"
           alt="NASA Logo"
-          className="opacity-70 w-60 h-auto"
+          className="opacity-20 w-60 h-auto"
         />
       </div>
 
@@ -41,14 +41,14 @@ export default function NASAProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-5 text-black">
           <h3 className="text-xl font-bold">Astronaut Experience Research</h3>
           <p>
-            Led four rounds of usability testing with NASA astronauts, informing iterative design improvements of medical workstation prototypes for Gateway, an upcoming lunar-orbiting station. Increased astronaut task efficiency by <strong>30%</strong>.
+            Led four rounds of usability testing with NASA astronauts, informing
+            iterative design improvements of medical workstation prototypes for
+            Gateway, an upcoming lunar-orbiting station. Increased astronaut task
+            efficiency by <strong>30%</strong>.
           </p>
         </motion.div>
 
-        <motion.div
-          variants={fadeInFromRight}
-          className="flex flex-col items-center"
-        >
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center">
           <Image
             src="/assets/nasahab2.PNG"
             alt="NASA Gateway Research"
@@ -62,7 +62,7 @@ export default function NASAProjectSection() {
         </motion.div>
       </motion.div>
 
-      {/* Expanded Single Case Study */}
+      {/* Case Studies Section */}
       <motion.h3
         variants={fadeInUp}
         initial="hidden"
@@ -83,25 +83,26 @@ export default function NASAProjectSection() {
         <motion.div
           className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           whileHover={{ scale: 1.02, y: -4 }}
-          style={{ backgroundColor: "#e5e5e5", color: "#000000" }}
+          style={{ backgroundColor: "#f5f5f5", color: "#000000" }}
         >
           <h4 className="text-xl font-bold">
-            Medical Workstation Optimization for NASA's Lunar Gateway
+            Medical Workstation Optimization for NASA&apos;s Lunar Gateway
           </h4>
-          <p className="mt-3">
-            Designing medical workstations for astronauts aboard NASAs Lunar
-            Gateway presented unique challenges due to severe space, mass, and
-            energy constraints. Conducting usability testing, virtual reality
-            simulations, ergonomic assessments, task analyses, and cognitive load
-            measurements, I collaborated with the Habitat Design teams from Langley and Johnson Space Centers. Over four rounds of
-            rigorous testing, our iterative refinements reduced astronauts'
-            perceived workload by 18% and improved task completion time by up to
-            30%.
+          <p className="mt-2">
+            Designing medical workstations for NASA&apos;s Lunar Gateway presented
+            unique challenges due to severe space, mass, and energy constraints.
+            Conducting usability testing, virtual reality simulations, ergonomic
+            assessments, task analyses, and cognitive load measurements, I closely
+            collaborated with NASA&apos;s space mission analysis group and habitat
+            teams from Johnson Space Center.
           </p>
-          
-           
+          <p className="mt-3">
+            Over four rounds of testing, our refinements reduced astronaut
+            perceived workload by 18% and decreased task completion times by 30%.
+          </p>
         </motion.div>
       </motion.div>
     </section>
   );
 }
+

@@ -20,6 +20,27 @@ export const metadata: Metadata = {
     "Mercedes-Benz",
     "Harvard",
   ],
+  openGraph: {
+    title: "Brandon Fluegel, Ph.D.",
+    description:
+      "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, Mercedes-Benz, and Harvard.",
+    images: [
+      {
+        url: "/assets/talk.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Brandon Fluegel, Ph.D.",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Brandon Fluegel, Ph.D.",
+    description:
+      "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, Mercedes-Benz, and Harvard.",
+    images: ["/assets/talk.jpg"],
+  },
 };
 
 export default function RootLayout({
@@ -36,3 +57,4 @@ export default function RootLayout({
     </html>
   );
 }
+
