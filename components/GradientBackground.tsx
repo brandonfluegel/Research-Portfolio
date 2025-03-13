@@ -1,14 +1,9 @@
 "use client";
-
-import { useScroll, useTransform, motion } from "framer-motion";
-import { useRef } from "react";
+import { useTransform, motion } from "framer-motion";
+import useScrollProgress from "@/app/hooks/useScrollProgress";
 
 export default function GradientBackground() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
+  const { ref, scrollYProgress } = useScrollProgress();
 
   const background = useTransform(
     scrollYProgress,
@@ -17,10 +12,6 @@ export default function GradientBackground() {
   );
 
   return (
-    <motion.div
-      ref={ref}
-      className="fixed inset-0 -z-50"
-      style={{ background }}
-    />
+    <motion.div ref={ref} className="fixed inset-0 -z-50" style={{ background }} />
   );
 }

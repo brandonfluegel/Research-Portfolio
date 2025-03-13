@@ -11,11 +11,11 @@ export default function HarvardProjectSection() {
 
   return (
     <section className="relative max-w-5xl mx-auto py-20 px-3 -mt-8 scale-90" ref={ref}>
-      <div id="harvard" className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+      <div id="harvard" className="absolute -top-20 left-1/2 transform -translate-x-1/2">
         <LogoBadge
           logoSrc="/assets/harvard-logo.png"
           alt="Harvard Logo"
-          className="opacity-50 w-90 h-auto"
+          className="opacity-70 w-100 h-auto"
         />
       </div>
 
@@ -34,7 +34,7 @@ export default function HarvardProjectSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight}>
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center">
           <Image
             src="/assets/tVNS.png"
             alt="tVNS Therapy Device"
@@ -42,11 +42,13 @@ export default function HarvardProjectSection() {
             height={400}
             className="rounded-lg object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
           />
-          <span className="mt-3 text-center text-sm font-medium text-white">Fixing tVNS Device on Patient (correct vs placebo)</span>
+          <span className="mt-3 text-center text-sm font-medium text-white">
+            tVNS Device on Patient (correct vs placebo)
+          </span>
         </motion.div>
       </motion.div>
 
-      {/* Case Studies Section */}
+      {/* Expanded Single Case Study */}
       <motion.h3
         variants={fadeInUp}
         initial="hidden"
@@ -54,50 +56,30 @@ export default function HarvardProjectSection() {
         viewport={{ once: true }}
         className="text-2xl font-bold text-left mt-16 mb-6 text-white"
       >
-        Case Studies
+        Case Study
       </motion.h3>
 
       <motion.div
-        variants={staggerContainer}
+        variants={fadeInFromLeft}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid md:grid-cols-2 gap-8"
+        className="w-full"
       >
-        {/* Case Study Card 1 */}
         <motion.div
-          className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer"
-          variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -4 }}
+          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
+          whileHover={{ scale: 1.02, y: -4 }}
           style={{ backgroundColor: "#262626", color: "#ffffff" }}
         >
-          <h4 className="text-lg font-bold">Evaluating Neural Markers of Therapy Efficacy</h4>
-          <p>
-            Employed fMRI and EEG to determine neural correlates predicting successful responses to tVNS therapy.
+          <h4 className="text-xl font-bold">Pioneering Non-Invasive Treatments for Anxiety and Depression</h4>
+          <p className="mt-3">
+            Pharmaceutical treatments for anxiety and depression often have challenging side effects. My research evaluated a promising alternative: transcutaneous vagus nerve stimulation (tVNS). Using brain imaging techniques (EEG, fMRI), participant interviews, quantitative symptom assessments, and physiological monitoring, we identified neurological markers predictive of successful treatment.
           </p>
-          <ul className="list-disc ml-5 mt-3 text-sm">
-            <li><strong>Methods:</strong> fMRI, EEG, Clinical Trials</li>
-            <li><strong>Findings:</strong> Identified predictive neural markers</li>
-            <li><strong>Impact:</strong> Personalized device adjustments for better outcomes</li>
-          </ul>
-        </motion.div>
-
-        {/* Case Study Card 2 */}
-        <motion.div
-          className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer"
-          variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -4 }}
-          style={{ backgroundColor: "#262626", color: "#ffffff" }}
-        >
-          <h4 className="text-lg font-bold">Optimizing User Experience</h4>
-          <p>
-            Assessed cognitive and emotional effects of tVNS, improving device design significantly.
+          <p className="mt-3">
+            This approach resulted in significant symptom reduction in over 60% of participants, influencing clinical practices and providing patients a safer therapeutic alternative without medication side effects.
           </p>
-          <ul className="list-disc ml-5 mt-3 text-sm">
-            <li><strong>Methods:</strong> Cognitive Testing, Interviews, Physiological Monitoring</li>
-            <li><strong>Findings:</strong> Positive emotional and cognitive outcomes</li>
-            <li><strong>Impact:</strong> Enhanced device ergonomics and adherence</li>
-          </ul>
+         
+         
         </motion.div>
       </motion.div>
     </section>

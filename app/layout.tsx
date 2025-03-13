@@ -7,7 +7,7 @@ import GradientBackground from "@/components/GradientBackground";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Brandon Fluegel, Ph.D. | UX & Human Factors Researcher",
+  title: "Brandon Fluegel, Ph.D.",
   description:
     "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, Mercedes-Benz, and Harvard.",
   keywords: [

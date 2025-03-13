@@ -15,10 +15,10 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center space-x-3">
           <Image
-            src="/assets/cowboy.jpg"
+            src="/assets/howdy.jpg"
             alt="Profile Image"
-            width={55}
-            height={55}
+            width={65}
+            height={65}
             className="rounded-full"
           />
           <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
@@ -32,7 +32,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden sm:flex space-x-6 text-white">
-          {["amazon", "uber", "nasa", "mercedes", "harvard"].map((item) => (
+          {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
             <li key={item}>
               <Link href={`#${item}`} className="capitalize hover:text-indigo-300">
                 {item}
