@@ -80,10 +80,7 @@ export default function MercedesProjectSection() {
         My research investigated drivers' trust issues with semi-autonomous driving features, leveraging simulator studies, on-road driving observations, interviews, contextual inquiries, and physiological monitoring (e.g., heart rate variability).
       </p>
       <p>
-        Working closely with Mercedes’s Core Engineering and Interior Design teams, I translated driver insights into actionable dashboard interface and feedback system improvements.
-      </p>
-      <p>
-        These design iterations led to measurable improvements, with driver trust ratings increasing by approximately 25%.
+        Working closely with Mercedes Core Engineering and Interior Design teams, I translated driver insights into actionable dashboard interface and feedback system improvements. These design iterations led to measurable improvements, with driver trust ratings increasing by approximately 25%.
       </p>
     </div>
   </motion.div>
