@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useScrollDirection from "@/app/hooks/useScrollDirection";
 
 export default function Navbar() {
