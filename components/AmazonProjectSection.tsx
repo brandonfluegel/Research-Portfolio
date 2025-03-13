@@ -77,7 +77,7 @@ export default function AmazonProjectSection() {
         Slow Alexa responses negatively impact customer experience and reduce their subsequent spending across Amazon services.
       </p>
       <p>
-        As Lead Researcher, I let a multi-year effort that included longitudinal diary studies, lab-based A/B tests, and large-scale quantitative surveys. Results from my research identified task- and device-specific latency thresholds critical to customer satisfaction.
+        As Lead Researcher, I led a multi-year effort that used longitudinal diary studies, lab-based A/B tests, and large-scale quantitative surveys. Results from my research identified task- and device-specific latency thresholds critical to customer satisfaction.
       </p>
       <p>
         Partnering with Amazon’s Economics team, we demonstrated how meeting these thresholds could drive an additional 5+ billion Alexa interactions and approximately $1.7 billion in downstream revenue within 18 months.
@@ -98,10 +98,10 @@ export default function AmazonProjectSection() {
       To identify what makes a TV interface truly engaging, I collaborated closely with Fire TV and Prime Video design teams over the course of six months.
       </p>
       <p>
-      Combining eye-tracking, brain imaging (fNIRS), heuristic evaluations, and user interviews, I defined several UI design attributes that significantly lowered customer cognitive load and improved usability.
+      Combining eye-tracking, brain imaging (fNIRS), heuristic evaluations, and customer interviews, I defined several UI design attributes that significantly lowered customer cognitive load and improved usability.
       </p>
       <p>
-      My insights directly guided interface redesigns, reducing content discovery time by 25% and enhancing customer satisfaction across millions of viewers.
+      My insights directly guided Fire TV and Prime Video interface redesigns, reducing content discovery time by 25% and enhancing customer satisfaction across millions of viewers.
       </p>
     </div>
   </motion.div>

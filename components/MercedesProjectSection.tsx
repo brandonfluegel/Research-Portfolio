@@ -10,11 +10,11 @@ export default function MercedesProjectSection() {
 
   return (
     <section className="relative max-w-5xl mx-auto py-20 px-3 -mt-8 scale-90" ref={ref}>
-      <div id="mercedes" className="absolute -top-30 left-1/2 transform -translate-x-1/2">
+      <div id="mercedes" className="absolute -top-45 left-1/2 transform -translate-x-1/2">
         <LogoBadge
           logoSrc="/assets/benz.png"
           alt="Mercedes-Benz Logo"
-          className="opacity-80 w-50 h-auto"
+          className="opacity-80 w-60 h-auto"
         />
       </div>
 
