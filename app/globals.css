@@ -64,10 +64,12 @@ li {
   }
 
   .case-study-container {
-    padding: 1rem 0.5rem; /* Explicitly reduced horizontal padding for full width on mobile */
+    padding: 1rem 0.25rem; /* Significantly reduced horizontal padding for wider usage on mobile */
+    margin-left: -0.5rem; /* Slight negative margin for full edge-to-edge layout */
+    margin-right: -0.5rem;
   }
 
   .hero-header {
-    font-size: 1.25rem !important; /* Explicitly smaller font for hero header on mobile */
+    font-size: 1rem !important;
   }
 }
