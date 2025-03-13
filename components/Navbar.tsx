@@ -45,7 +45,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="absolute top-full left-0 w-full bg-black bg-opacity-95 shadow-xl py-4">
             <ul className="flex flex-col space-y-4 text-white px-6">
-              {["amazon", "uber", "nasa", "mercedes", "harvard"].map((item) => (
+              {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
                 <li key={item}>
                   <Link href={`#${item}`} onClick={handleLinkClick} className="capitalize block text-lg">
                     {item}

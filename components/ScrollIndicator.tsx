@@ -5,20 +5,21 @@ import { useEffect, useState } from "react";
 
 export default function ScrollIndicator() {
   const [visible, setVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY < 200);
-    };
-
+    setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+    const handleScroll = () => setVisible(window.scrollY < 200);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (!isMobile) return null; // explicitly hides it on desktop
+
   return (
     <AnimatePresence>
       {visible && (
-        <div className="hidden sm:flex justify-end pr-16 fixed right-0 bottom-1/2 transform translate-y-1/2">
+        <div className="flex justify-center mt-4">
           <motion.div
             animate={{ y: [0, 15, 0], opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

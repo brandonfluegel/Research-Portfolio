@@ -20,13 +20,13 @@ export default function NASAProjectSection() {
       ref={ref}
     >
       <div
-        id="nasa"
+        id="NASA"
         className="absolute -top-28 left-1/2 transform -translate-x-1/2"
       >
         <LogoBadge
           logoSrc="/assets/nasa-logo.png"
           alt="NASA Logo"
-          className="opacity-20 w-60 h-auto"
+          className="opacity-60 w-60 h-auto"
         />
       </div>
 
