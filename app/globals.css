@@ -68,7 +68,7 @@ li {
   }
 
   h1.hero-header {
-    font-size: 1.5rem !important; /* explicitly smaller hero header for mobile */
+    font-size: 1.25rem !important; /* explicitly smaller hero header for mobile */
   }
 
   .case-study-container {
