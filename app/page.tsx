@@ -13,7 +13,7 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
 
 export default function Home() {
-  useSmoothScroll('nav', 120); // clearly set offset as needed
+  useSmoothScroll("nav", 120);
 
   return (
     <main className="relative min-h-screen cursor-none px-4 sm:px-8 bg-gradient-to-b from-black via-white to-black overflow-hidden">
@@ -22,25 +22,21 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-<section className="relative flex flex-col justify-center items-start min-h-screen px-6 pt-32 pb-12 -mt-[90px]">
-  <div className="max-w-3xl w-full mx-auto relative z-10 px-2 sm:px-4 md:px-8">
-  <AnimatedText
-  text="Thanks for being here!"
-  className="text-xl sm:text-2xl md:text-4xl font-semibold mb-4 text-white text-center"
-/>
+      <section className="relative flex flex-col justify-center items-start min-h-screen px-6 pt-32 pb-12 -mt-[90px]">
+        <div className="max-w-3xl w-full mx-auto relative z-10 px-2 sm:px-4 md:px-8">
+          <AnimatedText
+            text="Thanks for being here!"
+            className="hero-header font-semibold mb-4 text-white text-center"
+          />
 
-
-    <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify">
-      <p>
-        Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with six years of industry experience, I earned my Ph.D. in Human Factors Psychology in 2020.
-      </p>
-      <ScrollIndicator />
-    </div>
-  </div>
-</section>
-
-
-
+          <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify">
+            <p>
+              Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with six years of industry experience, I earned my Ph.D. in Human Factors Psychology in 2020.
+            </p>
+            <ScrollIndicator />
+          </div>
+        </div>
+      </section>
 
       {/* Project Sections */}
       <section className="max-w-6xl mx-auto mt-8">

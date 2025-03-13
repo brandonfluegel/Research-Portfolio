@@ -41,6 +41,10 @@ h3 {
   font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
+h1.hero-header {
+  font-size: clamp(1.75rem, 3vw, 2.5rem) !important; /* explicitly smaller hero header */
+}
+
 p,
 li {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
@@ -63,10 +67,14 @@ li {
     font-size: 1.25rem;
   }
 
+  h1.hero-header {
+    font-size: 1.5rem !important; /* explicitly smaller hero header for mobile */
+  }
+
   .case-study-container {
-    padding: 1rem 0.25rem; /* Significantly reduced horizontal padding for wider usage on mobile */
-    margin-left: -0.5rem; /* Slight negative margin for full edge-to-edge layout */
-    margin-right: -0.5rem;
+    padding: 1rem 0.25rem;
+    margin-left: -0.25rem;
+    margin-right: -0.25rem;
   }
 
   .hero-header {
