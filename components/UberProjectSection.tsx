@@ -88,14 +88,11 @@ export default function UberProjectSection() {
             setup that introduces specific payment challenges. Traveling across
             three Brazilian cities, I documented driver pain points using
             ethnographic methods, contextual inquiries, and moderated usability
-            testing. Collaborating closely with Uber’s local product managers,
-            design team, translators, and videographers, we redesigned the driver
-            app to seamlessly integrate earnings management and rental payments.
-          </p>
-          <p className="mt-3">
-            This integrated approach boosted driver retention rates by over 30%
+            testing. Collaborating closely with local product managers,
+            design team, translators, and videographers, my research informed the redesign of the driver
+            app to seamlessly integrate earnings management and rental payments.This integrated approach boosted driver retention rates by over 30%
             and significantly improved driver satisfaction scores, directly
-            contributing to Uber’s market growth in Brazil.
+            contributing to market growth in Brazil.
           </p>
           <ul className="list-disc ml-6 mt-4 text-sm">
            

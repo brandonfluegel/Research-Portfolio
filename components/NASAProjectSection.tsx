@@ -57,7 +57,7 @@ export default function NASAProjectSection() {
             className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
           />
           <span className="mt-3 text-center text-sm font-medium text-black">
-            Used VR to assess task performance in reaching and movement tasks.
+            Used VR to assess performance in reaching and movement tasks.
           </span>
         </motion.div>
       </motion.div>
@@ -93,11 +93,7 @@ export default function NASAProjectSection() {
             unique challenges due to severe space, mass, and energy constraints.
             Conducting usability testing, virtual reality simulations, ergonomic
             assessments, task analyses, and cognitive load measurements, I closely
-            collaborated with NASA&apos;s space mission analysis group and habitat
-            teams from Johnson Space Center.
-          </p>
-          <p className="mt-3">
-            Over four rounds of testing, our refinements reduced astronaut
+            collaborated with NASA&apos;s Habitat Design teams from Johnson Space Center.Over four rounds of testing, my research reccomendations reduced astronaut
             perceived workload by 18% and decreased task completion times by 30%.
           </p>
         </motion.div>

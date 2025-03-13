@@ -29,7 +29,7 @@ export default function MercedesProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-5 text-black">
           <h3 className="text-xl font-bold">Vehicle Innovation Group</h3>
           <p>
-            Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that significantly enhanced passenger comfort, luxury perception, and reinforced Mercedes-Benz’s market leadership.
+            Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
         </motion.div>
 

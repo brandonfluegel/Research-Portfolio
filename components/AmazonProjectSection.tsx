@@ -29,7 +29,7 @@ export default function AmazonProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-5 text-white">
           <h3 className="text-xl font-bold">Devices Design Group</h3>
           <p>
-            Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Echo Show, Echo Hub, Fire TV, Alexa Mobile App, and Alexa+ Generative AI. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.5 billion opportunity by optimizing Alexa’s response latency.
+            Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.7 billion opportunity by optimizing Alexa’s response latency.
           </p>
         </motion.div>
 
@@ -74,7 +74,7 @@ export default function AmazonProjectSection() {
           <p className="mt-2">
           Slow Alexa responses caused customer frustration, reducing their engagement and spending on Amazon services. As the Lead Reseacher in this multi-year series of diary studies, lab-based A/B tests, and large-scale surveys, I identified precise latency thresholds that influenced customer satisfaction.          </p>
           <p className="mt-2">
-          Partnering with the Alexa Economics team, we modeled the business impact: improving latency for 75M Alexa users would yield over 5 billion additional interactions and approximately $1.7B in incremental revenue over 18 months.          </p>
+          Partnering with the Alexa Economics team, we modeled the business impact: improving latency for 75M Alexa users would yield approximately <strong> 5 billion additional interactions and $1.7B in incremental revenue </strong>  over 18 months.          </p>
          
         </motion.div>
 
@@ -86,7 +86,7 @@ export default function AmazonProjectSection() {
         >
           <h4 className="text-lg font-bold">Designing Engaging TV Interfaces with Cognitive Research</h4>
           <p className="mt-2">
-          To identify what makes a TV interface truly engaging, I collaborated closely with Fire TV and Prime Video design teams over two months. Combining eye-tracking, brain imaging (fNIRS), heuristic evaluations, and user interviews, I uncovered how minimalistic layouts significantly lowered cognitive load and improved usability.
+          To identify what makes a TV interface truly engaging, I collaborated closely with Fire TV and Prime Video design teams over the course of six months. Combining eye-tracking, brain imaging (fNIRS), heuristic evaluations, and user interviews, I uncovered several UI design attributes that significantly lowered customer cognitive load and improved usability.
 
 </p>
           <p className="mt-2">

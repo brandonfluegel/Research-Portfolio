@@ -73,10 +73,7 @@ export default function HarvardProjectSection() {
         >
           <h4 className="text-xl font-bold">Pioneering Non-Invasive Treatments for Anxiety and Depression</h4>
           <p className="mt-3">
-            Pharmaceutical treatments for anxiety and depression often have challenging side effects. My research evaluated a promising alternative: transcutaneous vagus nerve stimulation (tVNS). Using brain imaging techniques (EEG, fMRI), participant interviews, quantitative symptom assessments, and physiological monitoring, we identified neurological markers predictive of successful treatment.
-          </p>
-          <p className="mt-3">
-            This approach resulted in significant symptom reduction in over 60% of participants, influencing clinical practices and providing patients a safer therapeutic alternative without medication side effects.
+            Pharmaceutical treatments for anxiety and depression often have challenging side effects. My research evaluated a promising alternative: transcutaneous vagus nerve stimulation (tVNS). Using brain imaging techniques (EEG, fMRI), participant interviews, quantitative symptom assessments, and physiological monitoring, we identified neurological markers predictive of successful treatment. This approach resulted in significant symptom reduction in over 60% of participants, influencing clinical practices and providing patients a safer therapeutic alternative without medication side effects.
           </p>
          
          

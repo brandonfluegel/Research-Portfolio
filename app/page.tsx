@@ -31,7 +31,7 @@ export default function Home() {
 
     <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-left">
       <p>
-        Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with 10 years of experience in the tech industry, I earned my Ph.D. in Human Factors Psychology in 2020.
+        Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with 10 years of experience, I earned my Ph.D. in Human Factors Psychology in 2020.
       </p>
       <ScrollIndicator />
     </div>
