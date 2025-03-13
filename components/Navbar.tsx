@@ -2,26 +2,32 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import useScrollDirection from "@/app/hooks/useScrollDirection";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollDirection = useScrollDirection();
 
   const handleToggle = () => setIsOpen(prev => !prev);
   const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-md">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-90 backdrop-blur-md transition-transform duration-300 ${
+        scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"
+      }`}
+    >
+      <div className="max-w-5xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-3">
+          <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
           <Image
             src="/assets/howdy.jpg"
             alt="Profile Image"
-            width={65}
-            height={65}
+            width={55}
+            height={55}
             className="rounded-full"
           />
-          <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
         </Link>
 
         <button className="sm:hidden flex flex-col space-y-1.5" onClick={handleToggle}>
@@ -41,11 +47,11 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile Menu Dropdown (Fixed positioning to prevent overflow) */}
+        {/* Mobile Menu Dropdown */}
         {isOpen && (
           <div className="absolute top-full left-0 w-full bg-black bg-opacity-95 shadow-xl py-4">
             <ul className="flex flex-col space-y-4 text-white px-6">
-              {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
+              {["amazon", "uber", "nasa", "mercedes", "harvard"].map((item) => (
                 <li key={item}>
                   <Link href={`#${item}`} onClick={handleLinkClick} className="capitalize block text-lg">
                     {item}

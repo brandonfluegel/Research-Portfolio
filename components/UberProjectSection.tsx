@@ -58,49 +58,46 @@ export default function UberProjectSection() {
       </motion.div>
 
       {/* Single Expanded Case Study */}
-      <motion.h3
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="text-2xl font-bold text-left mt-16 mb-6 text-black"
-      >
-        Case Study
-      </motion.h3>
+<motion.h3
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-2xl font-bold text-left mt-16 mb-6 text-black"
+>
+  Case Study
+</motion.h3>
 
-      <motion.div
-        variants={fadeInFromLeft}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full"
-      >
-        <motion.div
-          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
-          whileHover={{ scale: 1.02, y: -4 }}
-          style={{ color: "#000000" }}
-        >
-          <h4 className="text-xl font-bold">
-            Enhancing Payment Experiences for Uber Rental Drivers
-          </h4>
-          <p className="mt-3">
-            Driving for Uber in Brazil often means renting vehicles, a unique
-            setup that introduces specific payment challenges. Traveling across
-            three Brazilian cities, I documented driver pain points using
-            ethnographic methods, contextual inquiries, and moderated usability
-            testing. Collaborating closely with local product managers,
-            design team, translators, and videographers, my research informed the redesign of the driver
-            app to seamlessly integrate earnings management and rental payments.This integrated approach boosted driver retention rates by over 30%
-            and significantly improved driver satisfaction scores, directly
-            contributing to market growth in Brazil.
-          </p>
-          <ul className="list-disc ml-6 mt-4 text-sm">
-           
-             
-           
-          </ul>
-        </motion.div>
-      </motion.div>
+<motion.div
+  variants={fadeInFromLeft}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="w-full"
+>
+  <motion.div
+    className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
+    whileHover={{ scale: 1.02, y: -4 }}
+    style={{ color: "#000000" }}
+  >
+    <h4 className="text-xl font-bold">
+      Enhancing Payment Experiences for Uber Rental Drivers
+    </h4>
+
+    <div className="space-y-3 mt-3">
+      <p>
+        Driving for Uber in Brazil often means renting vehicles, a unique setup that introduces specific payment challenges. Traveling across three Brazilian cities, I documented driver pain points using ethnographic methods, contextual inquiries, and moderated usability testing.
+      </p>
+      <p>
+        Collaborating closely with Uber’s local product managers, design team, translators, and videographers, my research informed the redesign of the driver app to seamlessly integrate earnings management and rental payments.
+      </p>
+      <p>
+        This integrated approach boosted driver retention rates by over 30% and significantly improved driver satisfaction scores, directly contributing to Uber’s market growth in Brazil.
+      </p>
+    </div>
+  </motion.div>
+</motion.div>
+
     </section>
   );
 }

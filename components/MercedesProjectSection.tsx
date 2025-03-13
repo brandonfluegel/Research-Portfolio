@@ -49,47 +49,65 @@ export default function MercedesProjectSection() {
       </motion.div>
 
       {/* Case Studies Section */}
-      <motion.h3
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="text-2xl font-bold text-left mt-16 mb-6 text-black"
-      >
-        Case Studies
-      </motion.h3>
+<motion.h3
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-2xl font-bold text-left mt-16 mb-6 text-black"
+>
+  Case Studies
+</motion.h3>
 
-      <motion.div
-        variants={staggerContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="grid md:grid-cols-2 gap-8"
-      >
-        {/* Trust Case Study */}
-        <motion.div
-          className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer text-black"
-          variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -4 }}
-        >
-          <h4 className="text-lg font-bold">Building Trust in Semi-Autonomous Vehicles</h4>
-          <p className="mt-2">
-            My research examined driver performance and trust with automnous driving features using a mix of simulator studies, in-vehicle interviews, contextual inquiries, and physiological monitoring. Collaborating with the core Engineering & Design teams, my research reccomendations informed the redesign of the driver instrument cluster, dashboard, and attention systems. These design iterations led to improvements in driver trust ratings by ~25%.
-          </p>
-        </motion.div>
+<motion.div
+  variants={staggerContainer}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="grid md:grid-cols-2 gap-8"
+>
+  {/* Trust Case Study */}
+  <motion.div
+    className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer"
+    variants={fadeInFromLeft}
+    whileHover={{ scale: 1.03, y: -4 }}
+    style={{ color: "#000000" }}
+  >
+    <h4 className="text-lg font-bold">Building Trust in Semi-Autonomous Vehicles</h4>
 
-        {/* Acoustic Comfort Case Study */}
-        <motion.div
-          className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer text-black"
-          variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -4 }}
-        >
-          <h4 className="text-lg font-bold">Quiet Comfort: Redefining Luxury Vehicle Interiors</h4>
-          <p className="mt-2">
-            Identified key sound issues through acoustic testing, surveys, and observational studies. Collaborated closely with acoustic engineers and interior designers, achieving a 15% reduction in perceived cabin noise and significantly enhancing customer comfort.
-          </p>
-        </motion.div>
-      </motion.div>
+    <div className="space-y-3 mt-3">
+      <p>
+        My research investigated drivers' trust issues with semi-autonomous driving features, leveraging simulator studies, on-road driving observations, interviews, contextual inquiries, and physiological monitoring (e.g., heart rate variability).
+      </p>
+      <p>
+        Working closely with Mercedes’s Core Engineering and Interior Design teams, I translated driver insights into actionable dashboard interface and feedback system improvements.
+      </p>
+      <p>
+        These design iterations led to measurable improvements, with driver trust ratings increasing by approximately 25%.
+      </p>
+    </div>
+  </motion.div>
+
+  {/* Acoustic Comfort Case Study */}
+  <motion.div
+    className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer"
+    variants={fadeInFromRight}
+    whileHover={{ scale: 1.03, y: -4 }}
+    style={{ color: "#000000" }}
+  >
+    <h4 className="text-lg font-bold">Quiet Comfort: Redefining Luxury Vehicle Interiors</h4>
+
+    <div className="space-y-3 mt-3">
+      <p>
+        Cabin noise critically impacts luxury vehicle comfort. Using acoustic testing, surveys, user interviews, and observational studies, I identified key acoustic pain points.
+      </p>
+      <p>
+        In close collaboration with acoustic engineers and interior designers, I guided targeted cabin improvements to address these issues. My research recomendations successfully reduced perceived cabin noise by 15%, significantly enhancing customer perceptions of comfort and luxury.
+      </p>
+    </div>
+  </motion.div>
+</motion.div>
+
     </section>
   );
 }

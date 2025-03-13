@@ -48,37 +48,45 @@ export default function HarvardProjectSection() {
         </motion.div>
       </motion.div>
 
-      {/* Expanded Single Case Study */}
-      <motion.h3
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="text-2xl font-bold text-left mt-16 mb-6 text-white"
-      >
-        Case Study
-      </motion.h3>
+      {/* Single Expanded Case Study */}
+<motion.h3
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-2xl font-bold text-left mt-16 mb-6 text-white"
+>
+  Case Study
+</motion.h3>
 
-      <motion.div
-        variants={fadeInFromLeft}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full"
-      >
-        <motion.div
-          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
-          whileHover={{ scale: 1.02, y: -4 }}
-          style={{ backgroundColor: "#262626", color: "#ffffff" }}
-        >
-          <h4 className="text-xl font-bold">Pioneering Non-Invasive Treatments for Anxiety and Depression</h4>
-          <p className="mt-3">
-            Pharmaceutical treatments for anxiety and depression often have challenging side effects. My research evaluated a promising alternative: transcutaneous vagus nerve stimulation (tVNS). Using brain imaging techniques (EEG, fMRI), participant interviews, quantitative symptom assessments, and physiological monitoring, we identified neurological markers predictive of successful treatment. This approach resulted in significant symptom reduction in over 60% of participants, influencing clinical practices and providing patients a safer therapeutic alternative without medication side effects.
-          </p>
-         
-         
-        </motion.div>
-      </motion.div>
+<motion.div
+  variants={fadeInFromLeft}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="w-full"
+>
+  <motion.div
+    className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
+    whileHover={{ scale: 1.02, y: -4 }}
+    style={{ backgroundColor: "transparent", color: "#ffffff" }}
+
+  >
+    <h4 className="text-xl font-bold">
+      Pioneering Non-Invasive Treatments for Anxiety and Depression
+    </h4>
+
+    <div className="space-y-3 mt-3">
+      <p>
+        Pharmaceutical treatments for anxiety and depression often come with challenging side effects, creating a need for safer therapeutic alternatives. My research evaluated transcutaneous vagus nerve stimulation (tVNS), a non-invasive therapy, using EEG, fMRI brain imaging, patient interviews, quantitative symptom assessments, and physiological monitoring.
+      </p>
+      <p>
+        In collaboration with teams from MIT, we identified neurological markers predicting successful treatment outcomes. This research showed significant symptom reduction in over 60% of participants, influencing clinical practices and providing a safe, effective alternative to pharmaceutical interventions.
+      </p>
+    </div>
+  </motion.div>
+</motion.div>
+
     </section>
   );
 }

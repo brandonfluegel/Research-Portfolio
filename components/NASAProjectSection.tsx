@@ -62,43 +62,43 @@ export default function NASAProjectSection() {
         </motion.div>
       </motion.div>
 
-      {/* Case Studies Section */}
-      <motion.h3
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="text-2xl font-bold text-left mt-16 mb-6 text-black"
-      >
-        Case Study
-      </motion.h3>
+      {/* Single Expanded Case Study */}
+<motion.h3
+  variants={fadeInUp}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="text-2xl font-bold text-left mt-16 mb-6 text-black"
+>
+  Case Study
+</motion.h3>
 
-      <motion.div
-        variants={fadeInFromLeft}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="w-full"
-      >
-        <motion.div
-          className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
-          whileHover={{ scale: 1.02, y: -4 }}
-          style={{ backgroundColor: "transparent", color: "#000000" }}
+<motion.div
+  variants={fadeInFromLeft}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  className="w-full"
+>
+  <motion.div
+    className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
+    whileHover={{ scale: 1.02, y: -4 }}
+    style={{ backgroundColor: "transparent", color: "#000000" }}
+  >
+    <h4 className="text-xl font-bold">
+      Medical Workstation Optimization for NASA&apos;s Lunar Gateway
+    </h4>
 
-        >
-          <h4 className="text-xl font-bold">
-            Medical Workstation Optimization for NASA&apos;s Lunar Gateway
-          </h4>
-          <p className="mt-2">
-            Designing medical workstations for NASA&apos;s Lunar Gateway presented
-            unique challenges due to severe space, mass, and energy constraints.
-            Conducting usability testing, virtual reality simulations, ergonomic
-            assessments, task analyses, and cognitive load measurements, I closely
-            collaborated with NASA&apos;s Habitat Design teams from Johnson Space Center.Over four rounds of testing, my research reccomendations reduced astronaut
-            perceived workload by 18% and decreased task completion times by 30%.
-          </p>
-        </motion.div>
-      </motion.div>
+    <div className="space-y-3 mt-3">
+      <p>
+        Designing medical workstations for NASA&apos;s Lunar Gateway involves overcoming unique challenges related to constraints on space, mass, and available energy. 
+      </p>
+      <p>
+      Collaborating with NASA's Habitat Design teams from Johnson Space Center, I conducted extensive usability testing, virtual reality simulations, ergonomic assessments, detailed task analyses, and cognitive load measurements. By the end of four rounds of iterative testing, my research recomendations reduced astronaut perceived workload by 18% and decreased task completion times by 30%.      </p>
+    </div>
+  </motion.div>
+</motion.div>
+
     </section>
   );
 }
