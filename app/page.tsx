@@ -29,7 +29,7 @@ export default function Home() {
             className="hero-header font-semibold mb-4 text-white text-center"
           />
 
-          <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify">
+          <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify hero-body">
             <p>
               Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with six years of industry experience, I earned my Ph.D. in Human Factors Psychology in 2020.
             </p>

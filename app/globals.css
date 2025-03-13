@@ -68,16 +68,20 @@ li {
   }
 
   h1.hero-header {
-    font-size: 1.25rem !important; /* explicitly smaller hero header for mobile */
+    font-size: 1.5rem !important; /* explicitly smaller hero header for mobile */
   }
 
   .case-study-container {
     padding: 1rem 0.25rem;
-    margin-left: -0.25rem;
-    margin-right: -0.25rem;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
 
   .hero-header {
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
+  }
+
+  .hero-body {
+    text-align: left !important; /* explicitly left-aligned for mobile */
   }
 }

@@ -6,23 +6,15 @@ import { ChevronDown } from "lucide-react";
 
 export default function ScrollIndicator() {
   const [visible, setVisible] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.matchMedia("(max-width: 640px)").matches);
-    checkMobile();
     const handleScroll = () => setVisible(window.scrollY < 200);
-
-    window.addEventListener("resize", checkMobile);
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!isMobile || !visible) return null;
+  if (!visible) return null;
 
   return (
     <AnimatePresence>
