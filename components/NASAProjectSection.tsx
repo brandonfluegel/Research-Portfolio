@@ -83,7 +83,8 @@ export default function NASAProjectSection() {
         <motion.div
           className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
           whileHover={{ scale: 1.02, y: -4 }}
-          style={{ backgroundColor: "#f5f5f5", color: "#000000" }}
+          style={{ backgroundColor: "transparent", color: "#000000" }}
+
         >
           <h4 className="text-xl font-bold">
             Medical Workstation Optimization for NASA&apos;s Lunar Gateway
