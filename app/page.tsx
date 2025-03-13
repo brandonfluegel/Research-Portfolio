@@ -1,19 +1,32 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
+import ScrollIndicator from "@/components/ScrollIndicator";
+import ProjectCarousel from "@/components/ProjectCarousel";
 import AmazonProjectSection from "@/components/AmazonProjectSection";
 import UberProjectSection from "@/components/UberProjectSection";
 import NASAProjectSection from "@/components/NASAProjectSection";
 import MercedesProjectSection from "@/components/MercedesProjectSection";
 import HarvardProjectSection from "@/components/HarvardProjectSection";
-import ScrollIndicator from "@/components/ScrollIndicator";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
 
 export default function Home() {
   useSmoothScroll("nav", 120);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () =>
+      setIsMobile(window.matchMedia("(max-width: 640px)").matches);
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <main className="relative min-h-screen cursor-none px-4 sm:px-8 bg-gradient-to-b from-black via-white to-black overflow-hidden">
@@ -38,25 +51,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Project Sections */}
+      {/* Conditional Rendering: Carousel for mobile, traditional sections for web */}
       <section className="max-w-6xl mx-auto mt-8">
-        <AmazonProjectSection />
-
-        <div className="my-12">
-          <UberProjectSection />
-        </div>
-
-        <div className="my-12">
-          <NASAProjectSection />
-        </div>
-
-        <div className="my-12">
-          <MercedesProjectSection />
-        </div>
-
-        <div className="my-12">
-          <HarvardProjectSection />
-        </div>
+        {isMobile ? (
+          <ProjectCarousel />
+        ) : (
+          <>
+            <AmazonProjectSection />
+            <div className="my-12">
+              <UberProjectSection />
+            </div>
+            <div className="my-12">
+              <NASAProjectSection />
+            </div>
+            <div className="my-12">
+              <MercedesProjectSection />
+            </div>
+            <div className="my-12">
+              <HarvardProjectSection />
+            </div>
+          </>
+        )}
       </section>
     </main>
   );

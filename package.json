@@ -16,7 +16,8 @@
     "react": "^19.0.0",
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
-    "react-parallax-tilt": "^1.7.286"
+    "react-parallax-tilt": "^1.7.286",
+    "swiper": "^11.2.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
