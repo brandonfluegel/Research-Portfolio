@@ -94,7 +94,7 @@ export default function NASAProjectSection() {
         Designing medical workstations for NASA&apos;s Lunar Gateway involves overcoming unique challenges related to constraints on space, mass, and available energy. 
       </p>
       <p>
-      Collaborating with NASA&apos;s Habitat Design teams from Johnson Space Center, I conducted extensive usability testing, virtual reality simulations, ergonomic assessments, detailed task analyses, and cognitive load measurements. By the end of four rounds of iterative testing, my research recomendations reduced astronaut perceived workload by 18% and decreased task completion times by 30%.      </p>
+      Collaborating with NASA&apos;s Habitat Design teams from Johnson Space Center, I conducted extensive usability testing, virtual reality simulations, ergonomic assessments, detailed task analyses, and cognitive load measurements. By the end of four rounds of iterative testing, my research recommendations reduced astronaut perceived workload by 18% and decreased task completion times by 30%.      </p>
     </div>
   </motion.div>
 </motion.div>
