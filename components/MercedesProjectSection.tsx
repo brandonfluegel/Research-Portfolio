@@ -99,7 +99,7 @@ export default function MercedesProjectSection() {
         Cabin noise critically impacts luxury vehicle comfort. Using acoustic testing, surveys, user interviews, and observational studies, I identified key acoustic pain points.
       </p>
       <p>
-        In close collaboration with acoustic engineers and interior designers, I guided targeted cabin improvements to address these issues. My research recomendations successfully reduced perceived cabin noise by 15%, significantly enhancing customer perceptions of comfort and luxury.
+        In close collaboration with acoustic engineers and interior designers, I guided targeted cabin improvements to address these issues. My research recommendations successfully reduced perceived cabin noise by 15%, significantly enhancing customer perceptions of comfort and luxury.
       </p>
     </div>
   </motion.div>

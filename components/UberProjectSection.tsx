@@ -38,8 +38,8 @@ export default function UberProjectSection() {
           <p>
             Conducted international ethnography and contextual inquiry research
             in Brazil that informed the iterative design of the rental driver app
-            and payments experience. My research recomendations led to significantly improved driver
-            satisfaction, increasing rental driver retention by over <strong>30%</strong>.
+            and payments experience. My research recommendations led to significantly improved driver
+            satisfaction, increasing rental driver retention by over <strong>15%</strong>.
           </p>
         </motion.div>
 
@@ -92,7 +92,7 @@ export default function UberProjectSection() {
         Collaborating closely with Uber’s local product managers, design team, translators, and videographers, my research informed the redesign of the driver app to seamlessly integrate earnings management and rental payments.
       </p>
       <p>
-        This integrated approach boosted driver retention rates by over 30% and significantly improved driver satisfaction scores, directly contributing to Uber’s market growth in Brazil.
+        This integrated approach boosted driver retention rates by ~15% and significantly improved driver satisfaction scores, directly contributing to Uber’s market growth in Brazil.
       </p>
     </div>
   </motion.div>
