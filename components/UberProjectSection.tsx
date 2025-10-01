@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/LogoBadge";
@@ -11,17 +12,17 @@ export default function UberProjectSection() {
 
   return (
     <section
-      className="relative max-w-5xl mx-auto py-20 px-3 -mt-8 scale-90"
+      className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10 text-white shadow-2xl backdrop-blur"
       ref={ref}
     >
       <div
         id="uber"
-        className="absolute -top-20 left-1/2 transform -translate-x-1/2"
+        className="absolute -top-16 left-1/2 -translate-x-1/2"
       >
         <LogoBadge
           logoSrc="/assets/uber-logo.png"
           alt="Uber Logo"
-          className="opacity-90 w-60 h-auto"
+          className="w-48 h-auto opacity-70"
         />
       </div>
 
@@ -31,15 +32,12 @@ export default function UberProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid md:grid-cols-2 gap-10 items-start"
+        className="mt-6 grid gap-10 md:grid-cols-2"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 text-black">
-          <h3 className="text-xl font-bold">Driver Experience Research</h3>
-          <p>
-            Conducted international ethnography and contextual inquiry research
-            in Brazil that informed the iterative design of the rental driver app
-            and payments experience. My research recommendations led to significantly improved driver
-            satisfaction, increasing rental driver retention by over <strong>15%</strong>.
+        <motion.div variants={fadeInFromLeft} className="space-y-5">
+          <h3 className="text-2xl font-semibold">Driver experience research</h3>
+          <p className="text-gray-200">
+            Led international ethnography and contextual inquiries in Brazil to inform the rental driver app and payments experience. The research roadmap drove iterative product refinements that increased rental driver satisfaction and retention by over <strong>15%</strong>.
           </p>
         </motion.div>
 
@@ -49,54 +47,52 @@ export default function UberProjectSection() {
             alt="Uber Research Fieldwork"
             width={1200}
             height={800}
-            className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+            className="w-full rounded-2xl object-cover shadow-xl transition-transform duration-500 hover:scale-105"
           />
-          <span className="mt-3 text-center text-sm font-medium text-black">
+          <span className="mt-3 text-center text-sm font-medium text-gray-300">
             Iterative Design of the Uber Driver App
           </span>
         </motion.div>
       </motion.div>
 
       {/* Single Expanded Case Study */}
-<motion.h3
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="text-2xl font-bold text-left mt-16 mb-6 text-black"
->
-  Case Study
-</motion.h3>
+      <motion.h3
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mt-16 text-2xl font-semibold text-white"
+      >
+        Case study
+      </motion.h3>
 
-<motion.div
-  variants={fadeInFromLeft}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="w-full"
->
-  <motion.div
-    className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
-    whileHover={{ scale: 1.02, y: -4 }}
-    style={{ color: "#000000" }}
-  >
-    <h4 className="text-xl font-bold">
-      Enhancing Payment Experiences for Uber Rental Drivers
-    </h4>
+      <motion.article
+        variants={fadeInFromLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="group flex flex-col gap-4 rounded-2xl bg-white p-8 text-neutral-900 shadow-lg transition hover:-translate-y-1"
+      >
+        <div className="space-y-4">
+          <h4 className="text-xl font-semibold">
+            Designing confident payment flows for Uber rental drivers
+          </h4>
 
-    <div className="space-y-3 mt-3">
-      <p>
-        Driving for Uber in Brazil often means renting vehicles, a unique setup that introduces specific payment challenges. Traveling across three Brazilian cities, I documented driver pain points using ethnographic methods, contextual inquiries, and moderated usability testing.
-      </p>
-      <p>
-        Collaborating closely with Uber’s local product managers, design team, translators, and videographers, my research informed the redesign of the driver app to seamlessly integrate earnings management and rental payments.
-      </p>
-      <p>
-        This integrated approach boosted driver retention rates by ~15% and significantly improved driver satisfaction scores, directly contributing to Uber’s market growth in Brazil.
-      </p>
-    </div>
-  </motion.div>
-</motion.div>
+          <p>
+            Rental drivers in Brazil juggle multiple apps, payment providers, and rental agreements. I mapped their workflows across São Paulo, Salvador, and Belo Horizonte to uncover friction in how they track earnings and remit rental fees.
+          </p>
+          <p>
+            Partnering with local product, design, and operations teams, we prototyped integrated payment journeys and validated them through iterative field testing. The updated flows raised retention by roughly 15% while easing daily financial anxiety for drivers.
+          </p>
+        </div>
+
+        <Link
+          href="/case-studies/uber-rental-payments"
+          className="inline-flex items-center font-semibold text-indigo-600 transition group-hover:text-indigo-500"
+        >
+          Read the case study →
+        </Link>
+      </motion.article>
 
     </section>
   );
