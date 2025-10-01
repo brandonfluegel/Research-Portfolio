@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/LogoBadge";
@@ -16,17 +17,17 @@ export default function NASAProjectSection() {
 
   return (
     <section
-      className="relative max-w-5xl mx-auto py-20 px-3 mt-10 scale-90"
+      className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-10 text-white shadow-2xl backdrop-blur"
       ref={ref}
     >
       <div
         id="NASA"
-        className="absolute -top-28 left-1/2 transform -translate-x-1/2"
+        className="absolute -top-20 left-1/2 -translate-x-1/2"
       >
         <LogoBadge
           logoSrc="/assets/nasa-logo.png"
           alt="NASA Logo"
-          className="opacity-60 w-60 h-auto"
+          className="w-48 h-auto opacity-70"
         />
       </div>
 
@@ -36,15 +37,12 @@ export default function NASAProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid md:grid-cols-2 gap-10 items-start"
+        className="mt-6 grid gap-10 md:grid-cols-2"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 text-black">
-          <h3 className="text-xl font-bold">Astronaut Experience Research</h3>
-          <p>
-            Led four rounds of usability testing with NASA astronauts, informing
-            iterative design improvements of medical workstation prototypes for
-            Gateway, an upcoming lunar-orbiting station. Increased astronaut task
-            efficiency by <strong>30%</strong>.
+        <motion.div variants={fadeInFromLeft} className="space-y-5">
+          <h3 className="text-2xl font-semibold">Astronaut experience research</h3>
+          <p className="text-gray-200">
+            Led four rounds of usability testing with NASA astronauts to evolve medical workstation prototypes for Gateway, the upcoming lunar-orbiting station. My recommendations increased task efficiency by <strong>30%</strong> while lowering perceived workload by 18%.
           </p>
         </motion.div>
 
@@ -54,50 +52,52 @@ export default function NASAProjectSection() {
             alt="NASA Gateway Research"
             width={1200}
             height={700}
-            className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+            className="w-full rounded-2xl object-cover shadow-xl transition-transform duration-500 hover:scale-105"
           />
-          <span className="mt-3 text-center text-sm font-medium text-black">
+          <span className="mt-3 text-center text-sm font-medium text-gray-300">
             Used VR to assess performance in reaching and movement tasks.
           </span>
         </motion.div>
       </motion.div>
 
       {/* Single Expanded Case Study */}
-<motion.h3
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="text-2xl font-bold text-left mt-16 mb-6 text-black"
->
-  Case Study
-</motion.h3>
+      <motion.h3
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mt-16 text-2xl font-semibold text-white"
+      >
+        Case study
+      </motion.h3>
 
-<motion.div
-  variants={fadeInFromLeft}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="w-full"
->
-  <motion.div
-    className="case-study-container rounded-xl shadow-lg p-8 cursor-pointer"
-    whileHover={{ scale: 1.02, y: -4 }}
-    style={{ backgroundColor: "transparent", color: "#000000" }}
-  >
-    <h4 className="text-xl font-bold">
-      Medical Workstation Optimization for NASA&apos;s Lunar Gateway
-    </h4>
+      <motion.article
+        variants={fadeInFromLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="group flex flex-col gap-4 rounded-2xl bg-white p-8 text-neutral-900 shadow-lg transition hover:-translate-y-1"
+      >
+        <div className="space-y-4">
+          <h4 className="text-xl font-semibold">
+            Optimizing NASA Gateway medical workstations for microgravity
+          </h4>
 
-    <div className="space-y-3 mt-3">
-      <p>
-        Designing medical workstations for NASA&apos;s Lunar Gateway involves overcoming unique challenges related to constraints on space, mass, and available energy. 
-      </p>
-      <p>
-      Collaborating with NASA&apos;s Habitat Design teams from Johnson Space Center, I conducted extensive usability testing, virtual reality simulations, ergonomic assessments, detailed task analyses, and cognitive load measurements. By the end of four rounds of iterative testing, my research recommendations reduced astronaut perceived workload by 18% and decreased task completion times by 30%.      </p>
-    </div>
-  </motion.div>
-</motion.div>
+          <p>
+            Gateway crews must diagnose and treat health issues without real-time ground support. I facilitated VR simulations, ergonomic analyses, and moderated evaluations with astronauts to stress-test workstation concepts under mission timelines and movement constraints.
+          </p>
+          <p>
+            The resulting design blueprint streamlines reach envelopes, clarifies decision support, and supports autonomous medical care—cutting task times by 30% while reducing cognitive load.
+          </p>
+        </div>
+
+        <Link
+          href="/case-studies/nasa-gateway-medical"
+          className="inline-flex items-center font-semibold text-indigo-600 transition group-hover:text-indigo-500"
+        >
+          Read the case study →
+        </Link>
+      </motion.article>
 
     </section>
   );

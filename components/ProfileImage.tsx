@@ -13,8 +13,8 @@ export default function ProfileImage() {
         className="rounded-full shadow-2xl overflow-hidden"
       >
         <Image
-          src="/assets/brandon-fluegel.jpg"
-          alt="Brandon Fluegel, Ph.D"
+          src="/assets/howdy.jpg"
+          alt="Brandon Fluegel smiling"
           width={300}
           height={300}
           className="object-cover w-[150px] sm:w-[200px] md:w-[300px] aspect-square"

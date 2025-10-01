@@ -50,7 +50,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
-      <body className="text-white cursor-none overflow-x-hidden">
+      <body className="bg-neutral-950 text-white overflow-x-hidden">
         <GradientBackground />
         {children}
       </body>

@@ -7,8 +7,8 @@ export default function GradientBackground() {
 
   const background = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.6, 1],
-    ["#0a0a0a", "#18181b", "#f5f5f5", "#0a0a0a"]
+    [0, 0.5, 1],
+    ["#050505", "#0f172a", "#050505"]
   );
 
   return (

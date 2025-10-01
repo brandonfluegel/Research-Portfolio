@@ -50,31 +50,45 @@ export default function Navbar() {
           <span className="block w-6 h-0.5 bg-white"></span>
         </button>
 
-        <ul className="hidden sm:flex space-x-6 text-white">
+        <div className="hidden items-center space-x-6 text-white sm:flex">
           {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
-            <li key={item}>
-              <Link href={`#${item}`} className="capitalize hover:text-indigo-300">
-                {item}
-              </Link>
-            </li>
+            <Link
+              key={item}
+              href={`#${item}`}
+              className="capitalize transition hover:text-indigo-300"
+            >
+              {item}
+            </Link>
           ))}
-        </ul>
+          <Link
+            href="#connect"
+            className="rounded-full bg-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-md shadow-indigo-500/30 transition hover:-translate-y-0.5 hover:bg-indigo-400"
+          >
+            Book a conversation
+          </Link>
+        </div>
 
         {isOpen && (
           <div className="absolute top-full left-0 w-full bg-black bg-opacity-95 shadow-xl py-4">
-            <ul className="flex flex-col space-y-4 text-white px-6">
+            <div className="flex flex-col space-y-4 px-6 text-white">
               {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={`#${item}`}
-                    onClick={handleLinkClick}
-                    className="capitalize block text-lg"
-                  >
-                    {item}
-                  </Link>
-                </li>
+                <Link
+                  key={item}
+                  href={`#${item}`}
+                  onClick={handleLinkClick}
+                  className="capitalize text-lg"
+                >
+                  {item}
+                </Link>
               ))}
-            </ul>
+              <Link
+                href="#connect"
+                onClick={handleLinkClick}
+                className="rounded-full bg-indigo-500 px-5 py-3 text-center text-base font-semibold text-white shadow-md shadow-indigo-500/30 transition hover:bg-indigo-400"
+              >
+                Book a conversation
+              </Link>
+            </div>
           </div>
         )}
       </div>
