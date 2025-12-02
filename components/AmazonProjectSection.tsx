@@ -27,9 +27,9 @@ export default function AmazonProjectSection() {
         className="mt- grid md:grid-cols-2 gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 text-white">
-          <h3 className="text-xl font-bold">Devices Design Group</h3>
+          <h3 className="text-xl font-bold">Amazon: Multimodal AI & Latency Strategy</h3>
           <p>
-            Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.7 billion opportunity by optimizing Alexa’s response latency.
+            Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.3 billion opportunity by optimizing Alexa’s response latency.
           </p>
         </motion.div>
 
@@ -71,7 +71,12 @@ export default function AmazonProjectSection() {
     whileHover={{ scale: 1.03, y: -4 }}
     style={{ color: "#ffffff" }}
   >
-    <h4 className="text-lg font-bold">Alexa Latency: Impact on UX and Engagement</h4>
+    <h4 className="text-lg font-bold">Quantifying the $1.3B Cost of Latency</h4>
+    <div className="flex gap-2 mt-2 mb-3 flex-wrap">
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md">Method: Psychophysics</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md">Impact: $1.3B Revenue Opportunity</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md">Stakeholder: VP Engineering</span>
+    </div>
     <div className="space-y-3 mt-3">
       <p>
         Slow Alexa responses negatively impact customer experience and reduce their subsequent spending across Amazon services.
@@ -80,7 +85,7 @@ export default function AmazonProjectSection() {
         As Lead Researcher, I led a multi-year effort that used longitudinal diary studies, lab-based A/B tests, and large-scale quantitative surveys. Results from my research identified task- and device-specific latency thresholds critical to customer satisfaction.
       </p>
       <p>
-        Partnering with Amazon’s Economics team, we demonstrated how meeting these thresholds could drive an additional 5+ billion Alexa interactions and approximately $1.7 billion in downstream revenue within 18 months.
+        Partnering with Amazon’s Economics team, we demonstrated how meeting these thresholds could drive an additional 5+ billion Alexa interactions and approximately $1.3 billion in downstream revenue within 18 months.
       </p>
     </div>
   </motion.div>
@@ -92,7 +97,12 @@ export default function AmazonProjectSection() {
     whileHover={{ scale: 1.03, y: -4 }}
     style={{ color: "#ffffff" }}
   >
-    <h4 className="text-lg font-bold">Optimizing TV Interface Design through Neuroscience</h4>
+    <h4 className="text-lg font-bold">Neuro-Optimized TV Interfaces</h4>
+    <div className="flex gap-2 mt-2 mb-3 flex-wrap">
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md">Method: Eye-Tracking & fNIRS</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md">Result: -25% Search Time</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md">Scale: Fire TV Global</span>
+    </div>
     <div className="space-y-3 mt-3">
       <p>
       To identify what makes a TV interface truly engaging, I collaborated closely with Fire TV and Prime Video design teams over the course of six months.

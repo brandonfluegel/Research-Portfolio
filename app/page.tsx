@@ -11,6 +11,8 @@ import MercedesProjectSection from "@/components/MercedesProjectSection";
 import HarvardProjectSection from "@/components/HarvardProjectSection";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
+import { motion } from "framer-motion";
+import { fadeInUp } from "@/app/utils/animationVariants";
 
 export default function Home() {
   useSmoothScroll("nav", 120);
@@ -22,17 +24,33 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-start min-h-screen px-6 pt-32 pb-12 -mt-[90px]">
-        <div className="max-w-3xl w-full mx-auto relative z-10 px-2 sm:px-4 md:px-8">
+      <section className="relative flex flex-col justify-center items-center min-h-screen px-6 pt-32 pb-12 -mt-[90px]">
+        <div className="max-w-5xl w-full mx-auto relative z-10 px-2 sm:px-4 md:px-8 flex flex-col items-center text-center">
           <AnimatedText
-            text="Thanks for being here!"
-            className="hero-header font-semibold mb-4 text-white text-center"
+            text="Brandon Fluegel, PhD"
+            className="hero-header font-bold text-white text-5xl sm:text-6xl mb-2"
           />
 
-          <div className="text-white text-base sm:text-lg md:text-xl leading-relaxed text-justify hero-body">
-            <p>
-              Blending scientific rigor with creative storytelling, my mixed-methods research guides the design of delightful, human-centered products. Along with six years of industry experience, I earned my Ph.D. in Human Factors Psychology in 2020.
-            </p>
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            className="text-gray-300 text-2xl sm:text-3xl font-medium mt-2"
+          >
+            Staff Product Researcher | AI Strategy | Cognitive Science
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.4 }}
+            className="text-white text-lg sm:text-xl max-w-2xl leading-relaxed mt-8"
+          >
+            Translating human factors into billion-dollar product outcomes
+          </motion.div>
+
+          <div className="mt-16">
             <ScrollIndicator />
           </div>
         </div>

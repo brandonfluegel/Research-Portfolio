@@ -1,27 +1,17 @@
 "use client";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
-import useScrollProgress from "@/app/hooks/useScrollProgress";
 
 export default function Cursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const [isMobile, setIsMobile] = useState(false);
 
-  const { scrollYProgress } = useScrollProgress();
-
-  // Explicitly define cursor color transformations (match GradientBackground colors)
-  const cursorColor = useTransform(
-    scrollYProgress,
-    [0, 0.3, 0.6, 1],
-    ["#ffffff", "#dddddd", "#000000", "#ffffff"] // Adjust explicitly for contrast
-  );
-
   useEffect(() => {
     setIsMobile(window.matchMedia("(pointer: coarse)").matches);
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 10);
-      cursorY.set(e.clientY - 10);
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
 
     if (!isMobile) {
@@ -34,13 +24,20 @@ export default function Cursor() {
   if (isMobile) return null;
 
   return (
-    <motion.div
+    <motion.svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
       style={{
         translateX: cursorX,
         translateY: cursorY,
-        backgroundColor: cursorColor,
       }}
-      className="fixed top-0 left-0 w-5 h-5 rounded-full pointer-events-none z-[9999]"
-    />
+      className="fixed top-0 left-0 pointer-events-none z-[9999] drop-shadow-md mix-blend-difference"
+    >
+      <path
+        d="M5.5 3.21l.01 11.09 3.02-3.8 2.37 5.17 1.83-.83-2.38-5.18 5.62-.02L5.5 3.21z"
+        fill="#ffffff"
+      />
+    </motion.svg>
   );
 }
