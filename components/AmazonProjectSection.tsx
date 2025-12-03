@@ -14,7 +14,7 @@ export default function AmazonProjectSection() {
         <LogoBadge
           logoSrc="/assets/amazon-logo.png"
           alt="Amazon Logo"
-          className="opacity-40 w-32 md:w-60 h-auto brightness-0 invert"
+          className="w-32 md:w-60 h-auto opacity-100"
         />
       </div>
 
