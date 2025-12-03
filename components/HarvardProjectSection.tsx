@@ -10,12 +10,12 @@ export default function HarvardProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-24 px-4 mb-24" ref={ref}>
-      <div id="harvard" className="absolute -top-12 left-1/2 transform -translate-x-1/2">
+    <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
+      <div id="harvard" className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12">
         <LogoBadge
           logoSrc="/assets/harvard-logo.png"
           alt="Harvard Logo"
-          className="opacity-70 w-100 h-auto brightness-200"
+          className="opacity-70 w-32 md:w-60 h-auto brightness-0 invert"
         />
       </div>
 
@@ -25,11 +25,11 @@ export default function HarvardProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid md:grid-cols-2 gap-10 items-start"
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl">
-          <h3 className="text-xl font-bold text-white">Clinical Neuroscience Lab</h3>
-          <p className="text-zinc-200">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Clinical Neuroscience Lab</h3>
+          <p className="text-base text-zinc-200">
             Conducted research using advanced brain imaging techniques (fMRI, EEG) to evaluate the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy for major depression. Identified brain activity patterns correlating with symptom reduction, influencing clinical practices and improving patient care.
           </p>
         </motion.div>

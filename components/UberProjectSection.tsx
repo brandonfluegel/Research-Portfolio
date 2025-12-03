@@ -11,17 +11,17 @@ export default function UberProjectSection() {
 
   return (
     <section
-      className="relative max-w-5xl mx-auto py-24 px-4 mb-24"
+      className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24"
       ref={ref}
     >
       <div
         id="uber"
-        className="absolute -top-12 left-1/2 transform -translate-x-1/2"
+        className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12"
       >
         <LogoBadge
           logoSrc="/assets/uber-logo.png"
           alt="Uber Logo"
-          className="opacity-90 w-60 h-auto brightness-0 invert"
+          className="opacity-90 w-32 md:w-60 h-auto brightness-0 invert"
         />
       </div>
 
@@ -31,11 +31,11 @@ export default function UberProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid md:grid-cols-2 gap-10 items-start"
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl">
-          <h3 className="text-xl font-bold text-white">Uber: Global Retention Strategy (Brazil)</h3>
-          <p className="text-zinc-200 leading-relaxed">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Uber: Global Retention Strategy (Brazil)</h3>
+          <p className="text-base text-zinc-200 leading-relaxed">
             Conducted international ethnography and contextual inquiry research
             in Brazil that informed the iterative design of the rental driver app
             and payments experience. My research recommendations led to significantly improved driver

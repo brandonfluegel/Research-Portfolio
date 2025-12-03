@@ -9,18 +9,18 @@ export default function SlingProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-20 px-3 -mt-8 scale-90" ref={ref}>
+    <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
       {/* Overview Section */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid md:grid-cols-2 gap-10 items-start"
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl">
-          <h3 className="text-xl font-bold text-white">Product Leadership & AI Strategy</h3>
-          <p className="text-zinc-200">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Product Leadership & AI Strategy</h3>
+          <p className="text-base text-zinc-200">
             Recruited to report directly to the VP of Product to build the Product Research function. I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and long-term subscriber retention.
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
@@ -50,7 +50,7 @@ export default function SlingProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-2xl font-bold text-left mt-16 mb-6 text-white"
+        className="text-2xl md:text-3xl font-bold text-left mt-16 mb-6 text-white"
       >
         Strategic Initiatives
       </motion.h3>
@@ -60,15 +60,15 @@ export default function SlingProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid md:grid-cols-2 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
         {/* GenAI Case Study */}
         <motion.div
-          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
           variants={fadeInFromLeft}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-xl font-bold text-white">Architecting Trust in GenAI Companions</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white">Architecting Trust in GenAI Companions</h4>
           
           <div className="flex flex-wrap gap-2 mt-3 mb-4">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: Trust Framework Adoption</span>
@@ -76,7 +76,7 @@ export default function SlingProjectSection() {
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Mental Model Mapping</span>
           </div>
 
-          <div className="space-y-3 mt-3 text-zinc-300">
+          <div className="space-y-3 mt-3 text-base text-zinc-300">
             <p>
               Architected the interaction model for a probabilistic AI companion. By applying Human Factors principles, I defined a &apos;System Status&apos; framework that mitigates hallucination risks and aligns user expectations with model capabilities.
             </p>
@@ -85,11 +85,11 @@ export default function SlingProjectSection() {
 
         {/* Monetization Case Study */}
         <motion.div
-          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
           variants={fadeInFromRight}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-xl font-bold text-white">The Science of Conversion (+17% Lift)</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white">The Science of Conversion (+17% Lift)</h4>
 
           <div className="flex flex-wrap gap-2 mt-3 mb-4">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: +17% Conversion</span>
@@ -97,7 +97,7 @@ export default function SlingProjectSection() {
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Mixed-Methods Funnel Analysis</span>
           </div>
 
-          <div className="space-y-3 mt-3 text-zinc-300">
+          <div className="space-y-3 mt-3 text-base text-zinc-300">
             <p>
               Orchestrated a data-backed redesign of the acquisition funnel. By triangulating behavioral drop-off points with qualitative friction analysis, I drove a design strategy that unlocked significant revenue growth while protecting long-term brand integrity.
             </p>

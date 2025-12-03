@@ -9,12 +9,12 @@ export default function MercedesProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-24 px-4 mb-24" ref={ref}>
-      <div id="mercedes" className="absolute -top-30 left-1/2 transform -translate-x-1/2">
+    <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
+      <div id="mercedes" className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12">
         <LogoBadge
           logoSrc="/assets/benz.png"
           alt="Mercedes-Benz Logo"
-          className="opacity-80 w-60 h-auto brightness-0 invert"
+          className="opacity-80 w-32 md:w-60 h-auto brightness-0 invert"
         />
       </div>
 
@@ -24,11 +24,11 @@ export default function MercedesProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid md:grid-cols-2 gap-10 items-start"
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl">
-          <h3 className="text-xl font-bold text-white">Mercedes-Benz: L3 Autonomous Trust Systems</h3>
-          <p className="text-zinc-200">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Mercedes-Benz: L3 Autonomous Trust Systems</h3>
+          <p className="text-base text-zinc-200">
             Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
         </motion.div>
@@ -54,7 +54,7 @@ export default function MercedesProjectSection() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="text-2xl font-bold text-left mt-16 mb-6 text-white"
+  className="text-2xl md:text-3xl font-bold text-left mt-16 mb-6 text-white"
 >
   Case Studies
 </motion.h3>
@@ -64,15 +64,15 @@ export default function MercedesProjectSection() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="grid md:grid-cols-2 gap-8"
+  className="grid grid-cols-1 md:grid-cols-2 gap-8"
 >
   {/* Trust Case Study */}
   <motion.div
-    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
     variants={fadeInFromLeft}
     whileHover={{ scale: 1.03, y: -4 }}
   >
-    <h4 className="text-xl font-bold text-white">Calibrating Trust in Level 3 Autonomy</h4>
+    <h4 className="text-lg md:text-xl font-bold text-white">Calibrating Trust in Level 3 Autonomy</h4>
 
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
       <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: +24% Trust Rating</span>
@@ -81,7 +81,7 @@ export default function MercedesProjectSection() {
     </div>
 
     <div className="space-y-3 mt-3">
-      <p className="text-zinc-300">
+      <p className="text-base text-zinc-300">
         Led simulator studies to define the &apos;Alert Modality&apos; standards for autonomous handovers. My research identified the precise signaling required to keep drivers in the loop, increasing trust ratings by 24% during critical transitions.
       </p>
     </div>
@@ -89,11 +89,11 @@ export default function MercedesProjectSection() {
 
   {/* Acoustic Comfort Case Study */}
   <motion.div
-    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
     variants={fadeInFromRight}
     whileHover={{ scale: 1.03, y: -4 }}
   >
-    <h4 className="text-xl font-bold text-white">Psychoacoustics of Luxury</h4>
+    <h4 className="text-lg md:text-xl font-bold text-white">Psychoacoustics of Luxury</h4>
 
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
       <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: -15% Perceived Noise</span>
@@ -102,7 +102,7 @@ export default function MercedesProjectSection() {
     </div>
 
     <div className="space-y-3 mt-3">
-      <p className="text-zinc-300">
+      <p className="text-base text-zinc-300">
         Quantified the subjective experience of &apos;quiet.&apos; By correlating acoustic engineering data with passenger perception surveys, I guided cabin insulation strategies that significantly enhanced the perception of luxury.
       </p>
     </div>
