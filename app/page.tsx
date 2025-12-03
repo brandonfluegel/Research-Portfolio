@@ -34,7 +34,7 @@ export default function Home() {
             className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.5rem,5.5vw,5rem)] max-w-5xl mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
             style={{ textWrap: "balance" }}
           >
-            Human Factors Researcher focused on Human-AI Interaction
+            Human Factors PhD focused on Human-AI Interaction & Trust
           </motion.div>
 
           <motion.div
@@ -45,7 +45,7 @@ export default function Home() {
             className="font-medium text-zinc-400 text-center px-4 text-[clamp(1.1rem,2vw,1.5rem)] max-w-3xl mx-auto"
             style={{ textWrap: "balance" }}
           >
-            Translating cognitive science into billion-dollar product strategy
+            Translating cognitive science into monetizable product strategy
           </motion.div>
 
           <div className="mt-16">

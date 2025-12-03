@@ -38,7 +38,7 @@ export default function Navbar() {
             height={55}
             className="rounded-full relative top-0" // explicitly moves the image downward
           />
-          <span className="text-lg font-semibold text-white">Brandon Fluegel, Ph.D.</span>
+          <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
         </Link>
 
         <button
