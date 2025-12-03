@@ -27,7 +27,7 @@ export default function MercedesProjectSection() {
         className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl h-full flex flex-col justify-center">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Increasing Driver Trust in Autonomous Handoffs</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white"> Boosting Driver Trust in Autonomous Vehicles</h3>
           <p className="text-base text-zinc-200 leading-loose">
             Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
@@ -69,7 +69,7 @@ export default function MercedesProjectSection() {
     variants={fadeInFromLeft}
     whileHover={{ scale: 1.03, y: -4 }}
   >
-    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Calibrating User Trust in Level 3 Autonomy</h4>
+    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Increasing Driver Trust in Autonomous Handoffs</h4>
 
     <div className="flex flex-wrap gap-2 mt-4 mb-6">
       <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: +24% Increase in Driver Trust Ratings</span>
@@ -79,8 +79,7 @@ export default function MercedesProjectSection() {
 
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-        Led simulator studies to define the &apos;Alert Modality&apos; standards for autonomous handovers. My research identified the precise signaling required to keep drivers in the loop, increasing trust ratings by 24% during critical transitions.
-      </p>
+Led high-fidelity simulator studies to define Alert Modality standards for autonomous handovers, directly influencing internal design guidelines for L2 vehicles. Identified interaction strategies that optimized driver situational awareness, increasing average trust ratings by 24% during critical control transitions.      </p>
     </div>
   </motion.div>
 
@@ -93,15 +92,14 @@ export default function MercedesProjectSection() {
     <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Psychoacoustics of Luxury</h4>
 
     <div className="flex flex-wrap gap-2 mt-4 mb-6">
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: Reduction of Perceived Noise by 15%</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: 15% Reduction in Perceived Cabin Noise</span>
       <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Human Factors & Auditory Perception</span>
       <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Survey & Acoustic Analysis</span>
     </div>
 
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-        Quantified the subjective experience of &apos;quiet.&apos; By correlating acoustic cabin data with subjective auditory perception data, my research guided cabin insulation strategies that significantly reduced the perception of interior cabin noise.
-      </p>
+Operationalized the subjective experience of 'quiet' by correlating acoustic sensor data with human perception. These insights drove new cabin insulation strategies, significantly reducing noise intrusion and bridging the gap between engineering metrics and user comfort.      </p>
     </div>
   </motion.div>
 </motion.div>

@@ -90,7 +90,7 @@ export default function SlingProjectSection() {
           variants={fadeInFromRight}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">The Science of Conversion</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Boosting Sling Subscriber Conversion</h4>
 
           <div className="flex flex-wrap gap-2 mt-4 mb-6">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: 17% Increase in Purchase Conversion on Sling.com</span>
