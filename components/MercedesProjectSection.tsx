@@ -10,11 +10,11 @@ export default function MercedesProjectSection() {
 
   return (
     <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
-      <div id="mercedes" className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12">
+      <div id="mercedes" className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-50 md:-top-20">
         <LogoBadge
           logoSrc="/assets/benz.png"
           alt="Mercedes-Benz Logo"
-          className="opacity-80 w-32 md:w-60 h-auto brightness-0 invert"
+          className="w-32 md:w-48 h-auto brightness-0 invert"
         />
       </div>
 
@@ -24,7 +24,7 @@ export default function MercedesProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
+        className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">Mercedes-Benz: L3 Autonomous Trust Systems</h3>

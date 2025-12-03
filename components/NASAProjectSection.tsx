@@ -18,14 +18,11 @@ export default function NASAProjectSection() {
       className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24"
       ref={ref}
     >
-      <div
-        id="NASA"
-        className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12"
-      >
+      <div id="nasa" className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-50 md:-top-20">
         <LogoBadge
           logoSrc="/assets/nasa-logo.png"
           alt="NASA Logo"
-          className="opacity-60 w-32 md:w-60 h-auto brightness-200"
+          className="w-32 md:w-48 h-auto"
         />
       </div>
 
@@ -35,7 +32,7 @@ export default function NASAProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
+        className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">NASA: Lunar Gateway Cognitive Safety</h3>
