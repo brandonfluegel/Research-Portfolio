@@ -27,7 +27,7 @@ export default function AmazonProjectSection() {
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Amazon: Multimodal AI & Latency Strategy</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Multimodal AI & Latency Strategy</h3>
           <p className="text-base text-zinc-200 leading-loose">
             During 4.5 years in the Devices Design group, I delivered actionable insights that led to 100+ design iterations across Alexa AI, Echo Show, Echo Hub, and Fire TV. My largest impact was a multi-year study that identified a $1.3B opportunity by optimizing Alexa’s response latency.
           </p>

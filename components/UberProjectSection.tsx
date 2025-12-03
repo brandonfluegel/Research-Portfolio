@@ -34,12 +34,12 @@ export default function UberProjectSection() {
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Uber: Driver Retention Strategy in Brazil</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Driver Retention Strategy in Brazil</h3>
           <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
             Conducted international ethnography and contextual inquiry research
             in Brazil that informed the iterative design of the rental driver app
             and payments experience. My research recommendations led to significantly improved driver
-            satisfaction, increasing rental driver retention by over <strong>15%</strong>.
+            satisfaction, increasing rental driver retention by <strong>15%</strong>.
           </p>
         </motion.div>
 

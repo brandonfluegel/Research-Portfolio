@@ -35,7 +35,7 @@ export default function NASAProjectSection() {
         className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">NASA: Lunar Gateway Cognitive Safety</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Reducing Cognitive Load on Lunar Gateway</h3>
           <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
             Led four rounds of usability testing with NASA astronauts, informing
             iterative design improvements of medical workstation prototypes for
