@@ -25,13 +25,13 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-[50vh] px-6 pt-32 pb-12 md:pt-48 md:pb-16 -mt-[90px]">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[85vh] pt-44 pb-12 md:pt-0 md:pb-0 px-4">
         <div className="w-full flex flex-col items-center justify-center max-w-5xl mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.5rem,5vw,5rem)] mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+            className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.2rem,4vw,4rem)] mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
             style={{ textWrap: "balance" }}
           >
             Human Factors PhD <br /> Designing the Future of AI-Powered Products
