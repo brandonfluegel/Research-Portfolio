@@ -9,12 +9,12 @@ export default function MercedesProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-20 px-3 -mt-8 scale-90" ref={ref}>
-      <div id="mercedes" className="absolute -top-45 left-1/2 transform -translate-x-1/2">
+    <section className="relative max-w-5xl mx-auto py-24 px-4 mb-24" ref={ref}>
+      <div id="mercedes" className="absolute -top-30 left-1/2 transform -translate-x-1/2">
         <LogoBadge
           logoSrc="/assets/benz.png"
           alt="Mercedes-Benz Logo"
-          className="opacity-80 w-60 h-auto"
+          className="opacity-80 w-60 h-auto brightness-0 invert"
         />
       </div>
 
@@ -26,9 +26,9 @@ export default function MercedesProjectSection() {
         viewport={{ once: true }}
         className="mt-6 grid md:grid-cols-2 gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 text-black">
-          <h3 className="text-xl font-bold">Vehicle Innovation Group</h3>
-          <p>
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl">
+          <h3 className="text-xl font-bold text-white">Mercedes-Benz: L3 Autonomous Trust Systems</h3>
+          <p className="text-zinc-200">
             Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
         </motion.div>
@@ -42,7 +42,7 @@ export default function MercedesProjectSection() {
             playsInline
             className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500 max-h-[500px]"
           />
-          <span className="mt-3 text-center text-sm font-medium text-black">
+          <span className="mt-3 text-center text-sm font-medium text-zinc-300 block">
             Driving Simulator for Lab Research
           </span>
         </motion.div>
@@ -54,7 +54,7 @@ export default function MercedesProjectSection() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="text-2xl font-bold text-left mt-16 mb-6 text-black"
+  className="text-2xl font-bold text-left mt-16 mb-6 text-white"
 >
   Case Studies
 </motion.h3>
@@ -68,38 +68,42 @@ export default function MercedesProjectSection() {
 >
   {/* Trust Case Study */}
   <motion.div
-    className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer"
+    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
     variants={fadeInFromLeft}
     whileHover={{ scale: 1.03, y: -4 }}
-    style={{ color: "#000000" }}
   >
-    <h4 className="text-lg font-bold">Building Trust in Semi-Autonomous Vehicles</h4>
+    <h4 className="text-xl font-bold text-white">Calibrating Trust in Level 3 Autonomy</h4>
+
+    <div className="flex flex-wrap gap-2 mt-3 mb-4">
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: +24% Trust Rating</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Autonomous Systems</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Human-in-the-Loop Simulation</span>
+    </div>
 
     <div className="space-y-3 mt-3">
-      <p>
-        My research investigated driver trust issues with semi-autonomous driving assistance, leveraging simulator studies, on-road driving observations, contextual inquiries, and physiological monitoring (e.g., heart rate variability).
-      </p>
-      <p>
-        Working closely with Mercedes Core Engineering and Interior Design teams, I translated driver insights into actionable dashboard interface and feedback system improvements. These design iterations led to measurable improvements, with driver trust ratings increasing by approximately 25%.
+      <p className="text-zinc-300">
+        Led simulator studies to define the &apos;Alert Modality&apos; standards for autonomous handovers. My research identified the precise signaling required to keep drivers in the loop, increasing trust ratings by 24% during critical transitions.
       </p>
     </div>
   </motion.div>
 
   {/* Acoustic Comfort Case Study */}
   <motion.div
-    className="case-study-container rounded-xl shadow-lg p-6 cursor-pointer"
+    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
     variants={fadeInFromRight}
     whileHover={{ scale: 1.03, y: -4 }}
-    style={{ color: "#000000" }}
   >
-    <h4 className="text-lg font-bold">Quiet Comfort: Redefining Luxury Vehicle Interiors</h4>
+    <h4 className="text-xl font-bold text-white">Psychoacoustics of Luxury</h4>
+
+    <div className="flex flex-wrap gap-2 mt-3 mb-4">
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: -15% Perceived Noise</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Sensory Design</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Survey & Acoustic Analysis</span>
+    </div>
 
     <div className="space-y-3 mt-3">
-      <p>
-        Cabin noise critically impacts luxury vehicle comfort. Using acoustic testing, surveys, user interviews, and observational studies, I identified key acoustic pain points.
-      </p>
-      <p>
-        In close collaboration with acoustic engineers and interior designers, I guided targeted cabin improvements to address these issues. My research recommendations successfully reduced perceived cabin noise by 15%, significantly enhancing customer perceptions of comfort and luxury.
+      <p className="text-zinc-300">
+        Quantified the subjective experience of &apos;quiet.&apos; By correlating acoustic engineering data with passenger perception surveys, I guided cabin insulation strategies that significantly enhanced the perception of luxury.
       </p>
     </div>
   </motion.div>

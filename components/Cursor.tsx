@@ -10,8 +10,8 @@ export default function Cursor() {
   useEffect(() => {
     setIsMobile(window.matchMedia("(pointer: coarse)").matches);
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
+      cursorX.set(e.clientX - 14);
+      cursorY.set(e.clientY - 8);
     };
 
     if (!isMobile) {
@@ -25,8 +25,8 @@ export default function Cursor() {
 
   return (
     <motion.svg
-      width="24"
-      height="24"
+      width="60"
+      height="60"
       viewBox="0 0 24 24"
       style={{
         translateX: cursorX,

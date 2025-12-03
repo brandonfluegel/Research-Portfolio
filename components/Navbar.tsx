@@ -38,7 +38,7 @@ export default function Navbar() {
             height={55}
             className="rounded-full relative top-0" // explicitly moves the image downward
           />
-          <span className="text-lg font-semibold text-white">Brandon Fluegel</span>
+          <span className="text-lg font-semibold text-white">Brandon Fluegel, Ph.D.</span>
         </Link>
 
         <button
@@ -51,7 +51,7 @@ export default function Navbar() {
         </button>
 
         <ul className="hidden sm:flex space-x-6 text-white">
-          {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
+          {["sling", "amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
             <li key={item}>
               <Link href={`#${item}`} className="capitalize hover:text-indigo-300">
                 {item}
@@ -63,7 +63,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="absolute top-full left-0 w-full bg-black bg-opacity-95 shadow-xl py-4">
             <ul className="flex flex-col space-y-4 text-white px-6">
-              {["amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
+              {["sling", "amazon", "uber", "NASA", "mercedes", "harvard"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`#${item}`}

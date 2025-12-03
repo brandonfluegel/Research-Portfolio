@@ -2,8 +2,10 @@
 
 import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
+import SlingProjectSection from "@/components/SlingProjectSection";
 import AmazonProjectSection from "@/components/AmazonProjectSection";
 import UberProjectSection from "@/components/UberProjectSection";
 import NASAProjectSection from "@/components/NASAProjectSection";
@@ -24,20 +26,16 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-screen px-6 pt-32 pb-12 -mt-[90px]">
-        <div className="max-w-5xl w-full mx-auto relative z-10 px-2 sm:px-4 md:px-8 flex flex-col items-center text-center">
-          <AnimatedText
-            text="Brandon Fluegel, PhD"
-            className="hero-header font-bold text-white text-5xl sm:text-6xl mb-2"
-          />
-
+      <section className="relative flex flex-col justify-center items-center min-h-[50vh] px-6 pt-48 pb-12 -mt-[90px]">
+        <div className="w-full flex flex-col items-center justify-center max-w-5xl mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="text-gray-300 text-2xl sm:text-3xl font-medium mt-2"
+            className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.5rem,5.5vw,5rem)] max-w-5xl mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+            style={{ textWrap: "balance" }}
           >
-            Staff Product Researcher | AI Strategy | Cognitive Science
+            Human Factors Researcher focused on Human-AI Interaction
           </motion.div>
 
           <motion.div
@@ -45,9 +43,10 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.4 }}
-            className="text-white text-lg sm:text-xl max-w-2xl leading-relaxed mt-8"
+            className="font-medium text-zinc-400 text-center px-4 text-[clamp(1.1rem,2vw,1.5rem)] max-w-3xl mx-auto"
+            style={{ textWrap: "balance" }}
           >
-            Translating human factors into billion-dollar product outcomes
+            Translating cognitive science into billion-dollar product strategy
           </motion.div>
 
           <div className="mt-16">
@@ -57,7 +56,11 @@ export default function Home() {
       </section>
 
       {/* Project Sections */}
-      <section className="max-w-6xl mx-auto mt-8">
+      <section className="max-w-6xl mx-auto mt-4">
+        <div className="mb-12">
+          <SlingProjectSection />
+        </div>
+
         <AmazonProjectSection />
 
         <div className="my-12">
@@ -76,6 +79,10 @@ export default function Home() {
           <HarvardProjectSection />
         </div>
       </section>
+
+      <div className="mt-20">
+        <Footer />
+      </div>
     </main>
   );
 }
