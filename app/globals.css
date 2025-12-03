@@ -51,11 +51,6 @@ li {
   line-height: 1.8;
 }
 
-.case-study-container {
-  padding: clamp(1rem, 3vw, 2rem);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-}
-
 @media (max-width: 640px) {
   h1 {
     font-size: 1.75rem;
@@ -69,12 +64,6 @@ li {
 
   h1.hero-header {
     font-size: 1.25rem !important; /* explicitly smaller hero header for mobile */
-  }
-
-  .case-study-container {
-    padding: 1rem 0.25rem;
-    margin-left: -0.25rem;
-    margin-right: -0.25rem;
   }
 
   .hero-header {
