@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
 
@@ -19,26 +18,28 @@ export default function SlingProjectSection() {
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Product Leadership & AI Strategy</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Sling TV: Product Leadership & Human-AI Strategy</h3>
           <p className="text-base text-zinc-200">
-            Reporting directly to the VP of Product, I was recruited to build and lead the Product Research function. I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and long-term subscriber retention.
+            Reporting directly to the VP of Product, I was recruited to build and lead the Product Research function at Sling. 
+            
+            I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and long-term subscriber retention.
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
-             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Role: Staff Product Researcher</span>
           </div>
         </motion.div>
 
         {/* Placeholder for Visual - You can replace this src with a relevant image or video later */}
         <motion.div variants={fadeInFromRight} className="flex flex-col items-center">
-          <Image
-            src="/assets/sling.png"
-            alt="Sling TV Logo"
-            width={800}
-            height={400}
-            className="rounded-xl object-contain w-full h-auto shadow-xl hover:scale-105 transition-transform duration-500"
+          <video
+            src="/assets/sling-workshop.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="rounded-xl object-cover w-full h-auto shadow-xl hover:scale-105 transition-transform duration-500"
           />
-          <span className="mt-3 text-center text-sm font-medium text-zinc-300 block">
-            Defining the Future of Entertainment
+          <span className="mt-3 text-center text-sm font-medium text-zinc-400 block">
+            Led a Product & Design workshop to explore the intersection of UX, AI, and customer delight. Generated 50+ concepts that are now being triaged into our 2026 product roadmap.
           </span>
         </motion.div>
       </motion.div>
@@ -67,7 +68,7 @@ export default function SlingProjectSection() {
           variants={fadeInFromLeft}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white">Architecting Trust in a TV-based GenAI Companion</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white">Architecting Trust in an AI Companion</h4>
           
           <div className="flex flex-wrap gap-2 mt-3 mb-4">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: AI Trust Framework Adoption</span>
