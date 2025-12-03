@@ -21,7 +21,7 @@ export default function UberProjectSection() {
         <LogoBadge
           logoSrc="/assets/uber-logo.png"
           alt="Uber Logo"
-          className="opacity-90 w-32 md:w-60 h-auto brightness-0 invert"
+          className="w-32 md:w-60 h-auto opacity-100"
         />
       </div>
 

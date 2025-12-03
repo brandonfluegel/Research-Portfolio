@@ -14,7 +14,7 @@ export default function MercedesProjectSection() {
         <LogoBadge
           logoSrc="/assets/benz.png"
           alt="Mercedes-Benz Logo"
-          className="w-32 md:w-48 h-auto brightness-0 invert"
+          className="w-32 md:w-60 h-auto opacity-100"
         />
       </div>
 

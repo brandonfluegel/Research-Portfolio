@@ -15,7 +15,7 @@ export default function HarvardProjectSection() {
         <LogoBadge
           logoSrc="/assets/harvard-logo.png"
           alt="Harvard Logo"
-          className="opacity-70 w-32 md:w-60 h-auto brightness-0 invert"
+          className="w-32 md:w-60 h-auto opacity-100"
         />
       </div>
 
