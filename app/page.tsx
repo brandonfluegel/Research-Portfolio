@@ -25,13 +25,14 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-[50vh] px-6 pt-48 pb-12 -mt-[90px]">
+      <section className="relative flex flex-col justify-center items-center min-h-[50vh] px-6 pt-32 md:pt-48 pb-6 -mt-[90px]">
         <div className="w-full flex flex-col items-center justify-center max-w-5xl mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-bold leading-[1.2] text-center mb-6 text-[clamp(1.8rem,4vw,3.5rem)] mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+            className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.5rem,5vw,5rem)] mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
+            style={{ textWrap: "balance" }}
           >
             Human Factors PhD <br /> Designing Trustworthy AI
           </motion.div>
@@ -41,13 +42,13 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.4 }}
-            className="font-medium text-zinc-400 text-center px-4 text-[clamp(1.1rem,2vw,1.5rem)] max-w-3xl mx-auto"
+            className="font-medium text-zinc-400 text-center px-4 text-[clamp(1.1rem,2vw,1.5rem)] mt-4 max-w-sm md:max-w-2xl mx-auto"
             style={{ textWrap: "balance" }}
           >
             Translating cognitive science into monetizable product strategy
           </motion.div>
 
-          <div className="mt-16">
+          <div className="mt-8">
             <ScrollIndicator />
           </div>
         </div>
