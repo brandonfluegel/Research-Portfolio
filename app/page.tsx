@@ -26,14 +26,14 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[85vh] pt-44 pb-12 md:pt-0 md:pb-0 px-4">
-        <div className="w-full flex flex-col items-center justify-center max-w-5xl mx-auto relative z-10 px-2 sm:px-4 md:px-8">
+        <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             className="font-bold leading-[1.2] text-center mb-6 text-[clamp(2rem,4vw,4rem)] bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
           >
-            Human Factors PhD <br /> Designing the Future of UX & AI
+            Human Factors PhD <br /> Designing the Future of UX + AI
           </motion.div>
 
           <motion.div
