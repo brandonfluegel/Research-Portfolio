@@ -25,7 +25,7 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center items-center min-h-[50vh] px-6 pt-40 pb-12 md:pt-48 md:pb-16 -mt-[90px]">
+      <section className="relative flex flex-col justify-center items-center min-h-[50vh] px-6 pt-32 pb-12 md:pt-48 md:pb-16 -mt-[90px]">
         <div className="w-full flex flex-col items-center justify-center max-w-5xl mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
