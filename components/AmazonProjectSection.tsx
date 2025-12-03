@@ -78,7 +78,7 @@ export default function AmazonProjectSection() {
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-Acting as Lead Researcher, I proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+, Echo Show, and Fire TV architecture.
+Acting as Lead Researcher, I proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+.
       </p>
     </div>
   </motion.div>
@@ -97,7 +97,7 @@ Acting as Lead Researcher, I proposed and drove a multi-year research initiative
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-        Combined neuroimaging (fNIRS) with task-based moderatedevaluation to identify the neurological &apos;cost&apos; of complex UI. My framework guided the Fire TV Home redesign, significantly reducing time-to-content for millions of viewers.
+        Combined neuroimaging (fNIRS) with task-based moderated evaluation to identify the neurological &apos;cost&apos; of visually complex UI. My framework guided the Fire TV Home iterative redesign, significantly reducing time-to-content for millions of viewers.
       </p>
     </div>
   </motion.div>

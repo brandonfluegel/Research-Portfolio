@@ -34,8 +34,7 @@ export default function Home() {
             className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.5rem,5.5vw,5rem)] max-w-5xl mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
             style={{ textWrap: "balance" }}
           >
-            Human Factors PhD focused on Human-AI Interaction & Trust
-          </motion.div>
+Human Factors PhD Designing Trustworthy AI          </motion.div>
 
           <motion.div
             variants={fadeInUp}
