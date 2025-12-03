@@ -16,7 +16,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold text-white tracking-tight"
         >
-          Let's define the next generation of <br />
+          Let&apos;s define the future of <br />
           <span className="text-zinc-500">Human-AI Interaction.</span>
         </motion.h2>
 
@@ -28,7 +28,6 @@ export default function Footer() {
           transition={{ delay: 0.1 }}
           className="text-zinc-400 text-lg max-w-2xl mx-auto"
         >
-          I am currently a Staff Product Researcher <br className="hidden sm:block" />
           Always open to discussing high-impact leadership roles in Human Factors, AI, and Product Strategy.
         </motion.p>
 
