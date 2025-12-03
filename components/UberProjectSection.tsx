@@ -34,7 +34,7 @@ export default function UberProjectSection() {
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Uber: Global Retention Strategy (Brazil)</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Uber: Driver Retention Strategy in Brazil</h3>
           <p className="text-base text-zinc-200 leading-relaxed">
             Conducted international ethnography and contextual inquiry research
             in Brazil that informed the iterative design of the rental driver app

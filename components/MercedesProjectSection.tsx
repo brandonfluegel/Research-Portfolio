@@ -27,7 +27,7 @@ export default function MercedesProjectSection() {
         className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Mercedes-Benz: L3 Autonomous Trust Systems</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Mercedes-Benz: Increasing Driver Trust during Autonomous Handoff</h3>
           <p className="text-base text-zinc-200">
             Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
@@ -42,7 +42,7 @@ export default function MercedesProjectSection() {
             playsInline
             className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500 max-h-[500px]"
           />
-          <span className="mt-3 text-center text-sm font-medium text-zinc-300 block">
+          <span className="mt-3 text-center text-sm font-medium text-white">
             Driving Simulator for Lab Research
           </span>
         </motion.div>
@@ -75,9 +75,9 @@ export default function MercedesProjectSection() {
     <h4 className="text-lg md:text-xl font-bold text-white">Calibrating Trust in Level 3 Autonomy</h4>
 
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: +24% Trust Rating</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Autonomous Systems</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Human-in-the-Loop Simulation</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: +24% Increase in Driver Trust Ratings</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Autonomous Driving Alert Systems</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Human-in-the-Loop Driving Simulation</span>
     </div>
 
     <div className="space-y-3 mt-3">
@@ -96,14 +96,14 @@ export default function MercedesProjectSection() {
     <h4 className="text-lg md:text-xl font-bold text-white">Psychoacoustics of Luxury</h4>
 
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: -15% Perceived Noise</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Sensory Design</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: Reduction of Perceived Noise by 15%</span>
+      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Human Factors & Auditory Perception</span>
       <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Survey & Acoustic Analysis</span>
     </div>
 
     <div className="space-y-3 mt-3">
       <p className="text-base text-zinc-300">
-        Quantified the subjective experience of &apos;quiet.&apos; By correlating acoustic engineering data with passenger perception surveys, I guided cabin insulation strategies that significantly enhanced the perception of luxury.
+        Quantified the subjective experience of &apos;quiet.&apos; By correlating acoustic cabin data with subjective passenger auditory perception data, my research guided cabin insulation strategies that significantly reduced the perception of interior cabin noise.
       </p>
     </div>
   </motion.div>

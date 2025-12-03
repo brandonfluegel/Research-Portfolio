@@ -73,8 +73,8 @@ export default function AmazonProjectSection() {
     <h4 className="text-lg md:text-xl font-bold text-white">Quantifying the $1.3B Cost of Milliseconds</h4>
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: $1.3B Revenue Opportunity</span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Psychophysics</span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Longitudinal Diary Studies</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Alexa AI </span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B testing & NVA Modeling</span>
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base text-zinc-300">
@@ -91,13 +91,13 @@ export default function AmazonProjectSection() {
   >
     <h4 className="text-lg md:text-xl font-bold text-white">Reducing Cognitive Load in Content Discovery</h4>
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: -25% Search Time</span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: 10-foot UI</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: 25% Reduction in Content Discovery Time</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Fire TV</span>
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Eye-Tracking & fNIRS</span>
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base text-zinc-300">
-        Combined neuroimaging (fNIRS) with heuristic evaluation to identify the neurological &apos;cost&apos; of complex UI. My framework guided the Fire TV redesign, significantly reducing time-to-content for millions of viewers.
+        Combined neuroimaging (fNIRS) with task-based moderatedevaluation to identify the neurological &apos;cost&apos; of complex UI. My framework guided the Fire TV Home redesign, significantly reducing time-to-content for millions of viewers.
       </p>
     </div>
   </motion.div>
