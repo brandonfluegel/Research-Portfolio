@@ -70,11 +70,11 @@ export default function AmazonProjectSection() {
     variants={fadeInFromLeft}
     whileHover={{ scale: 1.03, y: -4 }}
   >
-    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Quantifying the $1.3B Cost of Latency</h4>
+    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Quantifying the Cost of Response Latency</h4>
     <div className="flex flex-wrap gap-2 mt-4 mb-6">
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: $1.3B Revenue Opportunity</span>
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Alexa AI </span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B testing & Economic Modeling</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B Testing & Economic Modeling</span>
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
