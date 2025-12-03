@@ -29,7 +29,7 @@ export default function AmazonProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">Amazon: Multimodal AI & Latency Strategy</h3>
           <p className="text-base text-zinc-200 leading-loose">
-            Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.3 billion opportunity by optimizing Alexa’s response latency.
+            During 4.5 years in the Devices Design group, I delivered actionable insights that led to 100+ design iterations across Alexa AI, Echo Show, Echo Hub, and Fire TV. My largest impact was a multi-year study that identified a $1.3 billion opportunity by optimizing Alexa’s response latency.
           </p>
         </motion.div>
 
