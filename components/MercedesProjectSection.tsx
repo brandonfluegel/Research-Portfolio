@@ -99,7 +99,7 @@ Led high-fidelity simulator studies to define Alert Modality standards for auton
 
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-Operationalized the subjective experience of 'quiet' by correlating acoustic sensor data with human perception. These insights drove new cabin insulation strategies, significantly reducing noise intrusion and bridging the gap between engineering metrics and user comfort.      </p>
+Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. These insights drove new cabin insulation strategies, significantly reducing noise intrusion and bridging the gap between engineering metrics and user comfort.      </p>
     </div>
   </motion.div>
 </motion.div>
