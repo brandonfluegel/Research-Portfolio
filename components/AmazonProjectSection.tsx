@@ -26,14 +26,14 @@ export default function AmazonProjectSection() {
         viewport={{ once: true }}
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">Amazon: Multimodal AI & Latency Strategy</h3>
-          <p className="text-base text-zinc-200">
+          <p className="text-base text-zinc-200 leading-loose">
             Designed and conducted 25+ mixed-methods studies, delivering actionable insights that informed 100+ design iterations across Alexa+ Generative AI, Echo Show, Echo Hub, and Fire TV. Strategically prioritized high-impact research programs, including a multi-year study that identified a $1.3 billion opportunity by optimizing Alexa’s response latency.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-8 md:mb-0">
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-12 md:mb-0">
           <video
             src="/assets/fnirs.mp4"
             autoPlay
@@ -52,7 +52,7 @@ export default function AmazonProjectSection() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="text-2xl md:text-3xl font-bold text-left mt-16 mb-6 text-white"
+  className="text-2xl md:text-3xl font-bold text-left mt-16 md:mt-24 mb-6 text-white"
 >
   Case Studies
 </motion.h3>
@@ -77,7 +77,7 @@ export default function AmazonProjectSection() {
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B testing & Economic Modeling</span>
     </div>
     <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
 Acting as Lead Researcher, I proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+, Echo Show, and Fire TV architecture.
       </p>
     </div>
@@ -96,7 +96,7 @@ Acting as Lead Researcher, I proposed and drove a multi-year research initiative
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Eye-Tracking & fNIRS</span>
     </div>
     <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
         Combined neuroimaging (fNIRS) with task-based moderatedevaluation to identify the neurological &apos;cost&apos; of complex UI. My framework guided the Fire TV Home redesign, significantly reducing time-to-content for millions of viewers.
       </p>
     </div>

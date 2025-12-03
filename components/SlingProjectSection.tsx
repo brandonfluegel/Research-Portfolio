@@ -17,9 +17,9 @@ export default function SlingProjectSection() {
         viewport={{ once: true }}
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">Product Leadership & Human-AI Strategy at Sling</h3>
-          <p className="text-base text-zinc-200">
+          <p className="text-base text-zinc-200 leading-loose">
             Reporting directly to the VP of Product, I was recruited to build and lead the Product Research function at Sling. 
             
             I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and long-term subscriber retention.
@@ -29,7 +29,7 @@ export default function SlingProjectSection() {
         </motion.div>
 
         {/* Placeholder for Visual - You can replace this src with a relevant image or video later */}
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-8 md:mb-0">
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-12 md:mb-0">
           <video
             src="/assets/sling-workshop.mp4"
             autoPlay
@@ -50,7 +50,7 @@ export default function SlingProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-left mt-16 mb-6 text-white"
+        className="text-2xl md:text-3xl font-bold text-left mt-16 md:mt-24 mb-6 text-white"
       >
         Strategic Initiatives
       </motion.h3>
@@ -77,7 +77,7 @@ export default function SlingProjectSection() {
           </div>
 
           <div className="space-y-3 mt-3">
-            <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+            <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
               Architected the interaction model for a novel TV-based AI companion. By applying Human Factors principles, I defined a &apos;Trust & System Status&apos; framework that increased customer trust and product usability, ensuring safe and delightful adoption for mass-market audiences.
             </p>
           </div>
@@ -98,7 +98,7 @@ export default function SlingProjectSection() {
           </div>
 
           <div className="space-y-3 mt-3">
-            <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+            <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
 Orchestrated the redesign of the end-to-end user acquisition funnel. Identified critical friction points and implemented a design strategy that increased conversion performance on Sling.com by 17%.
             </p>
           </div>

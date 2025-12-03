@@ -29,12 +29,12 @@ export default function HarvardProjectSection() {
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Clinical Neuroscience Lab</h3>
-          <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+          <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
             Conducted research using advanced brain imaging techniques (fMRI, EEG) to evaluate the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy for major depression. Identified brain activity patterns correlating with symptom reduction, influencing clinical practices and improving patient care.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-8 md:mb-0">
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-12 md:mb-0">
           <motion.div className="relative w-full h-auto overflow-hidden rounded-xl shadow-2xl border border-white/10 group">
             <motion.div
               initial={{ scale: 1.1 }}

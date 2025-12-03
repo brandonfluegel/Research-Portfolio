@@ -26,14 +26,14 @@ export default function MercedesProjectSection() {
         viewport={{ once: true }}
         className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">Mercedes-Benz: Increasing Driver Trust during Autonomous Handoff</h3>
-          <p className="text-base text-zinc-200">
+          <p className="text-base text-zinc-200 leading-loose">
             Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-8 md:mb-0">
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-12 md:mb-0">
           <video
             src="/assets/drive.mp4"
             autoPlay
@@ -54,7 +54,7 @@ export default function MercedesProjectSection() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: true }}
-  className="text-2xl md:text-3xl font-bold text-left mt-16 mb-6 text-white"
+  className="text-2xl md:text-3xl font-bold text-left mt-16 md:mt-24 mb-6 text-white"
 >
   Case Studies
 </motion.h3>
@@ -81,7 +81,7 @@ export default function MercedesProjectSection() {
     </div>
 
     <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
         Led simulator studies to define the &apos;Alert Modality&apos; standards for autonomous handovers. My research identified the precise signaling required to keep drivers in the loop, increasing trust ratings by 24% during critical transitions.
       </p>
     </div>
@@ -102,7 +102,7 @@ export default function MercedesProjectSection() {
     </div>
 
     <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
+      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
         Quantified the subjective experience of &apos;quiet.&apos; By correlating acoustic cabin data with subjective passenger auditory perception data, my research guided cabin insulation strategies that significantly reduced the perception of interior cabin noise.
       </p>
     </div>
