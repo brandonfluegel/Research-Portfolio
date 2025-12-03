@@ -74,11 +74,11 @@ export default function AmazonProjectSection() {
     <div className="flex flex-wrap gap-2 mt-3 mb-4">
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: $1.3B Revenue Opportunity</span>
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Alexa AI </span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B testing & NVA Modeling</span>
+      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B testing & Economic Modeling</span>
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base text-zinc-300">
-        Proposed and led a multi-year initiative correlating human latency perception with downstream engagement. Established the &apos;Just Noticeable Difference&apos; (JND) benchmarks now used by Core Engineering to prioritize speed investments.
+Acting as Lead Researcher, I proposed and drove a multi-year research initiative on "Customer Perception of Response Latency" that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+, Echo Show, and Fire TV architecture.
       </p>
     </div>
   </motion.div>
