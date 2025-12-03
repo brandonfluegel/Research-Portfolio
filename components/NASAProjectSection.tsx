@@ -7,7 +7,6 @@ import useParallax from "@/app/hooks/useParallax";
 import {
   fadeInFromLeft,
   fadeInFromRight,
-  fadeInUp,
   staggerContainer,
 } from "@/app/utils/animationVariants";
 

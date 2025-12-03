@@ -3,7 +3,6 @@
 import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import AnimatedText from "@/components/AnimatedText";
 import ScrollToTop from "@/components/ScrollToTop";
 import SlingProjectSection from "@/components/SlingProjectSection";
 import AmazonProjectSection from "@/components/AmazonProjectSection";
