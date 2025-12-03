@@ -31,10 +31,9 @@ export default function Home() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.2rem,4vw,4rem)] mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
-            style={{ textWrap: "balance" }}
+            className="font-bold leading-[1.2] text-center mb-6 text-[clamp(2rem,4vw,4rem)] bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
           >
-            Human Factors PhD <br /> Designing the Future of AI-Powered Products
+            Human Factors PhD <br /> Designing the Future of UX & AI
           </motion.div>
 
           <motion.div
