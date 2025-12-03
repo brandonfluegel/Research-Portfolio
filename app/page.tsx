@@ -31,10 +31,10 @@ export default function Home() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-bold leading-[1.1] text-center mb-6 text-[clamp(2.5rem,5.5vw,5rem)] max-w-5xl mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
-            style={{ textWrap: "balance" }}
+            className="font-bold leading-[1.2] text-center mb-6 text-[clamp(1.8rem,4vw,3.5rem)] mx-auto bg-gradient-to-b from-white to-white/70 bg-clip-text text-transparent"
           >
-Human Factors PhD Designing Trustworthy AI          </motion.div>
+            Human Factors PhD <br /> Designing Trustworthy AI
+          </motion.div>
 
           <motion.div
             variants={fadeInUp}

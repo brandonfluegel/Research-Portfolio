@@ -77,8 +77,11 @@ export default function AmazonProjectSection() {
       <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B Testing & Economic Modeling</span>
     </div>
     <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-Acting as Lead Researcher, I proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+.
+      <p className="leading-relaxed text-base md:text-lg text-zinc-300/90">
+        Proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior.
+      </p>
+      <p className="leading-relaxed text-base md:text-lg text-zinc-300/90 mt-4">
+        Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+.
       </p>
     </div>
   </motion.div>
