@@ -18,7 +18,7 @@ export default function SlingProjectSection() {
         className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Sling TV: Product Leadership & Human-AI Strategy</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Product Leadership & Human-AI Strategy at Sling</h3>
           <p className="text-base text-zinc-200">
             Reporting directly to the VP of Product, I was recruited to build and lead the Product Research function at Sling. 
             
@@ -29,7 +29,7 @@ export default function SlingProjectSection() {
         </motion.div>
 
         {/* Placeholder for Visual - You can replace this src with a relevant image or video later */}
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center">
+        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-8 md:mb-0">
           <video
             src="/assets/sling-workshop.mp4"
             autoPlay
@@ -64,20 +64,20 @@ export default function SlingProjectSection() {
       >
         {/* GenAI Case Study */}
         <motion.div
-          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
           variants={fadeInFromLeft}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white">Architecting Trust in an AI Companion</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Architecting Trust in an AI Companion</h4>
           
-          <div className="flex flex-wrap gap-2 mt-3 mb-4">
+          <div className="flex flex-wrap gap-2 mt-4 mb-6">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: AI Trust Framework Adoption</span>
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Human-AI Interaction</span>
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Iterative Concept Testing & Expert Review</span>
           </div>
 
-          <div className="space-y-3 mt-3 text-base text-zinc-300">
-            <p>
+          <div className="space-y-3 mt-3">
+            <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
               Architected the interaction model for a novel TV-based AI companion. By applying Human Factors principles, I defined a &apos;Trust & System Status&apos; framework that increased customer trust and product usability, ensuring safe and delightful adoption for mass-market audiences.
             </p>
           </div>
@@ -85,20 +85,20 @@ export default function SlingProjectSection() {
 
         {/* Monetization Case Study */}
         <motion.div
-          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-6 md:p-8 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
           variants={fadeInFromRight}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white">The Science of Conversion</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">The Science of Conversion</h4>
 
-          <div className="flex flex-wrap gap-2 mt-3 mb-4">
+          <div className="flex flex-wrap gap-2 mt-4 mb-6">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: 17% Increase in Purchase Conversion on Sling.com</span>
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Sling Web & Mobile</span>
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Mixed-Methods Funnel Analysis & Iterative Redesign</span>
           </div>
 
-          <div className="space-y-3 mt-3 text-base text-zinc-300">
-            <p>
+          <div className="space-y-3 mt-3">
+            <p className="text-base md:text-lg text-zinc-300/90 leading-relaxed">
 Orchestrated the redesign of the end-to-end user acquisition funnel. Identified critical friction points and implemented a design strategy that increased conversion performance on Sling.com by 17%.
             </p>
           </div>
