@@ -78,7 +78,7 @@ export default function AmazonProjectSection() {
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base text-zinc-300">
-Acting as Lead Researcher, I proposed and drove a multi-year research initiative on "Customer Perception of Response Latency" that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+, Echo Show, and Fire TV architecture.
+Acting as Lead Researcher, I proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior. Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+, Echo Show, and Fire TV architecture.
       </p>
     </div>
   </motion.div>
