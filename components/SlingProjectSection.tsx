@@ -67,7 +67,7 @@ export default function SlingProjectSection() {
           variants={fadeInFromLeft}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white">Architecting Trust & Usability in a TV-based GenAI Companion</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white">Architecting Trust in a TV-based GenAI Companion</h4>
           
           <div className="flex flex-wrap gap-2 mt-3 mb-4">
             <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: AI Trust Framework Adoption</span>
@@ -88,17 +88,17 @@ export default function SlingProjectSection() {
           variants={fadeInFromRight}
           whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white">The Science of Conversion (+17% Lift)</h4>
+          <h4 className="text-lg md:text-xl font-bold text-white">The Science of Conversion</h4>
 
           <div className="flex flex-wrap gap-2 mt-3 mb-4">
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: +17% Conversion</span>
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Growth Strategy</span>
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Mixed-Methods Funnel Analysis</span>
+            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: 17% Increase in Purchase Conversion on Sling.com</span>
+            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Sling Web & Mobile</span>
+            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Mixed-Methods Funnel Analysis & Iterative Redesign</span>
           </div>
 
           <div className="space-y-3 mt-3 text-base text-zinc-300">
             <p>
-              Orchestrated a data-backed redesign of the acquisition funnel. By triangulating behavioral drop-off points with qualitative friction analysis, I drove a design strategy that unlocked significant revenue growth while protecting long-term brand integrity.
+Orchestrated the redesign of the end-to-end user acquisition funnel. Identified critical friction points and implemented a design strategy that increased conversion performance on Sling.com by 17%.
             </p>
           </div>
         </motion.div>
