@@ -11,11 +11,11 @@ export default function HarvardProjectSection() {
 
   return (
     <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
-      <div id="harvard" className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12">
+      <div id="harvard" className="absolute -top-12 left-1/2 transform -translate-x-1/2">
         <LogoBadge
           logoSrc="/assets/harvard-logo.png"
           alt="Harvard Logo"
-          className="w-32 md:w-60 h-auto opacity-100"
+          className="w-48 md:w-96 h-auto opacity-100"
         />
       </div>
 
