@@ -33,14 +33,14 @@ export default function MercedesProjectSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="relative w-full rounded-xl overflow-hidden shadow-2xl h-auto aspect-video md:h-full md:aspect-auto mb-12 md:mb-0">
+        <motion.div variants={fadeInFromRight} className="relative w-full rounded-xl overflow-hidden shadow-2xl aspect-video md:aspect-auto md:h-full mb-12 md:mb-0">
           <video
             src="/assets/drive.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover absolute inset-0"
           />
         </motion.div>
       </motion.div>
