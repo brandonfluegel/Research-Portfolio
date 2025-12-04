@@ -60,7 +60,7 @@ export default function NASAProjectSection() {
             </motion.div>
           </motion.div>
           <span className="mt-3 text-center text-sm font-medium text-black">
-            Used VR to assess performance simulated medical procedures.
+            Used VR to assess performance in simulated medical tasks
           </span>
         </motion.div>
       </motion.div>
