@@ -24,25 +24,25 @@ export default function AmazonProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Multimodal AI & Latency Strategy</h3>
+        <motion.div variants={fadeInFromLeft} className="flex flex-col justify-center h-full space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-white">Multimodal AI & Latency</h3>
           <p className="text-base text-zinc-200 leading-loose">
-            During 4.5 years in the Devices Design group, I delivered actionable insights that led to 100+ design iterations across Alexa AI, Echo Show, Echo Hub, and Fire TV. My largest impact was a multi-year study that identified a $1.3B opportunity by optimizing Alexa’s response latency.
+            In 4.5 years in the Devices Design Group, I delivered actionable insights that led to 100+ design iterations across Alexa AI, Echo Show, Echo Hub, and Fire TV. My largest impact was a multi-year study that identified a $1.3B opportunity by optimizing Alexa’s response latency.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-12 md:mb-0">
+        <motion.div variants={fadeInFromRight} className="flex flex-col justify-center h-full w-full mb-12 md:mb-0">
           <video
             src="/assets/fnirs.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="rounded-xl object-cover w-full shadow-xl hover:scale-105 transition-transform duration-500"
+            className="w-full h-auto rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
           />
-          <span className="mt-3 text-center text-sm font-medium text-white">Functional Brain Imaging During TV Search</span>
+          <span className="mt-4 text-center text-sm font-medium text-white">Functional Brain Imaging During TV Search</span>
         </motion.div>
       </motion.div>
 
@@ -100,7 +100,7 @@ export default function AmazonProjectSection() {
     </div>
     <div className="space-y-3 mt-3">
       <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-        Combined neuroimaging (fNIRS) with task-based moderated evaluation to identify the neurological &apos;cost&apos; of visually complex UI. My framework guided the Fire TV Home iterative redesign, significantly reducing time-to-content for millions of viewers.
+        Combined neuroimaging (fNIRS) with task-based moderated evaluation to identify the neurological &apos;cost&apos; of navigation and content search in UI prototypes of varying complexity. My framework guided the Fire TV Home iterative redesign, significantly reducing time-to-content for millions of viewers.
       </p>
     </div>
   </motion.div>

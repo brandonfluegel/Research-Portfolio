@@ -26,21 +26,21 @@ export default function MercedesProjectSection() {
         viewport={{ once: true }}
         className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl h-full flex flex-col justify-center">
+        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl h-full">
           <h3 className="text-2xl md:text-3xl font-bold text-white"> Boosting Driver Trust in Autonomous Vehicles</h3>
           <p className="text-base text-zinc-200 leading-loose">
             Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="h-full w-full rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md shadow-2xl overflow-hidden">
+        <motion.div variants={fadeInFromRight} className="relative h-full w-full rounded-xl overflow-hidden shadow-2xl mb-12 md:mb-0">
           <video
             src="/assets/drive.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </motion.div>
       </motion.div>

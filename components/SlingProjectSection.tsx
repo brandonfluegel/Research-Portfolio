@@ -40,7 +40,7 @@ export default function SlingProjectSection() {
             className="rounded-xl object-cover w-full h-auto shadow-xl hover:scale-105 transition-transform duration-500"
           />
           <span className="mt-3 text-center text-sm font-medium text-zinc-400 block">
-            Led the 2025 Product & Design workshop to explore the intersection of UX, AI, and customer delight. Generated 50+ concepts that are now being triaged into our 2026 product roadmap.
+            Led the 2025 Product & Design workshop to explore the intersection of UX, AI, and customer delight. Generated 50+ concepts that are being triaged into our 2026 product roadmap.
           </span>
         </motion.div>
       </motion.div>
