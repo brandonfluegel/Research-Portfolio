@@ -20,7 +20,7 @@ export default function SlingProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
           <h3 className="text-2xl md:text-3xl font-bold text-white">Product Leadership & Human-AI Strategy</h3>
           <p className="text-zinc-200 leading-relaxed">
-            Reporting directly to the VP of Product, I was recruited to build and lead the Product Research function.
+            Reporting directly to the VP of Product, I was recruited to build and lead the Product Research function at Sling.
           </p>
           <p className="text-zinc-200 leading-relaxed mt-4">
             I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and long-term subscriber retention.
@@ -40,7 +40,7 @@ export default function SlingProjectSection() {
             className="rounded-xl object-cover w-full h-auto shadow-xl hover:scale-105 transition-transform duration-500"
           />
           <span className="mt-3 text-center text-sm font-medium text-zinc-400 block">
-            Led a Product & Design workshop to explore the intersection of UX, AI, and customer delight. Generated 50+ concepts that are now being triaged into our 2026 product roadmap.
+            Led the 2025 Product & Design workshop to explore the intersection of UX, AI, and customer delight. Generated 50+ concepts that are now being triaged into our 2026 product roadmap.
           </span>
         </motion.div>
       </motion.div>
