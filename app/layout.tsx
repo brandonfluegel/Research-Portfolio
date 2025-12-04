@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import GradientBackground from "@/components/GradientBackground";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -9,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Brandon Fluegel, Ph.D.",
   description:
-    "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, Mercedes-Benz, and Harvard.",
+    "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, and Mercedes-Benz.",
   keywords: [
     "UX Research",
     "Human Factors",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
     description:
-      "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, Mercedes-Benz, and Harvard.",
+      "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, and Mercedes-Benz.",
     images: [
       {
         url: "/assets/talk.jpg",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
     description:
-      "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, Mercedes-Benz, and Harvard.",
+      "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, and Mercedes-Benz.",
     images: ["/assets/talk.jpg"],
   },
 };
@@ -53,6 +54,7 @@ export default function RootLayout({
       <body className="text-white cursor-none overflow-x-hidden">
         <GradientBackground />
         {children}
+        <Analytics />
       </body>
     </html>
   );
