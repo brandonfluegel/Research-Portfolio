@@ -35,12 +35,9 @@ export default function NASAProjectSection() {
         className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Reducing Cognitive Load on Lunar Gateway</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Reducing Astronaut Cognitive Load</h3>
           <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-            Led four rounds of usability testing with NASA astronauts, informing
-            iterative design improvements of medical workstation prototypes for
-            Gateway, an upcoming lunar-orbiting station. Increased astronaut task
-            efficiency by <strong>30%</strong>.
+            Led Human Factors validation for next-gen medical workstations on the Lunar Gateway (Orbiting Space Station). Leveraged cognitive load analysis to redesign workflows, reducing time-on-task by <strong>30%</strong> while minimizing critical operator errors.
           </p>
         </motion.div>
 
@@ -63,7 +60,7 @@ export default function NASAProjectSection() {
             </motion.div>
           </motion.div>
           <span className="mt-3 text-center text-sm font-medium text-black">
-            Used VR to assess performance in reaching and movement tasks.
+            Used VR to assess performance simulated medical procedures.
           </span>
         </motion.div>
       </motion.div>
