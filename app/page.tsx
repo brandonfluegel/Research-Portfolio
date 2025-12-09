@@ -4,6 +4,7 @@ import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import TrustNav from "@/components/TrustNav"; // <--- NEW IMPORT
 import SlingProjectSection from "@/components/SlingProjectSection";
 import AmazonProjectSection from "@/components/AmazonProjectSection";
 import UberProjectSection from "@/components/UberProjectSection";
@@ -25,7 +26,7 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[85vh] pt-44 pb-12 md:pt-0 md:pb-0 px-4">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[75vh] pt-44 pb-12 md:pt-0 md:pb-0 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
@@ -53,29 +54,36 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Project Sections */}
+      {/* NEW: Trust Navigation Bar */}
+      <TrustNav />
+
+      {/* Project Sections with IDs for Navigation */}
       <section className="max-w-6xl mx-auto mt-4">
-        <div className="mb-12">
+        
+        <div id="sling-section" className="mb-12">
           <SlingProjectSection />
         </div>
 
-        <AmazonProjectSection />
+        <div id="amazon-section">
+          <AmazonProjectSection />
+        </div>
 
-        <div className="my-12">
+        <div id="uber-section" className="my-12">
           <UberProjectSection />
         </div>
 
-        <div className="my-12">
+        <div id="nasa-section" className="my-12">
           <NASAProjectSection />
         </div>
 
-        <div className="my-12">
+        <div id="mercedes-section" className="my-12">
           <MercedesProjectSection />
         </div>
 
-        <div className="my-12">
+        <div id="harvard-section" className="my-12">
           <HarvardProjectSection />
         </div>
+      
       </section>
 
       <div className="mt-20">
