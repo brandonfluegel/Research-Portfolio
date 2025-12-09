@@ -9,35 +9,35 @@ const companies = [
     logo: "/assets/Sling-logo.png", 
     id: "sling-section", 
     width: 80, 
-    mobileWidth: 70 
+    mobileWidth: 75 
   },
   { 
     name: "Amazon", 
     logo: "/assets/amazon-logo.png", 
     id: "amazon-section", 
     width: 90, 
-    mobileWidth: 75 
+    mobileWidth: 80 
   },
   { 
     name: "Uber", 
     logo: "/assets/uber-logo.png", 
     id: "uber-section", 
     width: 60, 
-    mobileWidth: 45 
+    mobileWidth: 55 // Boosted from 45
   },
   { 
     name: "NASA", 
     logo: "/assets/nasa-logo.png", 
     id: "nasa-section", 
-    width: 80, // Boosted for visibility
-    mobileWidth: 65 
+    width: 80, 
+    mobileWidth: 70 
   },
   { 
     name: "Mercedes", 
     logo: "/assets/benz.png", 
     id: "mercedes-section", 
-    width: 85, // SIGNIFICANT boost because the thin lines disappear
-    mobileWidth: 60 
+    width: 85, 
+    mobileWidth: 65 // Boosted from 60
   }
 ];
 
@@ -57,9 +57,11 @@ export default function TrustNav() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.8 }}
-      className="w-full max-w-4xl mx-auto px-6 mb-24 mt-12"
+      // FIX 1: Reduced top margin (mt-8 instead of mt-12 on mobile)
+      className="w-full max-w-4xl mx-auto px-6 mb-16 mt-8 md:mt-12"
     >
-      <div className="flex flex-wrap justify-center md:justify-between items-center gap-x-12 gap-y-10">
+      {/* FIX 2: Reduced gap-y (gap-y-6 instead of gap-y-10) for tighter rows */}
+      <div className="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-6 md:gap-x-12 md:gap-y-10">
         {companies.map((company) => (
           <a
             key={company.name}
@@ -90,7 +92,7 @@ export default function TrustNav() {
                   width={company.mobileWidth} 
                   height={45}
                   className="object-contain filter brightness-0 invert"
-                  style={{ width: 'auto', height: 'auto', maxHeight: '40px' }} 
+                  style={{ width: 'auto', height: 'auto', maxHeight: '45px' }} 
                 />
               </div>
 
@@ -100,7 +102,7 @@ export default function TrustNav() {
       </div>
       
       {/* Separator Line */}
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mt-16"></div>
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mt-12 md:mt-16"></div>
     </motion.nav>
   );
 }
