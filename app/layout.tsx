@@ -8,9 +8,19 @@ import GradientBackground from "@/components/GradientBackground";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  // FIX 1: Set the Base URL to resolve the build warning and help Google indexing
+  metadataBase: new URL('https://humanfactors.pro'),
+
   title: "Brandon Fluegel, Ph.D.",
   description:
     "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, and Mercedes-Benz.",
+  
+  // FIX 2: Point the favicon to your cowboy image
+  icons: {
+    icon: '/assets/cowboy.jpg',
+    apple: '/assets/cowboy.jpg',
+  },
+
   keywords: [
     "UX Research",
     "Human Factors",
@@ -59,4 +69,3 @@ export default function RootLayout({
     </html>
   );
 }
-
