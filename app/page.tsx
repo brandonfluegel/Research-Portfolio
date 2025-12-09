@@ -4,13 +4,13 @@ import Cursor from "@/components/Cursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import TrustNav from "@/components/TrustNav"; // <--- NEW IMPORT
+import TrustNav from "@/components/TrustNav"; 
 import SlingProjectSection from "@/components/SlingProjectSection";
 import AmazonProjectSection from "@/components/AmazonProjectSection";
 import UberProjectSection from "@/components/UberProjectSection";
 import NASAProjectSection from "@/components/NASAProjectSection";
 import MercedesProjectSection from "@/components/MercedesProjectSection";
-import HarvardProjectSection from "@/components/HarvardProjectSection";
+// import HarvardProjectSection from "@/components/HarvardProjectSection"; 
 import ScrollIndicator from "@/components/ScrollIndicator";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
 import { motion } from "framer-motion";
@@ -26,7 +26,7 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[75vh] pt-44 pb-12 md:pt-0 md:pb-0 px-4">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[65vh] pt-44 pb-12 md:pt-40 md:pb-0 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <motion.div
             variants={fadeInUp}
@@ -37,13 +37,15 @@ export default function Home() {
             Human Factors PhD <br /> Designing the Future of UX + AI
           </motion.div>
 
+          {/* UPDATED: Forced Single Line */}
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.4 }}
-            className="font-medium text-zinc-400 text-center px-4 text-[clamp(1.1rem,2vw,1.5rem)] mt-4 max-w-sm md:max-w-2xl mx-auto"
-            style={{ textWrap: "balance" }}
+            // 1. Removed 'max-w-sm' (which squeezed it).
+            // 2. Added 'md:whitespace-nowrap' to force single line on desktop.
+            className="font-medium text-zinc-400 text-center px-4 text-[clamp(1.1rem,2vw,1.5rem)] mt-4 w-full md:max-w-4xl mx-auto md:whitespace-nowrap"
           >
             Translating cognitive science into monetizable product strategy
           </motion.div>
@@ -54,10 +56,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW: Trust Navigation Bar */}
+      {/* Trust Navigation Bar */}
       <TrustNav />
 
-      {/* Project Sections with IDs for Navigation */}
+      {/* Project Sections */}
       <section className="max-w-6xl mx-auto mt-4">
         
         <div id="sling-section" className="mb-12">
@@ -78,10 +80,6 @@ export default function Home() {
 
         <div id="mercedes-section" className="my-12">
           <MercedesProjectSection />
-        </div>
-
-        <div id="harvard-section" className="my-12">
-          <HarvardProjectSection />
         </div>
       
       </section>

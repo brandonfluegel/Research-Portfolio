@@ -16,11 +16,12 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(true); // Default to true to prevent flash
+  // Default to true ensures Mobile doesn't see the "Center" flash on load
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      // 600px is roughly the height of the Hero section
+      // 600px is roughly the Hero section height
       setIsScrolled(window.scrollY > 600);
     };
 
@@ -28,7 +29,7 @@ export default function Navbar() {
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
+    // Run immediately to set correct state
     handleResize();
 
     window.addEventListener("scroll", handleScroll);
@@ -51,17 +52,22 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   };
 
-  // Logic: 
-  // If Mobile -> Always Left (0%)
-  // If Desktop -> If Scrolled ? Left (0%) : Center (50%)
+  // LOGIC: 
+  // Mobile: ALWAYS Left (0%)
+  // Desktop: Center (50%) -> Left (0%) on scroll
   const leftPosition = isMobile ? "0%" : (isScrolled ? "0%" : "50%");
   const xTransform = isMobile ? "0%" : (isScrolled ? "0%" : "-50%");
 
+  // BACKGROUND LOGIC:
+  // Mobile: Always Black/90 (Classic look)
+  // Desktop: Transparent -> Black/90 on scroll
+  const navBackground = isMobile 
+    ? "bg-black/90 backdrop-blur-md py-3" 
+    : (isScrolled ? "bg-black/90 backdrop-blur-md py-3 shadow-md" : "bg-transparent py-6");
+
   return (
     <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-black/90 backdrop-blur-md py-3 shadow-md" : "bg-transparent py-6"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navBackground}`}
     >
       <div className="max-w-6xl mx-auto px-6 relative flex items-center justify-between h-14">
         
@@ -75,6 +81,7 @@ export default function Navbar() {
             left: leftPosition,
             x: xTransform,
           }}
+          // Only animate heavily on Desktop to prevent mobile jitters
           transition={{ type: "spring", stiffness: 45, damping: 20 }}
           style={{ position: 'absolute' }}
         >
@@ -109,6 +116,7 @@ export default function Navbar() {
               className="text-sm font-medium text-zinc-300 hover:text-white transition-colors uppercase tracking-wider"
               initial={{ opacity: 0 }}
               animate={{ 
+                // Force visible if Scrolled OR if Mobile (though hidden via CSS on mobile)
                 opacity: isScrolled ? 1 : 0,
                 pointerEvents: isScrolled ? "auto" : "none" 
               }}
