@@ -9,35 +9,35 @@ const companies = [
     logo: "/assets/Sling-logo.png", 
     id: "sling-section", 
     width: 80, 
-    mobileWidth: 75 
+    mobileWidth: 70 // Standard Rectangle
   },
   { 
     name: "Amazon", 
     logo: "/assets/amazon-logo.png", 
     id: "amazon-section", 
     width: 90, 
-    mobileWidth: 80 
+    mobileWidth: 85 // Large Rectangle (Anchor)
   },
   { 
     name: "Uber", 
     logo: "/assets/uber-logo.png", 
     id: "uber-section", 
-    width: 60, 
-    mobileWidth: 55 // Boosted from 45
+    width: 65, 
+    mobileWidth: 60 // Boosted slightly (was 55)
   },
   { 
     name: "NASA", 
     logo: "/assets/nasa-logo.png", 
     id: "nasa-section", 
-    width: 80, 
-    mobileWidth: 70 
+    width: 90, // Massive boost (was 80)
+    mobileWidth: 85 // Massive boost (was 70) - Round shapes need to be bigger
   },
   { 
     name: "Mercedes", 
     logo: "/assets/benz.png", 
     id: "mercedes-section", 
-    width: 85, 
-    mobileWidth: 65 // Boosted from 60
+    width: 90, // Massive boost (was 85)
+    mobileWidth: 80 // Massive boost (was 65) - Thin lines need extra size
   }
 ];
 
@@ -57,11 +57,14 @@ export default function TrustNav() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.6, duration: 0.8 }}
-      // FIX 1: Reduced top margin (mt-8 instead of mt-12 on mobile)
-      className="w-full max-w-4xl mx-auto px-6 mb-16 mt-8 md:mt-12"
+      className="w-full max-w-4xl mx-auto px-6 mb-16 mt-6 md:mt-12"
     >
-      {/* FIX 2: Reduced gap-y (gap-y-6 instead of gap-y-10) for tighter rows */}
-      <div className="flex flex-wrap justify-center md:justify-between items-center gap-x-8 gap-y-6 md:gap-x-12 md:gap-y-10">
+      {/* Layout Logic:
+         - 'gap-x-12': Increases horizontal space so logos don't crowd each other.
+         - 'gap-y-6': Keeps the vertical rows tight so they feel like one group.
+         - 'items-center': Vertically centers the logos in their rows.
+      */}
+      <div className="flex flex-wrap justify-center md:justify-between items-center gap-x-10 gap-y-8 md:gap-x-12 md:gap-y-10">
         {companies.map((company) => (
           <a
             key={company.name}
@@ -78,9 +81,9 @@ export default function TrustNav() {
                   src={company.logo}
                   alt={`${company.name} logo`}
                   width={company.width} 
-                  height={55}
+                  height={60}
                   className="object-contain filter brightness-0 invert"
-                  style={{ width: 'auto', height: 'auto', maxHeight: '55px' }} 
+                  style={{ width: 'auto', height: 'auto', maxHeight: '60px' }} 
                 />
               </div>
 
@@ -90,9 +93,9 @@ export default function TrustNav() {
                   src={company.logo}
                   alt={`${company.name} logo`}
                   width={company.mobileWidth} 
-                  height={45}
+                  height={50}
                   className="object-contain filter brightness-0 invert"
-                  style={{ width: 'auto', height: 'auto', maxHeight: '45px' }} 
+                  style={{ width: 'auto', height: 'auto', maxHeight: '50px' }} 
                 />
               </div>
 
