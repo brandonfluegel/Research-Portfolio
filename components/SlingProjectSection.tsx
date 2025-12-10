@@ -94,7 +94,7 @@ Architected the multi-turn interaction model for an LLM-powered agentic TV assis
           </div>
           <h4 className="text-2xl font-bold text-white mb-4">Boosting Subscriber Conversion</h4>
           <p className="leading-relaxed text-zinc-300 text-sm">
-             Orchestrated the redesign of the user acquisition funnel. Identified critical friction points and implemented a design strategy that increased signup performance.
+Directed research to identify specific friction points where users were abandoning the subscription signup flow. Partnered with leadership from Product, Engineering, and Design to streamline the path to purchase, directly driving a 17% increase in purchase confidence on Sling.com.
           </p>
         </motion.div>
       </motion.div>
