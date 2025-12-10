@@ -38,7 +38,7 @@ export default function SlingProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Product Leadership & Human-AI Strategy</h3>
           <p className="text-lg text-zinc-200 leading-relaxed">
-            Reporting directly to the VP of Product, I lead the Research function at Sling. I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and retention.
+Own the strategic research roadmap for monetization, retention, and Human-AI interaction, reporting directly to the VP of Product.
           </p>
         </motion.div>
 
