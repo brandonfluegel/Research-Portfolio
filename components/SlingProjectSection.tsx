@@ -1,108 +1,100 @@
 "use client";
 
 import { motion } from "framer-motion";
+import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
+import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function SlingProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
-      {/* Overview Section */}
+    <section className="relative w-full py-16 md:py-24" ref={ref}>
+      
+      {/* HEADER ROW */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-b border-white/10 pb-6"
+      >
+          <LogoBadge 
+            logoSrc="/assets/Sling-logo.png" 
+            alt="Sling" 
+            className="w-16 md:w-20 h-auto opacity-100 brightness-0 invert" 
+          />
+          <div className="hidden sm:block h-6 w-[1px] bg-white/20"></div>
+          <span className="text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest">Product Strategy Lead</span>
+      </motion.div>
+
+      {/* CONTENT GRID */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Product Leadership & Human-AI Strategy</h3>
-          <p className="text-zinc-200 leading-relaxed">
-            Reporting directly to the VP of Product, I was recruited to lead the Product Research function at Sling.
+        <motion.div variants={fadeInFromLeft} className="space-y-8">
+          <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Product Leadership & Human-AI Strategy</h3>
+          <p className="text-lg text-zinc-200 leading-relaxed">
+Own the strategic research roadmap for monetization, retention, and Human-AI interaction, reporting directly to the VP of Product.
           </p>
-          <p className="text-zinc-200 leading-relaxed mt-4">
-            I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and long-term subscriber retention.
-          </p>
-          <div className="flex flex-wrap gap-2 mt-2">
-          </div>
         </motion.div>
 
-        {/* Placeholder for Visual - You can replace this src with a relevant image or video later */}
-        <motion.div variants={fadeInFromRight} className="flex flex-col items-center mb-12 md:mb-0">
-          <video
-            src="/assets/sling-workshop.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="rounded-xl object-cover w-full h-auto shadow-xl hover:scale-105 transition-transform duration-500"
-          />
-          <span className="mt-3 text-center text-sm font-medium text-white">
-            Led the 2025 Product & Design workshop to explore the intersection of UX, AI, and customer delight. Generated 50+ concepts that are being triaged into our 2026 product roadmap.
+        <motion.div variants={fadeInFromRight} className="relative group w-full">
+          <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl aspect-video w-full">
+            <video
+              src="/assets/sling-workshop.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">
+            Led the 2025 Product & Design AI Workshop
           </span>
         </motion.div>
       </motion.div>
 
-      {/* Case Studies Section */}
-      <motion.h3
-        variants={fadeInUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        className="text-2xl md:text-3xl font-bold text-left mt-16 md:mt-24 mb-6 text-white"
-      >
-        Strategic Initiatives
-      </motion.h3>
-
+      {/* OUTCOMES GRID */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16"
       >
-        {/* GenAI Case Study */}
         <motion.div
-          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+          className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300"
           variants={fadeInFromLeft}
-          whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Architecting Trust in an AI Companion</h4>
-          
-          <div className="flex flex-wrap gap-2 mt-4 mb-6">
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: AI Trust Framework Adoption</span>
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Human-AI Interaction</span>
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Iterative Concept Testing & Expert Review</span>
+          <div className="flex flex-wrap gap-3 mb-6">
+            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">GenAI</span>
           </div>
-
-          <div className="space-y-3 mt-3">
-            <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-              Architected the interaction model for a novel TV-based AI companion. By applying Human Factors principles, I defined a &apos;Trust & System Status&apos; framework that increased customer trust and product usability, ensuring safe and delightful adoption for mass-market audiences.
-            </p>
-          </div>
+          <h4 className="text-2xl font-bold text-white mb-4">Architecting Trust in AI</h4>
+          <p className="leading-relaxed text-zinc-300 text-sm">
+Architected the multi-turn interaction model for an LLM-powered agentic TV assistant. Defined response latency targets and addressed response ambiguity challenges through the creation of a "Trust and System Status" framework, ensuring users understand agent intent during complex tasks.
+          </p>
         </motion.div>
 
-        {/* Monetization Case Study */}
         <motion.div
-          className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
+          className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300"
           variants={fadeInFromRight}
-          whileHover={{ scale: 1.03, y: -4 }}
         >
-          <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Boosting Sling Subscriber Conversion</h4>
-
-          <div className="flex flex-wrap gap-2 mt-4 mb-6">
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Outcome: 17% Increase in Purchase Conversion on Sling.com</span>
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Sling Web & Mobile</span>
-            <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Mixed-Methods Funnel Analysis & Iterative Redesign</span>
+          <div className="flex justify-between items-start mb-6">
+             <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">Growth</span>
+             <div className="text-right">
+                <div className="text-3xl font-bold text-white tracking-tighter">+17%</div>
+                <div className="text-[10px] text-zinc-400 uppercase tracking-widest">Conversion Lift</div>
+             </div>
           </div>
-
-          <div className="space-y-3 mt-3">
-            <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-Orchestrated the redesign of the end-to-end user acquisition funnel. Identified critical friction points and implemented a design strategy that increased conversion performance on Sling.com by 17%.
-            </p>
-          </div>
+          <h4 className="text-2xl font-bold text-white mb-4">Boosting Subscriber Confidence</h4>
+          <p className="leading-relaxed text-zinc-300 text-sm">
+Directed research to identify specific friction points where users were abandoning the subscription signup flow. Partnered with leadership from Product, Engineering, and Design to streamline the path to purchase, directly driving a 17% increase in purchase confidence on Sling.com.
+          </p>
         </motion.div>
       </motion.div>
     </section>

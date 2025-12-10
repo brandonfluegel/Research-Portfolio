@@ -10,13 +10,17 @@ interface LogoBadgeProps {
 
 export default function LogoBadge({ logoSrc, alt, className = "" }: LogoBadgeProps) {
   return (
-    <div className={`absolute left-1/2 transform -translate-x-1/2 pointer-events-none select-none ${className}`}>
+    // FIX: Removed 'absolute left-1/2 transform -translate-x-1/2'
+    // Added 'relative' so it respects Flexbox/Grid parents.
+    <div className={`relative select-none ${className}`}>
       <Image
         src={logoSrc}
         alt={alt}
         width={400}
         height={400}
-        className="object-contain w-full h-auto opacity-150"
+        // FIX: Removed opacity-150 (invalid CSS, max is 100). 
+        // We let the parent control opacity/filter via className.
+        className="object-contain w-full h-auto"
       />
     </div>
   );

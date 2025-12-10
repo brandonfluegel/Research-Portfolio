@@ -3,108 +3,105 @@
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-import { fadeInFromLeft, fadeInFromRight, fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
+import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function MercedesProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
-      <div id="mercedes" className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-50 md:-top-20">
-        <LogoBadge
-          logoSrc="/assets/benz.png"
-          alt="Mercedes-Benz Logo"
-          className="w-32 md:w-60 h-auto opacity-100"
-        />
-      </div>
+    <section className="relative w-full py-16 md:py-24" ref={ref}>
+      
+      {/* HEADER ROW */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-b border-white/10 pb-6"
+      >
+          <LogoBadge 
+            logoSrc="/assets/benz.png" 
+            alt="Mercedes" 
+            className="w-12 md:w-16 h-auto opacity-100 brightness-0 invert" 
+          />
+          <div className="hidden sm:block h-6 w-[1px] bg-white/20"></div>
+          <span className="text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest">UX Researcher</span>
+      </motion.div>
 
-      {/* Overview Section */}
+      {/* CONTENT GRID */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl h-full">
-          <h3 className="text-2xl md:text-3xl font-bold text-white"> Boosting Driver Trust in Autonomous Vehicles</h3>
-          <p className="text-base text-zinc-200 leading-loose">
-            Conducted foundational research on passenger experiences in semi-autonomous vehicles and evaluated ambient noise levels in newly developed vehicle cabins. My findings guided critical improvements that enhanced passenger trust, comfort, and luxury perception.
+        <motion.div variants={fadeInFromLeft} className="space-y-8">
+          <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Trust in Semi-Autonomous Driving</h3>
+          
+          <p className="text-lg text-zinc-200 leading-relaxed border-l-2 border-white/20 pl-6 my-6">
+            &quot;How does the car communicate intent?&quot; <br/>
+            <span className="text-base text-zinc-400 mt-2 block font-normal leading-relaxed">
+            Conducted foundational research on passenger experiences in L2 vehicles. Findings guided critical improvements to the HMI (Human Machine Interface) that enhanced trust during automated lane changes.
+            </span>
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="relative w-full rounded-xl overflow-hidden shadow-2xl aspect-video md:aspect-auto md:h-full mb-12 md:mb-0">
-          <video
-            src="/assets/drive.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover absolute inset-0"
-          />
+        <motion.div variants={fadeInFromRight} className="relative group w-full">
+           <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl aspect-video w-full">
+              <video
+                src="/assets/drive.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="object-cover w-full h-full"
+              />
+           </div>
         </motion.div>
       </motion.div>
 
-      {/* Case Studies Section */}
-<motion.h3
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="text-2xl md:text-3xl font-bold text-left mt-16 md:mt-24 mb-6 text-white"
->
-  Case Studies
-</motion.h3>
+      {/* OUTCOMES GRID */}
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16"
+      >
+        <motion.div
+          className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300"
+          variants={fadeInFromLeft}
+        >
+          <div className="flex justify-between items-start mb-6">
+             <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">HMI Design</span>
+             <div className="text-right">
+                <div className="text-3xl font-bold text-white tracking-tighter">+24%</div>
+                <div className="text-[10px] text-zinc-400 uppercase tracking-widest">Trust Score</div>
+             </div>
+          </div>
+          <h4 className="text-2xl font-bold text-white mb-2">Autonomous Handoffs</h4>
+          <p className="text-zinc-300 text-sm leading-relaxed">
+             Defined Alert Modality standards for autonomous handovers, directly influencing internal design guidelines for L2 vehicles. 
+          </p>
+        </motion.div>
 
-<motion.div
-  variants={staggerContainer}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="grid grid-cols-1 md:grid-cols-2 gap-8"
->
-  {/* Trust Case Study */}
-  <motion.div
-    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
-    variants={fadeInFromLeft}
-    whileHover={{ scale: 1.03, y: -4 }}
-  >
-    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Increasing Driver Trust in Autonomous Handoffs</h4>
-
-    <div className="flex flex-wrap gap-2 mt-4 mb-6">
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: +24% Increase in Driver Trust Ratings</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Autonomous Driving Alert Systems</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Human-in-the-Loop Driving Simulation</span>
-    </div>
-
-    <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-Led high-fidelity simulator studies to define Alert Modality standards for autonomous handovers, directly influencing internal design guidelines for L2 vehicles. Identified interaction strategies that optimized driver situational awareness, increasing average trust ratings by 24% during critical control transitions.      </p>
-    </div>
-  </motion.div>
-
-  {/* Acoustic Comfort Case Study */}
-  <motion.div
-    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
-    variants={fadeInFromRight}
-    whileHover={{ scale: 1.03, y: -4 }}
-  >
-    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Psychoacoustics of Luxury</h4>
-
-    <div className="flex flex-wrap gap-2 mt-4 mb-6">
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Impact: 15% Reduction in Perceived Cabin Noise</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Domain: Human Factors & Auditory Perception</span>
-      <span className="px-2 py-1 text-xs font-medium bg-white/10 border border-white/20 rounded-md text-white">Method: Survey & Acoustic Analysis</span>
-    </div>
-
-    <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. These insights drove new cabin insulation strategies, significantly reducing noise intrusion and bridging the gap between engineering metrics and user comfort.      </p>
-    </div>
-  </motion.div>
-</motion.div>
-
+        <motion.div
+          className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300"
+          variants={fadeInFromRight}
+        >
+          <div className="flex justify-between items-start mb-6">
+             <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">Psychoacoustics</span>
+             <div className="text-right">
+                <div className="text-3xl font-bold text-white tracking-tighter">-15%</div>
+                <div className="text-[10px] text-zinc-400 uppercase tracking-widest">Perceived Noise</div>
+             </div>
+          </div>
+          <h4 className="text-2xl font-bold text-white mb-2">The Sound of Luxury</h4>
+          <p className="text-zinc-300 text-sm leading-relaxed">
+             Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception.
+          </p>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
-

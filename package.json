@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
-    "framer-motion": "^12.4.10",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.25",
     "lucide-react": "^0.477.0",
     "next": "15.2.6",
     "next-nprogress-bar": "^2.4.7",
@@ -18,7 +19,8 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-parallax-tilt": "^1.7.286",
-    "swiper": "^11.2.5"
+    "swiper": "^11.2.5",
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

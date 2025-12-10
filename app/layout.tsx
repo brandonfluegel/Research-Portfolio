@@ -1,26 +1,22 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google"; // Added JetBrains Mono
 import { Analytics } from "@vercel/analytics/react";
 import GradientBackground from "@/components/GradientBackground";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
 
 export const metadata: Metadata = {
-  // FIX 1: Set the Base URL to resolve the build warning and help Google indexing
   metadataBase: new URL('https://humanfactors.pro'),
-
   title: "Brandon Fluegel, Ph.D.",
   description:
     "Welcome to my UX & Human Factors research portfolio, showcasing projects completed at Amazon, Uber, NASA, and Mercedes-Benz.",
-  
-  // FIX 2: Point the favicon to your cowboy image
   icons: {
     icon: '/assets/cowboy.jpg',
     apple: '/assets/cowboy.jpg',
   },
-
   keywords: [
     "UX Research",
     "Human Factors",
@@ -60,8 +56,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
-      <body className="text-white cursor-none overflow-x-hidden">
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+      <body className="text-white cursor-none overflow-x-hidden font-sans">
         <GradientBackground />
         {children}
         <Analytics />

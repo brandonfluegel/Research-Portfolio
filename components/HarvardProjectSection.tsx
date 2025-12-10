@@ -25,12 +25,12 @@ export default function HarvardProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-start"
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
+        <motion.div variants={fadeInFromLeft} className="space-y-6 rounded-xl bg-black/40 border border-white/5 backdrop-blur-xl p-8 md:p-10 shadow-[0_0_50px_-12px_rgba(255,255,255,0.05)]">
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Neuroscience Research</h3>
-          <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-            Conducted research using advanced brain imaging techniques (fMRI, EEG) to evaluate the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy for major depression. Identified brain activity patterns correlating with symptom reduction, influencing clinical practices and improving patient care.
+          <p className="text-base md:text-lg text-zinc-300/90 leading-[1.8]">
+            Conducted research using advanced brain imaging techniques (fMRI, EEG) to evaluate the effectiveness of transcutaneous vagus nerve stimulation (tVNS) therapy for major depression. Identified brain activity patterns correlating with symptom reduction, influencing clinical practices.
           </p>
         </motion.div>
 
@@ -51,14 +51,11 @@ export default function HarvardProjectSection() {
               />
             </motion.div>
           </motion.div>
-          <span className="mt-3 text-center text-sm font-medium text-zinc-300 block">
+          <span className="mt-3 text-center text-sm font-medium text-zinc-500 block">
             tVNS Device on Patient (correct vs placebo)
           </span>
         </motion.div>
       </motion.div>
-
-
-
     </section>
   );
 }

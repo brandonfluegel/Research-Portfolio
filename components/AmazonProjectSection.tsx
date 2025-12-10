@@ -9,103 +9,116 @@ export default function AmazonProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24" ref={ref}>
-      <div id="amazon" className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12">
-        <LogoBadge
-          logoSrc="/assets/amazon-logo.png"
-          alt="Amazon Logo"
-          className="w-32 md:w-60 h-auto opacity-100"
+    <section className="relative w-full py-16 md:py-24" ref={ref}>
+      
+      {/* 1. HEADER ROW (Full Width) */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-b border-white/10 pb-6"
+      >
+        <LogoBadge 
+          logoSrc="/assets/amazon-logo.png" 
+          alt="Amazon" 
+          className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
         />
-      </div>
+        <div className="hidden sm:block h-6 w-[1px] bg-white/20"></div>
+        <span className="text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest">Devices Design Group</span>
+      </motion.div>
 
-      {/* Overview Section */}
+      {/* 2. CONTENT GRID */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="flex flex-col justify-center h-full space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white">Multimodal AI & Latency</h3>
-          <p className="text-base text-zinc-200 leading-loose">
-            In 4.5 years in the Devices Design Group, I delivered actionable insights that led to 100+ design iterations across Alexa AI, Echo Show, Echo Hub, and Fire TV. My largest impact was a multi-year study that identified a $1.3B opportunity by optimizing Alexa’s response latency.
-          </p>
+        {/* Left Column: Text */}
+        <motion.div variants={fadeInFromLeft} className="flex flex-col justify-center">
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Multimodal AI & Latency</h3>
+          
+          <div className="py-6 border-y border-white/10 my-8">
+            <div className="text-6xl md:text-7xl font-bold text-white tracking-tighter">
+              $1.3B
+            </div>
+            <div className="text-xs md:text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+              Revenue Opportunity Identified
+            </div>
+          </div>
+
+          <p className="text-lg text-zinc-200 leading-relaxed">
+Led end-to-end Human Factors research for high-visibility consumer AI hardware (Echo Show). Directly informed product requirements and engineering roadmaps for the Alexa+ ecosystem, influencing core user experience for 75M+ customers. Received the Amazon Inventor Award for contributions on a novel multimodal interaction pattern.          </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="flex flex-col justify-center h-full w-full mb-12 md:mb-0">
+        {/* Right Column: Image */}
+        <motion.div variants={fadeInFromRight} className="relative group w-full">
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
           <video
             src="/assets/fnirs.mp4"
             autoPlay
             muted
             loop
             playsInline
-            className="w-full h-auto rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500"
+            className="relative w-full h-auto rounded-xl shadow-2xl border border-white/10 aspect-video object-cover"
           />
-          <span className="mt-4 text-center text-sm font-medium text-white">Functional Brain Imaging During TV Search</span>
+          <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">Functional Brain Imaging (fNIRS)</span>
         </motion.div>
       </motion.div>
 
-      {/* Case Studies Section */}
-<motion.h3
-  variants={fadeInUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="text-2xl md:text-3xl font-bold text-left mt-16 md:mt-24 mb-6 text-white"
->
-  Case Studies
-</motion.h3>
+      {/* 3. OUTCOMES */}
+      <motion.h3
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-xl font-medium text-zinc-400 mt-20 mb-8 uppercase tracking-widest border-b border-white/10 pb-4 inline-block"
+      >
+        Selected Outcomes
+      </motion.h3>
 
-<motion.div
-  variants={staggerContainer}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  className="grid grid-cols-1 md:grid-cols-2 gap-8"
->
-  {/* Alexa Latency Case Study */}
-  <motion.div
-    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
-    variants={fadeInFromLeft}
-    whileHover={{ scale: 1.03, y: -4 }}
-  >
-    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Quantifying the Cost of Response Latency</h4>
-    <div className="flex flex-wrap gap-2 mt-4 mb-6">
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: $1.3B Revenue Opportunity</span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Alexa AI </span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Lab-based A/B Testing & Economic Modeling</span>
-    </div>
-    <div className="space-y-3 mt-3">
-      <p className="leading-relaxed text-base md:text-lg text-zinc-300/90">
-        Proposed and drove a multi-year research initiative on &quot;Customer Perception of Response Latency&quot; that identified a $1.3B revenue opportunity by correlating human latency perception with downstream engagement and on-device purchase behavior.
-      </p>
-      <p className="leading-relaxed text-base md:text-lg text-zinc-300/90 mt-4">
-        Established the 3-year performance benchmarks used by Alexa Core Engineering to optimize system latency across Alexa+.
-      </p>
-    </div>
-  </motion.div>
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-8"
+      >
+        <motion.div
+          className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300"
+          variants={fadeInFromLeft}
+        >
+          <div className="flex flex-wrap gap-3 mb-6">
+            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">Strategy</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">Econ Modeling</span>
+          </div>
 
-  {/* TV Interface Design Case Study */}
-  <motion.div
-    className="case-study-container rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl cursor-pointer transition-all duration-300 hover:border-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:-translate-y-1"
-    variants={fadeInFromRight}
-    whileHover={{ scale: 1.03, y: -4 }}
-  >
-    <h4 className="text-lg md:text-xl font-bold text-white mb-4 leading-tight">Reducing Cognitive Load in Content Discovery</h4>
-    <div className="flex flex-wrap gap-2 mt-4 mb-6">
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Impact: 25% Reduction in Content Discovery Time</span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Domain: Fire TV</span>
-      <span className="text-xs font-medium px-2 py-1 bg-white/10 border border-white/20 rounded-md text-white">Method: Eye-Tracking & fNIRS</span>
-    </div>
-    <div className="space-y-3 mt-3">
-      <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-        Combined neuroimaging (fNIRS) with task-based moderated evaluation to identify the neurological &apos;cost&apos; of navigation and content search in UI prototypes of varying complexity. My framework guided the Fire TV Home iterative redesign, significantly reducing time-to-content for millions of viewers.
-      </p>
-    </div>
-  </motion.div>
-</motion.div>
+          <h4 className="text-2xl font-bold text-white mb-4">Quantifying the Cost of Latency</h4>
+          <p className="text-zinc-300 group-hover:text-zinc-100 transition-colors leading-relaxed">
+ Defined the UX roadmap for latency perception thresholds across the Alexa ecosystem. Correlated millisecond-level latency metrics with customer purchase behavior to identify a $1.3B opportunity, establishing the response latency benchmarks now used by Alexa Core Engineering.          </p>
+        </motion.div>
 
+        <motion.div
+          className="group relative rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 p-8 transition-all duration-300"
+          variants={fadeInFromRight}
+        >
+          <div className="flex justify-between items-start mb-6">
+             <div className="flex flex-wrap gap-3">
+                <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">Neuroscience</span>
+             </div>
+             <div className="text-right">
+                <div className="text-3xl font-bold text-white tracking-tighter">-25%</div>
+                <div className="text-[10px] text-zinc-400 uppercase tracking-widest">Discovery Time</div>
+             </div>
+          </div>
+
+          <h4 className="text-2xl font-bold text-white mb-4">Reducing Cognitive Load</h4>
+          <p className="text-zinc-300 group-hover:text-zinc-100 transition-colors leading-relaxed">
+            Combined neuroimaging (fNIRS) with task-based evaluation to identify the neurological &apos;cost&apos; of content search. My framework guided the Fire TV Home iterative redesign.
+          </p>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

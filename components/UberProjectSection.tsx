@@ -10,65 +10,62 @@ export default function UberProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section
-      className="relative max-w-5xl mx-auto py-12 px-4 mb-16 md:py-24 md:mb-24"
-      ref={ref}
-    >
-      <div
-        id="uber"
-        className="absolute -top-8 left-1/2 transform -translate-x-1/2 md:-top-12"
+    <section className="relative w-full py-16 md:py-24" ref={ref}>
+      
+      {/* HEADER ROW */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-b border-white/10 pb-6"
       >
-        <LogoBadge
-          logoSrc="/assets/uber-logo.png"
-          alt="Uber Logo"
-          className="w-32 md:w-60 h-auto opacity-100"
-        />
-      </div>
+          <LogoBadge 
+            logoSrc="/assets/uber-logo.png" 
+            alt="Uber" 
+            className="w-16 md:w-20 h-auto opacity-100 brightness-0 invert" 
+          />
+          <div className="hidden sm:block h-6 w-[1px] bg-white/20"></div>
+          <span className="text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest">UX Researcher</span>
+      </motion.div>
 
-      {/* Overview Section */}
+      {/* CONTENT GRID */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-5 rounded-xl bg-zinc-900/90 border border-white/10 backdrop-blur-md p-8 md:p-10 shadow-2xl">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Driver Retention Strategy in Brazil</h3>
-          <p className="text-base md:text-lg text-zinc-300/90 leading-loose">
-            Conducted international ethnography and contextual inquiry research
-            in Brazil that informed the iterative design of the rental driver app
-            and payments experience. My research recommendations led to significantly improved driver
-            satisfaction, increasing rental driver retention by <strong>15%</strong>.
-          </p>
+        <motion.div variants={fadeInFromLeft} className="space-y-8">
+          <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Driver Retention Strategy in Brazil</h3>
+          
+          <div className="py-6 border-y border-white/10">
+             <div className="text-6xl font-bold text-white tracking-tighter">
+               15%
+             </div>
+             <div className="text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+               Lift in Driver Retention
+             </div>
+          </div>
+
+          <p className="text-lg text-zinc-200 leading-relaxed">
+Conducted foundational research in Brazil to inform global product strategy. Insights directly steered the driver app redesign, successfully reducing cognitive load and improving rental driver retention by 15%.          </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="flex flex-col w-full h-auto bg-transparent shadow-none border-none mb-12 md:mb-0">
-          <motion.div className="relative w-full h-full overflow-hidden rounded-xl group">
-            <motion.div
-              className="w-full h-full"
-              initial={{ scale: 1.1 }}
-              whileInView={{ scale: 1.0 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-            >
+        <motion.div variants={fadeInFromRight} className="relative group w-full">
+           <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] w-full">
               <Image
                 src="/assets/project-image-2.jpg"
-                alt="Uber Research Fieldwork"
-                width={1200}
-                height={800}
-                className="w-full h-auto object-contain rounded-xl"
+                alt="Uber Research"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-            </motion.div>
-          </motion.div>
-          <span className="mt-3 text-center text-sm font-medium text-black">
-            Iterative Design of the Uber Driver App
+           </div>
+           <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">
+           Research Led to Driver App Redesign
           </span>
         </motion.div>
       </motion.div>
-
-
-
     </section>
   );
 }
