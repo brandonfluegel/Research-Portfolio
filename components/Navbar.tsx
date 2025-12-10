@@ -41,29 +41,31 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
         isScrolled
           ? "bg-black/80 backdrop-blur-xl border-white/10 py-3"
-          : "bg-transparent border-transparent py-5"
+          : "bg-black/50 backdrop-blur-sm border-transparent py-4 md:py-5"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
+      <div className="max-w-6xl mx-auto px-6 flex items-center h-14 relative">
         
-        {/* LOGO - Static & Professional */}
-        <Link 
-          href="/" 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
-          className="flex items-center gap-3 z-50 group"
-        >
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
-            <Image
-              src="/assets/howdy.jpg"
-              alt="Profile Image"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <span className="text-sm font-semibold text-white tracking-wide uppercase">
-            Brandon Fluegel
-          </span>
-        </Link>
+        {/* LOGO & NAME - Centered on Mobile, Left on Desktop */}
+        <div className="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0 md:left-0 flex items-center gap-3 z-50 group">
+          <Link 
+            href="/" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+            className="flex items-center gap-3"
+          >
+            <div className="relative h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
+              <Image
+                src="/assets/howdy.jpg"
+                alt="Profile Image"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <span className="text-xs md:text-sm font-semibold text-white tracking-wide uppercase whitespace-nowrap">
+              Brandon Fluegel
+            </span>
+          </Link>
+        </div>
 
         {/* DESKTOP NAV */}
         <div className="hidden md:flex ml-auto space-x-8">
@@ -78,14 +80,14 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* MOBILE HAMBURGER */}
+        {/* MOBILE HAMBURGER - Absolute Right */}
         <button
-          className="md:hidden ml-auto flex flex-col space-y-1.5 z-50 relative"
+          className="md:hidden absolute right-6 flex flex-col space-y-1.5 z-50 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          <span className={`block w-6 h-0.5 bg-white transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-white transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-white transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-white transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-white transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-5 h-0.5 bg-white transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
       </div>
 

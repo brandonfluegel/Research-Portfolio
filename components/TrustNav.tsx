@@ -4,37 +4,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const companies = [
-  { 
-    name: "Amazon", 
-    logo: "/assets/amazon-logo.png", 
-    id: "amazon-section", 
-    sizing: "h-5 md:h-8 w-auto"
-  },
-  { 
-    name: "NASA", 
-    logo: "/assets/nasa-logo.png", 
-    id: "nasa-section", 
-    sizing: "h-6 md:h-10 w-auto"
-  },
-  { 
-    name: "Uber", 
-    logo: "/assets/uber-logo.png", 
-    id: "uber-section", 
-    sizing: "h-4 md:h-8 w-auto" 
-  },
-  { 
-    name: "Mercedes", 
-    logo: "/assets/benz.png", 
-    id: "mercedes-section", 
-    sizing: "h-6 md:h-10 w-auto"
-  },
-  { 
-    name: "Sling", 
-    logo: "/assets/Sling-logo.png", 
-    id: "sling-section", 
-    sizing: "h-5 md:h-9 w-auto"
-  },
+  { name: "Amazon", logo: "/assets/amazon-logo.png", id: "amazon-section", sizing: "h-6 md:h-8 w-auto" },
+  { name: "NASA", logo: "/assets/nasa-logo.png", id: "nasa-section", sizing: "h-8 md:h-10 w-auto" },
+  { name: "Uber", logo: "/assets/uber-logo.png", id: "uber-section", sizing: "h-5 md:h-8 w-auto" },
+  { name: "Mercedes", logo: "/assets/benz.png", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto" },
+  { name: "Sling", logo: "/assets/Sling-logo.png", id: "sling-section", sizing: "h-6 md:h-9 w-auto" },
 ];
+
+// Duplicate the array to create the infinite loop effect
+const carouselCompanies = [...companies, ...companies, ...companies];
 
 export default function TrustNav() {
   const scrollToSection = (e: React.MouseEvent, id: string) => {
@@ -52,20 +30,53 @@ export default function TrustNav() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
-      // FIX: mt-4 -> mt-2. mb-12 -> mb-8. This compresses the vertical space on mobile.
-      className="w-full max-w-6xl mx-auto px-4 md:px-6 mb-8 md:mb-24 mt-2 md:mt-12"
+      className="w-full max-w-6xl mx-auto mb-12 md:mb-24 mt-8 md:mt-12 overflow-hidden mask-image-linear-gradient"
     >
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6 md:mb-10"></div>
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
-      <div className="grid grid-cols-3 gap-4 place-items-center md:flex md:justify-between md:items-center md:gap-x-12">
+      {/* MOBILE: Infinite Ticker */}
+      <div className="md:hidden w-full overflow-hidden relative">
+        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10"></div>
+        
+        <motion.div 
+          className="flex gap-12 w-max px-4"
+          animate={{ x: ["0%", "-50%"] }} // Move halfway (since we triplicated, -50% is safe)
+          transition={{ 
+            repeat: Infinity, 
+            ease: "linear", 
+            duration: 20 // Adjust speed here (higher = slower)
+          }}
+        >
+          {carouselCompanies.map((company, index) => (
+            <a
+              key={`${company.name}-${index}`}
+              href={`#${company.id}`}
+              onClick={(e) => scrollToSection(e, company.id)}
+              className="relative flex-shrink-0 cursor-pointer"
+            >
+              <div className={`relative ${company.sizing}`}>
+                <Image
+                  src={company.logo}
+                  alt={`${company.name} logo`}
+                  width={150}
+                  height={80}
+                  className="object-contain w-full h-full opacity-60 filter brightness-0 invert select-none"
+                />
+              </div>
+            </a>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* DESKTOP: Static Spread (Professional Standard) */}
+      <div className="hidden md:flex justify-between items-center gap-x-12 px-6">
         {companies.map((company) => (
           <a
             key={company.name}
             href={`#${company.id}`}
             onClick={(e) => scrollToSection(e, company.id)}
-            className={`group relative transition-all duration-300 hover:scale-105 cursor-pointer ${
-               company.name === 'Mercedes' || company.name === 'Sling' ? 'col-span-1' : '' 
-            }`}
+            className="group relative transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <div className={`relative ${company.sizing}`}>
               <Image
