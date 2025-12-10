@@ -38,7 +38,7 @@ export default function SlingProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Product Leadership & Human-AI Strategy</h3>
           <p className="text-lg text-zinc-200 leading-relaxed">
-Own the strategic research roadmap for monetization, retention, and Human-AI interaction, reporting directly to the VP of Product.
+            Reporting directly to the VP of Product, I lead the Research function at Sling. I operationalize user insights into high-level product strategy, focusing on AI trust, monetization, and retention.
           </p>
         </motion.div>
 
@@ -54,7 +54,7 @@ Own the strategic research roadmap for monetization, retention, and Human-AI int
             />
           </div>
           <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">
-            Led the 2025 Product & Design AI Workshop
+            2025 Product & AI Workshop
           </span>
         </motion.div>
       </motion.div>
@@ -75,8 +75,9 @@ Own the strategic research roadmap for monetization, retention, and Human-AI int
             <span className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-white/10 border border-white/20 rounded-full text-zinc-200">GenAI</span>
           </div>
           <h4 className="text-2xl font-bold text-white mb-4">Architecting Trust in AI</h4>
+          {/* FIX IS BELOW: Used &quot; instead of " */}
           <p className="leading-relaxed text-zinc-300 text-sm">
-Architected the multi-turn interaction model for an LLM-powered agentic TV assistant. Defined response latency targets and addressed response ambiguity challenges through the creation of a "Trust and System Status" framework, ensuring users understand agent intent during complex tasks.
+Architected the multi-turn interaction model for an LLM-powered agentic TV assistant. Defined response latency targets and addressed response ambiguity challenges through the creation of a &quot;Trust & System Status&quot; framework, ensuring users understand agent intent during complex tasks.
           </p>
         </motion.div>
 
@@ -91,9 +92,9 @@ Architected the multi-turn interaction model for an LLM-powered agentic TV assis
                 <div className="text-[10px] text-zinc-400 uppercase tracking-widest">Conversion Lift</div>
              </div>
           </div>
-          <h4 className="text-2xl font-bold text-white mb-4">Boosting Subscriber Confidence</h4>
+          <h4 className="text-2xl font-bold text-white mb-4">Boosting Subscriber Conversion</h4>
           <p className="leading-relaxed text-zinc-300 text-sm">
-Directed research to identify specific friction points where users were abandoning the subscription signup flow. Partnered with leadership from Product, Engineering, and Design to streamline the path to purchase, directly driving a 17% increase in purchase confidence on Sling.com.
+             Orchestrated the redesign of the user acquisition funnel. Identified critical friction points and implemented a design strategy that increased signup performance.
           </p>
         </motion.div>
       </motion.div>
