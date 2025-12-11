@@ -72,7 +72,6 @@ export default function AmazonProjectSection() {
           <motion.div variants={fadeInFromRight} className="relative group w-full order-1 lg:order-2">
             <div className="absolute -inset-1 bg-gradient-to-tr from-orange-600/20 to-amber-600/20 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             
-            {/* UPDATED: Added background and tweaked filters for better readability */}
             <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-900/50">
                <Image
                 src="/assets/latency.png"
@@ -169,8 +168,8 @@ export default function AmazonProjectSection() {
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              // UPDATED: Reduced max-width significantly to balance with text
-              className="relative w-full max-w-sm mx-auto"
+              // FIX: Reduced max-width from 'sm' to 'xs' (approx 320px) to balance with text
+              className="relative w-full max-w-xs mx-auto"
             >
               {/* Blue Backlight Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/20 blur-[80px] rounded-full -z-10"></div>
