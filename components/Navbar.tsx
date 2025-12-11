@@ -46,7 +46,7 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center h-14 relative">
         
-        {/* LOGO & NAME - Centered on Mobile, Left on Desktop */}
+        {/* LOGO & NAME - Absolute Center on Mobile */}
         <div className="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0 md:left-0 flex items-center gap-3 z-50 group">
           <Link 
             href="/" 
@@ -82,7 +82,7 @@ export default function Navbar() {
 
         {/* MOBILE HAMBURGER - Absolute Right */}
         <button
-          className="md:hidden absolute right-6 flex flex-col space-y-1.5 z-50 p-2"
+          className="md:hidden absolute right-4 flex flex-col space-y-1.5 z-50 p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           <span className={`block w-5 h-0.5 bg-white transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
