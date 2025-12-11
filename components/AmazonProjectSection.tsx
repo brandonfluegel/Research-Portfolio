@@ -26,7 +26,7 @@ export default function AmazonProjectSection() {
           className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
         />
         <div className="hidden sm:block h-6 w-[1px] bg-white/20"></div>
-        <span className="text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest">Principal Researcher</span>
+        <span className="text-xs md:text-sm font-mono text-zinc-400 uppercase tracking-widest">Lead Researcher, Devices Design Group</span>
       </motion.div>
 
       {/* 2. ZIG-ZAG LAYOUT CONTAINER */}
