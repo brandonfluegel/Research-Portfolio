@@ -11,7 +11,7 @@ const companies = [
   { name: "Sling", logo: "/assets/Sling-logo.png", id: "sling-section", sizing: "h-6 md:h-9 w-auto" },
 ];
 
-// Duplicate the array to create the infinite loop effect
+// Duplicate the array 3 times to create a seamless infinite loop
 const carouselCompanies = [...companies, ...companies, ...companies];
 
 export default function TrustNav() {
@@ -30,22 +30,23 @@ export default function TrustNav() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
-      className="w-full max-w-6xl mx-auto mb-12 md:mb-24 mt-8 md:mt-12 overflow-hidden mask-image-linear-gradient"
+      className="w-full max-w-6xl mx-auto mb-12 md:mb-24 mt-8 md:mt-12 overflow-hidden"
     >
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
       {/* MOBILE: Infinite Ticker */}
       <div className="md:hidden w-full overflow-hidden relative">
-        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-black to-transparent z-10"></div>
-        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-black to-transparent z-10"></div>
+        {/* Gradient Masks for Fade In/Out Effect */}
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent z-10"></div>
+        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black to-transparent z-10"></div>
         
         <motion.div 
           className="flex gap-12 w-max px-4"
-          animate={{ x: ["0%", "-50%"] }} // Move halfway (since we triplicated, -50% is safe)
+          animate={{ x: ["0%", "-50%"] }} 
           transition={{ 
             repeat: Infinity, 
             ease: "linear", 
-            duration: 20 // Adjust speed here (higher = slower)
+            duration: 25 // Slow, smooth tick
           }}
         >
           {carouselCompanies.map((company, index) => (
@@ -69,7 +70,7 @@ export default function TrustNav() {
         </motion.div>
       </div>
 
-      {/* DESKTOP: Static Spread (Professional Standard) */}
+      {/* DESKTOP: Static Professional Layout */}
       <div className="hidden md:flex justify-between items-center gap-x-12 px-6">
         {companies.map((company) => (
           <a
