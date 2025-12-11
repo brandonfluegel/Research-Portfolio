@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
-// FIX: Removed 'fadeInUp' from imports to solve build error
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
 export default function AmazonProjectSection() {
@@ -64,8 +63,7 @@ export default function AmazonProjectSection() {
                 </p>
               </div>
               <p className="text-lg text-zinc-300 leading-relaxed">
-Directed Alexa Economics to ingest my threshold data into their NVA models, proving that meeting intent-specific latency standards would drive $1.7B in incremental OPS over a 15-month period. Consequently, these latency targets were established as launch criteria for the entire Alexa ecosystem.
-
+                Directed Alexa Economics to ingest my threshold data into their NVA models, proving that meeting intent-specific latency standards would drive $1.7B in incremental OPS over a 15-month period. Consequently, these latency targets were established as launch criteria for the entire Alexa ecosystem.
               </p>
             </div>
           </motion.div>
@@ -74,14 +72,14 @@ Directed Alexa Economics to ingest my threshold data into their NVA models, prov
           <motion.div variants={fadeInFromRight} className="relative group w-full order-1 lg:order-2">
             <div className="absolute -inset-1 bg-gradient-to-tr from-orange-600/20 to-amber-600/20 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black">
-               {/* THE CHART HACK: Invert + Hue Rotate = Dark Mode Chart */}
+            {/* UPDATED: Added background and tweaked filters for better readability */}
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-900/50">
                <Image
                 src="/assets/latency.png"
                 alt="Latency Economic Model"
                 width={800}
                 height={600}
-                className="object-cover w-full h-auto filter invert hue-rotate-180 contrast-125 opacity-90"
+                className="object-cover w-full h-auto filter invert hue-rotate-180 contrast-150 brightness-110 opacity-100"
               />
             </div>
             <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">
@@ -171,7 +169,8 @@ Directed Alexa Economics to ingest my threshold data into their NVA models, prov
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              className="relative w-full max-w-md lg:max-w-lg"
+              // UPDATED: Reduced max-width significantly to balance with text
+              className="relative w-full max-w-sm mx-auto"
             >
               {/* Blue Backlight Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/20 blur-[80px] rounded-full -z-10"></div>
