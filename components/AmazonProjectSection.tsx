@@ -42,7 +42,7 @@ export default function AmazonProjectSection() {
           {/* Text Block */}
           <motion.div variants={fadeInFromLeft} className="flex flex-col justify-center order-2 lg:order-1">
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight">
-              Alexa AI & <br className="hidden lg:block"/> Revenue Strategy
+              Alexa AI + <br className="hidden lg:block"/> Revenue Strategy
             </h3>
             
             {/* TIGHTER GROUPING */}
@@ -59,30 +59,31 @@ export default function AmazonProjectSection() {
               <div>
                 <h4 className="text-lg font-bold text-white mb-2">The Biological Cost of Latency</h4>
                 <p className="text-lg text-zinc-300 leading-relaxed">
-                  Rearchitected Alexa’s performance strategy by replacing arbitrary engineering targets with <span className="text-white font-semibold">biological thresholds</span> derived from my foundational research on user perception. 
+                  Rearchitected Alexa’s response latency strategy by replacing arbitrary engineering targets with <span className="text-white font-semibold">human perception thresholds</span> derived from my foundational research on multimodal latency perception. 
                 </p>
               </div>
               <p className="text-lg text-zinc-300 leading-relaxed">
-                Directed Alexa Economics to ingest my threshold data into their NVA models, proving that meeting intent-specific latency standards would drive $1.7B in incremental OPS over a 15-month period. Consequently, these latency targets were established as launch criteria for the entire Alexa ecosystem.
+                Successfully convinced leadership from Alexa Economics to ingest my threshold data into their Negative Value Add (NVA) models, proving that meeting intent-specific latency standards would drive $1.7B in incremental OPS over a 15-month period. Consequently, these latency targets were established as launch criteria for the entire Alexa ecosystem.
               </p>
             </div>
           </motion.div>
 
-          {/* Asset Block: Latency Chart with Dark Mode Filter */}
+          {/* Asset Block: Latency Chart (UPDATED) */}
           <motion.div variants={fadeInFromRight} className="relative group w-full order-1 lg:order-2">
-            <div className="absolute -inset-1 bg-gradient-to-tr from-orange-600/20 to-amber-600/20 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+            {/* Updated Glow to match Cyan/Pink Chart Theme */}
+            <div className="absolute -inset-1 bg-gradient-to-tr from-cyan-600/20 to-pink-600/20 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
             
-            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-zinc-900/50">
+            <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
                <Image
-                src="/assets/latency.png"
-                alt="Latency Economic Model"
-                width={800}
-                height={600}
-                className="object-cover w-full h-auto filter invert hue-rotate-180 contrast-150 brightness-110 opacity-100"
+                src="/assets/economic_threshold_model.png"
+                alt="Human Latency Perpection Thresholds & Revenue Impact"
+                width={1200}
+                height={700}
+                className="object-cover w-full h-auto select-none rounded-2xl" 
               />
             </div>
             <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">
-              Latency Perception Threshold Model
+              The "Economic Gap" between Engineering & Human Perception
             </span>
           </motion.div>
         </motion.div>
@@ -138,7 +139,7 @@ export default function AmazonProjectSection() {
         >
           <motion.div variants={fadeInFromLeft} className="flex flex-col justify-center order-2 lg:order-1">
              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-              Multimodal AI & Hardware
+              Multimodal AI + Hardware
              </h3>
              
              <div className="space-y-6 mb-8">
@@ -168,7 +169,6 @@ export default function AmazonProjectSection() {
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              // FIX: Reduced max-width from 'sm' to 'xs' (approx 320px) to balance with text
               className="relative w-full max-w-xs mx-auto"
             >
               {/* Blue Backlight Glow */}
