@@ -83,7 +83,7 @@ export default function AmazonProjectSection() {
               />
             </div>
             <span className="block mt-4 text-center text-xs font-mono text-zinc-500 uppercase tracking-wider">
-              The "Economic Gap" between Engineering & Human Perception
+              The &quot;Economic Gap&quot; between Engineering &amp; Human Perception
             </span>
           </motion.div>
         </motion.div>
