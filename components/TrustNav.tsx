@@ -11,7 +11,7 @@ const companies = [
   { name: "Sling", logo: "/assets/Sling-logo.png", id: "sling-section", sizing: "h-6 md:h-9 w-auto" },
 ];
 
-// Duplicate the array 3 times to create a seamless infinite loop
+// 3 copies is good for ultra-wide screens, but requires -33.33% shift logic
 const carouselCompanies = [...companies, ...companies, ...companies];
 
 export default function TrustNav() {
@@ -36,17 +36,20 @@ export default function TrustNav() {
 
       {/* MOBILE: Infinite Ticker */}
       <div className="md:hidden w-full overflow-hidden relative">
-        {/* Gradient Masks for Fade In/Out Effect */}
-        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent z-10"></div>
-        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black to-transparent z-10"></div>
+        {/* Added pointer-events-none to prevent scroll blocking */}
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
         
         <motion.div 
-          className="flex gap-12 w-max px-4"
-          animate={{ x: ["0%", "-50%"] }} 
+          // Added 'will-change-transform' and 'transform-gpu' for hardware acceleration
+          className="flex gap-12 w-max px-4 will-change-transform transform-gpu"
+          // FIX: Changed -50% to -33.333% (1/3 of total width) because we have 3 sets of items.
+          // This ensures the loop snaps back to a visually identical starting point.
+          animate={{ x: ["0%", "-33.333333%"] }} 
           transition={{ 
             repeat: Infinity, 
             ease: "linear", 
-            duration: 25 // Slow, smooth tick
+            duration: 20 // Adjusted duration for 1/3 distance (felt too slow at 25)
           }}
         >
           {carouselCompanies.map((company, index) => (
@@ -57,12 +60,14 @@ export default function TrustNav() {
               className="relative flex-shrink-0 cursor-pointer"
             >
               <div className={`relative ${company.sizing}`}>
+                {/* Optimized: brightness/invert filters can be heavy, but GPU transform handles it better now */}
                 <Image
                   src={company.logo}
                   alt={`${company.name} logo`}
                   width={150}
                   height={80}
                   className="object-contain w-full h-full opacity-60 filter brightness-0 invert select-none"
+                  loading="eager" // Load these immediately
                 />
               </div>
             </a>
