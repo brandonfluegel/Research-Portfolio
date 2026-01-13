@@ -35,8 +35,8 @@ export default function Home() {
             animate="visible"
             className="font-bold leading-[1.1] tracking-tight text-center mb-4 md:mb-6 text-3xl md:text-[clamp(2.5rem,5vw,4.5rem)] text-white text-balance"
           >
-            Human Factors PhD. <br className="hidden md:block" /> 
-            <span className="text-zinc-400 block md:inline mt-1 md:mt-0">Designing the Future of UX + AI.</span>
+            Human Factors PhD <br className="hidden md:block" /> 
+            <span className="text-zinc-400 block md:inline mt-1 md:mt-0">Designing the Future of UX + AI</span>
           </motion.div>
 
           <motion.div
@@ -46,7 +46,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="font-medium text-zinc-300 text-center px-4 text-sm md:text-[clamp(1rem,1.5vw,1.25rem)] w-full max-w-sm md:max-w-2xl mx-auto leading-relaxed text-balance"
           >
-            Translating cognitive science into monetizable product strategy.
+            Translating cognitive science into monetizable product strategy
           </motion.div>
 
           <div className="mt-8 md:mt-12 opacity-60 scale-75 md:scale-100">
