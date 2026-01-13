@@ -9,6 +9,7 @@
 /* Base HTML Settings */
 html {
   scroll-behavior: smooth;
+  /* REMOVED: cursor: none */
 }
 
 body {
@@ -18,15 +19,10 @@ body {
   letter-spacing: 0.02em;
   line-height: 1.6;
   overflow-x: hidden;
-  padding: 0; /* CRITICAL FIX: Removed clamp padding to let sections handle full width */
+  padding: 0;
+  /* REMOVED: cursor: none */
 }
 
-/* Utility for text balancing in Hero */
 .text-balance {
   text-wrap: balance;
 }
-
-/* Note: We removed the H1/H2/H3/P sizing rules and Media Queries 
-   because we are now handling all typography scaling directly 
-   inside the React components using Tailwind classes. 
-*/

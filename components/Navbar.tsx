@@ -44,10 +44,13 @@ export default function Navbar() {
           : "bg-black/50 backdrop-blur-sm border-transparent py-4 md:py-5"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center h-14 relative">
+      {/* CRITICAL FIX: Added z-[60] to this container. 
+         This ensures the Logo and Hamburger Button sit ON TOP of the overlay (which is z-[50]).
+      */}
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 relative z-[60]">
         
-        {/* LOGO & NAME - Absolute Center on Mobile */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 md:static md:translate-x-0 md:left-0 flex items-center gap-3 z-50 group">
+        {/* LOGO */}
+        <div className="flex items-center gap-3 group cursor-pointer relative">
           <Link 
             href="/" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
@@ -67,38 +70,29 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* DESKTOP NAV */}
-        <div className="hidden md:flex ml-auto space-x-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={(e) => scrollToSection(e, link.href)}
-              className="text-xs font-medium text-zinc-400 hover:text-white transition-colors uppercase tracking-widest"
-            >
-              {link.name}
-            </button>
-          ))}
-        </div>
-
-        {/* MOBILE HAMBURGER - Absolute Right */}
+        {/* HAMBURGER BUTTON */}
         <button
-          className="md:hidden absolute right-4 flex flex-col space-y-1.5 z-50 p-2"
+          className="flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle Menu"
         >
-          <span className={`block w-5 h-0.5 bg-white transition-transform ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-5 h-0.5 bg-white transition-opacity ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-5 h-0.5 bg-white transition-transform ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* FULL SCREEN MENU OVERLAY */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "100vh" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black fixed inset-0 z-40 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            // FIX: Changed 'bg-black/95' to 'bg-black' (SOLID). removed backdrop-blur. 
+            // FIX: Changed z-40 to z-[50] to cover the navbar background but sit below the button (z-[60]).
+            className="fixed inset-0 z-[50] bg-black flex flex-col items-center justify-center h-screen w-screen"
           >
             <ul className="flex flex-col space-y-8 text-center">
               {navLinks.map((link) => (
@@ -106,7 +100,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-2xl font-light text-zinc-300 hover:text-white block tracking-widest uppercase"
+                    className="text-3xl md:text-5xl font-light text-zinc-400 hover:text-white transition-colors block tracking-widest uppercase hover:scale-105 transform duration-300"
                   >
                     {link.name}
                   </Link>
