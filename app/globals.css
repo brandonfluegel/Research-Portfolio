@@ -6,10 +6,8 @@
   --accent-color: #4f46e5;
 }
 
-/* Base HTML Settings */
 html {
   scroll-behavior: smooth;
-  /* REMOVED: cursor: none */
 }
 
 body {
@@ -20,7 +18,35 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   padding: 0;
-  /* REMOVED: cursor: none */
+}
+
+/* CRITICAL FIX: GPU-Accelerated Infinite Scroll */
+@keyframes infinite-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0); /* Moves exactly half the width */
+  }
+}
+
+.animate-infinite-scroll {
+  /* 40s duration for a smooth, slow glide. Linear is required for seamless looping. */
+  animation: infinite-scroll 40s linear infinite;
+  /* Hardware acceleration hacks for mobile */
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Pause animation on hover if desired (optional, feels premium) */
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Force hide system cursor on interactive elements */
+a, button, [role="button"], input, select, textarea {
+  cursor: none !important;
 }
 
 .text-balance {

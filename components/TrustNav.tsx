@@ -11,8 +11,11 @@ const companies = [
   { name: "Sling", logo: "/assets/Sling-logo.png", id: "sling-section", sizing: "h-6 md:h-9 w-auto" },
 ];
 
-// 3 copies is good for ultra-wide screens, but requires -33.33% shift logic
-const carouselCompanies = [...companies, ...companies, ...companies];
+// CRITICAL FIX: Create a massive buffer (4 sets). 
+// We will animate the container by -50%. 
+// This means we show 2 sets, then slide to the next 2 sets, then reset.
+// This guarantees we never run out of logos on wide screens.
+const mobileCompanies = [...companies, ...companies, ...companies, ...companies];
 
 export default function TrustNav() {
   const scrollToSection = (e: React.MouseEvent, id: string) => {
@@ -34,48 +37,37 @@ export default function TrustNav() {
     >
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
-      {/* MOBILE: Infinite Ticker */}
-      <div className="md:hidden w-full overflow-hidden relative">
-        {/* Added pointer-events-none to prevent scroll blocking */}
+      {/* MOBILE: Infinite Ticker (CSS Powered) */}
+      <div className="md:hidden w-full overflow-hidden relative group">
+        {/* Gradient Masks */}
         <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
         <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none"></div>
         
-        <motion.div 
-          // Added 'will-change-transform' and 'transform-gpu' for hardware acceleration
-          className="flex gap-12 w-max px-4 will-change-transform transform-gpu"
-          // FIX: Changed -50% to -33.333% (1/3 of total width) because we have 3 sets of items.
-          // This ensures the loop snaps back to a visually identical starting point.
-          animate={{ x: ["0%", "-33.333333%"] }} 
-          transition={{ 
-            repeat: Infinity, 
-            ease: "linear", 
-            duration: 20 // Adjusted duration for 1/3 distance (felt too slow at 25)
-          }}
-        >
-          {carouselCompanies.map((company, index) => (
+        {/* CSS ANIMATION CONTAINER */}
+        <div className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused]">
+          {mobileCompanies.map((company, index) => (
             <a
               key={`${company.name}-${index}`}
               href={`#${company.id}`}
               onClick={(e) => scrollToSection(e, company.id)}
-              className="relative flex-shrink-0 cursor-pointer"
+              className="relative flex-shrink-0 cursor-pointer px-6" // Used padding instead of gap for smoother math
             >
               <div className={`relative ${company.sizing}`}>
-                {/* Optimized: brightness/invert filters can be heavy, but GPU transform handles it better now */}
                 <Image
                   src={company.logo}
                   alt={`${company.name} logo`}
                   width={150}
                   height={80}
                   className="object-contain w-full h-full opacity-60 filter brightness-0 invert select-none"
-                  loading="eager" // Load these immediately
+                  loading="eager"
                 />
               </div>
             </a>
           ))}
-        </motion.div>
+        </div>
       </div>
 
-      {/* DESKTOP: Static Professional Layout */}
+      {/* DESKTOP: Static Layout (Unchanged) */}
       <div className="hidden md:flex justify-between items-center gap-x-12 px-6">
         {companies.map((company) => (
           <a
