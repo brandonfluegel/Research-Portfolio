@@ -32,7 +32,7 @@ export default function AmazonProjectSection() {
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Lead Researcher • 2016-2021</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Lead Researcher</p>
           </div>
         </div>
         
@@ -75,7 +75,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Phase 1: Mixed Methods Research</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Manipulated verbal response latency (500ms–3000ms) in a controlled setting over 1000+ trials. Mapped the non-linear degradation of satisfaction to find the <span className="text-white font-medium">"Cliff of User Dissatisfaction" at 1000ms</span>.
+                  Manipulated verbal response latency (500ms–3000ms) in a controlled setting over 1000+ trials. Mapped the non-linear degradation of satisfaction to find the <span className="text-white font-medium">&quot;Cliff of User Dissatisfaction&quot; at 1000ms</span>.
                 </p>
               </div>
               {/* Node 2 */}
@@ -83,7 +83,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Phase 2: Economic Model</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate response latency thresholds into the NVA (Negative Value Action) model. We redefined "defects" as <span className="text-white font-medium">any interaction slower than human latency perception</span>.
+                  Partnered with Alexa Economics to integrate response latency thresholds into the NVA (Negative Value Action) model. We redefined &quot;defects&quot; as <span className="text-white font-medium">any interaction slower than human latency perception</span>.
                 </p>
               </div>
                {/* Node 3 */}
@@ -131,7 +131,7 @@ export default function AmazonProjectSection() {
                        <span className="text-[10px] font-bold text-white uppercase tracking-wider">Critical Insight</span>
                      </div>
                      <p className="text-[11px] text-zinc-400 leading-relaxed">
-                       Latency {">"}1000ms is not just "slow", it is a psychophysical defect that directly correlates to 90-day retention loss.
+                       Latency {">"}1000ms is not just &quot;slow&quot;, it is a psychophysical defect that directly correlates to 90-day retention loss.
                      </p>
                   </div>
                 </div>
@@ -192,9 +192,9 @@ export default function AmazonProjectSection() {
 
             <div className="space-y-8">
               <div className="group">
-                <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing "Clutter"</h4>
+                <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Stakeholders debated UI "density" vs "minimalism" on aesthetic preference. My research shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (neuroimaging), we proved that FireTV's visual density triggered significantly higher activation in the Left DLPFC (working memory) compared to Apple TV.
+                  Stakeholders debated UI &quot;density&quot; vs &quot;minimalism&quot; on aesthetic preference. My research shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (neuroimaging), we proved that FireTV&apos;s visual density triggered significantly higher activation in the Left DLPFC (working memory) compared to Apple TV.
                 </p>
               </div>
               
