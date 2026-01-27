@@ -60,10 +60,10 @@ export default function AmazonProjectSection() {
                 <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Strategy</span>
               </div>
               <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
-                Calibrating the <br /> <span className="text-zinc-500">Revenue Model</span>
+                Calibrating Alexa Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
               </h3>
               <p className="text-lg text-zinc-300 leading-relaxed font-light">
-                Engineering latency targets for Alexa were historically arbitrary. I proposed and led a multi-year research program to identify the precise response latency threshold where user satisfaction collapses.
+                Engineering latency targets for Alexa were historically arbitrary. I proposed and led a multi-year research program to identify the precise response latency thresholds where user satisfaction collapses.
               </p>
             </div>
 
@@ -73,7 +73,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Phase 1: Mixed Methods Research</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Manipulated verbal response latency (500ms–3000ms) in a controlled setting. Mapped the non-linear degradation of satisfaction to find the <span className="text-white font-medium">&quot;Cliff of User Dissatisfaction&quot; at 1000ms</span>.
+                  Manipulated multimodal response latency in a controlled setting over 1000+ trials with customers. Mapped the non-linear degradation of satisfaction to find the <span className="text-white font-medium">&quot;Cliff of User Dissatisfaction&quot; at 1000ms</span>.
                 </p>
               </div>
               <div className="relative">
@@ -93,9 +93,9 @@ export default function AmazonProjectSection() {
             </div>
           </motion.div>
 
-          {/* RIGHT: DATA VISUALIZATION (DESIGN FIX) */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-7">
-            <div className="relative w-full">
+          {/* RIGHT: DATA VISUALIZATION (DESIGN FIX + CENTERED) */}
+          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full">
+            <div className="relative w-full max-w-2xl mx-auto"> 
               
               {/* Header Label for Context */}
               <div className="flex justify-between items-end mb-3 px-1">
@@ -150,21 +150,23 @@ export default function AmazonProjectSection() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center"
         >
              {/* ... Copy previous code for Left Column ... */}
-             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1">
-                <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
-                  {/* ... Video ... */}
-                   <video
-                      src="/assets/fnirs.mp4"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-auto object-cover opacity-70 grayscale-[30%] hover:grayscale-0 transition duration-700"
-                    />
+             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex justify-center"> {/* Added flex justify-center */}
+                <div className="relative w-full max-w-2xl"> {/* Added width constraint wrapper */}
+                    <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
+                    {/* ... Video ... */}
+                    <video
+                        src="/assets/fnirs.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-auto object-cover opacity-70 grayscale-[30%] hover:grayscale-0 transition duration-700"
+                        />
+                    </div>
+                    <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                    Fig 2. Measuring Cognitive Load via fNIRS
+                    </p>
                 </div>
-                 <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                   Fig 2. Measuring Cognitive Load via fNIRS
-                 </p>
              </motion.div>
 
              {/* ... Copy previous code for Right Column ... */}
