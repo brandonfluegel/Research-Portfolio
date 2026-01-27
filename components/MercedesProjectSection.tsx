@@ -47,14 +47,15 @@ export default function MercedesProjectSection() {
         </motion.div>
 
         <motion.div variants={fadeInFromRight} className="relative group w-full">
-           <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl aspect-video w-full">
+           {/* Kept 'aspect-video' to maintain tile size, changed video to 'object-contain' to prevent zooming */}
+           <div className="relative rounded-xl overflow-hidden border border-white/10 bg-black shadow-2xl aspect-video w-full">
               <video
                 src="/assets/drive.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="object-cover w-full h-full"
+                className="object-contain w-full h-full"
               />
            </div>
         </motion.div>
