@@ -33,7 +33,7 @@ export default function Home() {
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-bold leading-[1.1] tracking-tight text-center mb-4 md:mb-6 text-3xl md:text-[clamp(2.5rem,5vw,4.5rem)] text-white text-balance"
+            className="font-bold leading-[1.1] tracking-tight text-center mb-4 md:mb-6 text-2xl md:text-[clamp(2.5rem,5vw,4.5rem)] text-white text-balance"
           >
             Human Factors PhD <br className="hidden md:block" /> 
           </motion.div>
