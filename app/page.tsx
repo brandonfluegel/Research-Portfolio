@@ -36,7 +36,6 @@ export default function Home() {
             className="font-bold leading-[1.1] tracking-tight text-center mb-4 md:mb-6 text-3xl md:text-[clamp(2.5rem,5vw,4.5rem)] text-white text-balance"
           >
             Human Factors PhD <br className="hidden md:block" /> 
-            <span className="text-zinc-400 block md:inline mt-1 md:mt-0">Designing the Future of UX + AI</span>
           </motion.div>
 
           <motion.div
