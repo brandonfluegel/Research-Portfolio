@@ -17,6 +17,9 @@ export default function ProfileImage() {
           alt="Brandon Fluegel, Ph.D"
           width={300}
           height={300}
+          priority
+          quality={90}
+          sizes="(max-width: 640px) 150px, (max-width: 768px) 200px, 300px"
           className="object-cover w-[150px] sm:w-[200px] md:w-[300px] aspect-square"
         />
       </motion.div>

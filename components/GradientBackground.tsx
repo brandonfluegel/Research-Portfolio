@@ -19,6 +19,7 @@ export default function GradientBackground() {
           repeat: Infinity,
           repeatType: "mirror",
         }}
+        style={{ willChange: "transform" }}
         className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-blue-900/20 blur-[100px]"
       />
 
@@ -35,6 +36,7 @@ export default function GradientBackground() {
           repeat: Infinity,
           repeatType: "mirror",
         }}
+        style={{ willChange: "transform" }}
         className="absolute top-[40%] -right-[10%] w-[60vw] h-[60vw] rounded-full bg-indigo-900/10 blur-[120px]"
       />
 
