@@ -10,118 +10,119 @@ export default function AmazonProjectSection() {
   const { ref } = useParallax();
 
   return (
-    <section className="relative w-full py-24 md:py-32 overflow-hidden bg-black" ref={ref}>
+    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black" ref={ref}>
       
       {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
+      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
+      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="relative z-10 mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
+        className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
       >
         <div className="flex items-center gap-6">
           <LogoBadge 
             logoSrc="/assets/amazon-logo.png" 
             alt="Amazon" 
-            className="w-28 h-auto opacity-100 brightness-0 invert" 
+            className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
           />
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Staff UX Researcher</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-sm text-zinc-400">UX Researcher, Devices Design Group</p>
+          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Staff UX Researcher</p>
         </div>
       </motion.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
         
         {/* === CASE STUDY 1: REVENUE STRATEGY ($1.7B) === */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: NARRATIVE */}
-          <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-4">
-            <div className="mb-10">
-              <div className="flex items-center gap-2 mb-4">
+          <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
+            <div className="mb-8 md:mb-10">
+              <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-                <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Business Strategy</span>
+                <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Business Strategy</span>
               </div>
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
+              <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Calibrating Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
               </h3>
-              <p className="text-lg text-zinc-300 leading-relaxed font-light">
+              <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                 Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace technical benchmarks with human-centered thresholds, directly linking millisecond delays to revenue loss.
               </p>
             </div>
 
             {/* PROCESS TIMELINE */}
-            <div className="relative pl-8 border-l border-white/10 space-y-12">
+            <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               
               {/* Step 1 */}
               <div className="relative">
-                <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Experimental Design: Psychophysics</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Psychophysics</h4>
+                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
                   Utilized a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 trials. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; at exactly 1000ms</span>, proving that user sentiment degrades non-linearly beyond this point.
                 </p>
               </div>
 
               {/* Step 2 */}
               <div className="relative">
-                <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Strategic Integration: Economics</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
+                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
                   Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not as technical failures, but as any interaction slower than the 1000ms perceptual cliff.
                 </p>
               </div>
 
               {/* Step 3 */}
                <div className="relative">
-                <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
-                <h4 className="text-sm font-bold text-cyan-400 uppercase tracking-wide mb-2">Outcome: $1.7B Projection</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> over the following 15 months, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn (Incremental OPS).
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
+                <h4 className="text-xs md:text-sm font-bold text-cyan-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $1.7B Projection</h4>
+                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn (Incremental OPS).
                 </p>
               </div>
             </div>
           </motion.div>
 
           {/* RIGHT: DATA VISUALIZATION */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8">
-            <div className="relative w-full max-w-2xl mx-auto aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-6 md:p-8 group">
+          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
+            {/* CHANGED: Taller aspect ratio on mobile (aspect-[4/3]) for better readability, standard 16/10 on desktop */}
+            <div className="relative w-full max-w-2xl mx-auto aspect-[4/3] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
   
               {/* Chart Header */}
-              <div className="flex justify-between items-start mb-8 z-20 relative">
+              <div className="flex justify-between items-start mb-6 md:mb-8 z-20 relative">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <h4 className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model</h4>
+                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model v4.2</h4>
                   </div>
-                  <div className="text-white font-bold text-lg md:text-xl tracking-tight">Latency vs. Revenue Risk</div>
+                  <div className="text-white font-bold text-base md:text-xl tracking-tight">Latency vs. Revenue Risk</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[10px] font-mono text-zinc-500 uppercase">Projected Impact</div>
-                  <div className="text-green-400 font-mono font-bold text-xl">$1.7 Billion</div>
+                  <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Projected Impact</div>
+                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$1.7 Billion</div>
                 </div>
               </div>
 
               {/* The Chart Area */}
-              <div className="relative w-full h-[65%]">
+              <div className="relative w-full h-[60%] md:h-[65%]">
                 
-                {/* Grid Lines - Slightly brighter for context */}
+                {/* Grid Lines */}
                 <div className="absolute inset-0 z-0 flex flex-col justify-between opacity-40">
                     <div className="w-full h-[1px] bg-white/10"></div>
                     <div className="w-full h-[1px] bg-white/10"></div>
@@ -132,7 +133,6 @@ export default function AmazonProjectSection() {
                 {/* SVG Layer */}
                 <svg className="absolute inset-0 w-full h-full overflow-visible z-10" preserveAspectRatio="none" viewBox="0 0 100 100">
                   <defs>
-                    {/* Gradient for the Line */}
                     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#4ade80" />   {/* Green (Fast) */}
                       <stop offset="30%" stopColor="#4ade80" />
@@ -140,17 +140,16 @@ export default function AmazonProjectSection() {
                       <stop offset="100%" stopColor="#ef4444" />  {/* Red (Slow) */}
                     </linearGradient>
                     
-                    {/* Gradient for Area Fill */}
                     <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                       <stop offset="0%" stopColor="#4ade80" stopOpacity="0.1" />
                       <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
                     </linearGradient>
                   </defs>
                   
-                  {/* 1. The Threshold Line (Vertical at 1000ms / 33%) */}
+                  {/* Threshold Line */}
                   <line x1="33" y1="0" x2="33" y2="100" stroke="white" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
                   
-                  {/* 2. The Satisfaction Curve */}
+                  {/* The Curve */}
                   <motion.path
                     d="M0,15 C 15,15 25,18 33,45 C 45,90 70,95 100,98" 
                     fill="none"
@@ -164,7 +163,7 @@ export default function AmazonProjectSection() {
                     style={{ filter: "drop-shadow(0px 0px 8px rgba(74, 222, 128, 0.3))" }}
                   />
                   
-                  {/* 3. The "Cliff" Marker Point - Pulsing */}
+                  {/* The "Cliff" Marker Point - Pulsing */}
                    <motion.circle 
                     cx="33" 
                     cy="45" 
@@ -189,41 +188,41 @@ export default function AmazonProjectSection() {
                   />
                 </svg>
 
-                {/* DATA LABELS - High Contrast */}
+                {/* DATA LABELS - Optimized for Mobile */}
                 
                 {/* Threshold Badge */}
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6 }}
-                  className="absolute top-[-18%] left-[22%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-3 py-1.5 rounded shadow-xl z-20"
+                  className="absolute top-[-25%] md:top-[-18%] left-[18%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
                 >
-                  <div className="text-[10px] md:text-xs font-bold text-white whitespace-nowrap">
+                  <div className="text-[9px] md:text-xs font-bold text-white whitespace-nowrap">
                     1000ms Threshold
                   </div>
-                  <div className="text-[8px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
+                  <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
                 </motion.div>
 
                 {/* Safe Zone Label */}
-                <div className="absolute bottom-6 left-6">
-                    <div className="text-[10px] font-mono text-green-400 uppercase tracking-wider mb-1">Safe Zone</div>
-                    <div className="text-xs text-zinc-300 max-w-[120px] leading-tight font-medium">
-                        Retained engagement & revenue
+                <div className="absolute bottom-2 left-2 md:bottom-6 md:left-6">
+                    <div className="text-[8px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
+                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[120px] leading-tight font-medium">
+                        Retained revenue
                     </div>
                 </div>
 
                 {/* Danger Zone Label */}
-                 <div className="absolute top-6 right-6 text-right">
-                    <div className="text-[10px] font-mono text-red-400 uppercase tracking-wider mb-1">Dissatisfaction Zone</div>
-                    <div className="text-xs text-zinc-300 max-w-[140px] leading-tight font-medium">
-                        Churn risk increases 3x per 500ms
+                 <div className="absolute top-2 right-2 md:top-6 md:right-6 text-right">
+                    <div className="text-[8px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
+                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[100px] md:max-w-[140px] leading-tight font-medium">
+                        Churn risk increases 3x
                     </div>
                 </div>
 
               </div>
 
               {/* X-Axis Labels */}
-              <div className="flex justify-between mt-8 text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
+              <div className="flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
                 <span>0ms</span>
                 <span className="text-zinc-300 relative left-[-5%]">1000ms</span>
                 <span>2000ms</span>
@@ -233,12 +232,12 @@ export default function AmazonProjectSection() {
           </motion.div>
         </motion.div>
 
-        {/* === CASE STUDY 2: NEUROIMAGING (Brief Recap) === */}
+        {/* === CASE STUDY 2: NEUROIMAGING === */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center"
         >
              {/* LEFT: VIDEO/IMAGE */}
@@ -262,26 +261,26 @@ export default function AmazonProjectSection() {
 
              {/* RIGHT: CONTENT */}
              <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2">
-                 <div className="flex items-center gap-2 mb-4">
+                 <div className="flex items-center gap-2 mb-3 md:mb-4">
                   <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
-                  <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & UX</span>
+                  <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & UX</span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
                   Biometric <br/> <span className="text-zinc-500">UI Benchmarking</span>
                 </h3>
                 
-                 <div className="space-y-8">
+                 <div className="space-y-6 md:space-y-8">
                   <div className="group">
-                    <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
-                      Stakeholders debated UI density based on aesthetics. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors (Apple TV, Netflix).
+                    <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
+                      Stakeholders debated UI density based on aesthetics. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors.
                     </p>
                   </div>
                   <div className="w-full h-[1px] bg-white/5"></div>
                   <div className="group">
-                    <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">The Strategic Pivot</h4>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
-                      We optimized the visual hierarchy of the FireTV Home UI to reduce cognitive load, resulting in increased engagement metrics and a simpler mental model for content discovery.
+                    <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">The Strategic Pivot</h4>
+                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
+                      We optimized the Home UI to reduce cognitive load, resulting in increased engagement metrics and a simpler mental model for content discovery.
                     </p>
                   </div>
                 </div>
@@ -293,34 +292,34 @@ export default function AmazonProjectSection() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center pb-24"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center pb-16 md:pb-24"
         >
            {/* LEFT: CONTENT */}
            <motion.div variants={fadeInFromLeft} className="lg:col-span-5">
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)]"></span>
-                <span className="text-xs font-mono text-yellow-400 uppercase tracking-widest">Hardware & AI</span>
+                <span className="text-[10px] md:text-xs font-mono text-yellow-400 uppercase tracking-widest">Hardware & AI</span>
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Multimodal AI <br /> <span className="text-zinc-500">+ Hardware</span>
               </h3>
-              <p className="text-lg text-zinc-300 mb-8 leading-relaxed font-light">
-                Led end-to-end Human Factors strategy for the Echo Show (5,8,10,15). My research informed 50+ iterative design updates that improved the core user experience for 75M+ Echo Show customers.
+              <p className="text-base md:text-lg text-zinc-300 mb-6 md:mb-8 leading-relaxed font-light">
+                Led end-to-end Human Factors strategy for the Echo Show portfolio. My research informed 50+ iterative design updates that improved the core user experience for 75M+ customers.
               </p>
-               <div className="inline-flex items-center gap-4 px-5 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
+               <div className="inline-flex items-center gap-4 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
                  <div className="p-1 bg-yellow-500/20 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
                     </svg>
                  </div>
-                 <span className="text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award Recipient</span>
+                 <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award Recipient</span>
               </div>
            </motion.div>
 
            {/* RIGHT: IMAGE */}
            <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex justify-center relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/5 blur-[80px] rounded-full -z-10"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-white/5 blur-[80px] rounded-full -z-10"></div>
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -341,4 +340,4 @@ export default function AmazonProjectSection() {
       </div>
     </section>
   );
-} 
+}
