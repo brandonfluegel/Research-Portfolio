@@ -32,12 +32,12 @@ export default function AmazonProjectSection() {
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Staff UX Researcher</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Staff UX Researcher</p>
+          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">UX Researcher</p>
         </div>
       </motion.div>
 
@@ -60,7 +60,7 @@ export default function AmazonProjectSection() {
                 <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Business Strategy</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Calibrating Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
+                Calibrating Alexa Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
               </h3>
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                 Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace technical benchmarks with human-centered thresholds, directly linking millisecond delays to revenue loss.
