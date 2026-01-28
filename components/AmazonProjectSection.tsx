@@ -341,4 +341,4 @@ export default function AmazonProjectSection() {
       </div>
     </section>
   );
-}
+} 
