@@ -5,7 +5,6 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GradientBackground from "@/components/GradientBackground";
-import MobileQuickNav from "@/components/MobileQuickNav";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
@@ -30,7 +29,6 @@ export default function RootLayout({
       {/* REMOVED 'cursor-none' from class list below */}
       <body className="text-white overflow-x-hidden font-sans">
         <GradientBackground />
-        <MobileQuickNav />
         {children}
         <Analytics />
         <SpeedInsights />

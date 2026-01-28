@@ -34,7 +34,7 @@ export default function NASAProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-16 items-start"
       >
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Reducing Astronaut Cognitive Load</h3>

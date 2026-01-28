@@ -50,7 +50,7 @@ export default function AmazonProjectSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: NARRATIVE */}
           <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
@@ -229,7 +229,7 @@ export default function AmazonProjectSection() {
               </div>
 
               {/* X-Axis Labels */}
-              <div className="flex justify-between mt-4 md:mt-8 text-[9px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
+              <div className="hidden md:flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
                 <span>0ms</span>
                 <span className="text-zinc-300 relative left-[-5%]">1000ms</span>
                 <span>2000ms</span>
@@ -245,7 +245,7 @@ export default function AmazonProjectSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-center"
         >
              {/* LEFT: VIDEO/IMAGE */}
              <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex justify-center">
@@ -296,11 +296,12 @@ export default function AmazonProjectSection() {
 
         {/* === CASE STUDY 3: HARDWARE === */}
         <motion.div
+          id="hardware-section"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center pb-16 md:pb-24"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-center pb-16 md:pb-24"
         >
            {/* LEFT: CONTENT */}
            <motion.div variants={fadeInFromLeft} className="lg:col-span-5">
