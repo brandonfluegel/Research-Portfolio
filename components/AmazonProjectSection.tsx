@@ -109,7 +109,7 @@ export default function AmazonProjectSection() {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model v4.2</h4>
+                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model</h4>
                   </div>
                   <div className="text-white font-bold text-base md:text-xl tracking-tight">Latency vs. Revenue Risk</div>
                 </div>
