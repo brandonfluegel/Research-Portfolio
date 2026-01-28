@@ -38,6 +38,16 @@ export default function MercedesProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Trust in Semi-Autonomous Driving</h3>
           
+          {/* INJECTED METRIC BLOCK */}
+          <div className="py-6 border-y border-white/10 md:hidden">
+             <div className="text-6xl font-bold text-white tracking-tighter">
+               +24%
+             </div>
+             <div className="text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+               Trust Score (Automated Handoffs)
+             </div>
+          </div>
+
           <p className="text-lg text-zinc-200 leading-relaxed border-l-2 border-white/20 pl-6 my-6">
             &quot;How does the car communicate intent?&quot; <br/>
             <span className="text-base text-zinc-400 mt-2 block font-normal leading-relaxed">

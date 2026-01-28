@@ -62,6 +62,18 @@ export default function AmazonProjectSection() {
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Calibrating Alexa Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
               </h3>
+
+              {/* --- MOBILE ONLY: KEY METRIC (Recruiter Glance) --- */}
+              <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
+                 <div className="flex items-center gap-2 mb-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Impact</span>
+                 </div>
+                 <div className="text-3xl font-bold text-white">$1.7 Billion</div>
+                 <p className="text-xs text-zinc-400 mt-1">Incremental OPS prevented by fixing latency thresholds.</p>
+              </div>
+              {/* ------------------------------------------------ */}
+
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                 Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace technical benchmarks with human-centered thresholds, directly linking millisecond delays to revenue loss.
               </p>
@@ -75,7 +87,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Psychophysics</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  Utilized a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 trials. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; at exactly 1000ms</span>, proving that user sentiment degrades non-linearly beyond this point.
+                  Utilized a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 trials. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; at exactly 1000ms</span>.
                 </p>
               </div>
 
@@ -88,12 +100,12 @@ export default function AmazonProjectSection() {
                 </p>
               </div>
 
-              {/* Step 3 */}
-               <div className="relative">
+              {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
+               <div className="relative hidden md:block">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
                 <h4 className="text-xs md:text-sm font-bold text-cyan-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $1.7B Projection</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn (Incremental OPS).
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn.
                 </p>
               </div>
             </div>
@@ -101,7 +113,7 @@ export default function AmazonProjectSection() {
 
           {/* RIGHT: DATA VISUALIZATION */}
           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
-            {/* CHANGED: Taller aspect ratio on mobile (aspect-[4/3]) for better readability, standard 16/10 on desktop */}
+            {/* Aspect Ratio tweaked for mobile legibility */}
             <div className="relative w-full max-w-2xl mx-auto aspect-[4/3] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
   
               {/* Chart Header */}
@@ -109,21 +121,21 @@ export default function AmazonProjectSection() {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model</h4>
+                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">NVA Model v4.2</h4>
                   </div>
-                  <div className="text-white font-bold text-base md:text-xl tracking-tight">Latency vs. Revenue Risk</div>
+                  <div className="text-white font-bold text-base md:text-xl tracking-tight">Latency vs. Revenue</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Projected Impact</div>
-                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$1.7 Billion</div>
+                  <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Impact</div>
+                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$1.7B</div>
                 </div>
               </div>
 
               {/* The Chart Area */}
               <div className="relative w-full h-[60%] md:h-[65%]">
                 
-                {/* Grid Lines */}
-                <div className="absolute inset-0 z-0 flex flex-col justify-between opacity-40">
+                {/* Grid Lines - HIDDEN ON MOBILE for cleanliness */}
+                <div className="hidden md:flex absolute inset-0 z-0 flex-col justify-between opacity-40">
                     <div className="w-full h-[1px] bg-white/10"></div>
                     <div className="w-full h-[1px] bg-white/10"></div>
                     <div className="w-full h-[1px] bg-white/10"></div>
@@ -134,15 +146,10 @@ export default function AmazonProjectSection() {
                 <svg className="absolute inset-0 w-full h-full overflow-visible z-10" preserveAspectRatio="none" viewBox="0 0 100 100">
                   <defs>
                     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#4ade80" />   {/* Green (Fast) */}
+                      <stop offset="0%" stopColor="#4ade80" />
                       <stop offset="30%" stopColor="#4ade80" />
-                      <stop offset="45%" stopColor="#facc15" />   {/* Yellow (Cliff) */}
-                      <stop offset="100%" stopColor="#ef4444" />  {/* Red (Slow) */}
-                    </linearGradient>
-                    
-                    <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#4ade80" stopOpacity="0.1" />
-                      <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
+                      <stop offset="45%" stopColor="#facc15" />
+                      <stop offset="100%" stopColor="#ef4444" />
                     </linearGradient>
                   </defs>
                   
@@ -163,7 +170,7 @@ export default function AmazonProjectSection() {
                     style={{ filter: "drop-shadow(0px 0px 8px rgba(74, 222, 128, 0.3))" }}
                   />
                   
-                  {/* The "Cliff" Marker Point - Pulsing */}
+                  {/* The "Cliff" Marker Point */}
                    <motion.circle 
                     cx="33" 
                     cy="45" 
@@ -188,41 +195,41 @@ export default function AmazonProjectSection() {
                   />
                 </svg>
 
-                {/* DATA LABELS - Optimized for Mobile */}
+                {/* DATA LABELS - Optimized Sizes for Mobile */}
                 
                 {/* Threshold Badge */}
                 <motion.div 
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6 }}
-                  className="absolute top-[-25%] md:top-[-18%] left-[18%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
+                  className="absolute top-[-25%] md:top-[-18%] left-[15%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
                 >
-                  <div className="text-[9px] md:text-xs font-bold text-white whitespace-nowrap">
+                  <div className="text-[10px] md:text-xs font-bold text-white whitespace-nowrap">
                     1000ms Threshold
                   </div>
-                  <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
+                  <div className="text-[8px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
                 </motion.div>
 
                 {/* Safe Zone Label */}
-                <div className="absolute bottom-2 left-2 md:bottom-6 md:left-6">
-                    <div className="text-[8px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
-                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[120px] leading-tight font-medium">
+                <div className="absolute bottom-2 left-0 md:bottom-6 md:left-6">
+                    <div className="text-[9px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
+                    <div className="text-[10px] md:text-xs text-zinc-300 max-w-[80px] md:max-w-[120px] leading-tight font-medium">
                         Retained revenue
                     </div>
                 </div>
 
                 {/* Danger Zone Label */}
-                 <div className="absolute top-2 right-2 md:top-6 md:right-6 text-right">
-                    <div className="text-[8px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
-                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[100px] md:max-w-[140px] leading-tight font-medium">
-                        Churn risk increases 3x
+                 <div className="absolute top-2 right-0 md:top-6 md:right-6 text-right">
+                    <div className="text-[9px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
+                    <div className="text-[10px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[140px] leading-tight font-medium">
+                        Churn risk increases
                     </div>
                 </div>
 
               </div>
 
               {/* X-Axis Labels */}
-              <div className="flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
+              <div className="flex justify-between mt-4 md:mt-8 text-[9px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
                 <span>0ms</span>
                 <span className="text-zinc-300 relative left-[-5%]">1000ms</span>
                 <span>2000ms</span>

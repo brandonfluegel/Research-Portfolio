@@ -37,6 +37,17 @@ export default function SlingProjectSection() {
       >
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Product Leadership & Human-AI Strategy</h3>
+          
+          {/* INJECTED METRIC BLOCK */}
+          <div className="py-6 border-y border-white/10 md:hidden">
+             <div className="text-6xl font-bold text-white tracking-tighter">
+               17%
+             </div>
+             <div className="text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+               Lift in Purchase Confidence
+             </div>
+          </div>
+
           <p className="text-lg text-zinc-200 leading-relaxed">
 Own the strategic research roadmap for monetization, retention, and Human-AI interaction, reporting directly to the VP of Product.
           </p>

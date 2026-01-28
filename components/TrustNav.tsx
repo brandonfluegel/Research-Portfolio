@@ -58,7 +58,7 @@ export default function TrustNav() {
                   alt={`${company.name} logo`}
                   width={150}
                   height={80}
-                  className="object-contain w-full h-full opacity-60 filter brightness-0 invert select-none"
+                  className="object-contain w-full h-full opacity-100 md:opacity-60 filter brightness-0 invert select-none"
                   loading="eager"
                 />
               </div>
