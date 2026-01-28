@@ -1,42 +1,37 @@
 "use client";
-import { motion, useMotionValue } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function Cursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  useEffect(() => {
-    // Only attach listener if pointer is fine (not mobile)
-    const isTouch = window.matchMedia("(pointer: coarse)").matches;
-    if (isTouch) return;
+  const springConfig = { damping: 25, stiffness: 700 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
+  useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 14);
-      cursorY.set(e.clientY - 8);
+      cursorX.set(e.clientX - 16);
+      cursorY.set(e.clientY - 16);
     };
 
     window.addEventListener("mousemove", moveCursor);
 
-    return () => window.removeEventListener("mousemove", moveCursor);
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
   }, [cursorX, cursorY]);
 
-  // Use CSS (hidden md:block) to handle visibility instead of conditonal return
   return (
-    <motion.svg
-      width="60"
-      height="60"
-      viewBox="0 0 24 24"
+    <motion.div
+      // We use 'hidden md:block' to hide on mobile via CSS instead of JS
+      // This prevents hydration mismatches and improves performance
+      className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white pointer-events-none z-[9999] mix-blend-difference hidden md:block"
       style={{
-        translateX: cursorX,
-        translateY: cursorY,
+        x: cursorXSpring,
+        y: cursorYSpring,
       }}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] drop-shadow-md mix-blend-difference hidden md:block"
-    >
-      <path
-        d="M5.5 3.21l.01 11.09 3.02-3.8 2.37 5.17 1.83-.83-2.38-5.18 5.62-.02L5.5 3.21z"
-        fill="#ffffff"
-      />
-    </motion.svg>
+    />
   );
 }
