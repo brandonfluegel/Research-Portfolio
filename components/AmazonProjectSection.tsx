@@ -32,12 +32,12 @@ export default function AmazonProjectSection() {
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Staff UX Researcher</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-sm text-zinc-400">Staff UX Researcher, Devices Design Group</p>
+          <p className="text-sm text-zinc-400">UX Researcher, Devices Design Group</p>
         </div>
       </motion.div>
 
@@ -93,7 +93,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
                 <h4 className="text-sm font-bold text-cyan-400 uppercase tracking-wide mb-2">Outcome: $1.7B Projection</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn (Incremental OPS).
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> over the following 15 months, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn (Incremental OPS).
                 </p>
               </div>
             </div>
@@ -108,7 +108,7 @@ export default function AmazonProjectSection() {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <h4 className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model v4.2</h4>
+                    <h4 className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model</h4>
                   </div>
                   <div className="text-white font-bold text-lg md:text-xl tracking-tight">Latency vs. Revenue Risk</div>
                 </div>
@@ -274,14 +274,14 @@ export default function AmazonProjectSection() {
                   <div className="group">
                     <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
                     <p className="text-sm text-zinc-400 leading-relaxed">
-                      Stakeholders debated UI density based on aesthetics. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors.
+                      Stakeholders debated UI density based on aesthetics. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors (Apple TV, Netflix).
                     </p>
                   </div>
                   <div className="w-full h-[1px] bg-white/5"></div>
                   <div className="group">
                     <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">The Strategic Pivot</h4>
                     <p className="text-sm text-zinc-400 leading-relaxed">
-                      We optimized the Home UI to reduce cognitive load, resulting in increased engagement metrics and a simpler mental model for content discovery.
+                      We optimized the visual hierarchy of the FireTV Home UI to reduce cognitive load, resulting in increased engagement metrics and a simpler mental model for content discovery.
                     </p>
                   </div>
                 </div>
@@ -306,7 +306,7 @@ export default function AmazonProjectSection() {
                 Multimodal AI <br /> <span className="text-zinc-500">+ Hardware</span>
               </h3>
               <p className="text-lg text-zinc-300 mb-8 leading-relaxed font-light">
-                Led end-to-end Human Factors strategy for the Echo Show portfolio. My research informed 50+ iterative design updates that improved the core user experience for 75M+ customers.
+                Led end-to-end Human Factors strategy for the Echo Show (5,8,10,15). My research informed 50+ iterative design updates that improved the core user experience for 75M+ Echo Show customers.
               </p>
                <div className="inline-flex items-center gap-4 px-5 py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
                  <div className="p-1 bg-yellow-500/20 rounded-full">
