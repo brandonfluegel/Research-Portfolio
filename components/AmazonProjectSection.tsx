@@ -12,7 +12,7 @@ export default function AmazonProjectSection() {
   return (
     <section className="relative w-full py-24 md:py-32 overflow-hidden bg-black" ref={ref}>
       
-      {/* PERFORMANCE FIX: Reduced blur radius and added transform-gpu for smoother rendering */}
+      {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
@@ -32,12 +32,12 @@ export default function AmazonProjectSection() {
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Lead Researcher</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Staff UX Researcher</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-sm text-zinc-400">Lead Researcher, Devices Design Group</p>
+          <p className="text-sm text-zinc-400">Staff UX Researcher, Devices Design Group</p>
         </div>
       </motion.div>
 
@@ -57,91 +57,183 @@ export default function AmazonProjectSection() {
             <div className="mb-10">
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-                <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Strategy</span>
+                <span className="text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Business Strategy</span>
               </div>
               <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
-                Calibrating Alexa Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
+                Calibrating Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
               </h3>
               <p className="text-lg text-zinc-300 leading-relaxed font-light">
-                Engineering latency targets for Alexa were historically arbitrary. I proposed and led a multi-year research program to identify the precise response latency thresholds where user satisfaction collapses.
+                Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace technical benchmarks with human-centered thresholds, directly linking millisecond delays to revenue loss.
               </p>
             </div>
 
             {/* PROCESS TIMELINE */}
-            <div className="relative pl-8 border-l border-white/10 space-y-10">
+            <div className="relative pl-8 border-l border-white/10 space-y-12">
+              
+              {/* Step 1 */}
               <div className="relative">
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Phase 1: Mixed Methods Research</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Experimental Design: Psychophysics</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Manipulated multimodal response latency in a controlled setting over 1000+ trials with customers. Mapped the non-linear degradation of satisfaction to find the <span className="text-white font-medium">&quot;Cliff of User Dissatisfaction&quot; at 1000ms</span>.
+                  Utilized a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 trials. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; at exactly 1000ms</span>, proving that user sentiment degrades non-linearly beyond this point.
                 </p>
               </div>
+
+              {/* Step 2 */}
               <div className="relative">
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Phase 2: Economic Model</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2">Strategic Integration: Economics</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate response latency thresholds into the NVA (Negative Value Action) model. We redefined &quot;defects&quot; as <span className="text-white font-medium">any interaction slower than this 1000ms threshold.</span>.
+                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not as technical failures, but as any interaction slower than the 1000ms perceptual cliff.
                 </p>
               </div>
+
+              {/* Step 3 */}
                <div className="relative">
                 <span className="absolute -left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
                 <h4 className="text-sm font-bold text-cyan-400 uppercase tracking-wide mb-2">Outcome: $1.7B Projection</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that hitting these human perceptual thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing $1.7B in downstream churn.
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn (Incremental OPS).
                 </p>
               </div>
             </div>
           </motion.div>
 
-          {/* RIGHT: DATA VISUALIZATION (DESIGN FIX + CENTERED) */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full">
-            <div className="relative w-full max-w-2xl mx-auto"> 
-              
-              {/* Header Label for Context */}
-              <div className="flex justify-between items-end mb-3 px-1">
-                <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">Fig 1. Latency vs. Satisfaction Curve</span>
-                <span className="text-[10px] font-mono text-cyan-500 uppercase tracking-widest">NVA Model</span>
+          {/* RIGHT: DATA VISUALIZATION */}
+          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8">
+            <div className="relative w-full max-w-2xl mx-auto aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-6 md:p-8 group">
+  
+              {/* Chart Header */}
+              <div className="flex justify-between items-start mb-8 z-20 relative">
+                <div>
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                    <h4 className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">Alexa Economics • NVA Model v4.2</h4>
+                  </div>
+                  <div className="text-white font-bold text-lg md:text-xl tracking-tight">Latency vs. Revenue Risk</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-[10px] font-mono text-zinc-500 uppercase">Projected Impact</div>
+                  <div className="text-green-400 font-mono font-bold text-xl">$1.7 Billion</div>
+                </div>
               </div>
 
-              {/* Main Container - Removed "Window" dots, cleaned up borders */}
-              <div className="relative rounded-lg overflow-hidden border border-white/10 bg-zinc-900/50 backdrop-blur-sm shadow-2xl">
+              {/* The Chart Area */}
+              <div className="relative w-full h-[65%]">
                 
-                {/* Image Container with Aspect Ratio Fix */}
-                <div className="relative aspect-[16/10] w-full">
-                   <Image
-                    src="/assets/economic_threshold_model.png"
-                    alt="Graph showing user satisfaction dropping as latency increases"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority // Forces high priority loading to prevent sluggishness
-                    className="object-contain p-6 md:p-10" 
-                  />
+                {/* Grid Lines - Slightly brighter for context */}
+                <div className="absolute inset-0 z-0 flex flex-col justify-between opacity-40">
+                    <div className="w-full h-[1px] bg-white/10"></div>
+                    <div className="w-full h-[1px] bg-white/10"></div>
+                    <div className="w-full h-[1px] bg-white/10"></div>
+                    <div className="w-full h-[1px] bg-white/10"></div>
                 </div>
 
-                {/* "HUD" Style Insight Overlay - positioned cleanly at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/90 to-transparent pt-12 pb-6 px-6 md:px-8 border-t border-white/5">
-                   <div className="flex items-start gap-4">
-                     <div className="mt-1 w-2 h-2 bg-red-500 rounded-full animate-pulse flex-shrink-0 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></div>
-                     <div>
-                       <span className="block text-[11px] font-bold text-zinc-300 uppercase tracking-wider mb-1">Critical Insight</span>
-                       <p className="text-sm text-zinc-400 leading-snug max-w-md">
-                         Latency {">"}1000ms is not just &quot;slow&quot;, it is a psychophysical defect that directly correlates to 90-day retention loss.
-                       </p>
-                     </div>
-                   </div>
+                {/* SVG Layer */}
+                <svg className="absolute inset-0 w-full h-full overflow-visible z-10" preserveAspectRatio="none" viewBox="0 0 100 100">
+                  <defs>
+                    {/* Gradient for the Line */}
+                    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#4ade80" />   {/* Green (Fast) */}
+                      <stop offset="30%" stopColor="#4ade80" />
+                      <stop offset="45%" stopColor="#facc15" />   {/* Yellow (Cliff) */}
+                      <stop offset="100%" stopColor="#ef4444" />  {/* Red (Slow) */}
+                    </linearGradient>
+                    
+                    {/* Gradient for Area Fill */}
+                    <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#4ade80" stopOpacity="0.1" />
+                      <stop offset="100%" stopColor="#4ade80" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* 1. The Threshold Line (Vertical at 1000ms / 33%) */}
+                  <line x1="33" y1="0" x2="33" y2="100" stroke="white" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
+                  
+                  {/* 2. The Satisfaction Curve */}
+                  <motion.path
+                    d="M0,15 C 15,15 25,18 33,45 C 45,90 70,95 100,98" 
+                    fill="none"
+                    stroke="url(#lineGradient)"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.8, ease: "easeInOut" }}
+                    style={{ filter: "drop-shadow(0px 0px 8px rgba(74, 222, 128, 0.3))" }}
+                  />
+                  
+                  {/* 3. The "Cliff" Marker Point - Pulsing */}
+                   <motion.circle 
+                    cx="33" 
+                    cy="45" 
+                    r="8" 
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="1"
+                    opacity="0.5"
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  />
+                  <motion.circle 
+                    cx="33" 
+                    cy="45" 
+                    r="4" 
+                    fill="#18181b" 
+                    stroke="#fff"
+                    strokeWidth="2"
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ delay: 1.4, type: "spring" }}
+                  />
+                </svg>
+
+                {/* DATA LABELS - High Contrast */}
+                
+                {/* Threshold Badge */}
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.6 }}
+                  className="absolute top-[-18%] left-[22%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-3 py-1.5 rounded shadow-xl z-20"
+                >
+                  <div className="text-[10px] md:text-xs font-bold text-white whitespace-nowrap">
+                    1000ms Threshold
+                  </div>
+                  <div className="text-[8px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
+                </motion.div>
+
+                {/* Safe Zone Label */}
+                <div className="absolute bottom-6 left-6">
+                    <div className="text-[10px] font-mono text-green-400 uppercase tracking-wider mb-1">Safe Zone</div>
+                    <div className="text-xs text-zinc-300 max-w-[120px] leading-tight font-medium">
+                        Retained engagement & revenue
+                    </div>
+                </div>
+
+                {/* Danger Zone Label */}
+                 <div className="absolute top-6 right-6 text-right">
+                    <div className="text-[10px] font-mono text-red-400 uppercase tracking-wider mb-1">Dissatisfaction Zone</div>
+                    <div className="text-xs text-zinc-300 max-w-[140px] leading-tight font-medium">
+                        Churn risk increases 3x per 500ms
+                    </div>
                 </div>
 
               </div>
-              
-              {/* Back Glow Effect */}
-              <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/10 to-purple-500/10 blur-xl -z-10 rounded-3xl opacity-50"></div>
+
+              {/* X-Axis Labels */}
+              <div className="flex justify-between mt-8 text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
+                <span>0ms</span>
+                <span className="text-zinc-300 relative left-[-5%]">1000ms</span>
+                <span>2000ms</span>
+                <span>3000ms</span>
+              </div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* ... (Keep fNIRS and Echo Show sections unchanged but verify Image tags have 'sizes' prop added if you modify them) ... */}
-        
-        {/* === CASE STUDY 2: NEUROIMAGING (Abbreviated for context preservation) === */}
+        {/* === CASE STUDY 2: NEUROIMAGING (Brief Recap) === */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -149,18 +241,17 @@ export default function AmazonProjectSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center"
         >
-             {/* ... Copy previous code for Left Column ... */}
-             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex justify-center"> {/* Added flex justify-center */}
-                <div className="relative w-full max-w-2xl"> {/* Added width constraint wrapper */}
+             {/* LEFT: VIDEO/IMAGE */}
+             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex justify-center">
+                <div className="relative w-full max-w-2xl">
                     <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
-                    {/* ... Video ... */}
                     <video
                         src="/assets/fnirs.mp4"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-auto object-cover opacity-70 grayscale-[30%] hover:grayscale-0 transition duration-700"
+                        className="w-full h-auto object-cover opacity-60 grayscale-[20%] hover:grayscale-0 transition duration-700"
                         />
                     </div>
                     <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
@@ -169,35 +260,35 @@ export default function AmazonProjectSection() {
                 </div>
              </motion.div>
 
-             {/* ... Copy previous code for Right Column ... */}
+             {/* RIGHT: CONTENT */}
              <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2">
                  <div className="flex items-center gap-2 mb-4">
                   <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
                   <span className="text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & UX</span>
                 </div>
-                <h3 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
                   Biometric <br/> <span className="text-zinc-500">UI Benchmarking</span>
                 </h3>
-                {/* ... Rest of text content ... */}
+                
                  <div className="space-y-8">
                   <div className="group">
                     <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
                     <p className="text-sm text-zinc-400 leading-relaxed">
-                      Stakeholders debated tradeoffs of UI &quot;density&quot; vs &quot;minimalism&quot; on aesthetic preference and scannability. My research shifted the conversation to <strong>cognitive cost</strong>. Using neuroimaging (fNIRS), we proved that FireTV&apos;s visual density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitive platforms.
+                      Stakeholders debated UI density based on aesthetics. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors.
                     </p>
                   </div>
                   <div className="w-full h-[1px] bg-white/5"></div>
                   <div className="group">
                     <h4 className="text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">The Strategic Pivot</h4>
                     <p className="text-sm text-zinc-400 leading-relaxed">
-                      The data showed users were cognitively fatigued while searching for content. This research led to a redesign of the FireTV home page, with multiple optimizations to reduce the cognitive load required to parse the UI.
+                      We optimized the Home UI to reduce cognitive load, resulting in increased engagement metrics and a simpler mental model for content discovery.
                     </p>
                   </div>
                 </div>
              </motion.div>
         </motion.div>
 
-        {/* === CASE STUDY 3: HARDWARE (Abbreviated) === */}
+        {/* === CASE STUDY 3: HARDWARE === */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -205,13 +296,13 @@ export default function AmazonProjectSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center pb-24"
         >
-           {/* ... Text Content ... */}
+           {/* LEFT: CONTENT */}
            <motion.div variants={fadeInFromLeft} className="lg:col-span-5">
               <div className="flex items-center gap-2 mb-4">
                 <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)]"></span>
                 <span className="text-xs font-mono text-yellow-400 uppercase tracking-widest">Hardware & AI</span>
               </div>
-              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-[1.1] tracking-tight">
                 Multimodal AI <br /> <span className="text-zinc-500">+ Hardware</span>
               </h3>
               <p className="text-lg text-zinc-300 mb-8 leading-relaxed font-light">
@@ -227,7 +318,7 @@ export default function AmazonProjectSection() {
               </div>
            </motion.div>
 
-           {/* ... Image ... */}
+           {/* RIGHT: IMAGE */}
            <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex justify-center relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/5 blur-[80px] rounded-full -z-10"></div>
               <motion.div
