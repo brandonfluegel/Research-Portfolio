@@ -39,11 +39,12 @@ export default function NASAProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Reducing Astronaut Cognitive Load</h3>
           
-          <div className="py-6 border-y border-white/10">
-             <div className="text-6xl font-bold text-white tracking-tighter">
+          {/* Metric Refactor: Glass Card Standard */}
+          <div className="bg-zinc-900/50 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-2xl my-6">
+             <div className="text-5xl md:text-6xl font-bold text-white tracking-tighter">
                30%
              </div>
-             <div className="text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+             <div className="text-xs md:text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
                Reduction in Time-on-Task
              </div>
           </div>

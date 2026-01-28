@@ -38,12 +38,12 @@ export default function MercedesProjectSection() {
         <motion.div variants={fadeInFromLeft} className="space-y-8">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Trust in Semi-Autonomous Driving</h3>
           
-          {/* INJECTED METRIC BLOCK */}
-          <div className="py-6 border-y border-white/10 md:hidden">
-             <div className="text-6xl font-bold text-white tracking-tighter">
+          {/* Metric Refactor: Glass Card Standard (Mobile Overlay) */}
+          <div className="md:hidden bg-zinc-900/50 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-2xl my-6">
+             <div className="text-5xl md:text-6xl font-bold text-white tracking-tighter">
                +24%
              </div>
-             <div className="text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+             <div className="text-xs md:text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
                Trust Score (Automated Handoffs)
              </div>
           </div>

@@ -33,9 +33,10 @@ export default function SlingProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        // Layout Pivot: Image Left (Order 1), Text Right (Order 2) on Desktop (lg)
         className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-8">
+        <motion.div variants={fadeInFromLeft} className="space-y-8 lg:order-2">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Product Leadership & Human-AI Strategy</h3>
           
           {/* INJECTED METRIC BLOCK */}
@@ -53,7 +54,7 @@ Own the strategic research roadmap for monetization, retention, and Human-AI int
           </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="relative group w-full">
+        <motion.div variants={fadeInFromRight} className="relative group w-full lg:order-1">
           <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl aspect-video w-full">
             <video
               src="/assets/sling-workshop.mp4"

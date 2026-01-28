@@ -34,16 +34,18 @@ export default function UberProjectSection() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        // Layout Pivot: Image Left (Order 1), Text Right (Order 2) on Desktop (lg)
         className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 lg:gap-16 items-start"
       >
-        <motion.div variants={fadeInFromLeft} className="space-y-8">
+        <motion.div variants={fadeInFromLeft} className="space-y-8 lg:order-2">
           <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">Driver Retention Strategy in Brazil</h3>
           
-          <div className="py-6 border-y border-white/10">
-             <div className="text-6xl font-bold text-white tracking-tighter">
+          {/* Metric Refactor: Glass Card Standard */}
+          <div className="bg-zinc-900/50 backdrop-blur-md border border-white/10 rounded-xl p-6 shadow-2xl my-6">
+             <div className="text-5xl md:text-6xl font-bold text-white tracking-tighter">
                15%
              </div>
-             <div className="text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
+             <div className="text-xs md:text-sm text-zinc-400 uppercase tracking-widest mt-2 font-medium">
                Lift in Driver Retention
              </div>
           </div>
@@ -52,7 +54,7 @@ export default function UberProjectSection() {
 Conducted foundational research in Brazil to inform global product strategy. Insights directly steered the driver app redesign, successfully reducing cognitive load and improving rental driver retention by 15%.          </p>
         </motion.div>
 
-        <motion.div variants={fadeInFromRight} className="relative group w-full">
+        <motion.div variants={fadeInFromRight} className="relative group w-full lg:order-1">
            <div className="relative rounded-xl overflow-hidden border border-white/10 shadow-2xl aspect-[4/3] w-full">
               <Image
                 src="/assets/project-image-2.jpg"
