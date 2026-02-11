@@ -103,7 +103,7 @@ export default function AmazonProjectSection() {
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative hidden md:block">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $100M+ Projection</h4>
+                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $100M+ Projection</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
                   The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa, preventing <span className="text-green-400 font-bold">$100M+</span> in downstream churn over the subsequent 15 months.
                 </p>
