@@ -202,7 +202,7 @@ export default function AmazonProjectSection() {
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6 }}
-                  className="absolute top-[-25%] md:top-[-18%] left-[15%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
+                  className="absolute top-[2%] md:top-[5%] left-[15%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
                 >
                   <div className="text-[10px] md:text-xs font-bold text-white whitespace-nowrap">
                     1000ms Threshold
