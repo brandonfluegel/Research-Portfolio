@@ -57,7 +57,7 @@ export default function AmazonProjectSection() {
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Psychophysics & Business Strategy</span>
+                <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Human Factors & Business Strategy</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Calibrating Alexa Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
@@ -96,16 +96,16 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not as technical failures, but as any interaction slower than the 1000ms perceptual cliff.
+                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not as technical failures, but as any interaction slower than the 1000ms satisfaction cliff.
                 </p>
               </div>
 
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative hidden md:block">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-cyan-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $100M+ Projection</h4>
+                <h4 className="text-xs md:text-sm font-bold text-zinc-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $100M+ Projection</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$100M+</span> in downstream churn.
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa, preventing <span className="text-green-400 font-bold">$100M+</span> in downstream churn over the subsequent 15 months.
                 </p>
               </div>
             </div>
@@ -121,9 +121,9 @@ export default function AmazonProjectSection() {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">NVA Model v4.2</h4>
+                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">NVA Model</h4>
                   </div>
-                  <div className="text-white font-bold text-base md:text-xl tracking-tight">Latency vs. Revenue</div>
+                  <div className="text-white font-bold text-base md:text-xl tracking-tight">Alexa Latency vs. User Satisfaction</div>
                 </div>
                 <div className="text-right">
                   <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Impact</div>
