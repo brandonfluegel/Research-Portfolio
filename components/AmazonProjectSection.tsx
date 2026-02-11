@@ -44,7 +44,7 @@ export default function AmazonProjectSection() {
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
         
-        {/* === CASE STUDY 1: REVENUE STRATEGY ($1.7B) === */}
+        {/* === CASE STUDY 1: REVENUE STRATEGY ($100M+) === */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -69,7 +69,7 @@ export default function AmazonProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">$1.7 Billion</div>
+                 <div className="text-3xl font-bold text-white">$100M+</div>
                  <p className="text-xs text-zinc-400 mt-1">Incremental OPS prevented by fixing latency thresholds.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -103,9 +103,9 @@ export default function AmazonProjectSection() {
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative hidden md:block">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-cyan-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $1.7B Projection</h4>
+                <h4 className="text-xs md:text-sm font-bold text-cyan-400 uppercase tracking-wide mb-1 md:mb-2">Outcome: $100M+ Projection</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$1.7B</span> in downstream churn.
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> annually, preventing <span className="text-green-400 font-bold">$100M+</span> in downstream churn.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function AmazonProjectSection() {
                 </div>
                 <div className="text-right">
                   <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Impact</div>
-                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$1.7B</div>
+                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$100M+</div>
                 </div>
               </div>
 
