@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import LogoBadge from "@/components/LogoBadge";
+import LogoBadge from "@/components/ui/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
@@ -331,22 +331,22 @@ export default function AmazonProjectSection() {
 
            {/* RIGHT: IMAGE */}
            <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col items-center justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group flex items-center justify-center">
+             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group flex items-center justify-center p-8">
                  
                  {/* Background Glow */}
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/5 blur-[80px] rounded-full pointer-events-none"></div>
 
                  <motion.div
-                    animate={{ y: [0, -15, 0] }}
+                    animate={{ y: [0, -10, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative w-full max-w-sm md:max-w-md p-8"
+                    className="relative w-full h-full flex items-center justify-center"
                   >
                     <Image
                       src="/assets/echo.png"
                       alt="Echo Show 10"
                       width={800}
                       height={600}
-                      className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
+                      className="w-auto h-full max-h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
                     />
                   </motion.div>
                 

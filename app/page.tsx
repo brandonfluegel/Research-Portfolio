@@ -1,19 +1,19 @@
 "use client";
 
 // REMOVED: import Cursor from "@/components/Cursor";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
-import TrustNav from "@/components/TrustNav"; 
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+import TrustNav from "@/components/sections/TrustNav"; 
 // Dynamic Imports for Code Splitting
 import dynamic from "next/dynamic";
-const SlingProjectSection = dynamic(() => import("@/components/SlingProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const AmazonProjectSection = dynamic(() => import("@/components/AmazonProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const UberProjectSection = dynamic(() => import("@/components/UberProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const NASAProjectSection = dynamic(() => import("@/components/NASAProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const MercedesProjectSection = dynamic(() => import("@/components/MercedesProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
+const SlingProjectSection = dynamic(() => import("@/components/sections/SlingProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
+const AmazonProjectSection = dynamic(() => import("@/components/sections/AmazonProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
+const UberProjectSection = dynamic(() => import("@/components/sections/UberProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
+const NASAProjectSection = dynamic(() => import("@/components/sections/NASAProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
+const MercedesProjectSection = dynamic(() => import("@/components/sections/MercedesProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
 
-import ScrollIndicator from "@/components/ScrollIndicator";
+import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/app/utils/animationVariants";

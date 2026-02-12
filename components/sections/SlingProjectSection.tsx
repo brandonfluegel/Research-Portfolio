@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import LogoBadge from "@/components/LogoBadge";
+import LogoBadge from "@/components/ui/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 

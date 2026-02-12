@@ -1,19 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import LogoBadge from "@/components/LogoBadge";
+import Image from "next/image";
+import LogoBadge from "@/components/ui/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
-export default function MercedesProjectSection() {
+export default function NASAProjectSection() {
   const { ref } = useParallax();
 
   return (
     <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black" ref={ref}>
-
+      
       {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-slate-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gray-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
+      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-sky-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
+      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
       <motion.div 
@@ -24,19 +25,19 @@ export default function MercedesProjectSection() {
       >
         <div className="flex items-center gap-6">
           <LogoBadge 
-            logoSrc="/assets/benz.png" 
-            alt="Mercedes" 
-            className="w-12 md:w-16 h-auto opacity-100 brightness-0 invert" 
+            logoSrc="/assets/nasa-logo.png" 
+            alt="NASA" 
+            className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
           />
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
-            <h2 className="text-lg text-white font-medium tracking-tight">Automotive UX & HMI</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
+            <h2 className="text-lg text-white font-medium tracking-tight">Human Factors Research</h2>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Research Lead</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">UX Researcher</p>
+          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors Researcher</p>
         </div>
       </motion.div>
 
@@ -54,26 +55,26 @@ export default function MercedesProjectSection() {
           <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-slate-500 rounded-full shadow-[0_0_8px_rgba(100,116,139,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-slate-500 uppercase tracking-widest">Human Machine Interface</span>
+                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
+                <span className="text-[10px] md:text-xs font-mono text-blue-500 uppercase tracking-widest">Space Systems & Cognition</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Trust in Semi-Autonomous <br/> <span className="text-zinc-500">Driving</span>
+                Reducing Astronaut <br/> <span className="text-zinc-500">Cognitive Load</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
               <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
                  <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Research Impact</span>
+                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Operational Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">+24%</div>
-                 <p className="text-xs text-zinc-400 mt-1">Increase in user trust during automated handoffs.</p>
+                 <div className="text-3xl font-bold text-white">30%</div>
+                 <p className="text-xs text-zinc-400 mt-1">Reduction in critical Time-on-Task for medical procedures.</p>
               </div>
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                &quot;How does the car communicate intent?&quot; Conducted foundational research on passenger experiences in L2 vehicles to guide critical improvements to the HMI that enhanced trust.
+                Led Human Factors validation for next-gen medical workstations on the Lunar Gateway, minimizing critical operator errors in high-stress zero-G environments.
               </p>
             </div>
 
@@ -83,27 +84,27 @@ export default function MercedesProjectSection() {
               {/* Block 1 */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HMI Design Standards</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Validation: Lunar Gateway</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Defined <span className="text-white font-medium">Alert Modality standards</span> for autonomous handovers. These findings directly influenced internal design guidelines, ensuring clear communication of system status during critical control transitions.
+                  Executed human factors validation studies for the <span className="text-white font-medium">Lunar Gateway medical workstation</span>. This rigorous testing environment simulated zero-gravity constraints to identify physical and cognitive ergonomic failure points.
                 </p>
               </div>
 
               {/* Block 2 */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Psychoacoustic Modeling</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Cognitive Load Analysis</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. This model guided engineering adjustments that reduced perceived cabin noise by <span className="text-green-400 font-bold">15%</span>.
+                  Leveraged cognitive load analysis to redesign critical medical workflows. By simplifying procedure execution steps and information architecture, we minimized the risk of <span className="text-white font-medium">critical operator errors</span> during high-stress operational scenarios.
                 </p>
               </div>
 
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Research Impact: <span className="text-green-400 font-bold">+24% Trust Score</span></h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Operational Impact: <span className="text-green-400 font-bold">-30% Time-on-Task</span></h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
-                  The implemented HMI improvements resulted in a verifiable <span className="text-green-400 font-bold">24% increase in user trust scores</span> during automated lane changes and handoffs.
+                  The redesigned interface and physical layout resulted in a significant <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures, ensuring astronaut safety and mission efficiency.
                 </p>
               </div>
 
@@ -113,18 +114,16 @@ export default function MercedesProjectSection() {
           {/* RIGHT: VISUAL MEDIA */}
           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
              <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
-                <video
-                  src="/assets/drive.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                <Image
+                  src="/assets/nasahab2.PNG"
+                  alt="NASA Gateway Research"
+                  fill
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
                 
                 {/* Caption Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Semi-Autonomous Driving Simulator</p>
+                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">VR Simulation: Medical Workstation</p>
                 </div>
              </div>
           </motion.div>
