@@ -81,27 +81,36 @@ export default function SlingProjectSection() {
               {/* Block 1: SXI (Framework) */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: THE SLING EXPERIENCE INDEX (SXI)</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Architected a proprietary quantitative framework (SXI) that merged behavioral telemetry with user-perceived friction, transitioning leadership to a proactive prioritization model now used for all VP+ product reviews.
                 </p>
               </div>
 
-               {/* Block 2: Human-AI */}
+               {/* Block 2: Roadmap Realignment */}
+               <div className="relative">
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC PIVOT: ROADMAP REALIGNMENT</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Leveraging SXI longitudinal data, I orchestrated a 2025 roadmap realignment. I secured executive buy-in to halt low-value feature releases and instead prioritize a foundational overhaul of the checkout architecture to address critical friction hotspots.
+                </p>
+              </div>
+
+              {/* Block 3: Measurable Impact */}
+              <div className="relative">
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">MEASURABLE IMPACT</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  The re-architected checkout flow directly resulted in a <span className="text-green-400 font-bold">17% lift in subscription conversion</span> during Q4 2025, validating the financial impact of the SXI framework in resolving systemic friction.
+                </p>
+              </div>
+
+               {/* Block 4: Human-AI */}
                <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Led foundational research for an LLM-powered assistant, defining the interaction model for the 10-foot experience. Established a &quot;Trust & System Status&quot; framework to align mental models during complex tasks.
-                </p>
-              </div>
-
-              {/* Block 3: Executive Influence */}
-              <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">EXECUTIVE INFLUENCE & RISK MITIGATION</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Leveraged longitudinal research to successfully influence the CEO to halt a high-stakes campaign launch, mitigating projected churn and protecting brand sentiment.
+Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust & System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.
                 </p>
               </div>
 
