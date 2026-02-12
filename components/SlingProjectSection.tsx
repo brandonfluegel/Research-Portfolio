@@ -103,7 +103,8 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Human-AI Interaction: Architecting Trust</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
- Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a "Trust & System Status" framework to align with customer mental models during complex, multi-turn tasks.                </p>
+                  Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust & System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.
+                </p>
               </div>
 
             </div>
