@@ -69,7 +69,7 @@ export default function AmazonProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">$100M+</div>
+                 <div className="text-3xl font-bold text-white">$50M+</div>
                  <p className="text-xs text-zinc-400 mt-1">Incremental OPS prevented by fixing latency thresholds.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -85,9 +85,9 @@ export default function AmazonProjectSection() {
               {/* Step 1 */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Psychophysics</h4>
+                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  Utilized a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 trials. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; at exactly 1000ms</span>.
+                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 interactions with Alexa. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; as all responses faster than 1000ms</span>.
                 </p>
               </div>
 
@@ -102,10 +102,10 @@ export default function AmazonProjectSection() {
 
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)] rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $100M+ Projection</h4>
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M+ Projection</h4>
                 <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa, preventing <span className="text-green-400 font-bold">$100M+</span> in downstream churn over the subsequent 15 months.
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa, realizing <span className="text-green-400 font-bold">$50M+</span> in incremental OPS over the subsequent 15 months.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function AmazonProjectSection() {
                 </div>
                 <div className="text-right">
                   <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Impact</div>
-                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$100M+</div>
+                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$50M+</div>
                 </div>
               </div>
 
@@ -214,7 +214,7 @@ export default function AmazonProjectSection() {
                 <div className="absolute bottom-2 left-0 md:bottom-6 md:left-6">
                     <div className="text-[9px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
                     <div className="text-[10px] md:text-xs text-zinc-300 max-w-[80px] md:max-w-[120px] leading-tight font-medium">
-                        Retained revenue
+                        Revenue opportunity
                     </div>
                 </div>
 
@@ -222,7 +222,7 @@ export default function AmazonProjectSection() {
                  <div className="absolute top-2 right-0 md:top-6 md:right-6 text-right">
                     <div className="text-[9px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
                     <div className="text-[10px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[140px] leading-tight font-medium">
-                        Churn risk increases
+                        Dissatisfaction & churn risk increases
                     </div>
                 </div>
 
@@ -331,7 +331,7 @@ export default function AmazonProjectSection() {
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full max-w-lg"
+                className="relative w-full max-w-lg md:max-w-sm"
               >
                 <Image
                   src="/assets/echo.png"
