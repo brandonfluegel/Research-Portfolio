@@ -29,13 +29,11 @@ export default function AmazonProjectSection() {
             alt="Amazon" 
             className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
           />
-          <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
+          <div className="h-8 w-[1px] bg-white/10"></div>
+          <div>
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
           </div>
-        
-        <div className="md:hidden">
-          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">UX Researcher</p>
         </div>
       </motion.div>
 
