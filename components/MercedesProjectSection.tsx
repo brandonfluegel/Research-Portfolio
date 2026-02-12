@@ -119,7 +119,7 @@ export default function MercedesProjectSection() {
                   muted
                   loop
                   playsInline
-                  className="object-contain w-full h-full opacity-90 group-hover:opacity-100"
+                  className="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
                 
                 {/* Caption Overlay */}

@@ -118,7 +118,7 @@ export default function NASAProjectSection() {
                   src="/assets/nasahab2.PNG"
                   alt="NASA Gateway Research"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
                 
                 {/* Caption Overlay */}

@@ -253,20 +253,20 @@ export default function AmazonProjectSection() {
         >
              {/* LEFT: VIDEO/IMAGE */}
              <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex justify-center">
-                <div className="relative w-full max-w-2xl">
-                    <div className="relative rounded-xl overflow-hidden border border-zinc-800 bg-black shadow-2xl">
+                <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
                     <video
                         src="/assets/fnirs.mp4"
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="w-full h-auto object-cover opacity-60 grayscale-[20%] hover:grayscale-0 transition duration-700"
-                        />
+                        className="object-cover w-full h-full opacity-60 grayscale-[20%] hover:grayscale-0 transition duration-700"
+                    />
+                    
+                    {/* Caption Overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                        <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 2. Measuring Cognitive Load via fNIRS</p>
                     </div>
-                    <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                    Fig 2. Measuring Cognitive Load via fNIRS
-                    </p>
                 </div>
              </motion.div>
 
@@ -330,25 +330,31 @@ export default function AmazonProjectSection() {
            </motion.div>
 
            {/* RIGHT: IMAGE */}
-           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col items-center justify-center relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-white/5 blur-[80px] rounded-full -z-10"></div>
-              <motion.div
-                animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="relative w-full max-w-lg md:max-w-sm"
-              >
-                <Image
-                  src="/assets/echo.png"
-                  alt="Echo Show 10"
-                  width={800}
-                  height={600}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
-                />
-              </motion.div>
-              <p className="mt-8 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-                  Fig 3. Echo Show 10 with Motion Tracking
-              </p>
+           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col items-center justify-center h-full pt-8 lg:pt-0">
+             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group flex items-center justify-center">
+                 
+                 {/* Background Glow */}
+                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/5 blur-[80px] rounded-full pointer-events-none"></div>
+
+                 <motion.div
+                    animate={{ y: [0, -15, 0] }}
+                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    className="relative w-full max-w-sm md:max-w-md p-8"
+                  >
+                    <Image
+                      src="/assets/echo.png"
+                      alt="Echo Show 10"
+                      width={800}
+                      height={600}
+                      className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
+                    />
+                  </motion.div>
+                
+                {/* Caption Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 3. Echo Show 10 with Motion Tracking</p>
+                </div>
+             </div>
            </motion.div>
         </motion.div>
 
