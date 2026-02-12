@@ -98,7 +98,7 @@ export default function SlingProjectSection() {
 
               {/* Block 3: Measurable Impact */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">MEASURABLE IMPACT</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   The re-architected checkout flow directly resulted in a <span className="text-green-400 font-bold">17% lift in subscription conversion</span> during Q4 2025, validating the financial impact of the SXI framework in resolving systemic friction.
