@@ -12,14 +12,14 @@ const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' }
 export const metadata: Metadata = {
   metadataBase: new URL('https://humanfactors.pro'),
   title: {
-    default: "Brandon Fluegel, Ph.D. | Human Factors & UX Researcher",
+    default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
   description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA. Specializing in psychophysics, experimental design, and biometric benchmarking.",
   keywords: ["Brandon Fluegel", "Human Factors", "UX Research", "PhD", "Psychophysics", "Amazon", "Sling TV", "Uber", "NASA", "Experimental Design"],
   authors: [{ name: "Brandon Fluegel" }],
   openGraph: {
-    title: "Brandon Fluegel, Ph.D. | Human Factors & UX Researcher",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA. Specializing in psychophysics, experimental design, and biometric benchmarking.",
     url: 'https://humanfactors.pro',
     siteName: 'Brandon Fluegel Portfolio',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/assets/howdy.jpg',
+        url: '/assets/cowboy.jpg',
         width: 800,
         height: 600,
         alt: 'Brandon Fluegel, Ph.D.',
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Brandon Fluegel, Ph.D. | Human Factors & UX Researcher",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA.",
-    images: ['/assets/howdy.jpg'],
+    images: ['/assets/cowboy.jpg'],
   },
   icons: {
-    icon: '/assets/howdy.jpg',
-    apple: '/assets/howdy.jpg',
+    icon: '/assets/cowboy.jpg',
+    apple: '/assets/cowboy.jpg',
   },
 };
 
