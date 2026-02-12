@@ -68,7 +68,7 @@ export default function UberProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Business Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-green-400">15% Lift</div>
+                 <div className="text-3xl font-bold text-green-400">5% Lift</div>
                  <p className="text-xs text-zinc-400 mt-1">Increase in rental driver retention via app redesign.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -90,21 +90,12 @@ export default function UberProjectSection() {
                 </p>
               </div>
 
-              {/* Block 2 */}
-              <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Strategic Pivot</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Influenced the global product team to prioritize a &quot;Lite&quot; version of the driver experience. This pivoting strategy focused on stripping away non-essential features to reduce friction for low-bandwidth devices and first-time users.
-                </p>
-              </div>
-
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact: <span className="text-green-400 font-bold">+15% Retention</span></h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact: <span className="text-green-400 font-bold">+5% Retention</span></h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
-                  The implemented driver app redesign successfully reduced cognitive load metrics and resulted in a <span className="text-green-400 font-bold">15% lift in driver retention</span> for the rental segment in the LATAM region.
+                  The implemented driver app redesign successfully reduced cognitive load metrics and resulted in a <span className="text-green-400 font-bold">5% lift in driver retention</span> for the rental segment in the LATAM region.
                 </p>
               </div>
 
