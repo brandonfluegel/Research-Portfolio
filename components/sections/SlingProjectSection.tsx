@@ -41,7 +41,7 @@ export default function SlingProjectSection() {
       </motion.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
         
         <motion.div
           variants={staggerContainer}
@@ -54,8 +54,6 @@ export default function SlingProjectSection() {
           <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-amber-500 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-amber-500 uppercase tracking-widest"> Strategy & AI Leadership</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Product Research Leadership
@@ -67,7 +65,7 @@ export default function SlingProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Business Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">+17%</div>
+                 <div className="text-3xl font-bold text-green-400">+17% Lift</div>
                  <p className="text-xs text-zinc-400 mt-1">Lift in subscription conversion via checkout innovations.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -78,32 +76,32 @@ export default function SlingProjectSection() {
             </div>
 
             {/* PROCESS TIMELINE / CONTENT BLOCKS */}
-            <div className="relative ml-3 md:ml-0 pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
+            <div className="relative ml-3 md:ml-0 pl-6 md:pl-8 border-l border-white/10 space-y-12 md:space-y-16">
               
               {/* Block 1: SXI (Framework) */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Strategic Framework for Product Innovation</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: THE SLING EXPERIENCE INDEX (SXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Invented the <span className="text-white font-medium">Sling Experience Index (SXI)</span>, a proprietary framework merging behavioral telemetry with perceived friction. This index replaced reactive sentiment tracking with a proactive prioritization model, now serving as the organizational standard for all <span className="text-green-400 font-bold">VP+ product reviews</span>.
+                  Architected a proprietary quantitative framework (SXI) that merged behavioral telemetry with user-perceived friction, transitioning leadership to a proactive prioritization model now used for all VP+ product reviews.
                 </p>
               </div>
 
-               {/* Block 2: Revenue & Roadmap (CONSOLIDATED) */}
+               {/* Block 2: Human-AI */}
                <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Revenue Strategy & Product Roadmap</h4>
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Orchestrated the 2025 roadmap realignment, leveraging SXI data to secure executive buy-in for a foundational overhaul of the checkout architecture. This research-led intervention directly drove a <span className="text-green-400 font-bold">17% lift in subscription conversion</span>, validating the financial impact of reducing user friction.
+                  Led foundational research for an LLM-powered assistant, defining the interaction model for the 10-foot experience. Established a &quot;Trust & System Status&quot; framework to align mental models during complex tasks.
                 </p>
               </div>
 
-              {/* Block 3: Human-AI */}
+              {/* Block 3: Executive Influence */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Human-AI Interaction: Architecting Trust</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">EXECUTIVE INFLUENCE & RISK MITIGATION</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust & System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.
+                  Leveraged longitudinal research to successfully influence the CEO to halt a high-stakes campaign launch, mitigating projected churn and protecting brand sentiment.
                 </p>
               </div>
 
@@ -123,11 +121,11 @@ export default function SlingProjectSection() {
                   className="object-cover w-full h-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 />
                 
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">2025 Product & AI Workshop</p>
-                </div>
+                {/* DARK GRADIENT OVERLAY (Requested) */}
+                <div className="absolute inset-0 bg-black/40 mix-blend-multiply pointer-events-none"></div>
             </div>
+            {/* Caption Below */}
+            <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">2025 Product & AI Workshop</p>
           </motion.div>
 
         </motion.div>

@@ -42,7 +42,7 @@ export default function AmazonProjectSection() {
       </motion.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
         
         {/* === CASE STUDY 1: REVENUE STRATEGY ($100M+) === */}
         <motion.div
@@ -69,7 +69,7 @@ export default function AmazonProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">$50M+</div>
+                 <div className="text-3xl font-bold text-white text-green-400">$50M+</div>
                  <p className="text-xs text-zinc-400 mt-1">Incremental OPS prevented by fixing latency thresholds.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -114,7 +114,7 @@ export default function AmazonProjectSection() {
           {/* RIGHT: DATA VISUALIZATION */}
           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
             {/* Aspect Ratio tweaked for mobile legibility */}
-            <div className="relative w-full max-w-2xl mx-auto aspect-[4/3] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
+            <div className="relative w-full max-w-2xl mx-auto aspect-[16/11] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
   
               {/* Chart Header */}
               <div className="flex justify-between items-start mb-6 md:mb-8 z-20 relative">
@@ -204,25 +204,25 @@ export default function AmazonProjectSection() {
                   transition={{ delay: 1.6 }}
                   className="absolute top-[2%] md:top-[5%] left-[15%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
                 >
-                  <div className="text-[10px] md:text-xs font-bold text-white whitespace-nowrap">
+                  <div className="text-[9px] md:text-xs font-bold text-white whitespace-nowrap">
                     1000ms Threshold
                   </div>
-                  <div className="text-[8px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
+                  <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
                 </motion.div>
 
                 {/* Safe Zone Label */}
                 <div className="absolute bottom-2 left-0 md:bottom-6 md:left-6">
-                    <div className="text-[9px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
-                    <div className="text-[10px] md:text-xs text-zinc-300 max-w-[80px] md:max-w-[120px] leading-tight font-medium">
+                    <div className="text-[8px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
+                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[80px] md:max-w-[120px] leading-tight font-medium">
                         Revenue opportunity
                     </div>
                 </div>
 
                 {/* Danger Zone Label */}
                  <div className="absolute top-2 right-0 md:top-6 md:right-6 text-right">
-                    <div className="text-[9px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
-                    <div className="text-[10px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[140px] leading-tight font-medium">
-                        Dissatisfaction & churn risk increases
+                    <div className="text-[8px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
+                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[140px] leading-tight font-medium">
+                        Churn risk increases
                     </div>
                 </div>
 
@@ -252,7 +252,7 @@ export default function AmazonProjectSection() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-center"
         >
              {/* LEFT: VIDEO/IMAGE */}
-             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex justify-center">
+             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center">
                 <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
                     <video
                         src="/assets/fnirs.mp4"
@@ -262,12 +262,9 @@ export default function AmazonProjectSection() {
                         playsInline
                         className="object-cover w-full h-full opacity-60 grayscale-[20%] hover:grayscale-0 transition duration-700"
                     />
-                    
-                    {/* Caption Overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                        <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 2. Measuring Cognitive Load via fNIRS</p>
-                    </div>
                 </div>
+                {/* Caption Below */}
+                <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 2. Measuring Cognitive Load via fNIRS</p>
              </motion.div>
 
              {/* RIGHT: CONTENT */}
@@ -349,12 +346,9 @@ export default function AmazonProjectSection() {
                       className="w-auto h-full max-h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
                     />
                   </motion.div>
-                
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 3. Echo Show 10 with Motion Tracking</p>
-                </div>
              </div>
+             {/* Caption Below */}
+             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 3. Echo Show 10 with Motion Tracking</p>
            </motion.div>
         </motion.div>
 

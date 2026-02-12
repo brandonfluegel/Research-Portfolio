@@ -42,7 +42,7 @@ export default function UberProjectSection() {
       </motion.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
 
         <motion.div
           variants={staggerContainer}
@@ -68,7 +68,7 @@ export default function UberProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Business Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">15% Lift</div>
+                 <div className="text-3xl font-bold text-green-400">15% Lift</div>
                  <p className="text-xs text-zinc-400 mt-1">Increase in rental driver retention via app redesign.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -101,7 +101,7 @@ export default function UberProjectSection() {
 
               {/* Block 3 */}
               <div className="relative">
-                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
+                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact: <span className="text-green-400 font-bold">+15% Retention</span></h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The implemented driver app redesign successfully reduced cognitive load metrics and resulted in a <span className="text-green-400 font-bold">15% lift in driver retention</span> for the rental segment in the LATAM region.
@@ -120,12 +120,9 @@ export default function UberProjectSection() {
                   fill
                   className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
-                
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Research Led to Driver App Redesign</p>
-                </div>
              </div>
+             {/* Caption Below */}
+             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Research Led to Driver App Redesign</p>
           </motion.div>
         </motion.div>
       </div>

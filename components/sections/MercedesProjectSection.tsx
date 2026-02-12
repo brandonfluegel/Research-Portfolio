@@ -41,7 +41,7 @@ export default function MercedesProjectSection() {
       </motion.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
 
         <motion.div
           variants={staggerContainer}
@@ -67,7 +67,7 @@ export default function MercedesProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Research Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">+24%</div>
+                 <div className="text-3xl font-bold text-green-400">+24%</div>
                  <p className="text-xs text-zinc-400 mt-1">Increase in user trust during automated handoffs.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -100,7 +100,7 @@ export default function MercedesProjectSection() {
 
               {/* Block 3 */}
               <div className="relative">
-                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
+                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Research Impact: <span className="text-green-400 font-bold">+24% Trust Score</span></h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The implemented HMI improvements resulted in a verifiable <span className="text-green-400 font-bold">24% increase in user trust scores</span> during automated lane changes and handoffs.
@@ -112,21 +112,18 @@ export default function MercedesProjectSection() {
 
           {/* RIGHT: VISUAL MEDIA */}
           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group flex items-center justify-center">
+             <div className="relative w-full bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
                 <video
                   src="/assets/drive.mp4"
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="object-contain w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                  className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
-                
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Semi-Autonomous Driving Simulator</p>
-                </div>
              </div>
+             {/* Caption Below */}
+             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Semi-Autonomous Driving Simulator</p>
           </motion.div>
         </motion.div>
       </div>

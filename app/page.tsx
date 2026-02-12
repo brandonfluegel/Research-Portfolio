@@ -62,8 +62,8 @@ export default function Home() {
       <section className="max-w-6xl mx-auto mt-32 md:mt-40 space-y-32 md:space-y-48">
         <div id="amazon-section"><AmazonProjectSection /></div>
         <div id="sling-section"><SlingProjectSection /></div>
-        <div id="nasa-section"><NASAProjectSection /></div>
         <div id="uber-section"><UberProjectSection /></div>
+        <div id="nasa-section"><NASAProjectSection /></div>
         <div id="mercedes-section"><MercedesProjectSection /></div>
       </section>
 

@@ -42,7 +42,7 @@ export default function NASAProjectSection() {
       </motion.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 space-y-32 md:space-y-48">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
 
         <motion.div
           variants={staggerContainer}
@@ -68,7 +68,7 @@ export default function NASAProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Operational Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white">30%</div>
+                 <div className="text-3xl font-bold text-green-400">30%</div>
                  <p className="text-xs text-zinc-400 mt-1">Reduction in critical Time-on-Task for medical procedures.</p>
               </div>
               {/* ------------------------------------------------ */}
@@ -101,7 +101,7 @@ export default function NASAProjectSection() {
 
               {/* Block 3 */}
               <div className="relative">
-                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
+                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Operational Impact: <span className="text-green-400 font-bold">-30% Time-on-Task</span></h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The redesigned interface and physical layout resulted in a significant <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures, ensuring astronaut safety and mission efficiency.
@@ -120,12 +120,9 @@ export default function NASAProjectSection() {
                   fill
                   className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
-                
-                {/* Caption Overlay */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                  <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">VR Simulation: Medical Workstation</p>
-                </div>
              </div>
+             {/* Caption Below */}
+             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">VR Simulation: Medical Workstation</p>
           </motion.div>
         </motion.div>
       </div>
