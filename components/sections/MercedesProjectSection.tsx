@@ -101,7 +101,7 @@ export default function MercedesProjectSection() {
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Research Impact: <span className="text-green-400 font-bold">+24% Trust Score</span></h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Research Impact</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The implemented HMI improvements resulted in a verifiable <span className="text-green-400 font-bold">24% increase in user trust scores</span> during automated lane changes and handoffs.
                 </p>

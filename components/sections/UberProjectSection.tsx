@@ -84,16 +84,16 @@ export default function UberProjectSection() {
               {/* Block 1 */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Foundational Research: Brazil</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Foundational Research in Brazil</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Conducted field research with rental drivers in <span className="text-white font-medium">Brazil</span> to identify unique market constraints. Discovered that high cognitive load from the existing driver app was a primary churn factor for new rental drivers.
+                  Conducted field research with rental drivers in Brazil to identify unique market constraints. Discovered that high cognitive load from the existing driver app was a primary churn factor for new rental drivers.
                 </p>
               </div>
 
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact: <span className="text-green-400 font-bold">+5% Retention</span></h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The implemented driver app redesign successfully reduced cognitive load metrics and resulted in a <span className="text-green-400 font-bold">5% lift in driver retention</span> for the rental segment in the LATAM region.
                 </p>

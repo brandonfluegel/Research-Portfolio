@@ -90,19 +90,11 @@ export default function NASAProjectSection() {
                 </p>
               </div>
 
-              {/* Block 2 */}
-              <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Cognitive Load Analysis</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Leveraged cognitive load analysis to redesign critical medical workflows. By simplifying procedure execution steps and information architecture, we minimized the risk of <span className="text-white font-medium">critical operator errors</span> during high-stress operational scenarios.
-                </p>
-              </div>
 
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Operational Impact: <span className="text-green-400 font-bold">-30% Time-on-Task</span></h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Operational Impact</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The redesigned interface and physical layout resulted in a significant <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures, ensuring astronaut safety and mission efficiency.
                 </p>
