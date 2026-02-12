@@ -75,7 +75,7 @@ export default function AmazonProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace technical benchmarks with human-centered thresholds, directly linking millisecond delays to revenue loss.
+                Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace legacy technical benchmarks with human-centered thresholds, directly linking millisecond delays to long-term revenue loss.
               </p>
             </div>
 
@@ -85,27 +85,27 @@ export default function AmazonProjectSection() {
               {/* Step 1 */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 interactions with Alexa. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; as all responses faster than 1000ms</span>.
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 controlled interactions with Alexa. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; as all responses faster than 1000ms</span>, where user satisfaction is highest and perception of &quot;slowness&quot; is minimized.
                 </p>
               </div>
 
               {/* Step 2 */}
               <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not as technical failures, but as any interaction slower than the 1000ms satisfaction cliff.
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not just as technical failures, but as any interaction slower than the 1000ms satisfaction cliff—the point where the probability of customer churn and engagement loss sharply increases.
                 </p>
               </div>
 
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-xs md:text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M+ Projection</h4>
-                <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa, realizing <span className="text-green-400 font-bold">$50M+</span> in incremental OPS over the subsequent 15 months.
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M+ Projection</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa. Realizing these interaction gains was projected to generate <span className="text-green-400 font-bold">$50M+</span> in incremental revenue over the subsequent 15 months, providing a definitive financial North Star for Alexa’s global engineering roadmap.
                 </p>
               </div>
             </div>
@@ -236,6 +236,10 @@ export default function AmazonProjectSection() {
                 <span>3000ms</span>
               </div>
             </div>
+
+            <p className="mt-8 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+              Fig 1. The &quot;Satisfaction Cliff&quot;: User satisfaction drops sharply after 1000ms
+            </p>
           </motion.div>
         </motion.div>
 
@@ -280,14 +284,14 @@ export default function AmazonProjectSection() {
                   <div className="group">
                     <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
                     <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                      Stakeholders debated UI density based on aesthetics. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors.
+                    The FireTV Home UI design was historically based on aesthetic preferences. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors (Apple TV & Netflix).
                     </p>
                   </div>
                   <div className="w-full h-[1px] bg-white/5"></div>
                   <div className="group">
                     <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">The Strategic Pivot</h4>
                     <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                      We optimized the Home UI to reduce cognitive load, resulting in increased engagement metrics and a simpler mental model for content discovery.
+                      We optimized the Home UI to reduce cognitive load for 75M+ customers, resulting in increased engagement metrics and a simpler mental model for content discovery.
                     </p>
                   </div>
                 </div>
@@ -326,7 +330,7 @@ export default function AmazonProjectSection() {
            </motion.div>
 
            {/* RIGHT: IMAGE */}
-           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex justify-center relative">
+           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col items-center justify-center relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[400px] h-[300px] md:h-[400px] bg-white/5 blur-[80px] rounded-full -z-10"></div>
               <motion.div
                 animate={{ y: [0, -15, 0] }}
@@ -342,6 +346,9 @@ export default function AmazonProjectSection() {
                   className="w-full h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
                 />
               </motion.div>
+              <p className="mt-8 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                  Fig 3. Echo Show 10 with Motion Tracking
+              </p>
            </motion.div>
         </motion.div>
 
