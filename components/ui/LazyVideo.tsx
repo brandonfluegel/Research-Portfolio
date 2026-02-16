@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface LazyVideoProps {
   src: string;
@@ -8,64 +8,70 @@ interface LazyVideoProps {
 }
 
 export default function LazyVideo({ src, className = "" }: LazyVideoProps) {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const isInViewRef = useRef(false);
 
-  // Track viewport visibility
+  // Track viewport visibility on the container div (always in DOM)
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const container = containerRef.current;
+    if (!container) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsInView(entry.isIntersecting);
+        isInViewRef.current = entry.isIntersecting;
+
         if (entry.isIntersecting) {
-          setShouldLoad(true); // Once loaded, stays loaded
+          setShouldLoad(true);
+        }
+
+        // Pause when scrolled away
+        const video = videoRef.current;
+        if (video && !entry.isIntersecting) {
+          video.pause();
         }
       },
       { rootMargin: "200px" }
     );
 
-    observer.observe(video);
+    observer.observe(container);
     return () => observer.disconnect();
   }, []);
 
-  // Play/pause based on visibility — only after video can play
-  const handleCanPlay = useCallback(() => {
+  // Once loaded, attach the video element and force-load
+  useEffect(() => {
+    if (!shouldLoad) return;
+
     const video = videoRef.current;
-    if (video && isInView) {
+    if (video && isInViewRef.current && video.paused && video.readyState >= 2) {
       video.play().catch(() => {});
     }
-  }, [isInView]);
+  }, [shouldLoad]);
 
-  // Pause when scrolled away, play when scrolled back
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video || !shouldLoad) return;
-
-    if (isInView) {
-      // Only play if readyState indicates media is ready
-      if (video.readyState >= 3) {
-        video.play().catch(() => {});
-      }
-      // Otherwise handleCanPlay will fire when ready
-    } else {
-      video.pause();
+  // Handle the ref callback to trigger load() on mount
+  const setVideoRef = (el: HTMLVideoElement | null) => {
+    videoRef.current = el;
+    if (el) {
+      // Force the browser to pick up the src and start loading
+      el.load();
     }
-  }, [isInView, shouldLoad]);
+  };
 
   return (
-    <video
-      ref={videoRef}
-      src={shouldLoad ? src : undefined}
-      autoPlay={false}
-      muted
-      loop
-      playsInline
-      preload={shouldLoad ? "auto" : "none"}
-      onCanPlay={handleCanPlay}
-      className={className}
-    />
+    <div ref={containerRef} className={className} style={{ lineHeight: 0 }}>
+      {shouldLoad && (
+        <video
+          ref={setVideoRef}
+          src={src}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover"
+        />
+      )}
+    </div>
   );
 }
