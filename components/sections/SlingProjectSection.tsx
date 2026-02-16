@@ -16,6 +16,7 @@ import {
   ReferenceLine,
   ReferenceArea,
   Label,
+  LabelList,
   ZAxis,
   Cell
 } from 'recharts';
@@ -60,6 +61,42 @@ const getSXILabel = (sxi: number) => {
   return "Critical";
 };
 
+// Custom Scatter Label — selective, clean labels for key data points only
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const renderCustomLabel = (props: any) => {
+  const { x, y, value } = props;
+  if (x == null || y == null) return null;
+  const item = sxiData.find(d => d.name === value);
+  if (!item) return null;
+
+  // Only label the 3 strategic narrative points
+  const labelConfig: Record<string, { dy: number; dx: number; anchor: string }> = {
+    "DVR Recording":  { dy: -22, dx: 0,  anchor: "middle" },
+    "Video Player":   { dy: -18, dx: 0,  anchor: "middle" },
+    "Live TV Guide":  { dy: 22,  dx: 0,  anchor: "middle" },
+  };
+
+  const config = labelConfig[item.name];
+  if (!config) return null; // Skip unlabeled points — tooltip handles them
+
+  const color = getSXIColor(item.sxi);
+
+  return (
+    <text
+      x={x + config.dx}
+      y={y + config.dy}
+      fill={color}
+      fontSize={10}
+      fontWeight="bold"
+      textAnchor={config.anchor}
+      fontFamily="monospace"
+      style={{ letterSpacing: '0.03em' }}
+    >
+      {item.name}
+    </text>
+  );
+};
+
 // Custom Tooltip — "Diagnostic Card"
 const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payload: SXIDataPoint }[] }) => {
   if (active && payload && payload.length && payload[0].payload) {
@@ -87,14 +124,7 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
               </span>
             </div>
           </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">Engagement</span>
-            <span className="text-base font-bold text-blue-400">{d.engagement}h</span>
-          </div>
-          <div className="flex justify-between items-center">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">Volume (n)</span>
-            <span className="text-sm font-mono text-zinc-300">{d.volume.toLocaleString()}</span>
-          </div>
+
         </div>
 
         {/* Friction */}
@@ -149,38 +179,22 @@ function SXIProjectMatrix() {
               backgroundSize: '32px 32px'
             }} />
 
-          {/* Quadrant labels — positioned absolutely over the chart area */}
-          <div className="absolute inset-0 pointer-events-none z-[1] select-none">
-            <div className="absolute top-3 right-4 md:top-5 md:right-6 text-right">
-              <div className="text-emerald-400/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">FORTIFY</div>
-              <div className="text-emerald-400/[0.05] font-mono text-[8px] md:text-[10px] tracking-[0.3em] uppercase mt-0.5">(PROTECT)</div>
-            </div>
-            <div className="absolute bottom-10 right-4 md:bottom-14 md:right-6 text-right">
-              <div className="text-red-400/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">PRIORITIZE</div>
-              <div className="text-red-400/[0.05] font-mono text-[8px] md:text-[10px] tracking-[0.3em] uppercase mt-0.5">(FIX)</div>
-            </div>
-            <div className="absolute top-3 left-4 md:top-5 md:left-6">
-              <div className="text-blue-400/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">MONITOR</div>
-            </div>
-            <div className="absolute bottom-10 left-4 md:bottom-14 md:left-6">
-              <div className="text-zinc-500/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">PROSPECT</div>
-            </div>
-          </div>
+
 
           <ResponsiveContainer width="100%" height="100%">
-            <ScatterChart margin={{ top: 25, right: 35, bottom: 50, left: 10 }}>
+<ScatterChart margin={{ top: 30, right: 40, bottom: 50, left: 15 }}>
 
               {/* Strategic Quadrant Shading */}
-              {/* Fortify: Top-Right (x>50, y>70) */}
-              <ReferenceArea x1={50} x2={100} y1={70} y2={100} fill="#00ff87" fillOpacity={0.02} />
-              {/* Prioritize: Bottom-Right (x>50, y<65 — below Churn Cliff) */}
-              <ReferenceArea x1={50} x2={100} y1={-100} y2={65} fill="#ff3b5c" fillOpacity={0.03} />
+              {/* Fortify / Target Zone: Top-Right (x>50, y>70) */}
+              <ReferenceArea x1={50} x2={120} y1={70} y2={100} fill="#00ff87" fillOpacity={0.02} />
+              {/* Prioritize / Danger Zone: Bottom-Right (x>50, y<65 — below Churn Cliff) */}
+              <ReferenceArea x1={50} x2={120} y1={50} y2={65} fill="#ff3b5c" fillOpacity={0.06} />
               {/* Monitor: Top-Left (x<50, y>70) */}
-              <ReferenceArea x1={0} x2={50} y1={70} y2={100} fill="#3b82f6" fillOpacity={0.01} />
+              <ReferenceArea x1={15} x2={50} y1={70} y2={100} fill="#71717a" fillOpacity={0.01} />
               {/* Prospect: Bottom-Left (x<50, y<70) */}
-              <ReferenceArea x1={0} x2={50} y1={-100} y2={70} fill="#71717a" fillOpacity={0.01} />
+              <ReferenceArea x1={15} x2={50} y1={50} y2={70} fill="#71717a" fillOpacity={0.01} />
               {/* Transition Zone: Right side between Churn Cliff (65) and Quadrant line (70) */}
-              <ReferenceArea x1={50} x2={100} y1={65} y2={70} fill="#ffb020" fillOpacity={0.015} />
+              <ReferenceArea x1={50} x2={120} y1={65} y2={70} fill="#ffb020" fillOpacity={0.015} />
 
               {/* Ultra-faint grid */}
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" opacity={0.015} />
@@ -195,7 +209,7 @@ function SXIProjectMatrix() {
                 tickFormatter={(v) => `${v}h`}
                 tickLine={false}
                 axisLine={{ stroke: '#27272a' }}
-                domain={[0, 100]}
+                domain={[15, 120]}
                 dy={8}
               >
                 <Label
@@ -217,7 +231,7 @@ function SXIProjectMatrix() {
                 tickFormatter={(v) => (v > 0 ? `+${v}` : `${v}`)}
                 tickLine={false}
                 axisLine={{ stroke: '#27272a' }}
-                domain={[-100, 100]}
+                domain={[50, 100]}
                 dx={-5}
               >
                 <Label
@@ -231,7 +245,7 @@ function SXIProjectMatrix() {
               </YAxis>
 
               {/* Z-Axis: Bubble Size = Volume (aggressive scaling for visual hierarchy) */}
-              <ZAxis type="number" dataKey="volume" range={[100, 4500]} name="User Volume" />
+              <ZAxis type="number" dataKey="volume" range={[300, 1800]} name="User Volume" />
 
               {/* Tooltip */}
               <Tooltip
@@ -244,51 +258,6 @@ function SXIProjectMatrix() {
               <ReferenceLine x={50} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
               <ReferenceLine y={70} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
 
-              {/* Neutral zero line — solid thin grey (mathematical balance point) */}
-              <ReferenceLine y={0} stroke="#52525b" strokeWidth={0.75} strokeOpacity={0.4}>
-                <Label value="NEUTRAL (0)" position="insideTopLeft" fill="#52525b" fontSize={8} className="font-mono tracking-widest" offset={5} />
-              </ReferenceLine>
-
-              {/* CHURN CLIFF at y=65 — neon-red glow emphasis */}
-              <ReferenceLine
-                y={65}
-                stroke="#ff3b5c"
-                strokeDasharray="8 4"
-                strokeWidth={1.5}
-                strokeOpacity={0.85}
-                style={{ filter: 'drop-shadow(0 0 8px #ff3b5c) drop-shadow(0 0 3px #ff3b5c)' }}
-              >
-                <Label
-                  value="▸ CHURN CLIFF (Critical Threshold)"
-                  position="insideTopRight"
-                  fill="#ff3b5c"
-                  fontSize={9}
-                  className="font-mono font-bold tracking-wider uppercase"
-                  offset={8}
-                />
-              </ReferenceLine>
-
-              {/* Direct Label — Live TV Guide (offset right to avoid Video Player collision) */}
-              <ReferenceArea x1={93} x2={100} y1={64} y2={64}>
-                <Label value='Live TV Guide' position="bottom" offset={14} fill="#ff3b5c" fontSize={10} fontWeight="bold" className="font-mono tracking-wide" />
-              </ReferenceArea>
-              <ReferenceArea x1={93} x2={100} y1={64} y2={64}>
-                <Label value='"Channel Bloat"' position="bottom" offset={28} fill="#ff3b5c" fontSize={8} className="font-mono opacity-50" />
-              </ReferenceArea>
-
-              {/* Direct Label — Video Player (offset left to separate from Live TV Guide) */}
-              <ReferenceArea x1={82} x2={94} y1={69} y2={69}>
-                <Label value='Video Player' position="bottom" offset={14} fill="#ffb020" fontSize={10} fontWeight="bold" className="font-mono tracking-wide" />
-              </ReferenceArea>
-              <ReferenceArea x1={82} x2={94} y1={69} y2={69}>
-                <Label value='"Jumpy FF/RW"' position="bottom" offset={28} fill="#ffb020" fontSize={8} className="font-mono opacity-50" />
-              </ReferenceArea>
-
-              {/* Direct Label — DVR Recording */}
-              <ReferenceArea x1={83} x2={93} y1={87} y2={87}>
-                <Label value="DVR Recording" position="top" offset={14} fill="#00ff87" fontSize={10} fontWeight="bold" className="font-mono tracking-wide" />
-              </ReferenceArea>
-
               {/* Data Points */}
               <Scatter name="Features" data={sxiData}>
                 {sxiData.map((entry, index) => {
@@ -300,17 +269,37 @@ function SXIProjectMatrix() {
                       fill={color}
                       stroke={color}
                       strokeWidth={2}
-                      fillOpacity={0.55}
-                      strokeOpacity={0.85}
+                      fillOpacity={0.35}
+                      strokeOpacity={0.7}
                       style={{
-                        filter: `drop-shadow(0 0 12px ${glow}) drop-shadow(0 0 4px ${glow})`,
+                        filter: `drop-shadow(0 0 6px ${glow})`,
                         transition: 'all 0.3s ease',
                         cursor: 'pointer',
                       }}
                     />
                   );
                 })}
+
               </Scatter>
+
+              {/* CHURN CLIFF at y=65 — rendered after Scatter so line draws on top of bubbles */}
+              <ReferenceLine
+                y={65}
+                stroke="#ff3b5c"
+                strokeDasharray="5 5"
+                strokeWidth={2}
+                strokeOpacity={0.85}
+                style={{ filter: 'drop-shadow(0 0 5px #ff3b5c)' }}
+              >
+                <Label
+                  value="▸ CHURN CLIFF (Critical Threshold)"
+                  position="insideBottomRight"
+                  fill="#ff3b5c"
+                  fontSize={9}
+                  className="font-mono font-bold tracking-wider uppercase"
+                  offset={8}
+                />
+              </ReferenceLine>
 
             </ScatterChart>
           </ResponsiveContainer>
@@ -333,7 +322,7 @@ function SXIProjectMatrix() {
             </div>
           </div>
           <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider">
-            Bubble Size = User Volume (n) &nbsp;|&nbsp; Color = SXI Health Status
+            Color = SXI Health Status
           </p>
         </div>
       </div>
