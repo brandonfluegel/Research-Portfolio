@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
@@ -68,7 +68,7 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
     const label = getSXILabel(d.sxi);
 
     return (
-      <div className="bg-[#0a0a0a]/95 border border-white/10 p-4 rounded-xl shadow-2xl backdrop-blur-xl min-w-[230px]">
+      <div className="bg-[#0a0a0a]/95 border border-white/10 p-3 md:p-4 rounded-xl shadow-2xl backdrop-blur-xl min-w-[180px] md:min-w-[230px]">
         {/* Header */}
         <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/10">
           <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} />
@@ -102,6 +102,15 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
 };
 
 function SXIProjectMatrix() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   return (
     <div className="w-full rounded-2xl relative overflow-hidden group shadow-2xl" style={{ backgroundColor: '#050505' }}>
 
@@ -145,7 +154,7 @@ function SXIProjectMatrix() {
 
 
           <ResponsiveContainer width="100%" height="100%">
-<ScatterChart margin={{ top: 30, right: 40, bottom: 50, left: 15 }}>
+<ScatterChart margin={isMobile ? { top: 16, right: 12, bottom: 38, left: 4 } : { top: 30, right: 40, bottom: 50, left: 15 }}>
 
               {/* Strategic Quadrant Shading */}
               {/* Fortify / Target Zone: Top-Right (x>50, y>70) */}
@@ -168,19 +177,20 @@ function SXIProjectMatrix() {
                 dataKey="engagement"
                 name="Engagement"
                 stroke="#27272a"
-                tick={{ fill: '#52525b', fontSize: 10, fontFamily: 'monospace' }}
+                tick={{ fill: '#52525b', fontSize: isMobile ? 8 : 10, fontFamily: 'monospace' }}
                 tickFormatter={(v) => `${v}h`}
                 tickLine={false}
                 axisLine={{ stroke: '#27272a' }}
                 domain={[15, 120]}
-                dy={8}
+                dy={isMobile ? 4 : 8}
               >
                 <Label
-                  value="MONTHLY ENGAGEMENT (HOURS)"
+                  value={isMobile ? "ENGAGEMENT (HRS)" : "MONTHLY ENGAGEMENT (HOURS)"}
                   offset={0}
                   position="insideBottom"
-                  dy={30}
-                  className="fill-zinc-600 text-[8px] font-mono uppercase tracking-[0.25em] font-bold"
+                  dy={isMobile ? 22 : 30}
+                  className="fill-zinc-600 font-mono uppercase tracking-[0.25em] font-bold"
+                  style={{ fontSize: isMobile ? 6 : 8 }}
                 />
               </XAxis>
 
@@ -190,25 +200,26 @@ function SXIProjectMatrix() {
                 dataKey="sxi"
                 name="Net Good Index"
                 stroke="#27272a"
-                tick={{ fill: '#52525b', fontSize: 10, fontFamily: 'monospace' }}
+                tick={{ fill: '#52525b', fontSize: isMobile ? 8 : 10, fontFamily: 'monospace' }}
                 tickFormatter={(v) => (v > 0 ? `+${v}` : `${v}`)}
                 tickLine={false}
                 axisLine={{ stroke: '#27272a' }}
                 domain={[50, 100]}
-                dx={-5}
+                dx={isMobile ? -2 : -5}
+                width={isMobile ? 30 : 40}
               >
                 <Label
-                  value="NET GOOD INDEX"
+                  value={isMobile ? "SXI" : "NET GOOD INDEX"}
                   angle={-90}
                   position="insideLeft"
-                  className="fill-zinc-600 text-[8px] font-mono uppercase tracking-[0.25em] font-bold"
-                  style={{ textAnchor: 'middle' }}
-                  dx={5}
+                  className="fill-zinc-600 font-mono uppercase tracking-[0.25em] font-bold"
+                  style={{ textAnchor: 'middle', fontSize: isMobile ? 6 : 8 }}
+                  dx={isMobile ? 8 : 5}
                 />
               </YAxis>
 
               {/* Z-Axis: Bubble Size = Volume (aggressive scaling for visual hierarchy) */}
-              <ZAxis type="number" dataKey="volume" range={[300, 1800]} name="User Volume" />
+              <ZAxis type="number" dataKey="volume" range={isMobile ? [120, 600] : [300, 1800]} name="User Volume" />
 
               {/* Tooltip */}
               <Tooltip
@@ -255,12 +266,12 @@ function SXIProjectMatrix() {
                 style={{ filter: 'drop-shadow(0 0 5px #ff3b5c)' }}
               >
                 <Label
-                  value="▸ CHURN CLIFF (Critical Threshold)"
+                  value={isMobile ? "CHURN CLIFF" : "▸ CHURN CLIFF (Critical Threshold)"}
                   position="insideBottomRight"
                   fill="#ff3b5c"
-                  fontSize={9}
+                  fontSize={isMobile ? 7 : 9}
                   className="font-mono font-bold tracking-wider uppercase"
-                  offset={8}
+                  offset={isMobile ? 4 : 8}
                 />
               </ReferenceLine>
 
