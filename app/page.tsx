@@ -14,18 +14,23 @@ const NASAProjectSection = dynamic(() => import("@/components/sections/NASAProje
 const MercedesProjectSection = dynamic(() => import("@/components/sections/MercedesProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
 
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import SectionDivider from "@/components/ui/SectionDivider";
 import useSmoothScroll from "@/app/hooks/useSmoothScroll";
+import useActiveSection from "@/app/hooks/useActiveSection";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/app/utils/animationVariants";
 
 export default function Home() {
   useSmoothScroll("nav", 120);
+  const activeSection = useActiveSection();
 
   return (
     // REMOVED: 'cursor-none' from className
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
       {/* REMOVED: <Cursor /> */}
-      <Navbar />
+      <ScrollProgress />
+      <Navbar activeSection={activeSection} />
       <ScrollToTop />
 
       {/* Hero Section */}
@@ -57,13 +62,37 @@ export default function Home() {
         </div>
       </section>
 
-      <TrustNav />
+      <TrustNav activeSection={activeSection} />
 
-      <section className="max-w-6xl mx-auto mt-32 md:mt-40 space-y-32 md:space-y-48">
+      <section className="max-w-6xl mx-auto mt-32 md:mt-40 space-y-16 md:space-y-24">
         <div id="amazon-section"><AmazonProjectSection /></div>
+        
+        <SectionDivider 
+          label="From AI voice systems → Product strategy"
+          description="Applying psychophysics to monetization at scale"
+        />
+        
         <div id="sling-section"><SlingProjectSection /></div>
+        
+        <SectionDivider 
+          label="From product strategy → Global operations"
+          description="Taking cognitive load reduction to emerging markets"
+        />
+        
         <div id="uber-section"><UberProjectSection /></div>
+        
+        <SectionDivider 
+          label="From global ops → Mission-critical systems"
+          description="Where cognitive error costs lives, not conversions"
+        />
+        
         <div id="nasa-section"><NASAProjectSection /></div>
+        
+        <SectionDivider 
+          label="From space systems → Autonomous vehicles"
+          description="Translating trust frameworks to human-machine interfaces"
+        />
+        
         <div id="mercedes-section"><MercedesProjectSection /></div>
       </section>
 

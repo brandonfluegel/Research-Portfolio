@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
+import LazyVideo from "@/components/ui/LazyVideo";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
@@ -249,14 +250,10 @@ export default function AmazonProjectSection() {
            {/* LEFT: VIDEO */}
            <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
               <div className="relative w-full max-w-2xl mx-auto">
-                <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
+                <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
                   <div className="absolute -inset-4 bg-purple-500/[0.06] blur-[60px] rounded-full pointer-events-none"></div>
-                  <video
+                  <LazyVideo
                       src="/assets/fnirs.mp4"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
                       className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                   />
                 </div>

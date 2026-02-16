@@ -17,7 +17,7 @@ const companies = [
 // This guarantees we never run out of logos on wide screens.
 const mobileCompanies = [...companies, ...companies, ...companies, ...companies];
 
-export default function TrustNav() {
+export default function TrustNav({ activeSection = "" }: { activeSection?: string }) {
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
@@ -74,7 +74,9 @@ export default function TrustNav() {
             key={company.name}
             href={`#${company.id}`}
             onClick={(e) => scrollToSection(e, company.id)}
-            className="group relative transition-all duration-300 hover:scale-105 cursor-pointer"
+            className={`group relative transition-all duration-300 hover:scale-105 cursor-pointer ${
+              activeSection === company.id ? "scale-105" : ""
+            }`}
           >
             <div className={`relative ${company.sizing}`}>
               <Image
@@ -82,9 +84,17 @@ export default function TrustNav() {
                 alt={`${company.name} logo`}
                 width={200}
                 height={100}
-                className="object-contain w-full h-full opacity-60 group-hover:opacity-100 transition-opacity duration-300 filter brightness-0 invert select-none"
+                className={`object-contain w-full h-full transition-opacity duration-300 filter brightness-0 invert select-none ${
+                  activeSection === company.id
+                    ? "opacity-100"
+                    : "opacity-40 group-hover:opacity-100"
+                }`}
               />
             </div>
+            {/* Active indicator dot */}
+            <div className={`absolute -bottom-3 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white transition-opacity duration-300 ${
+              activeSection === company.id ? "opacity-100" : "opacity-0"
+            }`} />
           </a>
         ))}
       </div>

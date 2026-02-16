@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
+import LazyVideo from "@/components/ui/LazyVideo";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
 
@@ -50,8 +51,20 @@ export default function MercedesProjectSection() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
-          {/* LEFT: NARRATIVE */}
-          <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
+          {/* LEFT: VISUAL MEDIA (on desktop) */}
+          <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+             <div className="relative w-full bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+                <LazyVideo
+                  src="/assets/drive.mp4"
+                  className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                />
+             </div>
+             {/* Caption Below */}
+             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Semi-Autonomous Driving Simulator</p>
+          </motion.div>
+
+          {/* RIGHT: NARRATIVE (on desktop) */}
+          <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-slate-500 rounded-full shadow-[0_0_8px_rgba(100,116,139,0.8)]"></span>
@@ -108,22 +121,6 @@ export default function MercedesProjectSection() {
               </div>
 
             </div>
-          </motion.div>
-
-          {/* RIGHT: VISUAL MEDIA */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
-                <video
-                  src="/assets/drive.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-500"
-                />
-             </div>
-             {/* Caption Below */}
-             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Semi-Autonomous Driving Simulator</p>
           </motion.div>
         </motion.div>
       </div>

@@ -13,7 +13,7 @@ const navLinks = [
   { name: "Sling", href: "#sling-section" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ activeSection = "" }: { activeSection?: string }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -100,7 +100,11 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-3xl md:text-5xl font-light text-zinc-400 hover:text-white transition-colors block tracking-widest uppercase hover:scale-105 transform duration-300"
+                    className={`text-3xl md:text-5xl font-light transition-colors block tracking-widest uppercase hover:scale-105 transform duration-300 ${
+                      activeSection === link.href.replace("#", "")
+                        ? "text-white"
+                        : "text-zinc-400 hover:text-white"
+                    }`}
                   >
                     {link.name}
                   </Link>

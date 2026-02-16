@@ -33,10 +33,9 @@ body {
 .animate-infinite-scroll {
   /* 40s duration for a smooth, slow glide. Linear is required for seamless looping. */
   animation: infinite-scroll 40s linear infinite;
-  /* Hardware acceleration hacks for mobile */
+  /* Hardware acceleration for mobile */
   backface-visibility: hidden;
   perspective: 1000px;
-  will-change: transform;
 }
 
 /* Pause animation on hover if desired (optional, feels premium) */
@@ -44,11 +43,38 @@ body {
   animation-play-state: paused;
 }
 
-/* Force hide system cursor on interactive elements */
-a, button, [role="button"], input, select, textarea {
-  cursor: none !important;
-}
-
 .text-balance {
   text-wrap: balance;
+}
+
+/* CSS-only ambient background orbs (replaces Framer Motion) */
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate3d(-20px, -20px, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate3d(20px, 20px, 0) scale(1.2); opacity: 0.2; }
+}
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate3d(20px, 20px, 0) scale(1); opacity: 0.2; }
+  50% { transform: translate3d(-20px, -20px, 0) scale(1.1); opacity: 0.1; }
+}
+.animate-orb-1 {
+  animation: orb-drift-1 10s ease-in-out infinite;
+}
+.animate-orb-2 {
+  animation: orb-drift-2 15s ease-in-out infinite;
+}
+
+/* Enhanced media card hover micro-interactions */
+.media-card {
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+              border-color 0.4s ease,
+              box-shadow 0.5s ease;
+}
+/* Only apply hover lift on devices with fine pointer (mouse) — prevents jank on touch */
+@media (hover: hover) and (pointer: fine) {
+  .media-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.5),
+                0 0 40px -10px rgba(255, 255, 255, 0.03);
+  }
 }
