@@ -83,6 +83,8 @@ export default function NASAProjectSection() {
                 src="/assets/nasahab2.PNG"
                 alt="NASA Gateway Research"
                 fill
+                priority
+                loading="eager"
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
               />
               {/* Overlay gradient for depth */}

@@ -18,8 +18,8 @@ export default function LogoBadge({ logoSrc, alt, className = "" }: LogoBadgePro
         alt={alt}
         width={400}
         height={400}
-        // FIX: Removed opacity-150 (invalid CSS, max is 100). 
-        // We let the parent control opacity/filter via className.
+        priority
+        loading="eager"
         className="object-contain w-full h-auto"
       />
     </div>

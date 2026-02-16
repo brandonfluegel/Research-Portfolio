@@ -61,6 +61,8 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                 src="/assets/howdy.jpg"
                 alt="Profile Image"
                 fill
+                priority
+                loading="eager"
                 className="object-cover"
               />
             </div>

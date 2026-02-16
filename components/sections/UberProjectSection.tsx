@@ -58,6 +58,8 @@ export default function UberProjectSection() {
                   src="/assets/project-image-2.jpg"
                   alt="Uber Research"
                   fill
+                  priority
+                  loading="eager"
                   className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
              </div>

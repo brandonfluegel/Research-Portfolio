@@ -48,12 +48,13 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 alt={`${company.name} logo`}
                 width={120}
                 height={60}
+                priority
+                loading="eager"
                 className={`object-contain w-full h-full filter brightness-0 invert select-none transition-opacity duration-300 ${
                   activeSection === company.id
                     ? "opacity-100"
                     : "opacity-60"
                 }`}
-                loading="eager"
               />
             </div>
             {/* Active dot */}
@@ -81,6 +82,8 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 alt={`${company.name} logo`}
                 width={200}
                 height={100}
+                priority
+                loading="eager"
                 className={`object-contain w-full h-full transition-opacity duration-300 filter brightness-0 invert select-none ${
                   activeSection === company.id
                     ? "opacity-100"
