@@ -34,7 +34,7 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[70svh] sm:min-h-[75svh] md:min-h-[85svh] lg:min-h-[90svh] pt-28 sm:pt-32 md:pt-40 lg:pt-48 pb-8 md:pb-0 px-4">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[60svh] sm:min-h-[60svh] md:min-h-[65svh] lg:min-h-[70svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-8 md:pb-0 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           
           <motion.div
