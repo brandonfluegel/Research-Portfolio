@@ -55,7 +55,7 @@ export default function AmazonProjectSection() {
                 <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Human Factors & Business Strategy</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Calibrating Alexa AI Response Latency <br /> <span className="text-zinc-500">to Human Perception</span>
+                Calibrating Alexa Latency <span className="text-zinc-500">to Human Perception</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC (Recruiter Glance) --- */}
