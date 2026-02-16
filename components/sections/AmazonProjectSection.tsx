@@ -65,7 +65,7 @@ export default function AmazonProjectSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                     <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Impact</span>
                  </div>
-                 <div className="text-3xl font-bold text-white text-green-400">$50M+</div>
+                 <div className="text-3xl font-bold text-green-400">$50M+</div>
                  <p className="text-xs text-zinc-400 mt-1">Incremental OPS prevented by fixing latency thresholds.</p>
               </div>
               {/* ------------------------------------------------ */}
