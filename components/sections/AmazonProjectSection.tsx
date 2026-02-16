@@ -83,7 +83,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 controlled interactions with Alexa. This rigorous mapping identified the <span className="text-white font-medium">&quot;High Satisfaction Threshold&quot; as all responses faster than 1000ms</span>, where user satisfaction is highest and perception of &quot;slowness&quot; is minimized.
+                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 2,160 controlled interactions with Alexa. This rigorous mapping identified the <span className="text-green-400 font-bold">&quot;High Satisfaction Threshold&quot; as all responses faster than 1000ms</span>, where user satisfaction is highest and perception of &quot;slowness&quot; is minimized.
                 </p>
               </div>
 
@@ -92,7 +92,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-white font-medium">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not just as technical failures, but as any interaction slower than the 1000ms satisfaction cliff—the point where the probability of customer churn and engagement loss sharply increases.
+                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-green-400 font-bold">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not just as technical failures, but as any interaction slower than the 1000ms satisfaction cliff, the point where the probability of customer churn and engagement loss sharply increases.
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M+ Projection</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-white font-medium">50.3B dialogs</span> with Alexa. Realizing these interaction gains was projected to generate <span className="text-green-400 font-bold">$50M+</span> in incremental revenue over the subsequent 15 months, providing a definitive financial North Star for Alexa’s global engineering roadmap.
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-green-400 font-bold">20B+ dialogs</span> with Alexa. Realizing these interaction gains was projected to generate <span className="text-green-400 font-bold">$50M+</span> in incremental revenue over the subsequent 15 months, providing a North Star for Alexa’s global engineering roadmap.
                 </p>
               </div>
             </div>
@@ -292,7 +292,7 @@ export default function AmazonProjectSection() {
                   <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show: Human Factors Leadership</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
-                    Led Human Factors strategy for the Echo Show portfolio, informing <span className="text-white font-medium">50+ design iterations</span> that improved the core experience for <span className="text-green-400 font-bold">75M+ customers</span>.
+                    Led Human Factors strategy for the Echo Show portfolio, informing <span className="text-green-400 font-bold">50+ design iterations</span> that improved the core experience for <span className="text-green-400 font-bold">75M+ customers</span>.
                   </p>
                 </div>
               </div>
