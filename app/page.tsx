@@ -34,16 +34,16 @@ export default function Home() {
       <ScrollToTop />
 
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[50vh] md:min-h-[65vh] pt-36 pb-8 md:pt-48 md:pb-0 px-4">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[70svh] sm:min-h-[75svh] md:min-h-[85svh] lg:min-h-[90svh] pt-28 sm:pt-32 md:pt-40 lg:pt-48 pb-8 md:pb-0 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           
           <motion.div
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
-            className="font-bold leading-[1.1] tracking-tight text-center mb-4 md:mb-6 text-xl md:text-[clamp(2rem,4vw,3.6rem)] text-white text-balance"
+            className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(1.75rem,6vw,2.25rem)] sm:text-[clamp(2rem,5vw,2.75rem)] md:text-[clamp(2.5rem,4.5vw,4rem)] lg:text-[clamp(3rem,4vw,4.5rem)] text-white text-balance"
           >
-            Human Factors PhD <br className="hidden md:block" /> 
+            Human Factors PhD
           </motion.div>
 
           <motion.div
@@ -51,12 +51,12 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.2 }}
-            className="font-medium text-zinc-300 text-center px-4 text-sm md:text-[clamp(1rem,1.5vw,1.25rem)] w-full max-w-sm md:max-w-2xl mx-auto leading-relaxed text-balance"
+            className="font-medium text-zinc-300 text-center px-2 text-[clamp(0.875rem,3vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[85vw] sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed text-balance"
           >
             Translating cognitive science into monetizable product strategy
           </motion.div>
 
-          <div className="mt-8 md:mt-12 opacity-60 scale-75 md:scale-100">
+          <div className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 opacity-60 scale-90 md:scale-100">
             <ScrollIndicator />
           </div>
         </div>
