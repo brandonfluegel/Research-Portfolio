@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface LazyVideoProps {
   src: string;
@@ -9,19 +9,19 @@ interface LazyVideoProps {
 
 export default function LazyVideo({ src, className = "" }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const [isInView, setIsInView] = useState(false);
 
+  // Track viewport visibility
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
+        setIsInView(entry.isIntersecting);
         if (entry.isIntersecting) {
-          setIsVisible(true);
-          video.play().catch(() => {});
-        } else {
-          video.pause();
+          setShouldLoad(true); // Once loaded, stays loaded
         }
       },
       { rootMargin: "200px" }
@@ -31,15 +31,40 @@ export default function LazyVideo({ src, className = "" }: LazyVideoProps) {
     return () => observer.disconnect();
   }, []);
 
+  // Play/pause based on visibility — only after video can play
+  const handleCanPlay = useCallback(() => {
+    const video = videoRef.current;
+    if (video && isInView) {
+      video.play().catch(() => {});
+    }
+  }, [isInView]);
+
+  // Pause when scrolled away, play when scrolled back
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoad) return;
+
+    if (isInView) {
+      // Only play if readyState indicates media is ready
+      if (video.readyState >= 3) {
+        video.play().catch(() => {});
+      }
+      // Otherwise handleCanPlay will fire when ready
+    } else {
+      video.pause();
+    }
+  }, [isInView, shouldLoad]);
+
   return (
     <video
       ref={videoRef}
-      src={isVisible ? src : undefined}
+      src={shouldLoad ? src : undefined}
       autoPlay={false}
       muted
       loop
       playsInline
-      preload="none"
+      preload={shouldLoad ? "auto" : "none"}
+      onCanPlay={handleCanPlay}
       className={className}
     />
   );
