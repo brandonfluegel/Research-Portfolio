@@ -55,7 +55,7 @@ export default function AmazonProjectSection() {
                 <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Human Factors & Business Strategy</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Calibrating Alexa Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
+                Calibrating Alexa AI Latency Targets <br /> <span className="text-zinc-500">to Human Perception</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC (Recruiter Glance) --- */}
@@ -274,7 +274,7 @@ export default function AmazonProjectSection() {
                   <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & Hardware</span>
                 </div>
                 <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Biometric Benchmarking <br/> <span className="text-zinc-500">& Multimodal AI</span>
+                  Biometric UI Benchmarking <br/> <span className="text-zinc-500"></span>
                 </h3>
                 <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                   Replaced subjective UI decisions with neuroscience-backed cognitive cost data across the FireTV and Echo Show portfolios.
@@ -287,7 +287,7 @@ export default function AmazonProjectSection() {
                   <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Quantifying UI Clutter via fNIRS</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
-                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher <span className="text-white font-medium">Left DLPFC activation</span> than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load for <span className="text-white font-medium">75M+ customers</span>, improving engagement and content discovery.
+                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher neural activation in the <span className="text-white font-medium">Left DLPFC</span> than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load for <span className="text-white font-medium">75M+ customers</span>, improving engagement and content discovery.
                   </p>
                 </div>
 
