@@ -284,7 +284,7 @@ export default function AmazonProjectSection() {
                   <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Quantifying UI Clutter via fNIRS</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
-                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher neural activation in the <span className="text-white font-medium">Left DLPFC</span> than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load, improving engagement and content discovery.
+                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher neural activation in the Left Prefrontal Cortex than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load, improving engagement and content discovery.
                   </p>
                 </div>
 
