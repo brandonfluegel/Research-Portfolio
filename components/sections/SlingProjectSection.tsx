@@ -31,14 +31,14 @@ interface SXIDataPoint {
 }
 
 const sxiData: SXIDataPoint[] = [
-  { name: "DVR Recording", sxi: 87, engagement: 88, volume: 953, friction: "Missed/Incomplete recordings" },
-  { name: "Collections", sxi: 85, engagement: 32, volume: 890, friction: "Horizontal scrolling fatigue" },
-  { name: "App Navigation", sxi: 82, engagement: 92, volume: 912, friction: "Too many clicks to destination" },
-  { name: "Info Card Details", sxi: 76, engagement: 48, volume: 840, friction: "Descriptions too short/unhelpful" },
-  { name: "Home Discovery", sxi: 73, engagement: 72, volume: 875, friction: "Random/Irrelevant recommendations" },
-  { name: "Video Player", sxi: 69, engagement: 94, volume: 934, friction: "Fast Forward/Rewind is jumpy" },
-  { name: "Value Clarity", sxi: 66, engagement: 58, volume: 926, friction: "Confusion: Free vs. Paid content" },
-  { name: "Live TV Guide", sxi: 64, engagement: 98, volume: 991, friction: "Channel bloat & confusing order" },
+  { name: "DVR Recording", sxi: 87, engagement: 8, volume: 953, friction: "Missed/Incomplete recordings" },
+  { name: "Collections", sxi: 85, engagement: 2, volume: 890, friction: "Horizontal scrolling fatigue" },
+  { name: "App Navigation", sxi: 82, engagement: 4, volume: 912, friction: "Too many clicks to destination" },
+  { name: "Info Card Details", sxi: 76, engagement: 1.5, volume: 840, friction: "Descriptions too short/unhelpful" },
+  { name: "Home Discovery", sxi: 73, engagement: 6, volume: 875, friction: "Random/Irrelevant recommendations" },
+  { name: "Video Player", sxi: 69, engagement: 26, volume: 934, friction: "Fast Forward/Rewind is jumpy" },
+  { name: "Value Clarity", sxi: 66, engagement: 2.5, volume: 926, friction: "Confusion: Free vs. Paid content" },
+  { name: "Live TV Guide", sxi: 64, engagement: 14, volume: 991, friction: "Channel bloat & confusing order" },
 ];
 
 // Color logic: >= 70 green, 66-69 amber, <= 65 red
@@ -158,15 +158,15 @@ function SXIProjectMatrix() {
 
               {/* Strategic Quadrant Shading */}
               {/* Fortify / Target Zone: Top-Right (x>50, y>70) */}
-              <ReferenceArea x1={50} x2={120} y1={70} y2={100} fill="#00ff87" fillOpacity={0.02} />
-              {/* Prioritize / Danger Zone: Bottom-Right (x>50, y<65 — below Churn Cliff) */}
-              <ReferenceArea x1={50} x2={120} y1={50} y2={65} fill="#ff3b5c" fillOpacity={0.06} />
-              {/* Monitor: Top-Left (x<50, y>70) */}
-              <ReferenceArea x1={15} x2={50} y1={70} y2={100} fill="#71717a" fillOpacity={0.01} />
-              {/* Prospect: Bottom-Left (x<50, y<70) */}
-              <ReferenceArea x1={15} x2={50} y1={50} y2={70} fill="#71717a" fillOpacity={0.01} />
+              <ReferenceArea x1={6} x2={32} y1={70} y2={100} fill="#00ff87" fillOpacity={0.02} />
+              {/* Prioritize / Danger Zone: Bottom-Right (x>6, y<65 — below Churn Cliff) */}
+              <ReferenceArea x1={6} x2={32} y1={50} y2={65} fill="#ff3b5c" fillOpacity={0.06} />
+              {/* Monitor: Top-Left (x<6, y>70) */}
+              <ReferenceArea x1={0} x2={6} y1={70} y2={100} fill="#71717a" fillOpacity={0.01} />
+              {/* Prospect: Bottom-Left (x<6, y<70) */}
+              <ReferenceArea x1={0} x2={6} y1={50} y2={70} fill="#71717a" fillOpacity={0.01} />
               {/* Transition Zone: Right side between Churn Cliff (65) and Quadrant line (70) */}
-              <ReferenceArea x1={50} x2={120} y1={65} y2={70} fill="#ffb020" fillOpacity={0.015} />
+              <ReferenceArea x1={6} x2={32} y1={65} y2={70} fill="#ffb020" fillOpacity={0.015} />
 
               {/* Ultra-faint grid */}
               <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" opacity={0.015} />
@@ -181,7 +181,7 @@ function SXIProjectMatrix() {
                 tickFormatter={(v) => `${v}h`}
                 tickLine={false}
                 axisLine={{ stroke: '#27272a' }}
-                domain={[15, 120]}
+                domain={[0, 32]}
                 dy={isMobile ? 4 : 8}
               >
                 <Label
@@ -229,7 +229,7 @@ function SXIProjectMatrix() {
               />
 
               {/* Quadrant dividers */}
-              <ReferenceLine x={50} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
+              <ReferenceLine x={6} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
               <ReferenceLine y={70} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
 
               {/* Data Points */}

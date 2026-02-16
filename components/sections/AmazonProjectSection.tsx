@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import LogoBadge from "@/components/ui/LogoBadge";
 import useParallax from "@/app/hooks/useParallax";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
@@ -239,112 +238,78 @@ export default function AmazonProjectSection() {
           </motion.div>
         </motion.div>
 
-        {/* === CASE STUDY 2: NEUROIMAGING === */}
+        {/* === CASE STUDY 2: NEUROIMAGING & HARDWARE === */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-center"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start pb-16 md:pb-24"
         >
-             {/* LEFT: VIDEO/IMAGE */}
-             <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col items-center">
+           {/* LEFT: VIDEO */}
+           <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+              <div className="relative w-full max-w-2xl mx-auto">
                 <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group">
-                    <video
-                        src="/assets/fnirs.mp4"
-                        autoPlay
-                        muted
-                        loop
-                        playsInline
-                        className="object-cover w-full h-full opacity-60 grayscale-[20%] hover:grayscale-0 transition duration-700"
-                    />
+                  <div className="absolute -inset-4 bg-purple-500/[0.06] blur-[60px] rounded-full pointer-events-none"></div>
+                  <video
+                      src="/assets/fnirs.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
+                  />
                 </div>
-                {/* Caption Below */}
-                <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 2. Measuring Cognitive Load via fNIRS</p>
-             </motion.div>
-
-             {/* RIGHT: CONTENT */}
-             <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2">
-                 <div className="flex items-center gap-2 mb-3 md:mb-4">
-                  <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
-                  <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & UX</span>
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 leading-[1.1] tracking-tight">
-                  Biometric <br/> <span className="text-zinc-500">UI Benchmarking</span>
-                </h3>
-                
-                 <div className="space-y-6 md:space-y-8">
-                  <div className="group">
-                    <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">Operationalizing &quot;Clutter&quot;</h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                    The FireTV Home UI design was historically based on aesthetic preferences. I shifted the conversation to <strong>cognitive cost</strong>. Using fNIRS (functional neuroimaging), we proved that FireTV&apos;s UI density triggered significantly higher activation in the Left DLPFC (working memory) compared to competitors (Apple TV & Netflix).
-                    </p>
-                  </div>
-                  <div className="w-full h-[1px] bg-white/5"></div>
-                  <div className="group">
-                    <h4 className="text-sm md:text-base font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">The Strategic Pivot</h4>
-                    <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">
-                      We optimized the Home UI to reduce cognitive load for 75M+ customers, resulting in increased engagement metrics and a simpler mental model for content discovery.
-                    </p>
-                  </div>
-                </div>
-             </motion.div>
-        </motion.div>
-
-        {/* === CASE STUDY 3: HARDWARE === */}
-        <motion.div
-          id="hardware-section"
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-center pb-16 md:pb-24"
-        >
-           {/* LEFT: CONTENT */}
-           <motion.div variants={fadeInFromLeft} className="lg:col-span-5">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_8px_rgba(250,204,21,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-yellow-400 uppercase tracking-widest">Hardware & AI</span>
-              </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Multimodal AI <br /> <span className="text-zinc-500">+ Hardware</span>
-              </h3>
-              <p className="text-base md:text-lg text-zinc-300 mb-6 md:mb-8 leading-relaxed font-light">
-                Led end-to-end Human Factors strategy for the Echo Show portfolio. My research informed 50+ iterative design updates that improved the core user experience for 75M+ customers.
-              </p>
-               <div className="inline-flex items-center gap-4 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
-                 <div className="p-1 bg-yellow-500/20 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
-                    </svg>
-                 </div>
-                 <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award Recipient</span>
+                <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                  Fig 2. Measuring Cognitive Load via fNIRS
+                </p>
               </div>
            </motion.div>
 
-           {/* RIGHT: IMAGE */}
-           <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col items-center justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group flex items-center justify-center p-8">
-                 
-                 {/* Background Glow */}
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-white/5 blur-[80px] rounded-full pointer-events-none"></div>
+           {/* RIGHT: NARRATIVE */}
+           <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2 pt-2">
+              <div className="mb-8 md:mb-10">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
+                  <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & Hardware</span>
+                </div>
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                  Biometric Benchmarking <br/> <span className="text-zinc-500">& Multimodal AI</span>
+                </h3>
+                <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
+                  Replaced subjective UI decisions with neuroscience-backed cognitive cost data across the FireTV and Echo Show portfolios.
+                </p>
+              </div>
 
-                 <motion.div
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    className="relative w-full h-full flex items-center justify-center"
-                  >
-                    <Image
-                      src="/assets/echo.png"
-                      alt="Echo Show 10"
-                      width={800}
-                      height={600}
-                      className="w-auto h-full max-h-full object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:scale-105 transition-transform duration-700" 
-                    />
-                  </motion.div>
-             </div>
-             {/* Caption Below */}
-             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Fig 3. Echo Show 10 with Motion Tracking</p>
+              {/* PROCESS TIMELINE */}
+              <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
+                <div className="relative">
+                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Quantifying UI Clutter via fNIRS</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher <span className="text-white font-medium">Left DLPFC activation</span> than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load for <span className="text-white font-medium">75M+ customers</span>, improving engagement and content discovery.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show: Human Factors Leadership</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Led Human Factors strategy for the Echo Show portfolio, informing <span className="text-white font-medium">50+ design iterations</span> that improved the core experience for 75M+ customers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 md:mt-10">
+                <div className="inline-flex items-center gap-4 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
+                  <div className="p-1 bg-yellow-500/20 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award Recipient</span>
+                </div>
+              </div>
            </motion.div>
         </motion.div>
 
