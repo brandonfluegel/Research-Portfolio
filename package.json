@@ -20,6 +20,7 @@
     "react-countup": "^6.5.3",
     "react-dom": "^19.0.0",
     "react-parallax-tilt": "^1.7.286",
+    "recharts": "^3.7.0",
     "swiper": "^11.2.5",
     "tailwind-merge": "^3.4.0"
   },
