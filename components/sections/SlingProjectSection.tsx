@@ -271,6 +271,7 @@ function SXIProjectMatrix() {
                   fill="#ff3b5c"
                   fontSize={isMobile ? 7 : 9}
                   className="font-mono font-bold tracking-wider uppercase"
+                  dy={isMobile ? 10 : 14}
                   offset={isMobile ? 4 : 8}
                 />
               </ReferenceLine>
