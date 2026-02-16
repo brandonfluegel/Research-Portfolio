@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     images: ['/assets/cowboy.jpg'],
   },
   icons: {
-    icon: '/assets/cowboy.jpg',
-    apple: '/assets/cowboy.jpg',
+    icon: '/assets/favicon.png',
+    apple: '/assets/favicon.png',
   },
 };
 

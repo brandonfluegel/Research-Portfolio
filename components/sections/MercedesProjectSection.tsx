@@ -107,7 +107,7 @@ export default function MercedesProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Psychoacoustic Modeling</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. This model guided engineering adjustments that reduced perceived cabin noise by <span className="text-green-400 font-bold">15%</span>.
+                  Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. This model guided engineering adjustments that <span className="text-green-400 font-bold">reduced perceived cabin noise by 15%</span>.
                 </p>
               </div>
 
