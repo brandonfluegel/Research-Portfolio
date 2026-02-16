@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
-  description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA. Specializing in psychophysics, experimental design, and biometric benchmarking.",
+  description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA.",
   keywords: ["Brandon Fluegel", "Human Factors", "UX Research", "PhD", "Psychophysics", "Amazon", "Sling TV", "Uber", "NASA", "Experimental Design"],
   authors: [{ name: "Brandon Fluegel" }],
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
-    description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA. Specializing in psychophysics, experimental design, and biometric benchmarking.",
+    description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA.",
     url: 'https://humanfactors.pro',
     siteName: 'Brandon Fluegel Portfolio',
     locale: 'en_US',

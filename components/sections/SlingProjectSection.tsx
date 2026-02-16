@@ -22,80 +22,85 @@ import {
 
 // --- SXI MATRIX DATA & HELPERS ---
 
-interface MatrixDataPoint {
+interface SXIDataPoint {
   name: string;
-  x: number;
-  y: number;
-  z: number;
-  type: string;
+  sxi: number;       // Y-axis: Net Good Index (-100 to +100)
+  engagement: number; // X-axis: Monthly Viewing Hours (0-100)
+  volume: number;     // Bubble size
+  friction: string;   // Primary friction point
 }
 
-const data: MatrixDataPoint[] = [
-  { name: 'Live TV Guide', x: 85, y: -40, z: 90, type: 'Friction' }, // High Hours, Low SXI (Monitor) - High Churn Risk
-  { name: 'DVR Space', x: 75, y: 87, z: 20, type: 'Growth' },        // High Hours, High SXI (Fortify) - Low Churn Risk
-  { name: 'Home Discovery', x: 65, y: 45, z: 40, type: 'Neutral' },  // Mid Hours, Mid SXI
-  { name: 'Search', x: 30, y: -20, z: 60, type: 'Friction' },        // Low Hours, Low SXI (Prospect)
-  { name: 'Collections', x: 25, y: 78, z: 15, type: 'Growth' },      // Low Hours, High SXI (Prioritize)
-  { name: 'Details Page', x: 55, y: 10, z: 35, type: 'Neutral' },    // Mid
-  { name: 'Settings', x: 15, y: -65, z: 10, type: 'Neutral' },       // Low Hours, Very Low SXI
-  { name: 'On Demand', x: 60, y: 72, z: 25, type: 'Growth' },        // Mid-High Hours, High SXI
+const sxiData: SXIDataPoint[] = [
+  { name: "DVR Recording", sxi: 87, engagement: 88, volume: 953, friction: "Missed/Incomplete recordings" },
+  { name: "Collections", sxi: 85, engagement: 32, volume: 890, friction: "Horizontal scrolling fatigue" },
+  { name: "App Navigation", sxi: 82, engagement: 92, volume: 912, friction: "Too many clicks to destination" },
+  { name: "Info Card Details", sxi: 76, engagement: 48, volume: 840, friction: "Descriptions too short/unhelpful" },
+  { name: "Home Discovery", sxi: 73, engagement: 72, volume: 875, friction: "Random/Irrelevant recommendations" },
+  { name: "Video Player", sxi: 69, engagement: 94, volume: 934, friction: "Fast Forward/Rewind is jumpy" },
+  { name: "Value Clarity", sxi: 66, engagement: 58, volume: 926, friction: "Confusion: Free vs. Paid content" },
+  { name: "Live TV Guide", sxi: 64, engagement: 98, volume: 991, friction: "Channel bloat & confusing order" },
 ];
 
-// Helper to get qualitative labels
-const getSatisfactionLabel = (score: number) => {
-  if (score >= 65) return "Growth Driver";
-  if (score > 40) return "Satisfied";
-  if (score > 0) return "Neutral";
-  if (score > -40) return "Friction";
-  return "Critical Issue";
+// Color logic: >= 70 green, 66-69 amber, <= 65 red
+const getSXIColor = (sxi: number) => {
+  if (sxi >= 70) return "#00ff87";   // neon green
+  if (sxi >= 66) return "#ffb020";   // amber
+  return "#ff3b5c";                  // critical red
 };
 
-const getEngagementLabel = (hours: number) => {
-  if (hours > 60) return "High Utility";
-  if (hours > 30) return "Moderate Use";
-  return "Low Adoption";
+const getSXIGlow = (sxi: number) => {
+  if (sxi >= 70) return "rgba(0,255,135,0.45)";
+  if (sxi >= 66) return "rgba(255,176,32,0.4)";
+  return "rgba(255,59,92,0.5)";
 };
 
-// Custom Tooltip
-const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payload: MatrixDataPoint }[] }) => {
+const getSXILabel = (sxi: number) => {
+  if (sxi >= 70) return "Healthy";
+  if (sxi >= 66) return "At Risk";
+  return "Critical";
+};
+
+// Custom Tooltip — "Diagnostic Card"
+const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payload: SXIDataPoint }[] }) => {
   if (active && payload && payload.length && payload[0].payload) {
-    const data = payload[0].payload;
-    const satisfaction = getSatisfactionLabel(data.y);
-    const engagement = getEngagementLabel(data.x);
-    
+    const d = payload[0].payload;
+    const color = getSXIColor(d.sxi);
+    const label = getSXILabel(d.sxi);
+
     return (
-      <div className="bg-zinc-900/95 border border-white/10 p-3 md:p-4 rounded-lg shadow-2xl backdrop-blur-md min-w-[200px]">
-        <h4 className="font-bold text-white text-sm mb-3 border-b border-white/10 pb-2">{data.name}</h4>
-        
-        {/* Metric Grid */}
-        <div className="grid grid-cols-2 gap-4 mb-3">
-          
-          {/* Satisfaction Col */}
-          <div>
-            <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Satisfaction</div>
-            <div className={`text-lg font-bold ${data.y > 0 ? "text-green-400" : "text-amber-500"}`}>
-              {data.y > 0 ? "+" : ""}{data.y}
-            </div>
-            <div className={`text-[10px] font-medium ${data.y > 0 ? "text-green-400/70" : "text-amber-500/70"}`}>
-              {satisfaction}
+      <div className="bg-[#0a0a0a]/95 border border-white/10 p-4 rounded-xl shadow-2xl backdrop-blur-xl min-w-[230px]">
+        {/* Header */}
+        <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/10">
+          <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} />
+          <h4 className="font-bold text-white text-sm tracking-tight">{d.name}</h4>
+        </div>
+
+        {/* Metrics */}
+        <div className="space-y-2.5 mb-3">
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">SXI Score</span>
+            <div className="flex items-center gap-2">
+              <span className="text-base font-bold" style={{ color }}>{d.sxi}%</span>
+              <span className="text-[9px] px-1.5 py-0.5 rounded font-mono font-bold uppercase tracking-wider" 
+                    style={{ color, backgroundColor: `${color}15`, border: `1px solid ${color}30` }}>
+                {label}
+              </span>
             </div>
           </div>
-
-          {/* Engagement Col */}
-          <div>
-            <div className="text-[10px] text-zinc-500 uppercase tracking-wider mb-1">Watch Time</div>
-            <div className="text-lg font-bold text-blue-400">{data.x}h</div>
-            <div className="text-[10px] text-blue-300/70 font-medium">{engagement}</div>
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">Engagement</span>
+            <span className="text-base font-bold text-blue-400">{d.engagement}h</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">Volume (n)</span>
+            <span className="text-sm font-mono text-zinc-300">{d.volume.toLocaleString()}</span>
           </div>
         </div>
 
-        {/* Action / Churn Risk Footer */}
-        <div className={`text-[10px] font-bold px-2 py-1.5 rounded text-center border uppercase tracking-widest ${
-          data.z > 50 
-            ? "bg-red-500/10 border-red-500/20 text-red-400" 
-            : "bg-emerald-500/10 border-emerald-500/20 text-emerald-400"
-        }`}>
-          {data.z > 50 ? "⚠ High Churn Risk" : "✓ Retention Driver"}
+        {/* Friction */}
+        <div className="p-2.5 bg-red-500/5 border border-red-500/10 rounded-lg">
+          <div className="text-[9px] text-red-400/70 uppercase tracking-wider font-mono font-bold mb-1">Primary Friction</div>
+          <p className="text-[11px] text-zinc-300 leading-relaxed">{d.friction}</p>
         </div>
       </div>
     );
@@ -105,203 +110,232 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
 
 function SXIProjectMatrix() {
   return (
-    <div className="w-full bg-black/50 p-4 md:p-6 rounded-xl border border-white/10 backdrop-blur-sm relative overflow-hidden group">
-      
-      {/* Aesthetic Background Gradients */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl pointer-events-none translate-y-1/2 -translate-x-1/2" />
+    <div className="w-full rounded-2xl relative overflow-hidden group shadow-2xl" style={{ backgroundColor: '#050505' }}>
 
-      {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between md:items-end mb-6 relative z-10 gap-4 md:gap-0">
-        <div>
-          <h3 className="text-lg md:text-xl font-bold text-white tracking-tight flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            SXI PRIORITIZATION MATRIX
-          </h3>
-          <p className="text-[10px] md:text-xs text-zinc-400 mt-1 font-mono uppercase tracking-widest">
-            Portfolio Performance • Q4 2025
+      {/* Outer glow ring */}
+      <div className="absolute inset-0 rounded-2xl border border-white/[0.06]" />
+
+      {/* Ambient gradient orbs */}
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-emerald-500/[0.07] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500/[0.07] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-60 h-60 bg-red-500/[0.04] rounded-full blur-[100px] pointer-events-none" />
+
+      {/* Content */}
+      <div className="relative z-10 p-4 md:p-6">
+
+        {/* Header */}
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-6 gap-4 md:gap-0">
+          <div>
+            <h3 className="text-base md:text-lg font-bold text-white tracking-tight flex items-center gap-2.5">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
+              </span>
+              SXI PRIORITIZATION MATRIX
+            </h3>
+            <p className="text-[10px] md:text-xs text-zinc-500 mt-1.5 font-mono uppercase tracking-[0.2em] pl-5">
+              Q4 2025 • Net Good Index vs. Engagement
+            </p>
+          </div>
+        </div>
+
+        {/* Chart Container */}
+        <div className="h-[380px] md:h-[480px] w-full relative rounded-xl overflow-hidden border border-white/[0.04]" style={{ backgroundColor: '#080808' }}>
+
+          {/* Micro grid pattern */}
+          <div className="absolute inset-0 z-0 opacity-[0.06]"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+              backgroundSize: '32px 32px'
+            }} />
+
+          {/* Quadrant labels — positioned absolutely over the chart area */}
+          <div className="absolute inset-0 pointer-events-none z-[1] select-none">
+            <div className="absolute top-3 right-4 md:top-5 md:right-6 text-right">
+              <div className="text-emerald-400/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">FORTIFY</div>
+              <div className="text-emerald-400/[0.05] font-mono text-[8px] md:text-[10px] tracking-[0.3em] uppercase mt-0.5">(PROTECT)</div>
+            </div>
+            <div className="absolute bottom-10 right-4 md:bottom-14 md:right-6 text-right">
+              <div className="text-red-400/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">PRIORITIZE</div>
+              <div className="text-red-400/[0.05] font-mono text-[8px] md:text-[10px] tracking-[0.3em] uppercase mt-0.5">(FIX)</div>
+            </div>
+            <div className="absolute top-3 left-4 md:top-5 md:left-6">
+              <div className="text-blue-400/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">MONITOR</div>
+            </div>
+            <div className="absolute bottom-10 left-4 md:bottom-14 md:left-6">
+              <div className="text-zinc-500/[0.08] font-black text-3xl md:text-6xl tracking-tighter leading-none">PROSPECT</div>
+            </div>
+          </div>
+
+          <ResponsiveContainer width="100%" height="100%">
+            <ScatterChart margin={{ top: 25, right: 35, bottom: 50, left: 10 }}>
+
+              {/* Strategic Quadrant Shading */}
+              {/* Fortify: Top-Right (x>50, y>70) */}
+              <ReferenceArea x1={50} x2={100} y1={70} y2={100} fill="#00ff87" fillOpacity={0.02} />
+              {/* Prioritize: Bottom-Right (x>50, y<65 — below Churn Cliff) */}
+              <ReferenceArea x1={50} x2={100} y1={-100} y2={65} fill="#ff3b5c" fillOpacity={0.03} />
+              {/* Monitor: Top-Left (x<50, y>70) */}
+              <ReferenceArea x1={0} x2={50} y1={70} y2={100} fill="#3b82f6" fillOpacity={0.01} />
+              {/* Prospect: Bottom-Left (x<50, y<70) */}
+              <ReferenceArea x1={0} x2={50} y1={-100} y2={70} fill="#71717a" fillOpacity={0.01} />
+              {/* Transition Zone: Right side between Churn Cliff (65) and Quadrant line (70) */}
+              <ReferenceArea x1={50} x2={100} y1={65} y2={70} fill="#ffb020" fillOpacity={0.015} />
+
+              {/* Ultra-faint grid */}
+              <CartesianGrid strokeDasharray="3 3" stroke="#ffffff" opacity={0.015} />
+
+              {/* X-Axis: Engagement */}
+              <XAxis
+                type="number"
+                dataKey="engagement"
+                name="Engagement"
+                stroke="#27272a"
+                tick={{ fill: '#52525b', fontSize: 10, fontFamily: 'monospace' }}
+                tickFormatter={(v) => `${v}h`}
+                tickLine={false}
+                axisLine={{ stroke: '#27272a' }}
+                domain={[0, 100]}
+                dy={8}
+              >
+                <Label
+                  value="MONTHLY ENGAGEMENT (HOURS)"
+                  offset={0}
+                  position="insideBottom"
+                  dy={30}
+                  className="fill-zinc-600 text-[8px] font-mono uppercase tracking-[0.25em] font-bold"
+                />
+              </XAxis>
+
+              {/* Y-Axis: Net Good Index */}
+              <YAxis
+                type="number"
+                dataKey="sxi"
+                name="Net Good Index"
+                stroke="#27272a"
+                tick={{ fill: '#52525b', fontSize: 10, fontFamily: 'monospace' }}
+                tickFormatter={(v) => (v > 0 ? `+${v}` : `${v}`)}
+                tickLine={false}
+                axisLine={{ stroke: '#27272a' }}
+                domain={[-100, 100]}
+                dx={-5}
+              >
+                <Label
+                  value="NET GOOD INDEX"
+                  angle={-90}
+                  position="insideLeft"
+                  className="fill-zinc-600 text-[8px] font-mono uppercase tracking-[0.25em] font-bold"
+                  style={{ textAnchor: 'middle' }}
+                  dx={5}
+                />
+              </YAxis>
+
+              {/* Z-Axis: Bubble Size = Volume (aggressive scaling for visual hierarchy) */}
+              <ZAxis type="number" dataKey="volume" range={[100, 4500]} name="User Volume" />
+
+              {/* Tooltip */}
+              <Tooltip
+                cursor={{ strokeDasharray: '3 3', stroke: '#ffffff15' }}
+                content={<CustomTooltip />}
+                wrapperStyle={{ zIndex: 50 }}
+              />
+
+              {/* Quadrant dividers */}
+              <ReferenceLine x={50} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
+              <ReferenceLine y={70} stroke="#27272a" strokeWidth={1} strokeOpacity={0.5} />
+
+              {/* Neutral zero line — solid thin grey (mathematical balance point) */}
+              <ReferenceLine y={0} stroke="#52525b" strokeWidth={0.75} strokeOpacity={0.4}>
+                <Label value="NEUTRAL (0)" position="insideTopLeft" fill="#52525b" fontSize={8} className="font-mono tracking-widest" offset={5} />
+              </ReferenceLine>
+
+              {/* CHURN CLIFF at y=65 — neon-red glow emphasis */}
+              <ReferenceLine
+                y={65}
+                stroke="#ff3b5c"
+                strokeDasharray="8 4"
+                strokeWidth={1.5}
+                strokeOpacity={0.85}
+                style={{ filter: 'drop-shadow(0 0 8px #ff3b5c) drop-shadow(0 0 3px #ff3b5c)' }}
+              >
+                <Label
+                  value="▸ CHURN CLIFF (Critical Threshold)"
+                  position="insideTopRight"
+                  fill="#ff3b5c"
+                  fontSize={9}
+                  className="font-mono font-bold tracking-wider uppercase"
+                  offset={8}
+                />
+              </ReferenceLine>
+
+              {/* Direct Label — Live TV Guide (offset right to avoid Video Player collision) */}
+              <ReferenceArea x1={93} x2={100} y1={64} y2={64}>
+                <Label value='Live TV Guide' position="bottom" offset={14} fill="#ff3b5c" fontSize={10} fontWeight="bold" className="font-mono tracking-wide" />
+              </ReferenceArea>
+              <ReferenceArea x1={93} x2={100} y1={64} y2={64}>
+                <Label value='"Channel Bloat"' position="bottom" offset={28} fill="#ff3b5c" fontSize={8} className="font-mono opacity-50" />
+              </ReferenceArea>
+
+              {/* Direct Label — Video Player (offset left to separate from Live TV Guide) */}
+              <ReferenceArea x1={82} x2={94} y1={69} y2={69}>
+                <Label value='Video Player' position="bottom" offset={14} fill="#ffb020" fontSize={10} fontWeight="bold" className="font-mono tracking-wide" />
+              </ReferenceArea>
+              <ReferenceArea x1={82} x2={94} y1={69} y2={69}>
+                <Label value='"Jumpy FF/RW"' position="bottom" offset={28} fill="#ffb020" fontSize={8} className="font-mono opacity-50" />
+              </ReferenceArea>
+
+              {/* Direct Label — DVR Recording */}
+              <ReferenceArea x1={83} x2={93} y1={87} y2={87}>
+                <Label value="DVR Recording" position="top" offset={14} fill="#00ff87" fontSize={10} fontWeight="bold" className="font-mono tracking-wide" />
+              </ReferenceArea>
+
+              {/* Data Points */}
+              <Scatter name="Features" data={sxiData}>
+                {sxiData.map((entry, index) => {
+                  const color = getSXIColor(entry.sxi);
+                  const glow = getSXIGlow(entry.sxi);
+                  return (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={color}
+                      stroke={color}
+                      strokeWidth={2}
+                      fillOpacity={0.55}
+                      strokeOpacity={0.85}
+                      style={{
+                        filter: `drop-shadow(0 0 12px ${glow}) drop-shadow(0 0 4px ${glow})`,
+                        transition: 'all 0.3s ease',
+                        cursor: 'pointer',
+                      }}
+                    />
+                  );
+                })}
+              </Scatter>
+
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Footer Legend */}
+        <div className="mt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
+          <div className="flex flex-wrap gap-3 text-[9px] md:text-[10px] font-mono uppercase tracking-wider">
+            <div className="flex items-center gap-1.5 text-zinc-500">
+              <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#00ff87', boxShadow: '0 0 6px rgba(0,255,135,0.4)' }} />
+              <span>SXI &ge; 70 (Healthy)</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-zinc-500">
+              <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#ffb020', boxShadow: '0 0 6px rgba(255,176,32,0.4)' }} />
+              <span>SXI 66–69 (At Risk)</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-zinc-500">
+              <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#ff3b5c', boxShadow: '0 0 6px rgba(255,59,92,0.4)' }} />
+              <span>SXI &le; 65 (Critical)</span>
+            </div>
+          </div>
+          <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider">
+            Bubble Size = User Volume (n) &nbsp;|&nbsp; Color = SXI Health Status
           </p>
         </div>
-        
-        {/* Legend */}
-        <div className="flex flex-wrap gap-3 md:gap-4 text-[9px] md:text-[10px] text-zinc-500 font-mono uppercase">
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-green-500/80" /> Growth
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-amber-500/80" /> Friction
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full border border-zinc-600" /> Size = Churn
-          </div>
-        </div>
-      </div>
-
-      {/* Chart Container */}
-      <div className="h-[350px] md:h-[450px] w-full font-sans text-xs relative z-10 group bg-zinc-900/50 rounded-xl border border-white/5 backdrop-blur-sm overflow-hidden">
-        
-        {/* Subtle Grid Pattern Overlay */}
-        <div className="absolute inset-0 z-0 opacity-10" 
-             style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }}>
-        </div>
-
-        {/* HTML Text Overlay for Quadrants (Refined Minimalist HUD - Professional Grade) */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
-             
-             {/* Top Right: FORTIFY (Strategic Win) */}
-             <div className="absolute top-0 right-0 p-6 text-right">
-                <div className="flex flex-col items-end">
-                  <div className="text-emerald-500/80 text-[10px] uppercase font-mono tracking-[0.2em] font-bold mb-1">Star Strategy</div>
-                  <div className="text-emerald-500 font-bold text-3xl md:text-5xl uppercase tracking-tighter leading-none opacity-20 mix-blend-overlay">Fortify</div>
-                  <div className="flex items-center gap-2 mt-2">
-                    <span className="h-px w-8 bg-emerald-500/40"></span>
-                    <span className="text-emerald-400/50 text-[9px] font-mono tracking-wide">High Value / Low Friction</span>
-                  </div>
-                </div>
-             </div>
-             
-             {/* Bottom Right: FIX PRIORITY (Critical) */}
-             <div className="absolute bottom-0 right-0 p-6 text-right">
-                <div className="flex flex-col items-end">
-                   <div className="text-red-500/80 text-[10px] uppercase font-mono tracking-[0.2em] font-bold mb-1">Critical Risk</div>
-                   <div className="text-red-500 font-bold text-3xl md:text-5xl uppercase tracking-tighter leading-none opacity-20 mix-blend-overlay">Fix<br/>Priority</div>
-                   <div className="flex items-center gap-2 mt-2">
-                     <span className="h-px w-8 bg-red-500/40"></span>
-                     <span className="text-red-400/50 text-[9px] font-mono tracking-wide">High Usage / High Friction</span>
-                   </div>
-                </div>
-             </div>
-
-             {/* Top Left: NICHE (Tactical) */}
-             <div className="absolute top-0 left-0 p-6 text-left">
-                <div className="flex flex-col items-start">
-                   <div className="text-blue-500/80 text-[10px] uppercase font-mono tracking-[0.2em] font-bold mb-1">Maintain</div>
-                   <div className="text-blue-500 font-bold text-3xl md:text-5xl uppercase tracking-tighter leading-none opacity-20 mix-blend-overlay">Niche</div>
-                    <div className="flex items-center gap-2 mt-2">
-                      <span className="text-blue-400/50 text-[9px] font-mono tracking-wide">Low Usage / Satisfaction</span>
-                      <span className="h-px w-8 bg-blue-500/40"></span>
-                    </div>
-                </div>
-             </div>
-
-             {/* Bottom Left: DEPRIORITIZE (Trash) */}
-             <div className="absolute bottom-0 left-0 p-6 text-left">
-                <div className="flex flex-col items-start">
-                   <div className="text-zinc-500/80 text-[10px] uppercase font-mono tracking-[0.2em] font-bold mb-1">Ignore</div>
-                   <div className="text-zinc-500 font-bold text-3xl md:text-5xl uppercase tracking-tighter leading-none opacity-20 mix-blend-overlay">Deprioritize</div>
-                   <div className="flex items-center gap-2 mt-2">
-                      <span className="text-zinc-500/50 text-[9px] font-mono tracking-wide">Low Value Loop</span>
-                      <span className="h-px w-8 bg-zinc-500/40"></span>
-                   </div>
-                </div>
-             </div>
-        </div>
-
-        <ResponsiveContainer width="100%" height="100%">
-          <ScatterChart
-            margin={{ top: 40, right: 40, bottom: 40, left: 10 }}
-          >
-            {/* Minimalist Grid */}
-            <CartesianGrid strokeDasharray="3 3" stroke="#52525b" vertical={false} horizontal={false} opacity={0.15} />
-
-            {/* Subtle Gradient Zones - Even more subtle professional look */}
-            <ReferenceArea x1={50} x2={100} y1={0} y2={100} fill="#10b981" fillOpacity={0.02} />
-            <ReferenceArea x1={50} x2={100} y1={-100} y2={0} fill="#ef4444" fillOpacity={0.03} />
-            <ReferenceArea x1={0} x2={50} y1={0} y2={100} fill="#3b82f6" fillOpacity={0.02} />
-            <ReferenceArea x1={0} x2={50} y1={-100} y2={0} fill="#71717a" fillOpacity={0.02} />
-
-
-            {/* X-Axis: Engagement - Professional styling */}
-            <XAxis 
-              type="number" 
-              dataKey="x" 
-              name="Engagement" 
-              unit=""
-              stroke="#52525b"
-              tick={{ fill: '#a1a1aa', fontSize: 10, fontFamily: 'monospace' }}
-              tickFormatter={(value) => `${value}h`}
-              tickLine={{ stroke: '#52525b', opacity: 0.5 }}
-              axisLine={{ stroke: '#52525b', opacity: 0.3 }}
-              domain={[0, 100]}
-              dy={10}
-            >
-              <Label 
-                value="Engagement (Hours Watched)" 
-                offset={0} 
-                position="insideBottom" 
-                dy={35} 
-                className="fill-zinc-500 text-[9px] font-mono uppercase tracking-[0.2em] font-bold" 
-              />
-            </XAxis>
-
-            {/* Y-Axis: SXI Score - Professional styling */}
-            <YAxis 
-              type="number" 
-              dataKey="y" 
-              name="SXI Score" 
-              unit=""
-              stroke="#52525b"
-              tick={{ fill: '#a1a1aa', fontSize: 10, fontFamily: 'monospace' }}
-              tickFormatter={(value) => value > 0 ? `+${value}` : `${value}`}
-              tickLine={{ stroke: '#52525b', opacity: 0.5 }}
-              axisLine={{ stroke: '#52525b', opacity: 0.3 }}
-              domain={[-100, 100]}
-              dx={-10}
-            >
-              <Label 
-                value="User Satisfaction (SXI Score)" 
-                angle={-90} 
-                position="insideLeft" 
-                className="fill-zinc-500 text-[9px] font-mono uppercase tracking-[0.2em] font-bold" 
-                style={{ textAnchor: 'middle' }} 
-                dx={-20}
-              />
-            </YAxis>
-
-            {/* Z-Axis: Bubble Size */}
-            <ZAxis type="number" dataKey="z" range={[80, 500]} name="Churn Correlation" />
-
-            {/* Tooltip */}
-            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3', stroke: '#ffffff20' }} />
-
-            {/* Reference Lines - Professional Clean Look */}
-            <ReferenceLine x={50} stroke="#3f3f46" strokeDasharray="3 3" strokeOpacity={0.5} />
-            <ReferenceLine y={0} stroke="#3f3f46" strokeDasharray="3 3" strokeOpacity={0.5} />
-
-            {/* Churn Cliff - Technical Marker Style */}
-            <ReferenceLine 
-              y={65} 
-              stroke="#f59e0b" 
-              strokeDasharray="4 2" 
-              strokeWidth={1}
-              strokeOpacity={0.8}
-            >
-               <Label 
-                  value="CHURN CLIFF (65)" 
-                  position="insideTopRight" 
-                  fill="#f59e0b" 
-                  fontSize={9}
-                  className="font-mono font-bold tracking-wider"
-                  offset={10}
-                />
-            </ReferenceLine>
-
-            {/* Data Points - Enhanced */}
-            <Scatter name="Features" data={data} fill="#8884d8">
-              {data.map((entry: MatrixDataPoint, index: number) => (
-                <Cell 
-                  key={`cell-${index}`} 
-                  fill={entry.y > 65 ? '#10b981' : (entry.y > 0 ? '#a3e635' : '#fbbf24')} 
-                  stroke={entry.z > 50 ? '#ef4444' : '#ffffff20'} 
-                  strokeWidth={entry.z > 50 ? 2 : 1}
-                  opacity={0.9}
-                  style={{ filter: 'drop-shadow(0px 0px 4px rgba(0,0,0,0.5))' }}
-                />
-              ))}
-            </Scatter>
-
-          </ScatterChart>
-        </ResponsiveContainer>
       </div>
     </div>
   );
