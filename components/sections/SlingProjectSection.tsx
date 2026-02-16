@@ -16,7 +16,6 @@ import {
   ReferenceLine,
   ReferenceArea,
   Label,
-  LabelList,
   ZAxis,
   Cell
 } from 'recharts';
@@ -59,42 +58,6 @@ const getSXILabel = (sxi: number) => {
   if (sxi >= 70) return "Healthy";
   if (sxi >= 66) return "At Risk";
   return "Critical";
-};
-
-// Custom Scatter Label — selective, clean labels for key data points only
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const renderCustomLabel = (props: any) => {
-  const { x, y, value } = props;
-  if (x == null || y == null) return null;
-  const item = sxiData.find(d => d.name === value);
-  if (!item) return null;
-
-  // Only label the 3 strategic narrative points
-  const labelConfig: Record<string, { dy: number; dx: number; anchor: string }> = {
-    "DVR Recording":  { dy: -22, dx: 0,  anchor: "middle" },
-    "Video Player":   { dy: -18, dx: 0,  anchor: "middle" },
-    "Live TV Guide":  { dy: 22,  dx: 0,  anchor: "middle" },
-  };
-
-  const config = labelConfig[item.name];
-  if (!config) return null; // Skip unlabeled points — tooltip handles them
-
-  const color = getSXIColor(item.sxi);
-
-  return (
-    <text
-      x={x + config.dx}
-      y={y + config.dy}
-      fill={color}
-      fontSize={10}
-      fontWeight="bold"
-      textAnchor={config.anchor}
-      fontFamily="monospace"
-      style={{ letterSpacing: '0.03em' }}
-    >
-      {item.name}
-    </text>
-  );
 };
 
 // Custom Tooltip — "Diagnostic Card"
