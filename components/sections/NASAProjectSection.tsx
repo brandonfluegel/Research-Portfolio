@@ -3,14 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/ui/LogoBadge";
-import useParallax from "@/app/hooks/useParallax";
-import { fadeInUp, staggerContainer } from "@/app/utils/animationVariants";
+import { fadeInUp, staggerContainer } from "@/lib/utils/animationVariants";
 
 export default function NASAProjectSection() {
-  const { ref } = useParallax();
-
   return (
-    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black" ref={ref}>
+    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-sky-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
@@ -83,8 +80,7 @@ export default function NASAProjectSection() {
                 src="/assets/nasahab2.PNG"
                 alt="NASA Gateway Research"
                 fill
-                priority
-                loading="eager"
+                sizes="100vw"
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
               />
               {/* Overlay gradient for depth */}

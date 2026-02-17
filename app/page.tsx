@@ -1,6 +1,5 @@
 "use client";
 
-// REMOVED: import Cursor from "@/components/Cursor";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
@@ -16,19 +15,15 @@ const MercedesProjectSection = dynamic(() => import("@/components/sections/Merce
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
-import useSmoothScroll from "@/app/hooks/useSmoothScroll";
-import useActiveSection from "@/app/hooks/useActiveSection";
+import useActiveSection from "@/hooks/useActiveSection";
 import { motion } from "framer-motion";
-import { fadeInUp } from "@/app/utils/animationVariants";
+import { fadeInUp } from "@/lib/utils/animationVariants";
 
 export default function Home() {
-  useSmoothScroll("nav", 120);
   const activeSection = useActiveSection();
 
   return (
-    // REMOVED: 'cursor-none' from className
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
-      {/* REMOVED: <Cursor /> */}
       <ScrollProgress />
       <Navbar activeSection={activeSection} />
       <ScrollToTop />

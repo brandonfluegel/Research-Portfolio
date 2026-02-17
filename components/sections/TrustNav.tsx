@@ -2,24 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const companies = [
-  { name: "Amazon", logo: "/assets/amazon-logo.png", id: "amazon-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-6 w-auto" },
-  { name: "Sling", logo: "/assets/Sling-logo.png", id: "sling-section", sizing: "h-6 md:h-9 w-auto", mobileSizing: "h-6 w-auto" },
-  { name: "NASA", logo: "/assets/nasa-logo.png", id: "nasa-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
-  { name: "Uber", logo: "/assets/uber-logo.png", id: "uber-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-5 w-auto" },
-  { name: "Mercedes", logo: "/assets/benz.png", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
-];
+import { scrollToSectionId } from "@/lib/utils/scroll";
+import { TRUST_COMPANIES } from "@/lib/constants/sections";
 
 export default function TrustNav({ activeSection = "" }: { activeSection?: string }) {
   const scrollToSection = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -100; 
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+    scrollToSectionId(id);
   };
 
   return (
@@ -33,7 +22,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
 
       {/* MOBILE: Static tappable row */}
       <div className="flex md:hidden justify-between items-center px-2">
-        {companies.map((company) => (
+        {TRUST_COMPANIES.map((company) => (
           <a
             key={company.name}
             href={`#${company.id}`}
@@ -48,8 +37,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 alt={`${company.name} logo`}
                 width={120}
                 height={60}
-                priority
-                loading="eager"
+                sizes="(max-width: 768px) 20vw, 120px"
                 className={`object-contain w-full h-full filter brightness-0 invert select-none transition-opacity duration-300 ${
                   activeSection === company.id
                     ? "opacity-100"
@@ -67,7 +55,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
 
       {/* DESKTOP: Static layout with active states */}
       <div className="hidden md:flex justify-between items-center gap-x-12 px-6">
-        {companies.map((company) => (
+        {TRUST_COMPANIES.map((company) => (
           <a
             key={company.name}
             href={`#${company.id}`}
@@ -82,8 +70,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 alt={`${company.name} logo`}
                 width={200}
                 height={100}
-                priority
-                loading="eager"
+                sizes="(max-width: 1024px) 120px, 200px"
                 className={`object-contain w-full h-full transition-opacity duration-300 filter brightness-0 invert select-none ${
                   activeSection === company.id
                     ? "opacity-100"

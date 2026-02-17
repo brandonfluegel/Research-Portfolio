@@ -1,18 +1,12 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
+import useScrollMetrics from "@/hooks/useScrollMetrics";
 
 export default function ScrollIndicator() {
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY < 200);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { scrollY } = useScrollMetrics();
+  const visible = scrollY < 200;
 
   if (!visible) return null;
 

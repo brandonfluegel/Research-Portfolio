@@ -1,38 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { name: "Amazon", href: "#amazon-section" },
-  { name: "NASA", href: "#nasa-section" },
-  { name: "Uber", href: "#uber-section" },
-  { name: "Mercedes", href: "#mercedes-section" },
-  { name: "Sling", href: "#sling-section" },
-];
+import useScrollMetrics from "@/hooks/useScrollMetrics";
+import { scrollToSectionId, scrollToTopSmooth } from "@/lib/utils/scroll";
+import { NAV_SECTIONS } from "@/lib/constants/sections";
 
 export default function Navbar({ activeSection = "" }: { activeSection?: string }) {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const { scrollY } = useScrollMetrics();
+  const isScrolled = scrollY > 50;
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
-    const element = document.getElementById(href.replace("#", ""));
-    if (element) {
-      const yOffset = -100;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }
+    scrollToSectionId(href.replace("#", ""));
     setMobileMenuOpen(false);
   };
 
@@ -44,16 +27,13 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           : "bg-black/50 backdrop-blur-sm border-transparent py-4 md:py-5"
       }`}
     >
-      {/* CRITICAL FIX: Added z-[60] to this container. 
-         This ensures the Logo and Hamburger Button sit ON TOP of the overlay (which is z-[50]).
-      */}
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 relative z-[60]">
         
         {/* LOGO */}
         <div className="flex items-center gap-3 group cursor-pointer relative">
           <Link 
             href="/" 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+            onClick={scrollToTopSmooth}
             className="flex items-center gap-3"
           >
             <div className="relative h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
@@ -92,12 +72,10 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            // FIX: Changed 'bg-black/95' to 'bg-black' (SOLID). removed backdrop-blur. 
-            // FIX: Changed z-40 to z-[50] to cover the navbar background but sit below the button (z-[60]).
             className="fixed inset-0 z-[50] bg-black flex flex-col items-center justify-center h-screen w-screen"
           >
             <ul className="flex flex-col space-y-8 text-center">
-              {navLinks.map((link) => (
+              {NAV_SECTIONS.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}

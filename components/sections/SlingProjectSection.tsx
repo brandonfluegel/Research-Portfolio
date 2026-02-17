@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
-import useParallax from "@/app/hooks/useParallax";
-import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
+import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 import {
   ScatterChart,
   Scatter,
@@ -103,10 +102,12 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
 
 function SXIProjectMatrix() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isChartReady, setIsChartReady] = useState(false);
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
+    setIsChartReady(true);
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);
@@ -153,7 +154,8 @@ function SXIProjectMatrix() {
 
 
 
-          <ResponsiveContainer width="100%" height="100%">
+          {isChartReady ? (
+            <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={isMobile ? 380 : 480}>
 <ScatterChart margin={isMobile ? { top: 16, right: 12, bottom: 38, left: 4 } : { top: 30, right: 40, bottom: 50, left: 15 }}>
 
               {/* Strategic Quadrant Shading */}
@@ -278,6 +280,9 @@ function SXIProjectMatrix() {
 
             </ScatterChart>
           </ResponsiveContainer>
+          ) : (
+            <div className="h-full w-full" aria-hidden="true" />
+          )}
         </div>
 
         {/* Footer Legend */}
@@ -308,10 +313,8 @@ function SXIProjectMatrix() {
 // --- MAIN PAGE COMPONENT ---
 
 export default function SlingProjectSection() {
-  const { ref } = useParallax();
-
   return (
-    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black" ref={ref}>
+    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
       {/* BACKGROUND ACCENTS - MATCHING ALEXA SECTION */}
       <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-amber-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>

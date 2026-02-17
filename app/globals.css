@@ -63,6 +63,35 @@ body {
   animation: orb-drift-2 15s ease-in-out infinite;
 }
 
+.ambient-orb {
+  will-change: transform, opacity;
+}
+
+html[data-performance-tier="low"] .ambient-orb,
+html[data-reduced-motion="true"] .ambient-orb {
+  animation: none !important;
+  filter: blur(56px) !important;
+  opacity: 0.16 !important;
+}
+
+html[data-performance-tier="low"] .media-card,
+html[data-reduced-motion="true"] .media-card {
+  transition-duration: 0.2s;
+}
+
+html[data-performance-tier="low"] .animate-pulse,
+html[data-performance-tier="low"] .animate-ping,
+html[data-reduced-motion="true"] .animate-pulse,
+html[data-reduced-motion="true"] .animate-ping {
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 /* Enhanced media card hover micro-interactions */
 .media-card {
   transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 

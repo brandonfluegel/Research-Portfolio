@@ -3,14 +3,11 @@
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
 import LazyVideo from "@/components/ui/LazyVideo";
-import useParallax from "@/app/hooks/useParallax";
-import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/app/utils/animationVariants";
+import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 
 export default function MercedesProjectSection() {
-  const { ref } = useParallax();
-
   return (
-    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black" ref={ref}>
+    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
 
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-slate-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
