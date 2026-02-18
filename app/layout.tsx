@@ -41,11 +41,6 @@ export const metadata: Metadata = {
     description: "Human Factors PhD & UX Researcher portfolio featuring impact at Amazon, Sling TV, Uber, and NASA.",
     images: ['/assets/cowboy.jpg'],
   },
-  icons: {
-    icon: '/assets/howdy.jpg',
-    shortcut: '/assets/howdy.jpg',
-    apple: '/assets/howdy.jpg',
-  },
 };
 
 export default function RootLayout({
