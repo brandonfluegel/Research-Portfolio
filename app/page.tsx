@@ -1,16 +1,15 @@
 "use client";
 
+import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import TrustNav from "@/components/sections/TrustNav"; 
-// Dynamic Imports for Code Splitting
-import dynamic from "next/dynamic";
-const SlingProjectSection = dynamic(() => import("@/components/sections/SlingProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const AmazonProjectSection = dynamic(() => import("@/components/sections/AmazonProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const UberProjectSection = dynamic(() => import("@/components/sections/UberProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const NASAProjectSection = dynamic(() => import("@/components/sections/NASAProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
-const MercedesProjectSection = dynamic(() => import("@/components/sections/MercedesProjectSection"), { loading: () => <div className="h-screen bg-black" /> });
+const SlingProjectSection = lazy(() => import("@/components/sections/SlingProjectSection"));
+const AmazonProjectSection = lazy(() => import("@/components/sections/AmazonProjectSection"));
+const UberProjectSection = lazy(() => import("@/components/sections/UberProjectSection"));
+const NASAProjectSection = lazy(() => import("@/components/sections/NASAProjectSection"));
+const MercedesProjectSection = lazy(() => import("@/components/sections/MercedesProjectSection"));
 
 import ScrollIndicator from "@/components/ui/ScrollIndicator";
 import ScrollProgress from "@/components/ui/ScrollProgress";
@@ -18,6 +17,46 @@ import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/utils/animationVariants";
+
+function SectionFallback() {
+  return <div className="h-[65vh] rounded-2xl border border-white/5 bg-zinc-950/60" aria-hidden="true" />;
+}
+
+function DeferredSection({
+  id,
+  children,
+  rootMargin = "420px 0px",
+}: {
+  id: string;
+  children: React.ReactNode;
+  rootMargin?: string;
+}) {
+  const mountRef = useRef<HTMLDivElement>(null);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    const node = mountRef.current;
+    if (!node || shouldRender) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setShouldRender(true);
+        observer.disconnect();
+      },
+      { rootMargin, threshold: 0.01 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [rootMargin, shouldRender]);
+
+  return (
+    <div id={id} ref={mountRef} className="deferred-section">
+      {shouldRender ? children : <SectionFallback />}
+    </div>
+  );
+}
 
 export default function Home() {
   const activeSection = useActiveSection();
@@ -59,36 +98,56 @@ export default function Home() {
 
       <TrustNav activeSection={activeSection} />
 
-      <section className="max-w-6xl mx-auto mt-32 md:mt-40 space-y-16 md:space-y-24">
-        <div id="amazon-section"><AmazonProjectSection /></div>
+      <section className="content-shell section-stack mt-32 md:mt-40">
+        <DeferredSection id="amazon-section" rootMargin="500px 0px">
+          <Suspense fallback={<SectionFallback />}>
+            <AmazonProjectSection />
+          </Suspense>
+        </DeferredSection>
         
         <SectionDivider 
           label="From AI voice systems → Product strategy"
           description="Applying psychophysics to monetization at scale"
         />
         
-        <div id="sling-section"><SlingProjectSection /></div>
+        <DeferredSection id="sling-section" rootMargin="500px 0px">
+          <Suspense fallback={<SectionFallback />}>
+            <SlingProjectSection />
+          </Suspense>
+        </DeferredSection>
         
         <SectionDivider 
           label="From product strategy → Global operations"
           description="Taking cognitive load reduction to emerging markets"
         />
         
-        <div id="uber-section"><UberProjectSection /></div>
+        <DeferredSection id="uber-section" rootMargin="500px 0px">
+          <Suspense fallback={<SectionFallback />}>
+            <UberProjectSection />
+          </Suspense>
+        </DeferredSection>
         
         <SectionDivider 
           label="From global ops → Mission-critical systems"
           description="Where cognitive error costs lives, not conversions"
         />
         
-        <div id="nasa-section"><NASAProjectSection /></div>
+        <DeferredSection id="nasa-section" rootMargin="500px 0px">
+          <Suspense fallback={<SectionFallback />}>
+            <NASAProjectSection />
+          </Suspense>
+        </DeferredSection>
         
         <SectionDivider 
           label="From space systems → Autonomous vehicles"
           description="Translating trust frameworks to human-machine interfaces"
         />
         
-        <div id="mercedes-section"><MercedesProjectSection /></div>
+        <DeferredSection id="mercedes-section" rootMargin="500px 0px">
+          <Suspense fallback={<SectionFallback />}>
+            <MercedesProjectSection />
+          </Suspense>
+        </DeferredSection>
       </section>
 
       <div className="mt-32 border-t border-white/10">

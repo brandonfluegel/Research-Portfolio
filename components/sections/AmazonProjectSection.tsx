@@ -254,7 +254,7 @@ export default function AmazonProjectSection() {
                       className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                   />
                 </div>
-                <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
+                <p className="meta-caption">
                   Fig 2. Measuring Cognitive Load via fNIRS
                 </p>
               </div>

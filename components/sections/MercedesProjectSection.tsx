@@ -57,7 +57,7 @@ export default function MercedesProjectSection() {
                 />
              </div>
              {/* Caption Below */}
-             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Semi-Autonomous Driving Simulator</p>
+             <p className="meta-caption">Semi-Autonomous Driving Simulator</p>
           </motion.div>
 
           {/* RIGHT: NARRATIVE (on desktop) */}

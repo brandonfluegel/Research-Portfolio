@@ -24,6 +24,8 @@ export default function LogoBadge({
         alt={alt}
         width={400}
         height={400}
+        quality={85}
+        decoding="async"
         priority={priority}
         loading={priority ? "eager" : "lazy"}
         sizes={sizes}

@@ -13,3 +13,5 @@ export const TRUST_COMPANIES = [
   { name: "Uber", logo: "/assets/uber-logo.png", id: "uber-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-5 w-auto" },
   { name: "Mercedes", logo: "/assets/benz.png", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
 ];
+
+export const SECTION_IDS = TRUST_COMPANIES.map((company) => company.id);

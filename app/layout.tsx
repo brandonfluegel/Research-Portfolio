@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GradientBackground from "@/components/ui/GradientBackground";
 import PerformanceModeProvider from "@/components/ui/PerformanceModeProvider";
+import MotionProvider from "@/components/ui/MotionProvider";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
@@ -13,6 +14,7 @@ const siteUrl = "https://humanfactors.pro";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  applicationName: "Brandon Fluegel Portfolio",
   title: {
     default: "Brandon Fluegel, Ph.D. | Human Factors UX Researcher",
     template: "%s | Brandon Fluegel, Ph.D."
@@ -20,12 +22,22 @@ export const metadata: Metadata = {
   description: "Human Factors UX Researcher with impact across Amazon, Sling TV, Uber, and NASA—translating psychophysics and experimentation into product, conversion, and revenue outcomes.",
   keywords: ["Brandon Fluegel", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
+  creator: "Brandon Fluegel",
+  publisher: "Brandon Fluegel",
+  category: "Technology",
   alternates: {
     canonical: "/",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
   icons: {
     icon: "/icon.png",
@@ -66,9 +78,37 @@ const structuredData = {
       url: siteUrl,
       image: `${siteUrl}/assets/howdy.jpg`,
       jobTitle: "Human Factors UX Researcher",
+      sameAs: ["https://www.linkedin.com/in/fluegel/"],
+      knowsAbout: [
+        "Human Factors",
+        "Human-AI Interaction",
+        "UX Research",
+        "Product Strategy",
+        "Psychophysics",
+        "Experimental Design",
+      ],
       worksFor: {
         "@type": "Organization",
         name: "Sling TV",
+      },
+    },
+    {
+      "@type": "Occupation",
+      "@id": `${siteUrl}#occupation`,
+      name: "Human Factors UX Researcher",
+      occupationLocation: {
+        "@type": "Country",
+        name: "United States",
+      },
+      skills: [
+        "Human Factors",
+        "Human-AI Interaction",
+        "UX Research",
+        "Product Research",
+        "Experimental Design",
+      ],
+      mainEntityOfPage: {
+        "@id": `${siteUrl}#website`,
       },
     },
     {
@@ -79,6 +119,21 @@ const structuredData = {
       description: "Human Factors UX Research and product impact portfolio.",
       publisher: {
         "@id": `${siteUrl}#person`,
+      },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${siteUrl}#profile-page`,
+      url: siteUrl,
+      name: "Brandon Fluegel Portfolio",
+      about: {
+        "@id": `${siteUrl}#person`,
+      },
+      mainEntity: {
+        "@id": `${siteUrl}#person`,
+      },
+      isPartOf: {
+        "@id": `${siteUrl}#website`,
       },
     },
   ],
@@ -99,7 +154,7 @@ export default function RootLayout({
         />
         <PerformanceModeProvider />
         <GradientBackground />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
         <Analytics />
         <SpeedInsights />
       </body>

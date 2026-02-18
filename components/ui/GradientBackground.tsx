@@ -1,6 +1,6 @@
 export default function GradientBackground() {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-black">
+    <div className="ambient-background fixed inset-0 -z-10 overflow-hidden bg-black">
       {/* Orb 1: Blue/Purple - Top Left — CSS-only animation */}
       <div className="ambient-orb absolute -top-[10%] -left-[10%] w-[70vw] md:w-[50vw] h-[70vw] md:h-[50vw] rounded-full bg-blue-900/20 blur-[80px] md:blur-[100px] animate-orb-1" />
 

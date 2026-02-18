@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useSyncExternalStore } from 'react';
 import { motion } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
@@ -102,12 +102,15 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
 
 function SXIProjectMatrix() {
   const [isMobile, setIsMobile] = useState(false);
-  const [isChartReady, setIsChartReady] = useState(false);
+  const isChartReady = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
     check();
-    setIsChartReady(true);
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);

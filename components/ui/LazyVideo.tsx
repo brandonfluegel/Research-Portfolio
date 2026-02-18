@@ -5,19 +5,16 @@ import { isLowPowerDevice } from "@/lib/utils/performance";
 
 interface LazyVideoProps {
   src: string;
+  poster?: string;
   className?: string;
 }
 
-export default function LazyVideo({ src, className = "" }: LazyVideoProps) {
+export default function LazyVideo({ src, poster, className = "" }: LazyVideoProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const [lowPowerMode, setLowPowerMode] = useState(false);
-
-  useEffect(() => {
-    setLowPowerMode(isLowPowerDevice());
-  }, []);
+  const [lowPowerMode] = useState(() => isLowPowerDevice());
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -62,11 +59,12 @@ export default function LazyVideo({ src, className = "" }: LazyVideoProps) {
       <video
         ref={videoRef}
         src={shouldLoad ? src : undefined}
+        poster={poster}
         autoPlay
         muted
         loop
         playsInline
-        preload={shouldLoad ? "metadata" : "none"}
+        preload={shouldLoad ? (isInView ? "auto" : "metadata") : "none"}
         className="w-full h-full object-cover"
       />
     </div>

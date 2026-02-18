@@ -55,12 +55,14 @@ export default function UberProjectSection() {
                   src="/assets/project-image-2.jpg"
                   alt="Uber Research"
                   fill
+                  quality={85}
+                  decoding="async"
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
                 />
              </div>
              {/* Caption Below */}
-             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">Research Led to Driver App Redesign</p>
+               <p className="meta-caption">Research Led to Driver App Redesign</p>
           </motion.div>
 
           {/* RIGHT: NARRATIVE (on desktop) */}

@@ -37,6 +37,8 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 alt={`${company.name} logo`}
                 width={120}
                 height={60}
+                quality={85}
+                decoding="async"
                 sizes="(max-width: 768px) 20vw, 120px"
                 className={`object-contain w-full h-full filter brightness-0 invert select-none transition-opacity duration-300 ${
                   activeSection === company.id
@@ -70,6 +72,8 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 alt={`${company.name} logo`}
                 width={200}
                 height={100}
+                quality={85}
+                decoding="async"
                 sizes="(max-width: 1024px) 120px, 200px"
                 className={`object-contain w-full h-full transition-opacity duration-300 filter brightness-0 invert select-none ${
                   activeSection === company.id

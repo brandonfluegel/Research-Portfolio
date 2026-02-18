@@ -19,6 +19,11 @@ UX and Human Factors portfolio showcasing case studies from Amazon, Sling, Uber,
 - `lib/constants/` — shared static metadata (navigation/section constants)
 - `public/assets/` — only production-used media assets
 
+## SEO + Discovery Artifacts
+- `app/robots.ts` — generated `robots.txt` with sitemap and host
+- `app/sitemap.ts` — generated `sitemap.xml`
+- `public/llms.txt` — machine-readable summary for LLM discovery/citation
+
 ## Contact
 - [LinkedIn](https://www.linkedin.com/in/fluegel/)
 - Email: Brandon.uxr@gmail.com
