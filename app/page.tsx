@@ -51,7 +51,7 @@ export default function Home() {
             Translating cognitive science into monetizable product strategy
           </motion.div>
 
-          <div className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 opacity-60 scale-90 md:scale-100">
+          <div className="mt-10 sm:mt-12 md:mt-16 lg:mt-20">
             <ScrollIndicator />
           </div>
         </div>
