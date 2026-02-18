@@ -38,11 +38,13 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           >
             <div className="relative h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
               <Image
-                src="/assets/howdy.jpg"
+                src="/assets/cowboy.jpg"
                 alt="Profile Image"
                 fill
                 priority
                 loading="eager"
+                quality={100}
+                sizes="40px"
                 className="object-cover"
               />
             </div>

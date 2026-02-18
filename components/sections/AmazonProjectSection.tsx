@@ -224,7 +224,7 @@ export default function AmazonProjectSection() {
               {/* X-Axis Labels */}
               <div className="hidden md:flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
                 <span>0ms</span>
-                <span className="text-zinc-300 relative left-[-5%]">1000ms</span>
+                <span className="text-zinc-300 relative left-[2%]">1000ms</span>
                 <span>2000ms</span>
                 <span>3000ms</span>
               </div>
