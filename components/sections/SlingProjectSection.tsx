@@ -156,7 +156,7 @@ function SXIProjectMatrix() {
 
           {isChartReady ? (
             <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={isMobile ? 380 : 480}>
-<ScatterChart margin={isMobile ? { top: 16, right: 12, bottom: 38, left: 4 } : { top: 30, right: 40, bottom: 50, left: 15 }}>
+<ScatterChart margin={isMobile ? { top: 16, right: 12, bottom: 38, left: 10 } : { top: 30, right: 40, bottom: 50, left: 24 }}>
 
               {/* Strategic Quadrant Shading */}
               {/* Fortify / Target Zone: Top-Right (x>50, y>70) */}
@@ -196,11 +196,11 @@ function SXIProjectMatrix() {
                 />
               </XAxis>
 
-              {/* Y-Axis: Net Good Index */}
+              {/* Y-Axis: SXI Score */}
               <YAxis
                 type="number"
                 dataKey="sxi"
-                name="Net Good Index"
+                name="SXI Score"
                 stroke="#27272a"
                 tick={{ fill: '#52525b', fontSize: isMobile ? 8 : 10, fontFamily: 'monospace' }}
                 tickFormatter={(v) => (v > 0 ? `+${v}` : `${v}`)}
@@ -208,15 +208,15 @@ function SXIProjectMatrix() {
                 axisLine={{ stroke: '#27272a' }}
                 domain={[50, 100]}
                 dx={isMobile ? -2 : -5}
-                width={isMobile ? 30 : 40}
+                width={isMobile ? 34 : 46}
               >
                 <Label
-                  value={isMobile ? "SXI" : "NET GOOD INDEX"}
+                  value="SXI SCORE"
                   angle={-90}
                   position="insideLeft"
                   className="fill-zinc-600 font-mono uppercase tracking-[0.25em] font-bold"
                   style={{ textAnchor: 'middle', fontSize: isMobile ? 6 : 8 }}
-                  dx={isMobile ? 8 : 5}
+                  dx={isMobile ? -8 : -12}
                 />
               </YAxis>
 
@@ -286,24 +286,26 @@ function SXIProjectMatrix() {
         </div>
 
         {/* Footer Legend */}
-        <div className="mt-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-3">
-          <div className="flex flex-wrap gap-3 text-[9px] md:text-[10px] font-mono uppercase tracking-wider">
-            <div className="flex items-center gap-1.5 text-zinc-500">
+        <div className="mt-4 rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2.5 md:px-4 md:py-3">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 text-[9px] md:text-[10px] font-mono uppercase tracking-wider">
+              <div className="flex items-center gap-1.5 text-zinc-500">
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#00ff87', boxShadow: '0 0 6px rgba(0,255,135,0.4)' }} />
               <span>SXI &ge; 70 (Healthy)</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-zinc-500">
+              </div>
+              <div className="flex items-center gap-1.5 text-zinc-500">
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#ffb020', boxShadow: '0 0 6px rgba(255,176,32,0.4)' }} />
               <span>SXI 66–69 (At Risk)</span>
-            </div>
-            <div className="flex items-center gap-1.5 text-zinc-500">
+              </div>
+              <div className="flex items-center gap-1.5 text-zinc-500">
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#ff3b5c', boxShadow: '0 0 6px rgba(255,59,92,0.4)' }} />
               <span>SXI &le; 65 (Critical)</span>
+              </div>
             </div>
+            <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider pt-1 md:pt-0 md:pl-4 md:border-l md:border-white/[0.06] md:whitespace-nowrap">
+              Color = SXI Health Status
+            </p>
           </div>
-          <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider">
-            Color = SXI Health Status
-          </p>
         </div>
       </div>
     </div>
