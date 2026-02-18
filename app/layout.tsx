@@ -15,10 +15,7 @@ const siteUrl = "https://humanfactors.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
-  title: {
-    default: "Brandon Fluegel, Ph.D. | Human Factors UX Researcher",
-    template: "%s | Brandon Fluegel, Ph.D."
-  },
+  title: "Brandon Fluegel, Ph.D.",
   description: "Human Factors UX Researcher with impact across Amazon, Sling TV, Uber, and NASA—translating psychophysics and experimentation into product, conversion, and revenue outcomes.",
   keywords: ["Brandon Fluegel", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
