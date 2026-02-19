@@ -16,9 +16,9 @@ const siteUrl = "https://humanfactors.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
-  title: "Brandon Fluegel, Ph.D.",
-  description: "Human Factors UX Researcher with impact across Amazon, Sling TV, Uber, and NASA—translating psychophysics and experimentation into product, conversion, and revenue outcomes.",
-  keywords: ["Brandon Fluegel", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
+  title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+  description: "Staff UX Researcher in Human Factors and AI. Delivered measurable impact across Amazon, Sling, Uber, and NASA.",
+  keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
   publisher: "Brandon Fluegel",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Brandon Fluegel, Ph.D. | Human Factors UX Researcher",
-    description: "Research portfolio featuring impact at Amazon, Sling TV, Uber, and NASA through psychophysics, experimentation, and product strategy.",
+    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    description: "Staff UX Researcher with Human Factors and AI expertise across Amazon, Sling, Uber, and NASA.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D. | Human Factors UX Researcher",
-    description: "Research portfolio featuring impact at Amazon, Sling TV, Uber, and NASA.",
+    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    description: "Staff UX Researcher with Human Factors and AI impact across Amazon, Sling, Uber, and NASA.",
     images: ["/assets/og-preview.jpg"],
   },
 };
@@ -75,7 +75,8 @@ const structuredData = {
       name: "Brandon Fluegel, Ph.D.",
       url: siteUrl,
       image: `${siteUrl}/assets/howdy.jpg`,
-      jobTitle: "Human Factors UX Researcher",
+      jobTitle: "Staff UX Researcher",
+      description: "Staff-level Human Factors and AI UX researcher focused on measurable product and revenue outcomes.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
       knowsAbout: [
         "Human Factors",
@@ -93,7 +94,7 @@ const structuredData = {
     {
       "@type": "Occupation",
       "@id": `${siteUrl}#occupation`,
-      name: "Human Factors UX Researcher",
+      name: "Staff UX Researcher",
       occupationLocation: {
         "@type": "Country",
         name: "United States",

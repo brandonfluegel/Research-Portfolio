@@ -1,19 +1,21 @@
-# Brandon Fluegel — Human Factors + AI Research Portfolio
+# Brandon Fluegel, Ph.D. — Staff UX Researcher
 
 Canonical: https://humanfactors.pro/
 Owner: Brandon Fluegel, Ph.D.
-Primary role: Human Factors UX Researcher
+Target role: Staff UX Researcher
+Specialty: Human Factors, Human-AI Interaction, Product Strategy
 
-Summary:
-This site is a portfolio focused on Human Factors research, Human-AI interaction,
-UX research strategy, and measurable product impact across Amazon, Sling TV,
-Uber, NASA, and Mercedes-Benz related work.
+At-a-glance:
+- Leads complex, cross-functional research programs tied to business outcomes
+- Applies psychophysics and experimentation to product strategy decisions
+- Portfolio impact spans Amazon, Sling TV, Uber, NASA, and Mercedes-Benz work
 
 Core topics:
+- Staff UX Research
+- Principal UX Research
 - Human Factors
 - Human-AI Interaction
-- UX Research
-- Product Strategy
+- UX Research Strategy
 - Psychophysics
 - Experimental Design
 - Trust and system status in AI-assisted experiences
