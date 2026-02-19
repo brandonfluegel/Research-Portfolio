@@ -80,7 +80,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 20,000+ controlled interactions with Alexa. This rigorous mapping identified the <span className="text-green-400 font-bold">&quot;High Satisfaction Threshold&quot; as all responses faster than 900ms</span>, where user satisfaction is highest and perception of &quot;slowness&quot; is minimized.
+                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 20,000+ controlled interactions with Alexa. This rigorous mapping identified the &quot;High Satisfaction Threshold&quot; as all responses faster than 900ms, where user satisfaction is highest and perception of &quot;slowness&quot; is minimized.
                 </p>
               </div>
 
@@ -89,7 +89,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate these perceptual thresholds into the <span className="text-green-400 font-bold">Negative Value Action (NVA) model</span>. We redefined &quot;system defects&quot; not just as technical failures, but as any interaction slower than the 900ms satisfaction cliff, the point where the probability of customer churn and engagement loss sharply increases.
+                  Partnered with Alexa Economics to integrate these perceptual thresholds into the Negative Value Action (NVA) model. We redefined &quot;system defects&quot; not just as technical failures, but as any interaction slower than the 900ms satisfaction cliff, the point where the probability of customer churn and engagement loss sharply increases.
                 </p>
               </div>
 
