@@ -5,6 +5,7 @@ import { Inter, JetBrains_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import GradientBackground from "@/components/ui/GradientBackground";
+import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 import PerformanceModeProvider from "@/components/ui/PerformanceModeProvider";
 import MotionProvider from "@/components/ui/MotionProvider";
 
@@ -152,6 +153,7 @@ export default function RootLayout({
         <PerformanceModeProvider />
         <GradientBackground />
         <MotionProvider>{children}</MotionProvider>
+        <GoogleAnalytics />
         <Analytics />
         <SpeedInsights />
       </body>
