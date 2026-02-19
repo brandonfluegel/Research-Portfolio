@@ -1,8 +1,8 @@
 "use client";
 
 import Script from "next/script";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useMemo } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -29,14 +29,8 @@ function getTargetMeasurementId() {
 
 export default function GoogleAnalytics() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const initialMeasurementId = webMeasurementId || mobileMeasurementId;
-
-  const pagePath = useMemo(() => {
-    const query = searchParams.toString();
-    return query ? `${pathname}?${query}` : pathname;
-  }, [pathname, searchParams]);
 
   useEffect(() => {
     if (!initialMeasurementId || typeof window.gtag !== "function") {
@@ -48,13 +42,15 @@ export default function GoogleAnalytics() {
       return;
     }
 
+    const pagePath = `${window.location.pathname}${window.location.search}`;
+
     window.gtag("event", "page_view", {
       page_title: document.title,
       page_location: window.location.href,
       page_path: pagePath,
       send_to: targetMeasurementId,
     });
-  }, [initialMeasurementId, pagePath]);
+  }, [initialMeasurementId, pathname]);
 
   if (!initialMeasurementId) {
     return null;
