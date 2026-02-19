@@ -90,7 +90,7 @@ export default function NASAProjectSection() {
               <div className="absolute bottom-0 left-0 right-0 hidden md:flex justify-between items-end p-8">
                 <div>
                   <div className="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-1">Lunar Gateway</div>
-                  <div className="text-sm text-zinc-300 max-w-xs leading-relaxed">Medical workstation validated for zero-gravity constraints</div>
+                  <div className="text-sm text-zinc-300 max-w-xs leading-relaxed">Medical workstation validated for minimized-gravity constraints</div>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-green-400">30%</div>
@@ -106,7 +106,7 @@ export default function NASAProjectSection() {
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Validation: Lunar Gateway</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                Executed human factors validation studies for the <span className="text-white font-medium">Lunar Gateway medical workstation</span>. This rigorous testing environment simulated zero-gravity constraints to identify physical and cognitive ergonomic failure points.
+                Executed human factors validation studies for the Lunar Gateway medical workstation. This testing environment simulated minimized-gravity constraints to identify physical and cognitive ergonomic failure points.
               </p>
             </div>
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">

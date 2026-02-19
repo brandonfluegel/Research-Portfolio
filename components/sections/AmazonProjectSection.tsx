@@ -98,7 +98,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M+ Projection</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would save <span className="text-green-400 font-bold">20B+ dialogs</span> with Alexa. Realizing these interaction gains was projected to generate <span className="text-green-400 font-bold">$50M+</span> in incremental revenue over the subsequent 15 months, providing a North Star for Alexa’s global engineering roadmap.
+                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would <span className="text-green-400 font-bold">save 20B+ dialogs with Alexa</span>. Realizing these interaction gains was projected to generate <span className="text-green-400 font-bold">$50M+ in incremental revenue</span> over the subsequent 15 months, providing a Latency North Star for Alexa’s engineering roadmap.
                 </p>
               </div>
             </div>
