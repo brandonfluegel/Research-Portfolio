@@ -16,7 +16,7 @@ const siteUrl = "https://humanfactors.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
-  title: "Brandon Fluegel, Ph.D. | Human Factors & AI Leader",
+  title: "Brandon Fluegel, Ph.D.",
   description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
   keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Brandon Fluegel, Ph.D. | Human Factors & AI Leader",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D. | Human Factors & AI Leader",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
     images: ["/assets/og-preview.jpg"],
   },
