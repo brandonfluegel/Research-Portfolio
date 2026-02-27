@@ -16,8 +16,8 @@ const siteUrl = "https://humanfactors.pro";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
-  title: "Brandon Fluegel, Ph.D.",
-  description: "Staff UX Researcher in Human Factors and AI. Delivered measurable impact across Amazon, Sling, Uber, and NASA.",
+  title: "Brandon Fluegel, Ph.D. | Human Factors & AI Leader",
+  description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
   keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
-    description: "Staff UX Researcher with Human Factors and AI expertise across Amazon, Sling, Uber, and NASA.",
+    title: "Brandon Fluegel, Ph.D. | Human Factors & AI Leader",
+    description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -60,8 +60,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
-    description: "Staff UX Researcher with Human Factors and AI impact across Amazon, Sling, Uber, and NASA.",
+    title: "Brandon Fluegel, Ph.D. | Human Factors & AI Leader",
+    description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
     images: ["/assets/og-preview.jpg"],
   },
 };
@@ -75,8 +75,8 @@ const structuredData = {
       name: "Brandon Fluegel, Ph.D.",
       url: siteUrl,
       image: `${siteUrl}/assets/howdy.jpg`,
-      jobTitle: "Staff UX Researcher",
-      description: "Staff-level Human Factors and AI UX researcher focused on measurable product and revenue outcomes.",
+      jobTitle: "Human Factors and AI Research Leader",
+      description: "Human factors and AI research leader driving measurable outcomes across product strategy, conversion, and cognitive load reduction.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
       knowsAbout: [
         "Human Factors",
@@ -94,7 +94,7 @@ const structuredData = {
     {
       "@type": "Occupation",
       "@id": `${siteUrl}#occupation`,
-      name: "Staff UX Researcher",
+      name: "Human Factors and AI Research Leader",
       occupationLocation: {
         "@type": "Country",
         name: "United States",
