@@ -54,9 +54,12 @@ const caseStudies = [
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
-  title: "Brandon Fluegel, Ph.D.",
-  description: "Staff UX Researcher in Human Factors and AI. Impact across Amazon, Sling TV, Uber, and NASA in monetization, engagement, and cognitive load.",
-  keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
+  title: {
+    default: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    template: "%s | Brandon Fluegel, Ph.D."
+  },
+  description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
+  keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion", "Human-AI Interaction", "Product Strategy"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
   publisher: "Brandon Fluegel",
@@ -81,8 +84,8 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher in Human Factors and AI. Impact across Amazon, Sling TV, Uber, and NASA in monetization, engagement, and cognitive load.",
+    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -98,8 +101,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher in Human Factors and AI. Impact across Amazon, Sling TV, Uber, and NASA in monetization, engagement, and cognitive load.",
+    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
     images: [profileSearchImage],
   },
 };
@@ -229,6 +232,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+      </head>
       {/* REMOVED 'cursor-none' from class list below */}
       <body className="text-white overflow-x-hidden font-sans">
         <script

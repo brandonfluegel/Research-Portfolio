@@ -58,7 +58,8 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
         <button
           className="flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Menu"
+          aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
+          aria-expanded={mobileMenuOpen}
         >
           <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
           <span className={`block w-6 h-0.5 bg-white transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
