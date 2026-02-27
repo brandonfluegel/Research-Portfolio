@@ -12,6 +12,7 @@ import MotionProvider from "@/components/ui/MotionProvider";
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
 const siteUrl = "https://humanfactors.pro";
+const profileSearchImage = "/assets/profile-search.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -51,10 +52,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/og-preview.jpg",
+        url: profileSearchImage,
         width: 1200,
-        height: 630,
-        alt: "Brandon Fluegel, Ph.D. portfolio preview",
+        height: 1200,
+        alt: "Brandon Fluegel profile photo",
       },
     ],
   },
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
     description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across monetization, engagement, and cognitive load reduction.",
-    images: ["/assets/og-preview.jpg"],
+    images: [profileSearchImage],
   },
 };
 
@@ -70,11 +71,22 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "ImageObject",
+      "@id": `${siteUrl}#profile-image`,
+      contentUrl: `${siteUrl}${profileSearchImage}`,
+      url: `${siteUrl}${profileSearchImage}`,
+      width: 1200,
+      height: 1200,
+      caption: "Brandon Fluegel profile photo",
+    },
+    {
       "@type": "Person",
       "@id": `${siteUrl}#person`,
       name: "Brandon Fluegel, Ph.D.",
       url: siteUrl,
-      image: `${siteUrl}/assets/howdy.jpg`,
+      image: {
+        "@id": `${siteUrl}#profile-image`,
+      },
       jobTitle: "Staff UX Researcher",
       description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across product strategy, conversion, and cognitive load reduction.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
@@ -116,6 +128,9 @@ const structuredData = {
       url: siteUrl,
       name: "Brandon Fluegel Portfolio",
       description: "Human Factors UX Research and product impact portfolio.",
+      image: {
+        "@id": `${siteUrl}#profile-image`,
+      },
       publisher: {
         "@id": `${siteUrl}#person`,
       },
@@ -130,6 +145,9 @@ const structuredData = {
       },
       mainEntity: {
         "@id": `${siteUrl}#person`,
+      },
+      primaryImageOfPage: {
+        "@id": `${siteUrl}#profile-image`,
       },
       isPartOf: {
         "@id": `${siteUrl}#website`,
