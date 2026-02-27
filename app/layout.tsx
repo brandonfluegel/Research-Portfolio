@@ -13,6 +13,43 @@ const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
 const siteUrl = "https://humanfactors.pro";
 const profileSearchImage = "/assets/profile-search.jpg";
+const caseStudies = [
+  {
+    id: "amazon",
+    name: "Amazon UX Research Case Study",
+    organization: "Amazon",
+    url: `${siteUrl}/#amazon-section`,
+    description: "Human factors research informing monetization and product strategy decisions.",
+  },
+  {
+    id: "sling",
+    name: "Sling TV UX Research Case Study",
+    organization: "Sling TV",
+    url: `${siteUrl}/#sling-section`,
+    description: "Product research strategy focused on engagement, conversion, and decision quality.",
+  },
+  {
+    id: "uber",
+    name: "Uber UX Research Case Study",
+    organization: "Uber",
+    url: `${siteUrl}/#uber-section`,
+    description: "Research-led product improvements addressing cognitive load and retention.",
+  },
+  {
+    id: "nasa",
+    name: "NASA Human Factors Case Study",
+    organization: "NASA",
+    url: `${siteUrl}/#nasa-section`,
+    description: "Mission-critical human factors validation for high-stakes system performance.",
+  },
+  {
+    id: "mercedes",
+    name: "Mercedes-Benz HMI Research Case Study",
+    organization: "Mercedes-Benz",
+    url: `${siteUrl}/#mercedes-section`,
+    description: "Human-machine interface research improving trust and cognitive ergonomics.",
+  },
+];
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -90,6 +127,11 @@ const structuredData = {
       jobTitle: "Staff UX Researcher",
       description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across product strategy, conversion, and cognitive load reduction.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Old Dominion University",
+      },
+      knowsLanguage: ["English"],
       knowsAbout: [
         "Human Factors",
         "Human-AI Interaction",
@@ -101,6 +143,9 @@ const structuredData = {
       worksFor: {
         "@type": "Organization",
         name: "Sling TV",
+      },
+      hasOccupation: {
+        "@id": `${siteUrl}#occupation`,
       },
     },
     {
@@ -149,9 +194,30 @@ const structuredData = {
       primaryImageOfPage: {
         "@id": `${siteUrl}#profile-image`,
       },
+      significantLink: caseStudies.map((study) => study.url),
       isPartOf: {
         "@id": `${siteUrl}#website`,
       },
+    },
+    {
+      "@type": "ItemList",
+      "@id": `${siteUrl}#case-studies`,
+      name: "UX and Human Factors Case Studies",
+      itemListElement: caseStudies.map((study, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "CreativeWork",
+          "@id": `${siteUrl}#${study.id}-case-study`,
+          name: study.name,
+          url: study.url,
+          description: study.description,
+          about: {
+            "@type": "Organization",
+            name: study.organization,
+          },
+        },
+      })),
     },
   ],
 };

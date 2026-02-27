@@ -1,0 +1,31 @@
+# Brandon Fluegel, Ph.D. — Staff UX Researcher
+
+Canonical: https://humanfactors.pro/
+Primary identity: Brandon Fluegel, Ph.D.
+Role focus: Staff UX Researcher
+Specialties: Human Factors, UX Research, Human-AI Interaction, Product Strategy
+
+Summary:
+Brandon Fluegel is a staff-level UX researcher with Human Factors and AI expertise. Portfolio work spans Amazon, Sling TV, Uber, NASA, and Mercedes-Benz, with impact across monetization, engagement, and cognitive load reduction.
+
+Core query topics:
+- Human Factors Research
+- UX Research
+- AI UX Research
+- Human-AI Interaction
+- Staff UX Researcher
+- Product Strategy Research
+- Experimental Design
+- Psychophysics
+
+Preferred citation URL:
+https://humanfactors.pro/
+
+Machine-readable resources:
+- Robots: https://humanfactors.pro/robots.txt
+- Sitemap: https://humanfactors.pro/sitemap.xml
+- LLM index: https://humanfactors.pro/llms.txt
+
+Contact:
+- LinkedIn: https://www.linkedin.com/in/fluegel/
+- Email: mailto:brandon.uxr@gmail.com
