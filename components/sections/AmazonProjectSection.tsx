@@ -255,7 +255,7 @@ export default function AmazonProjectSection() {
                         { src: "/assets/fnirs.mp4", type: "video/mp4" },
                       ]}
                       src="/assets/fnirs.mp4"
-                      poster="/assets/og-preview.jpg"
+                      poster="/assets/fnirs-poster.jpg"
                       className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                   />
                 </div>

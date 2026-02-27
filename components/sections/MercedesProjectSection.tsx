@@ -57,7 +57,7 @@ export default function MercedesProjectSection() {
                     { src: "/assets/drive.mp4", type: "video/mp4" },
                   ]}
                   src="/assets/drive.mp4"
-                  poster="/assets/project-image-2.jpg"
+                  poster="/assets/drive-poster.jpg"
                   className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
              </div>
