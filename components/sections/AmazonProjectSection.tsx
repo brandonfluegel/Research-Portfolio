@@ -250,7 +250,12 @@ export default function AmazonProjectSection() {
                 <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
                   <div className="absolute -inset-4 bg-purple-500/[0.06] blur-[60px] rounded-full pointer-events-none"></div>
                   <LazyVideo
+                      sources={[
+                        { src: "/assets/fnirs.webm", type: "video/webm" },
+                        { src: "/assets/fnirs.mp4", type: "video/mp4" },
+                      ]}
                       src="/assets/fnirs.mp4"
+                      poster="/assets/og-preview.jpg"
                       className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                   />
                 </div>
