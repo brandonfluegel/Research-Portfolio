@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
   title: {
-    default: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
   description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
   openGraph: {
-    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
@@ -101,7 +101,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D. | Staff UX Researcher",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
     images: [profileSearchImage],
   },
