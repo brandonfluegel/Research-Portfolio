@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
   title: "Brandon Fluegel, Ph.D.",
-  description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
+  description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across monetization, engagement, and cognitive load reduction.",
   keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
+    description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across monetization, engagement, and cognitive load reduction.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
+    description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across monetization, engagement, and cognitive load reduction.",
     images: ["/assets/og-preview.jpg"],
   },
 };
