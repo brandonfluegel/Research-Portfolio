@@ -43,10 +43,10 @@ export default function AmazonProjectSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
+          className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: NARRATIVE */}
-          <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
+          <motion.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -105,7 +105,7 @@ export default function AmazonProjectSection() {
           </motion.div>
 
           {/* RIGHT: DATA VISUALIZATION */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
+          <motion.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
             {/* Aspect Ratio tweaked for mobile legibility */}
             <div className="relative w-full max-w-2xl mx-auto aspect-[16/11] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
   
@@ -242,10 +242,10 @@ export default function AmazonProjectSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start pb-16 md:pb-24"
+          className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start pb-16 md:pb-24"
         >
            {/* LEFT: VIDEO */}
-           <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+           <motion.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
               <div className="relative w-full max-w-2xl mx-auto">
                 <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
                   <div className="absolute -inset-4 bg-purple-500/[0.06] blur-[60px] rounded-full pointer-events-none"></div>
@@ -266,7 +266,7 @@ export default function AmazonProjectSection() {
            </motion.div>
 
            {/* RIGHT: NARRATIVE */}
-           <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2 pt-2">
+           <motion.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
               <div className="mb-8 md:mb-10">
                 <div className="flex items-center gap-2 mb-3 md:mb-4">
                   <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>

@@ -46,10 +46,10 @@ export default function UberProjectSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
+          className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: VISUAL MEDIA (on desktop) */}
-          <motion.div variants={fadeInFromLeft} className="lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+          <motion.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
              <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card flex items-center justify-center p-3 md:p-6">
                 <Image
                   src="/assets/project-image-2.jpg"
@@ -66,7 +66,7 @@ export default function UberProjectSection() {
           </motion.div>
 
           {/* RIGHT: NARRATIVE (on desktop) */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-5 order-1 lg:order-2 pt-2">
+          <motion.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>

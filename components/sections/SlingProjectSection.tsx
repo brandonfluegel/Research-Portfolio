@@ -358,10 +358,10 @@ export default function SlingProjectSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
+          className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: NARRATIVE */}
-          <motion.div variants={fadeInFromLeft} className="lg:col-span-5 pt-2">
+          <motion.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
               </div>
@@ -428,7 +428,7 @@ Led foundational research to define the multi-turn interaction model for a conve
           </motion.div>
 
           {/* RIGHT: DATA VISUALIZATION - SXI IMPACT */}
-          <motion.div variants={fadeInFromRight} className="lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
+          <motion.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
             <div className="relative w-full max-w-2xl mx-auto">
                <SXIProjectMatrix />
             </div>
