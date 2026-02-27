@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
   title: "Brandon Fluegel, Ph.D.",
-  description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
+  description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
   keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
-    description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
+    description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
-    description: "Human factors and AI research leader driving measurable outcomes: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
+    description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA: $50M+ revenue impact, +17% conversion lift, and reduced cognitive load.",
     images: ["/assets/og-preview.jpg"],
   },
 };
@@ -75,8 +75,8 @@ const structuredData = {
       name: "Brandon Fluegel, Ph.D.",
       url: siteUrl,
       image: `${siteUrl}/assets/howdy.jpg`,
-      jobTitle: "Human Factors and AI Research Leader",
-      description: "Human factors and AI research leader driving measurable outcomes across product strategy, conversion, and cognitive load reduction.",
+      jobTitle: "Staff UX Researcher",
+      description: "Staff UX Researcher in Human Factors and AI driving measurable outcomes at Amazon, Sling, Uber, and NASA across product strategy, conversion, and cognitive load reduction.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
       knowsAbout: [
         "Human Factors",
@@ -94,7 +94,7 @@ const structuredData = {
     {
       "@type": "Occupation",
       "@id": `${siteUrl}#occupation`,
-      name: "Human Factors and AI Research Leader",
+      name: "Staff UX Researcher",
       occupationLocation: {
         "@type": "Country",
         name: "United States",
