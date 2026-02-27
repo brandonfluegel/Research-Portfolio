@@ -9,11 +9,11 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
 
-const SlingProjectSection = lazy(() => import("@/components/sections/SlingProjectSection"));
-const AmazonProjectSection = lazy(() => import("@/components/sections/AmazonProjectSection"));
-const UberProjectSection = lazy(() => import("@/components/sections/UberProjectSection"));
-const NASAProjectSection = lazy(() => import("@/components/sections/NASAProjectSection"));
-const MercedesProjectSection = lazy(() => import("@/components/sections/MercedesProjectSection"));
+const SlingProjectSection = lazy(() => import("@/components/sections/projects/SlingProjectSection"));
+const AmazonProjectSection = lazy(() => import("@/components/sections/projects/AmazonProjectSection"));
+const UberProjectSection = lazy(() => import("@/components/sections/projects/UberProjectSection"));
+const NASAProjectSection = lazy(() => import("@/components/sections/projects/NASAProjectSection"));
+const MercedesProjectSection = lazy(() => import("@/components/sections/projects/MercedesProjectSection"));
 
 function SectionFallback({ minHeightClass }: { minHeightClass: string }) {
   return (
