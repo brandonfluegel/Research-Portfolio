@@ -14,6 +14,7 @@ const AmazonProjectSection = lazy(() => import("@/components/sections/projects/A
 const UberProjectSection = lazy(() => import("@/components/sections/projects/UberProjectSection"));
 const NASAProjectSection = lazy(() => import("@/components/sections/projects/NASAProjectSection"));
 const MercedesProjectSection = lazy(() => import("@/components/sections/projects/MercedesProjectSection"));
+const FrameworkSection = lazy(() => import("@/components/sections/FrameworkSection"));
 
 function SectionFallback({ minHeightClass }: { minHeightClass: string }) {
   return (
@@ -141,6 +142,21 @@ export default function HomeClientSections() {
         >
           <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px] md:min-h-[1300px]" />}>
             <MercedesProjectSection />
+          </Suspense>
+        </DeferredSection>
+
+        <SectionDivider
+          label="From applications → Global standards"
+          description="Evolving established models into modern agent trust frameworks"
+        />
+
+        <DeferredSection
+          id="framework-section"
+          rootMargin="320px 0px"
+          minHeightClass="min-h-[1100px] md:min-h-[1300px]"
+        >
+          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px] md:min-h-[1300px]" />}>
+            <FrameworkSection />
           </Suspense>
         </DeferredSection>
       </section>

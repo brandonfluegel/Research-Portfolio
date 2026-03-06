@@ -83,11 +83,13 @@ function getSnapshot() {
   return snapshot;
 }
 
+const serverSnapshot: ScrollSnapshot = {
+  scrollY: 0,
+  progress: 0,
+};
+
 function getServerSnapshot(): ScrollSnapshot {
-  return {
-    scrollY: 0,
-    progress: 0,
-  };
+  return serverSnapshot;
 }
 
 export default function useScrollMetrics() {

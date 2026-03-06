@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
-  description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
+  description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",
   keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion", "Human-AI Interaction", "Product Strategy"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
+    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy. Portfolio highlights impact across Amazon, Sling TV, Uber, and NASA.",
+    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",
     images: [profileSearchImage],
   },
 };

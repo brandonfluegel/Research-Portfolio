@@ -4,6 +4,7 @@ export const NAV_SECTIONS = [
   { name: "Uber", href: "#uber-section" },
   { name: "NASA", href: "#nasa-section" },
   { name: "Mercedes", href: "#mercedes-section" },
+  { name: "Framework", href: "#framework-section" },
 ];
 
 export const TRUST_COMPANIES = [
@@ -14,4 +15,7 @@ export const TRUST_COMPANIES = [
   { name: "Mercedes", logo: "/assets/benz.png", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
 ];
 
-export const SECTION_IDS = TRUST_COMPANIES.map((company) => company.id);
+export const SECTION_IDS = [
+  ...TRUST_COMPANIES.map((company) => company.id),
+  "framework-section"
+];
