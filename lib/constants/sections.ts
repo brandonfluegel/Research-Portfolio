@@ -4,7 +4,7 @@ export const NAV_SECTIONS = [
   { name: "Uber", href: "#uber-section" },
   { name: "NASA", href: "#nasa-section" },
   { name: "Mercedes", href: "#mercedes-section" },
-  { name: "Framework", href: "#framework-section" },
+  { name: "Agentic Trust", href: "#framework-section" },
 ];
 
 export const TRUST_COMPANIES = [

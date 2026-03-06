@@ -34,9 +34,9 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           <Link 
             href="/" 
             onClick={scrollToTopSmooth}
-            className="flex items-center gap-3 md:gap-4"
+            className="flex items-center gap-3"
           >
-            <div className="relative h-9 w-9 md:h-11 md:w-11 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
+            <div className="relative h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
               <Image
                 src="/assets/cowboy.jpg"
                 alt="Profile Image"
@@ -44,18 +44,13 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                 priority
                 loading="eager"
                 quality={100}
-                sizes="44px"
+                sizes="40px"
                 className="object-cover"
               />
             </div>
-            <div className="flex flex-col justify-center">
-              <span className="text-sm md:text-base font-bold text-white tracking-wide whitespace-nowrap">
-                Brandon Fluegel<span className="text-zinc-500 font-normal">, Ph.D.</span>
-              </span>
-              <span className="text-[9px] md:text-[10px] font-mono text-indigo-400 uppercase tracking-[0.2em] hidden sm:block">
-                Staff UX Researcher
-              </span>
-            </div>
+            <span className="text-xs md:text-sm font-semibold text-white tracking-wide uppercase whitespace-nowrap">
+              Brandon Fluegel
+            </span>
           </Link>
         </div>
 

@@ -6,9 +6,6 @@ export function scrollToSectionId(sectionId: string, offset = -100) {
   window.scrollTo({ top: y, behavior: "smooth" });
 }
 
-export function scrollToTopSmooth(e?: any) {
-  if (e && e.preventDefault) {
-    e.preventDefault();
-  }
+export function scrollToTopSmooth() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }

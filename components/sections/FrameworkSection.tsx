@@ -235,7 +235,7 @@ export default function FrameworkSection() {
   }, [checkedItems]);
 
   return (
-    <section className="relative w-full py-8 md:py-12 overflow-hidden bg-black" id="framework-section">
+    <section className="relative w-full py-8 md:py-12 overflow-hidden bg-black">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3 transform-gpu"></div>
       <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3 transform-gpu"></div>
