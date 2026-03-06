@@ -40,6 +40,14 @@ function DeferredSection({
   const [shouldRender, setShouldRender] = useState(false);
 
   useEffect(() => {
+    const handleForceRender = () => {
+      setShouldRender(true);
+    };
+    window.addEventListener("force-render-all", handleForceRender);
+    return () => window.removeEventListener("force-render-all", handleForceRender);
+  }, []);
+
+  useEffect(() => {
     const node = mountRef.current;
     if (!node || shouldRender) return;
 

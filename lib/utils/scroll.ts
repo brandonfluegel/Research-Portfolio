@@ -1,9 +1,17 @@
 export function scrollToSectionId(sectionId: string, offset = -100) {
-  const element = document.getElementById(sectionId);
-  if (!element) return;
+  if (typeof window !== "undefined") {
+    // Eagerly render all sleeping components so height calculation is accurate
+    window.dispatchEvent(new CustomEvent("force-render-all"));
+  }
 
-  const y = element.getBoundingClientRect().top + window.pageYOffset + offset;
-  window.scrollTo({ top: y, behavior: "smooth" });
+  // Allow one repaint frame for DOM to expand
+  setTimeout(() => {
+    const element = document.getElementById(sectionId);
+    if (!element) return;
+
+    const y = element.getBoundingClientRect().top + window.pageYOffset + offset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }, 100);
 }
 
 export function scrollToTopSmooth() {
