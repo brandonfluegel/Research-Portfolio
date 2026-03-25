@@ -4,7 +4,7 @@ export const NAV_SECTIONS = [
   { name: "Uber", href: "#uber-section" },
   { name: "NASA", href: "#nasa-section" },
   { name: "Mercedes", href: "#mercedes-section" },
-  { name: "Agentic Trust", href: "#framework-section" },
+  { name: "Agentic Trust", href: "#agent-trust" },
 ];
 
 export const TRUST_COMPANIES = [
@@ -17,5 +17,5 @@ export const TRUST_COMPANIES = [
 
 export const SECTION_IDS = [
   ...TRUST_COMPANIES.map((company) => company.id),
-  "framework-section"
+  "agent-trust"
 ];

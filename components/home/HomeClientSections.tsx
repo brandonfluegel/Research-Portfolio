@@ -99,9 +99,22 @@ function DeferredSection({
   );
 }
 
+import { scrollToSectionId } from "@/lib/utils/scroll";
+
 export default function HomeClientSections() {
   const activeSection = useActiveSection();
   usePreloadSectionChunks();
+
+  // Handle direct link with hash (e.g. /#agent-trust)
+  useEffect(() => {
+    const hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    // Small delay to let initial render settle, then force-render and scroll
+    const timer = setTimeout(() => {
+      scrollToSectionId(hash);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <>
@@ -188,7 +201,7 @@ export default function HomeClientSections() {
         />
 
         <DeferredSection
-          id="framework-section"
+          id="agent-trust"
           rootMargin="320px 0px"
           minHeightClass="min-h-[1100px] md:min-h-[1300px]"
         >
