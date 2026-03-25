@@ -15,8 +15,15 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
-    scrollToSectionId(href.replace("#", ""));
+    const sectionId = href.replace("#", "");
+    // Close the overlay first so the user sees the page immediately.
     setMobileMenuOpen(false);
+    // Delay scroll until after AnimatePresence exit animation (300ms)
+    // completes. Without this, the overlay unmount interrupts the
+    // browser's smooth-scroll mid-animation, landing on Mercedes.
+    setTimeout(() => {
+      scrollToSectionId(sectionId);
+    }, 310);
   };
 
   return (

@@ -37,9 +37,14 @@ export function scrollToSectionId(sectionId: string) {
     if (stableFrames >= 5 || attempts >= MAX_ATTEMPTS) {
       const element = document.getElementById(sectionId);
       if (!element) return;
-      // scrollIntoView respects scroll-margin-top and handles content-visibility
-      // containment correctly — the browser does the coordinate math internally.
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Measure the fixed navbar height dynamically instead of relying
+      // solely on CSS scroll-margin-top. This ensures an accurate offset
+      // regardless of the nav's current padding state.
+      const nav = document.querySelector("nav");
+      const offset = nav ? nav.getBoundingClientRect().height : 80;
+      const top =
+        element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
     } else {
       requestAnimationFrame(tryScroll);
     }
