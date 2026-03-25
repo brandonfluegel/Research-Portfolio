@@ -109,11 +109,18 @@ export default function HomeClientSections() {
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     if (!hash) return;
-    // Small delay to let initial render settle, then force-render and scroll
-    const timer = setTimeout(() => {
+    // Force all lazy chunks to load immediately, then scroll once they resolve.
+    // On mobile, requestIdleCallback preloading may not have fired yet.
+    Promise.all([
+      import("@/components/sections/projects/AmazonProjectSection"),
+      import("@/components/sections/projects/SlingProjectSection"),
+      import("@/components/sections/projects/UberProjectSection"),
+      import("@/components/sections/projects/NASAProjectSection"),
+      import("@/components/sections/projects/MercedesProjectSection"),
+      import("@/components/sections/FrameworkSection"),
+    ]).then(() => {
       scrollToSectionId(hash);
-    }, 100);
-    return () => clearTimeout(timer);
+    });
   }, []);
 
   return (
