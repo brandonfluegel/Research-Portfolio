@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,21 +10,45 @@ import { NAV_SECTIONS } from "@/lib/constants/sections";
 
 export default function Navbar({ activeSection = "" }: { activeSection?: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pendingScrollRef = useRef<string | null>(null);
   const { scrollY } = useScrollMetrics();
   const isScrolled = scrollY > 50;
+
+  // Lock body scroll when overlay is open.
+  // Prevents iOS Safari from scrolling the page behind the overlay,
+  // which shifts scroll position and causes wrong-section landings.
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
     const sectionId = href.replace("#", "");
-    // Close the overlay first so the user sees the page immediately.
+    // Store target — actual scroll fires in onExitComplete after the
+    // overlay fully unmounts (no fixed timeout that breaks on slow devices).
+    pendingScrollRef.current = sectionId;
+    // Kick off deferred-section mounting NOW so layout settles during the
+    // exit animation, reducing scroll delay after the overlay is gone.
+    window.dispatchEvent(new CustomEvent("force-render-all"));
     setMobileMenuOpen(false);
-    // Delay scroll until after AnimatePresence exit animation (300ms)
-    // completes. Without this, the overlay unmount interrupts the
-    // browser's smooth-scroll mid-animation, landing on Mercedes.
-    setTimeout(() => {
-      scrollToSectionId(sectionId);
-    }, 310);
   };
+
+  // Fires reliably when AnimatePresence finishes the exit animation,
+  // regardless of device speed. Replaces the fragile setTimeout(310).
+  const handleExitComplete = useCallback(() => {
+    const sectionId = pendingScrollRef.current;
+    if (sectionId) {
+      pendingScrollRef.current = null;
+      scrollToSectionId(sectionId);
+    }
+  }, []);
 
   return (
     <motion.nav
@@ -75,14 +99,14 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
       </div>
 
       {/* FULL SCREEN MENU OVERLAY */}
-      <AnimatePresence>
+      <AnimatePresence onExitComplete={handleExitComplete}>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[50] bg-black flex flex-col items-center justify-center h-screen w-screen"
+            className="fixed inset-0 z-[50] bg-black flex flex-col items-center justify-center h-dvh w-screen"
           >
             <ul className="flex flex-col space-y-8 text-center">
               {NAV_SECTIONS.map((link) => (

@@ -2,26 +2,21 @@ export function scrollToSectionId(sectionId: string) {
   if (typeof window === "undefined") return;
 
   // Force all deferred (lazy) sections to mount their real content.
+  // Idempotent — harmless if already dispatched by the Navbar click handler.
   window.dispatchEvent(new CustomEvent("force-render-all"));
 
-  // Problem 1 (race condition): deferred sections expand from their placeholder
-  // min-h to their true height after React commits renders. A fixed timeout
-  // measures position mid-expansion and lands in the wrong section.
+  // Wait for layout to stabilise after deferred sections expand from
+  // placeholder min-heights to real content heights. We poll scrollHeight
+  // each rAF and consider layout "settled" once it stays constant.
   //
-  // Problem 2 (content-visibility containment): .deferred-section uses
-  // `content-visibility: auto` + `contain-intrinsic-size`. Off-screen sections
-  // have their layout computed from the intrinsic size, so getBoundingClientRect()
-  // returns stale positions even after content renders.
-  //
-  // Fix: poll scrollHeight each rAF until stable (layout settled), then use
-  // scrollIntoView which the browser resolves correctly against its own layout
-  // engine — bypassing any containment measurement inaccuracies. The fixed-nav
-  // offset is handled by `scroll-margin-top` on .deferred-section in globals.css.
+  // Mobile devices are slower to settle, so we require more stable frames
+  // than a single check and give a generous attempt budget.
 
   let lastHeight = 0;
   let stableFrames = 0;
   let attempts = 0;
   const MAX_ATTEMPTS = 120; // ~2s safety cap at 16ms/frame
+  const STABLE_THRESHOLD = 8; // extra frames for slower mobile GPUs
 
   const tryScroll = () => {
     attempts++;
@@ -34,12 +29,12 @@ export function scrollToSectionId(sectionId: string) {
       stableFrames++;
     }
 
-    if (stableFrames >= 5 || attempts >= MAX_ATTEMPTS) {
+    if (stableFrames >= STABLE_THRESHOLD || attempts >= MAX_ATTEMPTS) {
       const element = document.getElementById(sectionId);
       if (!element) return;
-      // Measure the fixed navbar height dynamically instead of relying
-      // solely on CSS scroll-margin-top. This ensures an accurate offset
-      // regardless of the nav's current padding state.
+      // Measure the fixed navbar height dynamically. The nav padding differs
+      // between scrolled (py-3) and top-of-page (py-4/py-5) states, so a
+      // hard-coded CSS value would be wrong in one of those states.
       const nav = document.querySelector("nav");
       const offset = nav ? nav.getBoundingClientRect().height : 80;
       const top =
