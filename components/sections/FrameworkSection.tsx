@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useCallback, useRef } from "react";
+import { motion } from "framer-motion";
 import React from "react";
 
 const PAIRS = [
@@ -121,6 +121,7 @@ export default function FrameworkSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const [exported, setExported] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
   
   const activePair = PAIRS[activeIdx];
 
@@ -225,6 +226,7 @@ export default function FrameworkSection() {
               <div className="absolute left-0 top-0 bottom-4 w-6 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-4 w-6 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
               <div className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              {/* Spacer after last item so it can scroll to center */}
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
                 const phaseTitle = PHASES.find(p => p.id === pair.phase)?.title.split('.')[0] || "I";
@@ -233,12 +235,20 @@ export default function FrameworkSection() {
                     key={idx}
                     onClick={() => {
                       setActiveIdx(idx);
-                      // On mobile, scroll slightly to show it's selected
                       const el = document.getElementById(`mobile-nav-${idx}`);
-                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                      if (!el) return;
+                      // Center the tapped tab within the horizontal scroll strip.
+                      const container = el.parentElement;
+                      if (!container) return;
+                      const scrollLeft = el.offsetLeft - container.offsetWidth / 2 + el.offsetWidth / 2;
+                      container.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
+                      // Scroll the content panel into view so the user sees the new content.
+                      requestAnimationFrame(() => {
+                        contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                      });
                     }}
                     id={`mobile-nav-${idx}`}
-                    className={`shrink-0 snap-center flex flex-col items-start px-5 py-4 rounded-2xl border transition-all active:scale-95 ${
+                    className={`shrink-0 snap-center flex flex-col items-start px-5 py-4 rounded-2xl border transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
                       isActive 
                         ? 'bg-white text-black border-white shadow-lg shadow-white/10' 
                         : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:bg-zinc-800'
@@ -269,7 +279,7 @@ export default function FrameworkSection() {
                             <button
                               key={idx}
                               onClick={() => setActiveIdx(idx)}
-                              className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all group flex items-center justify-between ${
+                              className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
                                 isActive 
                                   ? 'bg-white text-black shadow-lg shadow-white/10' 
                                   : 'text-zinc-400 hover:bg-zinc-800/80 hover:text-zinc-200'
@@ -321,18 +331,17 @@ export default function FrameworkSection() {
 
           {/* Main Content Area */}
           <motion.main 
+            ref={contentRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-3xl sm:rounded-[40px] border border-white/10 overflow-hidden flex flex-col xl:flex-row relative"
           >
-            <AnimatePresence mode="popLayout">
               <motion.div 
                 key={activeIdx}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.25 }}
+                transition={{ duration: 0.2 }}
                 className="flex flex-col xl:flex-row w-full"
               >
                 
@@ -485,7 +494,6 @@ export default function FrameworkSection() {
                 </div>
 
               </motion.div>
-            </AnimatePresence>
           </motion.main>
         </div>
       </div>
