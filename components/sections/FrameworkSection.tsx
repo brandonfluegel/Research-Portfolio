@@ -181,7 +181,7 @@ export default function FrameworkSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-12 md:mb-16 border-b border-white/10 pb-10 flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-6"
+          className="mb-10 md:mb-14 border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-6"
         >
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-black uppercase tracking-widest mb-4">
@@ -212,14 +212,14 @@ export default function FrameworkSection() {
         </motion.header>
 
         {/* Interface */}
-        <div className="flex flex-col lg:flex-row gap-6 xl:gap-10 items-start">
+        <div className="flex flex-col lg:flex-row gap-5 xl:gap-7 items-start">
           
           {/* Sidebar */}
           <motion.aside 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-64 xl:w-72 shrink-0 flex flex-col lg:sticky lg:top-24 z-20"
+            className="w-full lg:w-56 xl:w-64 shrink-0 flex flex-col lg:sticky lg:top-24 z-20"
           >
             {/* Mobile Horizontal Navigation */}
             <div className="lg:hidden relative">
@@ -265,13 +265,13 @@ export default function FrameworkSection() {
             </div>
 
             {/* Desktop Vertical Navigation */}
-            <div className="hidden lg:flex bg-zinc-900/50 backdrop-blur-md rounded-3xl border border-white/10 p-5 md:p-6 flex-col">
+            <div className="hidden lg:flex bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/10 p-4 xl:p-5 flex-col">
               <div className="flex-1">
                 <div className="space-y-5">
                   {PHASES.map((phase) => (
                     <div key={phase.id}>
-                      <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-1 mb-2.5">{phase.title}</h4>
-                      <div className="space-y-1.5">
+                      <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-1 mb-2">{phase.title}</h4>
+                      <div className="space-y-1">
                         {PAIRS.map((pair, idx) => {
                           if (pair.phase !== phase.id) return null;
                           const isActive = activeIdx === idx;
@@ -279,7 +279,7 @@ export default function FrameworkSection() {
                             <button
                               key={idx}
                               onClick={() => setActiveIdx(idx)}
-                              className={`w-full text-left px-4 py-3 rounded-xl text-[13px] font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
+                              className={`w-full text-left px-3.5 py-2.5 rounded-lg text-[13px] font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
                                 isActive 
                                   ? 'bg-white text-black shadow-lg shadow-white/10' 
                                   : 'text-zinc-400 hover:bg-zinc-800/80 hover:text-zinc-200'
@@ -335,7 +335,7 @@ export default function FrameworkSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-3xl sm:rounded-[40px] border border-white/10 overflow-hidden flex flex-col relative"
+            className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/10 overflow-hidden flex flex-col relative"
           >
               <motion.div 
                 key={activeIdx}
@@ -346,16 +346,16 @@ export default function FrameworkSection() {
               >
 
                 {/* Name & Audit Checklist (Left) */}
-                <div className="w-full xl:w-[380px] p-6 sm:p-8 lg:p-10 bg-black/40 border-b xl:border-b-0 xl:border-r border-white/5 shrink-0 flex flex-col">
-                  <div className="hidden xl:block mb-6">
-                    <h3 className="text-2xl font-extrabold text-white mb-2 leading-tight">{activePair.title}</h3>
-                    <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
+                <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-b xl:border-b-0 xl:border-r border-white/5 shrink-0 flex flex-col">
+                  <div className="hidden xl:block mb-5">
+                    <h3 className="text-xl font-extrabold text-white mb-1.5 leading-tight">{activePair.title}</h3>
+                    <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
                   </div>
                   
                   <div className="flex-1 flex flex-col">
-                    <div className="flex items-center justify-between mb-5">
-                      <h4 className="text-[10px] font-black text-indigo-400 uppercase tracking-widest flex items-center gap-2.5">
-                        <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span> 
+                    <div className="flex items-center justify-between mb-4">
+                      <h4 className="text-[10px] font-black text-indigo-400 uppercase tracking-widest flex items-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> 
                         Audit Checklist
                       </h4>
                       <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
@@ -363,31 +363,31 @@ export default function FrameworkSection() {
                       </span>
                     </div>
 
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       {activePair.questions.map((q, i) => {
                         const isChecked = checkedItems[`${activeIdx}-${i}`] || false;
                         return (
                           <button 
                             key={i}
                             onClick={() => toggleCheck(i)}
-                            className={`w-full text-left flex gap-4 p-5 rounded-2xl border transition-all active:scale-[0.98] ${
+                            className={`w-full text-left flex gap-3 px-4 py-3.5 rounded-xl border transition-all active:scale-[0.98] ${
                               isChecked 
                                 ? 'bg-indigo-500/10 border-indigo-500/50 shadow-inner' 
                                 : 'bg-white/5 border-white/5 hover:border-white/20'
                             }`}
                           >
-                            <div className={`w-5 h-5 rounded-md border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
+                            <div className={`w-[18px] h-[18px] rounded-[5px] border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
                               isChecked 
                                 ? 'bg-indigo-500 border-indigo-500' 
                                 : 'border-zinc-600'
                             }`}>
                               {isChecked && (
-                                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7"></path>
                                 </svg>
                               )}
                             </div>
-                            <p className={`text-[13px] leading-relaxed font-semibold transition-colors duration-300 ${
+                            <p className={`text-[13px] leading-snug font-medium transition-colors duration-300 ${
                               isChecked ? 'text-indigo-200' : 'text-zinc-300'
                             }`}>
                               {q}
@@ -428,8 +428,8 @@ export default function FrameworkSection() {
                 </div>
 
                 {/* Principle & Pitfall Details (Right) */}
-                <div className="flex-1 p-6 sm:p-8 lg:p-10 xl:p-14 flex flex-col justify-center">
-                  <div className="space-y-10 w-full max-w-3xl mx-auto">
+                <div className="flex-1 p-5 sm:p-6 lg:p-8 xl:p-10 flex flex-col justify-center">
+                  <div className="space-y-7 w-full max-w-2xl">
                     
                     {/* Header contextual awareness */}
                     <div className="xl:hidden mb-4">
@@ -438,42 +438,42 @@ export default function FrameworkSection() {
                     </div>
 
                     {/* Principle */}
-                    <div className="flex gap-4 sm:gap-6 flex-col sm:flex-row items-start">
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0 text-white">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex gap-4 sm:gap-5 flex-col sm:flex-row items-start">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0 text-white">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <span className="text-emerald-400 font-black text-[10px] sm:text-xs uppercase tracking-widest block mb-2 sm:mb-1">The Principle: Desired Behavior</span>
-                        <h4 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">{activePair.principle}</h4>
-                        <p className="text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium">{activePair.principleDesc}</p>
+                        <span className="text-emerald-400 font-black text-[10px] sm:text-xs uppercase tracking-widest block mb-1.5">The Principle: Desired Behavior</span>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2.5 tracking-tight">{activePair.principle}</h4>
+                        <p className="text-zinc-400 text-sm leading-relaxed">{activePair.principleDesc}</p>
                       </div>
                     </div>
 
                     {/* Divider */}
-                    <div className="flex items-center gap-4 py-1 sm:py-2 opacity-80">
+                    <div className="flex items-center gap-4 opacity-60">
                       <div className="h-px flex-1 bg-white/10"></div>
-                      <span className="text-[9px] sm:text-[10px] font-black tracking-widest text-zinc-500 uppercase">Friction Analysis</span>
+                      <span className="text-[9px] sm:text-[10px] font-black tracking-widest text-zinc-600 uppercase">Friction Analysis</span>
                       <div className="h-px flex-1 bg-white/10"></div>
                     </div>
 
                     {/* Pitfall */}
-                    <div className="flex gap-4 sm:gap-6 flex-col sm:flex-row items-start">
-                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-800 shadow-lg shadow-black/20 flex items-center justify-center shrink-0 text-white">
-                        <svg className="w-6 h-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex gap-4 sm:gap-5 flex-col sm:flex-row items-start">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-zinc-700 to-zinc-800 shadow-lg shadow-black/20 flex items-center justify-center shrink-0 text-white">
+                        <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-1">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1.5">
                           <span className="text-zinc-500 font-black text-[10px] sm:text-xs uppercase tracking-widest">The Pitfall: System Risk</span>
-                          <span className={`px-2.5 py-1 rounded-md text-[9px] uppercase font-black tracking-widest border ${getSeverityClasses(activePair.severityLevel)}`}>
+                          <span className={`px-2 py-0.5 rounded text-[9px] uppercase font-black tracking-widest border ${getSeverityClasses(activePair.severityLevel)}`}>
                             {activePair.severity}
                           </span>
                         </div>
-                        <h4 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">{activePair.pitfall}</h4>
-                        <p className="text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium">{activePair.pitfallDesc}</p>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2.5 tracking-tight">{activePair.pitfall}</h4>
+                        <p className="text-zinc-400 text-sm leading-relaxed">{activePair.pitfallDesc}</p>
                       </div>
                     </div>
 
@@ -488,18 +488,16 @@ export default function FrameworkSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.05 }}
-                className="border-t border-white/5 bg-black/30 px-6 sm:px-8 lg:px-10 xl:px-14 py-6 sm:py-8"
+                className="border-t border-white/5 bg-black/20 px-5 sm:px-6 lg:px-8 xl:px-10 py-4 sm:py-5"
               >
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start max-w-5xl">
-                  <div className="flex items-center gap-2.5 shrink-0">
-                    <div className="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center">
-                      <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-                      </svg>
-                    </div>
-                    <span className="text-[10px] font-black text-indigo-400/90 uppercase tracking-widest whitespace-nowrap">Scientific Foundation</span>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-baseline">
+                  <div className="flex items-center gap-2 shrink-0">
+                    <svg className="w-3.5 h-3.5 text-indigo-400/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                    <span className="text-[9px] font-black text-indigo-400/60 uppercase tracking-widest whitespace-nowrap">Foundation</span>
                   </div>
-                  <p className="text-zinc-400 text-[13px] sm:text-sm leading-relaxed">
+                  <p className="text-zinc-500 text-[13px] leading-relaxed">
                     {activePair.scientificFoundation}
                   </p>
                 </div>
