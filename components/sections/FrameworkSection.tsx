@@ -190,7 +190,7 @@ export default function FrameworkSection() {
               </span>
               Standardized Audit Tool
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight md:whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight">
               Human Factors <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
             </h2>
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
@@ -218,10 +218,13 @@ export default function FrameworkSection() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-72 shrink-0 flex flex-col lg:sticky lg:top-20 z-20"
+            className="w-full lg:w-72 shrink-0 flex flex-col lg:sticky lg:top-24 z-20"
           >
             {/* Mobile Horizontal Navigation */}
-            <div className="lg:hidden flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="lg:hidden relative">
+              <div className="absolute left-0 top-0 bottom-4 w-6 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-4 w-6 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
                 const phaseTitle = PHASES.find(p => p.id === pair.phase)?.title.split('.')[0] || "I";
@@ -248,6 +251,7 @@ export default function FrameworkSection() {
                   </button>
                 );
               })}
+              </div>
             </div>
 
             {/* Desktop Vertical Navigation */}
@@ -322,13 +326,13 @@ export default function FrameworkSection() {
             viewport={{ once: true }}
             className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-3xl sm:rounded-[40px] border border-white/10 overflow-hidden flex flex-col xl:flex-row relative"
           >
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="popLayout">
               <motion.div 
                 key={activeIdx}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25 }}
                 className="flex flex-col xl:flex-row w-full"
               >
                 
