@@ -345,8 +345,8 @@ export default function FrameworkSection() {
                 className="flex flex-col xl:flex-row w-full"
               >
 
-                {/* Name & Audit Checklist (Left) */}
-                <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-b xl:border-b-0 xl:border-r border-white/5 shrink-0 flex flex-col">
+                {/* Name & Audit Checklist (Left on desktop, bottom on mobile) */}
+                <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-3 xl:order-1">
                   <div className="hidden xl:block mb-5">
                     <h3 className="text-xl font-extrabold text-white mb-1.5 leading-tight">{activePair.title}</h3>
                     <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
@@ -427,8 +427,8 @@ export default function FrameworkSection() {
                   </div>
                 </div>
 
-                {/* Principle & Pitfall Details (Right) */}
-                <div className="flex-1 p-5 sm:p-6 lg:p-8 xl:p-10 flex flex-col justify-center">
+                {/* Principle & Pitfall Details (Right on desktop, top on mobile) */}
+                <div className="flex-1 p-5 sm:p-6 lg:p-8 xl:p-10 flex flex-col justify-center order-1 xl:order-2">
                   <div className="space-y-7 w-full max-w-2xl">
                     
                     {/* Header contextual awareness */}
@@ -488,7 +488,7 @@ export default function FrameworkSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.05 }}
-                className="border-t border-white/5 bg-black/20 px-5 sm:px-6 lg:px-8 xl:px-10 py-4 sm:py-5"
+                className="border-t border-white/5 bg-black/20 px-5 sm:px-6 lg:px-8 xl:px-10 py-4 sm:py-5 order-2 xl:order-3"
               >
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-baseline">
                   <div className="flex items-center gap-2 shrink-0">
