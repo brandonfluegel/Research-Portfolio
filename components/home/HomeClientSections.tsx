@@ -16,6 +16,34 @@ const NASAProjectSection = lazy(() => import("@/components/sections/projects/NAS
 const MercedesProjectSection = lazy(() => import("@/components/sections/projects/MercedesProjectSection"));
 const FrameworkSection = lazy(() => import("@/components/sections/FrameworkSection"));
 
+// In production, React.lazy() chunks are separate network requests. If the user
+// clicks a nav item before a chunk is fetched, the Suspense boundary shows its
+// fallback (stub heights) while the network request completes. Our scroll
+// stability poll fires during this period — scrollHeight is stable at stub
+// heights — and scrollIntoView lands in the wrong section.
+//
+// Fix: kick off all chunk fetches at page idle so they are cached by the time
+// any nav click arrives. React.lazy reuses the cached Promise, so Suspense
+// resolves synchronously with no fallback period and real heights are immediately
+// available for the scroll position calculation.
+function usePreloadSectionChunks() {
+  useEffect(() => {
+    const preload = () => {
+      import("@/components/sections/projects/AmazonProjectSection");
+      import("@/components/sections/projects/SlingProjectSection");
+      import("@/components/sections/projects/UberProjectSection");
+      import("@/components/sections/projects/NASAProjectSection");
+      import("@/components/sections/projects/MercedesProjectSection");
+      import("@/components/sections/FrameworkSection");
+    };
+    if (typeof requestIdleCallback !== "undefined") {
+      requestIdleCallback(preload);
+    } else {
+      setTimeout(preload, 300);
+    }
+  }, []);
+}
+
 function SectionFallback({ minHeightClass }: { minHeightClass: string }) {
   return (
     <div
@@ -73,6 +101,7 @@ function DeferredSection({
 
 export default function HomeClientSections() {
   const activeSection = useActiveSection();
+  usePreloadSectionChunks();
 
   return (
     <>
