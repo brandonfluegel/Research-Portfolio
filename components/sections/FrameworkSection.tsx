@@ -349,12 +349,7 @@ export default function FrameworkSection() {
                       })}
                     </div>
 
-                    {/* Mobile Attribution */}
-                    <div className="mt-6 pt-5 border-t border-white/10 lg:hidden">
-                      <p className="text-center text-[10px] text-zinc-500 font-mono">
-                        Framework by Brandon Fluegel
-                      </p>
-                    </div>
+
 
                   </div>
                 </div>
