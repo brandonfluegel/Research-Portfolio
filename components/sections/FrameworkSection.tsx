@@ -372,7 +372,7 @@ export default function FrameworkSection() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <span className="text-emerald-400 font-black text-[10px] sm:text-xs uppercase tracking-widest block mb-1.5">The Principle: Desired Behavior</span>
+                        <span className="text-emerald-400 font-black text-[10px] sm:text-xs uppercase tracking-widest block mb-1.5">The Principle</span>
                         <h4 className="text-lg sm:text-xl font-bold text-white mb-2.5 tracking-tight">{activePair.principle}</h4>
                         <p className="text-zinc-400 text-sm leading-relaxed">{activePair.principleDesc}</p>
                       </div>
@@ -394,7 +394,7 @@ export default function FrameworkSection() {
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1.5">
-                          <span className="text-zinc-500 font-black text-[10px] sm:text-xs uppercase tracking-widest">The Pitfall: System Risk</span>
+                          <span className="text-zinc-500 font-black text-[10px] sm:text-xs uppercase tracking-widest">Usability Issue</span>
                           <span className={`px-2 py-0.5 rounded text-[9px] uppercase font-black tracking-widest border ${getSeverityClasses(activePair.severityLevel)}`}>
                             {activePair.severity}
                           </span>
