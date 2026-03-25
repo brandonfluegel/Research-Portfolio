@@ -68,9 +68,11 @@ body {
 }
 
 .deferred-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 1100px;
-  /* Offset for fixed navbar so scrollIntoView lands below it */
+  /* NOTE: content-visibility:auto was removed. It caused scroll-to-section to
+     land in the wrong place because the browser uses contain-intrinsic-size
+     for off-screen layout — so scrollHeight stays flat even after React mounts
+     real content, making our stability poll fire too early with stale positions.
+     React's IntersectionObserver lazy mounting already handles performance. */
   scroll-margin-top: 80px;
 }
 
