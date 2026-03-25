@@ -8,172 +8,104 @@ import React from "react";
 const PAIRS = [
   {
     phase: 1,
-    title: "Identify the Role",
-    tagline: "Agent Persona",
-    principle: "Introduce the Skillset",
-    principleDesc: "State who the agent is and why it exists. Users must know if they are working with a general helper or a deep expert from the first interaction.",
-    pitfall: "The Mystery Guest",
-    pitfallDesc: "Acting without explaining a specific role. Users waste time testing the agent to see if it can actually do the job.",
-    severity: "Moderate Friction",
-    severityLevel: "moderate",
-    scientificFoundation: <>Draws from Victor Dibia's <strong>Identity</strong> principle. Explicitly defining a persona instantly helps users form an accurate mental model, reducing explorative cognitive load.</>,
+    title: "Capability Discovery",
+    tagline: "Scope & Boundaries",
+    principle: "Define the Toolkit and Limits",
+    principleDesc: "Explicitly map what the agent can and cannot do upfront. A trustworthy partner proactively shares its capabilities rather than forcing users to discover limits through trial and error.",
+    pitfall: "The Over-Promiser",
+    pitfallDesc: "Acting as a limitless oracle. The agent fails silently or hallucinates when asked to perform tasks outside its actual toolset.",
+    severity: "High Friction",
+    severityLevel: "high",
+    scientificFoundation: <>Integrates Victor Dibia's <strong>Capability Discovery</strong> and Google PAIR's <strong>Helpful AI</strong>. Upfront boundary-setting aligns human mental models with system realities before engagement.</>,
     questions: [
-      "Does the agent state its job title or role in the first turn?",
-      "Is it clear what data or tools the agent can access?",
-      "Does the visual design reinforce the agent's specific role?"
+      "Are the agent's tools and access rights immediately visible?",
+      "Does the agent clearly state what types of tasks it cannot handle?",
+      "When failing, does it explain which capability was missing?"
     ]
   },
   {
     phase: 1,
-    title: "Map the Limits",
-    tagline: "Boundary Alignment",
-    principle: "Set Capabilities Early",
-    principleDesc: "Explicitly list what the agent cannot do. Honesty about limitations prevents users from being burned by unexpected failures later.",
-    pitfall: "The Over-Promiser",
-    pitfallDesc: "Acting as if it has no limits. The system breaks trust the moment it hits a real-world constraint it never mentioned.",
+    title: "Intent Alignment",
+    tagline: "Transparent Goals",
+    principle: "Mirror Human Intentions",
+    principleDesc: "Ensure the agent's optimization goals perfectly match the user's true intent. The system must verify the 'why' before aggressively executing the 'what.'",
+    pitfall: "Misaligned Optimization",
+    pitfallDesc: "Executing the wrong task efficiently. The agent optimizes for a proxy metric or misunderstood prompt, wasting time and resources.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Rooted in Jakob Nielsen's heuristic of <strong>Visibility of System Status</strong> and Google PAIR's <strong>Mental Models</strong>. Explicitly defining constraints prevents the 'AI can do anything' trap, minimizing miscalibrated trust (Lee).</>,
+    scientificFoundation: <>Merges the original <strong>Transparency of Intent</strong> with Google's <strong>Data and Model Alignment</strong>. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
     questions: [
-      "Are the agent's limitations clearly stated before work starts?",
-      "Does the agent suggest alternatives for tasks it cannot handle?",
-      "Is there a way for users to see a 'skills list' or 'tools' view?"
-    ]
-  },
-  {
-    phase: 1,
-    title: "Use Context",
-    tagline: "Project Memory",
-    principle: "Build on Shared History",
-    principleDesc: "Remember past preferences and current project goals. The agent should know where it left off so the user never repeats themselves.",
-    pitfall: "The Amnesiac",
-    pitfallDesc: "Treating every chat like a blank slate. Users have to re-explain their context, which makes delegation feel like more work than doing the task alone.",
-    severity: "Moderate Friction",
-    severityLevel: "moderate",
-    scientificFoundation: <>Integrates Victor Dibia's parameter of <strong>Context</strong>. Anchoring sequentially to historical states lowers friction and supports prolonged engagement without manual setup.</>,
-    questions: [
-      "Does the agent refer to past interactions or data when relevant?",
-      "Can the agent resume a task from a previous session without help?",
-      "Is the user's specific context used to personalize the output?"
+      "Does the agent summarize its understanding of the goal before starting?",
+      "Is the underlying optimization metric or rule visible to the user?",
+      "Can the user clarify intent if the agent's proposed plan is slightly off?"
     ]
   },
   {
     phase: 2,
-    title: "Show the Path",
+    title: "Observability & Predictability",
     tagline: "Live Reasoning",
     principle: "Think Out Loud",
-    principleDesc: "Expose the agent's planned logic while it works. Streaming the reasoning process lets users catch logic errors before they compound.",
+    principleDesc: "Expose the agent's intermediate steps and logical deductions. Streaming the reasoning process allows users to predict the outcome and catch logic errors early.",
     pitfall: "The Black Box",
-    pitfallDesc: "Hiding complex logic behind a static spinner. Users have no way to verify if the agent is making progress or just hallucinating.",
+    pitfallDesc: "Hiding complex multistep execution behind a generic loading spinner. Users cannot verify progress or intervene if the system goes off track.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Connects to Endsley's <strong>Situation Awareness (Level 2)</strong>. Exposing live reasoning allows users to intuitively comprehend and monitor autonomous logic pipelines.</>,
+    scientificFoundation: <>Combines the original <strong>Mutual Predictability</strong> with Dibia's <strong>Observability and Provenance</strong>. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
     questions: [
-      "Can the user see the current sub-task being processed?",
-      "Is the 'reasoning' or 'plan' visible during execution?",
-      "Are the sources of information cited in real-time?"
+      "Are intermediate outputs or reasoning chains visible in real time?",
+      "Does the agent cite the provenance of its data or tools as it works?",
+      "Can the user predict roughly how long the current step will take?"
     ]
   },
   {
     phase: 2,
-    title: "Level of Effort",
-    tagline: "Task Complexity",
-    principle: "Signal Depth of Work",
-    principleDesc: "Tell the user when a task is complex or time-consuming. Manage expectations by differentiating between a quick check and a deep audit.",
-    pitfall: "The Frozen Agent",
-    pitfallDesc: "Long periods of silence without progress updates. Users often think the system has crashed and abandon the workflow.",
-    severity: "Moderate Friction",
-    severityLevel: "moderate",
-    scientificFoundation: <>Aligns with <a href="#amazon-section" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2 transition-colors">Brandon Fluegel's research</a> on latency. Understanding computational effort increases delay tolerance and preserves perceived reliability.</>,
-    questions: [
-      "Does the agent estimate how long a complex task will take?",
-      "Are there progress indicators for multi-minute processes?",
-      "Does the system proactively explain delays?"
-    ]
-  },
-  {
-    phase: 3,
-    title: "Intent Preview",
-    tagline: "Planned Action",
-    principle: "Show the Next Move",
-    principleDesc: "Always show what the agent is about to do next. Let the user see the plan before it turns into an irreversible action.",
-    pitfall: "The Jump Scare",
-    pitfallDesc: "Taking a major, unannounced action that surprises the user. This makes the system feel unpredictable and dangerous.",
-    severity: "Catastrophic Trust Failure",
-    severityLevel: "critical",
-    scientificFoundation: <>Connects to Endsley's <strong>Situation Awareness (Level 3)</strong>. Previewing future states empowers users, while Jakob Nielsen's <strong>Error Prevention</strong> heuristic prioritizes confirmation before irreversible actions.</>,
-    questions: [
-      "Does the agent announce a planned action before executing it?",
-      "Is there a 'preview' mode for high-stakes steps?",
-      "Can the user see the list of upcoming sub-tasks?"
-    ]
-  },
-  {
-    phase: 3,
-    title: "Live Nudges",
-    tagline: "Mid-Task Steering",
-    principle: "Allow Active Steering",
-    principleDesc: "Let the user correct the agent's path while it is in the middle of a task. The user should be able to pivot the work without starting over.",
-    pitfall: "The Runaway Train",
-    pitfallDesc: "Locking the user out until a multi-step plan is finished. Users have to watch a mistake unfold with no way to stop it.",
-    severity: "High Risk",
-    severityLevel: "high",
-    scientificFoundation: <>Implements Dibia's protocol of <strong>Intervention</strong>. Mid-flight steering calibrates trust and directly applies Jakob Nielsen's heuristic for <strong>User Control and Freedom</strong>.</>,
-    questions: [
-      "Is there a 'Pause' or 'Correct' button available during execution?",
-      "Can the user edit the agent's plan before it proceeds?",
-      "Is the intervention process fast and responsive?"
-    ]
-  },
-  {
-    phase: 3,
-    title: "The Handback",
-    tagline: "Seamless Handoff",
-    principle: "Provide a Clean Briefing",
-    principleDesc: "Give the user all the context they need when passing the work back. Explain what was done and what needs human attention.",
-    pitfall: "The Hot Potato",
-    pitfallDesc: "Quitting abruptly when a task gets hard. The agent dumps the problem on the user without a summary or a suggested next step.",
-    severity: "High Risk",
-    severityLevel: "high",
-    scientificFoundation: <>Reflects Dibia's <strong>Handoff</strong> principle and Google PAIR's <strong>Graceful Failure</strong>. Maintaining context during graceful degradation to human control is vital for perceived reliability.</>,
-    questions: [
-      "Does the agent summarize its work when handing back control?",
-      "Are specific 'areas for review' highlighted for the user?",
-      "Does the agent suggest what the user should do next?"
-    ]
-  },
-  {
-    phase: 4,
-    title: "The Evidence",
-    tagline: "Calibrated Trust",
-    principle: "Show Your Receipts",
-    principleDesc: "Always link back to sources or raw data. Users should be able to verify any fact or conclusion without taking the agent's word for it.",
-    pitfall: "The Confident Liar",
-    pitfallDesc: "Presenting guesses or hallucinations as facts. This is a terminal trust failure that stops users from delegating future tasks.",
-    severity: "Catastrophic Trust Failure",
-    severityLevel: "critical",
-    scientificFoundation: <>Built on Lee's <strong>Trust in Automation</strong> and Google PAIR's <strong>Calibrating Trust</strong>. Accessible evidence empowers users to independently evaluate AI certainty and prevents over-automation bias.</>,
-    questions: [
-      "Is every major claim supported by a clickable citation?",
-      "Can the user easily view the raw data used for an insight?",
-      "Does the agent admit when it is unsure about a source?"
-    ]
-  },
-  {
-    phase: 4,
-    title: "Critical Sign-off",
-    tagline: "Permission-Based",
-    principle: "Check High-Stakes Actions",
-    principleDesc: "Ask for permission before spending money, deleting data, or changing external state. Treat the user's resources with respect.",
+    title: "Context-Aware Delegation",
+    tagline: "Cost & Adaptation",
+    principle: "Scale Autonomy to Risk",
+    principleDesc: "The agent must understand the stakes (financial, destructive, or social) of its actions, adapting its need for human feedback based on the cost of failure.",
     pitfall: "The Rogue Spender",
-    pitfallDesc: "Taking a permanent, expensive, or risky action based on a guess. Zero accountability for human-level consequences.",
+    pitfallDesc: "Taking irreversible, high-cost actions without permission, or constantly interrupting the user for trivial, low-risk micro-tasks.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Synthesizes Jakob Nielsen's <strong>Error Prevention</strong> heuristic with cost-awareness. High-stakes autonomy requires validation barriers to stop unintended loops across financial or system boundaries.</>,
+    scientificFoundation: <>Integrates Dibia's <strong>Cost-Aware Delegation</strong> with Google's <strong>Adapt with Feedback</strong>. High-stakes actions require hard friction, while low-stakes loops require seamless autonomy.</>,
     questions: [
-      "Is a confirmation modal required for any financial transaction?",
-      "Does the interface clearly display the financial, computational, or time cost of an action before the user hits approve?",
-      "Does the system warn users before an irreversible data change?"
+      "Does the system recognize and flag actions that consume real money or destroy data?",
+      "Does the agent explicitly ask for permission before executing high-cost steps?",
+      "Does the system learn from past feedback to streamline future low-risk delegations?"
+    ]
+  },
+  {
+    phase: 3,
+    title: "Directability & Interruptibility",
+    tagline: "Active Steering",
+    principle: "Pivot Without Penalty",
+    principleDesc: "Users must maintain the autonomy to pause, edit, or entirely redirect an agent mid-task without losing progress or breaking the system state.",
+    pitfall: "The Runaway Train",
+    pitfallDesc: "Locking the user out of the loop once a process begins. The user is forced to watch a mistake unfold or abort the entire session.",
+    severity: "High Risk",
+    severityLevel: "high",
+    scientificFoundation: <>Synthesizes my <strong>Directability</strong> principle, Dibia's <strong>Interruptibility</strong>, and Google's <strong>User Autonomy</strong>. True partnership requires shared initiative and seamless mid-flight corrections.</>,
+    questions: [
+      "Can the user safely pause the agent mid-generation or mid-execution?",
+      "Is it possible to inject new context or steer the plan without starting over?",
+      "Does the agent gracefully hand back control when it encounters a hard blocker?"
+    ]
+  },
+  {
+    phase: 4,
+    title: "Calibrated Trust & Safety",
+    tagline: "Verifiable Confidence",
+    principle: "Signal Certainty Accurately",
+    principleDesc: "The system must accurately convey its confidence limits. Presenting uncertain outputs with hesitation fosters calibrated trust, while evolving safety guardrails protect long-term use.",
+    pitfall: "The Confident Liar",
+    pitfallDesc: "Presenting hallucinations, guesses, or unsafe actions with absolute certainty, leading to automation bias and inevitable human-level errors.",
+    severity: "Catastrophic Trust Failure",
+    severityLevel: "critical",
+    scientificFoundation: <>Merges the original <strong>Calibrated Trust</strong> with Google's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance.</>,
+    questions: [
+      "Are uncertain conclusions visually distinct from verified facts?",
+      "Does the agent provide immediate receipts or links for its claims?",
+      "Are safety boundaries constantly evolving based on error reporting?"
     ]
   }
 ];
@@ -262,15 +194,19 @@ export default function FrameworkSection() {
               Human Factors <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
             </h2>
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
-              A practical response to the gaps in traditional UX practices when evaluating autonomous systems. As agentic AI scales, there is an urgent need for a "Gen 2" set of evaluation tools designed specifically for non-deterministic interfaces.
+              A modern audit framework bridging the gap between traditional UX heuristics and the demands of autonomous AI systems. Designed for non-deterministic interfaces, this tool transforms abstract concepts of trust and agency into an actionable, measurable checklist.
             </p>
             <p className="text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-5 max-w-3xl">
-              Evolving from Nielsen's Heuristics and UI Tenets & Traps, this tool integrates Google's PAIR guidelines, modern AI patterns, and foundational human factors research. It shifts the primary focus from static usability towards Transparency of Intent, Calibrated Trust, and Directability.
+              Synthesizing foundational human factors research with Google's PAIR guidelines and multi-agent system principles, this "Gen 2" framework shifts the focus from static usability to context-aware delegation, predictive observability, and safely calibrated trust.
             </p>
           </div>
-          <div className="hidden md:block text-right shrink-0">
-            <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-2">Status</p>
-            <p className="text-sm font-bold text-white whitespace-nowrap px-3 py-1.5 bg-white/5 rounded-lg border border-white/10">Tier One Framework</p>
+          <div className="hidden md:flex flex-col items-end shrink-0">
+            <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-2">Version</p>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 rounded-lg border border-indigo-500/20 shadow-inner">
+              <span className="text-sm font-bold text-indigo-400 whitespace-nowrap">V.1</span>
+              <span className="w-1 h-1 bg-indigo-500/50 rounded-full"></span>
+              <span className="text-sm font-medium text-indigo-300/80 whitespace-nowrap">March '26</span>
+            </div>
           </div>
         </motion.header>
 
@@ -285,21 +221,27 @@ export default function FrameworkSection() {
             className="w-full lg:w-72 shrink-0 flex flex-col lg:sticky lg:top-20 z-20"
           >
             {/* Mobile Horizontal Navigation */}
-            <div className="lg:hidden flex overflow-x-auto gap-3 pb-2 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <div className="lg:hidden flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
                 const phaseTitle = PHASES.find(p => p.id === pair.phase)?.title.split('.')[0] || "I";
                 return (
                   <button
                     key={idx}
-                    onClick={() => setActiveIdx(idx)}
-                    className={`shrink-0 snap-start flex flex-col items-start px-4 py-3 rounded-2xl border transition-all active:scale-95 ${
+                    onClick={() => {
+                      setActiveIdx(idx);
+                      // On mobile, scroll slightly to show it's selected
+                      const el = document.getElementById(`mobile-nav-${idx}`);
+                      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    }}
+                    id={`mobile-nav-${idx}`}
+                    className={`shrink-0 snap-center flex flex-col items-start px-5 py-4 rounded-2xl border transition-all active:scale-95 ${
                       isActive 
                         ? 'bg-white text-black border-white shadow-lg shadow-white/10' 
                         : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:bg-zinc-800'
                     }`}
                   >
-                    <span className={`text-[10px] font-black uppercase tracking-widest mb-1 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
+                    <span className={`text-[10px] font-black uppercase tracking-widest mb-1.5 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
                       Phase {phaseTitle}
                     </span>
                     <span className="text-sm font-bold whitespace-nowrap">{pair.title}</span>
@@ -378,7 +320,7 @@ export default function FrameworkSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-[40px] border border-white/10 overflow-hidden flex flex-col xl:flex-row relative"
+            className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-3xl sm:rounded-[40px] border border-white/10 overflow-hidden flex flex-col xl:flex-row relative"
           >
             <AnimatePresence mode="wait">
               <motion.div 
@@ -391,52 +333,52 @@ export default function FrameworkSection() {
               >
                 
                 {/* Details (Middle) */}
-                <div className="flex-1 p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+                <div className="flex-1 p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
                   <div className="space-y-8 w-full max-w-3xl mx-auto">
                     
                     {/* Header contextual awareness */}
-                    <div className="xl:hidden mb-2">
-                      <h3 className="text-3xl font-extrabold text-white mb-2 leading-tight">{activePair.title}</h3>
+                    <div className="xl:hidden mb-4">
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-tight">{activePair.title}</h3>
                       <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
                     </div>
 
                     {/* Principle */}
-                    <div className="flex gap-5 flex-col sm:flex-row items-start">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0 text-white">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path>
+                    <div className="flex gap-4 sm:gap-6 flex-col sm:flex-row items-start">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0 text-white">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
                         </svg>
                       </div>
-                      <div>
-                        <span className="text-emerald-400 font-black text-[10px] uppercase tracking-widest block mb-2">The Principle: Desired Behavior</span>
-                        <h4 className="text-xl font-bold text-white mb-2 tracking-tight">{activePair.principle}</h4>
-                        <p className="text-zinc-300 text-sm leading-relaxed font-medium">{activePair.principleDesc}</p>
+                      <div className="flex-1">
+                        <span className="text-emerald-400 font-black text-[10px] sm:text-xs uppercase tracking-widest block mb-2 sm:mb-1">The Principle: Desired Behavior</span>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 tracking-tight">{activePair.principle}</h4>
+                        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">{activePair.principleDesc}</p>
                       </div>
                     </div>
 
                     {/* Divider */}
-                    <div className="flex items-center gap-4 py-2 opacity-80">
+                    <div className="flex items-center gap-4 py-1 sm:py-2 opacity-80">
                       <div className="h-px flex-1 bg-white/10"></div>
-                      <span className="text-[10px] font-black tracking-widest text-zinc-500 uppercase">Friction Analysis</span>
+                      <span className="text-[9px] sm:text-[10px] font-black tracking-widest text-zinc-500 uppercase">Friction Analysis</span>
                       <div className="h-px flex-1 bg-white/10"></div>
                     </div>
 
                     {/* Pitfall */}
-                    <div className="flex gap-5 flex-col sm:flex-row items-start">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-zinc-700 to-zinc-800 shadow-lg shadow-black/20 flex items-center justify-center shrink-0 text-white">
-                        <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex gap-4 sm:gap-6 flex-col sm:flex-row items-start">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-zinc-700 to-zinc-800 shadow-lg shadow-black/20 flex items-center justify-center shrink-0 text-white">
+                        <svg className="w-6 h-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                         </svg>
                       </div>
-                      <div>
-                        <div className="flex flex-wrap items-center gap-3 mb-2">
-                          <span className="text-zinc-500 font-black text-[10px] uppercase tracking-widest">The Pitfall: System Risk</span>
+                      <div className="flex-1">
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-2 sm:mb-1">
+                          <span className="text-zinc-500 font-black text-[10px] sm:text-xs uppercase tracking-widest">The Pitfall: System Risk</span>
                           <span className={`px-2.5 py-1 rounded-md text-[9px] uppercase font-black tracking-widest border ${getSeverityClasses(activePair.severityLevel)}`}>
                             {activePair.severity}
                           </span>
                         </div>
-                        <h4 className="text-xl font-bold text-white mb-2 tracking-tight">{activePair.pitfall}</h4>
-                        <p className="text-zinc-300 text-sm leading-relaxed font-medium">{activePair.pitfallDesc}</p>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 tracking-tight">{activePair.pitfall}</h4>
+                        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">{activePair.pitfallDesc}</p>
                       </div>
                     </div>
 
@@ -512,7 +454,7 @@ export default function FrameworkSection() {
                     <div className="mt-8 pt-6 border-t border-white/10 lg:hidden">
                       <button 
                         onClick={handleExport}
-                        className="w-full py-3 px-4 bg-zinc-900 border border-indigo-500/20 hover:bg-indigo-600 text-white rounded-xl text-sm justify-center font-bold transition-all flex items-center gap-2 active:scale-95 shadow-lg"
+                        className="w-full py-3.5 sm:py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm justify-center font-bold transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
                       >
                         {exported ? (
                           <>
@@ -523,13 +465,16 @@ export default function FrameworkSection() {
                           </>
                         ) : (
                           <>
-                            <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                             </svg>
                             Export Audit Report
                           </>
                         )}
                       </button>
+                      <p className="text-center text-[10px] text-zinc-500 mt-4 font-mono">
+                        Framework by Brandon Fluegel
+                      </p>
                     </div>
 
                   </div>
