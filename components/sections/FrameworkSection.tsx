@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -120,7 +120,6 @@ const PHASES = [
 export default function FrameworkSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-  const [exported, setExported] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   
   const activePair = PAIRS[activeIdx];
@@ -139,34 +138,7 @@ export default function FrameworkSection() {
     setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const handleExport = useCallback(() => {
-    let report = `HUMAN FACTORS PRINCIPLES FOR AGENTIC TRUST\nAudit Report\n\n`;
-    report += `Conducted on: ${new Date().toLocaleDateString()}\n`;
-    report += `Framework by: Brandon Fluegel, Ph.D.\n`;
-    report += `Available at: https://www.humanfactors.pro\n`;
-    report += `========================================================\n\n`;
 
-    let passedCount = 0;
-    let totalCount = 0;
-    
-    PAIRS.forEach((pair, pIdx) => {
-      report += `[Phase ${pair.phase}] ${pair.title} | Priority: ${pair.severity}\n`;
-      pair.questions.forEach((q, qIdx) => {
-        totalCount++;
-        const isChecked = checkedItems[`${pIdx}-${qIdx}`];
-        if (isChecked) passedCount++;
-        report += `  [${isChecked ? 'x' : ' '}] ${q}\n`;
-      });
-      report += `\n`;
-    });
-    
-    report += `========================================================\n`;
-    report += `Final Score: ${passedCount} / ${totalCount} Checks Passed\n`;
-    
-    navigator.clipboard.writeText(report);
-    setExported(true);
-    setTimeout(() => setExported(false), 2000);
-  }, [checkedItems]);
 
   return (
     <section className="relative w-full py-12 md:py-20 overflow-hidden bg-black">
@@ -300,29 +272,9 @@ export default function FrameworkSection() {
                 </div>
               </div>
               
-              {/* Sticky Export Button */}
+              {/* Attribution */}
               <div className="pt-4 mt-5 border-t border-white/10 shrink-0">
-                <button 
-                  onClick={handleExport}
-                  className="w-full py-2.5 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm justify-center font-bold transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
-                >
-                  {exported ? (
-                    <>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                      </svg>
-                      Copied to Clipboard!
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                      </svg>
-                      Export Audit Report
-                    </>
-                  )}
-                </button>
-                <p className="text-center text-[10px] text-zinc-500 mt-3 font-mono">
+                <p className="text-center text-[10px] text-zinc-500 font-mono">
                   Framework by Brandon Fluegel
                 </p>
               </div>
@@ -397,29 +349,9 @@ export default function FrameworkSection() {
                       })}
                     </div>
 
-                    {/* Mobile Export Button */}
-                    <div className="mt-8 pt-6 border-t border-white/10 lg:hidden">
-                      <button 
-                        onClick={handleExport}
-                        className="w-full py-3.5 sm:py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm justify-center font-bold transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
-                      >
-                        {exported ? (
-                          <>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
-                            </svg>
-                            Copied to Clipboard!
-                          </>
-                        ) : (
-                          <>
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
-                            </svg>
-                            Export Audit Report
-                          </>
-                        )}
-                      </button>
-                      <p className="text-center text-[10px] text-zinc-500 mt-4 font-mono">
+                    {/* Mobile Attribution */}
+                    <div className="mt-6 pt-5 border-t border-white/10 lg:hidden">
+                      <p className="text-center text-[10px] text-zinc-500 font-mono">
                         Framework by Brandon Fluegel
                       </p>
                     </div>
