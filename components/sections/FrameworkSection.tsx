@@ -169,7 +169,7 @@ export default function FrameworkSection() {
   }, [checkedItems]);
 
   return (
-    <section className="relative w-full py-8 md:py-12 overflow-hidden bg-black">
+    <section className="relative w-full py-12 md:py-20 overflow-hidden bg-black">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3 transform-gpu"></div>
       <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3 transform-gpu"></div>
@@ -181,7 +181,7 @@ export default function FrameworkSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 md:mb-12 border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-6"
+          className="mb-12 md:mb-16 border-b border-white/10 pb-10 flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-6"
         >
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-black uppercase tracking-widest mb-4">
@@ -212,14 +212,14 @@ export default function FrameworkSection() {
         </motion.header>
 
         {/* Interface */}
-        <div className="flex flex-col lg:flex-row gap-6 xl:gap-8 items-start">
+        <div className="flex flex-col lg:flex-row gap-6 xl:gap-10 items-start">
           
           {/* Sidebar */}
           <motion.aside 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-72 shrink-0 flex flex-col lg:sticky lg:top-24 z-20"
+            className="w-full lg:w-64 xl:w-72 shrink-0 flex flex-col lg:sticky lg:top-24 z-20"
           >
             {/* Mobile Horizontal Navigation */}
             <div className="lg:hidden relative">
@@ -279,7 +279,7 @@ export default function FrameworkSection() {
                             <button
                               key={idx}
                               onClick={() => setActiveIdx(idx)}
-                              className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
+                              className={`w-full text-left px-4 py-3 rounded-xl text-[13px] font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
                                 isActive 
                                   ? 'bg-white text-black shadow-lg shadow-white/10' 
                                   : 'text-zinc-400 hover:bg-zinc-800/80 hover:text-zinc-200'
@@ -346,8 +346,8 @@ export default function FrameworkSection() {
               >
 
                 {/* Name & Audit Checklist (Left) */}
-                <div className="w-full xl:w-[340px] p-6 lg:p-8 bg-black/40 border-b xl:border-b-0 xl:border-r border-white/5 shrink-0 flex flex-col">
-                  <div className="hidden xl:block mb-8">
+                <div className="w-full xl:w-[380px] p-6 sm:p-8 lg:p-10 bg-black/40 border-b xl:border-b-0 xl:border-r border-white/5 shrink-0 flex flex-col">
+                  <div className="hidden xl:block mb-6">
                     <h3 className="text-2xl font-extrabold text-white mb-2 leading-tight">{activePair.title}</h3>
                     <p className="text-xs font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
                   </div>
@@ -363,31 +363,31 @@ export default function FrameworkSection() {
                       </span>
                     </div>
 
-                    <div className="space-y-2.5">
+                    <div className="space-y-3">
                       {activePair.questions.map((q, i) => {
                         const isChecked = checkedItems[`${activeIdx}-${i}`] || false;
                         return (
                           <button 
                             key={i}
                             onClick={() => toggleCheck(i)}
-                            className={`w-full text-left flex gap-3.5 p-4 rounded-xl border transition-all active:scale-[0.98] ${
+                            className={`w-full text-left flex gap-4 p-5 rounded-2xl border transition-all active:scale-[0.98] ${
                               isChecked 
                                 ? 'bg-indigo-500/10 border-indigo-500/50 shadow-inner' 
                                 : 'bg-white/5 border-white/5 hover:border-white/20'
                             }`}
                           >
-                            <div className={`w-4 h-4 rounded border border-zinc-500 shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
+                            <div className={`w-5 h-5 rounded-md border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
                               isChecked 
                                 ? 'bg-indigo-500 border-indigo-500' 
-                                : 'border-zinc-500'
+                                : 'border-zinc-600'
                             }`}>
                               {isChecked && (
-                                <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7"></path>
                                 </svg>
                               )}
                             </div>
-                            <p className={`text-xs leading-relaxed font-semibold transition-colors duration-300 ${
+                            <p className={`text-[13px] leading-relaxed font-semibold transition-colors duration-300 ${
                               isChecked ? 'text-indigo-200' : 'text-zinc-300'
                             }`}>
                               {q}
@@ -428,8 +428,8 @@ export default function FrameworkSection() {
                 </div>
 
                 {/* Principle & Pitfall Details (Right) */}
-                <div className="flex-1 p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
-                  <div className="space-y-8 w-full max-w-3xl mx-auto">
+                <div className="flex-1 p-6 sm:p-8 lg:p-10 xl:p-14 flex flex-col justify-center">
+                  <div className="space-y-10 w-full max-w-3xl mx-auto">
                     
                     {/* Header contextual awareness */}
                     <div className="xl:hidden mb-4">
@@ -446,8 +446,8 @@ export default function FrameworkSection() {
                       </div>
                       <div className="flex-1">
                         <span className="text-emerald-400 font-black text-[10px] sm:text-xs uppercase tracking-widest block mb-2 sm:mb-1">The Principle: Desired Behavior</span>
-                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 tracking-tight">{activePair.principle}</h4>
-                        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">{activePair.principleDesc}</p>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">{activePair.principle}</h4>
+                        <p className="text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium">{activePair.principleDesc}</p>
                       </div>
                     </div>
 
@@ -472,20 +472,20 @@ export default function FrameworkSection() {
                             {activePair.severity}
                           </span>
                         </div>
-                        <h4 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 tracking-tight">{activePair.pitfall}</h4>
-                        <p className="text-zinc-300 text-sm sm:text-base leading-relaxed font-medium">{activePair.pitfallDesc}</p>
+                        <h4 className="text-lg sm:text-xl font-bold text-white mb-3 tracking-tight">{activePair.pitfall}</h4>
+                        <p className="text-zinc-300 text-sm sm:text-[15px] leading-relaxed font-medium">{activePair.pitfallDesc}</p>
                       </div>
                     </div>
 
                     {/* Scientific Foundation */}
-                    <div className="mt-6 pt-6 border-t border-white/10">
-                      <h5 className="text-[10px] font-black text-indigo-400/90 uppercase tracking-widest mb-2 flex items-center gap-2">
+                    <div className="mt-8 pt-8 border-t border-white/10">
+                      <h5 className="text-[10px] font-black text-indigo-400/90 uppercase tracking-widest mb-3 flex items-center gap-2">
                         <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                         </svg> 
                         Scientific Foundation
                       </h5>
-                      <p className="text-zinc-400 text-xs leading-relaxed">
+                      <p className="text-zinc-400 text-[13px] leading-relaxed">
                         {activePair.scientificFoundation}
                       </p>
                     </div>
