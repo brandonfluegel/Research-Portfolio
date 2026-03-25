@@ -191,7 +191,7 @@ export default function FrameworkSection() {
               </span>
               Standardized Audit Tool
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight lg:whitespace-nowrap">
               Human Factors <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
             </h2>
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
