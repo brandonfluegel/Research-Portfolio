@@ -33,7 +33,7 @@ const PAIRS = [
     pitfallDesc: "Executing the wrong task efficiently. The agent optimizes for a proxy metric or misunderstood prompt, wasting time and resources.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's HF <strong>Transparency of Intent</strong> with Google PAIR's <strong>Data and Model Alignment</strong>. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
+    scientificFoundation: <>Merges Fluegel's <strong>Transparency of Intent</strong> with Google PAIR's <strong>Data and Model Alignment</strong>. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
     questions: [
       "Does the agent summarize its understanding of the goal before starting?",
       "Is the underlying optimization metric or rule visible to the user?",
@@ -50,7 +50,7 @@ const PAIRS = [
     pitfallDesc: "Hiding complex multistep execution behind a generic loading spinner. Users cannot verify progress or intervene if the system goes off track.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Combines Fluegel's HF <strong>Mutual Predictability</strong> with Dibia's <strong>Observability and Provenance</strong>. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
+    scientificFoundation: <>Combines Fluegel's <strong>Mutual Predictability</strong> with Dibia's <strong>Observability and Provenance</strong>. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
     questions: [
       "Are intermediate outputs or reasoning chains visible in real time?",
       "Does the agent cite the provenance of its data or tools as it works?",
@@ -85,7 +85,7 @@ const PAIRS = [
     pitfallDesc: "Locking the user out of the loop once a process begins. The user is forced to watch a mistake unfold or abort the entire session.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Synthesizes Fluegel's HF <strong>Directability</strong> principle, Dibia's <strong>Interruptibility</strong>, and Google PAIR's <strong>User Autonomy</strong>. True partnership requires shared initiative and seamless mid-flight corrections.</>,
+    scientificFoundation: <>Synthesizes Fluegel's <strong>Directability</strong> principle, Dibia's <strong>Interruptibility</strong>, and Google PAIR's <strong>User Autonomy</strong>. True partnership requires shared initiative and seamless mid-flight corrections.</>,
     questions: [
       "Can the user safely pause the agent mid-generation or mid-execution?",
       "Is it possible to inject new context or steer the plan without starting over?",
@@ -102,7 +102,7 @@ const PAIRS = [
     pitfallDesc: "Presenting hallucinations, guesses, or unsafe actions with absolute certainty, leading to automation bias and inevitable human-level errors. Without visible performance history, users have no empirical basis for calibrating their own trust.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's HF <strong>Calibrated Trust</strong> with Google PAIR's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR's evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust.</>,
+    scientificFoundation: <>Merges Fluegel's <strong>Calibrated Trust</strong> with Google PAIR's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR's evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust.</>,
     questions: [
       "Are uncertain conclusions visually distinct from verified facts?",
       "Does the agent provide immediate receipts or links for its claims?",
