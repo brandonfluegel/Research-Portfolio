@@ -203,19 +203,16 @@ export default function FrameworkSection() {
               </span>
               Standardized Audit Tool
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-0 leading-tight lg:whitespace-nowrap">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight lg:whitespace-nowrap">
               Human Factors <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
             </h2>
-            {/* TEMPORARILY HIDDEN
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
               A modern audit framework bridging the gap between traditional UX heuristics and the demands of autonomous AI systems. Designed for non-deterministic interfaces, this tool transforms abstract concepts of trust and agency into an actionable, measurable checklist.
             </p>
             <p className="text-[12px] sm:text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-4 sm:pl-5 max-w-3xl">
               Synthesizing foundational human factors research with Google's PAIR guidelines and multi-agent system principles, this framework shifts the focus from static usability to context-aware delegation, predictive observability, and safely calibrated trust.
             </p>
-            */}
           </div>
-          {/* TEMPORARILY HIDDEN
           <div className="hidden md:flex flex-col items-end shrink-0">
             <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-2">Version</p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 rounded-lg border border-indigo-500/20 shadow-inner">
@@ -224,7 +221,6 @@ export default function FrameworkSection() {
               <span className="text-sm font-medium text-indigo-300/80 whitespace-nowrap">March '26</span>
             </div>
           </div>
-          */}
         </motion.header>
 
         {/* Interface */}
