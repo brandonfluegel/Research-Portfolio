@@ -209,7 +209,7 @@ export default function FrameworkSection() {
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
               A modern audit framework bridging the gap between traditional UX heuristics and the demands of autonomous AI systems. Designed for non-deterministic interfaces, this tool transforms abstract concepts of trust and agency into an actionable, measurable checklist.
             </p>
-            <p className="text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-5 max-w-3xl">
+            <p className="text-[12px] sm:text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-4 sm:pl-5 max-w-3xl">
               Synthesizing foundational human factors research with Google's PAIR guidelines and multi-agent system principles, this framework shifts the focus from static usability to context-aware delegation, predictive observability, and safely calibrated trust.
             </p>
           </div>
@@ -266,10 +266,10 @@ export default function FrameworkSection() {
                         : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:bg-zinc-800'
                     }`}
                   >
-                    <span className={`text-[10px] font-black uppercase tracking-widest mb-1.5 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
+                      <span className={`text-[10px] sm:text-[11px] font-black uppercase tracking-widest mb-1.5 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
                       Phase {phaseTitle}
                     </span>
-                    <span className="text-sm font-bold whitespace-nowrap">{pair.title}</span>
+                    <span className="text-[13px] sm:text-sm font-bold whitespace-nowrap">{pair.title}</span>
                   </button>
                 );
               })}
@@ -338,7 +338,7 @@ export default function FrameworkSection() {
               >
 
                 {/* Name & Audit Checklist (Left on desktop, bottom on mobile) */}
-                <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-3 xl:order-1">
+                <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-2 xl:order-1">
                   <div className="hidden xl:block mb-5">
                     <h3 className="text-xl font-extrabold text-white mb-1.5 leading-tight">{activePair.title}</h3>
                     <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
@@ -379,7 +379,7 @@ export default function FrameworkSection() {
                                 </svg>
                               )}
                             </div>
-                            <p className={`text-[13px] leading-snug font-medium transition-colors duration-300 ${
+                            <p className={`text-[13px] sm:text-[13px] leading-relaxed sm:leading-snug font-medium transition-colors duration-300 ${
                               isChecked ? 'text-indigo-200' : 'text-zinc-300'
                             }`}>
                               {q}
@@ -421,7 +421,7 @@ export default function FrameworkSection() {
                     {/* Divider */}
                     <div className="flex items-center gap-4 opacity-60">
                       <div className="h-px flex-1 bg-white/10"></div>
-                      <span className="text-[9px] sm:text-[10px] font-black tracking-widest text-zinc-600 uppercase">Friction Analysis</span>
+                      <span className="text-[10px] sm:text-[10px] font-black tracking-widest text-zinc-600 uppercase">Friction Analysis</span>
                       <div className="h-px flex-1 bg-white/10"></div>
                     </div>
 
@@ -455,7 +455,7 @@ export default function FrameworkSection() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.05 }}
-                className="border-t border-white/5 bg-black/20 px-5 sm:px-6 lg:px-8 xl:px-10 py-4 sm:py-5 order-2 xl:order-3"
+                className="border-t border-white/5 bg-black/20 px-5 sm:px-6 lg:px-8 xl:px-10 py-5 sm:py-5 order-last xl:order-3"
               >
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 items-start sm:items-baseline">
                   <div className="flex items-center gap-2 shrink-0">
@@ -476,7 +476,7 @@ export default function FrameworkSection() {
         <div className="mt-6 flex flex-col items-center">
           <button
             onClick={handleExport}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
+            className="inline-flex items-center gap-2 px-6 py-3 sm:px-5 sm:py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
