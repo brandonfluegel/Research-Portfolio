@@ -16,7 +16,7 @@ const PAIRS = [
     pitfallDesc: "Acting as a limitless oracle. The agent fails silently or hallucinates when asked to perform tasks outside its actual toolset.",
     severity: "High Friction",
     severityLevel: "high",
-    scientificFoundation: <>Integrates Dibia's <strong>Capability Discovery</strong> and Google PAIR's <strong>Helpful AI</strong>. Upfront boundary-setting aligns human mental models with system realities before engagement.</>,
+    scientificFoundation: <>Integrates Victor Dibia's <strong>Capability Discovery</strong> principle and Google PAIR's <strong>Helpful AI</strong> principle. Upfront boundary-setting aligns human mental models with system realities before engagement.</>,
     questions: [
       "Are the agent's tools and access rights immediately visible?",
       "Does the agent clearly state what types of tasks it cannot handle?",
