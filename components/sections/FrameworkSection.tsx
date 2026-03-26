@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -16,7 +16,7 @@ const PAIRS = [
     pitfallDesc: "Acting as a limitless oracle. The agent fails silently or hallucinates when asked to perform tasks outside its actual toolset.",
     severity: "High Friction",
     severityLevel: "high",
-    scientificFoundation: <>Integrates Victor Dibia's <strong>Capability Discovery</strong> and Google PAIR's <strong>Helpful AI</strong>. Upfront boundary-setting aligns human mental models with system realities before engagement.</>,
+    scientificFoundation: <>Integrates Dibia's <strong>Capability Discovery</strong> and Google PAIR's <strong>Helpful AI</strong>. Upfront boundary-setting aligns human mental models with system realities before engagement.</>,
     questions: [
       "Are the agent's tools and access rights immediately visible?",
       "Does the agent clearly state what types of tasks it cannot handle?",
@@ -33,7 +33,7 @@ const PAIRS = [
     pitfallDesc: "Executing the wrong task efficiently. The agent optimizes for a proxy metric or misunderstood prompt, wasting time and resources.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's <strong>Transparency of Intent</strong> with Google's <strong>Data and Model Alignment</strong>. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
+    scientificFoundation: <>Merges Fluegel's HF <strong>Transparency of Intent</strong> with Google PAIR's <strong>Data and Model Alignment</strong>. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
     questions: [
       "Does the agent summarize its understanding of the goal before starting?",
       "Is the underlying optimization metric or rule visible to the user?",
@@ -50,7 +50,7 @@ const PAIRS = [
     pitfallDesc: "Hiding complex multistep execution behind a generic loading spinner. Users cannot verify progress or intervene if the system goes off track.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Combines Fluegel's <strong>Mutual Predictability</strong> with Dibia's <strong>Observability and Provenance</strong>. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
+    scientificFoundation: <>Combines Fluegel's HF <strong>Mutual Predictability</strong> with Dibia's <strong>Observability and Provenance</strong>. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
     questions: [
       "Are intermediate outputs or reasoning chains visible in real time?",
       "Does the agent cite the provenance of its data or tools as it works?",
@@ -62,16 +62,17 @@ const PAIRS = [
     title: "Context-Aware Delegation",
     tagline: "Cost & Adaptation",
     principle: "Scale Autonomy to Risk",
-    principleDesc: "The agent must understand the stakes (financial, destructive, or social) of its actions, adapting its need for human feedback based on the cost of failure.",
+    principleDesc: "The agent must understand the stakes (financial, destructive, or social) of its actions, adapting its need for human feedback based on the cost of failure. It should also learn from past interactions how the user prefers to exchange information: quick, focused answers versus comprehensive batches for later review.",
     pitfall: "The Rogue Spender",
-    pitfallDesc: "Taking irreversible, high-cost actions without permission, or constantly interrupting the user for trivial, low-risk micro-tasks.",
+    pitfallDesc: "Taking irreversible, high-cost actions without permission, or constantly interrupting the user for trivial, low-risk micro-tasks. Equally problematic: ignoring demonstrated user preferences for how and when information is delivered.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Integrates Dibia's <strong>Cost-Aware Delegation</strong> with Google's <strong>Adapt with Feedback</strong>. High-stakes actions require hard friction, while low-stakes loops require seamless autonomy.</>,
+    scientificFoundation: <>Integrates Dibia's <strong>Cost-Aware Delegation</strong> with Google PAIR's <strong>Adapt with Feedback</strong>. High-stakes actions require hard friction, while low-stakes loops require seamless autonomy. PAIR's feedback adaptation principle extends naturally to communication style: the agent should learn <em>how</em> the user wants results, not just <em>what</em> to do.</>,
     questions: [
       "Does the system recognize and flag actions that consume real money or destroy data?",
       "Does the agent explicitly ask for permission before executing high-cost steps?",
-      "Does the system learn from past feedback to streamline future low-risk delegations?"
+      "Does the system learn from past feedback to streamline future low-risk delegations?",
+      "Does the agent adapt its communication style based on past interaction patterns?"
     ]
   },
   {
@@ -84,7 +85,7 @@ const PAIRS = [
     pitfallDesc: "Locking the user out of the loop once a process begins. The user is forced to watch a mistake unfold or abort the entire session.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Synthesizes Fluegel's <strong>Directability</strong> principle, Dibia's <strong>Interruptibility</strong>, and Google's <strong>User Autonomy</strong>. True partnership requires shared initiative and seamless mid-flight corrections.</>,
+    scientificFoundation: <>Synthesizes Fluegel's HF <strong>Directability</strong> principle, Dibia's <strong>Interruptibility</strong>, and Google PAIR's <strong>User Autonomy</strong>. True partnership requires shared initiative and seamless mid-flight corrections.</>,
     questions: [
       "Can the user safely pause the agent mid-generation or mid-execution?",
       "Is it possible to inject new context or steer the plan without starting over?",
@@ -96,16 +97,17 @@ const PAIRS = [
     title: "Calibrated Trust & Safety",
     tagline: "Verifiable Confidence",
     principle: "Signal Certainty Accurately",
-    principleDesc: "The system must accurately convey its confidence limits. Presenting uncertain outputs with hesitation fosters calibrated trust, while evolving safety guardrails protect long-term use.",
+    principleDesc: "The system must accurately convey its confidence limits. Presenting uncertain outputs with hesitation fosters calibrated trust, while evolving safety guardrails protect long-term use. Trust calibration improves when the agent tracks its own performance over time (error rates, clarifications needed) and makes that history visible to the user.",
     pitfall: "The Confident Liar",
-    pitfallDesc: "Presenting hallucinations, guesses, or unsafe actions with absolute certainty, leading to automation bias and inevitable human-level errors.",
+    pitfallDesc: "Presenting hallucinations, guesses, or unsafe actions with absolute certainty, leading to automation bias and inevitable human-level errors. Without visible performance history, users have no empirical basis for calibrating their own trust.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's <strong>Calibrated Trust</strong> with Google's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance.</>,
+    scientificFoundation: <>Merges Fluegel's HF <strong>Calibrated Trust</strong> with Google PAIR's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR's evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust.</>,
     questions: [
       "Are uncertain conclusions visually distinct from verified facts?",
       "Does the agent provide immediate receipts or links for its claims?",
-      "Are safety boundaries constantly evolving based on error reporting?"
+      "Are safety boundaries constantly evolving based on error reporting?",
+      "Can the user review the agent's performance vs. past interactions over time?"
     ]
   }
 ];
@@ -137,6 +139,44 @@ export default function FrameworkSection() {
     const key = `${activeIdx}-${questionIndex}`;
     setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
   };
+
+  const handleExport = useCallback(() => {
+    let report = `HUMAN FACTORS PRINCIPLES FOR AGENTIC TRUST\n`;
+    report += `Audit Report\n\n`;
+    report += `Conducted on: ${new Date().toLocaleDateString()}\n`;
+    report += `Framework by: Brandon Fluegel, Ph.D.\n`;
+    report += `Available at: https://www.humanfactors.pro/#agent-trust\n`;
+    report += `========================================================\n\n`;
+
+    let passedCount = 0;
+    let totalCount = 0;
+
+    PAIRS.forEach((pair, pIdx) => {
+      const phase = PHASES.find(p => p.id === pair.phase);
+      report += `[${phase?.title || `Phase ${pair.phase}`}] ${pair.title}\n`;
+      report += `Principle: ${pair.principle}\n`;
+      report += `Usability Issue: ${pair.pitfall} (${pair.severity})\n`;
+      report += `Checklist:\n`;
+      pair.questions.forEach((q, qIdx) => {
+        totalCount++;
+        const isChecked = checkedItems[`${pIdx}-${qIdx}`];
+        if (isChecked) passedCount++;
+        report += `  [${isChecked ? 'x' : ' '}] ${q}\n`;
+      });
+      report += `\n`;
+    });
+
+    report += `========================================================\n`;
+    report += `Final Score: ${passedCount} / ${totalCount} Checks Passed\n`;
+
+    const blob = new Blob([report], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `agentic-trust-audit-${new Date().toISOString().slice(0, 10)}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }, [checkedItems]);
 
 
 
@@ -170,7 +210,7 @@ export default function FrameworkSection() {
               A modern audit framework bridging the gap between traditional UX heuristics and the demands of autonomous AI systems. Designed for non-deterministic interfaces, this tool transforms abstract concepts of trust and agency into an actionable, measurable checklist.
             </p>
             <p className="text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-5 max-w-3xl">
-              Synthesizing foundational human factors research with Google's PAIR guidelines and multi-agent system principles, this "Gen 2" framework shifts the focus from static usability to context-aware delegation, predictive observability, and safely calibrated trust.
+              Synthesizing foundational human factors research with Google's PAIR guidelines and multi-agent system principles, this framework shifts the focus from static usability to context-aware delegation, predictive observability, and safely calibrated trust.
             </p>
           </div>
           <div className="hidden md:flex flex-col items-end shrink-0">
@@ -409,7 +449,7 @@ export default function FrameworkSection() {
 
               </motion.div>
 
-              {/* Scientific Foundation — full-width bar below columns */}
+              {/* Scientific Foundation - full-width bar below columns */}
               <motion.div
                 key={`foundation-${activeIdx}`}
                 initial={{ opacity: 0 }}
@@ -430,6 +470,20 @@ export default function FrameworkSection() {
                 </div>
               </motion.div>
           </motion.main>
+        </div>
+
+        {/* Export Button */}
+        <div className="mt-6 flex flex-col items-center">
+          <button
+            onClick={handleExport}
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 active:scale-[0.98]"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Download Audit Report
+          </button>
+          <p className="text-[10px] text-zinc-500 font-mono mt-2">Export your checklist progress as a .txt file</p>
         </div>
       </div>
     </section>
