@@ -60,19 +60,18 @@ const PAIRS = [
   {
     phase: 2,
     title: "Context-Aware Delegation",
-    tagline: "Cost & Adaptation",
+    tagline: "Cost & Delegation",
     principle: "Scale Autonomy to Risk",
-    principleDesc: "The agent must read the stakes of every action it takes. High-cost or irreversible tasks demand human approval; low-risk tasks should flow without interruption. Over time, the agent should also learn how the user prefers to receive information: quick answers or detailed summaries.",
+    principleDesc: "The agent must read the stakes of every action it takes. High-cost or irreversible tasks demand human approval; low-risk tasks should flow without interruption.",
     pitfall: "The Rogue Spender",
-    pitfallDesc: "Making irreversible, high-cost decisions without asking, or pestering the user for approval on trivial tasks. Just as damaging: ignoring how the user prefers to communicate and receive results.",
+    pitfallDesc: "Making irreversible, high-cost decisions without asking, or pestering the user for approval on trivial tasks.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Integrates Dibia's <strong>Cost-Aware Delegation</strong> with Google PAIR's <strong>Adapt with Feedback</strong>. High-stakes actions require hard friction, while low-stakes loops require seamless autonomy. PAIR's feedback adaptation principle extends naturally to communication style: the agent should learn <em>how</em> the user wants results, not just <em>what</em> to do.</>,
+    scientificFoundation: <>Integrates Dibia's <strong>Cost-Aware Delegation</strong> with Google PAIR's <strong>Adapt with Feedback</strong>. High-stakes actions require hard friction, while low-stakes loops require seamless autonomy.</>,
     questions: [
       "Does the system recognize and flag actions that consume real money or destroy data?",
       "Does the agent explicitly ask for permission before executing high-cost steps?",
-      "Does the system learn from past feedback to streamline future low-risk delegations?",
-      "Does the agent adapt its communication style based on past interaction patterns?"
+      "Does the system learn from past feedback to streamline future low-risk delegations?"
     ]
   },
   {
@@ -97,17 +96,18 @@ const PAIRS = [
     title: "Calibrated Trust & Safety",
     tagline: "Verifiable Confidence",
     principle: "Signal Certainty Accurately",
-    principleDesc: "The system must be honest about what it knows and what it is guessing. Showing uncertainty builds trust; hiding it destroys it. Trust deepens when the agent tracks its own accuracy over time (error rates, corrections needed) and shares that record with the user.",
+    principleDesc: "The system must be honest about what it knows and what it is guessing. Showing uncertainty builds trust; hiding it destroys it. Trust deepens when the agent tracks its own accuracy over time and shares that record with the user. As the relationship matures, the agent should also adapt how it communicates: learning whether the user prefers quick answers or detailed summaries.",
     pitfall: "The Confident Liar",
-    pitfallDesc: "Presenting guesses, hallucinations, or risky actions with total confidence, leading users to blindly accept outputs that may be wrong. Without a visible track record, users have no way to judge when to trust the agent and when to double-check.",
+    pitfallDesc: "Presenting guesses, hallucinations, or risky actions with total confidence, leading users to blindly accept outputs that may be wrong. Without a visible track record, users have no way to judge when to trust the agent and when to double-check. Worse still: delivering results in a format the user never asked for.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's <strong>Calibrated Trust</strong> with Google PAIR's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR's evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust.</>,
+    scientificFoundation: <>Merges Fluegel's <strong>Calibrated Trust</strong> with Google PAIR's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR's evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust. PAIR's <strong>Adapt with Feedback</strong> principle extends naturally here: as trust deepens, the agent should learn <em>how</em> the user wants results, not just <em>what</em> to do.</>,
     questions: [
       "Are uncertain conclusions visually distinct from verified facts?",
       "Does the agent provide immediate receipts or links for its claims?",
       "Are safety boundaries constantly evolving based on error reporting?",
-      "Can the user review the agent's performance vs. past interactions over time?"
+      "Can the user review the agent's performance vs. past interactions over time?",
+      "Does the agent adapt its communication style based on the user's preferences?"
     ]
   }
 ];
