@@ -75,7 +75,7 @@ export default function NASAProjectSection() {
 
           {/* FULL-WIDTH IMMERSIVE MEDIA */}
           <motion.div variants={fadeInUp} className="w-full">
-            <div className="relative w-full aspect-[4/3] md:aspect-[21/9] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+            <div className="relative w-full aspect-[16/9] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
               <Image
                 src="/assets/nasahab2.PNG"
                 alt="NASA Gateway Research"

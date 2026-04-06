@@ -9,8 +9,8 @@ import GoogleAnalytics from "@/components/ui/GoogleAnalytics";
 import PerformanceModeProvider from "@/components/ui/PerformanceModeProvider";
 import MotionProvider from "@/components/ui/MotionProvider";
 
-const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono' });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter', display: 'swap' });
+const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: '--font-mono', display: 'swap' });
 const siteUrl = "https://humanfactors.pro";
 const profileSearchImage = "/assets/profile-search.jpg";
 const caseStudies = [
@@ -243,8 +243,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
       </head>
       {/* REMOVED 'cursor-none' from class list below */}
       <body className="text-white overflow-x-hidden font-sans">

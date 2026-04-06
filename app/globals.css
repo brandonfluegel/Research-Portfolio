@@ -160,3 +160,8 @@ html[data-reduced-motion="true"] [class*="duration-"] {
                 0 0 40px -10px rgba(255, 255, 255, 0.03);
   }
 }
+
+/* Layout containment for fixed backgrounds to prevent CLS from viewport changes */
+.contain-strict {
+  contain: layout style paint;
+}

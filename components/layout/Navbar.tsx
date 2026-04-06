@@ -51,11 +51,11 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
   }, []);
 
   return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b py-3 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-xl border-white/10 py-3"
-          : "bg-black/50 backdrop-blur-sm border-transparent py-4 md:py-5"
+          ? "bg-black/80 backdrop-blur-xl border-white/10"
+          : "bg-black/50 backdrop-blur-sm border-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 relative z-[60]">
@@ -128,6 +128,6 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }

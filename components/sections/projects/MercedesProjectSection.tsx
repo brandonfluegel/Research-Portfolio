@@ -50,7 +50,7 @@ export default function MercedesProjectSection() {
         >
           {/* LEFT: VISUAL MEDIA (on desktop) */}
           <motion.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
                 <LazyVideo
                   sources={[
                     { src: "/assets/drive.webm", type: "video/webm" },
@@ -58,7 +58,7 @@ export default function MercedesProjectSection() {
                   ]}
                   src="/assets/drive.mp4"
                   poster="/assets/drive-poster.jpg"
-                  className="w-full h-auto opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                  className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
              </div>
              {/* Caption Below */}

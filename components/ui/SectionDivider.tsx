@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 interface SectionDividerProps {
   label: string;
   description?: string;
@@ -9,11 +7,7 @@ interface SectionDividerProps {
 
 export default function SectionDivider({ label, description }: SectionDividerProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 1 }}
+    <div
       className="relative flex flex-col items-center py-8 md:py-12"
     >
       {/* Decorative line */}
@@ -30,6 +24,6 @@ export default function SectionDivider({ label, description }: SectionDividerPro
           {description}
         </p>
       )}
-    </motion.div>
+    </div>
   );
 }

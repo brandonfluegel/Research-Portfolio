@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { scrollToSectionId } from "@/lib/utils/scroll";
 import { TRUST_COMPANIES } from "@/lib/constants/sections";
@@ -12,10 +11,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
   };
 
   return (
-    <motion.nav 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 1 }}
+    <nav 
       className="w-full max-w-6xl mx-auto mb-12 md:mb-24 mt-8 md:mt-12"
     >
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6 md:mb-8"></div>
@@ -89,6 +85,6 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
           </a>
         ))}
       </div>
-    </motion.nav>
+    </nav>
   );
 }
