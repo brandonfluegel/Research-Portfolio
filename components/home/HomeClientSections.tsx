@@ -143,6 +143,21 @@ export default function HomeClientSections() {
         </DeferredSection>
 
         <SectionDivider
+          label="From applications → Global standards"
+          description="Evolving established models into modern agent trust frameworks"
+        />
+
+        <DeferredSection
+          id="agent-trust"
+          rootMargin="320px 0px"
+          minHeightClass="min-h-[1100px] md:min-h-[1300px]"
+        >
+          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px] md:min-h-[1300px]" />}>
+            <FrameworkSection />
+          </Suspense>
+        </DeferredSection>
+
+        <SectionDivider
           label="From AI voice systems → Product strategy"
           description="Applying psychophysics to monetization at scale"
         />
@@ -202,20 +217,6 @@ export default function HomeClientSections() {
           </Suspense>
         </DeferredSection>
 
-        <SectionDivider
-          label="From applications → Global standards"
-          description="Evolving established models into modern agent trust frameworks"
-        />
-
-        <DeferredSection
-          id="agent-trust"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1100px] md:min-h-[1300px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px] md:min-h-[1300px]" />}>
-            <FrameworkSection />
-          </Suspense>
-        </DeferredSection>
       </section>
 
       <div className="mt-32 border-t border-white/10">
