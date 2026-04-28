@@ -88,11 +88,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
+
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
     description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",

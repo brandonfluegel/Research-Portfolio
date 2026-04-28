@@ -3,7 +3,6 @@
 
 import { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
-import React from "react";
 
 const PAIRS = [
   {

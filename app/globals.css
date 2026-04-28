@@ -51,6 +51,10 @@ body {
   text-wrap: balance;
 }
 
+@utility tap-highlight-transparent {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .content-shell {
   max-width: var(--content-max-width);
   margin-left: auto;
