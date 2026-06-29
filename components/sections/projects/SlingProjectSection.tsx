@@ -340,13 +340,13 @@ export default function SlingProjectSection() {
           />
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
-            <h2 className="text-lg text-white font-medium tracking-tight">Staff Product Researcher</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Product Strategy Lead</p>
+            <h2 className="text-lg text-white font-medium tracking-tight">Staff Human Factors Researcher</h2>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors & AI Systems</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Staff Product Researcher</p>
+          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Staff Human Factors Researcher</p>
         </div>
       </motion.div>
 
@@ -366,22 +366,22 @@ export default function SlingProjectSection() {
               <div className="flex items-center gap-2 mb-3 md:mb-4">
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Product Research Leadership
+                Human Factors Strategy <span className="text-zinc-500">& AI Systems</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
               <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
                  <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Business Impact</span>
+                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Org-Wide Adoption</span>
                  </div>
-                 <div className="text-3xl font-bold text-green-400">+17% Lift</div>
-                 <p className="text-xs text-zinc-400 mt-1">Lift in subscription conversion via checkout innovations.</p>
+                 <div className="text-3xl font-bold text-green-400">VP+ Reviews</div>
+                 <p className="text-xs text-zinc-400 mt-1">SXI framework adopted as the baseline for all VP+ product experience reviews.</p>
               </div>
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Directing the research roadmap for monetization and Human-AI interaction, reporting directly to the VP of Product.
+                Reporting directly to the VP of Product, I lead human factors strategy across all core software, hardware, and generative AI systems — establishing org-wide standards where human perception drives engineering decisions.
               </p>
             </div>
 
@@ -397,21 +397,21 @@ export default function SlingProjectSection() {
                 </p>
               </div>
 
-               {/* Block 2: Roadmap Realignment */}
+               {/* Block 2: HF Standards */}
                <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC PIVOT: ROADMAP REALIGNMENT</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HF STANDARDS: LATENCY, UI & RESPONSE QUALITY</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Leveraging SXI longitudinal data, I orchestrated a 2025 roadmap realignment. I secured executive buy-in to halt low-value feature releases and instead prioritize a foundational overhaul of the checkout architecture to address critical friction hotspots.
+                  Established and evaluated org-wide human factors standards for system latency, visual UI design, and response quality for conversational AI interaction — ensuring engineering targets are grounded in human perceptual thresholds rather than arbitrary technical benchmarks.
                 </p>
               </div>
 
-              {/* Block 3: Measurable Impact */}
+              {/* Block 3: Hardware HF */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.4)]"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">MEASURABLE IMPACT</h4>
+                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HARDWARE HUMAN FACTORS: FIT & COMFORT RESEARCH</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The re-architected checkout flow directly resulted in a <span className="text-green-400 font-bold">17% lift in subscription conversion</span> during Q4 2025, validating the financial impact of the SXI framework in resolving systemic friction.
+                  Led fit and comfort research for new hardware using anthropometric and engineering requirements, translating physical human factors data into actionable design constraints for Sling&apos;s hardware portfolio.
                 </p>
               </div>
 
@@ -420,7 +420,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust & System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.
+                  Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust &amp; System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.
                 </p>
               </div>
 
