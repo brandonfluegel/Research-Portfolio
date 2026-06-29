@@ -14,15 +14,38 @@ export default function Home() {
             Connecting perceptual science to engineering targets and product decisions
           </div>
 
-          <a
-            href="#amazon-section"
-            className="mt-10 sm:mt-12 md:mt-16 lg:mt-20 inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-white/90 animate-bounce"
-            aria-label="Scroll to projects"
-          >
-            <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7" aria-hidden="true">
-              <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+          {/* STAT BAR — gives recruiters a reason to scroll within the first viewport */}
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 md:gap-x-14 mt-10 sm:mt-12 md:mt-14">
+            {[
+              { value: "$50M", label: "Projected Impact" },
+              { value: "75M+", label: "Customers Reached" },
+              { value: "US Patent", label: "Amazon Inventor" },
+              { value: "5", label: "Tier-1 Companies" },
+            ].map((stat, i, arr) => (
+              <div key={stat.label} className="flex items-center gap-6 sm:gap-10 md:gap-14">
+                <div className="text-center">
+                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">{stat.value}</div>
+                  <div className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase tracking-widest mt-0.5">{stat.label}</div>
+                </div>
+                {i < arr.length - 1 && (
+                  <div className="h-6 w-px bg-white/10 hidden sm:block" />
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 flex flex-col items-center gap-2">
+            <a
+              href="#amazon-section"
+              className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-white/90 animate-bounce"
+              aria-label="Scroll to projects"
+            >
+              <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7" aria-hidden="true">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+            <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">View Work</span>
+          </div>
         </div>
       </section>
 

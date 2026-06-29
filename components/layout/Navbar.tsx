@@ -85,6 +85,20 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           </Link>
         </div>
 
+        {/* DESKTOP: Persistent LinkedIn CTA — visible regardless of scroll depth */}
+        <a
+          href="https://www.linkedin.com/in/fluegel/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex items-center gap-2 px-4 py-1.5 text-[10px] font-mono text-zinc-400 border border-white/15 rounded-full hover:border-white/40 hover:text-white transition-all duration-200 uppercase tracking-widest"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+          Connect
+        </a>
+
         {/* HAMBURGER BUTTON */}
         <button
           className="flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
