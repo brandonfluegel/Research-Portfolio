@@ -15,44 +15,6 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
       className="w-full max-w-6xl mx-auto mb-8 md:mb-16 mt-0"
     >
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6 md:mb-8"></div>
-
-      {/* MOBILE: Static tappable row */}
-      <div className="flex md:hidden justify-between items-center px-2">
-        {TRUST_COMPANIES.map((company, index) => (
-          <a
-            key={company.name}
-            href={`#${company.id}`}
-            onClick={(e) => scrollToSection(e, company.id)}
-            className={`group relative flex flex-col items-center gap-2 py-3 px-1.5 rounded-xl transition-all duration-300 cursor-pointer tap-highlight-transparent active:scale-90 active:bg-white/5 ${
-              activeSection === company.id ? "scale-105 bg-white/[0.04]" : ""
-            }`}
-          >
-            <div className={`relative ${company.mobileSizing}`}>
-              <Image
-                src={company.logo}
-                alt={`${company.name} logo`}
-                width={120}
-                height={60}
-                quality={85}
-                priority={index === 0}
-                loading={index === 0 ? "eager" : "lazy"}
-                decoding="async"
-                sizes="(max-width: 768px) 20vw, 120px"
-                className={`object-contain w-full h-full filter brightness-0 invert select-none transition-opacity duration-300 ${
-                  activeSection === company.id
-                    ? "opacity-100"
-                    : "opacity-60"
-                }`}
-              />
-            </div>
-            {/* Active dot */}
-            <div className={`w-1 h-1 rounded-full bg-white transition-opacity duration-300 ${
-              activeSection === company.id ? "opacity-100" : "opacity-0"
-            }`} />
-          </a>
-        ))}
-      </div>
-
     </nav>
   );
 }

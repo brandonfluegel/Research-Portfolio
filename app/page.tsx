@@ -14,16 +14,29 @@ export default function Home() {
             Connecting perceptual science to engineering targets and product decisions
           </div>
 
-          {/* CREDENTIAL STRIP — desktop only */}
-          <div className="hidden md:flex mt-8 md:mt-10 flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-[10px] md:text-[11px] font-mono uppercase tracking-widest">
-            <span className="text-white font-semibold">$50M</span>
-            <span className="text-zinc-500">Projected Impact</span>
-            <span className="text-white/20 px-1">·</span>
-            <span className="text-white font-semibold">US Patent</span>
-            <span className="text-zinc-500">Named Inventor</span>
-            <span className="text-white/20 px-1">·</span>
-            <span className="text-white font-semibold">5</span>
-            <span className="text-zinc-500">Tier-1 Companies</span>
+          {/* CREDENTIAL STRIP — all breakpoints */}
+          <div className="flex mt-8 md:mt-10 lg:mt-12 items-center justify-center gap-x-2 sm:gap-x-3 lg:gap-x-4">
+            {/* Stat 1 */}
+            <div className="flex flex-col items-center gap-1 px-4 sm:px-6 lg:px-8">
+              <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">$50M</span>
+              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Projected Impact</span>
+            </div>
+
+            <div className="w-px h-7 sm:h-8 bg-white/10" />
+
+            {/* Stat 2 */}
+            <div className="flex flex-col items-center gap-1 px-4 sm:px-6 lg:px-8">
+              <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">Patent</span>
+              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Named US Inventor</span>
+            </div>
+
+            <div className="w-px h-7 sm:h-8 bg-white/10" />
+
+            {/* Stat 3 */}
+            <div className="flex flex-col items-center gap-1 px-4 sm:px-6 lg:px-8">
+              <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">5</span>
+              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Tier-1 Companies</span>
+            </div>
           </div>
         </div>
       </section>
