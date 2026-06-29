@@ -16,13 +16,13 @@ Brandon led a multi-year human factors research program calibrating Alexa voice 
 Sling TV — Staff Human Factors Researcher:
 As the first dedicated Human Factors Researcher at Sling, built and leads human factors strategy across software, hardware, and generative AI systems, reporting directly to the VP of Product. Established org-wide HF standards for system latency, visual UI design, and conversational AI response quality — grounding engineering targets in human perceptual thresholds rather than arbitrary benchmarks. Led hardware fit and comfort research using anthropometric data. Architected the Sling Experience Index (SXI), a proprietary quantitative framework merging behavioral telemetry with user-perceived friction, now the baseline for all VP+ product experience reviews and a direct driver of roadmap prioritization for features serving millions of subscribers. Defined the multi-turn interaction model and Trust & System Status framework for a conversational TV assistant.
 
-Uber — UX Research (Driver Growth & Global Strategy):
+Uber — Human Factors PhD Intern (Driver Growth & Global Strategy):
 Conducted contextual inquiry and in-situ diary studies with rental drivers in São Paulo to surface friction unique to the LATAM market. Identified that multi-step task flows were a primary churn driver in the critical first 30 days of driver onboarding — measured via NASA-TLX and task completion analysis. Findings directly informed a driver app redesign that reduced cognitive load and produced a 5% lift in rental driver retention in the LATAM region within the first post-launch quarter.
 
-NASA — Human Factors Research Lead:
+NASA — Human Factors PhD Intern:
 Led human factors validation for next-generation medical workstations on the Lunar Gateway in a simulated microgravity environment. Surfaced critical physical and cognitive failure modes — including reach envelope violations, attention overload, and display legibility limits — before hardware specifications were finalized. The redesigned interface and physical layout produced a 30% reduction in time-on-task for complex medical procedures versus baseline, with a corresponding reduction in critical error rate.
 
-Mercedes-Benz — HMI Human Factors Research (Automotive UX & HMI):
+Mercedes-Benz — Human Factors PhD Intern (Automotive UX & HMI):
 Conducted foundational research on passenger experiences in L2 semi-autonomous vehicles to guide HMI improvements. Defined Alert Modality standards for autonomous handovers and built a psychoacoustic model correlating acoustic sensor data with perceived cabin noise — reducing perceived noise by 15%. Across a structured pre/post comparative study, the implemented HMI improvements produced a 24% increase in user trust scores during automated lane changes and handoffs.
 
 Core query topics:

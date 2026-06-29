@@ -33,21 +33,21 @@ const caseStudies = [
     name: "Uber UX Research Case Study",
     organization: "Uber",
     url: `${siteUrl}/#uber-section`,
-    description: "Research-led product improvements addressing cognitive load and retention across the Uber driver and rider experience.",
+    description: "Human Factors PhD Intern research addressing cognitive load and driver retention across the Uber driver experience in the LATAM market.",
   },
   {
     id: "nasa",
     name: "NASA Human Factors Research Case Study",
     organization: "NASA",
     url: `${siteUrl}/#nasa-section`,
-    description: "Mission-critical human factors validation for high-stakes system performance and operator safety in aerospace environments.",
+    description: "Human Factors PhD Intern validation research for mission-critical system performance and operator safety on the Lunar Gateway medical workstation.",
   },
   {
     id: "mercedes",
     name: "Mercedes-Benz HMI Human Factors Research Case Study",
     organization: "Mercedes-Benz",
     url: `${siteUrl}/#mercedes-section`,
-    description: "Human-machine interface (HMI) research improving driver trust, cognitive ergonomics, and system transparency in advanced automotive AI systems.",
+    description: "Human Factors PhD Intern HMI research improving driver trust, cognitive ergonomics, and system transparency in semi-autonomous vehicles.",
   },
 ];
 

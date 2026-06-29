@@ -29,12 +29,12 @@ export default function MercedesProjectSection() {
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Automotive UX & HMI</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">UX Researcher</p>
+          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
         </div>
       </motion.div>
 
