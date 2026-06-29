@@ -14,23 +14,16 @@ export default function Home() {
             Connecting perceptual science to engineering targets and product decisions
           </div>
 
-          {/* STAT BAR */}
-          <div className="flex items-center justify-center gap-x-8 sm:gap-x-12 md:gap-x-16 mt-10 sm:mt-12 md:mt-14">
-            {[
-              { value: "$50M", label: "Projected Impact" },
-              { value: "US Patent", label: "Named Inventor" },
-              { value: "5", label: "Tier-1 Companies" },
-            ].map((stat, i, arr) => (
-              <div key={stat.label} className="flex items-center gap-8 sm:gap-12 md:gap-16">
-                <div className="text-center">
-                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">{stat.value}</div>
-                  <div className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase tracking-widest mt-0.5">{stat.label}</div>
-                </div>
-                {i < arr.length - 1 && (
-                  <div className="h-6 w-px bg-white/10 hidden sm:block" />
-                )}
-              </div>
-            ))}
+          {/* CREDENTIAL STRIP — single line, low visual weight */}
+          <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-[10px] md:text-[11px] font-mono uppercase tracking-widest">
+            <span className="text-white font-semibold">$50M</span>
+            <span className="text-zinc-500">Projected Impact</span>
+            <span className="text-white/20 px-1">·</span>
+            <span className="text-white font-semibold">US Patent</span>
+            <span className="text-zinc-500">Named Inventor</span>
+            <span className="text-white/20 px-1">·</span>
+            <span className="text-white font-semibold">5</span>
+            <span className="text-zinc-500">Tier-1 Companies</span>
           </div>
         </div>
       </section>
