@@ -140,7 +140,7 @@ function SXIProjectMatrix() {
               SXI PRIORITIZATION MATRIX
             </h3>
             <p className="text-[10px] md:text-xs text-zinc-500 mt-1.5 font-mono uppercase tracking-[0.2em] pl-5">
-              Q4 2025 • Net Good Index vs. Engagement
+              Q4 2025 • SXI Score vs. Monthly Engagement
             </p>
           </div>
         </div>

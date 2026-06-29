@@ -60,15 +60,15 @@ export default function AmazonProjectSection() {
               <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
                  <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Impact</span>
+                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Alexa Economics Projection</span>
                  </div>
-                 <div className="text-3xl font-bold text-green-400">$50M+</div>
-                 <p className="text-xs text-zinc-400 mt-1">Projected incremental revenue from achieving human-centered latency thresholds over 15 months.</p>
+                 <div className="text-3xl font-bold text-green-400">$50M</div>
+                 <p className="text-xs text-zinc-400 mt-1">Projected by Alexa Economics via NVA modeling, applied against human-centered latency thresholds over 15 months.</p>
               </div>
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace legacy technical benchmarks with human-centered thresholds, directly linking millisecond delays to long-term revenue loss.
+                Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace legacy technical benchmarks with human-centered thresholds, directly linking millisecond delays to downstream engagement loss.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 20,000+ controlled interactions with Alexa. This rigorous mapping identified the &quot;High Satisfaction Threshold&quot; as all responses faster than 900ms, where user satisfaction is highest and perception of &quot;slowness&quot; is minimized.
+                  Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 20,000+ controlled interactions with Alexa. This mapping identified the <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong> — the point at which &gt;70% of users rate a response as &quot;not slow&quot; and &lt;5% rate it as &quot;too slow.&quot;
                 </p>
               </div>
 
@@ -89,16 +89,16 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to integrate these perceptual thresholds into the Negative Value Action (NVA) model. We redefined &quot;system defects&quot; not just as technical failures, but as any interaction slower than the 900ms satisfaction cliff, the point where the probability of customer churn and engagement loss sharply increases.
+                  Partnered with Alexa Economics to integrate these perceptual thresholds into the Negative Value Action (NVA) model. We redefined &quot;system defects&quot; as any interaction slower than the 1,000ms HST — the point where the proportion of &quot;somewhat slow&quot; ratings nearly triples and downstream customer engagement drops measurably.
                 </p>
               </div>
 
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative">
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M+ Projection</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M Operational Value</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The calibrated model forecasted that achieving these human-centered thresholds for high-utility intents would <span className="text-green-400 font-bold">save 20B+ dialogs with Alexa</span>. Realizing these interaction gains was projected to generate <span className="text-green-400 font-bold">$50M+ in incremental revenue</span> over the subsequent 15 months, providing a Latency North Star for Alexa’s engineering roadmap.
+                  These thresholds were fed into the NVA model by Alexa Economics, who independently projected that closing the latency gap on high-priority intents — PlayMusic, TurnOff, TurnOn, and Q&A — would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months. This third-party model output established a human perception–derived Latency North Star for Alexa’s engineering roadmap.
                 </p>
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function AmazonProjectSection() {
                 </div>
                 <div className="text-right">
                   <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Impact</div>
-                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$50M+</div>
+                  <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$50M</div>
                 </div>
               </div>
 
@@ -198,9 +198,9 @@ export default function AmazonProjectSection() {
                   className="absolute top-[2%] md:top-[5%] left-[15%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
                 >
                   <div className="text-[9px] md:text-xs font-bold text-white whitespace-nowrap">
-                    900ms Threshold
+                    1,000ms Threshold
                   </div>
-                  <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">High Satisfaction</div>
+                  <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">HST</div>
                 </motion.div>
 
                 {/* Safe Zone Label */}
@@ -231,7 +231,10 @@ export default function AmazonProjectSection() {
             </div>
 
             <p className="mt-8 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-              Fig 1. The &quot;Satisfaction Cliff&quot;: User satisfaction drops sharply after 900ms
+              Fig 1. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
+            </p>
+            <p className="mt-1 text-center text-[9px] font-mono text-zinc-700 tracking-wide">
+              Source: Alexa Response Latency Research — Devices Design Group, UX Research, April 2021
             </p>
           </motion.div>
         </motion.div>
@@ -294,19 +297,27 @@ export default function AmazonProjectSection() {
                   <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show: Human Factors Leadership</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
-                    Led Human Factors strategy for the Echo Show portfolio, informing 50+ design iterations that <span className="text-green-400 font-bold"> improved the core user experience for 75M+ customers</span>.
+                    Led Human Factors strategy for the Echo Show portfolio — a product line with 75M+ active customers — driving 50+ design iterations grounded in cognitive load data, with measurable gains in content discovery and task completion rates.
                   </p>
                 </div>
               </div>
 
-              <div className="mt-8 md:mt-10">
-                <div className="inline-flex items-center gap-4 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:bg-white/10 transition-colors cursor-default">
+              <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
+                <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm cursor-default">
                   <div className="p-1 bg-yellow-500/20 rounded-full">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award Recipient</span>
+                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award</span>
+                </div>
+                <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm cursor-default">
+                  <div className="p-1 bg-blue-500/20 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">US Patent 12,532,040 B1</span>
                 </div>
               </div>
            </motion.div>

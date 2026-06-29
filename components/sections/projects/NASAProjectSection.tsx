@@ -65,11 +65,11 @@ export default function NASAProjectSection() {
                   <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Operational Impact</span>
                </div>
                <div className="text-3xl font-bold text-green-400">30%</div>
-               <p className="text-xs text-zinc-400 mt-1">Reduction in critical Time-on-Task for medical procedures.</p>
+               <p className="text-xs text-zinc-400 mt-1">Reduction in time-on-task vs. the baseline hardware configuration.</p>
             </div>
 
             <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light max-w-2xl mx-auto">
-              Led Human Factors validation for next-gen medical workstations on the Lunar Gateway, minimizing critical operator errors in high-stress zero-G environments.
+              Led Human Factors validation for next-gen medical workstations on the Lunar Gateway, identifying and eliminating critical operator error modes under simulated microgravity conditions.
             </p>
           </motion.div>
 
@@ -90,7 +90,7 @@ export default function NASAProjectSection() {
               <div className="absolute bottom-0 left-0 right-0 hidden md:flex justify-between items-end p-8">
                 <div>
                   <div className="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-1">Lunar Gateway</div>
-                  <div className="text-sm text-zinc-300 max-w-xs leading-relaxed">Medical workstation validated for minimized-gravity constraints</div>
+                  <div className="text-sm text-zinc-300 max-w-xs leading-relaxed">Medical workstation validated under simulated microgravity constraints</div>
                 </div>
                 <div className="text-right">
                   <div className="text-3xl font-bold text-green-400">30%</div>
@@ -106,13 +106,13 @@ export default function NASAProjectSection() {
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Validation: Lunar Gateway</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                Executed human factors validation studies for the Lunar Gateway medical workstation. This testing environment simulated minimized-gravity constraints to identify physical and cognitive ergonomic failure points.
+                Executed human factors validation studies for the Lunar Gateway medical workstation in a simulated microgravity environment. Testing surfaced physical and cognitive failure modes including reach envelope violations, attention overload during timed procedures, and display legibility limits under restricted head mobility.
               </p>
             </div>
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Operational Impact</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                The redesigned interface and physical layout resulted in a significant <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures, ensuring astronaut safety and mission efficiency.
+                The redesigned interface and physical layout produced a <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures compared to the baseline hardware configuration — with a corresponding reduction in critical error rate across procedural steps.
               </p>
             </div>
           </motion.div>

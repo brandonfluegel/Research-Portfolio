@@ -23,8 +23,8 @@ export default function Footer() {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold text-white tracking-tight"
         >
-          Let&apos;s define the future of <br />
-          <span className="text-zinc-500">Human-AI Interaction.</span>
+          Connecting perceptual science to engineering decisions <br />
+          <span className="text-zinc-500">and measurable product outcomes.</span>
         </motion.h2>
 
         {/* Sub-text */}
@@ -35,7 +35,7 @@ export default function Footer() {
           transition={{ delay: 0.1 }}
           className="text-zinc-400 text-lg max-w-2xl mx-auto"
         >
-          Always open to discussing high-impact leadership roles in Human Factors, AI, and Product Strategy.
+          Open to senior leadership roles in Human Factors research, AI systems, and product strategy.
         </motion.p>
 
         {/* CTA Buttons */}

@@ -88,7 +88,7 @@ export default function UberProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Conducted foundational research in Brazil to inform global product strategy. Insights directly steered the driver app redesign, successfully reducing cognitive load and improving retention.
+                Conducted contextual inquiry and diary studies with rental drivers in São Paulo to surface friction unique to the LATAM market. Findings directly informed the driver app redesign, reducing task complexity and improving new-driver retention.
               </p>
             </div>
 
@@ -100,7 +100,7 @@ export default function UberProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Foundational Research in Brazil</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Conducted field research with rental drivers in Brazil to identify unique market constraints. Discovered that high cognitive load from the existing driver app was a primary churn factor for new rental drivers.
+                  Conducted contextual inquiry and in-situ diary studies with rental drivers across São Paulo. Found that the app’s multi-step task flows imposed high cognitive load — measured via NASA-TLX and task completion analysis — and was a primary churn driver for new rental drivers in the first 30 days.
                 </p>
               </div>
 
@@ -109,7 +109,7 @@ export default function UberProjectSection() {
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
-                  The implemented driver app redesign successfully reduced cognitive load metrics and resulted in a <span className="text-green-400 font-bold">5% lift in driver retention</span> for the rental segment in the LATAM region.
+                  The redesigned driver app reduced NASA-TLX workload subscale scores and produced a <span className="text-green-400 font-bold">5% lift in driver retention</span> for the rental segment in the LATAM region within the first post-launch quarter.
                 </p>
               </div>
 

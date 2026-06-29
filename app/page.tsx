@@ -11,7 +11,7 @@ export default function Home() {
           </h1>
 
           <div className="font-medium text-zinc-300 text-center px-2 text-[clamp(0.875rem,3vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[85vw] sm:max-w-md md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed text-balance">
-            Translating cognitive science into monetizable product strategy
+            Connecting perceptual science to engineering targets and product decisions
           </div>
 
           <a
@@ -31,7 +31,7 @@ export default function Home() {
         <p>
           Staff Human Factors Researcher and PhD specializing in Human-AI Interaction, psychophysics,
           cognitive load assessment, and neuroimaging (fNIRS). Portfolio highlights include human factors
-          research at Amazon (Alexa latency thresholds, $50M+ revenue projection), Sling TV (HF standards
+          research at Amazon (Alexa latency thresholds, $50M in operational value), Sling TV (HF standards
           for AI systems and hardware), Uber, NASA, and Mercedes-Benz HMI research.
         </p>
       </section>

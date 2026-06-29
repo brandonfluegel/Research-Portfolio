@@ -32,7 +32,7 @@ const PAIRS = [
     pitfallDesc: "Doing the wrong task quickly and confidently. The agent misreads the request and charges ahead, wasting effort and delivering results nobody asked for.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's <strong>Transparency of Intent</strong> principle with Google PAIR's <strong>Data and Model Alignment</strong> principle. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
+    scientificFoundation: <>Merges the framework’s <strong>Transparency of Intent</strong> principle with Google PAIR’s <strong>Data and Model Alignment</strong> principle. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
     questions: [
       "Does the agent summarize its understanding of the goal before starting?",
       "Can the user see what goal or rule the agent is actually following?",
@@ -49,7 +49,7 @@ const PAIRS = [
     pitfallDesc: "Hiding complex multistep execution behind a generic loading spinner. Users cannot verify progress or intervene if the system goes off track.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Combines Fluegel's <strong>Mutual Predictability</strong> principle with Dibia's <strong>Observability and Provenance</strong> principle. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
+    scientificFoundation: <>Combines the framework’s <strong>Mutual Predictability</strong> principle with Dibia’s <strong>Observability and Provenance</strong> principle. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
     questions: [
       "Can the user see the agent's work and reasoning as it happens?",
       "Does the agent cite the provenance of its data or tools as it works?",
@@ -83,7 +83,7 @@ const PAIRS = [
     pitfallDesc: "Locking the user out of the loop once a process begins. The user is forced to watch a mistake unfold or abort the entire session.",
     severity: "High Risk",
     severityLevel: "high",
-    scientificFoundation: <>Synthesizes Fluegel's <strong>Directability</strong> principle, Dibia's <strong>Interruptibility</strong> principle, and Google PAIR's <strong>User Autonomy</strong> principle. True partnership requires shared initiative and seamless mid-flight corrections.</>,
+    scientificFoundation: <>Synthesizes the framework’s <strong>Directability</strong> principle, Dibia’s <strong>Interruptibility</strong> principle, and Google PAIR’s <strong>User Autonomy</strong> principle. True partnership requires shared initiative and seamless mid-flight corrections.</>,
     questions: [
       "Can the user safely pause the agent mid-generation or mid-execution?",
       "Can the user add new information or change direction without starting over?",
@@ -100,7 +100,7 @@ const PAIRS = [
     pitfallDesc: "Presenting guesses, hallucinations, or risky actions with total confidence, leading users to blindly accept outputs that may be wrong. Without a visible track record, users have no way to judge when to trust the agent and when to double-check.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Merges Fluegel's <strong>Calibrated Trust</strong> principle with Google PAIR's <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR's evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust. PAIR's <strong>Adapt with Feedback</strong> principle extends naturally here: as trust deepens, the agent should learn <em>how</em> the user wants results, not just <em>what</em> to do.</>,
+    scientificFoundation: <>Merges the framework’s <strong>Calibrated Trust</strong> principle with Google PAIR’s <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR’s evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust. PAIR’s <strong>Adapt with Feedback</strong> principle extends naturally here: as trust deepens, the agent should learn <em>how</em> the user wants results, not just <em>what</em> to do.</>,
     questions: [
       "Are uncertain conclusions visually distinct from verified facts?",
       "Does the agent provide immediate receipts or links for its claims?",
