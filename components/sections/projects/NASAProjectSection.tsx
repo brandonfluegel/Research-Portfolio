@@ -106,13 +106,13 @@ export default function NASAProjectSection() {
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Validation: Lunar Gateway</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                Executed human factors validation studies for the Lunar Gateway medical workstation in a simulated microgravity environment. Testing surfaced physical and cognitive failure modes including reach envelope violations, attention overload during timed procedures, and display legibility limits under restricted head mobility.
+                Executed human factors validation studies for the Lunar Gateway medical workstation in a simulated microgravity environment, ahead of hardware specification lock. Testing surfaced physical and cognitive failure modes — including reach envelope violations, attention overload during timed procedures, and display legibility limits under restricted head mobility — before designs were committed to flight hardware.
               </p>
             </div>
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Operational Impact</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                The redesigned interface and physical layout produced a <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures compared to the baseline hardware configuration — with a corresponding reduction in critical error rate across procedural steps.
+                The redesigned interface and physical layout produced a <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.
               </p>
             </div>
           </motion.div>

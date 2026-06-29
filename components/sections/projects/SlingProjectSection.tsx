@@ -381,7 +381,7 @@ export default function SlingProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Reporting directly to the VP of Product, I lead human factors strategy across all core software, hardware, and generative AI systems — establishing org-wide standards where human perception drives engineering decisions.
+                As the first dedicated Human Factors Researcher at Sling, I report directly to the VP of Product and lead human factors strategy across all core software, hardware, and generative AI systems — building the function from the ground up and establishing org-wide standards where human perception drives engineering decisions.
               </p>
             </div>
 
@@ -393,7 +393,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Architected a proprietary quantitative framework (SXI) that merged behavioral telemetry with user-perceived friction, transitioning leadership to a <span className="text-green-400 font-bold">proactive prioritization model now used for all VP+ product reviews.</span>
+                  Architected a proprietary quantitative framework (SXI) that merged behavioral telemetry with user-perceived friction, transitioning leadership to a <span className="text-green-400 font-bold">proactive prioritization model now used for all VP+ product reviews</span> — directly shaping roadmap decisions for features used by millions of subscribers.
                 </p>
               </div>
 

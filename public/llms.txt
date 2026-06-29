@@ -11,19 +11,19 @@ Brandon Fluegel is a Staff Human Factors Researcher and PhD with research impact
 Case Studies:
 
 Amazon (Devices Design Group) — Human Factors & Business Strategy:
-Brandon led a multi-year human factors research program calibrating Alexa voice response latency to human perceptual thresholds. Using a custom Wizard of Oz latency engine across 20,000+ controlled interactions, he identified the 900ms "High Satisfaction Threshold." Integrating findings into the Negative Value Action (NVA) model projected $50M+ in incremental revenue over 15 months. Also conducted neuroimaging (fNIRS) to benchmark FireTV UI cognitive load against Apple TV and Netflix, and led Human Factors strategy for the Echo Show portfolio (75M+ customers). 2023 Amazon Inventor Award recipient.
+Brandon led a multi-year human factors research program calibrating Alexa voice response latency to human perceptual thresholds. Using a custom Wizard of Oz latency engine across 20,000+ controlled interactions, he identified the 1,000ms "High Satisfaction Threshold" — the point at which >70% of users rate a response as "not slow." Integrating these perceptual thresholds into the Negative Value Action (NVA) model, Alexa Economics independently projected $50M+ in incremental operational value over 15 months. Also conducted neuroimaging (fNIRS) to benchmark FireTV UI cognitive load against Apple TV and Netflix, and led Human Factors strategy for the Echo Show and Echo Hub portfolios (75M+ active customers). 2023 Amazon Inventor Award recipient and holder of US Patent 12,532,040 B1.
 
 Sling TV — Staff Human Factors Researcher:
-Leads human factors strategy across software, hardware, and generative AI systems reporting to the VP of Product. Established org-wide HF standards for system latency, visual UI design, and response quality for conversational AI. Led hardware fit and comfort research using anthropometric and engineering requirements. Architected the Sling Experience Index (SXI), a proprietary quantitative framework merging behavioral telemetry with user-perceived friction, now the baseline for all VP+ product experience reviews. Defined multi-turn interaction model and Trust & System Status framework for a conversational TV assistant.
+As the first dedicated Human Factors Researcher at Sling, built and leads human factors strategy across software, hardware, and generative AI systems, reporting directly to the VP of Product. Established org-wide HF standards for system latency, visual UI design, and conversational AI response quality — grounding engineering targets in human perceptual thresholds rather than arbitrary benchmarks. Led hardware fit and comfort research using anthropometric data. Architected the Sling Experience Index (SXI), a proprietary quantitative framework merging behavioral telemetry with user-perceived friction, now the baseline for all VP+ product experience reviews and a direct driver of roadmap prioritization for features serving millions of subscribers. Defined the multi-turn interaction model and Trust & System Status framework for a conversational TV assistant.
 
-Uber — UX Research:
-Research-led product improvements addressing cognitive load and retention across the Uber driver and rider experience.
+Uber — UX Research (Driver Growth & Global Strategy):
+Conducted contextual inquiry and in-situ diary studies with rental drivers in São Paulo to surface friction unique to the LATAM market. Identified that multi-step task flows were a primary churn driver in the critical first 30 days of driver onboarding — measured via NASA-TLX and task completion analysis. Findings directly informed a driver app redesign that reduced cognitive load and produced a 5% lift in rental driver retention in the LATAM region within the first post-launch quarter.
 
-NASA — Human Factors:
-Mission-critical human factors validation for high-stakes system performance and operator safety in aerospace environments.
+NASA — Human Factors Research Lead:
+Led human factors validation for next-generation medical workstations on the Lunar Gateway in a simulated microgravity environment. Surfaced critical physical and cognitive failure modes — including reach envelope violations, attention overload, and display legibility limits — before hardware specifications were finalized. The redesigned interface and physical layout produced a 30% reduction in time-on-task for complex medical procedures versus baseline, with a corresponding reduction in critical error rate.
 
-Mercedes-Benz — HMI Human Factors Research:
-Human-machine interface (HMI) research improving driver trust, cognitive ergonomics, and system transparency in advanced automotive AI systems.
+Mercedes-Benz — HMI Human Factors Research (Automotive UX & HMI):
+Conducted foundational research on passenger experiences in L2 semi-autonomous vehicles to guide HMI improvements. Defined Alert Modality standards for autonomous handovers and built a psychoacoustic model correlating acoustic sensor data with perceived cabin noise — reducing perceived noise by 15%. Across a structured pre/post comparative study, the implemented HMI improvements produced a 24% increase in user trust scores during automated lane changes and handoffs.
 
 Core query topics:
 - Human Factors Research

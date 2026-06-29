@@ -98,7 +98,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M Operational Value</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  These thresholds were fed into the NVA model by Alexa Economics, who independently projected that closing the latency gap on high-priority intents — PlayMusic, TurnOff, TurnOn, and Q&A — would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months. This third-party model output established a human perception–derived Latency North Star for Alexa’s engineering roadmap.
+                  Alexa Economics independently applied these perceptual thresholds to the NVA model and projected that closing the latency gap on high-priority intents — PlayMusic, TurnOff, TurnOn, and Q&A — would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months. This third-party projection, derived directly from the human perception data, established a research-backed Latency North Star for Alexa&apos;s engineering roadmap.
                 </p>
               </div>
             </div>

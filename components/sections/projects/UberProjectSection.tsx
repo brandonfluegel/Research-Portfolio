@@ -88,7 +88,7 @@ export default function UberProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Conducted contextual inquiry and diary studies with rental drivers in São Paulo to surface friction unique to the LATAM market. Findings directly informed the driver app redesign, reducing task complexity and improving new-driver retention.
+                Conducted contextual inquiry and diary studies with rental drivers in São Paulo to surface friction unique to the LATAM market. Findings directly informed the driver app redesign, reducing task complexity and improving new-driver retention in the critical first 30 days of onboarding.
               </p>
             </div>
 
