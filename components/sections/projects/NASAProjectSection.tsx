@@ -28,13 +28,19 @@ export default function NASAProjectSection() {
           />
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
-            <h2 className="text-lg text-white font-medium tracking-tight">Human Factors Research</h2>
+            <div className="flex items-center gap-2.5 mb-0.5">
+              <h2 className="text-lg text-white font-medium tracking-tight">Human Factors Research</h2>
+              <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
+            </div>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
           </div>
         </div>
         
         <div className="md:hidden">
-          <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
+          <div className="flex items-center gap-2">
+            <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
+            <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
+          </div>
         </div>
       </motion.div>
 
@@ -57,16 +63,6 @@ export default function NASAProjectSection() {
             <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Reducing Astronaut <br/> <span className="text-zinc-500">Cognitive Load</span>
             </h3>
-
-            {/* --- MOBILE ONLY: KEY METRIC --- */}
-            <div className="block md:hidden mb-6 mx-auto max-w-xs p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
-               <div className="flex items-center justify-center gap-2 mb-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Operational Impact</span>
-               </div>
-               <div className="text-3xl font-bold text-green-400">30%</div>
-               <p className="text-xs text-zinc-400 mt-1">Reduction in time-on-task vs. the baseline hardware configuration.</p>
-            </div>
 
             <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light max-w-2xl mx-auto">
               Led Human Factors validation for next-gen medical workstations on the Lunar Gateway, identifying and eliminating critical operator error modes under simulated microgravity conditions.
@@ -92,10 +88,6 @@ export default function NASAProjectSection() {
                   <div className="text-[10px] font-mono text-blue-400 uppercase tracking-widest mb-1">Lunar Gateway</div>
                   <div className="text-sm text-zinc-300 max-w-xs leading-relaxed">Medical workstation validated under simulated microgravity constraints</div>
                 </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-green-400">30%</div>
-                  <div className="text-xs text-zinc-400">Reduction in Time-on-Task</div>
-                </div>
               </div>
             </div>
             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">VR Simulation: Medical Workstation</p>
@@ -112,7 +104,7 @@ export default function NASAProjectSection() {
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Operational Impact</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                The redesigned interface and physical layout produced a <span className="text-green-400 font-bold">30% reduction in time-on-task</span> for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.
+                The redesigned interface and physical layout produced a measurable reduction in time-on-task for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.
               </p>
             </div>
           </motion.div>

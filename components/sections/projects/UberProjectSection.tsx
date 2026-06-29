@@ -28,13 +28,19 @@ export default function UberProjectSection() {
           />
           <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
-            <h2 className="text-lg text-white font-medium tracking-tight">Driver Growth & Global Strategy</h2>
+            <div className="flex items-center gap-2.5 mb-0.5">
+              <h2 className="text-lg text-white font-medium tracking-tight">Driver Growth & Global Strategy</h2>
+              <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
+            </div>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
           </div>
         </div>
         
         <div className="md:hidden">
-         <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
+          <div className="flex items-center gap-2">
+            <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
+            <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
+          </div>
         </div>
       </motion.div>
 
@@ -76,17 +82,6 @@ export default function UberProjectSection() {
                 Driver Retention Strategy <br/> <span className="text-zinc-500">in Brazil</span>
               </h3>
 
-              {/* --- MOBILE ONLY: KEY METRIC --- */}
-              <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
-                 <div className="flex items-center gap-2 mb-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Business Impact</span>
-                 </div>
-                 <div className="text-3xl font-bold text-green-400">5% Lift</div>
-                 <p className="text-xs text-zinc-400 mt-1">Increase in rental driver retention via app redesign.</p>
-              </div>
-              {/* ------------------------------------------------ */}
-
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                 Conducted contextual inquiry and diary studies with rental drivers in São Paulo to surface friction unique to the LATAM market. Findings directly informed the driver app redesign, reducing task complexity and improving new-driver retention in the critical first 30 days of onboarding.
               </p>
@@ -109,7 +104,7 @@ export default function UberProjectSection() {
                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
-                  The redesigned driver app reduced NASA-TLX workload subscale scores and produced a <span className="text-green-400 font-bold">5% lift in driver retention</span> for the rental segment in the LATAM region within the first post-launch quarter.
+                  The redesigned driver app reduced NASA-TLX workload subscale scores and produced a measurable lift in driver retention for the rental segment in the LATAM region within the first post-launch quarter.
                 </p>
               </div>
 
