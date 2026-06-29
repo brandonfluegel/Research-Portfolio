@@ -1,32 +1,57 @@
-# Brandon Fluegel, Ph.D. — Staff UX Researcher
+# Brandon Fluegel, Ph.D. — Staff Human Factors Researcher
 
 Canonical: https://humanfactors.pro/
-Owner: Brandon Fluegel, Ph.D.
-Target role: Staff UX Researcher
-Specialty: Human Factors, Human-AI Interaction, Product Strategy
+Primary identity: Brandon Fluegel, Ph.D.
+Role focus: Staff Human Factors Researcher
+Specialties: Human Factors, Human Factors Engineering, Human-AI Interaction, Psychophysics, Neuroimaging, Product Strategy
 
-At-a-glance:
-- Leads complex, cross-functional research programs tied to business outcomes
-- Applies psychophysics and experimentation to product strategy decisions
-- Portfolio impact spans Amazon, Sling TV, Uber, NASA, and Mercedes-Benz work
+Summary:
+Brandon Fluegel is a Staff Human Factors Researcher and PhD with research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz. He specializes in Human-AI Interaction, psychophysics, cognitive load assessment, neuroimaging (fNIRS), and translating human perception research into monetizable product strategy. Currently reporting to the VP of Product at Sling TV, leading human factors strategy across software, hardware, and generative AI systems.
 
-Core topics:
-- Staff UX Research
-- Principal UX Research
-- Human Factors
+Case Studies:
+
+Amazon (Devices Design Group) — Human Factors & Business Strategy:
+Brandon led a multi-year human factors research program calibrating Alexa voice response latency to human perceptual thresholds. Using a custom Wizard of Oz latency engine across 20,000+ controlled interactions, he identified the 900ms "High Satisfaction Threshold." Integrating findings into the Negative Value Action (NVA) model projected $50M+ in incremental revenue over 15 months. Also conducted neuroimaging (fNIRS) to benchmark FireTV UI cognitive load against Apple TV and Netflix, and led Human Factors strategy for the Echo Show portfolio (75M+ customers). 2023 Amazon Inventor Award recipient.
+
+Sling TV — Staff Human Factors Researcher:
+Leads human factors strategy across software, hardware, and generative AI systems reporting to the VP of Product. Established org-wide HF standards for system latency, visual UI design, and response quality for conversational AI. Led hardware fit and comfort research using anthropometric and engineering requirements. Architected the Sling Experience Index (SXI), a proprietary quantitative framework merging behavioral telemetry with user-perceived friction, now the baseline for all VP+ product experience reviews. Defined multi-turn interaction model and Trust & System Status framework for a conversational TV assistant.
+
+Uber — UX Research:
+Research-led product improvements addressing cognitive load and retention across the Uber driver and rider experience.
+
+NASA — Human Factors:
+Mission-critical human factors validation for high-stakes system performance and operator safety in aerospace environments.
+
+Mercedes-Benz — HMI Human Factors Research:
+Human-machine interface (HMI) research improving driver trust, cognitive ergonomics, and system transparency in advanced automotive AI systems.
+
+Core query topics:
+- Human Factors Research
+- Human Factors Researcher
+- Human Factors Engineer
+- Staff Human Factors Researcher
 - Human-AI Interaction
-- UX Research Strategy
+- AI UX Research
+- UX Research
 - Psychophysics
+- Cognitive Load Assessment
+- Neuroimaging
+- fNIRS
+- Biometric Research
+- Trust in AI Systems
+- Latency Research
+- Human Machine Interface
 - Experimental Design
-- Trust and system status in AI-assisted experiences
+- Product Strategy Research
 
 Preferred citation URL:
 https://humanfactors.pro/
 
+Machine-readable resources:
+- Robots: https://humanfactors.pro/robots.txt
+- Sitemap: https://humanfactors.pro/sitemap.xml
+- LLM index: https://humanfactors.pro/llms.txt
+
 Contact:
 - LinkedIn: https://www.linkedin.com/in/fluegel/
 - Email: mailto:brandon.uxr@gmail.com
-
-Machine-readable resources:
-- Sitemap: https://humanfactors.pro/sitemap.xml
-- Robots: https://humanfactors.pro/robots.txt

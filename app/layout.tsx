@@ -16,38 +16,38 @@ const profileSearchImage = "/assets/profile-search.jpg";
 const caseStudies = [
   {
     id: "amazon",
-    name: "Amazon UX Research Case Study",
+    name: "Amazon Alexa Latency & Human Factors Research Case Study",
     organization: "Amazon",
     url: `${siteUrl}/#amazon-section`,
-    description: "Human factors research informing monetization and product strategy decisions.",
+    description: "Human factors research calibrating Alexa latency thresholds to human perception, projecting $50M+ incremental revenue through the Negative Value Action model.",
   },
   {
     id: "sling",
-    name: "Sling TV UX Research Case Study",
+    name: "Sling TV Human Factors & AI Systems Research Case Study",
     organization: "Sling TV",
     url: `${siteUrl}/#sling-section`,
-    description: "Product research strategy focused on engagement, conversion, and decision quality.",
+    description: "Staff Human Factors Researcher establishing org-wide HF standards for latency, visual UI design, and conversational AI response quality, alongside the Sling Experience Index (SXI) framework.",
   },
   {
     id: "uber",
     name: "Uber UX Research Case Study",
     organization: "Uber",
     url: `${siteUrl}/#uber-section`,
-    description: "Research-led product improvements addressing cognitive load and retention.",
+    description: "Research-led product improvements addressing cognitive load and retention across the Uber driver and rider experience.",
   },
   {
     id: "nasa",
-    name: "NASA Human Factors Case Study",
+    name: "NASA Human Factors Research Case Study",
     organization: "NASA",
     url: `${siteUrl}/#nasa-section`,
-    description: "Mission-critical human factors validation for high-stakes system performance.",
+    description: "Mission-critical human factors validation for high-stakes system performance and operator safety in aerospace environments.",
   },
   {
     id: "mercedes",
-    name: "Mercedes-Benz HMI Research Case Study",
+    name: "Mercedes-Benz HMI Human Factors Research Case Study",
     organization: "Mercedes-Benz",
     url: `${siteUrl}/#mercedes-section`,
-    description: "Human-machine interface research improving trust and cognitive ergonomics.",
+    description: "Human-machine interface (HMI) research improving driver trust, cognitive ergonomics, and system transparency in advanced automotive AI systems.",
   },
 ];
 
@@ -65,15 +65,15 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
   title: {
-    default: "Brandon Fluegel, Ph.D.",
+    default: "Brandon Fluegel, Ph.D. | Staff Human Factors Researcher",
     template: "%s | Brandon Fluegel, Ph.D."
   },
-  description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",
-  keywords: ["Brandon Fluegel", "Staff UX Researcher", "Human Factors", "UX Researcher", "Human Factors UX Researcher", "AI UX Research", "Psychophysics", "Experimental Design", "Amazon", "Sling TV", "Uber", "NASA", "Product Research", "Conversion", "Human-AI Interaction", "Product Strategy"],
+  description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
+  keywords: ["Brandon Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "UX Researcher", "Human Factors", "Human-AI Interaction", "AI UX Research", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "Sling TV", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
   publisher: "Brandon Fluegel",
-  category: "Technology",
+  category: "Human Factors Research",
   alternates: {
     canonical: "/",
   },
@@ -90,8 +90,8 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",
+    title: "Brandon Fluegel, Ph.D. | Staff Human Factors Researcher",
+    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -107,8 +107,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D.",
-    description: "Staff UX Researcher specializing in Human Factors, Human-AI Interaction, and Product Strategy.",
+    title: "Brandon Fluegel, Ph.D. | Staff Human Factors Researcher",
+    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
     images: [profileSearchImage],
   },
 };
@@ -133,8 +133,8 @@ const structuredData = {
       image: {
         "@id": `${siteUrl}#profile-image`,
       },
-      jobTitle: "Staff UX Researcher",
-      description: "Staff UX Researcher in Human Factors and AI with impact across Amazon, Sling TV, Uber, and NASA in monetization, engagement, and cognitive load.",
+      jobTitle: "Staff Human Factors Researcher",
+      description: "Staff Human Factors Researcher and PhD with impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz — specializing in Human-AI Interaction, psychophysics, neuroimaging (fNIRS), cognitive load assessment, and research-driven product strategy.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -143,11 +143,20 @@ const structuredData = {
       knowsLanguage: ["English"],
       knowsAbout: [
         "Human Factors",
+        "Human Factors Engineering",
         "Human-AI Interaction",
         "UX Research",
         "Product Strategy",
         "Psychophysics",
         "Experimental Design",
+        "Cognitive Load Assessment",
+        "Neuroimaging",
+        "fNIRS",
+        "Biometric Research",
+        "Trust in AI Systems",
+        "Latency Research",
+        "Human Machine Interface",
+        "Quantitative UX Research",
       ],
       worksFor: {
         "@type": "Organization",
@@ -160,17 +169,24 @@ const structuredData = {
     {
       "@type": "Occupation",
       "@id": `${siteUrl}#occupation`,
-      name: "Staff UX Researcher",
+      name: "Staff Human Factors Researcher",
       occupationLocation: {
         "@type": "Country",
         name: "United States",
       },
       skills: [
         "Human Factors",
+        "Human Factors Engineering",
         "Human-AI Interaction",
         "UX Research",
-        "Product Research",
         "Experimental Design",
+        "Psychophysics",
+        "Cognitive Load Assessment",
+        "Neuroimaging (fNIRS)",
+        "Biometric Research",
+        "Trust in AI Systems",
+        "Quantitative Research",
+        "Product Strategy",
       ],
       mainEntityOfPage: {
         "@id": `${siteUrl}#website`,

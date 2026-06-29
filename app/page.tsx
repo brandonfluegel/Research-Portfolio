@@ -27,11 +27,12 @@ export default function Home() {
       </section>
 
       <section aria-label="SEO Summary" className="sr-only">
-        <h2>Brandon Fluegel, Ph.D. — Staff UX Researcher in Human Factors and AI</h2>
+        <h2>Brandon Fluegel, Ph.D. — Staff Human Factors Researcher</h2>
         <p>
-          Staff-level UX researcher specializing in Human Factors, Human-AI interaction, and product strategy.
-          Portfolio highlights include research impact across Amazon, Sling TV, Uber, NASA, and Mercedes-Benz,
-          with outcomes spanning monetization, engagement, and cognitive load reduction.
+          Staff Human Factors Researcher and PhD specializing in Human-AI Interaction, psychophysics,
+          cognitive load assessment, and neuroimaging (fNIRS). Portfolio highlights include human factors
+          research at Amazon (Alexa latency thresholds, $50M+ revenue projection), Sling TV (HF standards
+          for AI systems and hardware), Uber, NASA, and Mercedes-Benz HMI research.
         </p>
       </section>
 
