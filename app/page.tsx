@@ -14,8 +14,8 @@ export default function Home() {
             Connecting perceptual science to engineering targets and product decisions
           </div>
 
-          {/* CREDENTIAL STRIP — single line, low visual weight */}
-          <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-[10px] md:text-[11px] font-mono uppercase tracking-widest">
+          {/* CREDENTIAL STRIP — desktop only */}
+          <div className="hidden md:flex mt-8 md:mt-10 flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-[10px] md:text-[11px] font-mono uppercase tracking-widest">
             <span className="text-white font-semibold">$50M</span>
             <span className="text-zinc-500">Projected Impact</span>
             <span className="text-white/20 px-1">·</span>
