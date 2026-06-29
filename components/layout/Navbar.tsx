@@ -85,7 +85,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           </Link>
         </div>
 
-        {/* HAMBURGER BUTTON */
+        {/* HAMBURGER BUTTON */}
         <button
           className="flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
