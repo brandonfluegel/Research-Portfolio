@@ -18,7 +18,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-x-8 sm:gap-x-12 md:gap-x-16 mt-10 sm:mt-12 md:mt-14">
             {[
               { value: "$50M", label: "Projected Impact" },
-              { value: "Named Inventor", label: "US Patent · Amazon" },
+              { value: "US Patent", label: "Named Inventor" },
               { value: "5", label: "Tier-1 Companies" },
             ].map((stat, i, arr) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-12 md:gap-16">
