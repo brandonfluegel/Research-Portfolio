@@ -131,7 +131,7 @@ export default function HomeClientSections() {
 
       <TrustNav activeSection={activeSection} />
 
-      <section className="content-shell section-stack mt-32 md:mt-40">
+      <section className="content-shell section-stack mt-16 md:mt-20">
         <DeferredSection
           id="amazon-section"
           rootMargin="320px 0px"

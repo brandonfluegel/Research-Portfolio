@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[50svh] sm:min-h-[52svh] md:min-h-[55svh] lg:min-h-[58svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-10 md:pb-12 px-4">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[50svh] sm:min-h-[52svh] md:min-h-[55svh] lg:min-h-[58svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-6 md:pb-8 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(1.75rem,6vw,2.25rem)] sm:text-[clamp(2rem,5vw,2.75rem)] md:text-[clamp(2.5rem,4.5vw,4rem)] lg:text-[clamp(3rem,4vw,4.5rem)] text-white text-balance">
             Human Factors PhD
@@ -14,15 +14,14 @@ export default function Home() {
             Connecting perceptual science to engineering targets and product decisions
           </div>
 
-          {/* STAT BAR — gives recruiters a reason to scroll within the first viewport */}
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 sm:gap-x-10 md:gap-x-14 mt-10 sm:mt-12 md:mt-14">
+          {/* STAT BAR */}
+          <div className="flex items-center justify-center gap-x-8 sm:gap-x-12 md:gap-x-16 mt-10 sm:mt-12 md:mt-14">
             {[
               { value: "$50M", label: "Projected Impact" },
-              { value: "75M+", label: "Customers Reached" },
-              { value: "US Patent", label: "Amazon Inventor" },
+              { value: "Named Inventor", label: "US Patent · Amazon" },
               { value: "5", label: "Tier-1 Companies" },
             ].map((stat, i, arr) => (
-              <div key={stat.label} className="flex items-center gap-6 sm:gap-10 md:gap-14">
+              <div key={stat.label} className="flex items-center gap-8 sm:gap-12 md:gap-16">
                 <div className="text-center">
                   <div className="text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight">{stat.value}</div>
                   <div className="text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase tracking-widest mt-0.5">{stat.label}</div>
@@ -32,19 +31,6 @@ export default function Home() {
                 )}
               </div>
             ))}
-          </div>
-
-          <div className="mt-10 sm:mt-12 md:mt-14 lg:mt-16 flex flex-col items-center gap-2">
-            <a
-              href="#amazon-section"
-              className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm text-white/90 animate-bounce"
-              aria-label="Scroll to projects"
-            >
-              <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7" aria-hidden="true">
-                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-            <span className="text-[9px] font-mono text-zinc-600 uppercase tracking-widest">View Work</span>
           </div>
         </div>
       </section>

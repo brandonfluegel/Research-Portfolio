@@ -12,7 +12,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
 
   return (
     <nav 
-      className="w-full max-w-6xl mx-auto mb-12 md:mb-24 mt-2 md:mt-4"
+      className="w-full max-w-6xl mx-auto mb-8 md:mb-16 mt-0"
     >
       <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6 md:mb-8"></div>
 
