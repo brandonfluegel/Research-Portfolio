@@ -29,7 +29,7 @@ export default function AmazonProjectSection() {
           <div className="h-8 w-[1px] bg-white/10"></div>
           <div>
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">UX Researcher</p>
+            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors Researcher</p>
           </div>
         </div>
       </motion.div>
@@ -279,7 +279,7 @@ export default function AmazonProjectSection() {
                   Biometric UI Benchmarking <br/> <span className="text-zinc-500"></span>
                 </h3>
                 <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                  Replaced subjective UI decisions with neuroscience-backed cognitive cost data across the FireTV and Echo Show portfolios.
+                  As the sole Human Factors Researcher in the Devices Design Group, co-established Amazon&apos;s first objective framework for measuring cognitive load in complex UIs — replacing subjective decisions with neuroscience-backed data across the FireTV, Echo Show, and Echo Hub portfolios.
                 </p>
               </div>
 
@@ -295,9 +295,9 @@ export default function AmazonProjectSection() {
 
                 <div className="relative">
                   <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show: Human Factors Leadership</h4>
+                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show & Echo Hub: Human Factors Leadership</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
-                    Led Human Factors strategy for the Echo Show portfolio — a product line with 75M+ active customers — driving 50+ design iterations grounded in cognitive load data, with measurable gains in content discovery and task completion rates.
+                    Led Human Factors strategy for the Echo Show and Echo Hub portfolios — product lines spanning 75M+ active customers — directly shaping hardware product strategy through neuroimaging-based cognitive load data, with measurable gains in content discovery and task completion rates.
                   </p>
                 </div>
               </div>
