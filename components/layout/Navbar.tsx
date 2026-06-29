@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import useScrollMetrics from "@/hooks/useScrollMetrics";
 import { scrollToSectionId, scrollToTopSmooth } from "@/lib/utils/scroll";
 import { NAV_SECTIONS } from "@/lib/constants/sections";
@@ -101,7 +101,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
       {/* FULL SCREEN MENU OVERLAY */}
       <AnimatePresence onExitComplete={handleExitComplete}>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -125,7 +125,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

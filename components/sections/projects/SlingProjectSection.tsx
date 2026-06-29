@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useSyncExternalStore } from 'react';
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 import {
@@ -326,7 +326,7 @@ export default function SlingProjectSection() {
       <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <motion.div 
+      <m.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -348,12 +348,12 @@ export default function SlingProjectSection() {
         <div className="md:hidden">
           <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Staff Human Factors Researcher</p>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
         
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -361,7 +361,7 @@ export default function SlingProjectSection() {
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: NARRATIVE */}
-          <motion.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
+          <m.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
               </div>
@@ -425,16 +425,16 @@ export default function SlingProjectSection() {
               </div>
 
             </div>
-          </motion.div>
+          </m.div>
 
           {/* RIGHT: DATA VISUALIZATION - SXI IMPACT */}
-          <motion.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
+          <m.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
             <div className="relative w-full max-w-2xl mx-auto">
                <SXIProjectMatrix />
             </div>
-          </motion.div>
+          </m.div>
 
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

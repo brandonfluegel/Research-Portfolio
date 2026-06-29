@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/image";
 import LogoBadge from "@/components/ui/LogoBadge";
 import { fadeInUp, staggerContainer } from "@/lib/utils/animationVariants";
@@ -14,7 +14,7 @@ export default function NASAProjectSection() {
       <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <motion.div 
+      <m.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -42,12 +42,12 @@ export default function NASAProjectSection() {
             <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
           </div>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* 2. MAIN CONTENT — FULL-WIDTH IMMERSIVE LAYOUT */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 space-y-12 md:space-y-16">
 
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -55,7 +55,7 @@ export default function NASAProjectSection() {
           className="flex flex-col items-center"
         >
           {/* CENTERED NARRATIVE */}
-          <motion.div variants={fadeInUp} className="max-w-3xl text-center mb-8 md:mb-16 px-2">
+          <m.div variants={fadeInUp} className="max-w-3xl text-center mb-8 md:mb-16 px-2">
             <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
               <span className="w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
               <span className="text-[10px] md:text-xs font-mono text-blue-500 uppercase tracking-widest">Space Systems & Cognition</span>
@@ -67,16 +67,17 @@ export default function NASAProjectSection() {
             <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light max-w-2xl mx-auto">
               Led Human Factors validation for next-gen medical workstations on the Lunar Gateway, identifying and eliminating critical operator error modes under simulated microgravity conditions.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* FULL-WIDTH IMMERSIVE MEDIA */}
-          <motion.div variants={fadeInUp} className="w-full">
+          <m.div variants={fadeInUp} className="w-full">
             <div className="relative w-full aspect-[16/9] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
               <Image
                 src="/assets/nasahab2.PNG"
                 alt="NASA Gateway Research"
                 fill
-                sizes="100vw"
+                quality={80}
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 1200px"
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
               />
               {/* Overlay gradient for depth */}
@@ -91,10 +92,10 @@ export default function NASAProjectSection() {
               </div>
             </div>
             <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">VR Simulation: Medical Workstation</p>
-          </motion.div>
+          </m.div>
 
           {/* PROCESS BLOCKS — TWO-COLUMN ON DESKTOP */}
-          <motion.div variants={fadeInUp} className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-16 max-w-4xl mx-auto">
+          <m.div variants={fadeInUp} className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-16 max-w-4xl mx-auto">
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Validation: Lunar Gateway</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
@@ -107,8 +108,8 @@ export default function NASAProjectSection() {
                 The redesigned interface and physical layout produced a measurable reduction in time-on-task for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.
               </p>
             </div>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
       </div>
     </section>
   );

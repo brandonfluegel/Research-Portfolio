@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useCallback, useRef } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const PAIRS = [
   {
@@ -188,7 +188,7 @@ export default function FrameworkSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         
         {/* Header */}
-        <motion.header 
+        <m.header 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -220,13 +220,13 @@ export default function FrameworkSection() {
               <span className="text-sm font-medium text-indigo-300/80 whitespace-nowrap">March '26</span>
             </div>
           </div>
-        </motion.header>
+        </m.header>
 
         {/* Interface */}
         <div className="flex flex-col lg:flex-row gap-5 xl:gap-7 items-start">
           
           {/* Sidebar */}
-          <motion.aside 
+          <m.aside 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -318,17 +318,17 @@ export default function FrameworkSection() {
                 </p>
               </div>
             </div>
-          </motion.aside>
+          </m.aside>
 
           {/* Main Content Area */}
-          <motion.main 
+          <m.main 
             ref={contentRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/10 overflow-hidden flex flex-col relative"
           >
-              <motion.div 
+              <m.div 
                 key={activeIdx}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -446,10 +446,10 @@ export default function FrameworkSection() {
                   </div>
                 </div>
 
-              </motion.div>
+              </m.div>
 
               {/* Scientific Foundation - full-width bar below columns */}
-              <motion.div
+              <m.div
                 key={`foundation-${activeIdx}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -467,8 +467,8 @@ export default function FrameworkSection() {
                     {activePair.scientificFoundation}
                   </p>
                 </div>
-              </motion.div>
-          </motion.main>
+              </m.div>
+          </m.main>
         </div>
 
         {/* Export Button */}

@@ -13,6 +13,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
   },

@@ -18,7 +18,7 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
 
       {/* MOBILE: Static tappable row */}
       <div className="flex md:hidden justify-between items-center px-2">
-        {TRUST_COMPANIES.map((company) => (
+        {TRUST_COMPANIES.map((company, index) => (
           <a
             key={company.name}
             href={`#${company.id}`}
@@ -34,6 +34,8 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
                 width={120}
                 height={60}
                 quality={85}
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
                 sizes="(max-width: 768px) 20vw, 120px"
                 className={`object-contain w-full h-full filter brightness-0 invert select-none transition-opacity duration-300 ${
@@ -51,40 +53,6 @@ export default function TrustNav({ activeSection = "" }: { activeSection?: strin
         ))}
       </div>
 
-      {/* DESKTOP: Static layout with active states */}
-      <div className="hidden md:flex justify-between items-center gap-x-12 px-6">
-        {TRUST_COMPANIES.map((company) => (
-          <a
-            key={company.name}
-            href={`#${company.id}`}
-            onClick={(e) => scrollToSection(e, company.id)}
-            className={`group relative flex flex-col items-center gap-2 transition-all duration-300 hover:scale-105 cursor-pointer ${
-              activeSection === company.id ? "scale-105" : ""
-            }`}
-          >
-            <div className={`relative ${company.sizing}`}>
-              <Image
-                src={company.logo}
-                alt={`${company.name} logo`}
-                width={200}
-                height={100}
-                quality={85}
-                decoding="async"
-                sizes="(max-width: 1024px) 120px, 200px"
-                className={`object-contain w-full h-full transition-opacity duration-300 filter brightness-0 invert select-none ${
-                  activeSection === company.id
-                    ? "opacity-100"
-                    : "opacity-50 group-hover:opacity-100"
-                }`}
-              />
-            </div>
-            {/* Active indicator dot */}
-            <div className={`w-1 h-1 rounded-full bg-white transition-opacity duration-300 ${
-              activeSection === company.id ? "opacity-100" : "opacity-0"
-            }`} />
-          </a>
-        ))}
-      </div>
     </nav>
   );
 }

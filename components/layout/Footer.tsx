@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 
@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center space-y-8">
         
         {/* Headline */}
-        <motion.h2 
+        <m.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -25,10 +25,10 @@ export default function Footer() {
         >
           Connecting perceptual science to engineering decisions <br />
           <span className="text-zinc-500">and measurable product outcomes.</span>
-        </motion.h2>
+        </m.h2>
 
         {/* Sub-text */}
-        <motion.p 
+        <m.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -36,10 +36,10 @@ export default function Footer() {
           className="text-zinc-400 text-lg max-w-2xl mx-auto"
         >
           Open to senior leadership roles in Human Factors research, AI systems, and product strategy.
-        </motion.p>
+        </m.p>
 
         {/* CTA Buttons */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -62,10 +62,10 @@ export default function Footer() {
             <Mail size={20} />
             Email Me
           </Link>
-        </motion.div>
+        </m.div>
 
         {/* Copyright */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -73,7 +73,7 @@ export default function Footer() {
           className="pt-16 text-zinc-600 text-sm"
         >
           © {new Date().getFullYear()} Brandon Fluegel, PhD. All Rights Reserved.
-        </motion.div>
+        </m.div>
       </div>
     </footer>
   );

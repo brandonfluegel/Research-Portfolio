@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import LogoBadge from "@/components/ui/LogoBadge";
 import LazyVideo from "@/components/ui/LazyVideo";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
@@ -14,7 +14,7 @@ export default function AmazonProjectSection() {
       <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <motion.div 
+      <m.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -32,13 +32,13 @@ export default function AmazonProjectSection() {
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors Researcher</p>
           </div>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
         
         {/* === CASE STUDY 1: REVENUE STRATEGY ($100M+) === */}
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -46,7 +46,7 @@ export default function AmazonProjectSection() {
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
         >
           {/* LEFT: NARRATIVE */}
-          <motion.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
+          <m.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
@@ -102,10 +102,10 @@ export default function AmazonProjectSection() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* RIGHT: DATA VISUALIZATION */}
-          <motion.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
+          <m.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
             {/* Aspect Ratio tweaked for mobile legibility */}
             <div className="relative w-full max-w-2xl mx-auto aspect-[16/11] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
   
@@ -150,7 +150,7 @@ export default function AmazonProjectSection() {
                   <line x1="33" y1="0" x2="33" y2="100" stroke="white" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
                   
                   {/* The Curve */}
-                  <motion.path
+                  <m.path
                     d="M0,15 C 15,15 25,18 33,45 C 45,90 70,95 100,98" 
                     fill="none"
                     stroke="url(#lineGradient)"
@@ -164,7 +164,7 @@ export default function AmazonProjectSection() {
                   />
                   
                   {/* The "Cliff" Marker Point */}
-                   <motion.circle 
+                   <m.circle 
                     cx="33" 
                     cy="45" 
                     r="8" 
@@ -175,7 +175,7 @@ export default function AmazonProjectSection() {
                     animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   />
-                  <motion.circle 
+                  <m.circle 
                     cx="33" 
                     cy="45" 
                     r="4" 
@@ -191,7 +191,7 @@ export default function AmazonProjectSection() {
                 {/* DATA LABELS - Optimized Sizes for Mobile */}
                 
                 {/* Threshold Badge */}
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: -10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1.6 }}
@@ -201,7 +201,7 @@ export default function AmazonProjectSection() {
                     1,000ms Threshold
                   </div>
                   <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">HST</div>
-                </motion.div>
+                </m.div>
 
                 {/* Safe Zone Label */}
                 <div className="absolute bottom-2 left-0 md:bottom-6 md:left-6">
@@ -236,11 +236,11 @@ export default function AmazonProjectSection() {
             <p className="mt-1 text-center text-[9px] font-mono text-zinc-700 tracking-wide">
               Source: Alexa Response Latency Research — Devices Design Group, UX Research, April 2021
             </p>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         {/* === CASE STUDY 2: NEUROIMAGING & HARDWARE === */}
-        <motion.div
+        <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -248,7 +248,7 @@ export default function AmazonProjectSection() {
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start pb-16 md:pb-24"
         >
            {/* LEFT: VIDEO */}
-           <motion.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
               <div className="relative w-full max-w-2xl mx-auto">
                 <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
                   <div className="absolute -inset-4 bg-purple-500/[0.06] blur-[60px] rounded-full pointer-events-none"></div>
@@ -266,10 +266,10 @@ export default function AmazonProjectSection() {
                   Fig 2. Measuring Cognitive Load via fNIRS
                 </p>
               </div>
-           </motion.div>
+           </m.div>
 
            {/* RIGHT: NARRATIVE */}
-           <motion.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
+           <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
               <div className="mb-8 md:mb-10">
                 <div className="flex items-center gap-2 mb-3 md:mb-4">
                   <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
@@ -320,8 +320,8 @@ export default function AmazonProjectSection() {
                   <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">US Patent 12,532,040 B1</span>
                 </div>
               </div>
-           </motion.div>
-        </motion.div>
+           </m.div>
+        </m.div>
 
       </div>
     </section>
