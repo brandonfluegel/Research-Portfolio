@@ -15,11 +15,11 @@ export default function Home() {
           </div>
 
           {/* CREDENTIAL STRIP — all breakpoints */}
-          <div className="flex mt-8 md:mt-10 lg:mt-12 items-start justify-center gap-x-0 sm:gap-x-3 lg:gap-x-4">
+          <div className="flex w-full sm:w-auto mt-8 md:mt-10 lg:mt-12 items-start justify-center gap-x-0 sm:gap-x-3 lg:gap-x-4">
             {/* Stat 1 */}
             <div className="flex flex-col items-center gap-1 flex-1 sm:flex-none sm:px-6 lg:px-8">
               <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">$50M</span>
-              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Projected Impact</span>
+              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Projected Impact</span>
             </div>
 
             <div className="w-px h-7 sm:h-8 bg-white/10 self-center" />
@@ -35,7 +35,7 @@ export default function Home() {
             {/* Stat 3 */}
             <div className="flex flex-col items-center gap-1 flex-1 sm:flex-none sm:px-6 lg:px-8">
               <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">5</span>
-              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Tier-1 Companies</span>
+              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Tier-1 Companies</span>
             </div>
           </div>
         </div>
