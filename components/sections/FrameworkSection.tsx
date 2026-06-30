@@ -8,18 +8,20 @@ const PAIRS = [
   {
     phase: 1,
     title: "Capability Discovery",
-    tagline: "Scope & Boundaries",
-    principle: "Define the Toolkit and Limits",
-    principleDesc: "Map what the agent can and cannot do before work begins. A trustworthy partner shares its capabilities upfront rather than forcing users to discover limits through trial and error.",
+    tagline: "Scope Before Start",
+    principle: "Share Limits Before Work Begins",
+    principleDesc: "A trustworthy agent shares its capabilities upfront rather than having users discover limits through trial and error [Amershi et al., 2019]. Surfacing tools, access rights, and hard boundaries before engagement aligns the user's mental model with system reality—preventing wasted effort and eroded confidence.",
     pitfall: "The Over-Promiser",
-    pitfallDesc: "Acting as a limitless oracle. The agent fails silently or hallucinates when asked to perform tasks outside its actual toolset.",
+    pitfallDesc: "Acting as a limitless oracle—then failing silently or hallucinating when asked to perform tasks outside its actual toolset. The user only discovers capability gaps after investing time and trust in a request the agent was never equipped to handle.",
     severity: "High Friction",
     severityLevel: "high",
-    scientificFoundation: <>Integrates Victor Dibia's <strong>Capability Discovery</strong> principle and Google PAIR's <strong>Helpful AI</strong> principle. Upfront boundary-setting aligns human mental models with system realities before engagement.</>,
+    nielsenMapping: "Match System to World",
+    failureState: "Capability Mismatch",
+    scientificFoundation: <>Amershi et al.'s [2019] <strong>Guidelines for Human-AI Interaction</strong> establish upfront capability disclosure as a prerequisite for meaningful collaboration. This adapts Nielsen's [1994] <em>Match System to World</em> heuristic for the agentic era: rather than simply using familiar language, the agent must surface what it can and cannot do before any work begins.</>,
     questions: [
-      "Are the agent's tools and access rights immediately visible?",
-      "Does the agent clearly state what types of tasks it cannot handle?",
-      "When failing, does it explain which capability was missing?"
+      "Are the agent's tools and access rights visible to the user upfront?",
+      "Does the agent clearly state the specific types of tasks it cannot handle?",
+      "When the agent encounters a request outside its boundaries, does it explicitly decline and explain why?"
     ]
   },
   {
@@ -59,18 +61,20 @@ const PAIRS = [
   {
     phase: 2,
     title: "Context-Aware Delegation",
-    tagline: "Cost & Delegation",
-    principle: "Scale Autonomy to Risk",
-    principleDesc: "The agent must read the stakes of every action it takes. High-cost or irreversible tasks demand human approval; low-risk tasks should flow without interruption.",
+    tagline: "Risk-Scaled Autonomy",
+    principle: "Scale Autonomy to Perceived Risk",
+    principleDesc: "System friction must be proportional to action risk. Prior research shows users have greater tolerance for agent latency when perceived stakes justify the delay [Minaee et al., 2024]. Tasks involving irreversible actions on the user's data or finances must be flagged and require explicit permission before proceeding.",
     pitfall: "The Rogue Spender",
-    pitfallDesc: "Making irreversible, high-cost decisions without asking, or pestering the user for approval on trivial tasks.",
+    pitfallDesc: "Making irreversible, high-cost decisions without seeking approval—or pestering the user for permission on trivial, low-stakes tasks. Both failure modes erode trust: one through catastrophic overreach, the other through constant friction that trains users to ignore safety gates entirely.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    scientificFoundation: <>Integrates Dibia's <strong>Cost-Aware Delegation</strong> principle with Google PAIR's <strong>Adapt with Feedback</strong> principle. High-stakes actions require hard friction, while low-stakes loops require seamless autonomy.</>,
+    nielsenMapping: "Visibility of System Status",
+    failureState: "Execution Opacity",
+    scientificFoundation: <>Minaee et al. [2024] show that users accept latency when perceived stakes justify friction—providing empirical grounding for cost-aware delegation gates. Bucinca et al. [2021] demonstrate that <strong>intentional friction during high-stakes decisions</strong> disrupts heuristic-based shortcuts and leads to deeper analytical reflection, validating hard "pause and review" gates as a safety mechanism for irreversible agent actions.</>,
     questions: [
-      "Does the system recognize and flag actions that consume real money or destroy data?",
-      "Does the agent explicitly ask for permission before executing high-cost steps?",
-      "Does the system learn from past feedback to streamline future low-risk delegations?"
+      "Does the system flag actions that are irreversible or consume significant resources?",
+      "Does the agent explicitly request permission before executing high-stakes steps?",
+      "Does the agent streamline routine, low-risk delegations without requiring repeated approval?"
     ]
   },
   {
@@ -115,7 +119,7 @@ const PHASES = [
   { id: 1, title: "I. Alignment Phase" },
   { id: 2, title: "II. Execution Phase" },
   { id: 3, title: "III. Control Phase" },
-  { id: 4, title: "IV. Trust Phase" }
+  { id: 4, title: "IV. Trust Calibration" }
 ];
 
 export default function FrameworkSection() {
@@ -141,9 +145,12 @@ export default function FrameworkSection() {
 
   const handleExport = useCallback(() => {
     let report = `HUMAN FACTORS PRINCIPLES FOR AGENTIC TRUST\n`;
-    report += `Audit Report\n\n`;
+    report += `An Audit Framework for Non-Deterministic Interfaces\n`;
+    report += `Version 2 · July 2026\n`;
+    report += `\n`;
+    report += `Audit Report\n`;
     report += `Conducted on: ${new Date().toLocaleDateString()}\n`;
-    report += `Framework by: Brandon Fluegel, Ph.D.\n`;
+    report += `Framework by: Brandon Fluegel, Ph.D. · brandon.uxr@gmail.com\n`;
     report += `Available at: https://www.humanfactors.pro/#agent-trust\n`;
     report += `========================================================\n\n`;
 
@@ -200,24 +207,24 @@ export default function FrameworkSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
-              Standardized Audit Tool
+              Audit Framework
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight lg:whitespace-nowrap">
               Human Factors <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
             </h2>
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
-              A modern audit framework bridging the gap between traditional UX heuristics and the demands of autonomous AI systems. Designed for non-deterministic interfaces, this tool transforms abstract concepts of trust and agency into an actionable, measurable checklist.
+              An audit framework for non-deterministic interfaces. Traditional HCI assumes deterministic interactions—a command in, a predictable output out. Modern multi-agent systems operate probabilistically, demanding a new standard: one that operationalizes trust, observability, and human control into measurable design criteria.
             </p>
             <p className="text-[12px] sm:text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-4 sm:pl-5 max-w-3xl">
-              Synthesizing foundational human factors research with Google's PAIR guidelines and multi-agent system principles, this framework shifts the focus from static usability to context-aware delegation, predictive observability, and safely calibrated trust.
+              Synthesizing Nielsen [1994], Amershi et al. [2019], Bucinca et al. [2021], Chen et al. [2025], and Parasuraman & Riley [1997] with multi-agent system principles, this framework shifts the focus from static usability to context-aware delegation, predictive observability, and calibrated human-agent trust.
             </p>
           </div>
           <div className="hidden md:flex flex-col items-end shrink-0">
             <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-2">Version</p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 rounded-lg border border-indigo-500/20 shadow-inner">
-              <span className="text-sm font-bold text-indigo-400 whitespace-nowrap">V.1</span>
+              <span className="text-sm font-bold text-indigo-400 whitespace-nowrap">V.2</span>
               <span className="w-1 h-1 bg-indigo-500/50 rounded-full"></span>
-              <span className="text-sm font-medium text-indigo-300/80 whitespace-nowrap">March '26</span>
+              <span className="text-sm font-medium text-indigo-300/80 whitespace-nowrap">July '26</span>
             </div>
           </div>
         </m.header>
@@ -340,7 +347,8 @@ export default function FrameworkSection() {
                 <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-2 xl:order-1">
                   <div className="hidden xl:block mb-5">
                     <h3 className="text-xl font-extrabold text-white mb-1.5 leading-tight">{activePair.title}</h3>
-                    <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
+                    <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest mb-2">{activePair.tagline}</p>
+                    <p className="text-[9px] font-mono text-indigo-400/40 uppercase tracking-widest">Adapts · {activePair.nielsenMapping}</p>
                   </div>
                   
                   <div className="flex-1 flex flex-col">
@@ -401,6 +409,20 @@ export default function FrameworkSection() {
                     <div className="xl:hidden mb-4">
                       <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-tight">{activePair.title}</h3>
                       <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
+                    </div>
+
+                    {/* Scholarly Metadata */}
+                    <div className="flex flex-wrap gap-2">
+                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-800/60 border border-white/5 text-[10px] font-mono text-zinc-400">
+                        <span className="font-sans font-black text-[9px] uppercase tracking-widest text-zinc-600">Adapts</span>
+                        <span className="w-px h-3 bg-zinc-700 shrink-0"></span>
+                        {activePair.nielsenMapping}
+                      </div>
+                      <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border text-[10px] font-mono ${getSeverityClasses(activePair.severityLevel)}`}>
+                        <span className="font-sans font-black text-[9px] uppercase tracking-widest opacity-60">Failure State</span>
+                        <span className="w-px h-3 opacity-20 shrink-0"></span>
+                        {activePair.failureState}
+                      </div>
                     </div>
 
                     {/* Principle */}
