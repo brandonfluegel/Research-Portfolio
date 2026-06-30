@@ -30,7 +30,6 @@ export default function UberProjectSection() {
           <div className="hidden md:block">
             <div className="flex items-center gap-2.5 mb-0.5">
               <h2 className="text-lg text-white font-medium tracking-tight">Driver Growth & Global Strategy</h2>
-              <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
             </div>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
           </div>
@@ -39,7 +38,6 @@ export default function UberProjectSection() {
         <div className="md:hidden">
           <div className="flex items-center gap-2">
             <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
-            <span className="text-[9px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border border-zinc-600/60 text-zinc-500 bg-zinc-800/40">PhD Internship</span>
           </div>
         </div>
       </m.div>
