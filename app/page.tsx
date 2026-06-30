@@ -27,7 +27,7 @@ export default function Home() {
             {/* Stat 2 */}
             <div className="flex flex-col items-center gap-1 px-4 sm:px-6 lg:px-8">
               <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">Patent</span>
-              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Named US Inventor</span>
+              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest whitespace-nowrap">Amazon · Multimodal Interaction</span>
             </div>
 
             <div className="w-px h-7 sm:h-8 bg-white/10" />
