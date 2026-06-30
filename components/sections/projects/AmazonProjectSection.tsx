@@ -255,9 +255,7 @@ export default function AmazonProjectSection() {
                   <LazyVideo
                       sources={[
                         { src: "/assets/fnirs.webm", type: "video/webm" },
-                        { src: "/assets/fnirs.mp4", type: "video/mp4" },
                       ]}
-                      src="/assets/fnirs.mp4"
                       poster="/assets/fnirs-poster.jpg"
                       className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                   />

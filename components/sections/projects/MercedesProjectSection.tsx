@@ -60,9 +60,7 @@ export default function MercedesProjectSection() {
                 <LazyVideo
                   sources={[
                     { src: "/assets/drive.webm", type: "video/webm" },
-                    { src: "/assets/drive.mp4", type: "video/mp4" },
                   ]}
-                  src="/assets/drive.mp4"
                   poster="/assets/drive-poster.jpg"
                   className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
