@@ -251,13 +251,13 @@ export default function AmazonProjectSection() {
            <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
               <div className="relative w-full max-w-2xl mx-auto">
                 <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
-                  <div className="absolute -inset-4 bg-purple-500/[0.06] blur-[60px] rounded-full pointer-events-none"></div>
+                  <div className="absolute -inset-4 bg-purple-500/6 blur-[60px] rounded-full pointer-events-none"></div>
                   <LazyVideo
                       sources={[
                         { src: "/assets/fnirs.webm", type: "video/webm" },
                       ]}
                       poster="/assets/fnirs-poster.jpg"
-                      className="relative object-cover w-full h-full opacity-70 grayscale-[20%] group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
+                      className="relative object-cover w-full h-full opacity-70 grayscale-20 group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                   />
                 </div>
                 <p className="meta-caption">
@@ -277,7 +277,7 @@ export default function AmazonProjectSection() {
                   Biometric UI Benchmarking <br/> <span className="text-zinc-500"></span>
                 </h3>
                 <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                  As the sole Human Factors Researcher in the Devices Design Group, co-established Amazon&apos;s first objective framework for measuring cognitive load in complex UIs — replacing subjective decisions with neuroscience-backed data across the FireTV, Echo Show, and Echo Hub portfolios.
+                  As the sole Human Factors Researcher in the Devices Design Group, co-established Amazon&apos;s first objective framework for measuring cognitive load in complex UIs using fNIRS neuroimaging — quantifying neural activation patterns to identify cognitive friction and replacing subjective decisions with neuroscience-backed data across the FireTV, Echo Show, and Echo Hub portfolios.
                 </p>
               </div>
 

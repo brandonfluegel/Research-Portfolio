@@ -395,7 +395,7 @@ export default function SlingProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                As Sling&apos;s first dedicated Human Factors Researcher, I report directly to the VP of Product and own HF strategy across software, hardware, and generative AI — establishing the function from scratch and embedding perceptual-science standards into engineering decision-making at every layer of the product.
+                As Sling&apos;s first dedicated Human Factors Researcher, I report directly to the VP of Product to lead human factors strategy and design validation across all core software, physical hardware, and generative AI-driven platform integrations — establishing the function from scratch and embedding perceptual-science standards into engineering decision-making at every layer of the product.
               </p>
             </div>
 
@@ -416,7 +416,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HF STANDARDS: LATENCY, UI & RESPONSE QUALITY</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Defined perceptual thresholds for system response latency, visual transition timing, and conversational AI output quality — translating psychophysical limits into hard engineering targets. Standards anchor product teams to measurable human perception boundaries, replacing arbitrary performance benchmarks across software and AI surfaces.
+                  Established org-wide human factors and usability criteria for system latency, screen layout, and conversational AI response quality — translating psychophysical limits into hard engineering targets. Standards anchor product teams to measurable human perception boundaries, replacing arbitrary performance benchmarks and minimizing cognitive friction across software and AI surfaces.
                 </p>
               </div>
 
@@ -425,7 +425,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HARDWARE HUMAN FACTORS: FIT & COMFORT RESEARCH</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Conducted anthropometric research for new hardware products, characterizing population-level fit distributions and comfort thresholds across grip, reach, and pressure dimensions. Translated physical HF data into design constraints that directly informed final hardware specifications.
+                  Directed physical ergonomics and multi-platform usability validation protocols across the hardware design portfolio — identifying physical use-errors and defining anatomical safety and fit specifications. Translated anthropometric data into design constraints that directly informed final hardware specifications.
                 </p>
               </div>
 
@@ -434,7 +434,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Led foundational research defining the multi-turn interaction model for a conversational TV assistant. Applied mental model theory to map user expectation gaps during ambiguity resolution, and developed a Trust &amp; System Transparency framework — specifying feedback timing and recovery patterns to maintain perceived reliability across complex, multi-turn tasks.
+                  Led foundational research defining the multi-turn interaction model for a conversational TV assistant. Developed the <span className="text-green-400 font-bold">Principles for Agentic Trust</span> framework to evaluate and validate non-deterministic AI systems across four key phases — Alignment, Execution, Control, and Trust — providing engineering teams with actionable metrics for system observability, feedback loops, and user override capabilities.
                 </p>
               </div>
 
