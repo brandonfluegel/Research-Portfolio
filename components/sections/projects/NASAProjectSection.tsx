@@ -10,8 +10,8 @@ export default function NASAProjectSection() {
     <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
       {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-sky-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
+      <div className="absolute top-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-sky-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
+      <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-indigo-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
       <m.div 
@@ -26,7 +26,7 @@ export default function NASAProjectSection() {
             alt="NASA" 
             className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
           />
-          <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
+          <div className="h-8 w-px bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <div className="flex items-center gap-2.5 mb-0.5">
               <h2 className="text-lg text-white font-medium tracking-tight">Human Factors Research</h2>
@@ -69,7 +69,7 @@ export default function NASAProjectSection() {
 
           {/* FULL-WIDTH IMMERSIVE MEDIA */}
           <m.div variants={fadeInUp} className="w-full">
-            <div className="relative w-full aspect-[16/9] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+            <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
               <Image
                 src="/assets/nasahab2.PNG"
                 alt="NASA Gateway Research"
@@ -79,7 +79,7 @@ export default function NASAProjectSection() {
                 className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.03] opacity-90 group-hover:opacity-100"
               />
               {/* Overlay gradient for depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 
               {/* Inline stats overlay — visible on desktop */}
               <div className="absolute bottom-0 left-0 right-0 hidden md:flex justify-between items-end p-8">

@@ -189,8 +189,8 @@ export default function FrameworkSection() {
   return (
     <section className="relative w-full py-12 md:py-20 overflow-hidden bg-black">
       {/* Background Accents */}
-      <div className="absolute top-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3 transform-gpu"></div>
-      <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3 transform-gpu"></div>
+      <div className="absolute top-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3 transform-gpu"></div>
+      <div className="absolute bottom-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3 transform-gpu"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         
@@ -210,7 +210,7 @@ export default function FrameworkSection() {
               Audit Framework
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight lg:whitespace-nowrap">
-              Human Factors <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
+              Human Factors <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
             </h2>
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
               An audit framework for non-deterministic interfaces. Traditional HCI assumes deterministic interactions—a command in, a predictable output out. Modern multi-agent systems operate probabilistically, demanding a new standard: one that operationalizes trust, observability, and human control into measurable design criteria.
@@ -241,9 +241,9 @@ export default function FrameworkSection() {
           >
             {/* Mobile Horizontal Navigation */}
             <div className="lg:hidden relative">
-              <div className="absolute left-0 top-0 bottom-4 w-6 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-4 w-6 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
-              <div className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <div className="absolute left-0 top-0 bottom-4 w-6 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-4 w-6 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
+              <div className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
               {/* Spacer after last item so it can scroll to center */}
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
@@ -344,7 +344,7 @@ export default function FrameworkSection() {
               >
 
                 {/* Name & Audit Checklist (Left on desktop, bottom on mobile) */}
-                <div className="w-full xl:w-[340px] p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-2 xl:order-1">
+                <div className="w-full xl:w-85 p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-2 xl:order-1">
                   <div className="hidden xl:block mb-5">
                     <h3 className="text-xl font-extrabold text-white mb-1.5 leading-tight">{activePair.title}</h3>
                     <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest mb-2">{activePair.tagline}</p>
@@ -375,7 +375,7 @@ export default function FrameworkSection() {
                                 : 'bg-white/5 border-white/5 hover:border-white/20'
                             }`}
                           >
-                            <div className={`w-[18px] h-[18px] rounded-[5px] border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
+                            <div className={`w-4.5 h-4.5 rounded-[5px] border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
                               isChecked 
                                 ? 'bg-indigo-500 border-indigo-500' 
                                 : 'border-zinc-600'
@@ -427,7 +427,7 @@ export default function FrameworkSection() {
 
                     {/* Principle */}
                     <div className="flex gap-4 sm:gap-5 flex-col sm:flex-row items-start">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0 text-white">
+                      <div className="w-10 h-10 rounded-xl bg-linear-to-br from-emerald-400 to-emerald-600 shadow-lg shadow-emerald-500/20 flex items-center justify-center shrink-0 text-white">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
                         </svg>
@@ -448,7 +448,7 @@ export default function FrameworkSection() {
 
                     {/* Pitfall */}
                     <div className="flex gap-4 sm:gap-5 flex-col sm:flex-row items-start">
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-zinc-700 to-zinc-800 shadow-lg shadow-black/20 flex items-center justify-center shrink-0 text-white">
+                      <div className="w-10 h-10 rounded-xl bg-linear-to-br from-zinc-700 to-zinc-800 shadow-lg shadow-black/20 flex items-center justify-center shrink-0 text-white">
                         <svg className="w-5 h-5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                         </svg>
