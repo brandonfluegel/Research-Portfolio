@@ -6,7 +6,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full flex flex-col items-center justify-center min-h-[50svh] sm:min-h-[52svh] md:min-h-[55svh] lg:min-h-[58svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-6 md:pb-8 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
-          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(1.75rem,6vw,2.25rem)] sm:text-[clamp(2rem,5vw,2.75rem)] md:text-[clamp(2.5rem,4.5vw,4rem)] lg:text-[clamp(3rem,4vw,4.5rem)] text-white text-balance">
+          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2.25rem,9vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(3.5rem,5vw,5rem)] lg:text-[clamp(4rem,5vw,5.5rem)] text-white text-balance">
             Human Factors PhD
           </h1>
 
@@ -15,27 +15,27 @@ export default function Home() {
           </div>
 
           {/* CREDENTIAL STRIP — all breakpoints */}
-          <div className="flex w-full sm:w-auto mt-8 md:mt-10 lg:mt-12 items-start justify-center gap-x-0 sm:gap-x-3 lg:gap-x-4">
+          <div className="flex w-auto mt-8 md:mt-10 lg:mt-12 items-center justify-center">
             {/* Stat 1 */}
-            <div className="flex flex-col items-center gap-1 flex-1 sm:flex-none sm:px-6 lg:px-8">
-              <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">$50M</span>
-              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Projected Impact</span>
+            <div className="flex flex-col items-center gap-1 px-5 sm:px-6 lg:px-8">
+              <span className="text-white font-bold text-2xl sm:text-2xl lg:text-3xl tracking-tight">$50M</span>
+              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Projected Impact</span>
             </div>
 
-            <div className="w-px h-7 sm:h-8 bg-white/10 self-center" />
+            <div className="w-px h-8 sm:h-9 bg-white/10" />
 
             {/* Stat 2 */}
-            <div className="flex flex-col items-center gap-1 flex-1 sm:flex-none sm:px-6 lg:px-8">
-              <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">US Patent</span>
-              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight sm:whitespace-nowrap">Named Inventor ·<br className="sm:hidden" /> Amazon Devices</span>
+            <div className="flex flex-col items-center gap-1 px-5 sm:px-6 lg:px-8">
+              <span className="text-white font-bold text-2xl sm:text-2xl lg:text-3xl tracking-tight">US Patent</span>
+              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight whitespace-nowrap">Named Inventor · Amazon Devices</span>
             </div>
 
-            <div className="w-px h-7 sm:h-8 bg-white/10 self-center" />
+            <div className="w-px h-8 sm:h-9 bg-white/10" />
 
             {/* Stat 3 */}
-            <div className="flex flex-col items-center gap-1 flex-1 sm:flex-none sm:px-6 lg:px-8">
-              <span className="text-white font-bold text-xl sm:text-2xl lg:text-3xl tracking-tight">5</span>
-              <span className="text-zinc-500 text-[9px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Tier-1 Companies</span>
+            <div className="flex flex-col items-center gap-1 px-5 sm:px-6 lg:px-8">
+              <span className="text-white font-bold text-2xl sm:text-2xl lg:text-3xl tracking-tight">5</span>
+              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Tier-1 Companies</span>
             </div>
           </div>
         </div>
