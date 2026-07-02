@@ -7,7 +7,7 @@ export const NAV_SECTIONS = [
   { name: "Agentic Trust", href: "#agent-trust" },
 ];
 
-export const TRUST_COMPANIES = [
+const TRUST_COMPANIES = [
   { name: "Amazon", logo: "/assets/amazon-logo.png", id: "amazon-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-6 w-auto" },
   { name: "Sling", logo: "/assets/Sling-logo.png", id: "sling-section", sizing: "h-6 md:h-9 w-auto", mobileSizing: "h-6 w-auto" },
   { name: "Uber", logo: "/assets/uber-logo.png", id: "uber-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-5 w-auto" },

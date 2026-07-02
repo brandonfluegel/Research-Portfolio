@@ -4,7 +4,6 @@ import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import TrustNav from "@/components/sections/TrustNav";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
@@ -129,7 +128,9 @@ export default function HomeClientSections() {
       <Navbar activeSection={activeSection} />
       <ScrollToTop />
 
-      <TrustNav activeSection={activeSection} />
+      <div className="w-full max-w-6xl mx-auto mb-8 md:mb-16 mt-0">
+        <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-6 md:mb-8"></div>
+      </div>
 
       <section className="content-shell section-stack mt-16 md:mt-20">
         <DeferredSection
