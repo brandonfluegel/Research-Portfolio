@@ -364,24 +364,38 @@ export default function SlingProjectSection() {
           <m.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
+                <span className="text-[10px] text-green-400 font-mono uppercase tracking-[0.2em]">Human Factors &amp; AI Standards</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Human Factors Strategy <span className="text-zinc-500">& AI Systems</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
-              <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
-                 <div className="flex items-center gap-2 mb-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Org-Wide Adoption</span>
-                 </div>
-                 <div className="text-3xl font-bold text-green-400">VP+ Reviews</div>
-                 <p className="text-xs text-zinc-400 mt-1">SXI framework adopted as the baseline for all VP+ product experience reviews.</p>
+              <div className="block md:hidden mb-6 rounded-xl overflow-hidden border border-green-500/20" style={{ background: 'linear-gradient(135deg, rgba(10,20,14,0.95), rgba(5,8,6,0.98))' }}>
+                <div className="px-4 pt-4 pb-3 border-b border-green-500/10">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-[9px] font-mono text-green-400/80 uppercase tracking-[0.2em]">Human Factors Impact</span>
+                  </div>
+                  <div className="text-2xl font-bold text-green-400 tracking-tight">SXI Framework</div>
+                  <p className="text-[11px] text-zinc-400 mt-1.5 leading-relaxed">Perceptual-science prioritization model adopted org-wide for all VP+ product experience reviews</p>
+                </div>
+                <div className="flex divide-x divide-green-500/10">
+                  <div className="flex-1 px-4 py-3">
+                    <div className="text-xl font-bold text-white tracking-tight">8</div>
+                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider mt-0.5">Features Scored</div>
+                  </div>
+                  <div className="flex-1 px-4 py-3">
+                    <div className="text-xl font-bold text-white tracking-tight">#1</div>
+                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider mt-0.5">HF Researcher</div>
+                  </div>
+                </div>
               </div>
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                As the first dedicated Human Factors Researcher at Sling, I report directly to the VP of Product and lead human factors strategy across all core software, hardware, and generative AI systems — building the function from the ground up and establishing org-wide standards where human perception drives engineering decisions.
+                As Sling&apos;s first dedicated Human Factors Researcher, I report directly to the VP of Product and own HF strategy across software, hardware, and generative AI — establishing the function from scratch and embedding perceptual-science standards into engineering decision-making at every layer of the product.
               </p>
             </div>
 
@@ -393,7 +407,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Architected a proprietary quantitative framework (SXI) that merged behavioral telemetry with user-perceived friction, transitioning leadership to a <span className="text-green-400 font-bold">proactive prioritization model now used for all VP+ product reviews</span> — directly shaping roadmap decisions for features used by millions of subscribers.
+                  Designed a proprietary HF measurement system synthesizing behavioral telemetry with perceived-friction scores — converting subjective experience signals into a calibrated, actionable index. The SXI was <span className="text-green-400 font-bold">adopted org-wide as the HF standard for all VP+ product reviews</span>, directly driving roadmap prioritization for features used by millions of subscribers.
                 </p>
               </div>
 
@@ -402,7 +416,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HF STANDARDS: LATENCY, UI & RESPONSE QUALITY</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Established and evaluated org-wide human factors standards for system latency, visual UI design, and response quality for conversational AI interaction — ensuring engineering targets are grounded in human perceptual thresholds rather than arbitrary technical benchmarks.
+                  Defined perceptual thresholds for system response latency, visual transition timing, and conversational AI output quality — translating psychophysical limits into hard engineering targets. Standards anchor product teams to measurable human perception boundaries, replacing arbitrary performance benchmarks across software and AI surfaces.
                 </p>
               </div>
 
@@ -411,7 +425,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HARDWARE HUMAN FACTORS: FIT & COMFORT RESEARCH</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Led fit and comfort research for new hardware using anthropometric and engineering requirements, translating physical human factors data into actionable design constraints for Sling&apos;s hardware portfolio.
+                  Conducted anthropometric research for new hardware products, characterizing population-level fit distributions and comfort thresholds across grip, reach, and pressure dimensions. Translated physical HF data into design constraints that directly informed final hardware specifications.
                 </p>
               </div>
 
@@ -420,7 +434,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust &amp; System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.
+                  Led foundational research defining the multi-turn interaction model for a conversational TV assistant. Applied mental model theory to map user expectation gaps during ambiguity resolution, and developed a Trust &amp; System Transparency framework — specifying feedback timing and recovery patterns to maintain perceived reliability across complex, multi-turn tasks.
                 </p>
               </div>
 
