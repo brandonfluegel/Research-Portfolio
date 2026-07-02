@@ -67,7 +67,7 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
     const label = getSXILabel(d.sxi);
 
     return (
-      <div className="bg-[#0a0a0a]/95 border border-white/10 p-3 md:p-4 rounded-xl shadow-2xl backdrop-blur-xl min-w-[180px] md:min-w-[230px]">
+      <div className="bg-[#0a0a0a]/95 border border-white/10 p-3 md:p-4 rounded-xl shadow-2xl backdrop-blur-xl min-w-45 md:min-w-57.5">
         {/* Header */}
         <div className="flex items-center gap-2 mb-3 pb-2 border-b border-white/10">
           <span className="w-2 h-2 rounded-full" style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }} />
@@ -119,12 +119,12 @@ function SXIProjectMatrix() {
     <div className="w-full rounded-2xl relative overflow-hidden group shadow-2xl" style={{ backgroundColor: '#050505' }}>
 
       {/* Outer glow ring */}
-      <div className="absolute inset-0 rounded-2xl border border-white/[0.06]" />
+      <div className="absolute inset-0 rounded-2xl border border-white/6" />
 
       {/* Ambient gradient orbs */}
       <div className="absolute -top-20 -right-20 w-80 h-80 bg-emerald-500/[0.07] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500/[0.07] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-60 h-60 bg-red-500/[0.04] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-60 h-60 bg-red-500/4 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 p-4 md:p-6">
@@ -146,7 +146,7 @@ function SXIProjectMatrix() {
         </div>
 
         {/* Chart Container */}
-        <div className="h-[380px] md:h-[480px] w-full relative rounded-xl overflow-hidden border border-white/[0.04]" style={{ backgroundColor: '#080808' }}>
+        <div className="h-95 md:h-120 w-full relative rounded-xl overflow-hidden border border-white/4" style={{ backgroundColor: '#080808' }}>
 
           {/* Micro grid pattern */}
           <div className="absolute inset-0 z-0 opacity-[0.06]"
@@ -289,7 +289,7 @@ function SXIProjectMatrix() {
         </div>
 
         {/* Footer Legend */}
-        <div className="mt-4 rounded-lg border border-white/[0.06] bg-black/30 px-3 py-2.5 md:px-4 md:py-3">
+        <div className="mt-4 rounded-lg border border-white/6 bg-black/30 px-3 py-2.5 md:px-4 md:py-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 text-[9px] md:text-[10px] font-mono uppercase tracking-wider">
               <div className="flex items-center gap-1.5 text-zinc-500">
@@ -305,7 +305,7 @@ function SXIProjectMatrix() {
               <span>SXI &le; 65 (Critical)</span>
               </div>
             </div>
-            <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider pt-1 md:pt-0 md:pl-4 md:border-l md:border-white/[0.06] md:whitespace-nowrap">
+            <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider pt-1 md:pt-0 md:pl-4 md:border-l md:border-white/6 md:whitespace-nowrap">
               Color = SXI Health Status
             </p>
           </div>
@@ -322,8 +322,8 @@ export default function SlingProjectSection() {
     <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
       {/* BACKGROUND ACCENTS - MATCHING ALEXA SECTION */}
-      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-amber-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-blue-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
+      <div className="absolute top-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-amber-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
+      <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-blue-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
       <m.div 
@@ -338,7 +338,7 @@ export default function SlingProjectSection() {
             alt="Sling" 
             className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
           />
-          <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
+          <div className="h-8 w-px bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Staff Human Factors Researcher</h2>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors & AI Systems</p>
@@ -390,7 +390,7 @@ export default function SlingProjectSection() {
               
               {/* Block 1: SXI (Framework) */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Architected a proprietary quantitative framework (SXI) that merged behavioral telemetry with user-perceived friction, transitioning leadership to a <span className="text-green-400 font-bold">proactive prioritization model now used for all VP+ product reviews</span> — directly shaping roadmap decisions for features used by millions of subscribers.
@@ -399,7 +399,7 @@ export default function SlingProjectSection() {
 
                {/* Block 2: HF Standards */}
                <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HF STANDARDS: LATENCY, UI & RESPONSE QUALITY</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Established and evaluated org-wide human factors standards for system latency, visual UI design, and response quality for conversational AI interaction — ensuring engineering targets are grounded in human perceptual thresholds rather than arbitrary technical benchmarks.
@@ -408,7 +408,7 @@ export default function SlingProjectSection() {
 
               {/* Block 3: Hardware HF */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HARDWARE HUMAN FACTORS: FIT & COMFORT RESEARCH</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Led fit and comfort research for new hardware using anthropometric and engineering requirements, translating physical human factors data into actionable design constraints for Sling&apos;s hardware portfolio.
@@ -417,7 +417,7 @@ export default function SlingProjectSection() {
 
                {/* Block 4: Human-AI */}
                <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Led foundational research to define the multi-turn interaction model for a conversational TV assistant. Established performance benchmarks for latency and ambiguity resolution, and developed a &quot;Trust &amp; System Status&quot; framework to align with customer mental models during complex, multi-turn tasks.

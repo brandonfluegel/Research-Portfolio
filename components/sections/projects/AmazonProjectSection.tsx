@@ -10,8 +10,8 @@ export default function AmazonProjectSection() {
     <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
       {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
+      <div className="absolute top-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-blue-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
+      <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
       <m.div 
@@ -26,7 +26,7 @@ export default function AmazonProjectSection() {
             alt="Amazon" 
             className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
           />
-          <div className="h-8 w-[1px] bg-white/10"></div>
+          <div className="h-8 w-px bg-white/10"></div>
           <div>
             <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors Researcher</p>
@@ -77,7 +77,7 @@ export default function AmazonProjectSection() {
               
               {/* Step 1 */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Experimental Design: Human Factors</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Used a custom &quot;Wizard of Oz&quot; latency engine to manipulate response times with millisecond precision across 20,000+ controlled interactions with Alexa. This mapping identified the <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong> — the point at which &gt;70% of users rate a response as &quot;not slow&quot; and &lt;5% rate it as &quot;too slow.&quot;
@@ -86,7 +86,7 @@ export default function AmazonProjectSection() {
 
               {/* Step 2 */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Strategic Integration: Economics</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Partnered with Alexa Economics to integrate these perceptual thresholds into the Negative Value Action (NVA) model. We redefined &quot;system defects&quot; as any interaction slower than the 1,000ms HST — the point where the proportion of &quot;somewhat slow&quot; ratings nearly triples and downstream customer engagement drops measurably.
@@ -95,7 +95,7 @@ export default function AmazonProjectSection() {
 
               {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
                <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M Operational Value</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Alexa Economics independently applied these perceptual thresholds to the NVA model and projected that closing the latency gap on high-priority intents — PlayMusic, TurnOff, TurnOn, and Q&A — would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months. This third-party projection, derived directly from the human perception data, established a research-backed Latency North Star for Alexa&apos;s engineering roadmap.
@@ -107,7 +107,7 @@ export default function AmazonProjectSection() {
           {/* RIGHT: DATA VISUALIZATION */}
           <m.div variants={fadeInFromRight} className="relative z-10 lg:col-span-7 flex flex-col justify-center h-full pt-8 lg:pt-0">
             {/* Aspect Ratio tweaked for mobile legibility */}
-            <div className="relative w-full max-w-2xl mx-auto aspect-[16/11] md:aspect-[16/10] bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
+            <div className="relative w-full max-w-2xl mx-auto aspect-16/11 md:aspect-16/10 bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
   
               {/* Chart Header */}
               <div className="flex justify-between items-start mb-6 md:mb-8 z-20 relative">
@@ -129,10 +129,10 @@ export default function AmazonProjectSection() {
                 
                 {/* Grid Lines - HIDDEN ON MOBILE for cleanliness */}
                 <div className="hidden md:flex absolute inset-0 z-0 flex-col justify-between opacity-40">
-                    <div className="w-full h-[1px] bg-white/10"></div>
-                    <div className="w-full h-[1px] bg-white/10"></div>
-                    <div className="w-full h-[1px] bg-white/10"></div>
-                    <div className="w-full h-[1px] bg-white/10"></div>
+                    <div className="w-full h-px bg-white/10"></div>
+                    <div className="w-full h-px bg-white/10"></div>
+                    <div className="w-full h-px bg-white/10"></div>
+                    <div className="w-full h-px bg-white/10"></div>
                 </div>
 
                 {/* SVG Layer */}
@@ -206,7 +206,7 @@ export default function AmazonProjectSection() {
                 {/* Safe Zone Label */}
                 <div className="absolute bottom-2 left-0 md:bottom-6 md:left-6">
                     <div className="text-[8px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
-                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[80px] md:max-w-[120px] leading-tight font-medium">
+                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-20 md:max-w-30 leading-tight font-medium">
                         Revenue opportunity
                     </div>
                 </div>
@@ -214,7 +214,7 @@ export default function AmazonProjectSection() {
                 {/* Danger Zone Label */}
                  <div className="absolute top-2 right-0 md:top-6 md:right-6 text-right">
                     <div className="text-[8px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
-                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-[90px] md:max-w-[140px] leading-tight font-medium">
+                    <div className="text-[9px] md:text-xs text-zinc-300 max-w-22.5 md:max-w-35 leading-tight font-medium">
                         Churn risk increases
                     </div>
                 </div>
@@ -284,7 +284,7 @@ export default function AmazonProjectSection() {
               {/* PROCESS TIMELINE */}
               <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
                 <div className="relative">
-                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Quantifying UI Clutter via fNIRS</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
                     Used functional neuroimaging to prove FireTV&apos;s UI density drove higher neural activation in the Left Prefrontal Cortex than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load, improving engagement and content discovery.
@@ -292,7 +292,7 @@ export default function AmazonProjectSection() {
                 </div>
 
                 <div className="relative">
-                  <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show & Echo Hub: Human Factors Leadership</h4>
                   <p className="text-sm text-zinc-400 leading-relaxed">
                     Led Human Factors strategy for the Echo Show and Echo Hub portfolios — product lines spanning 75M+ active customers — directly shaping hardware product strategy through neuroimaging-based cognitive load data, with measurable gains in content discovery and task completion rates.

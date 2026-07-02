@@ -10,8 +10,8 @@ export default function UberProjectSection() {
     <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
 
       {/* BACKGROUND ACCENTS */}
-      <div className="absolute top-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-emerald-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
-      <div className="absolute bottom-0 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-teal-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
+      <div className="absolute top-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-emerald-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
+      <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-teal-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
       <m.div 
@@ -26,7 +26,7 @@ export default function UberProjectSection() {
             alt="Uber" 
             className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
           />
-          <div className="h-8 w-[1px] bg-white/10 hidden md:block"></div>
+          <div className="h-8 w-px bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <div className="flex items-center gap-2.5 mb-0.5">
               <h2 className="text-lg text-white font-medium tracking-tight">Driver Growth & Global Strategy</h2>
@@ -90,7 +90,7 @@ export default function UberProjectSection() {
               
               {/* Block 1 */}
               <div className="relative">
-                <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Foundational Research in Brazil</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Conducted contextual inquiry and in-situ diary studies with rental drivers across São Paulo. Found that the app’s multi-step task flows imposed high cognitive load — measured via NASA-TLX and task completion analysis — and was a primary churn driver for new rental drivers in the first 30 days.
@@ -99,7 +99,7 @@ export default function UberProjectSection() {
 
               {/* Block 3 */}
               <div className="relative">
-                 <span className="absolute -left-[29px] md:-left-[37px] top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The redesigned driver app reduced NASA-TLX workload subscale scores and produced a measurable lift in driver retention for the rental segment in the LATAM region within the first post-launch quarter.

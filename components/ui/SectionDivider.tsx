@@ -9,7 +9,7 @@ export default function SectionDivider({ label, description }: SectionDividerPro
       className="relative flex flex-col items-center py-8 md:py-12"
     >
       {/* Decorative line */}
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8 md:mb-10" />
+      <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-8 md:mb-10" />
 
       {/* Label */}
       <span className="text-[9px] md:text-xs font-mono text-zinc-500 uppercase tracking-[0.15em] md:tracking-[0.3em] mb-2 px-4 text-center leading-relaxed">
