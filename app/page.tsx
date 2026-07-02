@@ -6,7 +6,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full flex flex-col items-center justify-center min-h-[50svh] sm:min-h-[52svh] md:min-h-[55svh] lg:min-h-[58svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-6 md:pb-8 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
-          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2.25rem,9vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(3.5rem,5vw,5rem)] lg:text-[clamp(4rem,5vw,5.5rem)] text-white text-balance">
+          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2.25rem,9vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance">
             Human Factors PhD
           </h1>
 
