@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   applicationName: "Brandon Fluegel Portfolio",
   title: {
-    default: "Brandon Fluegel, Ph.D. | Staff Human Factors Researcher",
+    default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
   description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Brandon Fluegel, Ph.D. | Staff Human Factors Researcher",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
@@ -107,7 +107,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D. | Staff Human Factors Researcher",
+    title: "Brandon Fluegel, Ph.D.",
     description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
     images: [profileSearchImage],
   },
