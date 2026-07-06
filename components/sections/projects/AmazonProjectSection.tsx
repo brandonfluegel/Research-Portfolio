@@ -103,21 +103,16 @@ export default function AmazonProjectSection() {
                   Translated neuroimaging findings into concrete engineering and product requirements for the Alexa ecosystem. As the sole Human Factors voice shaping hardware direction, cognitive load data directly influenced the interaction design of Echo Show and Echo Hub — products reaching 75M+ active customers — with measurable gains in task completion rates.
                 </p>
               </div>
+              <div className="relative">
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Context-Aware Interaction Patent</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
+                  <a href="https://patents.google.com/patent/US12532040B1" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
+                  in January 2026. This work earned the 2023 Amazon Inventor Award.
+                </p>
+              </div>
             </div>
-
-            <div className="mt-8 md:mt-10 flex flex-wrap gap-2">
-              {["FireTV", "Echo Show", "Echo Hub"].map(platform => (
-                <span key={platform} className="px-3 py-1.5 text-[10px] font-mono text-zinc-400 uppercase tracking-wider bg-white/5 border border-white/10 rounded-full">
-                  {platform}
-                </span>
-              ))}
-            </div>
-
-            <p className="mt-6 md:mt-8 text-sm text-zinc-500 leading-relaxed">
-              Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
-              <a href="https://patents.google.com/patent/US12532040B1" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
-              in January 2026. This work earned the 2023 Amazon Inventor Award.
-            </p>
           </m.div>
         </m.div>
 
