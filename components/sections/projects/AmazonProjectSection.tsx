@@ -36,14 +36,110 @@ export default function AmazonProjectSection() {
 
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-32 md:space-y-48">
-        
-        {/* === CASE STUDY 1: REVENUE STRATEGY ($100M+) === */}
+
+        {/* === CASE STUDY 1: NEUROIMAGING, PATENT & HARDWARE === */}
         <m.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start"
+        >
+           {/* LEFT: VIDEO */}
+           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+              <div className="relative w-full max-w-2xl mx-auto">
+                <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+                  <div className="absolute -inset-4 bg-purple-500/6 blur-[60px] rounded-full pointer-events-none"></div>
+                  <LazyVideo
+                      sources={[
+                        { src: "/assets/fnirs.webm", type: "video/webm" },
+                      ]}
+                      poster="/assets/fnirs-poster.jpg"
+                      className="relative object-cover w-full h-full opacity-70 grayscale-20 group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
+                  />
+                </div>
+                <p className="meta-caption">
+                  Fig 1. Measuring Cognitive Load via fNIRS
+                </p>
+              </div>
+           </m.div>
+
+           {/* RIGHT: NARRATIVE */}
+           <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
+              <div className="mb-8 md:mb-10">
+                <div className="flex items-center gap-2 mb-3 md:mb-4">
+                  <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
+                  <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & Hardware</span>
+                </div>
+                <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
+                  Biometric UI Benchmarking <br/> <span className="text-zinc-500"></span>
+                </h3>
+                <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
+                  Awarded{" "}
+                  <a
+                    href="https://patents.google.com/patent/US12532040B1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
+                  >
+                    US Patent US-12532040-B1
+                  </a>{" "}
+                  and a 2023 Amazon Inventor Award for novel multimodal interaction architectures. As the sole Human Factors Researcher in the Devices Design Group, co-established Amazon&apos;s first objective framework for measuring cognitive load in complex UIs using fNIRS neuroimaging, quantifying neural activation patterns to identify cognitive friction.
+                </p>
+              </div>
+
+              {/* PROCESS TIMELINE */}
+              <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
+                <div className="relative">
+                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Quantifying UI Clutter via fNIRS</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher neural activation in the Left Prefrontal Cortex than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load, improving engagement and content discovery.
+                  </p>
+                </div>
+
+                <div className="relative">
+                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show & Echo Hub: Human Factors Leadership</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">
+                    Led Human Factors strategy for the Echo Show and Echo Hub portfolios — product lines spanning 75M+ active customers — directly shaping hardware product strategy through neuroimaging-based cognitive load data, with measurable gains in content discovery and task completion rates.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
+                <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm cursor-default">
+                  <div className="p-1 bg-yellow-500/20 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award</span>
+                </div>
+                <a
+                  href="https://patents.google.com/patent/US12532040B1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:border-blue-400/40 hover:bg-blue-500/5 transition-colors"
+                >
+                  <div className="p-1 bg-blue-500/20 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">US Patent 12,532,040 B1 ↗</span>
+                </a>
+              </div>
+           </m.div>
+        </m.div>
+
+        {/* === CASE STUDY 2: REVENUE STRATEGY ($50M+) === */}
+        <m.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start pb-16 md:pb-24"
         >
           {/* LEFT: NARRATIVE */}
           <m.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
@@ -68,7 +164,7 @@ export default function AmazonProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Engineering targets for Alexa were historically arbitrary. I led a multi-year research program to replace legacy technical benchmarks with human-centered thresholds, directly linking millisecond delays to downstream engagement loss.
+                Engineering targets for Alexa were historically arbitrary. I led a multi-year psychophysics research program to replace legacy technical benchmarks with human perception-derived thresholds, directly linking millisecond delays to downstream engagement loss.
               </p>
             </div>
 
@@ -93,7 +189,7 @@ export default function AmazonProjectSection() {
                 </p>
               </div>
 
-              {/* Step 3 (Outcome - Visible on Desktop flow, Mobile sees top block) */}
+              {/* Step 3 (Outcome) */}
                <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Outcome: $50M Operational Value</h4>
@@ -231,94 +327,12 @@ export default function AmazonProjectSection() {
             </div>
 
             <p className="mt-8 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-              Fig 1. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
+              Fig 2. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
             </p>
             <p className="mt-1 text-center text-[9px] font-mono text-zinc-700 tracking-wide">
               Source: Alexa Response Latency Research — Devices Design Group, UX Research, April 2021
             </p>
           </m.div>
-        </m.div>
-
-        {/* === CASE STUDY 2: NEUROIMAGING & HARDWARE === */}
-        <m.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-24 items-start pb-16 md:pb-24"
-        >
-           {/* LEFT: VIDEO */}
-           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-7 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
-              <div className="relative w-full max-w-2xl mx-auto">
-                <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
-                  <div className="absolute -inset-4 bg-purple-500/6 blur-[60px] rounded-full pointer-events-none"></div>
-                  <LazyVideo
-                      sources={[
-                        { src: "/assets/fnirs.webm", type: "video/webm" },
-                      ]}
-                      poster="/assets/fnirs-poster.jpg"
-                      className="relative object-cover w-full h-full opacity-70 grayscale-20 group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
-                  />
-                </div>
-                <p className="meta-caption">
-                  Fig 2. Measuring Cognitive Load via fNIRS
-                </p>
-              </div>
-           </m.div>
-
-           {/* RIGHT: NARRATIVE */}
-           <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
-              <div className="mb-8 md:mb-10">
-                <div className="flex items-center gap-2 mb-3 md:mb-4">
-                  <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
-                  <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroscience & Hardware</span>
-                </div>
-                <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                  Biometric UI Benchmarking <br/> <span className="text-zinc-500"></span>
-                </h3>
-                <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                  As the sole Human Factors Researcher in the Devices Design Group, co-established Amazon&apos;s first objective framework for measuring cognitive load in complex UIs using fNIRS neuroimaging — quantifying neural activation patterns to identify cognitive friction and replacing subjective decisions with neuroscience-backed data across the FireTV, Echo Show, and Echo Hub portfolios.
-                </p>
-              </div>
-
-              {/* PROCESS TIMELINE */}
-              <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-                <div className="relative">
-                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Quantifying UI Clutter via fNIRS</h4>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    Used functional neuroimaging to prove FireTV&apos;s UI density drove higher neural activation in the Left Prefrontal Cortex than Apple TV & Netflix. This data shifted the Home UI redesign toward reducing cognitive load, improving engagement and content discovery.
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                  <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Echo Show & Echo Hub: Human Factors Leadership</h4>
-                  <p className="text-sm text-zinc-400 leading-relaxed">
-                    Led Human Factors strategy for the Echo Show and Echo Hub portfolios — product lines spanning 75M+ active customers — directly shaping hardware product strategy through neuroimaging-based cognitive load data, with measurable gains in content discovery and task completion rates.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
-                <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm cursor-default">
-                  <div className="p-1 bg-yellow-500/20 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award</span>
-                </div>
-                <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm cursor-default">
-                  <div className="p-1 bg-blue-500/20 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                  </div>
-                  <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">US Patent 12,532,040 B1</span>
-                </div>
-              </div>
-           </m.div>
         </m.div>
 
       </div>
