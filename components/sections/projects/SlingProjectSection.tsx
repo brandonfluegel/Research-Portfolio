@@ -371,29 +371,6 @@ export default function SlingProjectSection() {
                 Human Factors Strategy <span className="text-zinc-500">& AI Systems</span>
               </h3>
 
-              {/* --- MOBILE ONLY: KEY METRIC --- */}
-              <div className="block md:hidden mb-6 rounded-xl overflow-hidden border border-green-500/20" style={{ background: 'linear-gradient(135deg, rgba(10,20,14,0.95), rgba(5,8,6,0.98))' }}>
-                <div className="px-4 pt-4 pb-3 border-b border-green-500/10">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-[9px] font-mono text-green-400/80 uppercase tracking-[0.2em]">Human Factors Impact</span>
-                  </div>
-                  <div className="text-2xl font-bold text-green-400 tracking-tight">SXI Framework</div>
-                  <p className="text-[11px] text-zinc-400 mt-1.5 leading-relaxed">Perceptual-science prioritization model adopted org-wide for all VP+ product experience reviews</p>
-                </div>
-                <div className="flex divide-x divide-green-500/10">
-                  <div className="flex-1 px-4 py-3">
-                    <div className="text-xl font-bold text-white tracking-tight">8</div>
-                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider mt-0.5">Features Scored</div>
-                  </div>
-                  <div className="flex-1 px-4 py-3">
-                    <div className="text-xl font-bold text-white tracking-tight">#1</div>
-                    <div className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider mt-0.5">HF Researcher</div>
-                  </div>
-                </div>
-              </div>
-              {/* ------------------------------------------------ */}
-
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                 I lead human factors strategy at Sling, reporting to the VP of Product — translating perceptual science into engineering requirements across software, physical hardware, and generative AI systems.
               </p>
@@ -402,16 +379,7 @@ export default function SlingProjectSection() {
             {/* PROCESS TIMELINE / CONTENT BLOCKS */}
             <div className="relative ml-3 md:ml-0 pl-6 md:pl-8 border-l border-white/10 space-y-12 md:space-y-16">
               
-              {/* Block 1: SXI (Framework) */}
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  A proprietary index anchoring behavioral telemetry to perceived-friction scores — converting subjective experience signals into a calibrated, actionable metric. <span className="text-green-400 font-bold">Adopted org-wide as the HF standard for all VP+ product reviews</span>, directly driving roadmap prioritization for features used by millions of subscribers.
-                </p>
-              </div>
-
-               {/* Block 2: HF Standards */}
+               {/* Block 1: HF Standards */}
                <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HF STANDARDS: LATENCY, UI & RESPONSE QUALITY</h4>
@@ -420,7 +388,7 @@ export default function SlingProjectSection() {
                 </p>
               </div>
 
-              {/* Block 3: Hardware HF */}
+              {/* Block 2: Hardware HF */}
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HARDWARE HUMAN FACTORS: FIT & COMFORT RESEARCH</h4>
@@ -429,12 +397,21 @@ export default function SlingProjectSection() {
                 </p>
               </div>
 
-               {/* Block 4: Human-AI */}
+               {/* Block 3: Human-AI */}
                <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HUMAN-AI INTERACTION: ARCHITECTING TRUST</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Led foundational research defining the multi-turn interaction model for a conversational TV assistant. Developed the <span className="text-green-400 font-bold">Principles for Agentic Trust</span> framework to evaluate and validate non-deterministic AI systems across four key phases — Alignment, Execution, Control, and Trust — providing engineering teams with actionable metrics for system observability, feedback loops, and user override capabilities.
+                </p>
+              </div>
+
+              {/* Block 4: SXI (Framework) */}
+              <div className="relative">
+                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
+                <p className="text-sm text-zinc-400 leading-relaxed">
+                  A proprietary index anchoring behavioral telemetry to perceived-friction scores — converting subjective experience signals into a calibrated, actionable metric. <span className="text-green-400 font-bold">Adopted org-wide as the HF standard for all VP+ product reviews</span>, directly driving roadmap prioritization for features used by millions of subscribers.
                 </p>
               </div>
 
