@@ -35,7 +35,7 @@ export default function AmazonProjectSection() {
       </m.div>
 
       {/* 2. MAIN CONTENT STACK */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 space-y-24 md:space-y-40">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-16 md:space-y-40">
 
         {/* === PROJECT 1: NEUROIMAGING, COGNITIVE LOAD & PATENT === */}
         <m.div
@@ -72,6 +72,17 @@ export default function AmazonProjectSection() {
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Mapping Cognitive Load <span className="text-zinc-500">to Product Decisions</span>
               </h3>
+
+              {/* --- MOBILE ONLY: KEY METRIC --- */}
+              <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-purple-500/30 rounded-lg">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
+                  <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Product Impact</span>
+                </div>
+                <div className="text-3xl font-bold text-purple-400">75M+</div>
+                <p className="text-xs text-zinc-400 mt-1">Active customers reached through Echo Show and Echo Hub, shaped by neuroimaging-driven design requirements.</p>
+              </div>
+
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
                 As the sole Human Factors Researcher in the Devices Design Group, I co-established Amazon&apos;s first neuroimaging framework for measuring cognitive load in complex UIs — using fNIRS to track prefrontal cortex activation in real time and replacing assumption-driven design decisions with direct neural evidence.
               </p>
@@ -102,72 +113,11 @@ export default function AmazonProjectSection() {
               ))}
             </div>
 
-            {/* Divider */}
-            <div className="border-t border-white/10 my-10 md:my-12"></div>
-
-            {/* Patent Narrative */}
-            <div className="mb-8 md:mb-10">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full shadow-[0_0_8px_rgba(96,165,250,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-blue-400 uppercase tracking-widest">Interaction Architecture</span>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                One Input. <span className="text-zinc-500">Contextually Intelligent.</span>
-              </h3>
-              <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Traditional device controls map a single input to a fixed action. I co-invented a system where the same physical input routes to a contextually appropriate action based on the active UI state at the moment of interaction — aligning device behavior with how users naturally reason about control. Granted as{" "}
-                <a
-                  href="https://patents.google.com/patent/US12532040B1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 underline underline-offset-2 hover:text-blue-300 transition-colors"
-                >
-                  US Patent US-12532040-B1
-                </a>{" "}
-                in January 2026.
-              </p>
-            </div>
-
-            <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">The Human Factors Problem: Mode Errors</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Device interfaces force users to mentally track which input does what across different UI states — a classic source of mode errors and frustration. The friction isn&apos;t in the physical control; it&apos;s in the mismatch between the user&apos;s contextual expectations and the system&apos;s static behavior mapping.
-                </p>
-              </div>
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">The Architecture: Context as a Control Layer</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  The patented system intercepts a user input, determines the active UI context at that moment, and routes the same input to the contextually appropriate action. On an Echo Show, the same gesture on the home screen, in a media player, or inside settings executes three different, contextually correct outcomes. One physical input. Intelligent routing.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-8 md:mt-10 flex flex-wrap gap-3">
-              <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm cursor-default">
-                <div className="p-1 bg-yellow-500/20 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.699-3.181a1 1 0 011.827.954L17.5 7.677V13a1 1 0 01-1 1h-2a1 1 0 01-1 1v-2.5l-2.481-.992-.472 2.361c-.13.65-.694 1.131-1.358 1.131H5.452c-.664 0-1.229-.481-1.358-1.131L3.622 9.508l-2.481.992V13a1 1 0 01-1 1h-2a1 1 0 01-1-1V7.677l-.98-3.92a1 1 0 011.827-.954L1.046 5.905 5 4.323V3a1 1 0 011-1h4z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">2023 Amazon Inventor Award</span>
-              </div>
-              <a
-                href="https://patents.google.com/patent/US12532040B1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-3 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm hover:border-blue-400/40 hover:bg-blue-500/5 transition-colors"
-              >
-                <div className="p-1 bg-blue-500/20 rounded-full">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                </div>
-                <span className="text-[10px] md:text-xs font-bold text-zinc-200 uppercase tracking-wider">US Patent 12,532,040 B1 ↗</span>
-              </a>
-            </div>
+            <p className="mt-6 md:mt-8 text-sm text-zinc-500 leading-relaxed">
+              Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
+              <a href="https://patents.google.com/patent/US12532040B1" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
+              in January 2026. This work earned the 2023 Amazon Inventor Award.
+            </p>
           </m.div>
         </m.div>
 
