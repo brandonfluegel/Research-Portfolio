@@ -395,7 +395,7 @@ export default function SlingProjectSection() {
               {/* ------------------------------------------------ */}
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                As Sling&apos;s first dedicated Human Factors Researcher, I report directly to the VP of Product to lead human factors strategy and design validation across all core software, physical hardware, and generative AI-driven platform integrations — establishing the function from scratch and embedding perceptual-science standards into engineering decision-making at every layer of the product.
+                I lead human factors strategy at Sling, reporting to the VP of Product — translating perceptual science into engineering requirements across software, physical hardware, and generative AI systems.
               </p>
             </div>
 
@@ -407,7 +407,7 @@ export default function SlingProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Designed a proprietary HF measurement system synthesizing behavioral telemetry with perceived-friction scores — converting subjective experience signals into a calibrated, actionable index. The SXI was <span className="text-green-400 font-bold">adopted org-wide as the HF standard for all VP+ product reviews</span>, directly driving roadmap prioritization for features used by millions of subscribers.
+                  A proprietary index anchoring behavioral telemetry to perceived-friction scores — converting subjective experience signals into a calibrated, actionable metric. <span className="text-green-400 font-bold">Adopted org-wide as the HF standard for all VP+ product reviews</span>, directly driving roadmap prioritization for features used by millions of subscribers.
                 </p>
               </div>
 
