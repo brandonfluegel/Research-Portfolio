@@ -153,16 +153,9 @@ export default function AmazonProjectSection() {
               </div>
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Translating Perception Into Economic Defects</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">From Perceptual Threshold to $50M Impact</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to embed the HST directly into the Negative Value Action (NVA) model — redefining any interaction slower than 1,000ms as a measurable system defect. At that boundary, &quot;somewhat slow&quot; ratings nearly triple and downstream customer engagement drops in a statistically reliable pattern.
-                </p>
-              </div>
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Independent Validation: $50M Projected Impact</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Alexa Economics independently applied the HST thresholds to their NVA model and projected that closing the latency gap on four high-priority intents — PlayMusic, TurnOff, TurnOn, and Q&A — would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months. A third-party financial validation of what the perceptual data had predicted — and the foundation of Alexa&apos;s Latency North Star.
+                  Partnered with Alexa Economics to embed the HST into the Negative Value Action (NVA) model — redefining any interaction slower than 1,000ms as a measurable system defect. Alexa Economics independently projected that closing the latency gap on four high-priority intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months, establishing the foundation of Alexa&apos;s Latency North Star.
                 </p>
               </div>
             </div>
