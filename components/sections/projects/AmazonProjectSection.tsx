@@ -153,9 +153,9 @@ export default function AmazonProjectSection() {
               </div>
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">NVA Model Integration & Independent Economic Validation</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">NVA Model Integration & Economic Validation</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The HST was formally adopted by Alexa Economics and embedded into the Negative Value Action (NVA) model — redefining any response exceeding 1,000ms as a quantifiable system defect with downstream engagement consequences. Applying the threshold independently, Alexa Economics projected that closing the latency gap across high-priority voice intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months — a third-party validation that became the foundation of Alexa&apos;s Latency North Star.
+                  The HST was formally adopted by Alexa Economics and embedded into the Negative Value Action (NVA) model — redefining any response exceeding 1,000ms as a quantifiable system defect with downstream engagement consequences. Alexa Economics projected that closing the latency gap across high-priority voice intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months — a third-party validation that became the foundation of Alexa&apos;s Latency North Star.
                 </p>
               </div>
             </div>
