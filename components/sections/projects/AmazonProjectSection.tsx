@@ -84,23 +84,16 @@ export default function AmazonProjectSection() {
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                As the sole Human Factors Researcher in the Devices Design Group, I co-established Amazon&apos;s first neuroimaging framework for measuring cognitive load in streaming UIs — combining fNIRS brain scanning with eye-tracking across six major platforms to replace assumption-driven design decisions with direct neural and gaze evidence.
+                I co-established Amazon&apos;s first neuroimaging framework — combining fNIRS brain scanning with eye-tracking to quantify cognitive load across streaming UIs, replacing assumption-driven design with direct neural and gaze evidence.
               </p>
             </div>
 
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Neural Evidence: UI Aesthetics Across Six Streaming Platforms</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Neuroimaging Methodology</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Using fNIRS to track prefrontal cortex activation across six major streaming platforms, we found that Apple TV produced the lowest cognitive load while YouTube TV produced the highest — with Fire TV&apos;s inconsistent tile architecture driving measurable increases in mental effort. That neural evidence directly informed FireTV&apos;s Home UI redesign, shifting product requirements toward cleaner, structurally consistent layouts that reduced cognitive effort during content discovery.
-                </p>
-              </div>
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">From Lab Data to Hardware Requirements</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Translated neuroimaging findings into concrete engineering and product requirements for the Alexa ecosystem. As the sole Human Factors voice shaping hardware direction, cognitive load data directly influenced the interaction design of Echo Show and Echo Hub — products reaching 75M+ active customers — with measurable gains in task completion rates.
+                  Applied a controlled within-subjects fNIRS protocol measuring prefrontal cortex activation, synchronized with eye-tracking to separate gaze behavior from cognitive effort. Findings translated directly into product requirements, shaping the interaction design of Echo Show and Echo Hub — reaching 75M+ active customers.
                 </p>
               </div>
               <div className="relative">
