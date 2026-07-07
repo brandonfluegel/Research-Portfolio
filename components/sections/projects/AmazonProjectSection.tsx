@@ -125,7 +125,7 @@ export default function AmazonProjectSection() {
                 <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Human Factors & Business Strategy</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Replacing Arbitrary Targets <span className="text-zinc-500">with Perception Science</span>
+                Calibrating Alexa Response Latency <span className="text-zinc-500">to Human Perceptual Limits</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
@@ -139,23 +139,23 @@ export default function AmazonProjectSection() {
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                Alexa&apos;s response time targets were set by engineers, not by perceptual data. I led a multi-year psychophysics program to replace those arbitrary benchmarks — isolating exactly where latency stops being imperceptible and starts eroding user trust.
+                Alexa&apos;s response latency targets were defined by engineering constraints, not human perception. I led a multi-year Human Factors research program to establish empirically grounded thresholds — identifying precisely where response delay crosses from imperceptible to trust-eroding, and anchoring those findings in the economic models that drive product investment.
               </p>
             </div>
 
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Psychophysics at Scale: Mapping the Perception Cliff</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Psychophysical Methodology: Isolating the Perceptual Threshold</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Engineered a custom &quot;Wizard of Oz&quot; latency injection system to vary Alexa response times with millisecond precision across 20,000+ controlled interactions. The psychophysical data revealed a clear <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong> — the boundary where &gt;70% of users rate a response as &quot;not slow&quot; and the &quot;too slow&quot; rate stays below 5%. Beyond it, satisfaction drops sharply and non-linearly.
+                  Engineered a custom Wizard of Oz latency injection system to manipulate Alexa response times with millisecond precision across 20,000+ controlled interactions — isolating latency as an independent variable free from confounding system noise. Psychophysical analysis identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point at which perceptual tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and user satisfaction deteriorates in a non-linear, statistically reliable pattern.
                 </p>
               </div>
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">From Perceptual Threshold to $50M Impact</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">NVA Model Integration & Independent Economic Validation</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Partnered with Alexa Economics to embed the HST into the Negative Value Action (NVA) model — redefining any interaction slower than 1,000ms as a measurable system defect. Alexa Economics independently projected that closing the latency gap on four high-priority intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months, establishing the foundation of Alexa&apos;s Latency North Star.
+                  The HST was formally adopted by Alexa Economics and embedded into the Negative Value Action (NVA) model — redefining any response exceeding 1,000ms as a quantifiable system defect with downstream engagement consequences. Applying the threshold independently, Alexa Economics projected that closing the latency gap across high-priority voice intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months — a third-party validation that became the foundation of Alexa&apos;s Latency North Star.
                 </p>
               </div>
             </div>
