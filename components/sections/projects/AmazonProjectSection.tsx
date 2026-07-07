@@ -146,9 +146,9 @@ export default function AmazonProjectSection() {
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Psychophysical Methodology: Isolating the Perceptual Threshold</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Research Methodology: Isolating the Satisfaction Threshold</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated independent variable while eliminating confounds from live system variance. Psychophysical analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where perceptual tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction deteriorates in a non-linear, statistically reliable pattern.
+                  Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated variable while keeping all other system factors constant. Analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where user tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction drops in a consistent, reliable pattern.
                 </p>
               </div>
               <div className="relative">
