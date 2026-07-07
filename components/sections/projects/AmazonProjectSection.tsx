@@ -148,7 +148,7 @@ export default function AmazonProjectSection() {
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Psychophysical Methodology: Isolating the Perceptual Threshold</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Engineered a custom Wizard of Oz latency injection system to manipulate Alexa response times with millisecond precision across 20,000+ controlled interactions — isolating latency as an independent variable free from confounding system noise. Psychophysical analysis identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point at which perceptual tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and user satisfaction deteriorates in a non-linear, statistically reliable pattern.
+                  Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated independent variable while eliminating confounds from live system variance. Psychophysical analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where perceptual tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction deteriorates in a non-linear, statistically reliable pattern.
                 </p>
               </div>
               <div className="relative">
