@@ -15,25 +15,25 @@ export default function Home() {
           </div>
 
           {/* CREDENTIAL STRIP — all breakpoints */}
-          <div className="flex w-auto mt-8 md:mt-10 lg:mt-12 items-center justify-center">
+          <div className="flex w-full max-w-[95vw] mt-8 md:mt-10 lg:mt-12 items-center justify-center overflow-x-auto">
             {/* Stat 1 */}
-            <div className="flex flex-col items-center gap-1 px-5 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center gap-1 px-3 sm:px-6 lg:px-8">
               <span className="text-white font-bold text-2xl sm:text-2xl lg:text-3xl tracking-tight">$50M</span>
               <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Projected Impact</span>
             </div>
 
-            <div className="w-px h-8 sm:h-9 bg-white/10" />
+            <div className="w-px h-12 sm:h-10 bg-white/10 shrink-0" />
 
             {/* Stat 2 */}
-            <div className="flex flex-col items-center gap-1 px-5 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center gap-1 px-3 sm:px-6 lg:px-8">
               <span className="text-white font-bold text-2xl sm:text-2xl lg:text-3xl tracking-tight">US Patent</span>
-              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight whitespace-nowrap">Named Inventor · Amazon Devices</span>
+              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Named Inventor · Amazon Devices</span>
             </div>
 
-            <div className="w-px h-8 sm:h-9 bg-white/10" />
+            <div className="w-px h-12 sm:h-10 bg-white/10 shrink-0" />
 
             {/* Stat 3 */}
-            <div className="flex flex-col items-center gap-1.5 px-5 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center gap-1.5 px-3 sm:px-6 lg:px-8">
               <div className="flex flex-col items-center gap-0.5">
                 <div className="flex items-center gap-1.5">
                   <span className="text-white/80 font-medium text-[11px] sm:text-xs lg:text-sm tracking-tight">Amazon</span>
