@@ -33,9 +33,22 @@ export default function Home() {
             <div className="w-px h-8 sm:h-9 bg-white/10" />
 
             {/* Stat 3 */}
-            <div className="flex flex-col items-center gap-1 px-5 sm:px-6 lg:px-8">
-              <span className="text-white font-bold text-2xl sm:text-2xl lg:text-3xl tracking-tight">5</span>
-              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Tier-1 Companies</span>
+            <div className="flex flex-col items-center gap-1.5 px-5 sm:px-6 lg:px-8">
+              <div className="flex flex-col items-center gap-0.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-white/80 font-medium text-[11px] sm:text-xs lg:text-sm tracking-tight">Amazon</span>
+                  <span className="text-white/20 text-[10px]">·</span>
+                  <span className="text-white/80 font-medium text-[11px] sm:text-xs lg:text-sm tracking-tight">Sling</span>
+                  <span className="text-white/20 text-[10px]">·</span>
+                  <span className="text-white/80 font-medium text-[11px] sm:text-xs lg:text-sm tracking-tight">Uber</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-white/80 font-medium text-[11px] sm:text-xs lg:text-sm tracking-tight">NASA</span>
+                  <span className="text-white/20 text-[10px]">·</span>
+                  <span className="text-white/80 font-medium text-[11px] sm:text-xs lg:text-sm tracking-tight">Mercedes-Benz</span>
+                </div>
+              </div>
+              <span className="text-zinc-500 text-[10px] sm:text-[11px] lg:text-xs font-mono uppercase tracking-widest text-center leading-tight">Industry Portfolio</span>
             </div>
           </div>
         </div>
