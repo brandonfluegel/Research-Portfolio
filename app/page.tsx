@@ -10,7 +10,7 @@ export default function Home() {
             Human Factors PhD
           </h1>
 
-          <div className="font-medium text-zinc-300 text-center px-2 text-[clamp(0.8rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[80vw] sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed text-balance">
+          <div className="font-medium text-zinc-300 text-center px-2 text-[clamp(0.8rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[88vw] sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto leading-relaxed text-balance">
             6+ years applying experimental design, neuroimaging, and human-performance modeling across aerospace, automotive, and consumer technology
           </div>
         </div>
