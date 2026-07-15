@@ -70,10 +70,6 @@ export default function MercedesProjectSection() {
           {/* RIGHT: NARRATIVE (on desktop) */}
           <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
             <div className="mb-8 md:mb-10">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-slate-500 rounded-full shadow-[0_0_8px_rgba(100,116,139,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-slate-500 uppercase tracking-widest">L2 Autonomy · Trust Calibration</span>
-              </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Trust in Semi-Autonomous <br/> <span className="text-zinc-500">Driving</span>
               </h3>

@@ -363,10 +363,6 @@ export default function SlingProjectSection() {
           {/* LEFT: NARRATIVE */}
           <m.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" />
-                <span className="text-[10px] text-green-400 font-mono uppercase tracking-[0.2em]">Human Factors &amp; AI Standards</span>
-              </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 HF Standards for AI, Hardware <span className="text-zinc-500">& Streaming Software</span>
               </h3>

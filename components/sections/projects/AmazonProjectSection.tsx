@@ -65,10 +65,6 @@ export default function AmazonProjectSection() {
 
             {/* fNIRS Narrative */}
             <div className="mb-8 md:mb-10">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">fNIRS Brain Scanning · Echo Show & Echo Hub</span>
-              </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Mapping Cognitive Load <span className="text-zinc-500">to Echo Device Design</span>
               </h3>
@@ -77,10 +73,10 @@ export default function AmazonProjectSection() {
               <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-purple-500/30 rounded-lg">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
-                  <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Product Impact</span>
+                  <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Customers Reached</span>
                 </div>
                 <div className="text-3xl font-bold text-purple-400">75M+</div>
-                <p className="text-xs text-zinc-400 mt-1">Active customers reached through Echo Show and Echo Hub, shaped by neuroimaging-driven design requirements.</p>
+                <p className="text-xs text-zinc-400 mt-1">My fNIRS findings defined the cognitive load requirements that directly shaped the interaction design of Echo Show and Echo Hub.</p>
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
@@ -120,10 +116,6 @@ export default function AmazonProjectSection() {
           {/* LEFT: NARRATIVE */}
           <m.div variants={fadeInFromLeft} className="relative z-20 lg:col-span-5 pt-2">
             <div className="mb-8 md:mb-10">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-cyan-400 uppercase tracking-widest">Human Factors & Business Strategy</span>
-              </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Calibrating Alexa Response Latency <span className="text-zinc-500">to Human Perceptual Limits</span>
               </h3>
@@ -132,10 +124,10 @@ export default function AmazonProjectSection() {
               <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Alexa Economics Projection</span>
+                  <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Operational Value</span>
                 </div>
                 <div className="text-3xl font-bold text-green-400">$50M</div>
-                <p className="text-xs text-zinc-400 mt-1">Projected by Alexa Economics via NVA modeling, applied against human-centered latency thresholds over 15 months.</p>
+                <p className="text-xs text-zinc-400 mt-1">Alexa Economics embedded my 1,000ms High Satisfaction Threshold into the NVA model and projected this figure from closing latency gaps across high-priority voice intents over 15 months.</p>
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">

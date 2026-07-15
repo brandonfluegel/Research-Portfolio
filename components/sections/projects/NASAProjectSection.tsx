@@ -54,10 +54,6 @@ export default function NASAProjectSection() {
         >
           {/* CENTERED NARRATIVE */}
           <m.div variants={fadeInUp} className="max-w-3xl text-center mb-8 md:mb-16 px-2">
-            <div className="flex items-center justify-center gap-2 mb-3 md:mb-4">
-              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_rgba(59,130,246,0.8)]"></span>
-              <span className="text-[10px] md:text-xs font-mono text-blue-500 uppercase tracking-widest">Space Systems & Cognition</span>
-            </div>
             <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Reducing Astronaut <br/> <span className="text-zinc-500">Cognitive Load</span>
             </h3>

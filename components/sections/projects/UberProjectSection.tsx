@@ -72,10 +72,6 @@ export default function UberProjectSection() {
           {/* RIGHT: NARRATIVE (on desktop) */}
           <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-5 order-1 lg:order-2 pt-2">
             <div className="mb-8 md:mb-10">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-emerald-500 uppercase tracking-widest">Driver App Redesign · LATAM Market</span>
-              </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Driver Retention Strategy <br/> <span className="text-zinc-500">in Brazil</span>
               </h3>
