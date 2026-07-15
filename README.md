@@ -1,119 +1,40 @@
 # Brandon Fluegel — Human Factors Research Portfolio
 
-> Human Factors PhD · Connecting perceptual science to engineering targets and product decisions
+> Translating human behavior and perception research into engineering specifications and product decisions
 
-[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-0055FF?style=flat-square&logo=framer&logoColor=white)](https://www.framer.com/motion/)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed_on-Vercel-black?style=flat-square&logo=vercel)](https://vercel.com/)
+**Stack:** Next.js 16 · TypeScript 5 · Tailwind CSS v4 · Framer Motion 12 · Recharts · Vercel
 
 ---
 
-## Overview
+## What This Is
 
-Single-page research portfolio showcasing human factors case studies from five Tier-1 companies. Each section presents research methodology, quantified outcomes, and evidence-based design decisions from applied HF work.
+A single-page research portfolio built from scratch — no templates. Each section presents a real HF case study with methodology, quantified outcomes, and engineering-facing decisions. The goal was a portfolio that reads like a researcher's work, not a design showcase.
 
-**Featured research:**
-
-| Company | Focus Area | Highlight |
-|---|---|---|
-| **Amazon** | Alexa latency thresholds & multimodal interaction | $50M projected operational impact · US Patent (Named Inventor) |
-| **Sling TV** | HF standards for AI systems & hardware | AI interaction framework across product lines |
-| **Uber** | Driver growth & global strategy | Human factors applied to marketplace behavior |
-| **NASA** | Human factors research | Operational impact in high-consequence environments |
-| **Mercedes-Benz** | Automotive UX & HMI | Psychophysics applied to in-vehicle interaction |
-
-Plus an **Agentic Trust** section covering an original framework for human–AI trust calibration.
+**Projects covered:** Amazon · Sling · Uber · NASA · Mercedes-Benz · Agentic Trust framework
 
 ---
 
-## Tech Stack
+## Design Decisions
 
-| Layer | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS v4 |
-| Animation | Framer Motion 12 |
-| Charts | Recharts 3 |
-| Icons | Lucide React |
-| Analytics | Google Analytics 4 + Vercel Analytics |
-| Performance | Vercel Speed Insights |
-| Deployment | Vercel |
+**Performance-tiered rendering** — `PerformanceModeProvider` detects low-power devices (hardware concurrency, device memory, `saveData`, `prefers-reduced-motion`) and sets a `data-performance-tier` attribute on `<html>`. Heavy animations opt out at the CSS/component level rather than running a JavaScript check per component.
 
----
+**Deferred section loading** — Below-the-fold sections are wrapped in an `IntersectionObserver`-based `DeferredSection` that delays rendering until the section is near the viewport. All lazy chunks are also pre-fetched at page idle so nav clicks resolve synchronously with no layout shift.
 
-## Architecture Highlights
+**Scroll-based active section tracking** — `useActiveSection` uses `IntersectionObserver` with calibrated thresholds rather than `scroll` event listeners, keeping the navbar highlight accurate without polling.
 
-**Performance-aware rendering** — `PerformanceModeProvider` detects low-power devices (hardware concurrency ≤ 4, device memory ≤ 4GB, `saveData` mode, `prefers-reduced-motion`) and sets a `data-performance-tier` attribute on `<html>` to gate heavy animations at the CSS/component level.
+**Lazy video** — `LazyVideo` defers `src` assignment until the element enters the viewport, avoiding unnecessary media downloads on load.
 
-**Security headers** — All routes receive `Strict-Transport-Security`, `X-Frame-Options: DENY`, `X-Content-Type-Options`, `X-XSS-Protection`, `Referrer-Policy`, and `Permissions-Policy` via `next.config.ts`.
+**Tree-shaken animation** — `MotionProvider` wraps `LazyMotion` with `domAnimation` features only, keeping the Framer Motion bundle minimal.
 
-**Optimized asset caching** — Hashed static assets (`/_next/static/`) are served with `Cache-Control: immutable` (1 year). Public assets use `stale-while-revalidate`.
+**SEO artifacts** — `robots.ts` and `sitemap.ts` generate the respective files at build time. `public/llms.txt` provides a machine-readable summary for LLM indexing.
 
-**Image optimization** — Next.js image pipeline configured for AVIF and WebP with a 30-day minimum cache TTL.
-
-**SEO & discovery artifacts:**
-- `app/robots.ts` — generates `robots.txt` with sitemap reference
-- `app/sitemap.ts` — generates `sitemap.xml`
-- `public/llms.txt` — machine-readable summary for LLM indexing and citation
+**Security headers** — `next.config.ts` sets `Strict-Transport-Security`, `X-Frame-Options: DENY`, `X-Content-Type-Options`, `X-XSS-Protection`, `Referrer-Policy`, and `Permissions-Policy` on all routes. Static assets use `Cache-Control: immutable` (1 year); public assets use `stale-while-revalidate`.
 
 ---
 
-## Project Structure
+## Stack
 
-```
-├── app/
-│   ├── layout.tsx          # Root layout — fonts, metadata, providers
-│   ├── page.tsx            # Hero section + credential strip
-│   ├── globals.css         # Global styles & Tailwind base
-│   ├── robots.ts           # Generated robots.txt
-│   └── sitemap.ts          # Generated sitemap.xml
-│
-├── components/
-│   ├── home/
-│   │   └── HomeClientSections.tsx   # Lazy-loads all below-the-fold sections
-│   ├── layout/
-│   │   ├── Navbar.tsx               # Sticky nav with active section tracking
-│   │   └── Footer.tsx
-│   ├── sections/
-│   │   ├── FrameworkSection.tsx     # Agentic Trust framework
-│   │   ├── TrustNav.tsx             # Company logo navigation strip
-│   │   └── projects/
-│   │       ├── AmazonProjectSection.tsx
-│   │       ├── SlingProjectSection.tsx
-│   │       ├── UberProjectSection.tsx
-│   │       ├── NASAProjectSection.tsx
-│   │       └── MercedesProjectSection.tsx
-│   └── ui/
-│       ├── GoogleAnalytics.tsx      # GA4 pageview tracking
-│       ├── GradientBackground.tsx
-│       ├── LazyVideo.tsx            # IntersectionObserver-based video loader
-│       ├── LogoBadge.tsx
-│       ├── MotionProvider.tsx       # Wraps LazyMotion for tree-shaken animation
-│       ├── PerformanceModeProvider.tsx
-│       ├── ScrollProgress.tsx
-│       ├── ScrollToTop.tsx
-│       └── SectionDivider.tsx
-│
-├── hooks/
-│   ├── useActiveSection.ts   # IntersectionObserver — drives navbar highlight
-│   └── useScrollMetrics.ts   # Scroll position & velocity tracking
-│
-├── lib/
-│   ├── constants/
-│   │   └── sections.ts       # Nav section IDs & company logo config
-│   └── utils/
-│       ├── animationVariants.ts   # Shared Framer Motion variants
-│       ├── performance.ts         # Low-power / reduced-motion detection
-│       └── scroll.ts              # Scroll utility helpers
-│
-└── public/
-    ├── llms.txt
-    └── assets/                # Production media only
-```
+Next.js 16 (App Router) · TypeScript 5 · Tailwind CSS v4 · Framer Motion 12 · Recharts · Vercel
 
 ---
 
@@ -122,34 +43,13 @@ Plus an **Agentic Trust** section covering an original framework for human–AI 
 **Prerequisites:** Node.js 20+
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Production build
-npm run build && npm start
-
-# Lint
+npm run dev       # development
+npm run build     # production build
 npm run lint
 ```
 
----
-
-## Environment Variables
-
-Create `.env.local` in the project root:
-
-```env
-NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
-```
-
-| Variable | Required | Description |
-|---|---|---|
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Optional | GA4 measurement ID. Omit to disable analytics. |
-
-GA4 captures the initial pageview automatically via `gtag` config. Client-side navigations send manual `page_view` events. Device segmentation is handled natively by GA4 audience reports.
+**Optional:** Add `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` to `.env.local` to enable GA4.
 
 ---
 
@@ -157,3 +57,4 @@ GA4 captures the initial pageview automatically via `gtag` config. Client-side n
 
 - **LinkedIn:** [linkedin.com/in/fluegel](https://www.linkedin.com/in/fluegel/)
 - **Email:** Brandon.uxr@gmail.com
+
