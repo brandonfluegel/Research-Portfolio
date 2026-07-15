@@ -29,7 +29,7 @@ export default function NASAProjectSection() {
           <div className="h-8 w-px bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <div className="flex items-center gap-2.5 mb-0.5">
-              <h2 className="text-lg text-white font-medium tracking-tight">Human Factors Research</h2>
+              <h2 className="text-lg text-white font-medium tracking-tight">Lunar Gateway · Medical Workstation Validation</h2>
             </div>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
           </div>
@@ -101,7 +101,7 @@ export default function NASAProjectSection() {
               </p>
             </div>
             <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
-              <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Operational Impact</h4>
+              <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Error Modes Caught Before Hardware Lock</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
                 The redesigned interface and physical layout produced a measurable reduction in time-on-task for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.
               </p>

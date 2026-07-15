@@ -368,7 +368,7 @@ export default function SlingProjectSection() {
                 <span className="text-[10px] text-green-400 font-mono uppercase tracking-[0.2em]">Human Factors &amp; AI Standards</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Human Factors Strategy <span className="text-zinc-500">& AI Systems</span>
+                HF Standards for AI, Hardware <span className="text-zinc-500">& Streaming Software</span>
               </h3>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">

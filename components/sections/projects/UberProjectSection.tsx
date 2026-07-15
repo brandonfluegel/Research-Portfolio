@@ -74,7 +74,7 @@ export default function UberProjectSection() {
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-emerald-500 uppercase tracking-widest">Global Strategy & Growth</span>
+                <span className="text-[10px] md:text-xs font-mono text-emerald-500 uppercase tracking-widest">Driver App Redesign · LATAM Market</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Driver Retention Strategy <br/> <span className="text-zinc-500">in Brazil</span>
@@ -100,7 +100,7 @@ export default function UberProjectSection() {
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Business Impact</h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Driver Retention Lift: First 30 Days Post-Launch</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   The redesigned driver app reduced NASA-TLX workload subscale scores and produced a measurable lift in driver retention for the rental segment in the LATAM region within the first post-launch quarter.
                 </p>

@@ -67,10 +67,10 @@ export default function AmazonProjectSection() {
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-purple-400 rounded-full shadow-[0_0_8px_rgba(192,132,252,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">Neuroimaging & Product Strategy</span>
+                <span className="text-[10px] md:text-xs font-mono text-purple-400 uppercase tracking-widest">fNIRS Brain Scanning · Echo Show & Echo Hub</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
-                Mapping Cognitive Load <span className="text-zinc-500">to Product Decisions</span>
+                Mapping Cognitive Load <span className="text-zinc-500">to Echo Device Design</span>
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
@@ -146,7 +146,7 @@ export default function AmazonProjectSection() {
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Research Methodology: Isolating the Satisfaction Threshold</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Isolating the Latency Satisfaction Threshold</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated variable while keeping all other system factors constant. Analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where user tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction drops in a consistent, reliable pattern.
                 </p>

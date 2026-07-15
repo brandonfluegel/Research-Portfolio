@@ -29,7 +29,7 @@ export default function MercedesProjectSection() {
           <div className="h-8 w-px bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <div className="flex items-center gap-2.5 mb-0.5">
-              <h2 className="text-lg text-white font-medium tracking-tight">Automotive UX & HMI</h2>
+              <h2 className="text-lg text-white font-medium tracking-tight">Semi-Autonomous HMI · Trust Research</h2>
             </div>
             <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
           </div>
@@ -72,7 +72,7 @@ export default function MercedesProjectSection() {
             <div className="mb-8 md:mb-10">
               <div className="flex items-center gap-2 mb-3 md:mb-4">
                 <span className="w-1.5 h-1.5 bg-slate-500 rounded-full shadow-[0_0_8px_rgba(100,116,139,0.8)]"></span>
-                <span className="text-[10px] md:text-xs font-mono text-slate-500 uppercase tracking-widest">Human Machine Interface</span>
+                <span className="text-[10px] md:text-xs font-mono text-slate-500 uppercase tracking-widest">L2 Autonomy · Trust Calibration</span>
               </div>
               <h3 className="text-3xl md:text-5xl font-bold text-white mb-4 md:mb-6 leading-[1.1] tracking-tight">
                 Trust in Semi-Autonomous <br/> <span className="text-zinc-500">Driving</span>
@@ -107,7 +107,7 @@ export default function MercedesProjectSection() {
               {/* Block 3 */}
               <div className="relative">
                  <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Research Impact</h4>
+                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Trust Score Lift: Automated Lane Changes & Handoffs</h4>
                  <p className="text-sm text-zinc-400 leading-relaxed">
                   Across a structured pre/post comparative study, the implemented HMI improvements produced a verifiable increase in user trust scores during automated lane changes and handoffs.
                 </p>
