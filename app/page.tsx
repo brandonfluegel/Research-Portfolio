@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[78svh] sm:min-h-[80svh] md:min-h-[82svh] lg:min-h-[84svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-6 md:pb-8 px-4">
+      <section className="relative w-full flex flex-col items-center justify-center min-h-[68svh] sm:min-h-[70svh] md:min-h-[72svh] lg:min-h-[74svh] pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-6 md:pb-8 px-4">
         <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2 sm:px-4 md:px-8">
           <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2.25rem,9vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance">
             Human Factors PhD
