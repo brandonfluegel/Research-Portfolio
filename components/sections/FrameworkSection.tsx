@@ -215,9 +215,6 @@ export default function FrameworkSection() {
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
               An audit framework for non-deterministic interfaces. Traditional HCI assumes deterministic interactions—a command in, a predictable output out. Modern multi-agent systems operate probabilistically, demanding a new standard: one that operationalizes trust, observability, and human control into measurable design criteria.
             </p>
-            <p className="text-[12px] sm:text-[13px] font-mono text-zinc-500 leading-relaxed border-l-2 border-indigo-500/30 pl-4 sm:pl-5 max-w-3xl">
-              Synthesizing Nielsen [1994], Amershi et al. [2019], Bucinca et al. [2021], Chen et al. [2025], and Parasuraman & Riley [1997] with multi-agent system principles, this framework shifts the focus from static usability to context-aware delegation, predictive observability, and calibrated human-agent trust.
-            </p>
           </div>
           <div className="hidden md:flex flex-col items-end shrink-0">
             <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-2">Version</p>
