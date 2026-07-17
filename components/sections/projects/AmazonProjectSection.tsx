@@ -76,7 +76,7 @@ export default function AmazonProjectSection() {
                   <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Customers Reached</span>
                 </div>
                 <div className="text-3xl font-bold text-purple-400">75M+</div>
-                <p className="text-xs text-zinc-400 mt-1">My fNIRS findings defined the cognitive load requirements that directly shaped the interaction design of Echo Show and Echo Hub.</p>
+                  <p className="text-xs text-zinc-400 mt-1">My latency and Human Factors work shaped Echo Show and Echo Hub experiences affecting 75M+ active customers.</p>
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
@@ -127,7 +127,7 @@ export default function AmazonProjectSection() {
                   <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Operational Value</span>
                 </div>
                 <div className="text-3xl font-bold text-green-400">$50M</div>
-                <p className="text-xs text-zinc-400 mt-1">Alexa Economics embedded my 1,000ms High Satisfaction Threshold into the NVA model and projected this figure from closing latency gaps across high-priority voice intents over 15 months.</p>
+                  <p className="text-xs text-zinc-400 mt-1">I established Alexa&apos;s latency satisfaction thresholds, then Alexa Economics projected $50M in incremental operational value over 15 months if those latency targets were met across high-priority voice intents.</p>
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
