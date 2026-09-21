@@ -8,7 +8,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
 
-const SlingProjectSection = lazy(() => import("@/components/sections/projects/SlingProjectSection"));
+const EchoStarProjectSection = lazy(() => import("@/components/sections/projects/EchoStarProjectSection"));
 const AmazonProjectSection = lazy(() => import("@/components/sections/projects/AmazonProjectSection"));
 const UberProjectSection = lazy(() => import("@/components/sections/projects/UberProjectSection"));
 const NASAProjectSection = lazy(() => import("@/components/sections/projects/NASAProjectSection"));
@@ -29,7 +29,7 @@ function usePreloadSectionChunks() {
   useEffect(() => {
     const preload = () => {
       import("@/components/sections/projects/AmazonProjectSection");
-      import("@/components/sections/projects/SlingProjectSection");
+      import("@/components/sections/projects/EchoStarProjectSection");
       import("@/components/sections/projects/UberProjectSection");
       import("@/components/sections/projects/NASAProjectSection");
       import("@/components/sections/projects/MercedesProjectSection");
@@ -112,7 +112,7 @@ export default function HomeClientSections() {
     // On mobile, requestIdleCallback preloading may not have fired yet.
     Promise.all([
       import("@/components/sections/projects/AmazonProjectSection"),
-      import("@/components/sections/projects/SlingProjectSection"),
+      import("@/components/sections/projects/EchoStarProjectSection"),
       import("@/components/sections/projects/UberProjectSection"),
       import("@/components/sections/projects/NASAProjectSection"),
       import("@/components/sections/projects/MercedesProjectSection"),
@@ -164,12 +164,12 @@ export default function HomeClientSections() {
         />
 
         <DeferredSection
-          id="sling-section"
+          id="echostar-section"
           rootMargin="320px 0px"
           minHeightClass="min-h-[1400px] md:min-h-[2000px]"
         >
           <Suspense fallback={<SectionFallback minHeightClass="min-h-[1400px] md:min-h-[2000px]" />}>
-            <SlingProjectSection />
+            <EchoStarProjectSection />
           </Suspense>
         </DeferredSection>
 

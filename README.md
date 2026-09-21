@@ -10,7 +10,7 @@
 
 A single-page research portfolio built from scratch — no templates. Each section presents a real HF case study with methodology, quantified outcomes, and engineering-facing decisions. The goal was a portfolio that reads like a researcher's work, not a design showcase.
 
-**Projects covered:** Amazon · Sling · Uber · NASA · Mercedes-Benz · Agentic Trust framework
+**Projects covered:** Amazon · EchoStar · Uber · NASA · Mercedes-Benz · Agentic Trust framework
 
 ---
 

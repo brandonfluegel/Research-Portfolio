@@ -22,11 +22,11 @@ const caseStudies = [
     description: "Human factors research calibrating Alexa latency thresholds to human perception, projecting $50M+ incremental revenue through the Negative Value Action model.",
   },
   {
-    id: "sling",
-    name: "Sling TV Human Factors & AI Systems Research Case Study",
-    organization: "Sling TV",
-    url: `${siteUrl}/#sling-section`,
-    description: "Staff Human Factors Researcher establishing org-wide HF standards for latency, visual UI design, and conversational AI response quality, alongside the Sling Experience Index (SXI) framework.",
+    id: "echostar",
+    name: "EchoStar Human Factors & AI Systems Research Case Study",
+    organization: "EchoStar",
+    url: `${siteUrl}/#echostar-section`,
+    description: "Staff Human Factors Researcher establishing org-wide HF standards for latency, visual UI design, and conversational AI response quality, alongside the EchoStar Experience Index (EXI) framework.",
   },
   {
     id: "uber",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
-  description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
-  keywords: ["Brandon Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "UX Researcher", "Human Factors", "Human-AI Interaction", "AI UX Research", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "Sling TV", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
+  description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz.",
+  keywords: ["Brandon Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "UX Researcher", "Human Factors", "Human-AI Interaction", "AI UX Research", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "EchoStar", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
   publisher: "Brandon Fluegel",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
+    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz.",
+    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz.",
     images: [profileSearchImage],
   },
 };
@@ -134,7 +134,7 @@ const structuredData = {
         "@id": `${siteUrl}#profile-image`,
       },
       jobTitle: "Staff Human Factors Researcher",
-      description: "Staff Human Factors Researcher and PhD with impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz — specializing in Human-AI Interaction, psychophysics, neuroimaging (fNIRS), cognitive load assessment, and research-driven product strategy.",
+      description: "Staff Human Factors Researcher and PhD with impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz — specializing in Human-AI Interaction, psychophysics, neuroimaging (fNIRS), cognitive load assessment, and research-driven product strategy.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -160,7 +160,7 @@ const structuredData = {
       ],
       worksFor: {
         "@type": "Organization",
-        name: "Sling TV",
+        name: "EchoStar",
       },
       hasOccupation: {
         "@id": `${siteUrl}#occupation`,

@@ -21,7 +21,7 @@ export default function Home() {
         <p>
           Staff Human Factors Researcher and PhD specializing in Human-AI Interaction, psychophysics,
           cognitive load assessment, and neuroimaging (fNIRS). Portfolio highlights include human factors
-          research at Amazon (Alexa latency thresholds, $50M in operational value), Sling TV (HF standards
+          research at Amazon (Alexa latency thresholds, $50M in operational value), EchoStar (HF standards
           for AI systems and hardware), Uber, NASA, and Mercedes-Benz HMI research.
         </p>
       </section>

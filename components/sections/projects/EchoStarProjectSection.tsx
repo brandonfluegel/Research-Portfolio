@@ -317,7 +317,7 @@ function SXIProjectMatrix() {
 
 // --- MAIN PAGE COMPONENT ---
 
-export default function SlingProjectSection() {
+export default function EchoStarProjectSection() {
   return (
     <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
@@ -333,11 +333,9 @@ export default function SlingProjectSection() {
         className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
       >
         <div className="flex items-center gap-6">
-          <LogoBadge 
-            logoSrc="/assets/Sling-logo.png" 
-            alt="Sling" 
-            className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
-          />
+          <div className="flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 md:px-5 md:py-3">
+            <span className="text-sm md:text-base font-semibold tracking-[0.24em] text-white uppercase">EchoStar</span>
+          </div>
           <div className="h-8 w-px bg-white/10 hidden md:block"></div>
           <div className="hidden md:block">
             <h2 className="text-lg text-white font-medium tracking-tight">Staff Human Factors Researcher</h2>
@@ -368,7 +366,7 @@ export default function SlingProjectSection() {
               </h3>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                I lead human factors strategy at Sling, reporting to the VP of Product — translating perceptual science into engineering requirements across software, physical hardware, and generative AI systems.
+                I lead human factors strategy at EchoStar, reporting to the VP of Product — translating perceptual science into engineering requirements across software, physical hardware, and generative AI systems.
               </p>
             </div>
 
@@ -405,7 +403,7 @@ export default function SlingProjectSection() {
               {/* Block 4: SXI (Framework) */}
               <div className="relative">
                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: SLING EXPERIENCE INDEX (SXI)</h4>
+                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">STRATEGIC FRAMEWORK: ECHOSTAR EXPERIENCE INDEX (EXI)</h4>
                 <p className="text-sm text-zinc-400 leading-relaxed">
                   A proprietary index anchoring behavioral telemetry to perceived-friction scores — converting subjective experience signals into a calibrated, actionable metric. <span className="text-green-400 font-bold">Adopted org-wide as the HF standard for all VP+ product reviews</span>, directly driving roadmap prioritization for features used by millions of subscribers.
                 </p>

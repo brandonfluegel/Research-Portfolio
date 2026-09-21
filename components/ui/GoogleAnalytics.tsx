@@ -14,7 +14,7 @@ declare global {
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
 
 // Case study section IDs that exist in the DOM
-const CASE_STUDY_SECTIONS = ["amazon", "sling", "uber", "nasa", "mercedes"];
+const CASE_STUDY_SECTIONS = ["amazon", "echostar", "uber", "nasa", "mercedes"];
 // Scroll depth checkpoints (% of total page height)
 const SCROLL_MILESTONES = [25, 50, 75, 90];
 // Active engagement time checkpoints (seconds)
