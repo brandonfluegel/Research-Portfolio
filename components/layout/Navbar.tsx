@@ -58,7 +58,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           : "bg-black/50 backdrop-blur-sm border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 relative z-[60]">
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 relative z-60">
         
         {/* LOGO */}
         <div className="flex items-center gap-3 group cursor-pointer relative">
@@ -106,7 +106,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[50] bg-black flex flex-col items-center justify-center h-dvh w-screen"
+            className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center h-dvh w-screen"
           >
             <ul className="flex flex-col space-y-8 text-center">
               {NAV_SECTIONS.map((link) => (
