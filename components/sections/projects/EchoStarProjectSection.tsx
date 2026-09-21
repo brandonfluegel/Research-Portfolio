@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useSyncExternalStore } from 'react';
 import { m } from "framer-motion";
-import LogoBadge from "@/components/ui/LogoBadge";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 import {
   ScatterChart,
