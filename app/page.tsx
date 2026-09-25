@@ -11,7 +11,7 @@ export default function Home() {
           </h1>
 
           <div className="font-medium text-zinc-300 text-center text-[clamp(0.8rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[90vw] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
-            Making autonomous and AI systems predictable and simple for the people who use them. Rapid field research paired with quantitative human-performance methods, across NASA, Mercedes-Benz, Amazon, and EchoStar.
+            Applying experimental design, neuroimaging, and human-performance modeling across aerospace, automotive, and consumer technology
           </div>
         </div>
       </section>
