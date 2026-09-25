@@ -30,7 +30,7 @@ const caseStudies = [
   },
   {
     id: "uber",
-    name: "Uber UX Research Case Study",
+    name: "Uber Human Factors Research Case Study",
     organization: "Uber",
     url: `${siteUrl}/#uber-section`,
     description: "Human Factors PhD Intern research addressing cognitive load and driver retention across the Uber driver experience in the LATAM market.",
@@ -68,8 +68,8 @@ export const metadata: Metadata = {
     default: "Brandon Fluegel, Ph.D.",
     template: "%s | Brandon Fluegel, Ph.D."
   },
-  description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz.",
-  keywords: ["Brandon Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "UX Researcher", "Human Factors", "Human-AI Interaction", "AI UX Research", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "EchoStar", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
+  description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
+  keywords: ["Brandon Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "Human Factors", "Human-AI Interaction", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "EchoStar", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
   authors: [{ name: "Brandon Fluegel" }],
   creator: "Brandon Fluegel",
   publisher: "Brandon Fluegel",
@@ -91,7 +91,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz.",
+    description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
     url: siteUrl,
     siteName: "Brandon Fluegel Portfolio",
     locale: "en_US",
@@ -108,7 +108,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Brandon Fluegel, Ph.D.",
-    description: "Staff Human Factors Researcher & PhD specializing in Human-AI Interaction, psychophysics, and product strategy. Research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz.",
+    description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
     images: [profileSearchImage],
   },
 };
@@ -145,7 +145,6 @@ const structuredData = {
         "Human Factors",
         "Human Factors Engineering",
         "Human-AI Interaction",
-        "UX Research",
         "Product Strategy",
         "Psychophysics",
         "Experimental Design",
@@ -156,7 +155,6 @@ const structuredData = {
         "Trust in AI Systems",
         "Latency Research",
         "Human Machine Interface",
-        "Quantitative UX Research",
       ],
       worksFor: {
         "@type": "Organization",
@@ -178,7 +176,6 @@ const structuredData = {
         "Human Factors",
         "Human Factors Engineering",
         "Human-AI Interaction",
-        "UX Research",
         "Experimental Design",
         "Psychophysics",
         "Cognitive Load Assessment",
@@ -197,7 +194,7 @@ const structuredData = {
       "@id": `${siteUrl}#website`,
       url: siteUrl,
       name: "Brandon Fluegel Portfolio",
-      description: "Human Factors UX Research and product impact portfolio.",
+      description: "Human Factors research and product impact portfolio.",
       image: {
         "@id": `${siteUrl}#profile-image`,
       },
@@ -227,7 +224,7 @@ const structuredData = {
     {
       "@type": "ItemList",
       "@id": `${siteUrl}#case-studies`,
-      name: "UX and Human Factors Case Studies",
+      name: "Human Factors Case Studies",
       itemListElement: caseStudies.map((study, index) => ({
         "@type": "ListItem",
         position: index + 1,

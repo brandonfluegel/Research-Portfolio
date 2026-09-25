@@ -76,7 +76,7 @@ const CustomTooltip = ({ active, payload }: { active?: boolean; payload?: { payl
         {/* Metrics */}
         <div className="space-y-2.5 mb-3">
           <div className="flex justify-between items-center">
-            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">SXI Score</span>
+            <span className="text-[10px] text-zinc-500 uppercase tracking-wider font-mono">EXI Score</span>
             <div className="flex items-center gap-2">
               <span className="text-base font-bold" style={{ color }}>{d.sxi}%</span>
               <span className="text-[9px] px-1.5 py-0.5 rounded font-mono font-bold uppercase tracking-wider" 
@@ -136,10 +136,10 @@ function SXIProjectMatrix() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)]" />
               </span>
-              SXI PRIORITIZATION MATRIX
+              EXI PRIORITIZATION MATRIX
             </h3>
             <p className="text-[10px] md:text-xs text-zinc-500 mt-1.5 font-mono uppercase tracking-[0.2em] pl-5">
-              Q4 2025 • SXI Score vs. Monthly Engagement
+              Q4 2025 • EXI Score vs. Monthly Engagement
             </p>
           </div>
         </div>
@@ -202,7 +202,7 @@ function SXIProjectMatrix() {
               <YAxis
                 type="number"
                 dataKey="sxi"
-                name="SXI Score"
+                name="EXI Score"
                 stroke="#27272a"
                 tick={{ fill: '#52525b', fontSize: isMobile ? 8 : 10, fontFamily: 'monospace' }}
                 tickFormatter={(v) => (v > 0 ? `+${v}` : `${v}`)}
@@ -213,7 +213,7 @@ function SXIProjectMatrix() {
                 width={isMobile ? 34 : 46}
               >
                 <Label
-                  value="SXI SCORE"
+                  value="EXI SCORE"
                   angle={-90}
                   position="insideLeft"
                   className="fill-zinc-600 font-mono uppercase tracking-[0.25em] font-bold"
@@ -293,19 +293,19 @@ function SXIProjectMatrix() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 text-[9px] md:text-[10px] font-mono uppercase tracking-wider">
               <div className="flex items-center gap-1.5 text-zinc-500">
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#00ff87', boxShadow: '0 0 6px rgba(0,255,135,0.4)' }} />
-              <span>SXI &ge; 70 (Healthy)</span>
+              <span>EXI &ge; 70 (Healthy)</span>
               </div>
               <div className="flex items-center gap-1.5 text-zinc-500">
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#ffb020', boxShadow: '0 0 6px rgba(255,176,32,0.4)' }} />
-              <span>SXI 66–69 (At Risk)</span>
+              <span>EXI 66–69 (At Risk)</span>
               </div>
               <div className="flex items-center gap-1.5 text-zinc-500">
               <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#ff3b5c', boxShadow: '0 0 6px rgba(255,59,92,0.4)' }} />
-              <span>SXI &le; 65 (Critical)</span>
+              <span>EXI &le; 65 (Critical)</span>
               </div>
             </div>
             <p className="text-[9px] md:text-[10px] text-zinc-600 font-mono tracking-wider pt-1 md:pt-0 md:pl-4 md:border-l md:border-white/6 md:whitespace-nowrap">
-              Color = SXI Health Status
+              Color = EXI Health Status
             </p>
           </div>
         </div>

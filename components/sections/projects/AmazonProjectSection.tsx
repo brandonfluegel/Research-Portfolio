@@ -244,7 +244,7 @@ export default function AmazonProjectSection() {
               Fig 3. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
             </p>
             <p className="mt-1 text-center text-[9px] font-mono text-zinc-700 tracking-wide">
-              Source: Alexa Response Latency Research — Devices Design Group, UX Research, April 2021
+              Source: Alexa Response Latency Research — Devices Design Group, April 2021
             </p>
           </m.div>
         </m.div>

@@ -11,18 +11,20 @@ export default function Home() {
           </h1>
 
           <div className="font-medium text-zinc-300 text-center text-[clamp(0.8rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[90vw] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
-            6+ years applying experimental design, neuroimaging, and human-performance modeling across aerospace, automotive, and consumer technology
+            Making autonomous and AI systems predictable and simple for the people who use them. Rapid field research paired with quantitative human-performance methods, across NASA, Mercedes-Benz, Amazon, and EchoStar.
           </div>
         </div>
       </section>
 
       <section aria-label="SEO Summary" className="sr-only">
-        <h2>Brandon Fluegel, Ph.D. — Staff Human Factors Researcher</h2>
+        <h2>Brandon Fluegel, Ph.D. — Human Factors Researcher</h2>
         <p>
-          Staff Human Factors Researcher and PhD specializing in Human-AI Interaction, psychophysics,
-          cognitive load assessment, and neuroimaging (fNIRS). Portfolio highlights include human factors
-          research at Amazon (Alexa latency thresholds, $50M in operational value), EchoStar (HF standards
-          for AI systems and hardware), Uber, NASA, and Mercedes-Benz HMI research.
+          Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive
+          systems. Pairs rapid field research (contextual inquiry, service blueprinting, rapid iterative testing)
+          with quantitative human-performance methods (psychophysics, cognitive load modeling, simulated-use
+          evaluation). Research across NASA, Mercedes-Benz, Amazon (perception-derived latency thresholds,
+          $50M in operational value; US Patent US-12532040-B1), and EchoStar (human factors strategy across
+          software, hardware, and AI).
         </p>
       </section>
 

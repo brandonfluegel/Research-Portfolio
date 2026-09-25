@@ -6,17 +6,17 @@ Role focus: Staff Human Factors Researcher
 Specialties: Human Factors, Human Factors Engineering, Human-AI Interaction, Psychophysics, Neuroimaging, Product Strategy
 
 Summary:
-Brandon Fluegel is a Staff Human Factors Researcher and PhD with research impact at Amazon, Sling TV, Uber, NASA, and Mercedes-Benz. He specializes in Human-AI Interaction, psychophysics, cognitive load assessment, neuroimaging (fNIRS), and translating human perception research into monetizable product strategy. Currently reporting to the VP of Product at Sling TV, leading human factors strategy across software, hardware, and generative AI systems.
+Brandon Fluegel is a Staff Human Factors Researcher and PhD with research impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz. He specializes in Human-AI Interaction, psychophysics, cognitive load assessment, neuroimaging (fNIRS), and translating human perception research into monetizable product strategy. Currently reporting to the VP of Product at EchoStar, leading human factors strategy across software, hardware, and generative AI systems.
 
 Case Studies:
 
 Amazon (Devices Design Group) — Human Factors & Business Strategy:
 Brandon led a multi-year human factors research program calibrating Alexa voice response latency to human perceptual thresholds. Using a custom Wizard of Oz latency engine across 20,000+ controlled interactions, he identified the 900ms "High Satisfaction Threshold." Integrating findings into the Negative Value Action (NVA) model projected $50M+ in incremental revenue over 15 months. Also conducted neuroimaging (fNIRS) to benchmark FireTV UI cognitive load against Apple TV and Netflix, and led Human Factors strategy for the Echo Show portfolio (75M+ customers). 2023 Amazon Inventor Award recipient.
 
-Sling TV — Staff Human Factors Researcher:
-Leads human factors strategy across software, hardware, and generative AI systems reporting to the VP of Product. Established org-wide HF standards for system latency, visual UI design, and response quality for conversational AI. Led hardware fit and comfort research using anthropometric and engineering requirements. Architected the Sling Experience Index (SXI), a proprietary quantitative framework merging behavioral telemetry with user-perceived friction, now the baseline for all VP+ product experience reviews. Defined multi-turn interaction model and Trust & System Status framework for a conversational TV assistant.
+EchoStar — Staff Human Factors Researcher:
+Leads human factors strategy across software, hardware, and generative AI systems reporting to the VP of Product. Established org-wide HF standards for system latency, visual UI design, and response quality for conversational AI. Led hardware fit and comfort research using anthropometric and engineering requirements. Architected the EchoStar Experience Index (EXI), a proprietary quantitative framework merging behavioral telemetry with user-perceived friction, now the baseline for all VP+ product experience reviews. Defined multi-turn interaction model and Trust & System Status framework for a conversational TV assistant.
 
-Uber — UX Research:
+Uber — Human Factors Research:
 Research-led product improvements addressing cognitive load and retention across the Uber driver and rider experience.
 
 NASA — Human Factors:
@@ -31,8 +31,6 @@ Core query topics:
 - Human Factors Engineer
 - Staff Human Factors Researcher
 - Human-AI Interaction
-- AI UX Research
-- UX Research
 - Psychophysics
 - Cognitive Load Assessment
 - Neuroimaging
