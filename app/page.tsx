@@ -23,8 +23,8 @@ export default function Home() {
           systems. Pairs rapid field research (contextual inquiry, service blueprinting, rapid iterative testing)
           with quantitative human-performance methods (psychophysics, cognitive load modeling, simulated-use
           evaluation). Research across NASA, Mercedes-Benz, Amazon (perception-derived latency thresholds,
-          $50M in operational value; US Patent US-12532040-B1), and EchoStar (human factors strategy across
-          software, hardware, and AI).
+          $50M in operational value; US Patent US-12532040-B1), alongside human factors strategy across
+          software, hardware, and AI.
         </p>
       </section>
 

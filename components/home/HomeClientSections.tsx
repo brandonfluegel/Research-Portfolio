@@ -8,7 +8,6 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
 
-const EchoStarProjectSection = lazy(() => import("@/components/sections/projects/EchoStarProjectSection"));
 const AmazonProjectSection = lazy(() => import("@/components/sections/projects/AmazonProjectSection"));
 const UberProjectSection = lazy(() => import("@/components/sections/projects/UberProjectSection"));
 const NASAProjectSection = lazy(() => import("@/components/sections/projects/NASAProjectSection"));
@@ -29,7 +28,6 @@ function usePreloadSectionChunks() {
   useEffect(() => {
     const preload = () => {
       import("@/components/sections/projects/AmazonProjectSection");
-      import("@/components/sections/projects/EchoStarProjectSection");
       import("@/components/sections/projects/UberProjectSection");
       import("@/components/sections/projects/NASAProjectSection");
       import("@/components/sections/projects/MercedesProjectSection");
@@ -112,7 +110,6 @@ export default function HomeClientSections() {
     // On mobile, requestIdleCallback preloading may not have fired yet.
     Promise.all([
       import("@/components/sections/projects/AmazonProjectSection"),
-      import("@/components/sections/projects/EchoStarProjectSection"),
       import("@/components/sections/projects/UberProjectSection"),
       import("@/components/sections/projects/NASAProjectSection"),
       import("@/components/sections/projects/MercedesProjectSection"),
@@ -159,22 +156,7 @@ export default function HomeClientSections() {
         </DeferredSection>
 
         <SectionDivider
-          label="From AI voice systems → Product strategy"
-          description="Applying psychophysics to monetization at scale"
-        />
-
-        <DeferredSection
-          id="echostar-section"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1400px] md:min-h-[2000px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1400px] md:min-h-[2000px]" />}>
-            <EchoStarProjectSection />
-          </Suspense>
-        </DeferredSection>
-
-        <SectionDivider
-          label="From product strategy → Global operations"
+          label="From AI systems → Global operations"
           description="Taking cognitive load reduction to emerging markets"
         />
 

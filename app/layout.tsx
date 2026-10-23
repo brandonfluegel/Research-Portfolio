@@ -22,13 +22,6 @@ const caseStudies = [
     description: "Human factors research calibrating Alexa latency thresholds to human perception, projecting $50M+ incremental revenue through the Negative Value Action model.",
   },
   {
-    id: "echostar",
-    name: "EchoStar Human Factors & AI Systems Research Case Study",
-    organization: "EchoStar",
-    url: `${siteUrl}/#echostar-section`,
-    description: "Staff Human Factors Researcher establishing org-wide HF standards for latency, visual UI design, and conversational AI response quality, alongside the EchoStar Experience Index (EXI) framework.",
-  },
-  {
     id: "uber",
     name: "Uber Human Factors Research Case Study",
     organization: "Uber",
@@ -68,8 +61,8 @@ export const metadata: Metadata = {
     default: "Brandon Allan Fluegel, Ph.D.",
     template: "%s | Brandon Allan Fluegel, Ph.D."
   },
-  description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
-  keywords: ["Brandon Allan Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "Human Factors", "Human-AI Interaction", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "EchoStar", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
+  description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and Uber.",
+  keywords: ["Brandon Allan Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "Human Factors", "Human-AI Interaction", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
   authors: [{ name: "Brandon Allan Fluegel" }],
   creator: "Brandon Allan Fluegel",
   publisher: "Brandon Allan Fluegel",
@@ -91,7 +84,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Brandon Allan Fluegel, Ph.D.",
-    description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
+    description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and Uber.",
     url: siteUrl,
     siteName: "Brandon Allan Fluegel Portfolio",
     locale: "en_US",
@@ -108,7 +101,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Brandon Allan Fluegel, Ph.D.",
-    description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
+    description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and Uber.",
     images: [profileSearchImage],
   },
 };
@@ -134,7 +127,7 @@ const structuredData = {
         "@id": `${siteUrl}#profile-image`,
       },
       jobTitle: "Staff Human Factors Researcher",
-      description: "Staff Human Factors Researcher and PhD with impact at Amazon, EchoStar, Uber, NASA, and Mercedes-Benz — specializing in Human-AI Interaction, psychophysics, neuroimaging (fNIRS), cognitive load assessment, and research-driven product strategy.",
+      description: "Staff Human Factors Researcher and PhD with impact at Amazon, Uber, NASA, and Mercedes-Benz — specializing in Human-AI Interaction, psychophysics, neuroimaging (fNIRS), cognitive load assessment, and research-driven product strategy.",
       sameAs: ["https://www.linkedin.com/in/fluegel/"],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -156,10 +149,6 @@ const structuredData = {
         "Latency Research",
         "Human Machine Interface",
       ],
-      worksFor: {
-        "@type": "Organization",
-        name: "EchoStar",
-      },
       hasOccupation: {
         "@id": `${siteUrl}#occupation`,
       },
