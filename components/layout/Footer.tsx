@@ -78,7 +78,7 @@ export default function Footer() {
           transition={{ delay: 0.4 }}
           className="pt-16 text-zinc-600 text-sm"
         >
-          © {new Date().getFullYear()} Brandon Fluegel, PhD. All Rights Reserved.
+          © {new Date().getFullYear()} Brandon Allan Fluegel, PhD. All Rights Reserved.
         </m.div>
       </div>
     </footer>

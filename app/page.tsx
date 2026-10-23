@@ -17,7 +17,7 @@ export default function Home() {
       </section>
 
       <section aria-label="SEO Summary" className="sr-only">
-        <h2>Brandon Fluegel, Ph.D. — Human Factors Researcher</h2>
+        <h2>Brandon Allan Fluegel, Ph.D. — Human Factors Researcher</h2>
         <p>
           Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive
           systems. Pairs rapid field research (contextual inquiry, service blueprinting, rapid iterative testing)

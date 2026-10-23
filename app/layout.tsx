@@ -63,16 +63,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  applicationName: "Brandon Fluegel Portfolio",
+  applicationName: "Brandon Allan Fluegel Portfolio",
   title: {
-    default: "Brandon Fluegel, Ph.D.",
-    template: "%s | Brandon Fluegel, Ph.D."
+    default: "Brandon Allan Fluegel, Ph.D.",
+    template: "%s | Brandon Allan Fluegel, Ph.D."
   },
   description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
-  keywords: ["Brandon Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "Human Factors", "Human-AI Interaction", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "EchoStar", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
-  authors: [{ name: "Brandon Fluegel" }],
-  creator: "Brandon Fluegel",
-  publisher: "Brandon Fluegel",
+  keywords: ["Brandon Allan Fluegel", "Staff Human Factors Researcher", "Human Factors Researcher", "Human Factors Engineer", "Human Factors", "Human-AI Interaction", "Psychophysics", "Experimental Design", "Cognitive Load", "fNIRS", "Neuroimaging", "Biometric Research", "Trust in AI", "Human Factors Engineering", "Amazon", "EchoStar", "Uber", "NASA", "Mercedes-Benz", "Product Research", "Product Strategy", "Latency Research", "Human Machine Interface"],
+  authors: [{ name: "Brandon Allan Fluegel" }],
+  creator: "Brandon Allan Fluegel",
+  publisher: "Brandon Allan Fluegel",
   category: "Human Factors Research",
   alternates: {
     canonical: "/",
@@ -90,10 +90,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Brandon Fluegel, Ph.D.",
+    title: "Brandon Allan Fluegel, Ph.D.",
     description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
     url: siteUrl,
-    siteName: "Brandon Fluegel Portfolio",
+    siteName: "Brandon Allan Fluegel Portfolio",
     locale: "en_US",
     type: "website",
     images: [
@@ -101,13 +101,13 @@ export const metadata: Metadata = {
         url: profileSearchImage,
         width: 1200,
         height: 1200,
-        alt: "Brandon Fluegel profile photo",
+        alt: "Brandon Allan Fluegel profile photo",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel, Ph.D.",
+    title: "Brandon Allan Fluegel, Ph.D.",
     description: "Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive systems. Research at NASA, Mercedes-Benz, Amazon, and EchoStar.",
     images: [profileSearchImage],
   },
@@ -123,12 +123,12 @@ const structuredData = {
       url: `${siteUrl}${profileSearchImage}`,
       width: 1200,
       height: 1200,
-      caption: "Brandon Fluegel profile photo",
+      caption: "Brandon Allan Fluegel profile photo",
     },
     {
       "@type": "Person",
       "@id": `${siteUrl}#person`,
-      name: "Brandon Fluegel, Ph.D.",
+      name: "Brandon Allan Fluegel, Ph.D.",
       url: siteUrl,
       image: {
         "@id": `${siteUrl}#profile-image`,
@@ -193,7 +193,7 @@ const structuredData = {
       "@type": "WebSite",
       "@id": `${siteUrl}#website`,
       url: siteUrl,
-      name: "Brandon Fluegel Portfolio",
+      name: "Brandon Allan Fluegel Portfolio",
       description: "Human Factors research and product impact portfolio.",
       image: {
         "@id": `${siteUrl}#profile-image`,
@@ -206,7 +206,7 @@ const structuredData = {
       "@type": "ProfilePage",
       "@id": `${siteUrl}#profile-page`,
       url: siteUrl,
-      name: "Brandon Fluegel Portfolio",
+      name: "Brandon Allan Fluegel Portfolio",
       about: {
         "@id": `${siteUrl}#person`,
       },

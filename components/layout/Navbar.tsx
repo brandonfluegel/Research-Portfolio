@@ -80,7 +80,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
               />
             </div>
             <span className="text-xs md:text-sm font-semibold text-white tracking-wide uppercase whitespace-nowrap">
-              Brandon Fluegel
+              Brandon Allan Fluegel
             </span>
           </Link>
         </div>

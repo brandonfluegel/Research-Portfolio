@@ -150,7 +150,7 @@ export default function FrameworkSection() {
     report += `\n`;
     report += `Audit Report\n`;
     report += `Conducted on: ${new Date().toLocaleDateString()}\n`;
-    report += `Framework by: Brandon Fluegel, Ph.D. · brandon.uxr@gmail.com\n`;
+    report += `Framework by: Brandon Allan Fluegel, Ph.D. · brandon.uxr@gmail.com\n`;
     report += `Available at: https://www.humanfactors.pro/#agent-trust\n`;
     report += `========================================================\n\n`;
 
@@ -318,7 +318,7 @@ export default function FrameworkSection() {
               {/* Attribution */}
               <div className="pt-4 mt-5 border-t border-white/10 shrink-0">
                 <p className="text-center text-[10px] text-zinc-500 font-mono">
-                  Framework by Brandon Fluegel
+                  Framework by Brandon Allan Fluegel
                 </p>
               </div>
             </div>
