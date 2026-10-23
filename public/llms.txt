@@ -1,12 +1,12 @@
-# Brandon Allan Fluegel, Ph.D. — Staff Human Factors Researcher
+# Brandon Allan Fluegel, Ph.D. — Human Factors Design Engineer
 
 Canonical: https://humanfactors.pro/
 Primary identity: Brandon Allan Fluegel, Ph.D.
-Role focus: Staff Human Factors Researcher
+Role focus: Human Factors Design Engineer
 Specialties: Human Factors, Human Factors Engineering, Human-AI Interaction, Psychophysics, Neuroimaging, Product Strategy
 
 Summary:
-Brandon Allan Fluegel is a Staff Human Factors Researcher and PhD with research impact at Amazon, Uber, NASA, and Mercedes-Benz. He specializes in Human-AI Interaction, psychophysics, cognitive load assessment, neuroimaging (fNIRS), and translating human perception research into monetizable product strategy.
+Brandon Allan Fluegel is a Human Factors Engineer and PhD with research impact at Amazon, Uber, NASA, and Mercedes-Benz. He specializes in Human-AI Interaction, psychophysics, cognitive load assessment, neuroimaging (fNIRS), and translating human perception research into monetizable product strategy.
 
 Case Studies:
 
@@ -25,7 +25,7 @@ Conducted foundational research on passenger experiences in L2 semi-autonomous v
 Core query topics:
 - Human Factors Research
 - Human Factors Researcher
-- Human Factors Engineer
+- Human Factors Design Engineer
 - Staff Human Factors Researcher
 - Human-AI Interaction
 - Psychophysics

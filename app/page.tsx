@@ -29,13 +29,12 @@ export default function Home() {
       </section>
 
       <section aria-label="SEO Summary" className="sr-only">
-        <h2>Brandon Allan Fluegel, Ph.D. — Human Factors Researcher</h2>
+        <h2>Brandon Allan Fluegel, Ph.D. — Human Factors Engineer</h2>
         <p>
-          Human Factors Researcher (Ph.D.) specializing in human-autonomy interaction and cognitive
+          Human Factors Engineer (Ph.D.) specializing in human-autonomy interaction and cognitive
           systems. Pairs rapid field research (contextual inquiry, service blueprinting, rapid iterative testing)
           with quantitative human-performance methods (psychophysics, cognitive load modeling, simulated-use
-          evaluation). Research across NASA, Mercedes-Benz, Amazon (perception-derived latency thresholds,
-          $50M in operational value; US Patent US-12532040-B1), alongside human factors strategy across
+          evaluation). Research across NASA, Mercedes-Benz, Amazon, alongside human factors strategy across
           software, hardware, and AI.
         </p>
       </section>

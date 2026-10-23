@@ -1,4 +1,4 @@
-# Brandon Allan Fluegel — Human Factors Research Portfolio
+# Brandon Allan Fluegel — Human Factors Engineering Portfolio
 
 > Translating human behavior and perception research into engineering specifications and product decisions
 
