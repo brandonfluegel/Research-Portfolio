@@ -12,39 +12,41 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevents white flashes during iOS overscroll and before hydration. */
+  background-color: #000;
+  color-scheme: dark;
 }
 
 body {
   background: transparent;
   color: var(--foreground);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   letter-spacing: 0.02em;
   line-height: 1.6;
   overflow-x: hidden;
   padding: 0;
 }
 
-/* CRITICAL FIX: GPU-Accelerated Infinite Scroll */
-@keyframes infinite-scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0); /* Moves exactly half the width */
-  }
+::selection {
+  background-color: rgb(99 102 241 / 0.35);
+  color: #fff;
 }
 
-.animate-infinite-scroll {
-  /* 40s duration for a smooth, slow glide. Linear is required for seamless looping. */
-  animation: infinite-scroll 40s linear infinite;
-  /* Hardware acceleration for mobile */
-  backface-visibility: hidden;
-  perspective: 1000px;
+:focus-visible {
+  outline: 2px solid rgb(129 140 248);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-/* Pause animation on hover if desired (optional, feels premium) */
-.animate-infinite-scroll:hover {
-  animation-play-state: paused;
+h1, h2, h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .text-balance {
@@ -90,20 +92,20 @@ body {
   text-transform: uppercase;
 }
 
-/* CSS-only ambient background orbs (replaces Framer Motion) */
+/* CSS-only ambient background orbs (radial gradients, no blur filters) */
 @keyframes orb-drift-1 {
-  0%, 100% { transform: translate3d(-20px, -20px, 0) scale(1); opacity: 0.3; }
-  50% { transform: translate3d(20px, 20px, 0) scale(1.2); opacity: 0.2; }
+  0%, 100% { transform: translate3d(-20px, -20px, 0) scale(1); opacity: 1; }
+  50% { transform: translate3d(20px, 20px, 0) scale(1.15); opacity: 0.7; }
 }
 @keyframes orb-drift-2 {
-  0%, 100% { transform: translate3d(20px, 20px, 0) scale(1); opacity: 0.2; }
-  50% { transform: translate3d(-20px, -20px, 0) scale(1.1); opacity: 0.1; }
+  0%, 100% { transform: translate3d(20px, 20px, 0) scale(1); opacity: 1; }
+  50% { transform: translate3d(-20px, -20px, 0) scale(1.1); opacity: 0.6; }
 }
 .animate-orb-1 {
-  animation: orb-drift-1 10s ease-in-out infinite;
+  animation: orb-drift-1 18s ease-in-out infinite;
 }
 .animate-orb-2 {
-  animation: orb-drift-2 15s ease-in-out infinite;
+  animation: orb-drift-2 24s ease-in-out infinite;
 }
 
 .ambient-orb {
@@ -113,8 +115,7 @@ body {
 html[data-performance-tier="low"] .ambient-orb,
 html[data-reduced-motion="true"] .ambient-orb {
   animation: none !important;
-  filter: blur(56px) !important;
-  opacity: 0.16 !important;
+  will-change: auto;
 }
 
 html[data-performance-tier="low"] .ambient-background,
@@ -168,4 +169,55 @@ html[data-reduced-motion="true"] [class*="duration-"] {
 /* Layout containment for fixed backgrounds to prevent CLS from viewport changes */
 .contain-strict {
   contain: layout style paint;
+}
+
+/* Layered so Tailwind utilities on the same element still win. */
+@layer components {
+  .media-frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(24 24 27 / 0.85);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.05), 0 25px 50px -12px rgb(0 0 0 / 0.5);
+  }
+
+  .info-card {
+    border-radius: 0.75rem;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    background-color: rgb(24 24 27 / 0.5);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.04);
+  }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.rise-in {
+  animation: rise-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes scroll-cue {
+  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.6; }
+  50% { transform: translate3d(0, 6px, 0); opacity: 1; }
+}
+
+.scroll-cue {
+  animation: scroll-cue 2.4s ease-in-out infinite;
+}
+
+html[data-reduced-motion="true"] .rise-in,
+html[data-reduced-motion="true"] .scroll-cue,
+html[data-performance-tier="low"] .scroll-cue {
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise-in,
+  .scroll-cue {
+    animation: none;
+  }
 }

@@ -47,12 +47,9 @@ export default function LazyVideo({ src, sources, poster, className = "" }: Lazy
 
     if (isInView) {
       video.play().catch(() => {});
-      return;
-    }
-
-    return () => {
+    } else {
       video.pause();
-    };
+    }
   }, [isInView, shouldLoad]);
 
   return (

@@ -69,7 +69,7 @@ function stopListening() {
   }
 }
 
-function subscribe(listener: () => void) {
+export function subscribeScroll(listener: () => void) {
   listeners.add(listener);
   startListening();
 
@@ -79,7 +79,7 @@ function subscribe(listener: () => void) {
   };
 }
 
-function getSnapshot() {
+export function getScrollSnapshot() {
   return snapshot;
 }
 
@@ -93,5 +93,14 @@ function getServerSnapshot(): ScrollSnapshot {
 }
 
 export default function useScrollMetrics() {
-  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  return useSyncExternalStore(subscribeScroll, getScrollSnapshot, getServerSnapshot);
+}
+
+// Re-renders only when the threshold is crossed, not on every scroll frame.
+export function useScrolledPast(threshold: number) {
+  return useSyncExternalStore(
+    subscribeScroll,
+    () => snapshot.scrollY > threshold,
+    () => false
+  );
 }

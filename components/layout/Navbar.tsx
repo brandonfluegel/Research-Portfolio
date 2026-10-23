@@ -4,29 +4,35 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { m, AnimatePresence } from "framer-motion";
-import useScrollMetrics from "@/hooks/useScrollMetrics";
+import { useScrolledPast } from "@/hooks/useScrollMetrics";
 import { scrollToSectionId, scrollToTopSmooth } from "@/lib/utils/scroll";
 import { NAV_SECTIONS } from "@/lib/constants/sections";
 
 export default function Navbar({ activeSection = "" }: { activeSection?: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pendingScrollRef = useRef<string | null>(null);
-  const { scrollY } = useScrollMetrics();
-  const isScrolled = scrollY > 50;
+  const isScrolled = useScrolledPast(50);
 
   // Lock body scroll when overlay is open.
   // Prevents iOS Safari from scrolling the page behind the overlay,
   // which shifts scroll position and causes wrong-section landings.
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    if (!mobileMenuOpen) return;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [mobileMenuOpen]);
+
+  const scrollToSectionDesktop = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    scrollToSectionId(href.replace("#", ""));
+  };
 
   const scrollToSection = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
@@ -69,12 +75,10 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           >
             <div className="relative h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
               <Image
-                src="/assets/cowboy.jpg"
-                alt="Profile Image"
+                src="/assets/avatar.webp"
+                alt="Brandon Allan Fluegel"
                 fill
                 priority
-                loading="eager"
-                quality={100}
                 sizes="40px"
                 className="object-cover"
               />
@@ -85,9 +89,29 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           </Link>
         </div>
 
+        <ul className="hidden lg:flex items-center gap-1">
+          {NAV_SECTIONS.map((link) => {
+            const isActive = activeSection === link.href.replace("#", "");
+            return (
+              <li key={link.name}>
+                <a
+                  href={link.href}
+                  onClick={(e) => scrollToSectionDesktop(e, link.href)}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`relative px-3 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors duration-200 ${
+                    isActive ? "text-white bg-white/10" : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {link.name}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+
         {/* HAMBURGER BUTTON */}
         <button
-          className="flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
+          className="lg:hidden flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={mobileMenuOpen}
@@ -109,8 +133,13 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
             className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center h-dvh w-screen"
           >
             <ul className="flex flex-col space-y-8 text-center">
-              {NAV_SECTIONS.map((link) => (
-                <li key={link.name}>
+              {NAV_SECTIONS.map((link, i) => (
+                <m.li
+                  key={link.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 + i * 0.04, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                >
                   <Link
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.href)}
@@ -122,7 +151,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                   >
                     {link.name}
                   </Link>
-                </li>
+                </m.li>
               ))}
             </ul>
           </m.div>

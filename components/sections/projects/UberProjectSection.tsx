@@ -22,7 +22,7 @@ export default function UberProjectSection() {
       >
         <div className="flex items-center gap-6">
           <LogoBadge 
-            logoSrc="/assets/uber-logo.png" 
+            logoSrc="/assets/uber-logo.webp"
             alt="Uber" 
             className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
           />
@@ -54,9 +54,9 @@ export default function UberProjectSection() {
         >
           {/* LEFT: VISUAL MEDIA (on desktop) */}
           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card flex items-center justify-center p-3 md:p-6">
+             <div className="media-frame aspect-video group media-card flex items-center justify-center p-3 md:p-6">
                 <Image
-                  src="/assets/project-image-2.jpg"
+                  src="/assets/uber-app.webp"
                   alt="Uber Research"
                   fill
                   quality={85}

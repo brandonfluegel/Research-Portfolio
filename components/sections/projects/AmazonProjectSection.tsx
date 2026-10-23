@@ -22,7 +22,7 @@ export default function AmazonProjectSection() {
       >
         <div className="flex items-center gap-6">
           <LogoBadge 
-            logoSrc="/assets/amazon-logo.png" 
+            logoSrc="/assets/amazon-logo.webp"
             alt="Amazon" 
             className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
           />
@@ -48,11 +48,11 @@ export default function AmazonProjectSection() {
           {/* LEFT: VIDEO */}
           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
             <div className="relative w-full max-w-2xl mx-auto">
-              <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+              <div className="media-frame aspect-video group media-card">
                 <div className="absolute -inset-4 bg-purple-500/6 blur-[60px] rounded-full pointer-events-none"></div>
                 <LazyVideo
                   sources={[{ src: "/assets/fnirs.webm", type: "video/webm" }]}
-                  poster="/assets/fnirs-poster.jpg"
+                  poster="/assets/fnirs-poster.webp"
                   className="relative object-cover w-full h-full opacity-70 grayscale-20 group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                 />
               </div>
@@ -70,7 +70,7 @@ export default function AmazonProjectSection() {
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
-              <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-purple-500/30 rounded-lg">
+              <div className="block md:hidden mb-6 p-4 info-card border-purple-500/30">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
                   <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Customers Reached</span>
@@ -105,7 +105,7 @@ export default function AmazonProjectSection() {
           </m.div>
         </m.div>
 
-        {/* === PROJECT 3: PERCEPTION SCIENCE & $50M IMPACT === */}
+        {/* === PROJECT 2: PERCEPTION SCIENCE & $50M IMPACT === */}
         <m.div
           variants={staggerContainer}
           initial="hidden"
@@ -121,7 +121,7 @@ export default function AmazonProjectSection() {
               </h3>
 
               {/* --- MOBILE ONLY: KEY METRIC --- */}
-              <div className="block md:hidden mb-6 p-4 bg-zinc-900/50 border border-green-500/30 rounded-lg">
+              <div className="block md:hidden mb-6 p-4 info-card border-green-500/30">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
                   <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Operational Value</span>
@@ -155,7 +155,7 @@ export default function AmazonProjectSection() {
 
           {/* RIGHT: DATA VISUALIZATION */}
           <m.div variants={fadeInFromRight} className="relative z-10 lg:col-span-6 flex flex-col justify-center h-full pt-8 lg:pt-0">
-            <div className="relative w-full max-w-2xl mx-auto aspect-16/11 md:aspect-16/10 bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl p-5 md:p-8 group">
+            <div className="media-frame max-w-2xl mx-auto aspect-16/11 md:aspect-16/10 p-5 md:p-8 group media-card">
 
               <div className="flex justify-between items-start mb-6 md:mb-8 z-20 relative">
                 <div>
@@ -240,10 +240,10 @@ export default function AmazonProjectSection() {
               </div>
             </div>
 
-            <p className="mt-8 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest">
-              Fig 3. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
+            <p className="meta-caption">
+              Fig 2. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
             </p>
-            <p className="mt-1 text-center text-[9px] font-mono text-zinc-700 tracking-wide">
+            <p className="mt-1 text-center text-[9px] font-mono text-zinc-600 tracking-wide">
               Source: Alexa Response Latency Research — Devices Design Group, April 2021
             </p>
           </m.div>

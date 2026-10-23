@@ -22,7 +22,7 @@ export default function NASAProjectSection() {
       >
         <div className="flex items-center gap-6">
           <LogoBadge 
-            logoSrc="/assets/nasa-logo.png" 
+            logoSrc="/assets/nasa-logo.webp"
             alt="NASA" 
             className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
           />
@@ -65,9 +65,9 @@ export default function NASAProjectSection() {
 
           {/* FULL-WIDTH IMMERSIVE MEDIA */}
           <m.div variants={fadeInUp} className="w-full">
-            <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+            <div className="media-frame aspect-video group media-card">
               <Image
-                src="/assets/nasahab2.PNG"
+                src="/assets/nasa-gateway.webp"
                 alt="NASA Gateway Research"
                 fill
                 quality={80}
@@ -85,18 +85,18 @@ export default function NASAProjectSection() {
                 </div>
               </div>
             </div>
-            <p className="mt-4 text-xs font-mono text-zinc-400 uppercase tracking-widest text-center">VR Simulation: Medical Workstation</p>
+            <p className="meta-caption">VR Simulation: Medical Workstation</p>
           </m.div>
 
           {/* PROCESS BLOCKS — TWO-COLUMN ON DESKTOP */}
           <m.div variants={fadeInUp} className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-8 md:mt-16 max-w-4xl mx-auto">
-            <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
+            <div className="p-4 md:p-6 info-card">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Validation: Lunar Gateway</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
                 Executed human factors validation studies for the Lunar Gateway medical workstation in a simulated microgravity environment, ahead of hardware specification lock. Testing surfaced physical and cognitive failure modes — including reach envelope violations, attention overload during timed procedures, and display legibility limits under restricted head mobility — before designs were committed to flight hardware.
               </p>
             </div>
-            <div className="p-4 md:p-6 bg-zinc-900/50 border border-white/10 rounded-xl">
+            <div className="p-4 md:p-6 info-card">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Error Modes Caught Before Hardware Lock</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
                 The redesigned interface and physical layout produced a measurable reduction in time-on-task for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.

@@ -22,7 +22,7 @@ export default function MercedesProjectSection() {
       >
         <div className="flex items-center gap-6">
           <LogoBadge 
-            logoSrc="/assets/benz.png" 
+            logoSrc="/assets/benz.webp"
             alt="Mercedes" 
             className="w-12 md:w-16 h-auto opacity-100 brightness-0 invert" 
           />
@@ -54,12 +54,12 @@ export default function MercedesProjectSection() {
         >
           {/* LEFT: VISUAL MEDIA (on desktop) */}
           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
-             <div className="relative w-full aspect-video bg-zinc-900/80 backdrop-blur-md rounded-xl overflow-hidden border border-white/10 shadow-2xl group media-card">
+             <div className="media-frame aspect-video group media-card">
                 <LazyVideo
                   sources={[
                     { src: "/assets/drive.webm", type: "video/webm" },
                   ]}
-                  poster="/assets/drive-poster.jpg"
+                  poster="/assets/drive-poster.webp"
                   className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
              </div>

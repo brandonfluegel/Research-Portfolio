@@ -7,10 +7,10 @@ export const NAV_SECTIONS = [
 ];
 
 const TRUST_COMPANIES = [
-  { name: "Amazon", logo: "/assets/amazon-logo.png", id: "amazon-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-6 w-auto" },
-  { name: "Uber", logo: "/assets/uber-logo.png", id: "uber-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-5 w-auto" },
-  { name: "NASA", logo: "/assets/nasa-logo.png", id: "nasa-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
-  { name: "Mercedes", logo: "/assets/benz.png", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
+  { name: "Amazon", logo: "/assets/amazon-logo.webp", id: "amazon-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-6 w-auto" },
+  { name: "Uber", logo: "/assets/uber-logo.webp", id: "uber-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-5 w-auto" },
+  { name: "NASA", logo: "/assets/nasa-logo.webp", id: "nasa-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
+  { name: "Mercedes", logo: "/assets/benz.webp", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
 ];
 
 export const SECTION_IDS = [
