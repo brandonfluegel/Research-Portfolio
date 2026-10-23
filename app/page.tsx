@@ -1,11 +1,5 @@
 import HomeClientSections from "@/components/home/HomeClientSections";
 
-const PROOF_POINTS = [
-  { value: "$50M", label: "Projected operational value" },
-  { value: "75M+", label: "Customers reached" },
-  { value: "Patent", label: "US 12,532,040 B1" },
-];
-
 export default function Home() {
   return (
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
@@ -20,16 +14,7 @@ export default function Home() {
             Applying experimental design, neuroimaging, and human-performance modeling across aerospace, automotive, and consumer technology
           </div>
 
-          <ul className="rise-in mt-8 md:mt-10 grid grid-cols-3 gap-2 sm:gap-3 w-full max-w-xl" style={{ animationDelay: "150ms" }}>
-            {PROOF_POINTS.map((point) => (
-              <li key={point.label} className="info-card px-1.5 py-3 sm:px-4 sm:py-4 text-center flex flex-col justify-center">
-                <div className="text-[15px] sm:text-xl md:text-2xl font-bold text-white tracking-tight">{point.value}</div>
-                <div className="mt-1 text-[9px] sm:text-[10px] font-mono text-zinc-500 uppercase tracking-normal sm:tracking-wider leading-tight">{point.label}</div>
-              </li>
-            ))}
-          </ul>
-
-          <p className="rise-in mt-5 text-[10px] sm:text-xs font-mono text-zinc-500 uppercase tracking-[0.12em] sm:tracking-[0.2em] text-center" style={{ animationDelay: "250ms" }}>
+          <p className="rise-in mt-8 md:mt-10 text-[10px] sm:text-xs font-mono text-zinc-500 uppercase tracking-[0.12em] sm:tracking-[0.2em] text-center" style={{ animationDelay: "250ms" }}>
             Amazon · Uber · NASA · <span className="whitespace-nowrap">Mercedes-Benz</span>
           </p>
 
