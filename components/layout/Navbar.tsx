@@ -58,22 +58,22 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b py-3 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] ${
         isScrolled
           ? "bg-black/80 backdrop-blur-xl border-white/10"
           : "bg-black/50 backdrop-blur-sm border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14 relative z-60">
+      <div className="max-w-6xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 flex items-center justify-between h-14 relative z-60">
         
         {/* LOGO */}
-        <div className="flex items-center gap-3 group cursor-pointer relative">
+        <div className="flex items-center gap-3 group cursor-pointer relative min-w-0">
           <Link 
             href="/" 
             onClick={scrollToTopSmooth}
-            className="flex items-center gap-3"
+            className="flex items-center gap-2.5 sm:gap-3 min-w-0"
           >
-            <div className="relative h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
+            <div className="relative shrink-0 h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
               <Image
                 src="/assets/avatar.webp"
                 alt="Brandon Allan Fluegel"
@@ -83,7 +83,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                 className="object-cover"
               />
             </div>
-            <span className="text-xs md:text-sm font-semibold text-white tracking-wide uppercase whitespace-nowrap">
+            <span className="text-xs md:text-sm font-semibold text-white tracking-wide uppercase whitespace-nowrap truncate">
               Brandon Allan Fluegel
             </span>
           </Link>
@@ -111,7 +111,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
 
         {/* HAMBURGER BUTTON */}
         <button
-          className="lg:hidden flex flex-col space-y-1.5 p-2 hover:opacity-80 transition-opacity cursor-pointer group"
+          className="lg:hidden shrink-0 -mr-2 h-11 w-11 flex flex-col items-center justify-center gap-1.5 hover:opacity-80 transition-opacity cursor-pointer group tap-highlight-transparent"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={mobileMenuOpen}
