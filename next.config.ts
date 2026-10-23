@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 2592000,
   },
   experimental: {
-    optimizePackageImports: ["framer-motion", "lucide-react", "recharts"],
+    optimizePackageImports: ["framer-motion"],
   },
   async headers() {
     return [
@@ -28,16 +28,6 @@ const nextConfig: NextConfig = {
         // Apply security headers to all routes.
         source: "/(.*)",
         headers: securityHeaders,
-      },
-      {
-        // Long-lived cache for immutable hashed static assets.
-        source: "/_next/static/(.*)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
       },
       {
         // Cache public assets (images, fonts) with revalidation.
