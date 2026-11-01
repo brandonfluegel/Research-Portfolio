@@ -2,7 +2,7 @@
 
 > Translating human behavior and perception research into engineering specifications and product decisions
 
-**Stack:** Next.js 16 · TypeScript 6 · Tailwind CSS v4 · Framer Motion 13 · Vercel
+**Stack:** Next.js 16 · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 · Vercel
 
 ---
 
@@ -34,7 +34,7 @@ A single-page research portfolio built from scratch — no templates. Each secti
 
 ## Stack
 
-Next.js 16 (App Router) · TypeScript 6 · Tailwind CSS v4 · Framer Motion 13 · Vercel
+Next.js 16 (App Router) · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 · Vercel
 
 ---
 

@@ -60,6 +60,7 @@ export default function MercedesProjectSection() {
                     { src: "/assets/drive.webm", type: "video/webm" },
                   ]}
                   poster="/assets/drive-poster.webp"
+                  ariaLabel="Mercedes-Benz semi-autonomous driving simulator"
                   className="w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                 />
              </div>

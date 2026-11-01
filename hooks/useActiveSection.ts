@@ -7,20 +7,36 @@ export default function useActiveSection() {
   const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
+    const visibleRatios = new Map<string, number>();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            visibleRatios.set(entry.target.id, entry.intersectionRect.height);
+          } else {
+            visibleRatios.delete(entry.target.id);
+          }
+        }
 
-        if (visible.length === 0) return;
+        if (visibleRatios.size === 0) return;
 
-        const next = visible[0].target.id;
-        setActiveSection((current) => (current === next ? current : next));
+        let bestId = "";
+        let bestHeight = -1;
+        for (const [id, height] of visibleRatios.entries()) {
+          if (height > bestHeight) {
+            bestHeight = height;
+            bestId = id;
+          }
+        }
+
+        if (bestId) {
+          setActiveSection((current) => (current === bestId ? current : bestId));
+        }
       },
       {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.1, 0.2, 0.3, 0.5],
+        rootMargin: "-18% 0px -55% 0px",
+        threshold: [0, 0.05, 0.1, 0.2, 0.35, 0.5, 0.75],
       }
     );
 
@@ -37,3 +53,4 @@ export default function useActiveSection() {
 
   return activeSection;
 }
+

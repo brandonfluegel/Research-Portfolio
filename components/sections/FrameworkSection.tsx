@@ -3,6 +3,7 @@
 
 import { useState, useCallback, useRef } from "react";
 import { m } from "framer-motion";
+import { trackAnalyticsEvent } from "@/components/ui/GoogleAnalytics";
 
 const PAIRS = [
   {
@@ -34,6 +35,8 @@ const PAIRS = [
     pitfallDesc: "Doing the wrong task quickly and confidently. The agent misreads the request and charges ahead, wasting effort and delivering results nobody asked for.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
+    nielsenMapping: "Error Prevention",
+    failureState: "Goal Misalignment",
     scientificFoundation: <>Merges the framework’s <strong>Transparency of Intent</strong> principle with Google PAIR’s <strong>Data and Model Alignment</strong> principle. Misalignment often stems from the agent failing to verify ambiguous goals before committing to action.</>,
     questions: [
       "Does the agent summarize its understanding of the goal before starting?",
@@ -51,6 +54,8 @@ const PAIRS = [
     pitfallDesc: "Hiding complex multistep execution behind a generic loading spinner. Users cannot verify progress or intervene if the system goes off track.",
     severity: "High Risk",
     severityLevel: "high",
+    nielsenMapping: "Visibility of System Status",
+    failureState: "Execution Opacity",
     scientificFoundation: <>Combines the framework’s <strong>Mutual Predictability</strong> principle with Dibia’s <strong>Observability and Provenance</strong> principle. Exposing live state maximizes Situation Awareness and grounds trust in verifiable actions.</>,
     questions: [
       "Can the user see the agent's work and reasoning as it happens?",
@@ -68,8 +73,8 @@ const PAIRS = [
     pitfallDesc: "Making irreversible, high-cost decisions without seeking approval—or pestering the user for permission on trivial, low-stakes tasks. Both failure modes erode trust: one through catastrophic overreach, the other through constant friction that trains users to ignore safety gates entirely.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
-    nielsenMapping: "Visibility of System Status",
-    failureState: "Execution Opacity",
+    nielsenMapping: "User Control & Freedom",
+    failureState: "Unbounded Autonomy",
     scientificFoundation: <>Minaee et al. [2024] show that users accept latency when perceived stakes justify friction—providing empirical grounding for cost-aware delegation gates. Bucinca et al. [2021] demonstrate that <strong>intentional friction during high-stakes decisions</strong> disrupts heuristic-based shortcuts and leads to deeper analytical reflection, validating hard "pause and review" gates as a safety mechanism for irreversible agent actions.</>,
     questions: [
       "Does the system flag actions that are irreversible or consume significant resources?",
@@ -87,6 +92,8 @@ const PAIRS = [
     pitfallDesc: "Locking the user out of the loop once a process begins. The user is forced to watch a mistake unfold or abort the entire session.",
     severity: "High Risk",
     severityLevel: "high",
+    nielsenMapping: "User Control & Freedom",
+    failureState: "Control Lockout",
     scientificFoundation: <>Synthesizes the framework’s <strong>Directability</strong> principle, Dibia’s <strong>Interruptibility</strong> principle, and Google PAIR’s <strong>User Autonomy</strong> principle. True partnership requires shared initiative and seamless mid-flight corrections.</>,
     questions: [
       "Can the user safely pause the agent mid-generation or mid-execution?",
@@ -104,6 +111,8 @@ const PAIRS = [
     pitfallDesc: "Presenting guesses, hallucinations, or risky actions with total confidence, leading users to blindly accept outputs that may be wrong. Without a visible track record, users have no way to judge when to trust the agent and when to double-check.",
     severity: "Catastrophic Trust Failure",
     severityLevel: "critical",
+    nielsenMapping: "Help Users Diagnose Errors",
+    failureState: "Miscalibrated Reliance",
     scientificFoundation: <>Merges the framework’s <strong>Calibrated Trust</strong> principle with Google PAIR’s <strong>Evolving Safety</strong> framework. Trust must be earned proportionately; expressing appropriate doubt prevents catastrophic over-reliance. PAIR’s evolving safety principle implies continuous self-assessment. Agents that surface their own improvement metrics give users a rational foundation for trust. PAIR’s <strong>Adapt with Feedback</strong> principle extends naturally here: as trust deepens, the agent should learn <em>how</em> the user wants results, not just <em>what</em> to do.</>,
     questions: [
       "Are uncertain conclusions visually distinct from verified facts?",
@@ -138,9 +147,29 @@ export default function FrameworkSection() {
     }
   };
 
+  const selectPrincipleTab = (idx: number, navSurface: "mobile" | "desktop") => {
+    setActiveIdx(idx);
+    trackAnalyticsEvent("framework_tab_selected", {
+      principle_title: PAIRS[idx]?.title || "",
+      phase: PAIRS[idx]?.phase || 1,
+      nav_surface: navSurface,
+    });
+  };
+
   const toggleCheck = (questionIndex: number) => {
     const key = `${activeIdx}-${questionIndex}`;
-    setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
+    setCheckedItems(prev => {
+      const nextChecked = !prev[key];
+      const nextState = { ...prev, [key]: nextChecked };
+      const totalChecked = Object.values(nextState).filter(Boolean).length;
+      trackAnalyticsEvent("framework_checklist_toggled", {
+        principle_title: PAIRS[activeIdx]?.title || "",
+        question_index: questionIndex + 1,
+        checked: nextChecked,
+        total_checked: totalChecked,
+      });
+      return nextState;
+    });
   };
 
   const handleExport = useCallback(() => {
@@ -174,6 +203,12 @@ export default function FrameworkSection() {
 
     report += `========================================================\n`;
     report += `Final Score: ${passedCount} / ${totalCount} Checks Passed\n`;
+
+    trackAnalyticsEvent("framework_audit_exported", {
+      passed_checks: passedCount,
+      total_checks: totalCount,
+      completion_percent: totalCount > 0 ? Math.round((passedCount / totalCount) * 100) : 0,
+    });
 
     const blob = new Blob([report], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
@@ -240,7 +275,7 @@ export default function FrameworkSection() {
             <div className="lg:hidden relative">
               <div className="absolute left-0 top-0 bottom-4 w-6 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-4 w-6 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
-              <div className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
+              <div role="tablist" aria-label="Agentic Trust Principles" className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
               {/* Spacer after last item so it can scroll to center */}
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
@@ -248,8 +283,11 @@ export default function FrameworkSection() {
                 return (
                   <button
                     key={idx}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
                     onClick={() => {
-                      setActiveIdx(idx);
+                      selectPrincipleTab(idx, "mobile");
                       const el = document.getElementById(`mobile-nav-${idx}`);
                       if (!el) return;
                       // Center the tapped tab within the horizontal scroll strip.
@@ -280,7 +318,7 @@ export default function FrameworkSection() {
             </div>
 
             {/* Desktop Vertical Navigation */}
-            <div className="hidden lg:flex bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/10 p-4 xl:p-5 flex-col">
+            <div role="tablist" aria-label="Agentic Trust Principles" className="hidden lg:flex bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/10 p-4 xl:p-5 flex-col">
               <div className="flex-1">
                 <div className="space-y-5">
                   {PHASES.map((phase) => (
@@ -293,7 +331,10 @@ export default function FrameworkSection() {
                           return (
                             <button
                               key={idx}
-                              onClick={() => setActiveIdx(idx)}
+                              type="button"
+                              role="tab"
+                              aria-selected={isActive}
+                              onClick={() => selectPrincipleTab(idx, "desktop")}
                               className={`w-full text-left px-3.5 py-2.5 rounded-lg text-[13px] font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
                                 isActive 
                                   ? 'bg-white text-black shadow-lg shadow-white/10' 
@@ -302,7 +343,7 @@ export default function FrameworkSection() {
                             >
                               <span>{pair.title}</span>
                               {!isActive && (
-                                <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                 </svg>
                               )}
@@ -365,6 +406,9 @@ export default function FrameworkSection() {
                         return (
                           <button 
                             key={i}
+                            type="button"
+                            role="checkbox"
+                            aria-checked={isChecked}
                             onClick={() => toggleCheck(i)}
                             className={`w-full text-left flex gap-3 px-4 py-3.5 rounded-xl border transition-all active:scale-[0.98] ${
                               isChecked 
@@ -376,7 +420,7 @@ export default function FrameworkSection() {
                               isChecked 
                                 ? 'bg-indigo-500 border-indigo-500' 
                                 : 'border-zinc-600'
-                            }`}>
+                            }`} aria-hidden="true">
                               {isChecked && (
                                 <svg className="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7"></path>

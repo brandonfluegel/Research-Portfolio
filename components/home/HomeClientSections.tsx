@@ -202,9 +202,7 @@ export default function HomeClientSections() {
 
       </section>
 
-      <div className="mt-32 border-t border-white/10">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

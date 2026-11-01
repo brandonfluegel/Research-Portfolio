@@ -41,7 +41,7 @@ export default function Footer() {
           transition={{ delay: 0.1 }}
           className="text-zinc-400 text-lg max-w-2xl mx-auto"
         >
-          Open to senior leadership roles in Human Factors research, AI systems, and product strategy.
+          Advancing human performance, safety, and trust across robotics, medical, and mission-critical autonomous systems.
         </m.p>
 
         {/* CTA Buttons */}

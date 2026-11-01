@@ -53,6 +53,7 @@ export default function AmazonProjectSection() {
                 <LazyVideo
                   sources={[{ src: "/assets/fnirs.webm", type: "video/webm" }]}
                   poster="/assets/fnirs-poster.webp"
+                  ariaLabel="Measuring cognitive load via fNIRS neuroimaging"
                   className="relative object-cover w-full h-full opacity-70 grayscale-20 group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
                 />
               </div>

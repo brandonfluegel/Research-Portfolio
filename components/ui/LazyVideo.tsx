@@ -1,16 +1,17 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { isLowPowerDevice } from "@/lib/utils/performance";
+import { isLowPowerDevice, prefersReducedMotion } from "@/lib/utils/performance";
 
 interface LazyVideoProps {
   src?: string;
   sources?: Array<{ src: string; type: string }>;
   poster?: string;
+  ariaLabel?: string;
   className?: string;
 }
 
-export default function LazyVideo({ src, sources, poster, className = "" }: LazyVideoProps) {
+export default function LazyVideo({ src, sources, poster, ariaLabel, className = "" }: LazyVideoProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -45,7 +46,7 @@ export default function LazyVideo({ src, sources, poster, className = "" }: Lazy
     const video = videoRef.current;
     if (!video || !shouldLoad) return;
 
-    if (isInView) {
+    if (isInView && !prefersReducedMotion()) {
       video.play().catch(() => {});
     } else {
       video.pause();
@@ -57,6 +58,7 @@ export default function LazyVideo({ src, sources, poster, className = "" }: Lazy
       <video
         ref={videoRef}
         poster={poster}
+        aria-label={ariaLabel}
         autoPlay
         muted
         loop
@@ -72,3 +74,4 @@ export default function LazyVideo({ src, sources, poster, className = "" }: Lazy
     </div>
   );
 }
+

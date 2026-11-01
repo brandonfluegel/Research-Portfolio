@@ -1,19 +1,10 @@
 export const NAV_SECTIONS = [
   { name: "Amazon", href: "#amazon-section" },
+  { name: "Agentic Trust", href: "#agent-trust" },
   { name: "Uber", href: "#uber-section" },
   { name: "NASA", href: "#nasa-section" },
   { name: "Mercedes", href: "#mercedes-section" },
-  { name: "Agentic Trust", href: "#agent-trust" },
-];
+] as const;
 
-const TRUST_COMPANIES = [
-  { name: "Amazon", logo: "/assets/amazon-logo.webp", id: "amazon-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-6 w-auto" },
-  { name: "Uber", logo: "/assets/uber-logo.webp", id: "uber-section", sizing: "h-5 md:h-8 w-auto", mobileSizing: "h-5 w-auto" },
-  { name: "NASA", logo: "/assets/nasa-logo.webp", id: "nasa-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
-  { name: "Mercedes", logo: "/assets/benz.webp", id: "mercedes-section", sizing: "h-8 md:h-10 w-auto", mobileSizing: "h-8 w-auto" },
-];
+export const SECTION_IDS = NAV_SECTIONS.map((section) => section.href.slice(1));
 
-export const SECTION_IDS = [
-  ...TRUST_COMPANIES.map((company) => company.id),
-  "agent-trust"
-];

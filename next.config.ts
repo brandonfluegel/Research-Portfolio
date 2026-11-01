@@ -39,6 +39,24 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // Serve LLM discovery files with explicit UTF-8 text/plain and Link discovery headers.
+        source: "/(llms\\.txt|llms-full\\.txt|\\.well-known/llms\\.txt)",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=utf-8",
+          },
+          {
+            key: "Cache-Control",
+            value: "public, max-age=3600, stale-while-revalidate=86400",
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "all",
+          },
+        ],
+      },
     ];
   },
 };
