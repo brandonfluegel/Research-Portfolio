@@ -205,7 +205,7 @@ export const PAIRS: FrameworkPrinciplePair[] = [
 ];
 
 export function buildAuditReport(checkedItems: Record<string, boolean>) {
-  let report = `HUMAN FACTORS PRINCIPLES FOR AGENTIC TRUST\n`;
+  let report = `HUMAN FACTORS PRINCIPLES FOR HUMAN-AI TRUST\n`;
   report += `An Audit Framework for Non-Deterministic Interfaces\n`;
   report += `Version 2 · July 2026\n\n`;
   report += `Audit Report\n`;

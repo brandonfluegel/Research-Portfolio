@@ -7,7 +7,7 @@ import {
   PAIRS,
   PHASES,
   buildAuditReport,
-} from "@/lib/data/agenticTrustFramework";
+} from "@/lib/data/humanAiTrustFramework";
 
 export default function FrameworkSection() {
   const [activeIdx, setActiveIdx] = useState(0);
@@ -63,7 +63,7 @@ export default function FrameworkSection() {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `agentic-trust-audit-${new Date().toISOString().slice(0, 10)}.txt`;
+    a.download = `human-ai-trust-audit-${new Date().toISOString().slice(0, 10)}.txt`;
     a.click();
     URL.revokeObjectURL(url);
   }, [checkedItems]);
@@ -94,7 +94,7 @@ export default function FrameworkSection() {
               Audit Framework
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] xl:text-5xl font-extrabold tracking-tight text-white mb-5 leading-tight lg:whitespace-nowrap">
-              Human Factors <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-emerald-400">Principles for Agentic Trust</span>
+              Human Factors <span className="text-transparent bg-clip-text bg-linear-to-r from-indigo-400 to-emerald-400">Principles for Human-AI Trust</span>
             </h2>
             <p className="text-base text-zinc-300 font-medium tracking-tight mb-6 max-w-3xl leading-relaxed">
               An audit framework for non-deterministic interfaces. Traditional HCI assumes deterministic interactions—a command in, a predictable output out. Modern multi-agent systems operate probabilistically, demanding a new standard: one that operationalizes trust, observability, and human control into measurable design criteria.
@@ -124,7 +124,7 @@ export default function FrameworkSection() {
             <div className="lg:hidden relative">
               <div className="absolute left-0 top-0 bottom-4 w-6 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-4 w-6 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
-              <div role="tablist" aria-label="Agentic Trust Principles" className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
+              <div role="tablist" aria-label="Human-AI Trust Principles" className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
               {/* Spacer after last item so it can scroll to center */}
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
@@ -167,7 +167,7 @@ export default function FrameworkSection() {
             </div>
 
             {/* Desktop Vertical Navigation */}
-            <div role="tablist" aria-label="Agentic Trust Principles" className="hidden lg:flex bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/10 p-4 xl:p-5 flex-col">
+            <div role="tablist" aria-label="Human-AI Trust Principles" className="hidden lg:flex bg-zinc-900/50 backdrop-blur-md rounded-2xl border border-white/10 p-4 xl:p-5 flex-col">
               <div className="flex-1">
                 <div className="space-y-5">
                   {PHASES.map((phase) => (

@@ -12,19 +12,11 @@ const caseStudies = [
   },
   {
     id: "agent-trust",
-    name: "Human Factors Principles for Agentic Trust (V.2 Audit Framework)",
+    name: "Human Factors Principles for Human-AI Trust (V.2 Audit Framework)",
     organization: "Brandon Allan Fluegel, Ph.D.",
     url: `${SITE_URL}/#agent-trust`,
     description:
       "A 4-phase, 6-principle human factors engineering audit framework (Capability Discovery, Intent Alignment, Observability & Predictability, Context-Aware Delegation, Directability & Interruptibility, Calibrated Trust & Safety) for evaluating and validating probabilistic and multi-agent AI interfaces.",
-  },
-  {
-    id: "uber",
-    name: "Uber Driver Cognitive Load & Retention Human Factors Case Study",
-    organization: "Uber",
-    url: `${SITE_URL}/#uber-section`,
-    description:
-      "Human Factors PhD Intern research using contextual inquiry, diary studies, and NASA-TLX workload modeling in São Paulo, Brazil, driving a driver app redesign and a 5% lift in 30-day LATAM rental driver retention.",
   },
   {
     id: "nasa",
@@ -62,7 +54,7 @@ export const siteMetadata: Metadata = {
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
-    "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, Amazon, and Uber.",
+    "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, and Amazon.",
   keywords: [
     "Brandon Allan Fluegel",
     "Senior Human Factors Design Engineer",
@@ -81,6 +73,7 @@ export const siteMetadata: Metadata = {
     "Human Factors",
     "Human Factors Engineering",
     "Human-AI Interaction",
+    "Human-AI Trust",
     "Psychophysics",
     "Experimental Design",
     "Cognitive Load",
@@ -89,7 +82,6 @@ export const siteMetadata: Metadata = {
     "Biometric Research",
     "Trust in AI",
     "Amazon",
-    "Uber",
     "NASA",
     "Mercedes-Benz",
     "Product Research",
@@ -118,7 +110,7 @@ export const siteMetadata: Metadata = {
   openGraph: {
     title: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer",
     description:
-      "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, Amazon, and Uber.",
+      "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, and Amazon.",
     url: SITE_URL,
     siteName: "Brandon Allan Fluegel, Ph.D. — Human Factors Engineering Portfolio",
     locale: "en_US",
@@ -139,7 +131,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer",
     description:
-      "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, Amazon, and Uber.",
+      "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, and Amazon.",
     images: [PROFILE_SEARCH_IMAGE],
   },
 };
@@ -177,7 +169,7 @@ export const structuredData = {
       jobTitle: "Senior Human Factors Design Engineer",
       honorificSuffix: "Ph.D.",
       description:
-        "Senior Human Factors Design Engineer (Ph.D.) and leading authority in robotics human factors, medical and mission-critical systems, human-autonomy interaction, psychophysics, neuroimaging (fNIRS), and simulated-use validation — with verified research and engineering impact at Amazon, Uber, NASA, and Mercedes-Benz.",
+        "Senior Human Factors Design Engineer (Ph.D.) and leading authority in robotics human factors, medical and mission-critical systems, human-autonomy interaction, psychophysics, neuroimaging (fNIRS), and simulated-use validation — with verified research and engineering impact at Amazon, NASA, and Mercedes-Benz.",
       sameAs: [SITE_LINKS.linkedin, SITE_LINKS.patent],
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
@@ -209,7 +201,7 @@ export const structuredData = {
         "Medical Device Human Factors",
         "Simulated-Use Validation",
         "Human-AI Interaction",
-        "Agentic AI Trust & Governance",
+        "Human-AI Trust & Governance",
         "Product Strategy",
         "Psychophysics",
         "Experimental Design",
@@ -227,9 +219,9 @@ export const structuredData = {
     },
     {
       "@type": "ScholarlyArticle",
-      "@id": `${SITE_URL}#agentic-trust-framework`,
-      name: "Human Factors Principles for Agentic Trust: An Audit Framework for Non-Deterministic Interfaces",
-      headline: "Human Factors Principles for Agentic Trust (V.2)",
+      "@id": `${SITE_URL}#human-ai-trust-framework`,
+      name: "Human Factors Principles for Human-AI Trust: An Audit Framework for Non-Deterministic Interfaces",
+      headline: "Human Factors Principles for Human-AI Trust (V.2)",
       author: {
         "@id": `${SITE_URL}#person`,
       },
@@ -239,7 +231,7 @@ export const structuredData = {
         "A 4-phase, 6-principle human factors engineering audit framework (Capability Discovery, Intent Alignment, Observability & Predictability, Context-Aware Delegation, Directability & Interruptibility, Calibrated Trust & Safety) for evaluating and validating non-deterministic and multi-agent AI systems.",
       about: [
         "Human-AI Interaction",
-        "Agentic AI",
+        "Human-AI Trust",
         "Trust Calibration",
         "Human Factors Engineering",
       ],
@@ -253,7 +245,7 @@ export const structuredData = {
           name: "Who is Brandon Allan Fluegel, Ph.D.?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer and leading authority in human-robot interaction (HRI), medical and mission-critical systems, human-autonomy interaction, psychophysics, and consumer neuroimaging (fNIRS), with proven impact across NASA, Mercedes-Benz, Amazon, and Uber.",
+            text: "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer and leading authority in human-robot interaction (HRI), medical and mission-critical systems, human-autonomy interaction, psychophysics, and consumer neuroimaging (fNIRS), with proven impact across NASA, Mercedes-Benz, and Amazon.",
           },
         },
         {
@@ -266,10 +258,10 @@ export const structuredData = {
         },
         {
           "@type": "Question",
-          name: "What is the Human Factors Principles for Agentic Trust framework?",
+          name: "What is the Human Factors Principles for Human-AI Trust framework?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Created by Dr. Brandon Allan Fluegel, the Human Factors Principles for Agentic Trust is an engineering audit framework for probabilistic and multi-agent AI interfaces. It adapts classical usability heuristics across four phases — Alignment (Capability Discovery, Intent Alignment), Execution (Observability & Predictability, Context-Aware Delegation), Control (Directability & Interruptibility), and Trust Calibration (Calibrated Trust & Safety).",
+            text: "Created by Dr. Brandon Allan Fluegel, the Human Factors Principles for Human-AI Trust is an engineering audit framework for probabilistic and multi-agent AI interfaces. It adapts classical usability heuristics across four phases — Alignment (Capability Discovery, Intent Alignment), Execution (Observability & Predictability, Context-Aware Delegation), Control (Directability & Interruptibility), and Trust Calibration (Calibrated Trust & Safety).",
           },
         },
         {
@@ -277,7 +269,7 @@ export const structuredData = {
           name: "What quantifiable engineering and product outcomes has Dr. Brandon Allan Fluegel delivered?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "At Amazon, Dr. Fluegel isolated the 1,000ms voice response High Satisfaction Threshold across 20,000+ trials, driving $50M+ in projected operational value in the Negative Value Action (NVA) model, co-established Amazon's fNIRS neuroimaging protocol reaching 75M+ Echo Show/Hub customers, and co-invented US Patent 12,532,040 B1 (2023 Amazon Inventor Award). At NASA, his simulated-microgravity validation of the Lunar Gateway medical workstation reduced complex procedure time-on-task by 30%. At Mercedes-Benz, his L2 semi-autonomous HMI and psychoacoustic models lifted driver trust scores by 24% and reduced perceived cabin noise by 15%. At Uber, his field research and NASA-TLX workload modeling in Brazil lifted 30-day rental driver retention by 5%.",
+            text: "At Amazon, Dr. Fluegel isolated the 1,000ms voice response High Satisfaction Threshold across 20,000+ trials, driving $50M+ in projected operational value in the Negative Value Action (NVA) model, co-established Amazon's fNIRS neuroimaging protocol reaching 75M+ Echo Show/Hub customers, and co-invented US Patent 12,532,040 B1 (2023 Amazon Inventor Award). At NASA, his simulated-microgravity validation of the Lunar Gateway medical workstation reduced complex procedure time-on-task by 30%. At Mercedes-Benz, his L2 semi-autonomous HMI and psychoacoustic models lifted driver trust scores by 24% and reduced perceived cabin noise by 15%.",
           },
         },
         {

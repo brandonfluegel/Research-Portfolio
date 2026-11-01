@@ -12,7 +12,6 @@ import { scrollToSectionId } from "@/lib/utils/scroll";
 const SECTION_IMPORTERS = {
   "amazon-section": () => import("@/components/sections/projects/AmazonProjectSection"),
   "agent-trust": () => import("@/components/sections/FrameworkSection"),
-  "uber-section": () => import("@/components/sections/projects/UberProjectSection"),
   "nasa-section": () => import("@/components/sections/projects/NASAProjectSection"),
   "mercedes-section": () => import("@/components/sections/projects/MercedesProjectSection"),
 } as const;
@@ -32,7 +31,7 @@ const HOME_SECTIONS: Array<{
     minHeightClass: "min-h-[1500px] md:min-h-[2100px]",
     dividerAfter: {
       label: "From applications → Global standards",
-      description: "Evolving established models into modern agent trust frameworks",
+      description: "Evolving established models into modern Human-AI trust frameworks",
     },
   },
   {
@@ -40,16 +39,7 @@ const HOME_SECTIONS: Array<{
     Component: lazy(SECTION_IMPORTERS["agent-trust"]),
     minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
     dividerAfter: {
-      label: "From AI systems → Global operations",
-      description: "Taking cognitive load reduction to emerging markets",
-    },
-  },
-  {
-    id: "uber-section",
-    Component: lazy(SECTION_IMPORTERS["uber-section"]),
-    minHeightClass: "min-h-[1050px] md:min-h-[1250px]",
-    dividerAfter: {
-      label: "From global ops → Mission-critical systems",
+      label: "From AI systems → Mission-critical systems",
       description: "Where cognitive error costs lives, not conversions",
     },
   },

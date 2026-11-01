@@ -39,7 +39,7 @@ export default function Home() {
           Patent 12,532,040 B1. He pairs rapid field research (contextual inquiry, service
           blueprinting, rapid iterative testing) with quantitative human-performance methods
           (psychophysics, cognitive load modeling, simulated-use validation) across NASA,
-          Mercedes-Benz, Amazon, and Uber.
+          Mercedes-Benz, and Amazon.
         </p>
         <h3>Key Contributions, Patents, Frameworks &amp; Quantified Impact</h3>
         <ul>
@@ -59,7 +59,7 @@ export default function Home() {
             load across streaming and multimodal device interfaces.
           </li>
           <li>
-            <strong>Human Factors Principles for Agentic Trust Framework (V.2, July 2026):</strong> Authored the 4-phase,
+            <strong>Human Factors Principles for Human-AI Trust Framework (V.2, July 2026):</strong> Authored the 4-phase,
             6-principle engineering audit framework for probabilistic and multi-agent AI systems:
             Phase I Alignment — (1) Capability Discovery (&ldquo;Share Limits Before Work Begins&rdquo;, adapts Match System to World, prevents The Over-Promiser / Capability Mismatch) and (2) Intent Alignment (&ldquo;Mirror Human Intentions&rdquo;, adapts Error Prevention, prevents The Eager Misreader / Goal Misalignment);
             Phase II Execution — (3) Observability &amp; Predictability (&ldquo;Think Out Loud&rdquo;, adapts Visibility of System Status, prevents The Black Box / Execution Opacity) and (4) Context-Aware Delegation (&ldquo;Scale Autonomy to Perceived Risk&rdquo;, adapts User Control &amp; Freedom, prevents The Rogue Spender / Unbounded Autonomy);
@@ -77,11 +77,6 @@ export default function Home() {
             Modality standards for L2 autonomous handovers and built a psychoacoustic cabin-noise perception model,
             reducing perceived cabin noise by 15% and increasing driver trust scores by 24% during automated lane
             changes and control transitions.
-          </li>
-          <li>
-            <strong>Global Driver Cognitive Load &amp; Retention (Uber):</strong> Executed contextual inquiry,
-            in-situ diary studies, and NASA-TLX cognitive workload modeling in São Paulo, Brazil, driving a driver
-            app redesign that lifted 30-day rental driver retention by 5% across LATAM.
           </li>
         </ul>
       </section>

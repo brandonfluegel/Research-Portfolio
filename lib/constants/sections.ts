@@ -1,7 +1,6 @@
 export const NAV_SECTIONS = [
   { id: "amazon-section", name: "Amazon", href: "#amazon-section" },
-  { id: "agent-trust", name: "Agentic Trust", href: "#agent-trust" },
-  { id: "uber-section", name: "Uber", href: "#uber-section" },
+  { id: "agent-trust", name: "Human-AI Trust", href: "#agent-trust" },
   { id: "nasa-section", name: "NASA", href: "#nasa-section" },
   { id: "mercedes-section", name: "Mercedes", href: "#mercedes-section" },
 ] as const;
