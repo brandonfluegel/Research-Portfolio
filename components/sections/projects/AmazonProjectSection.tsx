@@ -21,7 +21,10 @@ export default function AmazonProjectSection() {
       <ProjectSectionHeader
         logoSrc="/assets/amazon-logo.webp"
         logoAlt="Amazon"
+        logoWidth={800}
+        logoHeight={291}
         logoWidthClass="w-20 md:w-28"
+        logoPriority
         title="Devices Design Group"
         role="Human Factors Researcher"
       />
@@ -62,14 +65,18 @@ export default function AmazonProjectSection() {
                 Mapping Cognitive Load <span className="text-zinc-500">to Echo Device Design</span>
               </h3>
 
-              {/* --- MOBILE ONLY: KEY METRIC --- */}
-              <div className="block md:hidden mb-6 p-4 info-card border-purple-500/30">
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
-                  <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Customers Reached</span>
+              {/* KEY METRIC CALLOUT (Mobile & Desktop) */}
+              <div className="mb-6 p-4 info-card border-purple-500/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6">
+                <div className="shrink-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
+                    <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Customers Reached</span>
+                  </div>
+                  <div className="text-3xl font-bold text-purple-400">75M+</div>
                 </div>
-                <div className="text-3xl font-bold text-purple-400">75M+</div>
-                  <p className="text-xs text-zinc-400 mt-1">My latency and Human Factors work shaped Echo Show and Echo Hub experiences affecting 75M+ active customers.</p>
+                <p className="text-xs text-zinc-400 sm:max-w-xs leading-relaxed">
+                  Latency and Human Factors work shaped Echo Show and Echo Hub experiences affecting 75M+ active customers.
+                </p>
               </div>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
@@ -178,9 +185,15 @@ export default function AmazonProjectSection() {
                     transition={{ duration: 1.8, ease: "easeInOut" }}
                     style={{ filter: "drop-shadow(0px 0px 8px rgba(74, 222, 128, 0.3))" }}
                   />
-                  <m.circle cx="33" cy="45" r="8" fill="none" stroke="#fff" strokeWidth="1" opacity="0.5"
-                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                  <circle
+                    cx="33"
+                    cy="45"
+                    r="8"
+                    fill="none"
+                    stroke="#fff"
+                    strokeWidth="1"
+                    opacity="0.5"
+                    className="hst-pulse-ring"
                   />
                   <m.circle cx="33" cy="45" r="4" fill="#18181b" stroke="#fff" strokeWidth="2"
                     initial={{ scale: 0 }}
@@ -209,7 +222,7 @@ export default function AmazonProjectSection() {
                 </div>
               </div>
 
-              <div className="hidden md:flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
+              <div className="flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
                 <span>0ms</span>
                 <span className="text-zinc-300 relative left-[2%]">1000ms</span>
                 <span>2000ms</span>

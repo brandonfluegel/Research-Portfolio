@@ -3,40 +3,31 @@
 import { Fragment, Suspense, lazy, useEffect, useRef, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import AmazonProjectSection from "@/components/sections/projects/AmazonProjectSection";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
 import { scrollToSectionId } from "@/lib/utils/scroll";
 
-const SECTION_IMPORTERS = {
-  "amazon-section": () => import("@/components/sections/projects/AmazonProjectSection"),
+const DEFERRED_SECTION_IMPORTERS = {
   "agent-trust": () => import("@/components/sections/FrameworkSection"),
   "nasa-section": () => import("@/components/sections/projects/NASAProjectSection"),
   "mercedes-section": () => import("@/components/sections/projects/MercedesProjectSection"),
 } as const;
 
-const preloadAllSections = () =>
-  Promise.all(Object.values(SECTION_IMPORTERS).map((load) => load()));
+const preloadDeferredSections = () =>
+  Promise.all(Object.values(DEFERRED_SECTION_IMPORTERS).map((load) => load()));
 
-const HOME_SECTIONS: Array<{
-  id: keyof typeof SECTION_IMPORTERS;
+const DEFERRED_SECTIONS: Array<{
+  id: keyof typeof DEFERRED_SECTION_IMPORTERS;
   Component: React.LazyExoticComponent<React.ComponentType>;
   minHeightClass: string;
   dividerAfter?: { label: string; description: string };
 }> = [
   {
-    id: "amazon-section",
-    Component: lazy(SECTION_IMPORTERS["amazon-section"]),
-    minHeightClass: "min-h-[1500px] md:min-h-[2100px]",
-    dividerAfter: {
-      label: "From applications → Global standards",
-      description: "Evolving established models into modern Human-AI trust frameworks",
-    },
-  },
-  {
     id: "agent-trust",
-    Component: lazy(SECTION_IMPORTERS["agent-trust"]),
+    Component: lazy(DEFERRED_SECTION_IMPORTERS["agent-trust"]),
     minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
     dividerAfter: {
       label: "From AI systems → Mission-critical systems",
@@ -45,7 +36,7 @@ const HOME_SECTIONS: Array<{
   },
   {
     id: "nasa-section",
-    Component: lazy(SECTION_IMPORTERS["nasa-section"]),
+    Component: lazy(DEFERRED_SECTION_IMPORTERS["nasa-section"]),
     minHeightClass: "min-h-[1250px] md:min-h-[1500px]",
     dividerAfter: {
       label: "From space systems → Autonomous vehicles",
@@ -54,7 +45,7 @@ const HOME_SECTIONS: Array<{
   },
   {
     id: "mercedes-section",
-    Component: lazy(SECTION_IMPORTERS["mercedes-section"]),
+    Component: lazy(DEFERRED_SECTION_IMPORTERS["mercedes-section"]),
     minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
   },
 ];
@@ -73,11 +64,11 @@ function usePreloadSectionChunks() {
   useEffect(() => {
     if (typeof requestIdleCallback !== "undefined") {
       requestIdleCallback(() => {
-        void preloadAllSections();
+        void preloadDeferredSections();
       });
     } else {
       setTimeout(() => {
-        void preloadAllSections();
+        void preloadDeferredSections();
       }, 300);
     }
   }, []);
@@ -149,7 +140,7 @@ export default function HomeClientSections() {
     if (!hash) return;
     // Force all lazy chunks to load immediately, then scroll once they resolve.
     // On mobile, requestIdleCallback preloading may not have fired yet.
-    void preloadAllSections().then(() => {
+    void preloadDeferredSections().then(() => {
       scrollToSectionId(hash);
     });
   }, []);
@@ -165,7 +156,16 @@ export default function HomeClientSections() {
       </div>
 
       <section className="content-shell section-stack mt-16 md:mt-20">
-        {HOME_SECTIONS.map(({ id, Component, minHeightClass, dividerAfter }) => (
+        <div id="amazon-section" className="deferred-section">
+          <AmazonProjectSection />
+        </div>
+
+        <SectionDivider
+          label="From applications → Global standards"
+          description="Evolving established models into modern Human-AI trust frameworks"
+        />
+
+        {DEFERRED_SECTIONS.map(({ id, Component, minHeightClass, dividerAfter }) => (
           <Fragment key={id}>
             <DeferredSection id={id} minHeightClass={minHeightClass}>
               <Component />

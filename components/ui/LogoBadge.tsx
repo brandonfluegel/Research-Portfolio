@@ -5,6 +5,8 @@ import Image from "next/image";
 interface LogoBadgeProps {
   logoSrc: string;
   alt: string;
+  width?: number;
+  height?: number;
   className?: string;
   priority?: boolean;
   sizes?: string;
@@ -13,6 +15,8 @@ interface LogoBadgeProps {
 export default function LogoBadge({
   logoSrc,
   alt,
+  width = 400,
+  height = 400,
   className = "",
   priority = false,
   sizes = "(max-width: 768px) 80px, 112px",
@@ -22,8 +26,8 @@ export default function LogoBadge({
       <Image
         src={logoSrc}
         alt={alt}
-        width={400}
-        height={400}
+        width={width}
+        height={height}
         quality={85}
         decoding="async"
         priority={priority}

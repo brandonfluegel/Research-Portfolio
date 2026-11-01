@@ -17,6 +17,8 @@ export default function NASAProjectSection() {
       <ProjectSectionHeader
         logoSrc="/assets/nasa-logo.webp"
         logoAlt="NASA"
+        logoWidth={600}
+        logoHeight={502}
         logoWidthClass="w-20 md:w-24"
         title="Lunar Gateway · Medical Workstation Validation"
         role="Human Factors PhD Intern"

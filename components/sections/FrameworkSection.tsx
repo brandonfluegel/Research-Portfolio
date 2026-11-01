@@ -15,6 +15,10 @@ export default function FrameworkSection() {
   const contentRef = useRef<HTMLDivElement>(null);
   
   const activePair = PAIRS[activeIdx];
+  const totalQuestions = PAIRS.reduce((sum, pair) => sum + pair.questions.length, 0);
+  const totalCheckedCount = Object.values(checkedItems).filter(Boolean).length;
+  const totalProgressPct =
+    totalQuestions > 0 ? Math.round((totalCheckedCount / totalQuestions) * 100) : 0;
 
   const getSeverityClasses = (level: string) => {
     switch(level) {
@@ -32,6 +36,32 @@ export default function FrameworkSection() {
       phase: PAIRS[idx]?.phase || 1,
       nav_surface: navSurface,
     });
+  };
+
+  const handleTabKeyDown = (
+    e: React.KeyboardEvent<HTMLButtonElement>,
+    idx: number,
+    navSurface: "mobile" | "desktop"
+  ) => {
+    const nextKeys = ["ArrowRight", "ArrowDown"];
+    const prevKeys = ["ArrowLeft", "ArrowUp"];
+    if (!nextKeys.includes(e.key) && !prevKeys.includes(e.key) && e.key !== "Home" && e.key !== "End") {
+      return;
+    }
+    e.preventDefault();
+    let targetIdx = idx;
+    if (nextKeys.includes(e.key)) {
+      targetIdx = (idx + 1) % PAIRS.length;
+    } else if (prevKeys.includes(e.key)) {
+      targetIdx = (idx - 1 + PAIRS.length) % PAIRS.length;
+    } else if (e.key === "Home") {
+      targetIdx = 0;
+    } else if (e.key === "End") {
+      targetIdx = PAIRS.length - 1;
+    }
+    selectPrincipleTab(targetIdx, navSurface);
+    const tabId = navSurface === "mobile" ? `mobile-nav-${targetIdx}` : `desktop-nav-${targetIdx}`;
+    document.getElementById(tabId)?.focus();
   };
 
   const toggleCheck = (questionIndex: number) => {
@@ -135,6 +165,9 @@ export default function FrameworkSection() {
                     type="button"
                     role="tab"
                     aria-selected={isActive}
+                    aria-controls="framework-tabpanel"
+                    tabIndex={isActive ? 0 : -1}
+                    onKeyDown={(e) => handleTabKeyDown(e, idx, "mobile")}
                     onClick={() => {
                       selectPrincipleTab(idx, "mobile");
                       const el = document.getElementById(`mobile-nav-${idx}`);
@@ -180,9 +213,13 @@ export default function FrameworkSection() {
                           return (
                             <button
                               key={idx}
+                              id={`desktop-nav-${idx}`}
                               type="button"
                               role="tab"
                               aria-selected={isActive}
+                              aria-controls="framework-tabpanel"
+                              tabIndex={isActive ? 0 : -1}
+                              onKeyDown={(e) => handleTabKeyDown(e, idx, "desktop")}
                               onClick={() => selectPrincipleTab(idx, "desktop")}
                               className={`w-full text-left px-3.5 py-2.5 rounded-lg text-[13px] font-bold transition-all duration-200 group flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-900 ${
                                 isActive 
@@ -216,6 +253,9 @@ export default function FrameworkSection() {
 
           {/* Main Content Area */}
           <m.main 
+            id="framework-tabpanel"
+            role="tabpanel"
+            aria-label={activePair.title}
             ref={contentRef}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -383,8 +423,30 @@ export default function FrameworkSection() {
           </m.main>
         </div>
 
-        {/* Export Button */}
+        {/* Overall Audit Progress & Export Button */}
         <div className="mt-6 flex flex-col items-center">
+          <div className="w-full max-w-xs mb-4">
+            <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1.5">
+              <span>Total Audit Progress</span>
+              <span>
+                {totalCheckedCount} / {totalQuestions} ({totalProgressPct}%)
+              </span>
+            </div>
+            <div
+              className="w-full h-1.5 rounded-full bg-zinc-900 border border-white/10 overflow-hidden"
+              role="progressbar"
+              aria-label="Total audit checklist progress"
+              aria-valuenow={totalCheckedCount}
+              aria-valuemin={0}
+              aria-valuemax={totalQuestions}
+            >
+              <div
+                className="h-full bg-linear-to-r from-indigo-500 to-emerald-400 transition-all duration-300"
+                style={{ width: `${totalProgressPct}%` }}
+              />
+            </div>
+          </div>
+
           <button
             onClick={handleExport}
             className="inline-flex items-center gap-2 px-6 py-3 sm:px-5 sm:py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-sm font-bold transition-all shadow-lg shadow-indigo-500/20 active:scale-[0.98]"

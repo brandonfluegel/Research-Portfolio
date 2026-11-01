@@ -117,9 +117,7 @@ export default function GoogleAnalytics() {
     let isMounted = true;
     let unsubscribeScroll: (() => void) | null = null;
     let sectionObserver: IntersectionObserver | null = null;
-    let domMutationObserver: MutationObserver | null = null;
     let engagementInterval: ReturnType<typeof setInterval> | null = null;
-    const observedElements = new Set<Element>();
 
     const getSourceLabel = () =>
       landingCtx.current.utm_source ||
@@ -190,10 +188,7 @@ export default function GoogleAnalytics() {
       if (!sectionObserver) return;
       for (const domId of SECTION_IDS) {
         const el = document.getElementById(domId);
-        if (el && !observedElements.has(el)) {
-          observedElements.add(el);
-          sectionObserver.observe(el);
-        }
+        if (el) sectionObserver.observe(el);
       }
     };
 
@@ -251,14 +246,6 @@ export default function GoogleAnalytics() {
 
       attachSectionTargets();
 
-      // Re-scan if deferred sections mount later
-      domMutationObserver = new MutationObserver(() => {
-        if (observedElements.size < SECTION_IDS.length) {
-          attachSectionTargets();
-        }
-      });
-      domMutationObserver.observe(document.body, { childList: true, subtree: true });
-
       // Active-tab time ticker (only counts seconds while the tab is visible)
       engagementInterval = setInterval(() => {
         if (!isMounted || document.visibilityState !== "visible") return;
@@ -296,7 +283,6 @@ export default function GoogleAnalytics() {
       if (engagementInterval) clearInterval(engagementInterval);
       document.removeEventListener("click", handleClick);
       sectionObserver?.disconnect();
-      domMutationObserver?.disconnect();
     };
   }, []);
 

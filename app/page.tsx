@@ -14,10 +14,32 @@ export default function Home() {
             Applying psychophysics, neuroimaging, and simulated-use validation across robotics, medical, aerospace, and autonomous systems
           </div>
 
+          <div
+            aria-label="Key credentials and engineering impact"
+            className="rise-in mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-3xl mx-auto"
+            style={{ animationDelay: "120ms" }}
+          >
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-300 tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" aria-hidden="true" />
+              US Patent 12,532,040 B1
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-300 tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-400" aria-hidden="true" />
+              75M+ Customers Reached
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-300 tracking-wide">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
+              $50M Projected NVA
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-400 tracking-wide">
+              Amazon · NASA · Mercedes-Benz
+            </span>
+          </div>
+
           <a
             href="#amazon-section"
             aria-label="Scroll to case studies"
-            className="rise-in mt-8 md:mt-12 flex flex-col items-center gap-1 px-4 py-2 min-h-11 text-zinc-500 hover:text-white transition-colors"
+            className="rise-in mt-6 md:mt-10 flex flex-col items-center gap-1 px-4 py-2 min-h-11 text-zinc-500 hover:text-white transition-colors"
             style={{ animationDelay: "250ms" }}
           >
             <span className="text-[10px] font-mono uppercase tracking-[0.25em]">Case Studies</span>

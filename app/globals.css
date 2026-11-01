@@ -197,15 +197,29 @@ html[data-reduced-motion="true"] [class*="duration-"] {
   animation: scroll-cue 2.4s ease-in-out infinite;
 }
 
+@keyframes hst-pulse-ring {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.55); opacity: 0; }
+}
+
+.hst-pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hst-pulse-ring 2s ease-in-out infinite;
+}
+
 html[data-reduced-motion="true"] .rise-in,
 html[data-reduced-motion="true"] .scroll-cue,
-html[data-performance-tier="low"] .scroll-cue {
+html[data-reduced-motion="true"] .hst-pulse-ring,
+html[data-performance-tier="low"] .scroll-cue,
+html[data-performance-tier="low"] .hst-pulse-ring {
   animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .rise-in,
-  .scroll-cue {
+  .scroll-cue,
+  .hst-pulse-ring {
     animation: none;
   }
 }

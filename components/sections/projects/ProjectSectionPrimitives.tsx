@@ -6,7 +6,10 @@ import LogoBadge from "@/components/ui/LogoBadge";
 interface ProjectSectionHeaderProps {
   logoSrc: string;
   logoAlt: string;
+  logoWidth?: number;
+  logoHeight?: number;
   logoWidthClass?: string;
+  logoPriority?: boolean;
   title: string;
   role: string;
   compactMobile?: boolean;
@@ -15,7 +18,10 @@ interface ProjectSectionHeaderProps {
 export function ProjectSectionHeader({
   logoSrc,
   logoAlt,
+  logoWidth = 400,
+  logoHeight = 400,
   logoWidthClass = "w-20 md:w-24",
+  logoPriority = false,
   title,
   role,
   compactMobile = false,
@@ -31,6 +37,9 @@ export function ProjectSectionHeader({
         <LogoBadge
           logoSrc={logoSrc}
           alt={logoAlt}
+          width={logoWidth}
+          height={logoHeight}
+          priority={logoPriority}
           className={`${logoWidthClass} h-auto opacity-100 brightness-0 invert`}
         />
         <div className={`h-8 w-px bg-white/10 ${compactMobile ? "hidden md:block" : ""}`} />

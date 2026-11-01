@@ -97,10 +97,17 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                   href={link.href}
                   onClick={(e) => scrollToSectionDesktop(e, link.id)}
                   aria-current={isActive ? "true" : undefined}
-                  className={`relative px-3 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors duration-200 ${
-                    isActive ? "text-white bg-white/10" : "text-zinc-400 hover:text-white hover:bg-white/5"
+                  className={`relative px-3.5 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors duration-200 ${
+                    isActive ? "text-white" : "text-zinc-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
+                  {isActive && (
+                    <m.span
+                      layoutId="activeNavPill"
+                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      className="absolute inset-0 rounded-full bg-white/12 border border-white/10 -z-10"
+                    />
+                  )}
                   {link.name}
                 </a>
               </li>

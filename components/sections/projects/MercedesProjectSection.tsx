@@ -20,6 +20,8 @@ export default function MercedesProjectSection() {
       <ProjectSectionHeader
         logoSrc="/assets/benz.webp"
         logoAlt="Mercedes"
+        logoWidth={370}
+        logoHeight={400}
         logoWidthClass="w-12 md:w-16"
         title="Semi-Autonomous HMI · Trust Research"
         role="Human Factors PhD Intern"
@@ -38,7 +40,7 @@ export default function MercedesProjectSection() {
         >
           {/* LEFT: VISUAL MEDIA (on desktop) */}
           <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
-             <div className="media-frame aspect-video group media-card">
+             <div className="media-frame max-w-md mx-auto aspect-4/5 group media-card">
                 <LazyVideo
                   sources={[
                     { src: "/assets/drive.webm", type: "video/webm" },
