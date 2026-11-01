@@ -4,42 +4,20 @@ export default function Home() {
   return (
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
       {/* Hero Section */}
-      <section className="relative w-full flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-6 md:pb-8 px-0 sm:px-4">
-        <div className="w-full flex flex-col items-center justify-center mx-auto relative z-10 px-2">
-          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(1.875rem,8vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance sm:whitespace-nowrap">
+      <section className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-6 md:pb-8">
+        <div className="w-full flex flex-col items-center justify-center text-center mx-auto relative z-10 px-2 sm:px-6">
+          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2rem,8vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance">
             Human Factors PhD
           </h1>
 
-          <div className="font-medium text-zinc-300 text-center text-[clamp(0.8rem,2.5vw,1rem)] sm:text-[clamp(0.9rem,2.5vw,1.1rem)] md:text-[clamp(1rem,1.8vw,1.35rem)] lg:text-[clamp(1.1rem,1.5vw,1.5rem)] w-full max-w-[90vw] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed">
+          <p className="font-medium text-zinc-300 text-center text-balance text-[clamp(0.95rem,3.5vw,1.1rem)] sm:text-[clamp(1rem,2.2vw,1.2rem)] md:text-[clamp(1.1rem,1.8vw,1.35rem)] lg:text-[clamp(1.15rem,1.5vw,1.45rem)] w-full max-w-[22rem] sm:max-w-xl md:max-w-2xl lg:max-w-[44rem] mx-auto leading-relaxed">
             Applying psychophysics, neuroimaging, and simulated-use validation across robotics, medical, aerospace, and autonomous systems
-          </div>
-
-          <div
-            aria-label="Key credentials and engineering impact"
-            className="rise-in mt-6 md:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-3xl mx-auto"
-            style={{ animationDelay: "120ms" }}
-          >
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-300 tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" aria-hidden="true" />
-              US Patent 12,532,040 B1
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-300 tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400" aria-hidden="true" />
-              75M+ Customers Reached
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-300 tracking-wide">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" aria-hidden="true" />
-              $50M Projected NVA
-            </span>
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] sm:text-[11px] font-mono text-zinc-400 tracking-wide">
-              Amazon · NASA · Mercedes-Benz
-            </span>
-          </div>
+          </p>
 
           <a
             href="#amazon-section"
             aria-label="Scroll to case studies"
-            className="rise-in mt-6 md:mt-10 flex flex-col items-center gap-1 px-4 py-2 min-h-11 text-zinc-500 hover:text-white transition-colors"
+            className="rise-in mt-8 md:mt-12 flex flex-col items-center gap-1 px-4 py-2 min-h-11 text-zinc-500 hover:text-white transition-colors"
             style={{ animationDelay: "250ms" }}
           >
             <span className="text-[10px] font-mono uppercase tracking-[0.25em]">Case Studies</span>
