@@ -1,24 +1,24 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/constants/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://humanfactors.pro";
   const lastModified = new Date();
 
   return [
     {
-      url: baseUrl,
+      url: SITE_URL,
       lastModified,
       changeFrequency: "weekly",
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/llms.txt`,
+      url: `${SITE_URL}/llms.txt`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/llms-full.txt`,
+      url: `${SITE_URL}/llms-full.txt`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.9,

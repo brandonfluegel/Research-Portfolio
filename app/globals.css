@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
   --foreground: #ffffff;
-  --accent-color: #4f46e5;
   --content-max-width: 72rem;
   --section-gap: clamp(4rem, 9vw, 6rem);
-  --section-title-spacing: clamp(1rem, 2.2vw, 1.5rem);
   --caption-font-size: clamp(0.625rem, 0.75vw, 0.75rem);
 }
 
@@ -48,10 +45,6 @@ p {
   text-wrap: pretty;
 }
 
-.text-balance {
-  text-wrap: balance;
-}
-
 @utility tap-highlight-transparent {
   -webkit-tap-highlight-color: transparent;
 }
@@ -66,10 +59,6 @@ p {
   display: flex;
   flex-direction: column;
   gap: var(--section-gap);
-}
-
-.section-title-block {
-  margin-bottom: var(--section-title-spacing);
 }
 
 .deferred-section {

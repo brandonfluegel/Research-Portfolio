@@ -1,8 +1,12 @@
 "use client";
 
 import { m } from "framer-motion";
-import LogoBadge from "@/components/ui/LogoBadge";
 import LazyVideo from "@/components/ui/LazyVideo";
+import {
+  ProjectSectionHeader,
+  ProjectTimelineItem,
+} from "@/components/sections/projects/ProjectSectionPrimitives";
+import { SITE_LINKS } from "@/lib/constants/site";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 
 export default function AmazonProjectSection() {
@@ -14,25 +18,13 @@ export default function AmazonProjectSection() {
       <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-purple-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <m.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
-      >
-        <div className="flex items-center gap-6">
-          <LogoBadge 
-            logoSrc="/assets/amazon-logo.webp"
-            alt="Amazon" 
-            className="w-20 md:w-28 h-auto opacity-100 brightness-0 invert" 
-          />
-          <div className="h-8 w-px bg-white/10"></div>
-          <div>
-            <h2 className="text-lg text-white font-medium tracking-tight">Devices Design Group</h2>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors Researcher</p>
-          </div>
-        </div>
-      </m.div>
+      <ProjectSectionHeader
+        logoSrc="/assets/amazon-logo.webp"
+        logoAlt="Amazon"
+        logoWidthClass="w-20 md:w-28"
+        title="Devices Design Group"
+        role="Human Factors Researcher"
+      />
 
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-16 md:space-y-40">
@@ -86,22 +78,14 @@ export default function AmazonProjectSection() {
             </div>
 
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Neuroimaging Methodology</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Applied a controlled within-subjects fNIRS protocol measuring prefrontal cortex activation, synchronized with eye-tracking to separate gaze behavior from cognitive effort. Findings translated directly into product requirements, shaping the interaction design of Echo Show and Echo Hub — reaching 75M+ active customers.
-                </p>
-              </div>
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Context-Aware Interaction Patent</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
-                  <a href="https://patents.google.com/patent/US12532040B1" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
-                  in January 2026. This work earned the 2023 Amazon Inventor Award.
-                </p>
-              </div>
+              <ProjectTimelineItem title="Neuroimaging Methodology">
+                Applied a controlled within-subjects fNIRS protocol measuring prefrontal cortex activation, synchronized with eye-tracking to separate gaze behavior from cognitive effort. Findings translated directly into product requirements, shaping the interaction design of Echo Show and Echo Hub — reaching 75M+ active customers.
+              </ProjectTimelineItem>
+              <ProjectTimelineItem title="Context-Aware Interaction Patent">
+                Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
+                <a href={SITE_LINKS.patent} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
+                in January 2026. This work earned the 2023 Amazon Inventor Award.
+              </ProjectTimelineItem>
             </div>
           </m.div>
         </m.div>
@@ -137,20 +121,12 @@ export default function AmazonProjectSection() {
             </div>
 
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">Isolating the Latency Satisfaction Threshold</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated variable while keeping all other system factors constant. Analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where user tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction drops in a consistent, reliable pattern.
-                </p>
-              </div>
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2">NVA Model Integration & Economic Validation</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  The HST was formally adopted by Alexa Economics and embedded into the Negative Value Action (NVA) model — redefining any response exceeding 1,000ms as a quantifiable system defect with downstream engagement consequences. Alexa Economics projected that closing the latency gap across high-priority voice intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months — a third-party validation that became the foundation of Alexa&apos;s Latency North Star.
-                </p>
-              </div>
+              <ProjectTimelineItem title="Isolating the Latency Satisfaction Threshold">
+                Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated variable while keeping all other system factors constant. Analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where user tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction drops in a consistent, reliable pattern.
+              </ProjectTimelineItem>
+              <ProjectTimelineItem title="NVA Model Integration & Economic Validation">
+                The HST was formally adopted by Alexa Economics and embedded into the Negative Value Action (NVA) model — redefining any response exceeding 1,000ms as a quantifiable system defect with downstream engagement consequences. Alexa Economics projected that closing the latency gap across high-priority voice intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months — a third-party validation that became the foundation of Alexa&apos;s Latency North Star.
+              </ProjectTimelineItem>
             </div>
           </m.div>
 

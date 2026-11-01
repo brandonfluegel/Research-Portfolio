@@ -1,10 +1,13 @@
 export const NAV_SECTIONS = [
-  { name: "Amazon", href: "#amazon-section" },
-  { name: "Agentic Trust", href: "#agent-trust" },
-  { name: "Uber", href: "#uber-section" },
-  { name: "NASA", href: "#nasa-section" },
-  { name: "Mercedes", href: "#mercedes-section" },
+  { id: "amazon-section", name: "Amazon", href: "#amazon-section" },
+  { id: "agent-trust", name: "Agentic Trust", href: "#agent-trust" },
+  { id: "uber-section", name: "Uber", href: "#uber-section" },
+  { id: "nasa-section", name: "NASA", href: "#nasa-section" },
+  { id: "mercedes-section", name: "Mercedes", href: "#mercedes-section" },
 ] as const;
 
-export const SECTION_IDS = NAV_SECTIONS.map((section) => section.href.slice(1));
+export type SectionId = (typeof NAV_SECTIONS)[number]["id"];
+
+export const SECTION_IDS: readonly SectionId[] = NAV_SECTIONS.map((section) => section.id);
+
 

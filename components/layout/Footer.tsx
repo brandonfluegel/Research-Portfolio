@@ -2,6 +2,7 @@
 
 import { m } from "framer-motion";
 import Link from "next/link";
+import { SITE_LINKS } from "@/lib/constants/site";
 
 const MailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -53,7 +54,7 @@ export default function Footer() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
         >
           <Link 
-            href="https://www.linkedin.com/in/fluegel/" 
+            href={SITE_LINKS.linkedin} 
             target="_blank"
             className="flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300"
           >
@@ -62,7 +63,7 @@ export default function Footer() {
           </Link>
           
           <Link 
-            href="mailto:brandon.uxr@gmail.com" 
+            href={SITE_LINKS.mailto} 
             className="flex items-center gap-2 px-8 py-4 bg-zinc-900 border border-white/20 text-white font-medium rounded-full hover:bg-zinc-800 transition-colors duration-300"
           >
             <MailIcon />

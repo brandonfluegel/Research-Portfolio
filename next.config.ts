@@ -22,6 +22,14 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["framer-motion"],
   },
+  async rewrites() {
+    return [
+      {
+        source: "/.well-known/llms.txt",
+        destination: "/llms.txt",
+      },
+    ];
+  },
   async headers() {
     return [
       {

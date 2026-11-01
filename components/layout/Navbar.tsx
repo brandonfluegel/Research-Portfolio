@@ -29,14 +29,13 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
     };
   }, [mobileMenuOpen]);
 
-  const scrollToSectionDesktop = (e: React.MouseEvent, href: string) => {
+  const scrollToSectionDesktop = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
-    scrollToSectionId(href.replace("#", ""));
+    scrollToSectionId(sectionId);
   };
 
-  const scrollToSection = (e: React.MouseEvent, href: string) => {
+  const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
     e.preventDefault();
-    const sectionId = href.replace("#", "");
     // Store target — actual scroll fires in onExitComplete after the
     // overlay fully unmounts (no fixed timeout that breaks on slow devices).
     pendingScrollRef.current = sectionId;
@@ -91,12 +90,12 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
 
         <ul className="hidden lg:flex items-center gap-1">
           {NAV_SECTIONS.map((link) => {
-            const isActive = activeSection === link.href.replace("#", "");
+            const isActive = activeSection === link.id;
             return (
-              <li key={link.name}>
+              <li key={link.id}>
                 <a
                   href={link.href}
-                  onClick={(e) => scrollToSectionDesktop(e, link.href)}
+                  onClick={(e) => scrollToSectionDesktop(e, link.id)}
                   aria-current={isActive ? "true" : undefined}
                   className={`relative px-3 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors duration-200 ${
                     isActive ? "text-white bg-white/10" : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -135,16 +134,16 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
             <ul className="flex flex-col space-y-8 text-center">
               {NAV_SECTIONS.map((link, i) => (
                 <m.li
-                  key={link.name}
+                  key={link.id}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 + i * 0.04, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Link
                     href={link.href}
-                    onClick={(e) => scrollToSection(e, link.href)}
+                    onClick={(e) => scrollToSection(e, link.id)}
                     className={`text-3xl md:text-5xl font-light transition-colors block tracking-widest uppercase hover:scale-105 transform duration-300 ${
-                      activeSection === link.href.replace("#", "")
+                      activeSection === link.id
                         ? "text-white"
                         : "text-zinc-400 hover:text-white"
                     }`}

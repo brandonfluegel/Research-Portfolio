@@ -3,6 +3,8 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { SECTION_IDS } from "@/lib/constants/sections";
+import { getScrollSnapshot, subscribeScroll } from "@/hooks/useScrollMetrics";
 
 declare global {
   interface Window {
@@ -12,15 +14,6 @@ declare global {
 }
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
-
-// Case study & framework section IDs that exist in the DOM
-const TRACKED_SECTION_IDS = [
-  "amazon-section",
-  "agent-trust",
-  "uber-section",
-  "nasa-section",
-  "mercedes-section",
-] as const;
 
 // Scroll depth checkpoints (% of total page height)
 const SCROLL_MILESTONES = [25, 50, 75, 90] as const;
@@ -122,7 +115,7 @@ export default function GoogleAnalytics() {
     if (!GA_ID || typeof window === "undefined" || isLikelyBot()) return;
 
     let isMounted = true;
-    let scrollThrottleTimer: ReturnType<typeof setTimeout> | null = null;
+    let unsubscribeScroll: (() => void) | null = null;
     let sectionObserver: IntersectionObserver | null = null;
     let domMutationObserver: MutationObserver | null = null;
     let engagementInterval: ReturnType<typeof setInterval> | null = null;
@@ -133,12 +126,11 @@ export default function GoogleAnalytics() {
       landingCtx.current.traffic_source ||
       "(direct)";
 
-    // --- 1. Scroll Depth Handler --------------------------------------------
+    // --- 1. Scroll Depth Handler (via shared scroll store) ------------------
 
     const handleScroll = () => {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (docHeight <= 0) return;
-      const pct = Math.round((window.scrollY / docHeight) * 100);
+      if (!isMounted) return;
+      const pct = Math.round(getScrollSnapshot().progress * 100);
       for (const milestone of SCROLL_MILESTONES) {
         if (pct >= milestone && !firedScrollMilestones.current.has(milestone)) {
           firedScrollMilestones.current.add(milestone);
@@ -150,14 +142,6 @@ export default function GoogleAnalytics() {
           });
         }
       }
-    };
-
-    const throttledScroll = () => {
-      if (scrollThrottleTimer) return;
-      scrollThrottleTimer = setTimeout(() => {
-        scrollThrottleTimer = null;
-        if (isMounted) handleScroll();
-      }, 150);
     };
 
     // --- 2. Outbound, Patent, & Nav Click Handler ---------------------------
@@ -204,7 +188,7 @@ export default function GoogleAnalytics() {
 
     const attachSectionTargets = () => {
       if (!sectionObserver) return;
-      for (const domId of TRACKED_SECTION_IDS) {
+      for (const domId of SECTION_IDS) {
         const el = document.getElementById(domId);
         if (el && !observedElements.has(el)) {
           observedElements.add(el);
@@ -218,7 +202,7 @@ export default function GoogleAnalytics() {
     const setup = () => {
       if (!isMounted) return;
 
-      window.addEventListener("scroll", throttledScroll, { passive: true });
+      unsubscribeScroll = subscribeScroll(handleScroll);
       document.addEventListener("click", handleClick);
 
       // Observe section visibility (threshold 0.15 works reliably for both
@@ -269,7 +253,7 @@ export default function GoogleAnalytics() {
 
       // Re-scan if deferred sections mount later
       domMutationObserver = new MutationObserver(() => {
-        if (observedElements.size < TRACKED_SECTION_IDS.length) {
+        if (observedElements.size < SECTION_IDS.length) {
           attachSectionTargets();
         }
       });
@@ -308,9 +292,8 @@ export default function GoogleAnalytics() {
 
     return () => {
       isMounted = false;
-      if (scrollThrottleTimer) clearTimeout(scrollThrottleTimer);
+      unsubscribeScroll?.();
       if (engagementInterval) clearInterval(engagementInterval);
-      window.removeEventListener("scroll", throttledScroll);
       document.removeEventListener("click", handleClick);
       sectionObserver?.disconnect();
       domMutationObserver?.disconnect();

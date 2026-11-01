@@ -1,8 +1,11 @@
 "use client";
 
 import { m } from "framer-motion";
-import LogoBadge from "@/components/ui/LogoBadge";
 import LazyVideo from "@/components/ui/LazyVideo";
+import {
+  ProjectSectionHeader,
+  ProjectTimelineItem,
+} from "@/components/sections/projects/ProjectSectionPrimitives";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 
 export default function MercedesProjectSection() {
@@ -14,33 +17,14 @@ export default function MercedesProjectSection() {
       <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-gray-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <m.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
-      >
-        <div className="flex items-center gap-6">
-          <LogoBadge 
-            logoSrc="/assets/benz.webp"
-            alt="Mercedes" 
-            className="w-12 md:w-16 h-auto opacity-100 brightness-0 invert" 
-          />
-          <div className="h-8 w-px bg-white/10 hidden md:block"></div>
-          <div className="hidden md:block">
-            <div className="flex items-center gap-2.5 mb-0.5">
-              <h2 className="text-lg text-white font-medium tracking-tight">Semi-Autonomous HMI · Trust Research</h2>
-            </div>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
-          </div>
-        </div>
-        
-        <div className="md:hidden">
-          <div className="flex items-center gap-2">
-            <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
-          </div>
-        </div>
-      </m.div>
+      <ProjectSectionHeader
+        logoSrc="/assets/benz.webp"
+        logoAlt="Mercedes"
+        logoWidthClass="w-12 md:w-16"
+        title="Semi-Autonomous HMI · Trust Research"
+        role="Human Factors PhD Intern"
+        compactMobile
+      />
 
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-16 md:space-y-48">
@@ -82,34 +66,17 @@ export default function MercedesProjectSection() {
 
             {/* PROCESS TIMELINE */}
             <div className="relative ml-3 md:ml-0 pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-              
-              {/* Block 1 */}
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">HMI Design Standards</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Defined <span className="text-white font-medium">Alert Modality standards</span> for autonomous handovers. These findings directly influenced internal design guidelines, ensuring clear communication of system status during critical control transitions.
-                </p>
-              </div>
+              <ProjectTimelineItem title="HMI Design Standards">
+                Defined <span className="text-white font-medium">Alert Modality standards</span> for autonomous handovers. These findings directly influenced internal design guidelines, ensuring clear communication of system status during critical control transitions.
+              </ProjectTimelineItem>
 
-              {/* Block 2 */}
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Psychoacoustic Modeling</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. This model guided engineering adjustments that produced a measurable reduction in perceived cabin noise.
-                </p>
-              </div>
+              <ProjectTimelineItem title="Psychoacoustic Modeling">
+                Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. This model guided engineering adjustments that produced a measurable reduction in perceived cabin noise.
+              </ProjectTimelineItem>
 
-              {/* Block 3 */}
-              <div className="relative">
-                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Trust Score Lift: Automated Lane Changes & Handoffs</h4>
-                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  Across a structured pre/post comparative study, the implemented HMI improvements produced a verifiable increase in user trust scores during automated lane changes and handoffs.
-                </p>
-              </div>
-
+              <ProjectTimelineItem title="Trust Score Lift: Automated Lane Changes & Handoffs">
+                Across a structured pre/post comparative study, the implemented HMI improvements produced a verifiable increase in user trust scores during automated lane changes and handoffs.
+              </ProjectTimelineItem>
             </div>
           </m.div>
         </m.div>

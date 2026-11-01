@@ -1,18 +1,73 @@
 "use client";
 
-import { Suspense, lazy, useEffect, useRef, useState } from "react";
+import { Fragment, Suspense, lazy, useEffect, useRef, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
+import { scrollToSectionId } from "@/lib/utils/scroll";
 
-const AmazonProjectSection = lazy(() => import("@/components/sections/projects/AmazonProjectSection"));
-const UberProjectSection = lazy(() => import("@/components/sections/projects/UberProjectSection"));
-const NASAProjectSection = lazy(() => import("@/components/sections/projects/NASAProjectSection"));
-const MercedesProjectSection = lazy(() => import("@/components/sections/projects/MercedesProjectSection"));
-const FrameworkSection = lazy(() => import("@/components/sections/FrameworkSection"));
+const SECTION_IMPORTERS = {
+  "amazon-section": () => import("@/components/sections/projects/AmazonProjectSection"),
+  "agent-trust": () => import("@/components/sections/FrameworkSection"),
+  "uber-section": () => import("@/components/sections/projects/UberProjectSection"),
+  "nasa-section": () => import("@/components/sections/projects/NASAProjectSection"),
+  "mercedes-section": () => import("@/components/sections/projects/MercedesProjectSection"),
+} as const;
+
+const preloadAllSections = () =>
+  Promise.all(Object.values(SECTION_IMPORTERS).map((load) => load()));
+
+const HOME_SECTIONS: Array<{
+  id: keyof typeof SECTION_IMPORTERS;
+  Component: React.LazyExoticComponent<React.ComponentType>;
+  minHeightClass: string;
+  dividerAfter?: { label: string; description: string };
+}> = [
+  {
+    id: "amazon-section",
+    Component: lazy(SECTION_IMPORTERS["amazon-section"]),
+    minHeightClass: "min-h-[1500px] md:min-h-[2100px]",
+    dividerAfter: {
+      label: "From applications → Global standards",
+      description: "Evolving established models into modern agent trust frameworks",
+    },
+  },
+  {
+    id: "agent-trust",
+    Component: lazy(SECTION_IMPORTERS["agent-trust"]),
+    minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
+    dividerAfter: {
+      label: "From AI systems → Global operations",
+      description: "Taking cognitive load reduction to emerging markets",
+    },
+  },
+  {
+    id: "uber-section",
+    Component: lazy(SECTION_IMPORTERS["uber-section"]),
+    minHeightClass: "min-h-[1050px] md:min-h-[1250px]",
+    dividerAfter: {
+      label: "From global ops → Mission-critical systems",
+      description: "Where cognitive error costs lives, not conversions",
+    },
+  },
+  {
+    id: "nasa-section",
+    Component: lazy(SECTION_IMPORTERS["nasa-section"]),
+    minHeightClass: "min-h-[1250px] md:min-h-[1500px]",
+    dividerAfter: {
+      label: "From space systems → Autonomous vehicles",
+      description: "Translating trust frameworks to human-machine interfaces",
+    },
+  },
+  {
+    id: "mercedes-section",
+    Component: lazy(SECTION_IMPORTERS["mercedes-section"]),
+    minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
+  },
+];
 
 // In production, React.lazy() chunks are separate network requests. If the user
 // clicks a nav item before a chunk is fetched, the Suspense boundary shows its
@@ -26,17 +81,14 @@ const FrameworkSection = lazy(() => import("@/components/sections/FrameworkSecti
 // available for the scroll position calculation.
 function usePreloadSectionChunks() {
   useEffect(() => {
-    const preload = () => {
-      import("@/components/sections/projects/AmazonProjectSection");
-      import("@/components/sections/projects/UberProjectSection");
-      import("@/components/sections/projects/NASAProjectSection");
-      import("@/components/sections/projects/MercedesProjectSection");
-      import("@/components/sections/FrameworkSection");
-    };
     if (typeof requestIdleCallback !== "undefined") {
-      requestIdleCallback(preload);
+      requestIdleCallback(() => {
+        void preloadAllSections();
+      });
     } else {
-      setTimeout(preload, 300);
+      setTimeout(() => {
+        void preloadAllSections();
+      }, 300);
     }
   }, []);
 }
@@ -53,7 +105,7 @@ function SectionFallback({ minHeightClass }: { minHeightClass: string }) {
 function DeferredSection({
   id,
   children,
-  rootMargin = "260px 0px",
+  rootMargin = "320px 0px",
   minHeightClass = "min-h-[1200px] md:min-h-[1500px]",
 }: {
   id: string;
@@ -63,6 +115,7 @@ function DeferredSection({
 }) {
   const mountRef = useRef<HTMLDivElement>(null);
   const [shouldRender, setShouldRender] = useState(false);
+  const fallback = <SectionFallback minHeightClass={minHeightClass} />;
 
   useEffect(() => {
     const handleForceRender = () => {
@@ -91,12 +144,10 @@ function DeferredSection({
 
   return (
     <div id={id} ref={mountRef} className="deferred-section">
-      {shouldRender ? children : <SectionFallback minHeightClass={minHeightClass} />}
+      {shouldRender ? <Suspense fallback={fallback}>{children}</Suspense> : fallback}
     </div>
   );
 }
-
-import { scrollToSectionId } from "@/lib/utils/scroll";
 
 export default function HomeClientSections() {
   const activeSection = useActiveSection();
@@ -108,13 +159,7 @@ export default function HomeClientSections() {
     if (!hash) return;
     // Force all lazy chunks to load immediately, then scroll once they resolve.
     // On mobile, requestIdleCallback preloading may not have fired yet.
-    Promise.all([
-      import("@/components/sections/projects/AmazonProjectSection"),
-      import("@/components/sections/projects/UberProjectSection"),
-      import("@/components/sections/projects/NASAProjectSection"),
-      import("@/components/sections/projects/MercedesProjectSection"),
-      import("@/components/sections/FrameworkSection"),
-    ]).then(() => {
+    void preloadAllSections().then(() => {
       scrollToSectionId(hash);
     });
   }, []);
@@ -130,76 +175,19 @@ export default function HomeClientSections() {
       </div>
 
       <section className="content-shell section-stack mt-16 md:mt-20">
-        <DeferredSection
-          id="amazon-section"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1500px] md:min-h-[2100px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1500px] md:min-h-[2100px]" />}>
-            <AmazonProjectSection />
-          </Suspense>
-        </DeferredSection>
-
-        <SectionDivider
-          label="From applications → Global standards"
-          description="Evolving established models into modern agent trust frameworks"
-        />
-
-        <DeferredSection
-          id="agent-trust"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1100px] md:min-h-[1300px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px] md:min-h-[1300px]" />}>
-            <FrameworkSection />
-          </Suspense>
-        </DeferredSection>
-
-        <SectionDivider
-          label="From AI systems → Global operations"
-          description="Taking cognitive load reduction to emerging markets"
-        />
-
-        <DeferredSection
-          id="uber-section"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1050px] md:min-h-[1250px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1050px] md:min-h-[1250px]" />}>
-            <UberProjectSection />
-          </Suspense>
-        </DeferredSection>
-
-        <SectionDivider
-          label="From global ops → Mission-critical systems"
-          description="Where cognitive error costs lives, not conversions"
-        />
-
-        <DeferredSection
-          id="nasa-section"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1250px] md:min-h-[1500px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1250px] md:min-h-[1500px]" />}>
-            <NASAProjectSection />
-          </Suspense>
-        </DeferredSection>
-
-        <SectionDivider
-          label="From space systems → Autonomous vehicles"
-          description="Translating trust frameworks to human-machine interfaces"
-        />
-
-        <DeferredSection
-          id="mercedes-section"
-          rootMargin="320px 0px"
-          minHeightClass="min-h-[1100px] md:min-h-[1300px]"
-        >
-          <Suspense fallback={<SectionFallback minHeightClass="min-h-[1100px] md:min-h-[1300px]" />}>
-            <MercedesProjectSection />
-          </Suspense>
-        </DeferredSection>
-
+        {HOME_SECTIONS.map(({ id, Component, minHeightClass, dividerAfter }) => (
+          <Fragment key={id}>
+            <DeferredSection id={id} minHeightClass={minHeightClass}>
+              <Component />
+            </DeferredSection>
+            {dividerAfter && (
+              <SectionDivider
+                label={dividerAfter.label}
+                description={dividerAfter.description}
+              />
+            )}
+          </Fragment>
+        ))}
       </section>
 
       <Footer />

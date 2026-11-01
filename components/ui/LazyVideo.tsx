@@ -4,14 +4,13 @@ import { useRef, useEffect, useState } from "react";
 import { isLowPowerDevice, prefersReducedMotion } from "@/lib/utils/performance";
 
 interface LazyVideoProps {
-  src?: string;
-  sources?: Array<{ src: string; type: string }>;
+  sources: Array<{ src: string; type: string }>;
   poster?: string;
   ariaLabel?: string;
   className?: string;
 }
 
-export default function LazyVideo({ src, sources, poster, ariaLabel, className = "" }: LazyVideoProps) {
+export default function LazyVideo({ sources, poster, ariaLabel, className = "" }: LazyVideoProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -68,8 +67,7 @@ export default function LazyVideo({ src, sources, poster, ariaLabel, className =
         className="w-full h-full object-cover"
       >
         {shouldLoad &&
-          sources?.map((source) => <source key={source.src} src={source.src} type={source.type} />)}
-        {shouldLoad && src ? <source src={src} type="video/mp4" /> : null}
+          sources.map((source) => <source key={source.src} src={source.src} type={source.type} />)}
       </video>
     </div>
   );

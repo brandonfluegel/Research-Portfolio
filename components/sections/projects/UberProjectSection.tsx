@@ -2,7 +2,10 @@
 
 import { m } from "framer-motion";
 import Image from "next/image";
-import LogoBadge from "@/components/ui/LogoBadge";
+import {
+  ProjectSectionHeader,
+  ProjectTimelineItem,
+} from "@/components/sections/projects/ProjectSectionPrimitives";
 import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/animationVariants";
 
 export default function UberProjectSection() {
@@ -14,33 +17,14 @@ export default function UberProjectSection() {
       <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-teal-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <m.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
-      >
-        <div className="flex items-center gap-6">
-          <LogoBadge 
-            logoSrc="/assets/uber-logo.webp"
-            alt="Uber" 
-            className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
-          />
-          <div className="h-8 w-px bg-white/10 hidden md:block"></div>
-          <div className="hidden md:block">
-            <div className="flex items-center gap-2.5 mb-0.5">
-              <h2 className="text-lg text-white font-medium tracking-tight">Driver Growth & Global Strategy</h2>
-            </div>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
-          </div>
-        </div>
-        
-        <div className="md:hidden">
-          <div className="flex items-center gap-2">
-            <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
-          </div>
-        </div>
-      </m.div>
+      <ProjectSectionHeader
+        logoSrc="/assets/uber-logo.webp"
+        logoAlt="Uber"
+        logoWidthClass="w-20 md:w-24"
+        title="Driver Growth & Global Strategy"
+        role="Human Factors PhD Intern"
+        compactMobile
+      />
 
       {/* 2. MAIN CONTENT STACK */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 space-y-16 md:space-y-48">
@@ -83,25 +67,13 @@ export default function UberProjectSection() {
 
             {/* PROCESS TIMELINE */}
             <div className="relative ml-3 md:ml-0 pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-              
-              {/* Block 1 */}
-              <div className="relative">
-                <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Foundational Research in Brazil</h4>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Conducted contextual inquiry and in-situ diary studies with rental drivers across São Paulo. Found that the app’s multi-step task flows imposed high cognitive load — measured via NASA-TLX and task completion analysis — and was a primary churn driver for new rental drivers in the first 30 days.
-                </p>
-              </div>
+              <ProjectTimelineItem title="Foundational Research in Brazil">
+                Conducted contextual inquiry and in-situ diary studies with rental drivers across São Paulo. Found that the app’s multi-step task flows imposed high cognitive load — measured via NASA-TLX and task completion analysis — and was a primary churn driver for new rental drivers in the first 30 days.
+              </ProjectTimelineItem>
 
-              {/* Block 3 */}
-              <div className="relative">
-                 <span className="absolute -left-7.25 md:-left-9.25 top-1.5 w-3 h-3 bg-zinc-900 border border-zinc-600 rounded-full"></span>
-                 <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-1 md:mb-2 leading-tight">Driver Retention Lift: First 30 Days Post-Launch</h4>
-                 <p className="text-sm text-zinc-400 leading-relaxed">
-                  The redesigned driver app reduced NASA-TLX workload subscale scores and produced a measurable lift in driver retention for the rental segment in the LATAM region within the first post-launch quarter.
-                </p>
-              </div>
-
+              <ProjectTimelineItem title="Driver Retention Lift: First 30 Days Post-Launch">
+                The redesigned driver app reduced NASA-TLX workload subscale scores and produced a measurable lift in driver retention for the rental segment in the LATAM region within the first post-launch quarter.
+              </ProjectTimelineItem>
             </div>
           </m.div>
         </m.div>

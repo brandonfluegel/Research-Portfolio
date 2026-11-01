@@ -2,7 +2,7 @@
 
 import { m } from "framer-motion";
 import Image from "next/image";
-import LogoBadge from "@/components/ui/LogoBadge";
+import { ProjectSectionHeader } from "@/components/sections/projects/ProjectSectionPrimitives";
 import { fadeInUp, staggerContainer } from "@/lib/utils/animationVariants";
 
 export default function NASAProjectSection() {
@@ -14,33 +14,14 @@ export default function NASAProjectSection() {
       <div className="absolute bottom-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-indigo-900/10 blur-[80px] rounded-full pointer-events-none translate-x-1/3 translate-y-1/3 transform-gpu"></div>
 
       {/* 1. SECTION HEADER */}
-      <m.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
-      >
-        <div className="flex items-center gap-6">
-          <LogoBadge 
-            logoSrc="/assets/nasa-logo.webp"
-            alt="NASA" 
-            className="w-20 md:w-24 h-auto opacity-100 brightness-0 invert" 
-          />
-          <div className="h-8 w-px bg-white/10 hidden md:block"></div>
-          <div className="hidden md:block">
-            <div className="flex items-center gap-2.5 mb-0.5">
-              <h2 className="text-lg text-white font-medium tracking-tight">Lunar Gateway · Medical Workstation Validation</h2>
-            </div>
-            <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">Human Factors PhD Intern</p>
-          </div>
-        </div>
-        
-        <div className="md:hidden">
-          <div className="flex items-center gap-2">
-            <p className="text-xs text-zinc-400 uppercase tracking-widest font-mono">Human Factors PhD Intern</p>
-          </div>
-        </div>
-      </m.div>
+      <ProjectSectionHeader
+        logoSrc="/assets/nasa-logo.webp"
+        logoAlt="NASA"
+        logoWidthClass="w-20 md:w-24"
+        title="Lunar Gateway · Medical Workstation Validation"
+        role="Human Factors PhD Intern"
+        compactMobile
+      />
 
       {/* 2. MAIN CONTENT — FULL-WIDTH IMMERSIVE LAYOUT */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 space-y-12 md:space-y-16">

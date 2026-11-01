@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/constants/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -38,8 +39,8 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "CCBot", allow: "/" },
       { userAgent: "YouBot", allow: "/" },
     ],
-    sitemap: "https://humanfactors.pro/sitemap.xml",
-    host: "https://humanfactors.pro",
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
 
