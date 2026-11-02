@@ -4,7 +4,7 @@
 
 ## About Me
 
-I'm Dr. Brandon Allan Fluegel, a Senior Human Factors Design Engineer with a Ph.D. in Human Factors Psychology from Old Dominion University. I turn research on human perception, cognition, and behavior into engineering specifications and product decisions. At Amazon, I led perceptual latency research for Alexa, co-established fNIRS neuroimaging protocols, and co-invented a patented context-aware interaction system recognized with the Amazon Inventor Award. At NASA, I validated Lunar Gateway medical workstations in simulated microgravity. At Mercedes-Benz, I researched HMI and psychoacoustics for semi-autonomous driving. I also authored a human-AI trust audit framework and focus on robotics and mission-critical autonomous systems.
+I'm Dr. Brandon Allan Fluegel, a Senior Human Factors Design Engineer with a Ph.D. in Human Factors Psychology. I turn research on human perception and behavior into engineering decisions. My work spans Alexa at Amazon, Lunar Gateway at NASA, and semi-autonomous driving at Mercedes-Benz. I also authored a human-AI trust audit framework.
 
 **Stack:** Next.js 16 · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 · Vercel
 
