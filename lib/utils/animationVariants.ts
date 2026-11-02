@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import { Variants } from "framer-motion";
 
 const easeOutExpo = [0.22, 1, 0.36, 1] as const;

@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 "use client";
 
 import { useSyncExternalStore } from "react";
@@ -81,19 +82,6 @@ export function subscribeScroll(listener: () => void) {
 
 export function getScrollSnapshot() {
   return snapshot;
-}
-
-const serverSnapshot: ScrollSnapshot = {
-  scrollY: 0,
-  progress: 0,
-};
-
-function getServerSnapshot(): ScrollSnapshot {
-  return serverSnapshot;
-}
-
-export default function useScrollMetrics() {
-  return useSyncExternalStore(subscribeScroll, getScrollSnapshot, getServerSnapshot);
 }
 
 // Re-renders only when the threshold is crossed, not on every scroll frame.

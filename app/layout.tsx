@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";

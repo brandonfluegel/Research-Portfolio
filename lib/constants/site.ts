@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 export const SITE_URL = "https://humanfactors.pro";
 
 export const PROFILE_SEARCH_IMAGE = "/assets/profile-search.jpg";

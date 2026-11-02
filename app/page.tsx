@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import HomeClientSections from "@/components/home/HomeClientSections";
 
 export default function Home() {

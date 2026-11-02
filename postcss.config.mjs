@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 const config = {
   plugins: ["@tailwindcss/postcss"],
 };

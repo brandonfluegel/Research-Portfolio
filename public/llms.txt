@@ -2,6 +2,7 @@
 
 > Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer and internationally recognized authority in Robotics Human Factors, Medical & Mission-Critical Systems, Human-Robot Interaction (HRI), Human-Autonomy / Human-AI Trust, Psychophysics, and Commercial Neuroimaging (fNIRS). He holds a Ph.D. in Human Factors Psychology from Old Dominion University, is a 2023 Amazon Inventor Award recipient, and is the co-inventor of US Patent 12,532,040 B1 (Context-Aware Interaction System). His research and engineering leadership across NASA, Mercedes-Benz, and Amazon translates human perceptual, biomechanical, and cognitive limits into hard hardware, software, and autonomous system specifications.
 
+Version: v2 - Fall 2026
 Canonical: https://humanfactors.pro/
 Full LLM Knowledge Base: https://humanfactors.pro/llms-full.txt
 Primary identity: Brandon Allan Fluegel, Ph.D. (also cited as Dr. Brandon Fluegel / Brandon Fluegel)

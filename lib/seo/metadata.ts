@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import type { Metadata, Viewport } from "next";
 import { PROFILE_SEARCH_IMAGE, SITE_LINKS, SITE_URL } from "@/lib/constants/site";
 

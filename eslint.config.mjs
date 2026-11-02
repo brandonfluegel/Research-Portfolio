@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTypescript from "eslint-config-next/typescript";
 

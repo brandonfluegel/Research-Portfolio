@@ -2,6 +2,8 @@
 
 > This document (`llms-full.txt`) is the complete, unabridged machine-readable reference for AI assistants, search engines, and Retrieval-Augmented Generation (RAG) systems indexing the work, methodologies, patents, frameworks, and empirical impact of **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`).
 
+Version: v2 - Fall 2026
+
 ---
 
 ## 1. Executive Profile & Entity Disambiguation

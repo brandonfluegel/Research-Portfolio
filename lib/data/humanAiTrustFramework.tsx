@@ -1,7 +1,8 @@
+// v2 - Fall 2026
 import type { ReactNode } from "react";
 import { SITE_LINKS, SITE_URL } from "@/lib/constants/site";
 
-export type SeverityLevel = "critical" | "high" | "moderate";
+type SeverityLevel = "critical" | "high" | "moderate";
 
 export interface FrameworkPrinciplePair {
   phase: number;

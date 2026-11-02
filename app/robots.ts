@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants/site";
 

@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 export const NAV_SECTIONS = [
   { id: "amazon-section", name: "Amazon", href: "#amazon-section" },
   { id: "nasa-section", name: "NASA", href: "#nasa-section" },

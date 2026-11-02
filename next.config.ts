@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 import type { NextConfig } from "next";
 
 const securityHeaders = [

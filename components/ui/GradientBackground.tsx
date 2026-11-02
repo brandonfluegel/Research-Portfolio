@@ -1,3 +1,4 @@
+// v2 - Fall 2026
 export default function GradientBackground() {
   return (
     <div aria-hidden="true" className="ambient-background fixed inset-0 -z-10 overflow-hidden bg-black contain-strict">

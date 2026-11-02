@@ -1,5 +1,7 @@
 # Brandon Allan Fluegel — Human Factors Engineering Portfolio
 
+**v2 - Fall 2026**
+
 > Translating human behavior and perception research into engineering specifications and product decisions
 
 ## About Me
