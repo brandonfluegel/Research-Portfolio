@@ -26,15 +26,6 @@ const DEFERRED_SECTIONS: Array<{
   dividerAfter?: { label: string; description: string };
 }> = [
   {
-    id: "agent-trust",
-    Component: lazy(DEFERRED_SECTION_IMPORTERS["agent-trust"]),
-    minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
-    dividerAfter: {
-      label: "From AI systems → Mission-critical systems",
-      description: "Where cognitive error costs lives, not conversions",
-    },
-  },
-  {
     id: "nasa-section",
     Component: lazy(DEFERRED_SECTION_IMPORTERS["nasa-section"]),
     minHeightClass: "min-h-[1250px] md:min-h-[1500px]",
@@ -46,6 +37,15 @@ const DEFERRED_SECTIONS: Array<{
   {
     id: "mercedes-section",
     Component: lazy(DEFERRED_SECTION_IMPORTERS["mercedes-section"]),
+    minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
+    dividerAfter: {
+      label: "From applications → Global standards",
+      description: "Evolving established models into modern Human-AI trust frameworks",
+    },
+  },
+  {
+    id: "agent-trust",
+    Component: lazy(DEFERRED_SECTION_IMPORTERS["agent-trust"]),
     minHeightClass: "min-h-[1100px] md:min-h-[1300px]",
   },
 ];
@@ -161,8 +161,8 @@ export default function HomeClientSections() {
         </div>
 
         <SectionDivider
-          label="From applications → Global standards"
-          description="Evolving established models into modern Human-AI trust frameworks"
+          label="From consumer AI → Mission-critical systems"
+          description="Where cognitive error costs lives, not conversions"
         />
 
         {DEFERRED_SECTIONS.map(({ id, Component, minHeightClass, dividerAfter }) => (
