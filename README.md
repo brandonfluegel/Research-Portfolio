@@ -51,6 +51,8 @@ npm run lint
 
 **Optional:** Add `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` to `.env.local` to enable GA4.
 
+To exclude your own devices from GA4, visit the site once with `?ga_opt_out=1` (stored in `localStorage`); `?ga_opt_out=0` re-enables tracking.
+
 ---
 
 ## Contact

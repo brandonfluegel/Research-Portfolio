@@ -1,6 +1,5 @@
 "use client";
 
-import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { SECTION_IDS } from "@/lib/constants/sections";
@@ -10,57 +9,100 @@ declare global {
   interface Window {
     dataLayer: unknown[];
     gtag: (...args: unknown[]) => void;
+    __gaInitialized?: boolean;
   }
 }
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
 
-// Scroll depth checkpoints (% of total page height)
+// Visit any page with ?ga_opt_out=1 to stop tracking this browser (e.g. your own
+// devices); ?ga_opt_out=0 re-enables it. Persisted in localStorage.
+const OPT_OUT_PARAM = "ga_opt_out";
+const OPT_OUT_STORAGE_KEY = "ga_opt_out";
+
 const SCROLL_MILESTONES = [25, 50, 75, 90] as const;
-// Active engagement time checkpoints (seconds of visible, active tab time)
+// Seconds of *active* time: tab visible, window focused, and recent user input.
 const TIME_MILESTONES = [15, 30, 60, 120, 240] as const;
+// A reader who stops interacting for this long is treated as idle.
+const IDLE_TIMEOUT_MS = 60_000;
+// Active seconds within one section before it counts as an engaged read.
+const ENGAGED_READ_SECONDS = 8;
+// A section counts as viewed when 15% of it is visible OR it fills half the
+// viewport (tall mobile sections can never reach 15% of their own height).
+const SECTION_VIEW_RATIO = 0.15;
+const SECTION_VIEW_VIEWPORT_FRACTION = 0.5;
+const OBSERVER_THRESHOLDS = Array.from({ length: 21 }, (_, i) => i / 20);
+
+const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
+
+type LandingContext = Partial<Record<(typeof UTM_KEYS)[number], string>> & {
+  traffic_source?: string;
+  device_category: "mobile" | "desktop";
+};
 
 // ---------------------------------------------------------------------------
-// BOT DETECTION
-// navigator.webdriver is true in every headless Chrome instance (Puppeteer,
-// Playwright, Selenium) — the standard tooling for datacenter scrapers.
+// ELIGIBILITY
 // ---------------------------------------------------------------------------
 function isLikelyBot(): boolean {
-  if (typeof window === "undefined" || typeof navigator === "undefined") return true;
   if (navigator.webdriver) return true;
-  const botUA = /bot|crawler|spider|scraper|headless|phantomjs|selenium|archiver|slurp|bingpreview|lighthouse|pagespeed/i;
-  if (botUA.test(navigator.userAgent)) return true;
-  return false;
+  const botUA =
+    /bot|crawler|spider|scraper|headless|phantomjs|selenium|puppeteer|playwright|archiver|slurp|bingpreview|lighthouse|pagespeed|gtmetrix|pingdom|uptime|prerender/i;
+  return botUA.test(navigator.userAgent);
+}
+
+function isOptedOut(): boolean {
+  const url = new URL(window.location.href);
+  const param = url.searchParams.get(OPT_OUT_PARAM);
+
+  try {
+    if (param === "1") localStorage.setItem(OPT_OUT_STORAGE_KEY, "1");
+    if (param === "0") localStorage.removeItem(OPT_OUT_STORAGE_KEY);
+  } catch {
+    // Storage blocked (private mode); fall back to the URL param alone.
+  }
+
+  if (param !== null) {
+    url.searchParams.delete(OPT_OUT_PARAM);
+    window.history.replaceState(window.history.state, "", url.toString());
+  }
+
+  if (param === "1") return true;
+  try {
+    return localStorage.getItem(OPT_OUT_STORAGE_KEY) === "1";
+  } catch {
+    return false;
+  }
 }
 
 // ---------------------------------------------------------------------------
 // LANDING CONTEXT
-// Parsed once on mount; persists across SPA navigations via ref.
 // ---------------------------------------------------------------------------
-function parseLandingContext(): Record<string, string> {
-  if (typeof window === "undefined") return {};
-
+function parseLandingContext(): LandingContext {
   const params = new URLSearchParams(window.location.search);
-  const ctx: Record<string, string> = {};
+  const ua = navigator.userAgent || "";
+  const referrer = document.referrer || "";
+  const ctx: LandingContext = {
+    device_category: /Android|iPhone|iPad|iPod|Mobile/i.test(ua) ? "mobile" : "desktop",
+  };
 
-  for (const key of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"]) {
+  for (const key of UTM_KEYS) {
     const val = params.get(key);
     if (val) ctx[key] = val;
   }
 
-  const ua = navigator.userAgent || "";
-  const referrer = document.referrer || "";
   const isLinkedInApp = /LinkedInApp|LinkedIn/i.test(ua);
-  const isLinkedInReferrer = /linkedin\.com|lnkd\.in/i.test(referrer);
-
-  if (isLinkedInApp || isLinkedInReferrer) {
+  if (isLinkedInApp || /linkedin\.com|lnkd\.in/i.test(referrer)) {
     ctx.traffic_source = "linkedin";
-    if (!ctx.utm_source) ctx.utm_source = "linkedin";
-    if (!ctx.utm_medium) ctx.utm_medium = isLinkedInApp ? "social_app" : "social_web";
+    ctx.utm_source ??= "linkedin";
+    ctx.utm_medium ??= isLinkedInApp ? "social_app" : "social_web";
   } else if (/google\./i.test(referrer)) {
     ctx.traffic_source = "google_organic";
   } else if (/github\.com/i.test(referrer)) {
     ctx.traffic_source = "github";
+  } else if (/facebook\.com|fb\.me/i.test(referrer)) {
+    ctx.traffic_source = "facebook";
+  } else if (/instagram\.com/i.test(referrer)) {
+    ctx.traffic_source = "instagram";
   } else if (referrer) {
     try {
       ctx.traffic_source = new URL(referrer).hostname.replace(/^www\./, "");
@@ -69,18 +111,47 @@ function parseLandingContext(): Record<string, string> {
     }
   }
 
-  ctx.device_category = /Android|iPhone|iPad|iPod|Mobile/i.test(ua) ? "mobile" : "desktop";
   return ctx;
 }
 
+// LinkedIn's in-app browser strips the referrer, so GA files those sessions
+// under (direct)/(none). Injecting UTMs into page_location lets GA's own
+// session attribution credit LinkedIn when the link itself wasn't tagged.
+function buildPageLocation(ctx: LandingContext): string {
+  const url = new URL(window.location.href);
+  if (ctx.traffic_source === "linkedin" && !url.searchParams.has("utm_source")) {
+    url.searchParams.set("utm_source", ctx.utm_source || "linkedin");
+    url.searchParams.set("utm_medium", ctx.utm_medium || "social");
+  }
+  return url.toString();
+}
+
 // ---------------------------------------------------------------------------
-// SAFE GTAG WRAPPER
-// Guards every call so individual trackers do not need inline null checks.
-// Exported so interactive components (e.g. FrameworkSection) can fire custom
-// events without coupling directly to window.gtag.
+// GTAG BOOTSTRAP
+// gtag is defined synchronously so trackers never race the network script;
+// calls queue in dataLayer until gtag.js loads.
 // ---------------------------------------------------------------------------
+function initGtag(pageLocation: string) {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    // gtag.js requires the original `arguments` object, not a rest array.
+    // eslint-disable-next-line prefer-rest-params
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", GA_ID, { page_location: pageLocation });
+
+  const src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_ID)}`;
+  if (!document.querySelector(`script[src="${src}"]`)) {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = src;
+    document.head.appendChild(script);
+  }
+}
+
 export function trackAnalyticsEvent(event: string, params: Record<string, unknown> = {}) {
-  if (!GA_ID || typeof window === "undefined" || typeof window.gtag !== "function") return;
+  if (!GA_ID || typeof window === "undefined" || !window.__gaInitialized) return;
   window.gtag("event", event, { ...params, send_to: GA_ID });
 }
 
@@ -89,90 +160,117 @@ export function trackAnalyticsEvent(event: string, params: Record<string, unknow
 // ---------------------------------------------------------------------------
 export default function GoogleAnalytics() {
   const pathname = usePathname();
-  const isInitialLoad = useRef(true);
-  const landingCtx = useRef<Record<string, string>>({});
+  const lastTrackedPath = useRef<string | null>(null);
 
-  // State sets that survive re-renders without triggering them
-  const firedScrollMilestones = useRef(new Set<number>());
-  const firedSections = useRef(new Set<string>());
-  const firedTimeMilestones = useRef(new Set<number>());
-  const activeSeconds = useRef(0);
-  const sectionEnterTimestamps = useRef(new Map<string, number>());
-  const sectionDwellDispatched = useRef(new Set<string>());
-
-  // Capture landing context once on mount (before any effects send events)
   useEffect(() => {
-    landingCtx.current = parseLandingContext();
-  }, []);
+    if (!GA_ID || isLikelyBot() || isOptedOut()) return;
 
-  // ---------------------------------------------------------------------------
-  // ENGAGEMENT TRACKING
-  // All trackers (scroll depth, dynamic section views + dwell time, active-tab
-  // time milestones, and outbound/navigation clicks) are set up after gtag is
-  // confirmed ready, then torn down cleanly on unmount.
-  // ---------------------------------------------------------------------------
-  useEffect(() => {
-    if (!GA_ID || typeof window === "undefined" || isLikelyBot()) return;
+    const ctx = parseLandingContext();
 
-    let isMounted = true;
-    let unsubscribeScroll: (() => void) | null = null;
-    let sectionObserver: IntersectionObserver | null = null;
-    let engagementInterval: ReturnType<typeof setInterval> | null = null;
+    // Guard against React StrictMode re-running the effect in development.
+    if (!window.__gaInitialized) {
+      initGtag(buildPageLocation(ctx));
+      window.__gaInitialized = true;
 
-    const getSourceLabel = () =>
-      landingCtx.current.utm_source ||
-      landingCtx.current.traffic_source ||
-      "(direct)";
+      if (ctx.traffic_source === "linkedin") {
+        trackAnalyticsEvent("linkedin_landing", {
+          utm_source: ctx.utm_source,
+          utm_medium: ctx.utm_medium,
+          utm_campaign: ctx.utm_campaign || "(not set)",
+          utm_content: ctx.utm_content || "(not set)",
+          device_category: ctx.device_category,
+          landing_page: window.location.pathname,
+        });
+      }
+    }
 
-    // --- 1. Scroll Depth Handler (via shared scroll store) ------------------
+    const sourceLabel = ctx.utm_source || ctx.traffic_source || "(direct)";
+    const baseParams = { traffic_source: sourceLabel, device: ctx.device_category };
+
+    const firedScroll = new Set<number>();
+    const firedTime = new Set<number>();
+    const viewedSections = new Set<string>();
+    const observedSections = new Set<string>();
+    const visiblePx = new Map<string, number>();
+    const readSeconds = new Map<string, number>();
+    const readDispatched = new Set<string>();
+    let activeSeconds = 0;
+    let currentSection: string | null = null;
+    let lastInteraction = Date.now();
+
+    const maxScrollDepth = () => Math.max(0, ...firedScroll);
+    const sectionKey = (el: Element) => el.id.replace("-section", "");
+
+    const isActive = () =>
+      document.visibilityState === "visible" &&
+      document.hasFocus() &&
+      Date.now() - lastInteraction < IDLE_TIMEOUT_MS;
+
+    const markInteraction = () => {
+      lastInteraction = Date.now();
+    };
+
+    // --- Engaged reads -------------------------------------------------------
+
+    const flushRead = (key: string | null) => {
+      if (!key || readDispatched.has(key)) return;
+      const seconds = readSeconds.get(key) || 0;
+      if (seconds < ENGAGED_READ_SECONDS) return;
+      readDispatched.add(key);
+      trackAnalyticsEvent("case_study_engaged_read", {
+        section: key,
+        dwell_seconds: seconds,
+        ...baseParams,
+      });
+    };
+
+    const flushAllReads = () => {
+      for (const key of readSeconds.keys()) flushRead(key);
+    };
+
+    // --- Scroll depth --------------------------------------------------------
 
     const handleScroll = () => {
-      if (!isMounted) return;
+      markInteraction();
       const pct = Math.round(getScrollSnapshot().progress * 100);
       for (const milestone of SCROLL_MILESTONES) {
-        if (pct >= milestone && !firedScrollMilestones.current.has(milestone)) {
-          firedScrollMilestones.current.add(milestone);
+        if (pct >= milestone && !firedScroll.has(milestone)) {
+          firedScroll.add(milestone);
           trackAnalyticsEvent("scroll_depth_milestone", {
             depth_percent: milestone,
-            sections_viewed: firedSections.current.size,
-            traffic_source: getSourceLabel(),
-            device: landingCtx.current.device_category,
+            sections_viewed: viewedSections.size,
+            ...baseParams,
           });
         }
       }
     };
 
-    // --- 2. Outbound, Patent, & Nav Click Handler ---------------------------
+    // --- Clicks --------------------------------------------------------------
 
     const handleClick = (e: MouseEvent) => {
-      const link = (e.target as HTMLElement).closest("a");
+      const link = (e.target as HTMLElement | null)?.closest("a");
       if (!link) return;
       const href = link.getAttribute("href") || "";
-      const maxDepth = Math.max(0, ...Array.from(firedScrollMilestones.current));
+      const clickContext = {
+        sections_viewed_before_click: viewedSections.size,
+        active_seconds_before_click: activeSeconds,
+        max_scroll_depth: maxScrollDepth(),
+      };
 
       if (href.includes("linkedin.com")) {
         trackAnalyticsEvent("cta_click", {
           cta_type: "linkedin",
           cta_location: link.closest("nav") ? "navbar" : "footer",
-          sections_viewed_before_click: firedSections.current.size,
-          active_seconds_before_click: activeSeconds.current,
-          max_scroll_depth: maxDepth,
+          ...clickContext,
         });
-      } else if (href.includes("mailto:")) {
-        trackAnalyticsEvent("cta_click", {
-          cta_type: "email",
-          cta_location: "footer",
-          sections_viewed_before_click: firedSections.current.size,
-          active_seconds_before_click: activeSeconds.current,
-          max_scroll_depth: maxDepth,
-        });
+      } else if (href.startsWith("mailto:")) {
+        trackAnalyticsEvent("cta_click", { cta_type: "email", cta_location: "footer", ...clickContext });
       } else if (href.includes("patents.google.com")) {
         trackAnalyticsEvent("cta_click", {
           cta_type: "patent_link",
           cta_location: "amazon_section",
           patent_id: "US12532040B1",
-          sections_viewed_before_click: firedSections.current.size,
-          active_seconds_before_click: activeSeconds.current,
+          ...clickContext,
         });
       } else if (href.startsWith("#") && href.length > 1) {
         trackAnalyticsEvent("section_nav_click", {
@@ -182,173 +280,125 @@ export default function GoogleAnalytics() {
       }
     };
 
-    // --- 3. Section View & Dwell Time Tracking ------------------------------
+    // --- Section views -------------------------------------------------------
 
-    const attachSectionTargets = () => {
-      if (!sectionObserver) return;
-      for (const domId of SECTION_IDS) {
-        const el = document.getElementById(domId);
-        if (el) sectionObserver.observe(el);
-      }
-    };
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const key = sectionKey(entry.target);
+          const px = entry.isIntersecting ? entry.intersectionRect.height : 0;
+          visiblePx.set(key, px);
 
-    // --- Setup (deferred until gtag is ready) --------------------------------
+          const isViewed =
+            entry.intersectionRatio >= SECTION_VIEW_RATIO ||
+            px >= window.innerHeight * SECTION_VIEW_VIEWPORT_FRACTION;
 
-    const setup = () => {
-      if (!isMounted) return;
-
-      unsubscribeScroll = subscribeScroll(handleScroll);
-      document.addEventListener("click", handleClick);
-
-      // Observe section visibility (threshold 0.15 works reliably for both
-      // 2,100px desktop case studies and compact mobile viewports).
-      sectionObserver = new IntersectionObserver(
-        (entries) => {
-          if (!isMounted) return;
-          const now = Date.now();
-
-          for (const entry of entries) {
-            const sectionKey = entry.target.id.replace("-section", "");
-
-            if (entry.isIntersecting) {
-              sectionEnterTimestamps.current.set(sectionKey, now);
-
-              if (!firedSections.current.has(sectionKey)) {
-                firedSections.current.add(sectionKey);
-                trackAnalyticsEvent("case_study_viewed", {
-                  section: sectionKey,
-                  order_viewed: firedSections.current.size,
-                  traffic_source: getSourceLabel(),
-                  device: landingCtx.current.device_category,
-                });
-              }
-            } else {
-              const enteredAt = sectionEnterTimestamps.current.get(sectionKey);
-              if (enteredAt) {
-                sectionEnterTimestamps.current.delete(sectionKey);
-                const dwellSeconds = Math.round((now - enteredAt) / 1000);
-                // Fire a single deep-read signal when a visitor spends >= 8s reading a section
-                if (dwellSeconds >= 8 && !sectionDwellDispatched.current.has(sectionKey)) {
-                  sectionDwellDispatched.current.add(sectionKey);
-                  trackAnalyticsEvent("case_study_engaged_read", {
-                    section: sectionKey,
-                    dwell_seconds: dwellSeconds,
-                    traffic_source: getSourceLabel(),
-                    device: landingCtx.current.device_category,
-                  });
-                }
-              }
-            }
+          if (isViewed && !viewedSections.has(key)) {
+            viewedSections.add(key);
+            trackAnalyticsEvent("case_study_viewed", {
+              section: key,
+              order_viewed: viewedSections.size,
+              ...baseParams,
+            });
           }
-        },
-        { threshold: 0.15 }
-      );
-
-      attachSectionTargets();
-
-      // Active-tab time ticker (only counts seconds while the tab is visible)
-      engagementInterval = setInterval(() => {
-        if (!isMounted || document.visibilityState !== "visible") return;
-        activeSeconds.current += 1;
-        const sec = activeSeconds.current;
-
-        if ((TIME_MILESTONES as readonly number[]).includes(sec) && !firedTimeMilestones.current.has(sec)) {
-          firedTimeMilestones.current.add(sec);
-          trackAnalyticsEvent("engagement_milestone", {
-            seconds: sec,
-            sections_viewed: firedSections.current.size,
-            max_scroll_depth: Math.max(0, ...Array.from(firedScrollMilestones.current)),
-            traffic_source: getSourceLabel(),
-            device: landingCtx.current.device_category,
-          });
         }
-      }, 1000);
+      },
+      { threshold: OBSERVER_THRESHOLDS }
+    );
+
+    const observeSections = () => {
+      for (const id of SECTION_IDS) {
+        if (observedSections.has(id)) continue;
+        const el = document.getElementById(id);
+        if (el) {
+          sectionObserver.observe(el);
+          observedSections.add(id);
+        }
+      }
     };
 
-    // Poll until gtag script is initialized
-    const waitForGtag = (attempts = 0) => {
-      if (!isMounted) return;
-      if (typeof window.gtag === "function") {
-        setup();
-        return;
+    // The section most on-screen (by pixels) is the one being read.
+    const dominantSection = (): string | null => {
+      let best: string | null = null;
+      let bestPx = 0;
+      for (const [key, px] of visiblePx) {
+        if (px > bestPx) {
+          best = key;
+          bestPx = px;
+        }
       }
-      if (attempts >= 20) return;
-      setTimeout(() => waitForGtag(attempts + 1), 250);
+      return best;
     };
-    waitForGtag();
+
+    // --- Active-time ticker --------------------------------------------------
+
+    const tick = () => {
+      if (observedSections.size < SECTION_IDS.length) observeSections();
+      if (!isActive()) return;
+
+      activeSeconds += 1;
+      if ((TIME_MILESTONES as readonly number[]).includes(activeSeconds) && !firedTime.has(activeSeconds)) {
+        firedTime.add(activeSeconds);
+        trackAnalyticsEvent("engagement_milestone", {
+          seconds: activeSeconds,
+          sections_viewed: viewedSections.size,
+          max_scroll_depth: maxScrollDepth(),
+          ...baseParams,
+        });
+      }
+
+      const section = dominantSection();
+      if (section !== currentSection) {
+        flushRead(currentSection);
+        currentSection = section;
+      }
+      if (section) readSeconds.set(section, (readSeconds.get(section) || 0) + 1);
+    };
+
+    // Flush pending reads when the page is backgrounded or closed; this is the
+    // last reliable moment on mobile. gtag sends these via sendBeacon.
+    const handleVisibility = () => {
+      if (document.visibilityState === "hidden") flushAllReads();
+      else markInteraction();
+    };
+
+    observeSections();
+    const unsubscribeScroll = subscribeScroll(handleScroll);
+    const ticker = setInterval(tick, 1000);
+    const interactionEvents = ["pointerdown", "pointermove", "keydown", "touchstart", "wheel"] as const;
+    for (const type of interactionEvents) {
+      window.addEventListener(type, markInteraction, { passive: true });
+    }
+    document.addEventListener("click", handleClick);
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("pagehide", flushAllReads);
 
     return () => {
-      isMounted = false;
-      unsubscribeScroll?.();
-      if (engagementInterval) clearInterval(engagementInterval);
+      flushAllReads();
+      clearInterval(ticker);
+      unsubscribeScroll();
+      sectionObserver.disconnect();
+      for (const type of interactionEvents) window.removeEventListener(type, markInteraction);
       document.removeEventListener("click", handleClick);
-      sectionObserver?.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("pagehide", flushAllReads);
     };
   }, []);
 
-  // ---------------------------------------------------------------------------
-  // SPA PAGE_VIEW TRACKING
-  // Next.js does not re-fire gtag on client navigations; this effect handles it.
-  // Also fires the one-time linkedin_landing event on first load.
-  // ---------------------------------------------------------------------------
+  // Next.js client navigations don't trigger gtag's automatic page_view.
+  // The initial page_view is sent by gtag('config'), so the first path is skipped.
   useEffect(() => {
-    if (!GA_ID || isLikelyBot()) return;
-
-    if (isInitialLoad.current) {
-      isInitialLoad.current = false;
-      const sendLandingEvent = (attempts = 0) => {
-        if (typeof window.gtag !== "function") {
-          if (attempts < 20) setTimeout(() => sendLandingEvent(attempts + 1), 200);
-          return;
-        }
-        const ctx = landingCtx.current;
-        if (ctx.traffic_source === "linkedin") {
-          trackAnalyticsEvent("linkedin_landing", {
-            utm_source: ctx.utm_source,
-            utm_medium: ctx.utm_medium,
-            utm_campaign: ctx.utm_campaign || "(not set)",
-            utm_content: ctx.utm_content || "(not set)",
-            device_category: ctx.device_category,
-            landing_page: window.location.pathname,
-          });
-        }
-      };
-      setTimeout(sendLandingEvent, 100);
+    if (lastTrackedPath.current === null) {
+      lastTrackedPath.current = pathname;
       return;
     }
-
-    const ctx = landingCtx.current;
+    if (lastTrackedPath.current === pathname) return;
+    lastTrackedPath.current = pathname;
     trackAnalyticsEvent("page_view", {
       page_title: document.title,
       page_location: window.location.href,
-      page_path: window.location.pathname + window.location.search,
-      ...(ctx.utm_source && { utm_source: ctx.utm_source }),
-      ...(ctx.utm_medium && { utm_medium: ctx.utm_medium }),
-      ...(ctx.utm_campaign && { utm_campaign: ctx.utm_campaign }),
     });
   }, [pathname]);
 
-  if (!GA_ID || isLikelyBot()) return null;
-
-  return (
-    <>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-        strategy="afterInteractive"
-      />
-      <Script id="ga4-init" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            send_page_view: true,
-            anonymize_ip: true
-          });
-        `}
-      </Script>
-    </>
-  );
+  return null;
 }
-
