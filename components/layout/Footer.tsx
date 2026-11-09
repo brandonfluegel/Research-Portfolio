@@ -57,6 +57,8 @@ export default function Footer() {
           <Link 
             href={SITE_LINKS.linkedin} 
             target="_blank"
+            data-analytics-cta="linkedin"
+            data-analytics-location="footer"
             className="flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300"
           >
             <LinkedinIcon />
@@ -65,6 +67,8 @@ export default function Footer() {
           
           <Link 
             href={SITE_LINKS.mailto} 
+            data-analytics-cta="email"
+            data-analytics-location="footer"
             className="flex items-center gap-2 px-8 py-4 bg-zinc-900 border border-white/20 text-white font-medium rounded-full hover:bg-zinc-800 transition-colors duration-300"
           >
             <MailIcon />

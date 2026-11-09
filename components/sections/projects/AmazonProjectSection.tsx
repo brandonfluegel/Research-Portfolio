@@ -12,7 +12,7 @@ import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/a
 
 export default function AmazonProjectSection() {
   return (
-    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
+    <section data-analytics-section="amazon-section" className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
       
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-blue-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
@@ -91,7 +91,7 @@ export default function AmazonProjectSection() {
               </ProjectTimelineItem>
               <ProjectTimelineItem title="Context-Aware Interaction Patent">
                 Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
-                <a href={SITE_LINKS.patent} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
+                <a href={SITE_LINKS.patent} target="_blank" rel="noopener noreferrer" data-analytics-cta="patent_link" data-analytics-location="amazon_section" data-analytics-id="US12532040B1" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
                 in January 2026. This work earned the 2023 Amazon Inventor Award.
               </ProjectTimelineItem>
             </div>

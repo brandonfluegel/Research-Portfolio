@@ -12,6 +12,9 @@ import { siteMetadata, siteViewport, structuredData } from "@/lib/seo/metadata";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const isProductionDeployment = process.env.VERCEL_ENV
+  ? process.env.VERCEL_ENV === "production"
+  : process.env.NODE_ENV === "production";
 
 export const viewport: Viewport = siteViewport;
 export const metadata: Metadata = siteMetadata;
@@ -26,7 +29,7 @@ export default function RootLayout({
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Summary Index" />
         <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Knowledge Base" />
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ? (
+        {isProductionDeployment && process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ? (
           <>
             <link rel="preconnect" href="https://www.googletagmanager.com" />
             <link rel="preconnect" href="https://www.google-analytics.com" />
@@ -42,8 +45,12 @@ export default function RootLayout({
         <GradientBackground />
         <MotionProvider>{children}</MotionProvider>
         <GoogleAnalytics />
-        <Analytics />
-        <SpeedInsights />
+        {isProductionDeployment ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );

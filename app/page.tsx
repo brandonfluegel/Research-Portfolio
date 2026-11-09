@@ -17,6 +17,7 @@ export default function Home() {
 
           <a
             href="#amazon-section"
+            data-analytics-location="hero_cue"
             aria-label="Scroll to case studies"
             className="rise-in mt-8 md:mt-12 flex flex-col items-center gap-1 px-4 py-2 min-h-11 text-zinc-500 hover:text-white transition-colors"
             style={{ animationDelay: "250ms" }}

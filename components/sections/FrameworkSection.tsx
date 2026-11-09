@@ -67,17 +67,16 @@ export default function FrameworkSection() {
 
   const toggleCheck = (questionIndex: number) => {
     const key = `${activeIdx}-${questionIndex}`;
-    setCheckedItems(prev => {
-      const nextChecked = !prev[key];
-      const nextState = { ...prev, [key]: nextChecked };
-      const totalChecked = Object.values(nextState).filter(Boolean).length;
-      trackAnalyticsEvent("framework_checklist_toggled", {
-        principle_title: PAIRS[activeIdx]?.title || "",
-        question_index: questionIndex + 1,
-        checked: nextChecked,
-        total_checked: totalChecked,
-      });
-      return nextState;
+    const nextChecked = !checkedItems[key];
+    const nextState = { ...checkedItems, [key]: nextChecked };
+    const totalChecked = Object.values(nextState).filter(Boolean).length;
+
+    setCheckedItems(nextState);
+    trackAnalyticsEvent("framework_checklist_toggled", {
+      principle_title: PAIRS[activeIdx]?.title || "",
+      question_index: questionIndex + 1,
+      checked: nextChecked,
+      total_checked: totalChecked,
     });
   };
 
@@ -102,7 +101,7 @@ export default function FrameworkSection() {
 
 
   return (
-    <section className="relative w-full py-12 md:py-20 overflow-hidden bg-black">
+    <section data-analytics-section="agent-trust" className="relative w-full py-12 md:py-20 overflow-hidden bg-black">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3 transform-gpu"></div>
       <div className="absolute bottom-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3 transform-gpu"></div>

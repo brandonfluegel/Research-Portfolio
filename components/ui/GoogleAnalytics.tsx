@@ -15,6 +15,10 @@ declare global {
 }
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "";
+const IS_PRODUCTION_DEPLOYMENT = process.env.VERCEL_ENV
+  ? process.env.VERCEL_ENV === "production"
+  : process.env.NODE_ENV === "production";
+const GA_ENABLED = Boolean(GA_ID && IS_PRODUCTION_DEPLOYMENT);
 
 // Visit any page with ?ga_opt_out=1 to stop tracking this browser (e.g. your own
 // devices); ?ga_opt_out=0 re-enables it. Persisted in localStorage.
@@ -35,6 +39,7 @@ const SECTION_VIEW_VIEWPORT_FRACTION = 0.5;
 const OBSERVER_THRESHOLDS = Array.from({ length: 21 }, (_, i) => i / 20);
 
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
+const SAFE_CAMPAIGN_VALUE = /^[A-Za-z0-9._~-]{1,100}$/;
 
 type LandingContext = Partial<Record<(typeof UTM_KEYS)[number], string>> & {
   traffic_source?: string;
@@ -88,7 +93,7 @@ function parseLandingContext(): LandingContext {
 
   for (const key of UTM_KEYS) {
     const val = params.get(key);
-    if (val) ctx[key] = val;
+    if (val && SAFE_CAMPAIGN_VALUE.test(val)) ctx[key] = val;
   }
 
   const isLinkedInApp = /LinkedInApp|LinkedIn/i.test(ua);
@@ -115,14 +120,14 @@ function parseLandingContext(): LandingContext {
   return ctx;
 }
 
-// LinkedIn's in-app browser strips the referrer, so GA files those sessions
-// under (direct)/(none). Injecting UTMs into page_location lets GA's own
-// session attribution credit LinkedIn when the link itself wasn't tagged.
-function buildPageLocation(ctx: LandingContext): string {
-  const url = new URL(window.location.href);
-  if (ctx.traffic_source === "linkedin" && !url.searchParams.has("utm_source")) {
-    url.searchParams.set("utm_source", ctx.utm_source || "linkedin");
-    url.searchParams.set("utm_medium", ctx.utm_medium || "social");
+function buildPageLocation(): string {
+  const url = new URL(window.location.pathname, window.location.origin);
+  const params = new URLSearchParams(window.location.search);
+  for (const key of UTM_KEYS) {
+    const value = params.get(key);
+    if (value && SAFE_CAMPAIGN_VALUE.test(value)) {
+      url.searchParams.set(key, value);
+    }
   }
   return url.toString();
 }
@@ -140,7 +145,7 @@ function initGtag(pageLocation: string) {
     window.dataLayer.push(arguments);
   };
   window.gtag("js", new Date());
-  window.gtag("config", GA_ID, { page_location: pageLocation });
+  window.gtag("config", GA_ID, { page_location: pageLocation, send_page_view: false });
 
   const src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_ID)}`;
   if (!document.querySelector(`script[src="${src}"]`)) {
@@ -152,7 +157,7 @@ function initGtag(pageLocation: string) {
 }
 
 export function trackAnalyticsEvent(event: string, params: Record<string, unknown> = {}) {
-  if (!GA_ID || typeof window === "undefined" || !window.__gaInitialized) return;
+  if (!GA_ENABLED || typeof window === "undefined" || !window.__gaInitialized) return;
   window.gtag("event", event, { ...params, send_to: GA_ID });
 }
 
@@ -164,14 +169,19 @@ export default function GoogleAnalytics() {
   const lastTrackedPath = useRef<string | null>(null);
 
   useEffect(() => {
-    if (!GA_ID || isLikelyBot() || isOptedOut()) return;
+    if (!GA_ENABLED || isLikelyBot() || isOptedOut()) return;
 
     const ctx = parseLandingContext();
 
     // Guard against React StrictMode re-running the effect in development.
     if (!window.__gaInitialized) {
-      initGtag(buildPageLocation(ctx));
+      initGtag(buildPageLocation());
       window.__gaInitialized = true;
+
+      trackAnalyticsEvent("page_view", {
+        page_title: document.title,
+        page_location: buildPageLocation(),
+      });
 
       if (ctx.traffic_source === "linkedin") {
         trackAnalyticsEvent("linkedin_landing", {
@@ -197,12 +207,11 @@ export default function GoogleAnalytics() {
     const readDispatched = new Set<string>();
     let activeSeconds = 0;
     let currentSection: string | null = null;
-    let lastInteraction = Date.now();
-
-    const maxScrollDepth = () => Math.max(0, ...firedScroll);
-    const sectionKey = (el: Element) => el.id.replace("-section", "");
+    let lastInteraction: number | null = null;
+    let maxScrollDepthPercent = 0;
 
     const isActive = () =>
+      lastInteraction !== null &&
       document.visibilityState === "visible" &&
       document.hasFocus() &&
       Date.now() - lastInteraction < IDLE_TIMEOUT_MS;
@@ -233,7 +242,8 @@ export default function GoogleAnalytics() {
 
     const handleScroll = () => {
       markInteraction();
-      const pct = Math.round(getScrollSnapshot().progress * 100);
+      const pct = Math.min(100, Math.max(0, getScrollSnapshot().progress * 100));
+      maxScrollDepthPercent = Math.max(maxScrollDepthPercent, pct);
       for (const milestone of SCROLL_MILESTONES) {
         if (pct >= milestone && !firedScroll.has(milestone)) {
           firedScroll.add(milestone);
@@ -255,28 +265,24 @@ export default function GoogleAnalytics() {
       const clickContext = {
         sections_viewed_before_click: viewedSections.size,
         active_seconds_before_click: activeSeconds,
-        max_scroll_depth: maxScrollDepth(),
+        max_scroll_percent: Math.round(maxScrollDepthPercent),
       };
+      const ctaType = link.dataset.analyticsCta;
+      const ctaLocation = link.dataset.analyticsLocation;
 
-      if (href.includes("linkedin.com")) {
+      if (ctaType && ctaLocation) {
         trackAnalyticsEvent("cta_click", {
-          cta_type: "linkedin",
-          cta_location: link.closest("nav") ? "navbar" : "footer",
+          cta_type: ctaType,
+          cta_location: ctaLocation,
+          ...(link.dataset.analyticsId ? { cta_id: link.dataset.analyticsId } : {}),
           ...clickContext,
         });
-      } else if (href.startsWith("mailto:")) {
-        trackAnalyticsEvent("cta_click", { cta_type: "email", cta_location: "footer", ...clickContext });
-      } else if (href.includes("patents.google.com")) {
-        trackAnalyticsEvent("cta_click", {
-          cta_type: "patent_link",
-          cta_location: "amazon_section",
-          patent_id: "US12532040B1",
-          ...clickContext,
-        });
-      } else if (href.startsWith("#") && href.length > 1) {
+      }
+
+      if (href.startsWith("#") && href.length > 1) {
         trackAnalyticsEvent("section_nav_click", {
           target_section: href.slice(1).replace("-section", ""),
-          nav_location: link.closest("nav") ? "navbar" : "hero_cue",
+          nav_location: ctaLocation || (link.closest("nav") ? "navbar" : "hero_cue"),
         });
       }
     };
@@ -286,7 +292,8 @@ export default function GoogleAnalytics() {
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          const key = sectionKey(entry.target);
+          const key = entry.target.getAttribute("data-analytics-section");
+          if (!key) continue;
           const px = entry.isIntersecting ? entry.intersectionRect.height : 0;
           visiblePx.set(key, px);
 
@@ -310,7 +317,7 @@ export default function GoogleAnalytics() {
     const observeSections = () => {
       for (const id of SECTION_IDS) {
         if (observedSections.has(id)) continue;
-        const el = document.getElementById(id);
+        const el = document.querySelector(`[data-analytics-section="${id}"]`);
         if (el) {
           sectionObserver.observe(el);
           observedSections.add(id);
@@ -343,7 +350,7 @@ export default function GoogleAnalytics() {
         trackAnalyticsEvent("engagement_milestone", {
           seconds: activeSeconds,
           sections_viewed: viewedSections.size,
-          max_scroll_depth: maxScrollDepth(),
+          max_scroll_percent: Math.round(maxScrollDepthPercent),
           ...baseParams,
         });
       }
@@ -360,13 +367,12 @@ export default function GoogleAnalytics() {
     // last reliable moment on mobile. gtag sends these via sendBeacon.
     const handleVisibility = () => {
       if (document.visibilityState === "hidden") flushAllReads();
-      else markInteraction();
     };
 
     observeSections();
     const unsubscribeScroll = subscribeScroll(handleScroll);
     const ticker = setInterval(tick, 1000);
-    const interactionEvents = ["pointerdown", "pointermove", "keydown", "touchstart", "wheel"] as const;
+    const interactionEvents = ["pointerdown", "keydown", "touchstart", "wheel"] as const;
     for (const type of interactionEvents) {
       window.addEventListener(type, markInteraction, { passive: true });
     }
@@ -386,8 +392,7 @@ export default function GoogleAnalytics() {
     };
   }, []);
 
-  // Next.js client navigations don't trigger gtag's automatic page_view.
-  // The initial page_view is sent by gtag('config'), so the first path is skipped.
+  // The initial page_view is sent explicitly during initialization.
   useEffect(() => {
     if (lastTrackedPath.current === null) {
       lastTrackedPath.current = pathname;
@@ -397,7 +402,7 @@ export default function GoogleAnalytics() {
     lastTrackedPath.current = pathname;
     trackAnalyticsEvent("page_view", {
       page_title: document.title,
-      page_location: window.location.href,
+      page_location: buildPageLocation(),
     });
   }, [pathname]);
 

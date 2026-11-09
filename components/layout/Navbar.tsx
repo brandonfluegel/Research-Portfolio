@@ -97,6 +97,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                 <a
                   href={link.href}
                   onClick={(e) => scrollToSectionDesktop(e, link.id)}
+                  data-analytics-location="navbar"
                   aria-current={isActive ? "true" : undefined}
                   className={`relative px-3.5 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors duration-200 ${
                     isActive ? "text-white" : "text-zinc-400 hover:text-white hover:bg-white/5"
@@ -150,6 +151,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
                   <Link
                     href={link.href}
                     onClick={(e) => scrollToSection(e, link.id)}
+                    data-analytics-location="navbar"
                     className={`text-3xl md:text-5xl font-light transition-colors block tracking-widest uppercase hover:scale-105 transform duration-300 ${
                       activeSection === link.id
                         ? "text-white"

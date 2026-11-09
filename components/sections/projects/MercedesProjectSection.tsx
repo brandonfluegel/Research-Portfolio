@@ -11,7 +11,7 @@ import { fadeInFromLeft, fadeInFromRight, staggerContainer } from "@/lib/utils/a
 
 export default function MercedesProjectSection() {
   return (
-    <section className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
+    <section data-analytics-section="mercedes-section" className="relative w-full py-16 md:py-32 overflow-hidden bg-black">
 
       {/* BACKGROUND ACCENTS */}
       <div className="absolute top-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-slate-900/10 blur-[80px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transform-gpu"></div>
