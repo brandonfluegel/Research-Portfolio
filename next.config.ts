@@ -22,6 +22,7 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ["framer-motion"],
+    agentUpgrade: "security",
   },
   async rewrites() {
     return [

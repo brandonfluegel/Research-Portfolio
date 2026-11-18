@@ -8,11 +8,11 @@ export default function Home() {
       <section className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-6 md:pb-8">
         <div className="w-full flex flex-col items-center justify-center text-center mx-auto relative z-10 px-2 sm:px-6">
           <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2rem,8vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance">
-            Human Factors PhD
+            Senior Human Factors Design Engineer
           </h1>
 
           <p className="font-medium text-zinc-300 text-center text-balance text-[clamp(0.95rem,3.5vw,1.1rem)] sm:text-[clamp(1rem,2.2vw,1.2rem)] md:text-[clamp(1.1rem,1.8vw,1.35rem)] lg:text-[clamp(1.15rem,1.5vw,1.45rem)] w-full max-w-88 sm:max-w-xl md:max-w-2xl lg:max-w-176 mx-auto leading-relaxed">
-            Applying psychophysics, neuroimaging, and simulated-use validation across robotics, medical, aerospace, and autonomous systems
+            At Intuitive Surgical, applying human factors, psychophysics, and simulated-use validation to surgical robotics
           </p>
 
           <a
@@ -31,17 +31,14 @@ export default function Home() {
       </section>
 
       <section aria-label="SEO Summary" className="sr-only">
-        <h2>Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer</h2>
+        <h2>Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical</h2>
         <p>
           Brandon Allan Fluegel, Ph.D. (also known as Dr. Brandon Fluegel) is a Senior Human Factors
-          Design Engineer and internationally recognized expert in human-robot interaction (HRI),
-          medical and surgical robotics, human-autonomy systems, psychophysics, neuroimaging (fNIRS),
-          and simulated-use validation. He earned his Ph.D. in Human Factors Psychology from Old
-          Dominion University, received the 2023 Amazon Inventor Award, and is the co-inventor of US
-          Patent 12,532,040 B1. He pairs rapid field research (contextual inquiry, service
-          blueprinting, rapid iterative testing) with quantitative human-performance methods
-          (psychophysics, cognitive load modeling, simulated-use validation) across NASA,
-          Mercedes-Benz, and Amazon.
+          Design Engineer at Intuitive Surgical, specializing in surgical robotics, medical device
+          human factors, human-autonomy systems, psychophysics, and simulated-use validation. He earned
+          his Ph.D. in Human Factors Psychology from Old Dominion University, received the 2023 Amazon
+          Inventor Award, and is the co-inventor of US Patent 12,532,040 B1. His prior work includes
+          research and engineering at NASA, Mercedes-Benz, and Amazon.
         </p>
         <h3>Key Contributions, Patents, Frameworks &amp; Quantified Impact</h3>
         <ul>

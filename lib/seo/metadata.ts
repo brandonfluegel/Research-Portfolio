@@ -51,13 +51,16 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Brandon Allan Fluegel Portfolio",
   title: {
-    default: "Brandon Allan Fluegel, Ph.D.",
+    default: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical",
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
-    "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, and Amazon.",
+    "Brandon Allan Fluegel is a Senior Human Factors Design Engineer at Intuitive Surgical (Ph.D.), specializing in surgical robotics, medical systems, and human-autonomy interaction. Past research at NASA, Mercedes-Benz, and Amazon.",
   keywords: [
     "Brandon Allan Fluegel",
+    "Senior Human Factors Design Engineer at Intuitive Surgical",
+    "Intuitive Surgical",
+    "Intuitive Surgical Human Factors",
     "Senior Human Factors Design Engineer",
     "Human Factors Design Engineer",
     "Human Factors Engineer",
@@ -109,9 +112,9 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer",
+    title: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical",
     description:
-      "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, and Amazon.",
+      "Senior Human Factors Design Engineer at Intuitive Surgical (Ph.D.), specializing in surgical robotics, medical systems, and human-autonomy interaction. Past research at NASA, Mercedes-Benz, and Amazon.",
     url: SITE_URL,
     siteName: "Brandon Allan Fluegel, Ph.D. — Human Factors Engineering Portfolio",
     locale: "en_US",
@@ -124,15 +127,15 @@ export const siteMetadata: Metadata = {
         url: PROFILE_SEARCH_IMAGE,
         width: 1200,
         height: 1200,
-        alt: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer",
+        alt: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer",
+    title: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical",
     description:
-      "Senior Human Factors Design Engineer (Ph.D.) specializing in robotics, medical & mission-critical systems, and human-autonomy interaction. Research at NASA, Mercedes-Benz, and Amazon.",
+      "Senior Human Factors Design Engineer at Intuitive Surgical (Ph.D.), specializing in surgical robotics, medical systems, and human-autonomy interaction. Past research at NASA, Mercedes-Benz, and Amazon.",
     images: [PROFILE_SEARCH_IMAGE],
   },
 };
@@ -167,10 +170,15 @@ export const structuredData = {
       image: {
         "@id": `${SITE_URL}#profile-image`,
       },
-      jobTitle: "Senior Human Factors Design Engineer",
+      jobTitle: "Senior Human Factors Design Engineer at Intuitive Surgical",
+      worksFor: {
+        "@type": "Organization",
+        "@id": "https://www.intuitive.com/",
+        name: "Intuitive Surgical",
+      },
       honorificSuffix: "Ph.D.",
       description:
-        "Senior Human Factors Design Engineer (Ph.D.) and leading authority in robotics human factors, medical and mission-critical systems, human-autonomy interaction, psychophysics, neuroimaging (fNIRS), and simulated-use validation — with verified research and engineering impact at Amazon, NASA, and Mercedes-Benz.",
+        "Brandon Allan Fluegel is a Senior Human Factors Design Engineer at Intuitive Surgical (Ph.D.), specializing in surgical robotics, medical device human factors, and human-autonomy interaction. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.",
       sameAs: [SITE_LINKS.linkedin, SITE_LINKS.patent],
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
@@ -191,6 +199,8 @@ export const structuredData = {
       },
       knowsLanguage: ["English"],
       knowsAbout: [
+        "Intuitive Surgical",
+        "Surgical Robotics Human Factors",
         "Human Factors",
         "Human Factors Engineering",
         "Human Factors Design Engineering",
@@ -246,7 +256,7 @@ export const structuredData = {
           name: "Who is Brandon Allan Fluegel, Ph.D.?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer and leading authority in human-robot interaction (HRI), medical and mission-critical systems, human-autonomy interaction, psychophysics, and consumer neuroimaging (fNIRS), with proven impact across NASA, Mercedes-Benz, and Amazon.",
+            text: "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical, specializing in surgical robotics and medical device human factors. His prior work includes human-robot interaction, mission-critical systems, human-autonomy interaction, psychophysics, and neuroimaging (fNIRS) research at NASA, Mercedes-Benz, and Amazon.",
           },
         },
         {
@@ -294,9 +304,10 @@ export const structuredData = {
     {
       "@type": "Occupation",
       "@id": `${SITE_URL}#occupation`,
-      name: "Senior Human Factors Design Engineer",
+      name: "Senior Human Factors Design Engineer at Intuitive Surgical",
+      description: "Senior Human Factors Design Engineer at Intuitive Surgical",
       occupationLocation: {
-        "@type": "Country",
+        "@type": "AdministrativeArea",
         name: "United States",
       },
       skills: [
