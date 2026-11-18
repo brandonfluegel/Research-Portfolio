@@ -157,6 +157,14 @@ export default function HomeClientSections() {
       </div>
 
       <section className="content-shell section-stack mt-16 md:mt-20">
+        <div className="px-4 sm:px-8 pb-2">
+          <h2 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
+            Selected Prior Work
+          </h2>
+          <p className="mt-2 text-sm text-zinc-400">
+            Case studies from Amazon, NASA, and Mercedes-Benz.
+          </p>
+        </div>
         <div id="amazon-section" className="deferred-section">
           <AmazonProjectSection />
         </div>

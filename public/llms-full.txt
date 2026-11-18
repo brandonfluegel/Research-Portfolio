@@ -1,6 +1,6 @@
 # Brandon Allan Fluegel, Ph.D. — Complete Knowledge Base & Engineering Corpus (llms-full.txt)
 
-> This document (`llms-full.txt`) is the complete, unabridged machine-readable reference for AI assistants, search engines, and Retrieval-Augmented Generation (RAG) systems indexing the work, methodologies, patents, frameworks, and empirical impact of **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`).
+> This document (`llms-full.txt`) is a machine-readable profile of **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`), his current role at Intuitive Surgical, prior projects, methodologies, patents, frameworks, and research impact.
 
 Version: v2 - Fall 2026
 
