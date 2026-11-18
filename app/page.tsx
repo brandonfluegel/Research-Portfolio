@@ -30,56 +30,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-label="SEO Summary" className="sr-only">
-        <h2>Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical</h2>
-        <p>
-          Brandon Allan Fluegel, Ph.D. (also known as Dr. Brandon Fluegel) is a Senior Human Factors
-          Design Engineer at Intuitive Surgical, specializing in surgical robotics, medical device
-          human factors, human-autonomy systems, psychophysics, and simulated-use validation. He earned
-          his Ph.D. in Human Factors Psychology from Old Dominion University, received the 2023 Amazon
-          Inventor Award, and is the co-inventor of US Patent 12,532,040 B1. His prior work includes
-          research and engineering at NASA, Mercedes-Benz, and Amazon.
-        </p>
-        <h3>Key Contributions, Patents, Frameworks &amp; Quantified Impact</h3>
-        <ul>
-          <li>
-            <strong>US Patent 12,532,040 B1 &amp; 2023 Amazon Inventor Award:</strong> Co-invented a
-            context-aware physical-to-digital interaction system at Amazon Devices Design Group, shaping
-            Echo Show and Echo Hub experiences across 75M+ active customers.
-          </li>
-          <li>
-            <strong>Alexa Perceptual Latency &amp; $50M NVA Model (Amazon):</strong> Designed a Wizard of Oz
-            latency engine across 20,000+ controlled trials to isolate the 1,000ms High Satisfaction Threshold (HST),
-            embedded into the Negative Value Action (NVA) economic model projecting $50M+ in incremental operational value.
-          </li>
-          <li>
-            <strong>Commercial Consumer Neuroimaging (Amazon):</strong> Co-established Amazon&apos;s first
-            synchronized fNIRS prefrontal cortex neuroimaging and eye-tracking protocol to quantify cognitive
-            load across streaming and multimodal device interfaces.
-          </li>
-          <li>
-            <strong>Human Factors Principles for Human-AI Trust Framework (V.2, July 2026):</strong> Authored the 4-phase,
-            6-principle engineering audit framework for probabilistic and multi-agent AI systems:
-            Phase I Alignment — (1) Capability Discovery (&ldquo;Share Limits Before Work Begins&rdquo;, adapts Match System to World, prevents The Over-Promiser / Capability Mismatch) and (2) Intent Alignment (&ldquo;Mirror Human Intentions&rdquo;, adapts Error Prevention, prevents The Eager Misreader / Goal Misalignment);
-            Phase II Execution — (3) Observability &amp; Predictability (&ldquo;Think Out Loud&rdquo;, adapts Visibility of System Status, prevents The Black Box / Execution Opacity) and (4) Context-Aware Delegation (&ldquo;Scale Autonomy to Perceived Risk&rdquo;, adapts User Control &amp; Freedom, prevents The Rogue Spender / Unbounded Autonomy);
-            Phase III Control — (5) Directability &amp; Interruptibility (&ldquo;Pivot Without Penalty&rdquo;, adapts User Control &amp; Freedom, prevents The Runaway Train / Control Lockout);
-            Phase IV Trust Calibration — (6) Calibrated Trust &amp; Safety (&ldquo;Signal Certainty Accurately&rdquo;, adapts Help Users Diagnose Errors, prevents The Confident Liar / Miscalibrated Reliance).
-          </li>
-          <li>
-            <strong>Lunar Gateway Medical Workstation Validation (NASA):</strong> Led simulated-microgravity
-            human factors validation for next-generation astronaut medical workstations ahead of hardware specification
-            lock, eliminating critical physical reach-envelope and cognitive error modes and reducing complex procedural
-            time-on-task by 30%.
-          </li>
-          <li>
-            <strong>Semi-Autonomous Vehicle HMI &amp; Psychoacoustics (Mercedes-Benz):</strong> Defined Alert
-            Modality standards for L2 autonomous handovers and built a psychoacoustic cabin-noise perception model,
-            reducing perceived cabin noise by 15% and increasing driver trust scores by 24% during automated lane
-            changes and control transitions.
-          </li>
-        </ul>
-      </section>
-
       <HomeClientSections />
     </main>
   );

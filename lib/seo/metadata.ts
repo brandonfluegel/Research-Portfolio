@@ -49,50 +49,13 @@ export const siteViewport: Viewport = {
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: "Brandon Allan Fluegel Portfolio",
+  applicationName: "Brandon Allan Fluegel",
   title: {
-    default: "Brandon Fluegel | Senior Human Factors Design Engineer at Intuitive Surgical",
+    default: "Brandon Fluegel | Human Factors Design Engineer",
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
-    "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio features surgical robotics expertise and prior work at Amazon, NASA, and Mercedes-Benz.",
-  keywords: [
-    "Brandon Allan Fluegel",
-    "Senior Human Factors Design Engineer at Intuitive Surgical",
-    "Intuitive Surgical",
-    "Intuitive Surgical Human Factors",
-    "Senior Human Factors Design Engineer",
-    "Human Factors Design Engineer",
-    "Human Factors Engineer",
-    "Robotics Human Factors",
-    "Human-Robot Interaction",
-    "HRI",
-    "Medical Robotics",
-    "Surgical Robotics",
-    "Teleoperation",
-    "Medical Device Human Factors",
-    "Simulated-Use Validation",
-    "Human Factors Researcher",
-    "Staff Human Factors Researcher",
-    "Human Factors",
-    "Human Factors Engineering",
-    "Human-AI Interaction",
-    "Human-AI Trust",
-    "Psychophysics",
-    "Experimental Design",
-    "Cognitive Load",
-    "fNIRS",
-    "Neuroimaging",
-    "Biometric Research",
-    "Trust in AI",
-    "Amazon",
-    "NASA",
-    "Mercedes-Benz",
-    "Product Research",
-    "Product Strategy",
-    "Latency Research",
-    "Human Machine Interface",
-  ],
+    "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
   authors: [{ name: "Brandon Allan Fluegel" }],
   creator: "Brandon Allan Fluegel",
   publisher: "Brandon Allan Fluegel",
@@ -112,11 +75,11 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Brandon Fluegel | Senior Human Factors Design Engineer at Intuitive Surgical",
+    title: "Brandon Fluegel | Human Factors Design Engineer",
     description:
-      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio features surgical robotics expertise and prior work at Amazon, NASA, and Mercedes-Benz.",
+      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
     url: SITE_URL,
-    siteName: "Brandon Allan Fluegel, Ph.D. — Human Factors Engineering Portfolio",
+    siteName: "Brandon Allan Fluegel",
     locale: "en_US",
     type: "profile",
     firstName: "Brandon",
@@ -133,9 +96,9 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel | Senior Human Factors Design Engineer at Intuitive Surgical",
+    title: "Brandon Fluegel | Human Factors Design Engineer",
     description:
-      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio features surgical robotics expertise and prior work at Amazon, NASA, and Mercedes-Benz.",
+      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
     images: [PROFILE_SEARCH_IMAGE],
   },
 };
@@ -153,9 +116,15 @@ export const structuredData = {
       caption: "Brandon Allan Fluegel profile photo",
     },
     {
+      "@type": "Organization",
+      "@id": "https://www.intuitive.com/#organization",
+      name: "Intuitive Surgical",
+      url: "https://www.intuitive.com/",
+    },
+    {
       "@type": "Person",
       "@id": `${SITE_URL}#person`,
-      name: "Brandon Allan Fluegel, Ph.D.",
+      name: "Brandon Allan Fluegel",
       givenName: "Brandon",
       additionalName: "Allan",
       familyName: "Fluegel",
@@ -172,14 +141,17 @@ export const structuredData = {
       },
       jobTitle: "Senior Human Factors Design Engineer",
       worksFor: {
-        "@type": "Organization",
-        "@id": "https://www.intuitive.com/",
-        name: "Intuitive Surgical",
+        "@id": "https://www.intuitive.com/#organization",
       },
       honorificSuffix: "Ph.D.",
       description:
-        "Brandon Allan Fluegel is a Senior Human Factors Design Engineer at Intuitive Surgical (Ph.D.), specializing in surgical robotics, medical device human factors, and human-autonomy interaction. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.",
-      sameAs: [SITE_LINKS.linkedin, SITE_LINKS.patent],
+        "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.",
+      sameAs: [SITE_LINKS.linkedin],
+      subjectOf: {
+        "@type": "CreativeWork",
+        name: "US Patent 12,532,040 B1 — Context-Aware Interaction System",
+        url: SITE_LINKS.patent,
+      },
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "degree",
@@ -191,7 +163,6 @@ export const structuredData = {
       },
       award: [
         "2023 Amazon Inventor Award",
-        "US Patent 12,532,040 B1 (Context-Aware Interaction System, Granted January 2026)",
       ],
       alumniOf: {
         "@type": "CollegeOrUniversity",
@@ -199,7 +170,6 @@ export const structuredData = {
       },
       knowsLanguage: ["English"],
       knowsAbout: [
-        "Intuitive Surgical",
         "Surgical Robotics Human Factors",
         "Human Factors",
         "Human Factors Engineering",
@@ -229,6 +199,15 @@ export const structuredData = {
       },
     },
     {
+      "@type": "CreativeWork",
+      "@id": `${SITE_URL}#patent-12532040`,
+      name: "US Patent 12,532,040 B1 — Context-Aware Interaction System",
+      url: SITE_LINKS.patent,
+      creator: {
+        "@id": `${SITE_URL}#person`,
+      },
+    },
+    {
       "@type": "ScholarlyArticle",
       "@id": `${SITE_URL}#human-ai-trust-framework`,
       name: "Human Factors Principles for Human-AI Trust: An Audit Framework for Non-Deterministic Interfaces",
@@ -248,68 +227,10 @@ export const structuredData = {
       ],
     },
     {
-      "@type": "FAQPage",
-      "@id": `${SITE_URL}#faq`,
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Who is Brandon Allan Fluegel, Ph.D.?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical, specializing in surgical robotics and medical device human factors. His prior work includes human-robot interaction, mission-critical systems, human-autonomy interaction, psychophysics, and neuroimaging (fNIRS) research at NASA, Mercedes-Benz, and Amazon.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What are Dr. Brandon Allan Fluegel's primary areas of expertise?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Dr. Fluegel specializes in Robotics & Medical Device Human Factors, Simulated-Use Validation, Human-Autonomy & Human-AI Interaction, Psychophysics (perceptual latency modeling), Functional Near-Infrared Spectroscopy (fNIRS) Neuroimaging, Cognitive Load Assessment (NASA-TLX, eye-tracking), and Mission-Critical Human-Machine Interfaces (HMI).",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the Human Factors Principles for Human-AI Trust framework?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Created by Dr. Brandon Allan Fluegel, the Human Factors Principles for Human-AI Trust is an engineering audit framework for probabilistic and multi-agent AI interfaces. It adapts classical usability heuristics across four phases — Alignment (Capability Discovery, Intent Alignment), Execution (Observability & Predictability, Context-Aware Delegation), Control (Directability & Interruptibility), and Trust Calibration (Calibrated Trust & Safety).",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What quantifiable engineering and product outcomes has Dr. Brandon Allan Fluegel delivered?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "At Amazon, Dr. Fluegel isolated the 1,000ms voice response High Satisfaction Threshold across 20,000+ trials, driving $50M+ in projected operational value in the Negative Value Action (NVA) model, co-established Amazon's fNIRS neuroimaging protocol reaching 75M+ Echo Show/Hub customers, and co-invented US Patent 12,532,040 B1 (2023 Amazon Inventor Award). At NASA, his simulated-microgravity validation of the Lunar Gateway medical workstation reduced complex procedure time-on-task by 30%. At Mercedes-Benz, his L2 semi-autonomous HMI and psychoacoustic models lifted driver trust scores by 24% and reduced perceived cabin noise by 15%.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How does Dr. Brandon Allan Fluegel apply human factors engineering to robotics and medical systems?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Dr. Fluegel combines simulated-use validation, physical reach-envelope and biomechanics analysis, cognitive workload modeling (NASA-TLX, fNIRS neuroimaging, eye-tracking), and psychophysical threshold testing to identify and eliminate critical operator use-errors in robotics, medical workstations, and semi-autonomous systems before hardware and software specifications are locked.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What is the perceptual latency threshold for conversational AI and voice assistants?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Through a 20,000+ trial Wizard of Oz psychophysics research program at Amazon Devices Design Group, Dr. Brandon Allan Fluegel established the 1,000ms High Satisfaction Threshold (HST) — the perceptual boundary where >70% of users rate AI responses as 'not slow' and beyond which user trust and satisfaction degrade sharply.",
-          },
-        },
-      ],
-    },
-    {
       "@type": "Occupation",
       "@id": `${SITE_URL}#occupation`,
       name: "Senior Human Factors Design Engineer",
       description: "Senior Human Factors Design Engineer at Intuitive Surgical",
-      occupationLocation: {
-        "@type": "AdministrativeArea",
-        name: "United States",
-      },
       skills: [
         "Human Factors",
         "Human Factors Engineering",
@@ -336,8 +257,9 @@ export const structuredData = {
       "@type": "WebSite",
       "@id": `${SITE_URL}#website`,
       url: SITE_URL,
-      name: "Brandon Allan Fluegel Portfolio",
-      description: "Human Factors research and product impact portfolio.",
+      name: "Brandon Allan Fluegel",
+      alternateName: "humanfactors.pro",
+      description: "Portfolio of human factors research and engineering by Brandon Allan Fluegel, Ph.D.",
       image: {
         "@id": `${SITE_URL}#profile-image`,
       },
@@ -349,7 +271,7 @@ export const structuredData = {
       "@type": "ProfilePage",
       "@id": `${SITE_URL}#profile-page`,
       url: SITE_URL,
-      name: "Brandon Allan Fluegel Portfolio",
+      name: "Brandon Allan Fluegel",
       about: {
         "@id": `${SITE_URL}#person`,
       },
