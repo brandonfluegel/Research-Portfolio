@@ -11,11 +11,11 @@ export default function Home() {
             Brandon Allan Fluegel, Ph.D.
           </p>
           <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2rem,8vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance">
-            Senior Human Factors Design Engineer
+            Human Factors Design for Complex Systems
           </h1>
 
           <p className="font-medium text-zinc-300 text-center text-balance text-[clamp(0.95rem,3.5vw,1.1rem)] sm:text-[clamp(1rem,2.2vw,1.2rem)] md:text-[clamp(1.1rem,1.8vw,1.35rem)] lg:text-[clamp(1.15rem,1.5vw,1.45rem)] w-full max-w-88 sm:max-w-xl md:max-w-2xl lg:max-w-176 mx-auto leading-relaxed">
-            Currently at Intuitive Surgical, applying human factors design to surgical robotics and medical systems
+            Translating human behavior and perception into safer, clearer technology across robotics, medical, aerospace, and autonomous systems
           </p>
 
           <a
