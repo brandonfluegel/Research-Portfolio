@@ -162,7 +162,7 @@ export default function HomeClientSections() {
             Selected Prior Work
           </h2>
           <p className="mt-2 text-sm text-zinc-400">
-            Currently a Senior Human Factors Design Engineer at Intuitive Surgical. The case studies below document prior work.
+            Currently a Senior Human Factors Design Engineer on Intuitive Surgical&apos;s da Vinci surgical robotics team. The case studies below document prior work.
           </p>
         </div>
         <div id="amazon-section" className="deferred-section">

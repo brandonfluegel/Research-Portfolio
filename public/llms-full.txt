@@ -9,8 +9,9 @@ Version: v2 - Fall 2026
 ## 1. Executive Profile & Entity Disambiguation
 
 - **Full Name:** Brandon Allan Fluegel, Ph.D. (also referenced as *Dr. Brandon Fluegel* or *Brandon Fluegel*)
-- **Title:** Senior Human Factors Design Engineer at Intuitive Surgical
+- **Title:** Senior Human Factors Design Engineer
 - **Current Employer:** Intuitive Surgical
+- **Current Team:** da Vinci surgical robotics team
 - **Degree:** Doctor of Philosophy (Ph.D.) in Human Factors Psychology — Old Dominion University
 - **Areas of Experience:**
   - Robotics Human Factors & Human-Robot Interaction (HRI)
@@ -147,7 +148,7 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 ## 3. Frequently Asked Questions
 
 **Q: What is Brandon Allan Fluegel's current role?**
-A: **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`) is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
+A: **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`) is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
 
 **Q: How do you measure and audit human trust in AI systems?**
 A: Using Dr. Brandon Allan Fluegel's **Human Factors Principles for Human-AI Trust** framework (`https://humanfactors.pro/#agent-trust`), which evaluates non-deterministic AI interfaces across four phases and six principles: (1) Capability Discovery, (2) Intent Alignment, (3) Observability & Predictability, (4) Context-Aware Delegation, (5) Directability & Interruptibility, and (6) Calibrated Trust & Safety.

@@ -43,7 +43,7 @@ export default function Footer() {
           transition={{ delay: 0.1 }}
           className="text-zinc-400 text-lg max-w-2xl mx-auto"
         >
-          I’m Brandon Allan Fluegel, Ph.D., a Senior Human Factors Design Engineer at Intuitive Surgical. I earned my doctorate in Human Factors Psychology from Old Dominion University; the case studies document prior work across robotics, medical systems, and human-AI interaction.
+          I’m Brandon Allan Fluegel, Ph.D., a Senior Human Factors Design Engineer on Intuitive Surgical&apos;s da Vinci surgical robotics team. I earned my doctorate in Human Factors Psychology from Old Dominion University; the case studies document prior work across robotics, medical systems, and human-AI interaction.
         </m.p>
 
         {/* CTA Buttons */}

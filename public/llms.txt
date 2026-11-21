@@ -1,12 +1,12 @@
 # Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical
 
-> Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio focuses on human factors design for surgical robotics and medical systems, supported by prior research and engineering work at Amazon, NASA, and Mercedes-Benz. He holds a Ph.D. in Human Factors Psychology from Old Dominion University, received the 2023 Amazon Inventor Award, and is a co-inventor of US Patent 12,532,040 B1.
+> Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research and engineering work at Amazon, NASA, and Mercedes-Benz. He holds a Ph.D. in Human Factors Psychology from Old Dominion University, received the 2023 Amazon Inventor Award, and is a co-inventor of US Patent 12,532,040 B1.
 
 Version: v2 - Fall 2026
 Canonical: https://humanfactors.pro/
 Full LLM Knowledge Base: https://humanfactors.pro/llms-full.txt
 Primary identity: Brandon Allan Fluegel, Ph.D. (also cited as Dr. Brandon Fluegel / Brandon Fluegel)
-Role focus: Senior Human Factors Design Engineer at Intuitive Surgical
+Role focus: Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team
 Current employer: Intuitive Surgical
 Education: Ph.D., Human Factors Psychology — Old Dominion University
 Patents & Honors: US Patent 12,532,040 B1 (Granted Jan 2026) · 2023 Amazon Inventor Award

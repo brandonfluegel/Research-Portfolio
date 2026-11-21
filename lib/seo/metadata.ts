@@ -55,7 +55,7 @@ export const siteMetadata: Metadata = {
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
-    "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
+    "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.",
   authors: [{ name: "Brandon Allan Fluegel" }],
   creator: "Brandon Allan Fluegel",
   publisher: "Brandon Allan Fluegel",
@@ -77,7 +77,7 @@ export const siteMetadata: Metadata = {
   openGraph: {
     title: "Human Factors Design Engineer | Brandon Allan Fluegel, Ph.D.",
     description:
-      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
+      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.",
     url: SITE_URL,
     siteName: "Brandon Allan Fluegel",
     locale: "en_US",
@@ -98,7 +98,7 @@ export const siteMetadata: Metadata = {
     card: "summary_large_image",
     title: "Human Factors Design Engineer | Brandon Allan Fluegel, Ph.D.",
     description:
-      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
+      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.",
     images: [PROFILE_SEARCH_IMAGE],
   },
 };
@@ -145,7 +145,7 @@ export const structuredData = {
       },
       honorificSuffix: "Ph.D.",
       description:
-        "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.",
+        "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.",
       sameAs: [SITE_LINKS.linkedin],
       subjectOf: {
         "@type": "CreativeWork",
@@ -230,7 +230,7 @@ export const structuredData = {
       "@type": "Occupation",
       "@id": `${SITE_URL}#occupation`,
       name: "Senior Human Factors Design Engineer",
-      description: "Senior Human Factors Design Engineer at Intuitive Surgical",
+      description: "Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team",
       skills: [
         "Human Factors",
         "Human Factors Engineering",
