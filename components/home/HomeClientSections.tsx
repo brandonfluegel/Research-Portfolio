@@ -158,12 +158,12 @@ export default function HomeClientSections() {
 
       <section className="content-shell section-stack mt-16 md:mt-20">
         <div className="px-4 sm:px-8 pb-2">
-          <h2 className="text-xl md:text-2xl font-semibold text-white tracking-tight">
-            Selected Prior Work
-          </h2>
-          <p className="mt-2 text-sm text-zinc-400">
+          <p className="text-sm text-zinc-400">
             Current role: Senior Human Factors Design Engineer on Intuitive Surgical&apos;s da Vinci team.
           </p>
+          <h2 className="mt-2 text-xl md:text-2xl font-semibold text-white tracking-tight">
+            Selected Prior Work
+          </h2>
         </div>
         <div id="amazon-section" className="deferred-section">
           <AmazonProjectSection />
