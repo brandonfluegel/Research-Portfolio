@@ -6,7 +6,7 @@
 
 ## About Me
 
-I'm Dr. Brandon Allan Fluegel, a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team with a Ph.D. in Human Factors Psychology. I turn research on human perception and behavior into engineering decisions for surgical robotics and medical systems. My prior work includes Alexa at Amazon, Lunar Gateway at NASA, and semi-autonomous driving at Mercedes-Benz. I also authored a human-AI trust audit framework.
+I'm Dr. Brandon Allan Fluegel, a Senior Human Factors Design Engineer at Intuitive Surgical with a Ph.D. in Human Factors Psychology. I turn research on human perception and behavior into engineering decisions for complex systems. My prior work includes Alexa at Amazon, Lunar Gateway at NASA, and semi-autonomous driving at Mercedes-Benz. I also authored a human-AI trust audit framework.
 
 **Stack:** Next.js 16 · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 · Vercel
 

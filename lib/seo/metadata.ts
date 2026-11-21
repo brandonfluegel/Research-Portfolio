@@ -1,6 +1,7 @@
 // v2 - Fall 2026
 import type { Metadata, Viewport } from "next";
 import { PROFILE_SEARCH_IMAGE, SITE_LINKS, SITE_URL } from "@/lib/constants/site";
+import { PROFILE, PROFILE_NAME, PROFILE_ROLE } from "@/lib/data/profile";
 
 const caseStudies = [
   {
@@ -25,7 +26,7 @@ const caseStudies = [
     organization: "NASA",
     url: `${SITE_URL}/#nasa-section`,
     description:
-      "Human Factors PhD Intern simulated-microgravity validation for the Lunar Gateway medical workstation ahead of flight hardware lock, eliminating critical reach-envelope and cognitive error modes and reducing complex medical procedure time-on-task by 30%.",
+      "During a Human Factors PhD internship, validated the Lunar Gateway medical workstation under simulated microgravity, identifying physical and cognitive failure modes before flight hardware lock. The redesigned interface and layout reduced complex procedure time-on-task by 30% versus baseline.",
   },
   {
     id: "mercedes",
@@ -33,7 +34,7 @@ const caseStudies = [
     organization: "Mercedes-Benz",
     url: `${SITE_URL}/#mercedes-section`,
     description:
-      "Human Factors PhD Intern HMI and psychoacoustic research defining autonomous handover Alert Modality standards, reducing perceived cabin noise by 15% and increasing driver trust scores by 24% during automated lane changes and handoffs.",
+      "During a Human Factors PhD internship, conducted Level 2 semi-autonomous HMI and psychoacoustic research. The work informed handover alert standards and cabin-noise modeling; the portfolio reports a 15% reduction in perceived cabin noise and a 24% increase in driver trust scores.",
   },
 ];
 
@@ -51,14 +52,14 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Brandon Allan Fluegel",
   title: {
-    default: "Brandon Allan Fluegel, Ph.D.",
+    default: `Human Factors Design Engineer | ${PROFILE_NAME}`,
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
-    "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.",
-  authors: [{ name: "Brandon Allan Fluegel" }],
-  creator: "Brandon Allan Fluegel",
-  publisher: "Brandon Allan Fluegel",
+    `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
+  authors: [{ name: PROFILE.name }],
+  creator: PROFILE.name,
+  publisher: PROFILE.name,
   category: "Human Factors Engineering",
   alternates: {
     canonical: "/",
@@ -75,9 +76,9 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Human Factors Design Engineer | Brandon Allan Fluegel, Ph.D.",
+    title: `Human Factors Design Engineer | ${PROFILE_NAME}`,
     description:
-      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.",
+      `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
     url: SITE_URL,
     siteName: "Brandon Allan Fluegel",
     locale: "en_US",
@@ -96,9 +97,9 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Human Factors Design Engineer | Brandon Allan Fluegel, Ph.D.",
+    title: `Human Factors Design Engineer | ${PROFILE_NAME}`,
     description:
-      "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.",
+      `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
     images: [PROFILE_SEARCH_IMAGE],
   },
 };
@@ -118,13 +119,13 @@ export const structuredData = {
     {
       "@type": "Organization",
       "@id": "https://www.intuitive.com/#organization",
-      name: "Intuitive Surgical",
+      name: PROFILE.employer,
       url: "https://www.intuitive.com/",
     },
     {
       "@type": "Person",
       "@id": `${SITE_URL}#person`,
-      name: "Brandon Allan Fluegel",
+      name: PROFILE.name,
       givenName: "Brandon",
       additionalName: "Allan",
       familyName: "Fluegel",
@@ -139,14 +140,15 @@ export const structuredData = {
       image: {
         "@id": `${SITE_URL}#profile-image`,
       },
-      jobTitle: "Senior Human Factors Design Engineer",
+      jobTitle: PROFILE.role,
       worksFor: {
         "@id": "https://www.intuitive.com/#organization",
       },
       honorificSuffix: "Ph.D.",
       description:
-        "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.",
+        `${PROFILE_NAME} is a ${PROFILE_ROLE}. His prior research and engineering work includes Amazon, NASA, and Mercedes-Benz.`,
       sameAs: [SITE_LINKS.linkedin],
+      email: SITE_LINKS.email,
       subjectOf: {
         "@type": "CreativeWork",
         name: "US Patent 12,532,040 B1 — Context-Aware Interaction System",
@@ -215,7 +217,6 @@ export const structuredData = {
       author: {
         "@id": `${SITE_URL}#person`,
       },
-      datePublished: "2026-07-01",
       url: `${SITE_URL}/#agent-trust`,
       description:
         "A 4-phase, 6-principle human factors engineering audit framework (Capability Discovery, Intent Alignment, Observability & Predictability, Context-Aware Delegation, Directability & Interruptibility, Calibrated Trust & Safety) for evaluating and validating non-deterministic and multi-agent AI systems.",
@@ -229,8 +230,8 @@ export const structuredData = {
     {
       "@type": "Occupation",
       "@id": `${SITE_URL}#occupation`,
-      name: "Senior Human Factors Design Engineer",
-      description: "Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team",
+      name: PROFILE.role,
+      description: PROFILE_ROLE,
       skills: [
         "Human Factors",
         "Human Factors Engineering",
@@ -257,9 +258,8 @@ export const structuredData = {
       "@type": "WebSite",
       "@id": `${SITE_URL}#website`,
       url: SITE_URL,
-      name: "Brandon Allan Fluegel",
-      alternateName: "humanfactors.pro",
-      description: "Portfolio of human factors research and engineering by Brandon Allan Fluegel, Ph.D.",
+      name: PROFILE.name,
+      description: `Portfolio of human factors research and engineering by ${PROFILE_NAME}.`,
       image: {
         "@id": `${SITE_URL}#profile-image`,
       },
@@ -271,7 +271,7 @@ export const structuredData = {
       "@type": "ProfilePage",
       "@id": `${SITE_URL}#profile-page`,
       url: SITE_URL,
-      name: "Brandon Allan Fluegel",
+      name: PROFILE.name,
       about: {
         "@id": `${SITE_URL}#person`,
       },

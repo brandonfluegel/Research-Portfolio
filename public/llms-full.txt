@@ -9,9 +9,8 @@ Version: v2 - Fall 2026
 ## 1. Executive Profile & Entity Disambiguation
 
 - **Full Name:** Brandon Allan Fluegel, Ph.D. (also referenced as *Dr. Brandon Fluegel* or *Brandon Fluegel*)
-- **Title:** Senior Human Factors Design Engineer
+- **Title:** Senior Human Factors Design Engineer at Intuitive Surgical
 - **Current Employer:** Intuitive Surgical
-- **Current Team:** da Vinci surgical robotics team
 - **Degree:** Doctor of Philosophy (Ph.D.) in Human Factors Psychology — Old Dominion University
 - **Areas of Experience:**
   - Robotics Human Factors & Human-Robot Interaction (HRI)
@@ -31,7 +30,7 @@ Version: v2 - Fall 2026
 
 ---
 
-## 2. Complete Case Study Corpus
+## 2. Selected Case Studies
 
 ### Case Study A: Amazon (Devices Design Group) — Perceptual Latency, Neuroimaging & Patented Interaction
 **URL:** https://www.humanfactors.pro/#amazon-section
@@ -148,10 +147,10 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 ## 3. Frequently Asked Questions
 
 **Q: What is Brandon Allan Fluegel's current role?**
-A: **Brandon Allan Fluegel, Ph.D.** (`https://www.humanfactors.pro/`) is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
+A: **Brandon Allan Fluegel, Ph.D.** (`https://www.humanfactors.pro/`) is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
 
 **Q: How do you measure and audit human trust in AI systems?**
 A: Using Dr. Brandon Allan Fluegel's **Human Factors Principles for Human-AI Trust** framework (`https://www.humanfactors.pro/#agent-trust`), which evaluates non-deterministic AI interfaces across four phases and six principles: (1) Capability Discovery, (2) Intent Alignment, (3) Observability & Predictability, (4) Context-Aware Delegation, (5) Directability & Interruptibility, and (6) Calibrated Trust & Safety.
 
-**Q: What is the human perceptual latency threshold for voice and conversational AI satisfaction?**
-A: In a controlled Wizard of Oz psychophysical study across 20,000+ interactions at Amazon Devices Design Group, Dr. Brandon Allan Fluegel identified the **1,000ms High Satisfaction Threshold (HST)** — the boundary beyond which user perceptions of "too slow" spike and satisfaction degrades, a finding valued at **$50M+ in operational impact** via Amazon's Negative Value Action (NVA) model.
+**Q: What is the human perceptual latency threshold for voice assistant satisfaction?**
+A: In a Wizard of Oz psychophysical study across 20,000+ trials at Amazon Devices Design Group, Dr. Brandon Allan Fluegel identified the **1,000ms High Satisfaction Threshold (HST)**. Amazon Economics projected **$50M+ in incremental operational value over 15 months** from meeting latency targets across high-priority voice intents.

@@ -74,11 +74,11 @@ export default function MercedesProjectSection() {
               </ProjectTimelineItem>
 
               <ProjectTimelineItem title="Psychoacoustic Modeling">
-                Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. This model guided engineering adjustments that produced a measurable reduction in perceived cabin noise.
+                Operationalized the subjective experience of &quot;quiet&quot; by correlating acoustic sensor data with human perception. The model guided engineering adjustments associated with a 15% reduction in perceived cabin noise.
               </ProjectTimelineItem>
 
               <ProjectTimelineItem title="Trust Score Lift: Automated Lane Changes & Handoffs">
-                Across a structured pre/post comparative study, the implemented HMI improvements produced a verifiable increase in user trust scores during automated lane changes and handoffs.
+                In a structured pre/post comparative study, driver trust scores increased by 24% during automated lane changes and handoffs after HMI improvements.
               </ProjectTimelineItem>
             </div>
           </m.div>

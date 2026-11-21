@@ -83,7 +83,7 @@ export default function NASAProjectSection() {
             <div className="p-4 md:p-6 info-card">
               <h4 className="text-sm font-bold text-white uppercase tracking-wide mb-2 leading-tight">Error Modes Caught Before Hardware Lock</h4>
               <p className="text-sm text-zinc-400 leading-relaxed">
-                The redesigned interface and physical layout produced a measurable reduction in time-on-task for complex medical procedures compared to the baseline hardware configuration — eliminating critical failure modes at the validation stage, with a corresponding reduction in error rate across procedural steps.
+                The redesigned interface and physical layout reduced time-on-task for complex medical procedures by 30% compared with the baseline configuration. Validation identified critical physical and cognitive failure modes before flight hardware was locked.
               </p>
             </div>
           </m.div>

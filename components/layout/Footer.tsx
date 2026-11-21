@@ -4,6 +4,7 @@
 import { m } from "framer-motion";
 import Link from "next/link";
 import { SITE_LINKS } from "@/lib/constants/site";
+import { PROFILE_NAME, PROFILE_ROLE } from "@/lib/data/profile";
 
 const MailIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -43,7 +44,7 @@ export default function Footer() {
           transition={{ delay: 0.1 }}
           className="text-zinc-400 text-lg max-w-2xl mx-auto"
         >
-          I’m Brandon Allan Fluegel, Ph.D., a Senior Human Factors Design Engineer on Intuitive Surgical&apos;s da Vinci surgical robotics team. I earned my doctorate in Human Factors Psychology from Old Dominion University; the case studies document prior work across robotics, medical systems, and human-AI interaction.
+          I’m {PROFILE_NAME}, a {PROFILE_ROLE}. I earned my doctorate in Human Factors Psychology from Old Dominion University; the case studies document prior work across robotics, medical systems, and human-AI interaction.
         </m.p>
 
         {/* CTA Buttons */}

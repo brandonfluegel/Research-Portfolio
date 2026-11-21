@@ -71,12 +71,12 @@ export default function AmazonProjectSection() {
                 <div className="shrink-0">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
-                    <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Customers Reached</span>
+                    <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Product Reach</span>
                   </div>
                   <div className="text-3xl font-bold text-purple-400">75M+</div>
                 </div>
                 <p className="text-xs text-zinc-400 sm:max-w-xs leading-relaxed">
-                  Latency and Human Factors work shaped Echo Show and Echo Hub experiences affecting 75M+ active customers.
+                  The work informed Echo Show and Echo Hub products serving 75M+ active customers.
                 </p>
               </div>
 
@@ -87,7 +87,7 @@ export default function AmazonProjectSection() {
 
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               <ProjectTimelineItem title="Neuroimaging Methodology">
-                Applied a controlled within-subjects fNIRS protocol measuring prefrontal cortex activation, synchronized with eye-tracking to separate gaze behavior from cognitive effort. Findings translated directly into product requirements, shaping the interaction design of Echo Show and Echo Hub — reaching 75M+ active customers.
+                Applied a controlled within-subjects fNIRS protocol measuring prefrontal cortex activation, synchronized with eye-tracking to separate gaze behavior from cognitive effort. Findings informed Echo Show and Echo Hub product requirements.
               </ProjectTimelineItem>
               <ProjectTimelineItem title="Context-Aware Interaction Patent">
                 Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
@@ -130,10 +130,10 @@ export default function AmazonProjectSection() {
 
             <div className="relative pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
               <ProjectTimelineItem title="Isolating the Latency Satisfaction Threshold">
-                Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across thousands of trials — controlling latency as an isolated variable while keeping all other system factors constant. Analysis of the resulting data identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where user tolerance breaks down, &quot;too slow&quot; ratings climb sharply, and satisfaction drops in a consistent, reliable pattern.
+                Used a Wizard of Oz latency injection system to manipulate visual and auditory response latency on users&apos; devices across 20,000+ trials — controlling latency as an isolated variable while keeping other system factors constant. Analysis identified a <strong>High Satisfaction Threshold (HST)</strong> at <strong>1,000ms</strong>: the point where &quot;too slow&quot; ratings climbed and satisfaction declined.
               </ProjectTimelineItem>
               <ProjectTimelineItem title="NVA Model Integration & Economic Validation">
-                The HST was formally adopted by Alexa Economics and embedded into the Negative Value Action (NVA) model — redefining any response exceeding 1,000ms as a quantifiable system defect with downstream engagement consequences. Alexa Economics projected that closing the latency gap across high-priority voice intents would generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months — a third-party validation that became the foundation of Alexa&apos;s Latency North Star.
+                Alexa Economics adopted the HST in its Negative Value Action (NVA) model. It projected that meeting latency targets across high-priority voice intents could generate <span className="text-green-400 font-bold">$50M in incremental operational value</span> over 15 months.
               </ProjectTimelineItem>
             </div>
           </m.div>
