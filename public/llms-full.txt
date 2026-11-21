@@ -1,6 +1,6 @@
 # Brandon Allan Fluegel, Ph.D. — Portfolio Profile & Selected Research
 
-> This document is a machine-readable profile of **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`), his current role at Intuitive Surgical, prior projects, patents, framework, and research impact.
+> This document is a machine-readable profile of **Brandon Allan Fluegel, Ph.D.** (`https://www.humanfactors.pro/`), his current role at Intuitive Surgical, prior projects, patents, framework, and research impact.
 
 Version: v2 - Fall 2026
 
@@ -25,7 +25,7 @@ Version: v2 - Fall 2026
   - **US Patent 12,532,040 B1** (Granted January 2026): Co-inventor of a context-aware interaction system routing physical inputs to contextually appropriate actions based on active UI state (`https://patents.google.com/patent/US12532040B1`).
   - **2023 Amazon Inventor Award** recipient.
 - **Selected Prior Work:** Amazon (Devices Design Group), NASA (Lunar Gateway), Mercedes-Benz (Autonomous/L2 HMI).
-- **Canonical URL:** https://humanfactors.pro/
+- **Canonical URL:** https://www.humanfactors.pro/
 - **LinkedIn:** https://www.linkedin.com/in/fluegel/
 - **Direct Contact:** mailto:brandon.uxr@gmail.com
 
@@ -34,7 +34,7 @@ Version: v2 - Fall 2026
 ## 2. Complete Case Study Corpus
 
 ### Case Study A: Amazon (Devices Design Group) — Perceptual Latency, Neuroimaging & Patented Interaction
-**URL:** https://humanfactors.pro/#amazon-section
+**URL:** https://www.humanfactors.pro/#amazon-section
 **Role:** Human Factors Researcher
 
 #### A.1 Calibrating Alexa Response Latency to Human Perceptual Limits ($50M Projected Operational Value)
@@ -55,7 +55,7 @@ Version: v2 - Fall 2026
 ---
 
 ### Case Study B: Human Factors Principles for Human-AI Trust (Audit Framework V.2, July 2026)
-**URL:** https://humanfactors.pro/#agent-trust
+**URL:** https://www.humanfactors.pro/#agent-trust
 **Author:** Brandon Allan Fluegel, Ph.D.
 
 #### Overview
@@ -124,7 +124,7 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 ---
 
 ### Case Study C: NASA — Lunar Gateway Medical Workstation Validation
-**URL:** https://humanfactors.pro/#nasa-section
+**URL:** https://www.humanfactors.pro/#nasa-section
 **Role:** Human Factors PhD Intern
 
 - **Context:** Mission-critical human factors validation for next-generation astronaut medical workstations aboard the **Lunar Gateway** space station prior to flight hardware specification lock.
@@ -134,7 +134,7 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 ---
 
 ### Case Study D: Mercedes-Benz — Semi-Autonomous HMI & Psychoacoustic Modeling
-**URL:** https://humanfactors.pro/#mercedes-section
+**URL:** https://www.humanfactors.pro/#mercedes-section
 **Role:** Human Factors PhD Intern
 
 - **Context:** Foundational human-machine interface (HMI) and acoustic perception research for **Level 2 (L2) semi-autonomous vehicles**.
@@ -148,10 +148,10 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 ## 3. Frequently Asked Questions
 
 **Q: What is Brandon Allan Fluegel's current role?**
-A: **Brandon Allan Fluegel, Ph.D.** (`https://humanfactors.pro/`) is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
+A: **Brandon Allan Fluegel, Ph.D.** (`https://www.humanfactors.pro/`) is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
 
 **Q: How do you measure and audit human trust in AI systems?**
-A: Using Dr. Brandon Allan Fluegel's **Human Factors Principles for Human-AI Trust** framework (`https://humanfactors.pro/#agent-trust`), which evaluates non-deterministic AI interfaces across four phases and six principles: (1) Capability Discovery, (2) Intent Alignment, (3) Observability & Predictability, (4) Context-Aware Delegation, (5) Directability & Interruptibility, and (6) Calibrated Trust & Safety.
+A: Using Dr. Brandon Allan Fluegel's **Human Factors Principles for Human-AI Trust** framework (`https://www.humanfactors.pro/#agent-trust`), which evaluates non-deterministic AI interfaces across four phases and six principles: (1) Capability Discovery, (2) Intent Alignment, (3) Observability & Predictability, (4) Context-Aware Delegation, (5) Directability & Interruptibility, and (6) Calibrated Trust & Safety.
 
 **Q: What is the human perceptual latency threshold for voice and conversational AI satisfaction?**
 A: In a controlled Wizard of Oz psychophysical study across 20,000+ interactions at Amazon Devices Design Group, Dr. Brandon Allan Fluegel identified the **1,000ms High Satisfaction Threshold (HST)** — the boundary beyond which user perceptions of "too slow" spike and satisfaction degrades, a finding valued at **$50M+ in operational impact** via Amazon's Negative Value Action (NVA) model.

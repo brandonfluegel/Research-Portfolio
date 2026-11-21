@@ -3,8 +3,8 @@
 > Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team. His portfolio documents prior research and engineering work at Amazon, NASA, and Mercedes-Benz. He holds a Ph.D. in Human Factors Psychology from Old Dominion University, received the 2023 Amazon Inventor Award, and is a co-inventor of US Patent 12,532,040 B1.
 
 Version: v2 - Fall 2026
-Canonical: https://humanfactors.pro/
-Full LLM Knowledge Base: https://humanfactors.pro/llms-full.txt
+Canonical: https://www.humanfactors.pro/
+Full LLM Knowledge Base: https://www.humanfactors.pro/llms-full.txt
 Primary identity: Brandon Allan Fluegel, Ph.D. (also cited as Dr. Brandon Fluegel / Brandon Fluegel)
 Role focus: Senior Human Factors Design Engineer on Intuitive Surgical's da Vinci surgical robotics team
 Current employer: Intuitive Surgical
@@ -27,7 +27,7 @@ Specialties: Robotics Human Factors, Human-Robot Interaction (HRI), Medical & Su
 - **Patented Context-Aware Hardware/Software Interaction:** Co-invented a context-aware input routing system granted as US Patent 12,532,040 B1 (January 2026) and honored with the 2023 Amazon Inventor Award.
 
 ### 2. Human Factors Principles for Human-AI Trust (Audit Framework V.2, July 2026)
-- **URL:** https://humanfactors.pro/#agent-trust
+- **URL:** https://www.humanfactors.pro/#agent-trust
 - **Purpose:** Operationalizes trust, observability, and human control for non-deterministic, probabilistic, and multi-agent AI systems, adapting Nielsen's classical usability heuristics, Amershi et al. (2019), Bucinca et al. (2021), Dibia (2023), Minaee et al. (2024), and Google PAIR.
 - **Phase I — Alignment Phase:**
   1. *Capability Discovery ("Share Limits Before Work Begins")* — Adapts Match System to World; prevents "The Over-Promiser" (Capability Mismatch).
@@ -41,12 +41,12 @@ Specialties: Robotics Human Factors, Human-Robot Interaction (HRI), Medical & Su
   6. *Calibrated Trust & Safety ("Signal Certainty Accurately")* — Adapts Help Users Diagnose Errors; prevents "The Confident Liar" (Miscalibrated Reliance).
 
 ### 3. NASA — Human Factors PhD Intern (Lunar Gateway · Medical Workstation Validation)
-- **URL:** https://humanfactors.pro/#nasa-section
+- **URL:** https://www.humanfactors.pro/#nasa-section
 - **Scope:** Executed human factors simulated-use validation for next-generation astronaut medical workstations on the Lunar Gateway in a simulated microgravity environment ahead of flight hardware specification lock.
 - **Impact:** Surfaced critical physical and cognitive failure modes — reach envelope violations, attention overload during timed medical procedures, and display legibility limits under restricted head mobility — producing a 30% reduction in time-on-task for complex medical procedures versus baseline hardware and eliminating critical procedural error modes.
 
 ### 4. Mercedes-Benz — Human Factors PhD Intern (Semi-Autonomous HMI & Trust Research)
-- **URL:** https://humanfactors.pro/#mercedes-section
+- **URL:** https://www.humanfactors.pro/#mercedes-section
 - **Scope:** Conducted foundational human factors research on passenger and driver experiences in Level 2 (L2) semi-autonomous vehicles.
 - **Impact:** Defined Alert Modality standards for autonomous handover transitions and built a psychoacoustic model correlating acoustic sensor telemetry with perceived cabin quietness — reducing perceived cabin noise by 15% and producing a verified 24% increase in user trust scores during automated lane changes and handoffs.
 
@@ -59,12 +59,12 @@ Specialties: Robotics Human Factors, Human-Robot Interaction (HRI), Medical & Su
 - Safety-critical aerospace and semi-autonomous vehicle interfaces
 
 ## Machine-Readable Resources & Links
-- Homepage: https://humanfactors.pro/
-- LLM Summary Index: https://humanfactors.pro/llms.txt
-- LLM Full Knowledge Base: https://humanfactors.pro/llms-full.txt
-- Well-Known LLM Index: https://humanfactors.pro/.well-known/llms.txt
-- Sitemap: https://humanfactors.pro/sitemap.xml
-- Robots: https://humanfactors.pro/robots.txt
+- Homepage: https://www.humanfactors.pro/
+- LLM Summary Index: https://www.humanfactors.pro/llms.txt
+- LLM Full Knowledge Base: https://www.humanfactors.pro/llms-full.txt
+- Well-Known LLM Index: https://www.humanfactors.pro/.well-known/llms.txt
+- Sitemap: https://www.humanfactors.pro/sitemap.xml
+- Robots: https://www.humanfactors.pro/robots.txt
 - US Patent 12,532,040 B1: https://patents.google.com/patent/US12532040B1
 - LinkedIn: https://www.linkedin.com/in/fluegel/
 - Email: mailto:brandon.uxr@gmail.com
