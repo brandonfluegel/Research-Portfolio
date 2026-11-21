@@ -52,7 +52,7 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Brandon Allan Fluegel",
   title: {
-    default: `Human Factors Design Engineer | ${PROFILE_NAME}`,
+    default: `${PROFILE_NAME} | Human Factors Design Engineer`,
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
@@ -76,7 +76,7 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: `Human Factors Design Engineer | ${PROFILE_NAME}`,
+    title: `${PROFILE_NAME} | Human Factors Design Engineer`,
     description:
       `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
     url: SITE_URL,
@@ -97,7 +97,7 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Human Factors Design Engineer | ${PROFILE_NAME}`,
+    title: `${PROFILE_NAME} | Human Factors Design Engineer`,
     description:
       `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
     images: [PROFILE_SEARCH_IMAGE],
