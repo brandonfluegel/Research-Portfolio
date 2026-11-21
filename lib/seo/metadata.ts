@@ -51,7 +51,7 @@ export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Brandon Allan Fluegel",
   title: {
-    default: "Brandon Fluegel | Human Factors Design Engineer",
+    default: "Brandon Allan Fluegel, Ph.D.",
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   description:
@@ -75,7 +75,7 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Brandon Fluegel | Human Factors Design Engineer",
+    title: "Human Factors Design Engineer | Brandon Allan Fluegel, Ph.D.",
     description:
       "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
     url: SITE_URL,
@@ -96,7 +96,7 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brandon Fluegel | Human Factors Design Engineer",
+    title: "Human Factors Design Engineer | Brandon Allan Fluegel, Ph.D.",
     description:
       "Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. Explore his research in robotics, medical systems, and human-AI interaction.",
     images: [PROFILE_SEARCH_IMAGE],
@@ -208,7 +208,7 @@ export const structuredData = {
       },
     },
     {
-      "@type": "ScholarlyArticle",
+      "@type": "CreativeWork",
       "@id": `${SITE_URL}#human-ai-trust-framework`,
       name: "Human Factors Principles for Human-AI Trust: An Audit Framework for Non-Deterministic Interfaces",
       headline: "Human Factors Principles for Human-AI Trust (V.2)",
