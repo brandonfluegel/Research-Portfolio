@@ -3,7 +3,6 @@
 
 import { Fragment, Suspense, lazy, useEffect, useRef, useState } from "react";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import AmazonProjectSection from "@/components/sections/projects/AmazonProjectSection";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import ScrollProgress from "@/components/ui/ScrollProgress";
@@ -181,7 +180,6 @@ export default function HomeClientSections() {
         ))}
       </section>
 
-      <Footer />
     </>
   );
 }

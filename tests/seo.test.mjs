@@ -23,7 +23,9 @@ test("production HTML exposes the profile and research summaries without JavaScr
   for (const id of ["amazon-section", "nasa-section", "mercedes-section", "agent-trust"]) {
     assert.ok(overview[0].includes(`href="#${id}"`), `missing overview link to ${id}`);
     assert.ok(visibleHtml.includes(`id="${id}"`), `missing target ${id}`);
+    assert.ok(visibleHtml.indexOf(`id="${id}"`) < overview.index, `${id} must appear before the overview`);
   }
+  assert.ok(visibleHtml.indexOf("<footer") > overview.index, "overview must appear before the footer");
   for (const claim of ["20,000+ trials", "1,000 ms", "projected $50M", "15 months", "75M+ active customers", "30%", "15%", "24%", "four-phase, six-principle"]) {
     assert.ok(overview[0].includes(claim), `missing contextualized claim: ${claim}`);
   }

@@ -1,6 +1,7 @@
 // v3 - Winter 2026
 import HomeClientSections from "@/components/home/HomeClientSections";
 import ResearchHighlightLink from "@/components/home/ResearchHighlightLink";
+import Footer from "@/components/layout/Footer";
 import { SITE_LINKS } from "@/lib/constants/site";
 import { RESEARCH_HIGHLIGHTS } from "@/lib/data/researchHighlights";
 
@@ -33,6 +34,8 @@ export default function Home() {
         </div>
       </section>
 
+      <HomeClientSections />
+
       <section aria-labelledby="research-overview" className="relative z-10 w-full max-w-6xl mx-auto px-2 sm:px-6 pt-8 pb-12 md:pt-12 md:pb-16">
         <div className="max-w-3xl mb-8">
           <h2 id="research-overview" className="text-2xl md:text-3xl font-bold tracking-tight text-white">
@@ -62,7 +65,7 @@ export default function Home() {
         </div>
       </section>
 
-      <HomeClientSections />
+      <Footer />
     </main>
   );
 }
