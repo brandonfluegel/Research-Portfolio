@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 "use client";
 
 import { useRef, useEffect, useState } from "react";
@@ -73,4 +73,3 @@ export default function LazyVideo({ sources, poster, ariaLabel, className = "" }
     </div>
   );
 }
-

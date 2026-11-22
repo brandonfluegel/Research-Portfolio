@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 "use client";
 
 import { LazyMotion, MotionConfig, domAnimation, useReducedMotion } from "framer-motion";

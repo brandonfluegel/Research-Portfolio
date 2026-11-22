@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 "use client";
 
 import { useEffect, useState } from "react";
@@ -54,4 +54,3 @@ export default function useActiveSection() {
 
   return activeSection;
 }
-

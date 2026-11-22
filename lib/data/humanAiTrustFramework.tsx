@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 import type { ReactNode } from "react";
 import { SITE_LINKS, SITE_URL } from "@/lib/constants/site";
 

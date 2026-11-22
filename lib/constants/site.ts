@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 export const SITE_URL = "https://www.humanfactors.pro";
 
 export const PROFILE_SEARCH_IMAGE = "/assets/profile-search.jpg";

@@ -1,27 +1,31 @@
-# Brandon Allan Fluegel, Ph.D. — Human Factors Portfolio
+# Brandon Allan Fluegel, Ph.D. — Human Factors Engineering Portfolio
 
-> Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. Ph.D. in Human Factors Psychology; prior work at Amazon, NASA, and Mercedes-Benz.
+> Brandon Allan Fluegel, Ph.D., is a Senior Human Factors Design Engineer at Intuitive Surgical. His work focuses on human factors for surgical robotics. He earned his Ph.D. in Human Factors Psychology at Old Dominion University. His portfolio documents prior research and engineering projects at Amazon Devices, NASA, and Mercedes-Benz. He authored a human-AI trust audit framework and is a co-inventor of a U.S. patent.
+
+Portfolio release: v3.0.0 (Winter 2026)
+Last reviewed: 2026-11-22
 
 ## Profile
 - **Current role:** Senior Human Factors Design Engineer at Intuitive Surgical.
-- **Focus:** Human factors design for surgical robotics and complex systems.
 - **Education:** Ph.D. in Human Factors Psychology, Old Dominion University.
-- **Prior project experience:** Human factors research and engineering projects at Amazon Devices Design Group, NASA Lunar Gateway, and Mercedes-Benz.
-- **Areas of experience:** Human factors engineering, surgical and medical robotics, human-machine interaction, simulated-use validation, psychophysics, cognitive workload, and Human-AI interaction.
+- **Prior project roles:** Human Factors Researcher in Amazon Devices Design Group; Human Factors Ph.D. intern projects at NASA and Mercedes-Benz.
+- **Focus areas:** Human factors engineering, surgical robotics, human-machine interaction, simulated-use validation, psychophysics, cognitive workload, and Human-AI interaction.
 
-## Portfolio
-- [Amazon research and patent project](https://www.humanfactors.pro/#amazon-section)
-- [NASA Lunar Gateway workstation validation](https://www.humanfactors.pro/#nasa-section)
-- [Mercedes-Benz HMI and trust research](https://www.humanfactors.pro/#mercedes-section)
-- [Human Factors Principles for Human-AI Trust](https://www.humanfactors.pro/#agent-trust)
+## Selected work
+- **Amazon Devices:** Led Alexa response-latency research across 20,000+ trials and identified a 1,000 ms High Satisfaction Threshold. Alexa Economics projected $50M in incremental operational value over 15 months if latency targets were met; this was a projection, not realized value. Separate fNIRS and eye-tracking research informed Echo Show and Echo Hub products serving 75M+ active customers; 75M+ is product reach, not study-participant count. Co-inventor of US Patent 12,532,040 B1 and recipient of the 2023 Amazon Inventor Award.
+- **NASA Lunar Gateway:** Human factors validation of a medical workstation under simulated microgravity reduced time-on-task for complex medical procedures by 30% versus baseline.
+- **Mercedes-Benz:** Semi-autonomous driving interface and psychoacoustic research. Structured evaluations reported 15% lower perceived cabin noise and a 24% increase in driver trust scores during automated lane changes and handoffs.
+- **Human-AI trust:** Authored a four-phase, six-principle audit framework for non-deterministic interfaces.
+
+## Source links
+- [Portfolio homepage](https://www.humanfactors.pro/)
+- [Amazon Devices case study](https://www.humanfactors.pro/#amazon-section)
+- [NASA Lunar Gateway case study](https://www.humanfactors.pro/#nasa-section)
+- [Mercedes-Benz semi-autonomous driving interface case study](https://www.humanfactors.pro/#mercedes-section)
+- [Human-AI trust framework](https://www.humanfactors.pro/#agent-trust)
 - [Full profile and case-study details](https://www.humanfactors.pro/llms-full.txt)
-
-## Selected Prior-Work Outcomes
-- **Amazon:** Identified a 1,000 ms Alexa response High Satisfaction Threshold in a 20,000+ trial study. Alexa Economics projected $50M+ in operational value over 15 months from meeting latency targets. Co-invented US Patent 12,532,040 B1 and received the 2023 Amazon Inventor Award.
-- **NASA:** Lunar Gateway workstation validation reduced complex medical procedure time-on-task by 30% versus baseline.
-- **Mercedes-Benz:** L2 HMI and psychoacoustic research reported a 24% increase in driver trust scores and 15% lower perceived cabin noise.
-
-## External profiles
 - [LinkedIn](https://www.linkedin.com/in/fluegel/)
 - [US Patent 12,532,040 B1](https://patents.google.com/patent/US12532040B1)
 - [Email](mailto:brandon.uxr@gmail.com)
+
+The project descriptions and outcome figures are self-reported in the portfolio; independent public verification is not provided for those figures. The linked patent record independently lists Brandon Fluegel as a co-inventor.

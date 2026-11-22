@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 export function scrollToSectionId(sectionId: string) {
   if (typeof window === "undefined") return;
 

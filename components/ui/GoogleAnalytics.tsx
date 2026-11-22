@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 "use client";
 
 import { usePathname } from "next/navigation";
@@ -41,10 +41,16 @@ const OBSERVER_THRESHOLDS = Array.from({ length: 21 }, (_, i) => i / 20);
 const UTM_KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"] as const;
 const SAFE_CAMPAIGN_VALUE = /^[A-Za-z0-9._~-]{1,100}$/;
 
+function getSectionType(section: string): "case_study" | "framework" {
+  return section === "agent-trust" ? "framework" : "case_study";
+}
+
 type LandingContext = Partial<Record<(typeof UTM_KEYS)[number], string>> & {
   traffic_source?: string;
-  device_category: "mobile" | "desktop";
 };
+
+let eventTrafficSource = "(direct)";
+let lastPageLocation: string | null = null;
 
 // ---------------------------------------------------------------------------
 // ELIGIBILITY
@@ -85,18 +91,15 @@ function isOptedOut(): boolean {
 // ---------------------------------------------------------------------------
 function parseLandingContext(): LandingContext {
   const params = new URLSearchParams(window.location.search);
-  const ua = navigator.userAgent || "";
   const referrer = document.referrer || "";
-  const ctx: LandingContext = {
-    device_category: /Android|iPhone|iPad|iPod|Mobile/i.test(ua) ? "mobile" : "desktop",
-  };
+  const ctx: LandingContext = {};
 
   for (const key of UTM_KEYS) {
     const val = params.get(key);
     if (val && SAFE_CAMPAIGN_VALUE.test(val)) ctx[key] = val;
   }
 
-  const isLinkedInApp = /LinkedInApp|LinkedIn/i.test(ua);
+  const isLinkedInApp = /LinkedInApp|LinkedIn/i.test(navigator.userAgent || "");
   if (isLinkedInApp || /linkedin\.com|lnkd\.in/i.test(referrer)) {
     ctx.traffic_source = "linkedin";
     ctx.utm_source ??= "linkedin";
@@ -132,12 +135,22 @@ function buildPageLocation(): string {
   return url.toString();
 }
 
+function buildPageReferrer(referrer: string): string | undefined {
+  if (!referrer) return undefined;
+  try {
+    const url = new URL(referrer);
+    return `${url.origin}${url.origin === window.location.origin ? url.pathname : ""}`;
+  } catch {
+    return undefined;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // GTAG BOOTSTRAP
 // gtag is defined synchronously so trackers never race the network script;
 // calls queue in dataLayer until gtag.js loads.
 // ---------------------------------------------------------------------------
-function initGtag(pageLocation: string) {
+function initGtag(pageLocation: string, pageReferrer?: string) {
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() {
     // gtag.js requires the original `arguments` object, not a rest array.
@@ -145,7 +158,11 @@ function initGtag(pageLocation: string) {
     window.dataLayer.push(arguments);
   };
   window.gtag("js", new Date());
-  window.gtag("config", GA_ID, { page_location: pageLocation, send_page_view: false });
+  window.gtag("config", GA_ID, {
+    page_location: pageLocation,
+    ...(pageReferrer ? { page_referrer: pageReferrer } : {}),
+    send_page_view: false,
+  });
 
   const src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_ID)}`;
   if (!document.querySelector(`script[src="${src}"]`)) {
@@ -158,7 +175,11 @@ function initGtag(pageLocation: string) {
 
 export function trackAnalyticsEvent(event: string, params: Record<string, unknown> = {}) {
   if (!GA_ENABLED || typeof window === "undefined" || !window.__gaInitialized) return;
-  window.gtag("event", event, { ...params, send_to: GA_ID });
+  window.gtag("event", event, {
+    ...params,
+    traffic_source: eventTrafficSource,
+    send_to: GA_ID,
+  });
 }
 
 // ---------------------------------------------------------------------------
@@ -172,16 +193,21 @@ export default function GoogleAnalytics() {
     if (!GA_ENABLED || isLikelyBot() || isOptedOut()) return;
 
     const ctx = parseLandingContext();
+    eventTrafficSource = ctx.utm_source || ctx.traffic_source || "(direct)";
 
     // Guard against React StrictMode re-running the effect in development.
     if (!window.__gaInitialized) {
-      initGtag(buildPageLocation());
+      const pageLocation = buildPageLocation();
+      const pageReferrer = buildPageReferrer(document.referrer);
+      initGtag(pageLocation, pageReferrer);
       window.__gaInitialized = true;
 
       trackAnalyticsEvent("page_view", {
         page_title: document.title,
-        page_location: buildPageLocation(),
+        page_location: pageLocation,
+        ...(pageReferrer ? { page_referrer: pageReferrer } : {}),
       });
+      lastPageLocation = pageLocation;
 
       if (ctx.traffic_source === "linkedin") {
         trackAnalyticsEvent("linkedin_landing", {
@@ -189,14 +215,10 @@ export default function GoogleAnalytics() {
           utm_medium: ctx.utm_medium,
           utm_campaign: ctx.utm_campaign || "(not set)",
           utm_content: ctx.utm_content || "(not set)",
-          device_category: ctx.device_category,
           landing_page: window.location.pathname,
         });
       }
     }
-
-    const sourceLabel = ctx.utm_source || ctx.traffic_source || "(direct)";
-    const baseParams = { traffic_source: sourceLabel, device: ctx.device_category };
 
     const firedScroll = new Set<number>();
     const firedTime = new Set<number>();
@@ -208,6 +230,7 @@ export default function GoogleAnalytics() {
     let activeSeconds = 0;
     let currentSection: string | null = null;
     let lastInteraction: number | null = null;
+    let lastTrackedScrollY: number | null = null;
     let maxScrollDepthPercent = 0;
 
     const isActive = () =>
@@ -229,8 +252,8 @@ export default function GoogleAnalytics() {
       readDispatched.add(key);
       trackAnalyticsEvent("case_study_engaged_read", {
         section: key,
+        section_type: getSectionType(key),
         dwell_seconds: seconds,
-        ...baseParams,
       });
     };
 
@@ -241,8 +264,11 @@ export default function GoogleAnalytics() {
     // --- Scroll depth --------------------------------------------------------
 
     const handleScroll = () => {
+      const snapshot = getScrollSnapshot();
+      if (snapshot.scrollY === lastTrackedScrollY) return;
+      lastTrackedScrollY = snapshot.scrollY;
       markInteraction();
-      const pct = Math.min(100, Math.max(0, getScrollSnapshot().progress * 100));
+      const pct = Math.min(100, Math.max(0, snapshot.progress * 100));
       maxScrollDepthPercent = Math.max(maxScrollDepthPercent, pct);
       for (const milestone of SCROLL_MILESTONES) {
         if (pct >= milestone && !firedScroll.has(milestone)) {
@@ -250,7 +276,6 @@ export default function GoogleAnalytics() {
           trackAnalyticsEvent("scroll_depth_milestone", {
             depth_percent: milestone,
             sections_viewed: viewedSections.size,
-            ...baseParams,
           });
         }
       }
@@ -277,6 +302,14 @@ export default function GoogleAnalytics() {
           ...(link.dataset.analyticsId ? { cta_id: link.dataset.analyticsId } : {}),
           ...clickContext,
         });
+
+        if (ctaType === "email" || ctaType === "linkedin") {
+          trackAnalyticsEvent("contact_click", {
+            contact_method: ctaType,
+            cta_location: ctaLocation,
+            ...clickContext,
+          });
+        }
       }
 
       if (href.startsWith("#") && href.length > 1) {
@@ -305,8 +338,8 @@ export default function GoogleAnalytics() {
             viewedSections.add(key);
             trackAnalyticsEvent("case_study_viewed", {
               section: key,
+              section_type: getSectionType(key),
               order_viewed: viewedSections.size,
-              ...baseParams,
             });
           }
         }
@@ -351,7 +384,6 @@ export default function GoogleAnalytics() {
           seconds: activeSeconds,
           sections_viewed: viewedSections.size,
           max_scroll_percent: Math.round(maxScrollDepthPercent),
-          ...baseParams,
         });
       }
 
@@ -371,6 +403,12 @@ export default function GoogleAnalytics() {
 
     observeSections();
     const unsubscribeScroll = subscribeScroll(handleScroll);
+    const initialScroll = getScrollSnapshot();
+    lastTrackedScrollY = initialScroll.scrollY;
+    maxScrollDepthPercent = Math.max(
+      0,
+      Math.min(100, initialScroll.progress * 100)
+    );
     const ticker = setInterval(tick, 1000);
     const interactionEvents = ["pointerdown", "keydown", "touchstart", "wheel"] as const;
     for (const type of interactionEvents) {
@@ -400,10 +438,20 @@ export default function GoogleAnalytics() {
     }
     if (lastTrackedPath.current === pathname) return;
     lastTrackedPath.current = pathname;
+    if (!window.__gaInitialized) return;
+    const pageLocation = buildPageLocation();
+    const pageReferrer = buildPageReferrer(lastPageLocation || document.referrer);
+    window.gtag("config", GA_ID, {
+      page_location: pageLocation,
+      ...(pageReferrer ? { page_referrer: pageReferrer } : {}),
+      send_page_view: false,
+    });
     trackAnalyticsEvent("page_view", {
       page_title: document.title,
-      page_location: buildPageLocation(),
+      page_location: pageLocation,
+      ...(pageReferrer ? { page_referrer: pageReferrer } : {}),
     });
+    lastPageLocation = pageLocation;
   }, [pathname]);
 
   return null;

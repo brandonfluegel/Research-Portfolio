@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 "use client";
 
 import { m } from "framer-motion";
@@ -24,7 +24,7 @@ export default function MercedesProjectSection() {
         logoWidth={370}
         logoHeight={400}
         logoWidthClass="w-12 md:w-16"
-        title="Semi-Autonomous HMI · Trust Research"
+        title="Semi-Autonomous Driving Interfaces · Trust Research"
         role="Human Factors PhD Intern"
         compactMobile
       />
@@ -63,13 +63,13 @@ export default function MercedesProjectSection() {
               </h3>
 
               <p className="text-base md:text-lg text-zinc-300 leading-relaxed font-light">
-                &quot;How does the car communicate intent?&quot; Conducted foundational research on passenger experiences in L2 vehicles to guide critical improvements to the HMI that enhanced trust.
+                &quot;How does the car communicate intent?&quot; Conducted foundational research on passenger experiences in semi-autonomous vehicles to guide critical improvements to the interface and enhance trust.
               </p>
             </div>
 
             {/* PROCESS TIMELINE */}
             <div className="relative ml-3 md:ml-0 pl-6 md:pl-8 border-l border-white/10 space-y-8 md:space-y-12">
-              <ProjectTimelineItem title="HMI Design Standards">
+              <ProjectTimelineItem title="Driving Interface Standards">
                 Defined <span className="text-white font-medium">Alert Modality standards</span> for autonomous handovers. These findings directly influenced internal design guidelines, ensuring clear communication of system status during critical control transitions.
               </ProjectTimelineItem>
 
@@ -78,7 +78,7 @@ export default function MercedesProjectSection() {
               </ProjectTimelineItem>
 
               <ProjectTimelineItem title="Trust Score Lift: Automated Lane Changes & Handoffs">
-                In a structured pre/post comparative study, driver trust scores increased by 24% during automated lane changes and handoffs after HMI improvements.
+                In a structured pre/post comparative study, driver trust scores increased by 24% during automated lane changes and handoffs after interface improvements.
               </ProjectTimelineItem>
             </div>
           </m.div>

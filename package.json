@@ -1,6 +1,6 @@
 {
   "name": "research-portfolio",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "engines": {
     "node": ">=20.9.0"
@@ -10,7 +10,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:seo": "node --test tests/seo.test.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

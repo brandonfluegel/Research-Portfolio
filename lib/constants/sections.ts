@@ -1,4 +1,4 @@
-// v2 - Fall 2026
+// v3 - Winter 2026
 export const NAV_SECTIONS = [
   { id: "amazon-section", name: "Amazon", href: "#amazon-section" },
   { id: "nasa-section", name: "NASA", href: "#nasa-section" },
@@ -9,5 +9,4 @@ export const NAV_SECTIONS = [
 export type SectionId = (typeof NAV_SECTIONS)[number]["id"];
 
 export const SECTION_IDS: readonly SectionId[] = NAV_SECTIONS.map((section) => section.id);
-
 

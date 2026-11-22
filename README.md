@@ -1,6 +1,6 @@
 # Brandon Allan Fluegel — Human Factors Engineering Portfolio
 
-**v2 - Fall 2026**
+**v3.0.0 - Winter 2026**
 
 > Translating human behavior and perception research into engineering specifications and product decisions
 
@@ -32,7 +32,9 @@ A single-page research portfolio built from scratch — no templates. Each secti
 
 **Tree-shaken animation** — `MotionProvider` wraps `LazyMotion` with `domAnimation` features only, keeping the Framer Motion bundle minimal.
 
-**SEO artifacts** — `robots.ts` and `sitemap.ts` generate the respective files at build time. `public/llms.txt` provides a machine-readable summary for LLM indexing.
+**Search and AI discovery** — The initial HTML includes a visible profile and selected-work overview, including role and metric context, even when JavaScript is unavailable. Detailed NASA, Mercedes-Benz, and framework sections remain deferred. The overview and case-study structured data share the same source; the public patent record supports co-inventorship, while project outcomes are portfolio-reported. `robots.ts` allows all crawlers, including AI training crawlers; search access and training access are separate policy decisions. `sitemap.ts` generates the canonical sitemap. `public/llms.txt` and `public/llms-full.txt` are optional supplemental summaries, not a guarantee of crawler use, training, indexing, ranking, or citation.
+
+**Ongoing visibility** — Verify the canonical URL and sitemap in Google Search Console and Bing Webmaster Tools, inspect indexing after deployment, and keep public profiles consistent with the portfolio. Add links to independently verifiable research, patents, and other evidence where available and appropriate, respecting confidentiality. Review role descriptions and outcome contexts as they change. Search and AI providers decide what to crawl, index, cite, and display; their answers can be incomplete or out of date.
 
 **Security headers** — `next.config.ts` sets `Strict-Transport-Security`, `X-Frame-Options: DENY`, `X-Content-Type-Options`, `X-XSS-Protection`, `Referrer-Policy`, and `Permissions-Policy` on all routes. Static assets use `Cache-Control: immutable` (1 year); public assets use `stale-while-revalidate`.
 
@@ -52,6 +54,7 @@ Next.js 16 (App Router) · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 �
 npm install
 npm run dev       # development
 npm run build     # production build
+npm run test:seo  # checks the production HTML, structured data and crawler files
 npm run lint
 npm run typecheck
 ```
@@ -60,18 +63,22 @@ npm run typecheck
 
 To exclude a browser from GA4, visit the production site once with `?ga_opt_out=1` (stored in `localStorage`); `?ga_opt_out=0` re-enables GA4. This flag does not disable Vercel Analytics or Speed Insights.
 
+**Privacy model:** Analytics is currently production-only and opt-out, not consent-gated. The GA4 opt-out does not disable Vercel Analytics or Speed Insights. If consent is required for the site's audience, use a consent-management solution and gate all applicable analytics before they load.
+
 ### Analytics interpretation
 
-- Use GA4's built-in acquisition reports for session source, medium, and campaign. Campaign links should use UTM values made of letters, numbers, `.`, `_`, `~`, or `-` and be no longer than 100 characters. Never put personal information in URLs or UTM values. Only those five UTM parameters are retained in the page URL sent to GA4; other query parameters and fragments are omitted.
-- The custom `traffic_source` event parameter is a site-code-derived label (UTM source, known referrer category, or referrer hostname). It is not GA4's authoritative session attribution.
-- `engagement_milestone.seconds` and `case_study_engaged_read.dwell_seconds` count visible, focused time after a user interaction, while activity has occurred within the last 60 seconds. Scroll interaction also counts as activity.
-- `scroll_depth_milestone.depth_percent` is one of 25, 50, 75, or 90. `max_scroll_percent` is the maximum observed scroll percentage, not a milestone.
-- `case_study_viewed` fires when the rendered case-study content (not a deferred placeholder) is at least 15% visible or fills at least half the viewport.
-- `cta_click` is limited to links explicitly marked in the UI and reports `cta_type`, `cta_location`, and optional `cta_id`. `section_nav_click` reports the target and navigation surface.
+- Use GA4's built-in acquisition reports for session source, medium, and campaign. Use lowercase UTM values made of letters, numbers, `.`, `_`, `~`, or `-`, no longer than 100 characters. Never put personal information in URLs or UTM values. Only those five UTM parameters are retained in `page_location`; other query parameters and fragments are removed. `page_referrer` is reduced to the external origin or same-origin path, with query strings and fragments removed.
+- The custom `traffic_source` event parameter is applied consistently to events as an approximate site-code label (UTM source, known referrer category, or referrer hostname). Use GA4's built-in session acquisition dimensions as the source of truth.
+- Use GA4's built-in **Device category** dimension rather than registering a duplicate custom device field.
+- `engagement_milestone.seconds` fires at 15, 30, 60, 120, and 240 active seconds per page. `case_study_engaged_read.dwell_seconds` fires once per section after at least 8 active seconds, when leaving the section or the page. Active time counts only while the page is visible and focused and a user interaction occurred within the last 60 seconds; actual scrolling also counts as activity.
+- `scroll_depth_milestone.depth_percent` is one of 25, 50, 75, or 90. `max_scroll_percent` is the maximum observed scroll percentage, not a milestone. Resizing the window alone does not count as a scroll or active interaction.
+- `case_study_viewed` and `case_study_engaged_read` include `section_type` (`case_study` or `framework`), since both case studies and the Human-AI trust framework are measured.
+- `cta_click` is limited to links explicitly marked in the UI and reports `cta_type`, `cta_location`, and optional `cta_id`. `contact_click` separately records email and LinkedIn click intent; it does not prove that a message was sent. `section_nav_click` reports the target and navigation surface.
+- Framework interaction events are `framework_tab_selected`, `framework_checklist_toggled`, and `framework_audit_exported`. The export event measures a download action, not whether the downloaded report was used.
 
-Register event-scoped custom definitions in GA4 for the parameters needed in reports. The current definitions shown in GA4 should be checked against the event parameters above. Useful dimensions include `section`, `device`, `seconds`, `principle_title`, `target_section`, `depth_percent`, `traffic_source`, `cta_type`, `cta_location`, and `nav_location`. Useful numeric custom metrics include `dwell_seconds` and `max_scroll_percent`; register other metrics only if you intend to report on them. Definitions are not retroactive.
+Register event-scoped custom definitions in GA4 for the parameters needed in reports. Useful dimensions include `section`, `section_type`, `seconds`, `principle_title`, `phase`, `target_section`, `depth_percent`, `traffic_source`, `cta_type`, `cta_location`, `cta_id`, `contact_method`, `nav_location`, and `nav_surface`. Useful numeric custom metrics include `dwell_seconds`, `max_scroll_percent`, `active_seconds_before_click`, `completion_percent`, `passed_checks`, and `total_checks`. Register optional dimensions such as `utm_campaign` only if you plan to report on them. Definitions are not retroactive.
 
-The site sends page views explicitly (including on client-side path changes). In the GA4 web stream, disable enhanced-measurement page views triggered by browser-history changes to avoid duplicate SPA page views. Also review GA4's query-parameter redaction, internal-traffic filters, and consent/privacy requirements for the site's audience. Decide whether contact actions should be key events; if so, create a contact-only event from `cta_click` with `cta_type` of `email` or `linkedin` rather than counting patent clicks as contacts.
+The site sends page views explicitly and updates `page_location` and `page_referrer` on client-side path changes. In the GA4 web stream, disable enhanced-measurement page views triggered by browser-history changes to avoid duplicate SPA page views. Configure query-parameter redaction and internal-traffic filters in GA4. If contact intent is a business outcome, mark `contact_click` as a key event; do not count patent clicks or framework exports as contacts.
 
 ---
 
