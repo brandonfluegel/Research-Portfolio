@@ -48,15 +48,16 @@ export const siteViewport: Viewport = {
   interactiveWidget: "resizes-content",
 };
 
+const profileTitle = `${PROFILE_NAME} | Human Factors Design Engineer`;
 const profileDescription =
-  "Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. Ph.D. in Human Factors Psychology; prior work at Amazon, NASA, and Mercedes-Benz.";
+  "Current work at Intuitive Surgical focuses on surgical robotics; earlier projects include Amazon Alexa, NASA's Lunar Gateway, and Mercedes-Benz HMI.";
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: PROFILE.name,
   description: profileDescription,
   title: {
-    default: `${PROFILE_NAME} | Human Factors Design Engineer`,
+    default: profileTitle,
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   authors: [{ name: PROFILE.name }],
@@ -78,7 +79,7 @@ export const siteMetadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${PROFILE_NAME} | Human Factors Design Engineer`,
+    title: profileTitle,
     description: profileDescription,
     url: SITE_URL,
     siteName: PROFILE.name,
@@ -97,7 +98,7 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${PROFILE_NAME} | Human Factors Design Engineer`,
+    title: profileTitle,
     description: profileDescription,
     images: [PROFILE_SEARCH_IMAGE],
   },
@@ -238,7 +239,8 @@ export const structuredData = {
       "@id": `${SITE_URL}#website`,
       url: SITE_URL,
       name: PROFILE.name,
-      description: `Portfolio of human factors research and engineering by ${PROFILE_NAME}.`,
+      description:
+        "Human factors research and engineering focused on surgical robotics, Amazon Alexa, NASA's Lunar Gateway, and Mercedes-Benz HMI.",
       image: {
         "@id": `${SITE_URL}#profile-image`,
       },

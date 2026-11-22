@@ -46,13 +46,14 @@ Next.js 16 (App Router) · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 �
 
 ## Getting Started
 
-**Prerequisites:** Node.js 20+
+**Prerequisites:** Node.js 20.9+ and npm
 
 ```bash
 npm install
 npm run dev       # development
 npm run build     # production build
 npm run lint
+npm run typecheck
 ```
 
 **Optional:** Add `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` to the production environment to enable GA4. GA4, Vercel Analytics, and Speed Insights are disabled on local, preview, and other non-production deployments.
