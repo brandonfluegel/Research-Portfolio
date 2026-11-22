@@ -48,15 +48,17 @@ export const siteViewport: Viewport = {
   interactiveWidget: "resizes-content",
 };
 
+const profileDescription =
+  "Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. Ph.D. in Human Factors Psychology; prior work at Amazon, NASA, and Mercedes-Benz.";
+
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "Brandon Allan Fluegel",
+  description: profileDescription,
   title: {
     default: `${PROFILE_NAME} | Human Factors Design Engineer`,
     template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
-  description:
-    `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
   authors: [{ name: PROFILE.name }],
   creator: PROFILE.name,
   publisher: PROFILE.name,
@@ -77,8 +79,7 @@ export const siteMetadata: Metadata = {
   },
   openGraph: {
     title: `${PROFILE_NAME} | Human Factors Design Engineer`,
-    description:
-      `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
+    description: profileDescription,
     url: SITE_URL,
     siteName: "Brandon Allan Fluegel",
     locale: "en_US",
@@ -98,8 +99,7 @@ export const siteMetadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${PROFILE_NAME} | Human Factors Design Engineer`,
-    description:
-      `${PROFILE_NAME} is a ${PROFILE_ROLE}. His portfolio documents prior research at Amazon, NASA, and Mercedes-Benz.`,
+    description: profileDescription,
     images: [PROFILE_SEARCH_IMAGE],
   },
 };
