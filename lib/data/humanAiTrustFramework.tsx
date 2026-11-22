@@ -211,7 +211,7 @@ export function buildAuditReport(checkedItems: Record<string, boolean>) {
   report += `Version 2 · July 2026\n\n`;
   report += `Audit Report\n`;
   report += `Conducted on: ${new Date().toLocaleDateString()}\n`;
-  report += `Framework by: Brandon Allan, Ph.D. · ${SITE_LINKS.email}\n`;
+  report += `Framework by: Brandon Allan Fluegel, Ph.D. · ${SITE_LINKS.email}\n`;
   report += `Available at: ${SITE_URL}/#agent-trust\n`;
   report += `========================================================\n\n`;
 

@@ -4,6 +4,7 @@ import { SITE_URL } from "@/lib/constants/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
+    // Portfolio owner: Brandon Allan Fluegel
     rules: [
       {
         // The public portfolio is intentionally available to search and AI crawlers.

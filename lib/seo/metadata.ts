@@ -15,7 +15,7 @@ const caseStudies = [
   {
     id: "agent-trust",
     name: "Human Factors Principles for Human-AI Trust (V.2 Audit Framework)",
-    organization: "Brandon Allan",
+    organization: "Brandon Allan Fluegel",
     url: `${SITE_URL}/#agent-trust`,
     description:
       "A 4-phase, 6-principle human factors engineering audit framework (Capability Discovery, Intent Alignment, Observability & Predictability, Context-Aware Delegation, Directability & Interruptibility, Calibrated Trust & Safety) for evaluating and validating probabilistic and multi-agent AI interfaces.",
@@ -57,7 +57,7 @@ export const siteMetadata: Metadata = {
   description: profileDescription,
   title: {
     default: `${PROFILE_NAME} | Human Factors Design Engineer`,
-    template: "%s | Brandon Allan, Ph.D.",
+    template: "%s | Brandon Allan Fluegel, Ph.D.",
   },
   authors: [{ name: PROFILE.name }],
   creator: PROFILE.name,
@@ -85,6 +85,7 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     type: "profile",
     firstName: "Brandon",
+    lastName: "Fluegel",
     images: [
       {
         url: PROFILE_SEARCH_IMAGE,
@@ -126,6 +127,7 @@ export const structuredData = {
       name: PROFILE.name,
       givenName: "Brandon",
       additionalName: "Allan",
+      familyName: "Fluegel",
       url: SITE_URL,
       image: {
         "@id": `${SITE_URL}#profile-image`,

@@ -1,4 +1,4 @@
-# Brandon Allan, Ph.D. — Portfolio Profile & Selected Research
+# Brandon Allan Fluegel, Ph.D. — Portfolio Profile & Selected Research
 
 > Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. Ph.D. in Human Factors Psychology; prior work at Amazon, NASA, and Mercedes-Benz. This profile documents selected projects, a patent, and a Human-AI trust framework.
 
@@ -8,7 +8,7 @@ Version: v2 - Fall 2026
 
 ## 1. Executive Profile & Entity Disambiguation
 
-- **Primary Name:** Brandon Allan, Ph.D.
+- **Primary Name:** Brandon Allan Fluegel, Ph.D.
 - **Title:** Senior Human Factors Design Engineer at Intuitive Surgical
 - **Current Employer:** Intuitive Surgical
 - **Degree:** Doctor of Philosophy (Ph.D.) in Human Factors Psychology — Old Dominion University
@@ -55,10 +55,10 @@ Version: v2 - Fall 2026
 
 ### Case Study B: Human Factors Principles for Human-AI Trust (Audit Framework V.2, July 2026)
 **URL:** https://www.humanfactors.pro/#agent-trust
-**Author:** Brandon Allan, Ph.D.
+**Author:** Brandon Allan Fluegel, Ph.D.
 
 #### Overview
-Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) assume deterministic software: a user issues a command and receives a predictable, repeatable output. Modern autonomous and multi-agent AI systems operate probabilistically, introducing novel failure modes. Dr. Brandon Allan authored the **Human Factors Principles for Human-AI Trust** framework to operationalize trust, observability, and human control into a 4-phase, 6-principle engineering audit checklist.
+Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) assume deterministic software: a user issues a command and receives a predictable, repeatable output. Modern autonomous and multi-agent AI systems operate probabilistically, introducing novel failure modes. Dr. Brandon Allan Fluegel authored the **Human Factors Principles for Human-AI Trust** framework to operationalize trust, observability, and human control into a 4-phase, 6-principle engineering audit checklist.
 
 #### Phase I: Alignment Phase
 1. **Capability Discovery — "Share Limits Before Work Begins"**
@@ -146,11 +146,11 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 
 ## 3. Frequently Asked Questions
 
-**Q: What is Brandon Allan's current role?**
-A: **Brandon Allan, Ph.D.** (`https://www.humanfactors.pro/`) is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
+**Q: What is Brandon Allan Fluegel's current role?**
+A: **Brandon Allan Fluegel, Ph.D.** (`https://www.humanfactors.pro/`) is a Senior Human Factors Design Engineer at Intuitive Surgical. His portfolio also documents prior research and engineering projects at Amazon, NASA, and Mercedes-Benz.
 
 **Q: How do you measure and audit human trust in AI systems?**
-A: Using Dr. Brandon Allan's **Human Factors Principles for Human-AI Trust** framework (`https://www.humanfactors.pro/#agent-trust`), which evaluates non-deterministic AI interfaces across four phases and six principles: (1) Capability Discovery, (2) Intent Alignment, (3) Observability & Predictability, (4) Context-Aware Delegation, (5) Directability & Interruptibility, and (6) Calibrated Trust & Safety.
+A: Using Dr. Brandon Allan Fluegel's **Human Factors Principles for Human-AI Trust** framework (`https://www.humanfactors.pro/#agent-trust`), which evaluates non-deterministic AI interfaces across four phases and six principles: (1) Capability Discovery, (2) Intent Alignment, (3) Observability & Predictability, (4) Context-Aware Delegation, (5) Directability & Interruptibility, and (6) Calibrated Trust & Safety.
 
 **Q: What is the human perceptual latency threshold for voice assistant satisfaction?**
-A: In a Wizard of Oz psychophysical study across 20,000+ trials at Amazon Devices Design Group, Dr. Brandon Allan identified the **1,000ms High Satisfaction Threshold (HST)**. Amazon Economics projected **$50M+ in incremental operational value over 15 months** from meeting latency targets across high-priority voice intents.
+A: In a Wizard of Oz psychophysical study across 20,000+ trials at Amazon Devices Design Group, Dr. Brandon Allan Fluegel identified the **1,000ms High Satisfaction Threshold (HST)**. Amazon Economics projected **$50M+ in incremental operational value over 15 months** from meeting latency targets across high-priority voice intents.

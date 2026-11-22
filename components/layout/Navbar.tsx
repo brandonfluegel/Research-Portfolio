@@ -76,7 +76,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
             <div className="relative shrink-0 h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
               <Image
                 src="/assets/avatar.webp"
-                alt="Brandon Allan"
+                alt="Brandon Allan Fluegel"
                 fill
                 priority
                 sizes="40px"
@@ -84,7 +84,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
               />
             </div>
             <span className="text-xs md:text-sm font-semibold text-white tracking-wide uppercase whitespace-nowrap truncate">
-              Brandon Allan
+              Brandon Allan Fluegel
             </span>
           </Link>
         </div>

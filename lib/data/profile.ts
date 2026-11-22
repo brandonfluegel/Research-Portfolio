@@ -1,5 +1,5 @@
 export const PROFILE = {
-  name: "Brandon Allan",
+  name: "Brandon Allan Fluegel",
   credential: "Ph.D.",
   role: "Senior Human Factors Design Engineer",
   employer: "Intuitive Surgical",
