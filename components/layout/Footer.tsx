@@ -58,6 +58,7 @@ export default function Footer() {
           <Link 
             href={SITE_LINKS.linkedin} 
             target="_blank"
+            rel="noopener noreferrer"
             data-analytics-cta="linkedin"
             data-analytics-location="footer"
             className="flex items-center gap-2 px-8 py-4 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300"
@@ -65,7 +66,7 @@ export default function Footer() {
             <LinkedinIcon />
             Connect on LinkedIn
           </Link>
-          
+
           <Link 
             href={SITE_LINKS.mailto} 
             data-analytics-cta="email"
@@ -85,7 +86,7 @@ export default function Footer() {
           transition={{ delay: 0.4 }}
           className="pt-16 text-zinc-600 text-sm"
         >
-          © {new Date().getFullYear()} Brandon Allan Fluegel, PhD. All Rights Reserved.
+          © {new Date().getFullYear()} {PROFILE_NAME}, PhD. All Rights Reserved.
         </m.div>
       </div>
     </footer>

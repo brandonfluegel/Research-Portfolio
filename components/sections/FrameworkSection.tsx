@@ -245,7 +245,7 @@ export default function FrameworkSection() {
               {/* Attribution */}
               <div className="pt-4 mt-5 border-t border-white/10 shrink-0">
                 <p className="text-center text-[10px] text-zinc-500 font-mono">
-                  Framework by Brandon Allan Fluegel
+                  Framework by Brandon Allan
                 </p>
               </div>
             </div>

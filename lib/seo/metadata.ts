@@ -15,7 +15,7 @@ const caseStudies = [
   {
     id: "agent-trust",
     name: "Human Factors Principles for Human-AI Trust (V.2 Audit Framework)",
-    organization: "Brandon Allan Fluegel, Ph.D.",
+    organization: "Brandon Allan",
     url: `${SITE_URL}/#agent-trust`,
     description:
       "A 4-phase, 6-principle human factors engineering audit framework (Capability Discovery, Intent Alignment, Observability & Predictability, Context-Aware Delegation, Directability & Interruptibility, Calibrated Trust & Safety) for evaluating and validating probabilistic and multi-agent AI interfaces.",
@@ -53,11 +53,11 @@ const profileDescription =
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  applicationName: "Brandon Allan Fluegel",
+  applicationName: PROFILE.name,
   description: profileDescription,
   title: {
     default: `${PROFILE_NAME} | Human Factors Design Engineer`,
-    template: "%s | Brandon Allan Fluegel, Ph.D.",
+    template: "%s | Brandon Allan, Ph.D.",
   },
   authors: [{ name: PROFILE.name }],
   creator: PROFILE.name,
@@ -81,18 +81,16 @@ export const siteMetadata: Metadata = {
     title: `${PROFILE_NAME} | Human Factors Design Engineer`,
     description: profileDescription,
     url: SITE_URL,
-    siteName: "Brandon Allan Fluegel",
+    siteName: PROFILE.name,
     locale: "en_US",
     type: "profile",
     firstName: "Brandon",
-    lastName: "Fluegel",
-    username: "fluegel",
     images: [
       {
         url: PROFILE_SEARCH_IMAGE,
         width: 1200,
         height: 1200,
-        alt: "Brandon Allan Fluegel, Ph.D. — Senior Human Factors Design Engineer at Intuitive Surgical",
+        alt: `${PROFILE_NAME} — Senior Human Factors Design Engineer at Intuitive Surgical`,
       },
     ],
   },
@@ -114,7 +112,7 @@ export const structuredData = {
       url: `${SITE_URL}${PROFILE_SEARCH_IMAGE}`,
       width: 1200,
       height: 1200,
-      caption: "Brandon Allan Fluegel profile photo",
+      caption: `${PROFILE_NAME} profile photo`,
     },
     {
       "@type": "Organization",
@@ -128,14 +126,6 @@ export const structuredData = {
       name: PROFILE.name,
       givenName: "Brandon",
       additionalName: "Allan",
-      familyName: "Fluegel",
-      alternateName: [
-        "Brandon Fluegel",
-        "Dr. Brandon Fluegel",
-        "Dr. Brandon Allan Fluegel",
-        "Brandon A. Fluegel",
-        "Brandon Fluegel, PhD",
-      ],
       url: SITE_URL,
       image: {
         "@id": `${SITE_URL}#profile-image`,
