@@ -160,10 +160,10 @@ export default function HomeClientSections() {
       <section className="content-shell section-stack mt-16 md:mt-20">
         <div className="px-4 sm:px-8 pb-2">
           <p className="text-sm text-zinc-400">
-            Current role: {PROFILE_ROLE}.
+            {PROFILE_ROLE}
           </p>
           <h2 className="mt-2 text-xl md:text-2xl font-semibold text-white tracking-tight">
-            Selected Prior Work
+            Selected Work
           </h2>
         </div>
         <div id="amazon-section" className="deferred-section">
