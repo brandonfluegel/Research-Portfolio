@@ -1,6 +1,6 @@
 # Brandon Allan Fluegel, Ph.D. — Portfolio Profile & Selected Research
 
-> This document is a machine-readable profile of **Brandon Allan Fluegel, Ph.D.** (`https://www.humanfactors.pro/`), his current role at Intuitive Surgical, prior projects, patents, framework, and research impact.
+> Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. Ph.D. in Human Factors Psychology; prior work at Amazon, NASA, and Mercedes-Benz. This profile documents selected projects, a patent, and a Human-AI trust framework.
 
 Version: v2 - Fall 2026
 
@@ -128,7 +128,7 @@ Traditional Human-Computer Interaction (HCI) heuristics (e.g., Nielsen, 1994) as
 
 - **Context:** Mission-critical human factors validation for next-generation astronaut medical workstations aboard the **Lunar Gateway** space station prior to flight hardware specification lock.
 - **Methodology:** Conducted simulated-use human factors evaluations in a **VR / simulated microgravity environment** testing complex timed medical procedures under physical restraint and restricted head-mobility constraints.
-- **Findings & Engineering Impact:** Identified critical physical and cognitive failure modes — including reach envelope violations, attention overload during timed procedural steps, and display legibility limits — before flight hardware lock. The redesigned workstation layout and interface delivered a **30% reduction in time-on-task** for complex medical procedures versus baseline and eliminated critical operator error modes.
+- **Findings & Engineering Impact:** Identified critical physical and cognitive failure modes — including reach envelope violations, attention overload during timed procedural steps, and display legibility limits — before flight hardware lock. The redesigned workstation layout and interface delivered a **30% reduction in time-on-task** for complex medical procedures versus baseline.
 
 ---
 

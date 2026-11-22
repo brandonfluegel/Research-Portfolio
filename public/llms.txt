@@ -1,11 +1,12 @@
-# Brandon Allan Fluegel — Human Factors Portfolio
+# Brandon Allan Fluegel, Ph.D. — Human Factors Portfolio
 
-> Brandon Allan Fluegel, Ph.D. is a Senior Human Factors Design Engineer at Intuitive Surgical. This site documents his human factors research, engineering projects, and Human-AI Trust framework.
+> Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. Ph.D. in Human Factors Psychology; prior work at Amazon, NASA, and Mercedes-Benz.
 
 ## Profile
 - **Current role:** Senior Human Factors Design Engineer at Intuitive Surgical.
+- **Focus:** Human factors design for surgical robotics and complex systems.
 - **Education:** Ph.D. in Human Factors Psychology, Old Dominion University.
-- **Prior project experience:** Amazon Devices Design Group, NASA Lunar Gateway, and Mercedes-Benz.
+- **Prior project experience:** Human factors research and engineering projects at Amazon Devices Design Group, NASA Lunar Gateway, and Mercedes-Benz.
 - **Areas of experience:** Human factors engineering, surgical and medical robotics, human-machine interaction, simulated-use validation, psychophysics, cognitive workload, and Human-AI interaction.
 
 ## Portfolio
@@ -14,6 +15,11 @@
 - [Mercedes-Benz HMI and trust research](https://www.humanfactors.pro/#mercedes-section)
 - [Human Factors Principles for Human-AI Trust](https://www.humanfactors.pro/#agent-trust)
 - [Full profile and case-study details](https://www.humanfactors.pro/llms-full.txt)
+
+## Selected Prior-Work Outcomes
+- **Amazon:** Identified a 1,000 ms Alexa response High Satisfaction Threshold in a 20,000+ trial study. Alexa Economics projected $50M+ in operational value over 15 months from meeting latency targets. Co-invented US Patent 12,532,040 B1 and received the 2023 Amazon Inventor Award.
+- **NASA:** Lunar Gateway workstation validation reduced complex medical procedure time-on-task by 30% versus baseline.
+- **Mercedes-Benz:** L2 HMI and psychoacoustic research reported a 24% increase in driver trust scores and 15% lower perceived cabin noise.
 
 ## External profiles
 - [LinkedIn](https://www.linkedin.com/in/fluegel/)
