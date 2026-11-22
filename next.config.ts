@@ -24,6 +24,21 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["framer-motion"],
     agentUpgrade: "security",
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "humanfactors.pro",
+          },
+        ],
+        destination: "https://www.humanfactors.pro/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
