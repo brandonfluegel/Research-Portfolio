@@ -10,7 +10,6 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
 import useActiveSection from "@/hooks/useActiveSection";
 import { scrollToSectionId } from "@/lib/utils/scroll";
-import { PROFILE_ROLE } from "@/lib/data/profile";
 
 const DEFERRED_SECTION_IMPORTERS = {
   "agent-trust": () => import("@/components/sections/FrameworkSection"),
@@ -157,15 +156,7 @@ export default function HomeClientSections() {
         <div className="w-full h-px bg-linear-to-r from-transparent via-white/10 to-transparent mb-6 md:mb-8"></div>
       </div>
 
-      <section className="content-shell section-stack mt-16 md:mt-20">
-        <div className="px-4 sm:px-8 pb-2">
-          <p className="text-sm text-zinc-400">
-            {PROFILE_ROLE}
-          </p>
-          <h2 className="mt-2 text-xl md:text-2xl font-semibold text-white tracking-tight">
-            Selected Work
-          </h2>
-        </div>
+      <section className="content-shell section-stack mt-0">
         <div id="amazon-section" className="deferred-section">
           <AmazonProjectSection />
         </div>
