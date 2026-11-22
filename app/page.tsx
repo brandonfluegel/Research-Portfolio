@@ -12,7 +12,7 @@ export default function Home() {
           </h1>
 
           <p className="font-medium text-zinc-300 text-center text-balance text-[clamp(0.95rem,3.5vw,1.1rem)] sm:text-[clamp(1rem,2.2vw,1.2rem)] md:text-[clamp(1.1rem,1.8vw,1.35rem)] lg:text-[clamp(1.15rem,1.5vw,1.45rem)] w-full max-w-88 sm:max-w-xl md:max-w-2xl lg:max-w-176 mx-auto leading-relaxed">
-            Ph.D. in Human Factors Psychology with experience across medical systems, aerospace, automotive HMI, and consumer AI; currently at Intuitive Surgical.
+            Ph.D. in Human Factors Psychology with experience across aerospace, automotive HMI, and consumer AI; currently at Intuitive Surgical in surgical robotics.
           </p>
 
           <a
