@@ -3,31 +3,41 @@ import HomeClientSections from "@/components/home/HomeClientSections";
 import ResearchHighlightLink from "@/components/home/ResearchHighlightLink";
 import Footer from "@/components/layout/Footer";
 import { SITE_LINKS } from "@/lib/constants/site";
+import { PROFILE_NAME, PROFILE_ROLE } from "@/lib/data/profile";
 import { RESEARCH_HIGHLIGHTS } from "@/lib/data/researchHighlights";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
       {/* Hero Section */}
-      <section className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-6 md:pb-8">
-        <div className="w-full flex flex-col items-center justify-center text-center mx-auto relative z-10 px-2 sm:px-6">
-          <h1 className="font-bold leading-[1.08] tracking-tight text-center mb-4 sm:mb-5 md:mb-6 text-[clamp(2rem,8vw,3rem)] sm:text-[clamp(2.75rem,6vw,4rem)] md:text-[clamp(2.625rem,3.75vw,3.75rem)] lg:text-[clamp(3rem,3.75vw,4.125rem)] text-white text-balance">
-            Brandon Allan Fluegel, Ph.D.
+      <section aria-labelledby="hero-name" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-4 md:pb-8">
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-2 text-center sm:px-6">
+          <p className="flex items-center justify-center gap-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 sm:gap-3 sm:text-xs">
+            <span aria-hidden="true" className="h-px w-3 bg-indigo-400/50 sm:w-8" />
+            Human Factors &middot; Research
+            <span aria-hidden="true" className="h-px w-3 bg-indigo-400/50 sm:w-8" />
+          </p>
+
+          <h1 id="hero-name" className="mt-3 text-balance text-[clamp(2.4rem,5.2vw,4rem)] font-bold leading-[1.08] tracking-tight text-white sm:mt-5">
+            {PROFILE_NAME}
           </h1>
 
-          <p className="font-medium text-zinc-300 text-center text-balance text-[clamp(0.95rem,3.5vw,1.1rem)] sm:text-[clamp(1rem,2.2vw,1.2rem)] md:text-[clamp(1.1rem,1.8vw,1.35rem)] lg:text-[clamp(1.15rem,1.5vw,1.45rem)] w-full max-w-88 sm:max-w-xl md:max-w-2xl lg:max-w-176 mx-auto leading-relaxed">
-            Senior Human Factors Design Engineer at Intuitive Surgical, focused on surgical robotics. My portfolio covers Alexa latency research at Amazon Devices and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
+          <p className="mt-3 max-w-2xl text-balance text-base font-medium leading-6 text-zinc-200 sm:mt-5 sm:text-lg sm:leading-relaxed md:text-xl">
+            {PROFILE_ROLE}
+          </p>
+          <p className="mt-2 max-w-2xl text-balance text-sm leading-[1.5] text-zinc-400 sm:mt-3 sm:text-base sm:leading-relaxed">
+            Focused on surgical robotics, with prior Alexa latency research at Amazon Devices and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
           </p>
 
           <a
             href="#amazon-section"
             data-analytics-location="hero_cue"
             aria-label="Scroll to case studies"
-            className="rise-in mt-8 md:mt-12 flex flex-col items-center gap-1 px-4 py-2 min-h-11 text-zinc-500 hover:text-white transition-colors"
+            className="rise-in group mt-4 inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/15 bg-white/3 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/8 hover:text-white sm:mt-8"
             style={{ animationDelay: "250ms" }}
           >
-            <span className="text-[10px] font-mono uppercase tracking-[0.25em]">Explore the work</span>
-            <svg className="scroll-cue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <span>Explore the work</span>
+            <svg className="text-indigo-300 transition-transform group-hover:translate-y-0.5 motion-reduce:transform-none motion-reduce:transition-none" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <path d="m6 9 6 6 6-6" />
             </svg>
           </a>

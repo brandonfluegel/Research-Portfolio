@@ -11,7 +11,14 @@ const profileSummary = "Brandon Allan Fluegel, Ph.D., is a Senior Human Factors 
 test("production HTML exposes the profile and research summaries without JavaScript", async () => {
   const html = await read(".next/server/app/index.html");
   const visibleHtml = html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  const hero = visibleHtml.match(/<section aria-labelledby="hero-name"[\s\S]*?<\/section>/);
   const overview = visibleHtml.match(/<section aria-labelledby="research-overview"[\s\S]*?<\/section>/);
+  assert.ok(hero, "server-rendered hero is missing");
+  assert.match(hero[0], /Brandon Allan Fluegel, Ph\.D\./);
+  assert.match(hero[0], /Senior Human Factors Design Engineer at Intuitive Surgical/);
+  assert.match(hero[0], /surgical robotics/);
+  assert.match(hero[0], /Human Factors Ph\.D\. internship projects at NASA and Mercedes-Benz/);
+  assert.ok(hero[0].includes('href="#amazon-section"'), "hero must link to the case studies");
   assert.ok(overview, "server-rendered research overview is missing");
   assert.match(visibleHtml, /Brandon Allan Fluegel, Ph\.D\./);
   assert.match(visibleHtml, /Senior Human Factors Design Engineer at Intuitive Surgical/);
