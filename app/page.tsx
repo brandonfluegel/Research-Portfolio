@@ -18,7 +18,7 @@ export default function Home() {
             <span aria-hidden="true" className="h-px w-3 bg-indigo-400/50 sm:w-8" />
           </p>
 
-          <h1 id="hero-name" className="mt-3 text-balance text-[clamp(2.4rem,5.2vw,4rem)] font-bold leading-[1.08] tracking-tight text-white sm:mt-5">
+          <h1 id="hero-name" className="mt-3 text-balance text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.08] tracking-tight text-white sm:mt-5">
             {PROFILE_NAME}
           </h1>
 
