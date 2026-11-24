@@ -12,13 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section aria-labelledby="hero-name" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-4 md:pb-8">
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-2 text-center sm:px-6">
-          <p className="flex items-center justify-center gap-2 whitespace-nowrap text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400 sm:gap-3 sm:text-xs">
-            <span aria-hidden="true" className="h-px w-3 bg-indigo-400/50 sm:w-8" />
-            Human Factors &middot; Research
-            <span aria-hidden="true" className="h-px w-3 bg-indigo-400/50 sm:w-8" />
-          </p>
-
-          <h1 id="hero-name" className="mt-3 text-balance text-[clamp(2rem,4vw,3.2rem)] font-bold leading-[1.08] tracking-tight text-white sm:mt-5">
+          <h1 id="hero-name" className="text-balance text-[clamp(1.6rem,3.2vw,2.56rem)] font-bold leading-[1.08] tracking-tight text-white">
             {PROFILE_NAME}
           </h1>
 

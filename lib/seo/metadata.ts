@@ -20,7 +20,7 @@ export const siteViewport: Viewport = {
   interactiveWidget: "resizes-content",
 };
 
-const profileTitle = `${PROFILE_NAME} | Human Factors Design Engineer`;
+const profileTitle = PROFILE_NAME;
 
 export const siteMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -216,7 +216,7 @@ export const structuredData = {
       "@type": "ProfilePage",
       "@id": `${SITE_URL}#profile-page`,
       url: SITE_URL,
-      name: `${PROFILE_NAME} | Human Factors Portfolio`,
+      name: profileTitle,
       about: {
         "@id": `${SITE_URL}#person`,
       },

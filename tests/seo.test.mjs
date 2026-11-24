@@ -52,6 +52,7 @@ test("structured identity and research links match the published content", async
   assert.equal(person.name, "Brandon Allan Fluegel");
   assert.equal(person.jobTitle, "Senior Human Factors Design Engineer");
   assert.equal(person.description, profileSummary);
+  assert.equal(profile.name, "Brandon Allan Fluegel, Ph.D.");
   assert.equal(profile.mainEntity["@id"], `${site}#person`);
   assert.equal(patent.creator["@id"], `${site}#person`);
   assert.match(patent.name, /Context-based control inputs for a device/);
@@ -62,7 +63,9 @@ test("structured identity and research links match the published content", async
     assert.ok(html.includes(item.item.name), `structured work title is not visible: ${item.item.name}`);
   }
   assert.ok(html.includes(`<link rel="canonical" href="${site}"/>`));
-  assert.ok(html.includes("<title>Brandon Allan Fluegel, Ph.D. | Human Factors Design Engineer</title>"));
+  assert.ok(html.includes("<title>Brandon Allan Fluegel, Ph.D.</title>"));
+  assert.ok(html.includes('<meta property="og:title" content="Brandon Allan Fluegel, Ph.D."/>'));
+  assert.ok(html.includes('<meta name="twitter:title" content="Brandon Allan Fluegel, Ph.D."/>'));
   assert.ok(html.includes(`<meta name="description" content="${searchDescription}"/>`));
   assert.ok(html.includes(`<meta property="og:description" content="${searchDescription}"/>`));
   assert.ok(html.includes(`<meta name="twitter:description" content="${searchDescription}"/>`));
