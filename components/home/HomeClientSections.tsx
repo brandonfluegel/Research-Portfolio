@@ -162,7 +162,6 @@ export default function HomeClientSections() {
 
         <SectionDivider
           label="From consumer AI → Mission-critical systems"
-          description="Where cognitive error costs lives, not conversions"
         />
 
         {DEFERRED_SECTIONS.map(({ id, Component, minHeightClass, dividerAfter }) => (
