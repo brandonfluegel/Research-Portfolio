@@ -42,7 +42,7 @@ export default function AmazonProjectSection() {
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start"
         >
           {/* LEFT: VIDEO */}
-          <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-6 order-2 lg:order-1 flex flex-col justify-center h-full pt-8 lg:pt-0">
+          <m.div variants={fadeInFromLeft} className="relative z-10 lg:col-span-6 order-1 flex flex-col justify-center h-full">
             <div className="relative w-full max-w-2xl mx-auto">
               <div className="media-frame aspect-video group media-card">
                 <div className="absolute -inset-4 bg-purple-500/6 blur-[60px] rounded-full pointer-events-none"></div>
@@ -61,7 +61,7 @@ export default function AmazonProjectSection() {
           </m.div>
 
           {/* RIGHT: COMBINED NARRATIVE */}
-          <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-6 order-1 lg:order-2 pt-2">
+          <m.div variants={fadeInFromRight} className="relative z-20 lg:col-span-6 order-2 pt-2">
 
             {/* fNIRS Narrative */}
             <div className="mb-8 md:mb-10">

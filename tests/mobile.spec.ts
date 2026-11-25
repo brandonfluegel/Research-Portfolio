@@ -3,6 +3,29 @@ import { readFile } from "node:fs/promises";
 
 test.use({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
 
+test("mobile project previews link to their case studies and introduce the first visual before its details", async ({ page }) => {
+  await page.goto("/");
+  const hero = page.locator('section[aria-labelledby="hero-name"]');
+  for (const width of [320, 390, 430]) {
+    await page.setViewportSize({ width, height: 844 });
+    for (const [name, target] of [["Amazon", "amazon-section"], ["NASA", "nasa-section"], ["Mercedes-Benz", "mercedes-section"]]) {
+      const link = hero.getByRole("link", { name });
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute("href", `#${target}`);
+      const box = await link.boundingBox();
+      expect(box!.x).toBeGreaterThanOrEqual(0);
+      expect(box!.x + box!.width).toBeLessThanOrEqual(width);
+    }
+    const video = await page.locator("#amazon-section video").first().boundingBox();
+    const details = await page.getByRole("heading", { name: "Mapping Cognitive Load to Echo Device Design" }).boundingBox();
+    expect(video!.y + video!.height).toBeLessThan(details!.y);
+  }
+  await hero.getByRole("link", { name: "NASA" }).click();
+  await expect(page).toHaveURL(/#nasa-section$/);
+  await page.setViewportSize({ width: 1024, height: 844 });
+  await expect(hero.getByRole("link", { name: "NASA" })).toBeHidden();
+});
+
 test("the mobile menu contains focus, fits landscape, and preserves link navigation", async ({ page }) => {
   await page.goto("/");
   await page.setViewportSize({ width: 568, height: 320 });
