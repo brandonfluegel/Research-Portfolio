@@ -1,17 +1,10 @@
 // v3 - Winter 2026
-import Image from "next/image";
 import HomeClientSections from "@/components/home/HomeClientSections";
 import ResearchHighlightLink from "@/components/home/ResearchHighlightLink";
 import Footer from "@/components/layout/Footer";
 import { SITE_LINKS } from "@/lib/constants/site";
 import { PROFILE_NAME, PROFILE_ROLE } from "@/lib/data/profile";
 import { RESEARCH_HIGHLIGHTS } from "@/lib/data/researchHighlights";
-
-const MOBILE_PROJECTS = [
-  { name: "Amazon", href: "#amazon-section", image: "/assets/fnirs-poster.webp" },
-  { name: "NASA", href: "#nasa-section", image: "/assets/nasa-gateway.webp" },
-  { name: "Mercedes-Benz", href: "#mercedes-section", image: "/assets/drive-poster.webp" },
-] as const;
 
 export default function Home() {
   return (
@@ -32,24 +25,6 @@ export default function Home() {
           <p className="mt-3 hidden max-w-2xl text-balance text-base leading-relaxed text-zinc-400 sm:block">
             Focused on surgical robotics, with prior research at Amazon Devices Design Group and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
           </p>
-
-          <div className="mt-7 w-full sm:hidden">
-            <p className="mb-3 text-left text-[10px] font-mono uppercase tracking-[0.18em] text-zinc-400">Selected work</p>
-            <div className="grid grid-cols-3 gap-2">
-              {MOBILE_PROJECTS.map((project) => (
-                <a
-                  key={project.name}
-                  href={project.href}
-                  data-analytics-location="hero_cue"
-                  className="relative flex h-32 min-w-0 items-end overflow-hidden rounded-xl border border-white/15 bg-zinc-900 p-2.5 text-left"
-                >
-                  <Image src={project.image} alt="" fill sizes="(max-width: 640px) 33vw, 0px" className="object-cover" />
-                  <span className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-black/10" aria-hidden="true" />
-                  <span className="relative text-xs font-semibold leading-tight text-white">{project.name} <span aria-hidden="true">&rarr;</span></span>
-                </a>
-              ))}
-            </div>
-          </div>
 
           <a
             href="#amazon-section"
