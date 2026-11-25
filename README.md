@@ -48,22 +48,30 @@ Next.js 16 (App Router) · TypeScript 6 · Tailwind CSS v4 · Framer Motion 14 �
 
 ## Getting Started
 
-**Prerequisites:** Node.js 20.9+ and npm
+**Prerequisites:** Node.js 20.9+ and npm. Install dependencies and the Chromium test browser once:
 
 ```bash
-npm install
-npm run dev       # development
-npm run build     # production build
-npm run test:seo  # checks the production HTML, structured data and crawler files
+npm ci
 npx playwright install chromium
-npm run test:mobile # mobile viewport and interaction checks against the production build
-npx playwright install webkit
-npm run test:mobile -- --browser webkit # additional WebKit-engine checks
-npm run lint
-npm run typecheck
 ```
 
-The browser tests use port 31847 and can use a locally installed Chromium-compatible browser by setting `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Unset that variable when running WebKit. These tests do not replace testing on physical iOS and Android devices.
+In PowerShell, if script execution is disabled, use `npm.cmd` and `npx.cmd` in place of `npm` and `npx`.
+
+Run `npm run dev` for development. Before deploying, run:
+
+```bash
+npm run check
+```
+
+This runs lint, a production build (including TypeScript checking), SEO checks against the built output, and Chromium interaction tests against that same build. It stops on the first failure. `npm test` runs only the two test suites and requires an up-to-date `npm run build` first; `npm run lint`, `npm run typecheck`, `npm run test:seo`, and `npm run test:mobile` are also available individually.
+
+The browser tests use port 31847 and can use a locally installed Chromium-compatible browser by setting `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. For additional WebKit-engine checks, install WebKit once with `npx playwright install webkit`, unset that variable, and run `npm run test:mobile -- --browser webkit` after building. Browser emulation does not replace testing on physical iOS and Android devices.
+
+### Deploying
+
+Vercel deploys pushes to `main` to production. Run `npm run check` on the final changes before pushing; if it fails, fix the failure before deploying. After the push, confirm the deployment succeeded in Vercel and briefly check the production site. For riskier changes, use a branch and inspect its Vercel preview before merging to `main`.
+
+The checks are local, not an enforced deployment gate: a direct push to `main` can deploy without running them. Vercel also performs its own production build.
 
 **Optional:** Add `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` to the production environment to enable GA4. GA4, Vercel Analytics, and Speed Insights are disabled on local, preview, and other non-production deployments.
 
