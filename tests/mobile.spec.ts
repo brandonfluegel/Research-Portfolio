@@ -3,6 +3,23 @@ import { readFile } from "node:fs/promises";
 
 test.use({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
 
+test("the hero presents the role without repeating the name or overlapping navigation", async ({ page }) => {
+  await page.goto("/");
+  const hero = page.locator('section[aria-labelledby="hero-title"]');
+  const heading = hero.getByRole("heading", { level: 1, name: "Senior Human Factors Design Engineer at Intuitive Surgical" });
+  const nav = page.getByRole("navigation", { name: "Main navigation" });
+  await expect(hero.getByText("Brandon Allan Fluegel")).toHaveCount(0);
+  for (const width of [320, 390, 430, 1024]) {
+    await page.setViewportSize({ width, height: 844 });
+    const headingBox = await heading.boundingBox();
+    const navBox = await nav.boundingBox();
+    expect(headingBox!.y).toBeGreaterThanOrEqual(navBox!.y + navBox!.height);
+    expect(headingBox!.x).toBeGreaterThanOrEqual(0);
+    expect(headingBox!.x + headingBox!.width).toBeLessThanOrEqual(width);
+    await expect(hero.getByRole("link", { name: "Scroll to case studies" })).toBeVisible();
+  }
+});
+
 test("the first case study visual appears before its details on mobile", async ({ page }) => {
   await page.goto("/");
   for (const width of [320, 390, 430]) {
@@ -146,7 +163,7 @@ test.describe("without JavaScript", () => {
     await page.setViewportSize({ width: 320, height: 800 });
     await page.goto("/");
     const nav = page.getByRole("navigation", { name: "Main navigation" });
-    const heading = page.getByRole("heading", { name: "Brandon Allan Fluegel" });
+    const heading = page.getByRole("heading", { name: "Senior Human Factors Design Engineer at Intuitive Surgical" });
     expect((await heading.boundingBox())!.y).toBeGreaterThanOrEqual((await nav.boundingBox())!.height);
     await nav.getByRole("link", { name: "NASA" }).click();
     await expect(page).toHaveURL(/#nasa-section$/);

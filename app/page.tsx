@@ -3,26 +3,22 @@ import HomeClientSections from "@/components/home/HomeClientSections";
 import ResearchHighlightLink from "@/components/home/ResearchHighlightLink";
 import Footer from "@/components/layout/Footer";
 import { SITE_LINKS } from "@/lib/constants/site";
-import { PROFILE_NAME, PROFILE_ROLE } from "@/lib/data/profile";
+import { PROFILE_ROLE } from "@/lib/data/profile";
 import { RESEARCH_HIGHLIGHTS } from "@/lib/data/researchHighlights";
 
 export default function Home() {
   return (
     <main className="relative min-h-screen pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] bg-black overflow-x-clip selection:bg-white/20">
       {/* Hero Section */}
-      <section aria-labelledby="hero-name" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-[calc(6rem+env(safe-area-inset-top))] sm:pt-[calc(7rem+env(safe-area-inset-top))] md:pt-[calc(9rem+env(safe-area-inset-top))] lg:pt-[calc(10rem+env(safe-area-inset-top))] pb-4 md:pb-8">
+      <section aria-labelledby="hero-title" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-[calc(6rem+env(safe-area-inset-top))] sm:pt-[calc(7rem+env(safe-area-inset-top))] md:pt-[calc(9rem+env(safe-area-inset-top))] lg:pt-[calc(10rem+env(safe-area-inset-top))] pb-6 md:pb-8">
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-2 text-center sm:px-6">
-          <h1 id="hero-name" className="text-balance text-[clamp(1.6rem,3.2vw,2.56rem)] font-bold leading-[1.08] tracking-tight text-white">
-            {PROFILE_NAME}
-          </h1>
-
-          <p className="mt-3 max-w-2xl text-balance text-base font-medium leading-6 text-zinc-200 sm:mt-5 sm:text-lg sm:leading-relaxed md:text-xl">
+          <h1 id="hero-title" className="max-w-3xl text-balance text-[clamp(1.75rem,5vw,3rem)] font-bold leading-[1.12] tracking-tight text-white">
             {PROFILE_ROLE}
-          </p>
-          <p className="mt-2 max-w-2xl text-balance text-sm leading-[1.5] text-zinc-400 sm:hidden">
+          </h1>
+          <p className="mt-4 max-w-2xl text-balance text-sm leading-relaxed text-zinc-400 sm:hidden">
             Surgical robotics and Amazon research, with Ph.D. internships at NASA and Mercedes-Benz.
           </p>
-          <p className="mt-3 hidden max-w-2xl text-balance text-base leading-relaxed text-zinc-400 sm:block">
+          <p className="mt-5 hidden max-w-2xl text-balance text-base leading-relaxed text-zinc-400 sm:block">
             Focused on surgical robotics, with prior research at Amazon Devices Design Group and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
           </p>
 
@@ -30,7 +26,7 @@ export default function Home() {
             href="#amazon-section"
             data-analytics-location="hero_cue"
             aria-label="Scroll to case studies"
-            className="rise-in group mt-4 inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/15 bg-white/3 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/8 hover:text-white sm:mt-8"
+            className="rise-in group mt-6 inline-flex min-h-11 items-center gap-2.5 rounded-full border border-white/15 bg-white/3 px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/8 hover:text-white sm:mt-8"
             style={{ animationDelay: "250ms" }}
           >
             <span>Explore the work</span>

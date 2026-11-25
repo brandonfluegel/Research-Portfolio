@@ -112,7 +112,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           .menu-trigger, .video-playback-control { display: none !important; }
           @media (max-width: 63.999rem) {
             nav[aria-label="Main navigation"] { position: absolute; }
-            section[aria-labelledby="hero-name"] { padding-top: calc(10rem + env(safe-area-inset-top)); }
+            section[aria-labelledby="hero-title"] { padding-top: calc(10rem + env(safe-area-inset-top)); }
           }
         `}</style>
         <ul className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-2 text-sm">
