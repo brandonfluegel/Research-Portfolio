@@ -92,7 +92,7 @@ export default function AmazonProjectSection() {
               <ProjectTimelineItem title="Context-Aware Interaction Patent">
                 Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
                 <a href={SITE_LINKS.patent} target="_blank" rel="noopener noreferrer" data-analytics-cta="patent_link" data-analytics-location="amazon_section" data-analytics-id="US12532040B1" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
-                in January 2026. This work earned the 2023 Amazon Inventor Award.
+                in January 2026.
               </ProjectTimelineItem>
             </div>
           </m.div>
