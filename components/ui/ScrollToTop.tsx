@@ -9,7 +9,7 @@ export default function ScrollToTop() {
 
   return (
     <button
-      className={`fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-6 md:right-8 w-11 h-11 rounded-full border border-white/15 bg-zinc-900/80 text-white backdrop-blur-md shadow-lg shadow-black/40 flex items-center justify-center z-50 transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-zinc-800 cursor-pointer ${
+      className={`fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] md:right-[max(2rem,env(safe-area-inset-right))] w-11 h-11 rounded-full border border-white/15 bg-zinc-900/80 text-white backdrop-blur-md shadow-lg shadow-black/40 flex items-center justify-center z-50 transition-[opacity,transform,background-color] duration-300 ease-out hover:bg-zinc-800 cursor-pointer ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3 pointer-events-none"
       }`}
       onClick={scrollToTopSmooth}

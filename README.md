@@ -24,15 +24,15 @@ A single-page research portfolio built from scratch — no templates. Each secti
 
 **Performance-tiered rendering** — `PerformanceModeProvider` detects low-power devices (hardware concurrency, device memory, `saveData`, `prefers-reduced-motion`) and sets a `data-performance-tier` attribute on `<html>`. Heavy animations opt out at the CSS/component level rather than running a JavaScript check per component.
 
-**Deferred section loading** — Below-the-fold sections are wrapped in an `IntersectionObserver`-based `DeferredSection` that delays rendering until the section is near the viewport. All lazy chunks are also pre-fetched at page idle so nav clicks resolve synchronously with no layout shift.
+**Progressive rendering and navigation** — Case studies are included in the initial HTML, with a static framework fallback when JavaScript is unavailable. Native section links preserve URL fragments, browser history, and modified-click behavior. The mobile menu uses a modal dialog with keyboard focus containment.
 
 **Scroll-based active section tracking** — `useActiveSection` uses `IntersectionObserver` with calibrated thresholds rather than `scroll` event listeners, keeping the navbar highlight accurate without polling.
 
-**Lazy video** — `LazyVideo` defers `src` assignment until the element enters the viewport, avoiding unnecessary media downloads on load.
+**Video and motion** — Videos use `preload="none"` and start near the viewport, with H.264 sources and WebM fallbacks, a visible play/pause control, and reduced-motion support. Decorative continuous animations are disabled.
 
 **Tree-shaken animation** — `MotionProvider` wraps `LazyMotion` with `domAnimation` features only, keeping the Framer Motion bundle minimal.
 
-**Search and AI discovery** — The initial HTML includes a visible profile and selected-work overview after the main project sections, including role and metric context, even when JavaScript is unavailable. Detailed NASA, Mercedes-Benz, and framework sections remain deferred. The overview and case-study structured data share the same source; the public patent record supports co-inventorship, while project outcomes are portfolio-reported. `robots.ts` allows all crawlers, including AI training crawlers; search access and training access are separate policy decisions. `sitemap.ts` generates the canonical sitemap. `public/llms.txt` and `public/llms-full.txt` are optional supplemental summaries, not a guarantee of crawler use, training, indexing, ranking, or citation.
+**Search and AI discovery** — The initial HTML includes the profile, case studies, and a selected-work overview, including role and metric context. The framework provides a static alternative without JavaScript. The overview and case-study structured data share the same source; the public patent record supports co-inventorship, while project outcomes are portfolio-reported. `robots.ts` allows all crawlers, including AI training crawlers; search access and training access are separate policy decisions. `sitemap.ts` generates the canonical sitemap. `public/llms.txt` and `public/llms-full.txt` are optional supplemental summaries, not a guarantee of crawler use, training, indexing, ranking, or citation.
 
 **Ongoing visibility** — Verify the canonical URL and sitemap in Google Search Console and Bing Webmaster Tools, inspect indexing after deployment, and keep public profiles consistent with the portfolio. Add links to independently verifiable research, patents, and other evidence where available and appropriate, respecting confidentiality. Review role descriptions and outcome contexts as they change. Search and AI providers decide what to crawl, index, cite, and display; their answers can be incomplete or out of date.
 
@@ -55,9 +55,15 @@ npm install
 npm run dev       # development
 npm run build     # production build
 npm run test:seo  # checks the production HTML, structured data and crawler files
+npx playwright install chromium
+npm run test:mobile # mobile viewport and interaction checks against the production build
+npx playwright install webkit
+npm run test:mobile -- --browser webkit # additional WebKit-engine checks
 npm run lint
 npm run typecheck
 ```
+
+The browser tests use port 31847 and can use a locally installed Chromium-compatible browser by setting `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Unset that variable when running WebKit. These tests do not replace testing on physical iOS and Android devices.
 
 **Optional:** Add `NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX` to the production environment to enable GA4. GA4, Vercel Analytics, and Speed Insights are disabled on local, preview, and other non-production deployments.
 

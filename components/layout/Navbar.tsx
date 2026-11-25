@@ -1,82 +1,65 @@
 // v3 - Winter 2026
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { m, AnimatePresence } from "framer-motion";
 import { useScrolledPast } from "@/hooks/useScrollMetrics";
-import { scrollToSectionId, scrollToTopSmooth } from "@/lib/utils/scroll";
 import { NAV_SECTIONS } from "@/lib/constants/sections";
 
 export default function Navbar({ activeSection = "" }: { activeSection?: string }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const pendingScrollRef = useRef<string | null>(null);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const restoreFocusRef = useRef(false);
   const isScrolled = useScrolledPast(50);
 
-  // Lock body scroll when overlay is open.
-  // Prevents iOS Safari from scrolling the page behind the overlay,
-  // which shifts scroll position and causes wrong-section landings.
   useEffect(() => {
     if (!mobileMenuOpen) return;
+    const dialog = dialogRef.current;
+    const trigger = triggerRef.current;
+    if (!dialog) return;
+
+    const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMobileMenuOpen(false);
+    dialog.showModal();
+    closeRef.current?.focus();
+
+    const desktop = window.matchMedia("(min-width: 64rem)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMobileMenuOpen(false);
     };
-    window.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", closeOnDesktop);
+    closeOnDesktop();
+
     return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", closeOnDesktop);
+      dialog.close();
+      document.body.style.overflow = previousOverflow;
+      if (restoreFocusRef.current) {
+        restoreFocusRef.current = false;
+        trigger?.focus();
+      }
     };
   }, [mobileMenuOpen]);
 
-  const scrollToSectionDesktop = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault();
-    scrollToSectionId(sectionId);
-  };
-
-  const scrollToSection = (e: React.MouseEvent, sectionId: string) => {
-    e.preventDefault();
-    // Store target — actual scroll fires in onExitComplete after the
-    // overlay fully unmounts (no fixed timeout that breaks on slow devices).
-    pendingScrollRef.current = sectionId;
-    // Kick off deferred-section mounting NOW so layout settles during the
-    // exit animation, reducing scroll delay after the overlay is gone.
-    window.dispatchEvent(new CustomEvent("force-render-all"));
-    setMobileMenuOpen(false);
-  };
-
-  // Fires reliably when AnimatePresence finishes the exit animation,
-  // regardless of device speed. Replaces the fragile setTimeout(310).
-  const handleExitComplete = useCallback(() => {
-    const sectionId = pendingScrollRef.current;
-    if (sectionId) {
-      pendingScrollRef.current = null;
-      scrollToSectionId(sectionId);
-    }
-  }, []);
-
   return (
     <nav
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] ${
         isScrolled
           ? "bg-black/80 backdrop-blur-xl border-white/10"
           : "bg-black/50 backdrop-blur-sm border-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:px-6 flex items-center justify-between h-14 relative z-60">
-        
-        {/* LOGO */}
-        <div className="flex items-center gap-3 group cursor-pointer relative min-w-0">
-          <Link 
-            href="/" 
-            onClick={scrollToTopSmooth}
-            className="flex items-center gap-2.5 sm:gap-3 min-w-0"
-          >
+      <div className="max-w-6xl mx-auto pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-[max(1.5rem,env(safe-area-inset-left))] sm:pr-[max(1.5rem,env(safe-area-inset-right))] flex items-center justify-between h-14 relative">
+        <div className="flex items-center gap-3 group relative min-w-0">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 min-w-0">
             <div className="relative shrink-0 h-9 w-9 md:h-10 md:w-10 overflow-hidden rounded-full border border-white/20 group-hover:border-white/50 transition-colors">
               <Image
                 src="/assets/avatar.webp"
-                alt="Brandon Allan Fluegel"
+                alt=""
                 fill
                 priority
                 sizes="40px"
@@ -96,20 +79,12 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
               <li key={link.id}>
                 <a
                   href={link.href}
-                  onClick={(e) => scrollToSectionDesktop(e, link.id)}
                   data-analytics-location="navbar"
                   aria-current={isActive ? "true" : undefined}
                   className={`relative px-3.5 py-2 text-[13px] font-medium tracking-wide rounded-full transition-colors duration-200 ${
-                    isActive ? "text-white" : "text-zinc-400 hover:text-white hover:bg-white/5"
+                    isActive ? "text-white bg-white/12 border border-white/10" : "text-zinc-400 hover:text-white hover:bg-white/5"
                   }`}
                 >
-                  {isActive && (
-                    <m.span
-                      layoutId="activeNavPill"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                      className="absolute inset-0 rounded-full bg-white/12 border border-white/10 -z-10"
-                    />
-                  )}
                   {link.name}
                 </a>
               </li>
@@ -117,55 +92,92 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
           })}
         </ul>
 
-        {/* HAMBURGER BUTTON */}
         <button
-          className="lg:hidden shrink-0 -mr-2 h-11 w-11 flex flex-col items-center justify-center gap-1.5 hover:opacity-80 transition-opacity cursor-pointer group tap-highlight-transparent"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
+          ref={triggerRef}
+          type="button"
+          className="menu-trigger lg:hidden shrink-0 -mr-2 h-11 w-11 flex flex-col items-center justify-center gap-1.5 hover:opacity-80 transition-opacity cursor-pointer tap-highlight-transparent"
+          onClick={() => setMobileMenuOpen(true)}
+          aria-label="Open Menu"
           aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
-          <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-white transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`block w-6 h-0.5 bg-white transition-transform duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
+          <span className="block w-6 h-0.5 bg-white"></span>
         </button>
       </div>
 
-      {/* FULL SCREEN MENU OVERLAY */}
-      <AnimatePresence onExitComplete={handleExitComplete}>
-        {mobileMenuOpen && (
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center h-dvh w-screen"
-          >
-            <ul className="flex flex-col space-y-8 text-center">
-              {NAV_SECTIONS.map((link, i) => (
-                <m.li
-                  key={link.id}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 + i * 0.04, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      <noscript>
+        <style>{`
+          .menu-trigger, .video-playback-control { display: none !important; }
+          @media (max-width: 63.999rem) {
+            nav[aria-label="Main navigation"] { position: absolute; }
+            section[aria-labelledby="hero-name"] { padding-top: calc(10rem + env(safe-area-inset-top)); }
+          }
+        `}</style>
+        <ul className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-2 text-sm">
+          {NAV_SECTIONS.map((link) => (
+            <li key={link.id}><a href={link.href}>{link.name}</a></li>
+          ))}
+        </ul>
+      </noscript>
+
+      <dialog
+        ref={dialogRef}
+        id="mobile-menu"
+        aria-label="Main menu"
+        onCancel={(event) => {
+          event.preventDefault();
+          restoreFocusRef.current = true;
+          setMobileMenuOpen(false);
+        }}
+        onKeyDown={(event) => {
+          if (event.key !== "Tab") return;
+          const items = Array.from(event.currentTarget.querySelectorAll<HTMLElement>("button:not([disabled]), a[href]"));
+          if (items.length === 0) return;
+          const index = items.findIndex((item) => item === document.activeElement);
+          const next = index < 0
+            ? (event.shiftKey ? items.length - 1 : 0)
+            : (index + (event.shiftKey ? -1 : 1) + items.length) % items.length;
+          event.preventDefault();
+          items[next].focus();
+        }}
+        className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain border-0 bg-black text-white p-0 backdrop:bg-black"
+      >
+        <div className="min-h-full flex flex-col px-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <div className="flex justify-end">
+            <button
+              ref={closeRef}
+              type="button"
+              onClick={() => {
+                restoreFocusRef.current = true;
+                setMobileMenuOpen(false);
+              }}
+              aria-label="Close Menu"
+              className="h-11 w-11 flex items-center justify-center text-3xl leading-none"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <ul className="flex flex-1 flex-col items-center justify-center gap-4 py-4 text-center">
+            {NAV_SECTIONS.map((link) => (
+              <li key={link.id}>
+                <a
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  data-analytics-location="navbar"
+                  aria-current={activeSection === link.id ? "true" : undefined}
+                  className={`inline-flex min-h-11 items-center text-2xl sm:text-3xl md:text-5xl font-light tracking-widest uppercase transition-colors ${
+                    activeSection === link.id ? "text-white" : "text-zinc-400 hover:text-white"
+                  }`}
                 >
-                  <Link
-                    href={link.href}
-                    onClick={(e) => scrollToSection(e, link.id)}
-                    data-analytics-location="navbar"
-                    className={`text-3xl md:text-5xl font-light transition-colors block tracking-widest uppercase hover:scale-105 transform duration-300 ${
-                      activeSection === link.id
-                        ? "text-white"
-                        : "text-zinc-400 hover:text-white"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                </m.li>
-              ))}
-            </ul>
-          </m.div>
-        )}
-      </AnimatePresence>
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </dialog>
     </nav>
   );
 }

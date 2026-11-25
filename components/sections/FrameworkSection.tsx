@@ -1,9 +1,10 @@
 // v3 - Winter 2026
 "use client";
 
-import { useState, useCallback, useRef } from "react";
+import { useState, useCallback } from "react";
 import { m } from "framer-motion";
 import { trackAnalyticsEvent } from "@/components/ui/GoogleAnalytics";
+import { prefersReducedMotion } from "@/lib/utils/performance";
 import {
   PAIRS,
   PHASES,
@@ -13,8 +14,6 @@ import {
 export default function FrameworkSection() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
-  const contentRef = useRef<HTMLDivElement>(null);
-  
   const activePair = PAIRS[activeIdx];
   const totalQuestions = PAIRS.reduce((sum, pair) => sum + pair.questions.length, 0);
   const totalCheckedCount = Object.values(checkedItems).filter(Boolean).length;
@@ -101,7 +100,7 @@ export default function FrameworkSection() {
 
 
   return (
-    <section data-analytics-section="agent-trust" className="relative w-full py-12 md:py-20 overflow-hidden bg-black">
+    <section data-analytics-section="agent-trust" className="relative w-full py-12 md:py-20 overflow-x-clip bg-black">
       {/* Background Accents */}
       <div className="absolute top-0 right-0 w-75 md:w-150 h-75 md:h-150 bg-indigo-900/10 blur-[100px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/3 transform-gpu"></div>
       <div className="absolute bottom-0 left-0 w-75 md:w-125 h-75 md:h-125 bg-emerald-900/10 blur-[100px] rounded-full pointer-events-none translate-y-1/3 -translate-x-1/3 transform-gpu"></div>
@@ -110,7 +109,7 @@ export default function FrameworkSection() {
         
         {/* Header */}
         <m.header 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-10 md:mb-14 border-b border-white/10 pb-8 flex flex-col md:flex-row md:items-end justify-between gap-8 md:gap-6"
@@ -118,7 +117,6 @@ export default function FrameworkSection() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[10px] font-black uppercase tracking-widest mb-4">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
               </span>
               Audit Framework
@@ -131,7 +129,7 @@ export default function FrameworkSection() {
             </p>
           </div>
           <div className="hidden md:flex flex-col items-end shrink-0">
-            <p className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.2em] mb-2">Version</p>
+            <p className="text-xs font-black text-zinc-400 uppercase tracking-[0.2em] mb-2">Version</p>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-indigo-500/10 rounded-lg border border-indigo-500/20 shadow-inner">
               <span className="text-sm font-bold text-indigo-400 whitespace-nowrap">V.2</span>
               <span className="w-1 h-1 bg-indigo-500/50 rounded-full"></span>
@@ -140,12 +138,31 @@ export default function FrameworkSection() {
           </div>
         </m.header>
 
+        <noscript>
+          <style>{".framework-interactive { display: none !important; }"}</style>
+          <p className="mb-6 text-zinc-300">The interactive checklist and report download require JavaScript. The principles and questions are available below.</p>
+          <div className="space-y-8">
+            {PAIRS.map((pair) => (
+              <article key={pair.title} className="info-card p-5">
+                <h3 className="text-xl font-bold">{pair.title}</h3>
+                <h4 className="mt-4 font-semibold">{pair.principle}</h4>
+                <p className="mt-2 text-zinc-300">{pair.principleDesc}</p>
+                <h4 className="mt-4 font-semibold">{pair.pitfall}</h4>
+                <p className="mt-2 text-zinc-300">{pair.pitfallDesc}</p>
+                <ul className="mt-4 list-disc space-y-2 pl-5 text-zinc-300">
+                  {pair.questions.map((question) => <li key={question}>{question}</li>)}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </noscript>
+
         {/* Interface */}
-        <div className="flex flex-col lg:flex-row gap-5 xl:gap-7 items-start">
+        <div className="framework-interactive flex flex-col lg:flex-row gap-5 xl:gap-7 items-start">
           
           {/* Sidebar */}
           <m.aside 
-            initial={{ opacity: 0, x: -20 }}
+            initial={false}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="w-full lg:w-56 xl:w-64 shrink-0 flex flex-col lg:sticky lg:top-24 z-20"
@@ -154,7 +171,7 @@ export default function FrameworkSection() {
             <div className="lg:hidden relative">
               <div className="absolute left-0 top-0 bottom-4 w-6 bg-linear-to-r from-black to-transparent z-10 pointer-events-none" />
               <div className="absolute right-0 top-0 bottom-4 w-6 bg-linear-to-l from-black to-transparent z-10 pointer-events-none" />
-              <div role="tablist" aria-label="Human-AI Trust Principles" className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
+              <div role="tablist" aria-label="Human-AI Trust Principles" className="flex overflow-x-auto gap-3 pb-4 -mx-6 px-6 snap-x snap-proximity [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] scrollbar-none">
               {/* Spacer after last item so it can scroll to center */}
               {PAIRS.map((pair, idx) => {
                 const isActive = activeIdx === idx;
@@ -172,15 +189,10 @@ export default function FrameworkSection() {
                       selectPrincipleTab(idx, "mobile");
                       const el = document.getElementById(`mobile-nav-${idx}`);
                       if (!el) return;
-                      // Center the tapped tab within the horizontal scroll strip.
                       const container = el.parentElement;
                       if (!container) return;
                       const scrollLeft = el.offsetLeft - container.offsetWidth / 2 + el.offsetWidth / 2;
-                      container.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
-                      // Scroll the content panel into view so the user sees the new content.
-                      requestAnimationFrame(() => {
-                        contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                      });
+                      container.scrollTo({ left: Math.max(0, scrollLeft), behavior: prefersReducedMotion() ? "instant" : "smooth" });
                     }}
                     id={`mobile-nav-${idx}`}
                     className={`shrink-0 snap-center flex flex-col items-start px-5 py-4 rounded-2xl border transition-all active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black ${
@@ -189,7 +201,7 @@ export default function FrameworkSection() {
                         : 'bg-zinc-900/50 border-white/10 text-zinc-400 hover:bg-zinc-800'
                     }`}
                   >
-                      <span className={`text-[10px] sm:text-[11px] font-black uppercase tracking-widest mb-1.5 ${isActive ? 'text-zinc-600' : 'text-zinc-500'}`}>
+                      <span className={`text-xs font-black uppercase tracking-widest mb-1.5 ${isActive ? 'text-zinc-600' : 'text-zinc-400'}`}>
                       Phase {phaseTitle}
                     </span>
                     <span className="text-[13px] sm:text-sm font-bold whitespace-nowrap">{pair.title}</span>
@@ -205,7 +217,7 @@ export default function FrameworkSection() {
                 <div className="space-y-5">
                   {PHASES.map((phase) => (
                     <div key={phase.id}>
-                      <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest px-1 mb-2">{phase.title}</h4>
+                      <h4 className="text-xs font-black text-zinc-400 uppercase tracking-widest px-1 mb-2">{phase.title}</h4>
                       <div className="space-y-1">
                         {PAIRS.map((pair, idx) => {
                           if (pair.phase !== phase.id) return null;
@@ -244,7 +256,7 @@ export default function FrameworkSection() {
               
               {/* Attribution */}
               <div className="pt-4 mt-5 border-t border-white/10 shrink-0">
-                <p className="text-center text-[10px] text-zinc-500 font-mono">
+                <p className="text-center text-xs text-zinc-400 font-mono">
                   Framework by Brandon Allan Fluegel
                 </p>
               </div>
@@ -252,19 +264,18 @@ export default function FrameworkSection() {
           </m.aside>
 
           {/* Main Content Area */}
-          <m.main 
+          <m.div
             id="framework-tabpanel"
             role="tabpanel"
             aria-label={activePair.title}
-            ref={contentRef}
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex-1 bg-zinc-900/30 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-white/10 overflow-hidden flex flex-col relative"
           >
               <m.div 
                 key={activeIdx}
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
                 className="flex flex-col xl:flex-row w-full"
@@ -274,17 +285,17 @@ export default function FrameworkSection() {
                 <div className="w-full xl:w-85 p-5 sm:p-6 lg:p-8 bg-black/40 border-t xl:border-t-0 xl:border-r border-white/5 shrink-0 flex flex-col order-2 xl:order-1">
                   <div className="hidden xl:block mb-5">
                     <h3 className="text-xl font-extrabold text-white mb-1.5 leading-tight">{activePair.title}</h3>
-                    <p className="text-[11px] font-bold text-zinc-500 uppercase tracking-widest mb-2">{activePair.tagline}</p>
-                    <p className="text-[9px] font-mono text-indigo-400/40 uppercase tracking-widest">Adapts · {activePair.nielsenMapping}</p>
+                    <p className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">{activePair.tagline}</p>
+                    <p className="text-xs font-mono text-indigo-300 uppercase tracking-widest">Adapts · {activePair.nielsenMapping}</p>
                   </div>
                   
                   <div className="flex-1 flex flex-col">
                     <div className="flex items-center justify-between mb-4">
                       <h4 className="text-[10px] font-black text-indigo-400 uppercase tracking-widest flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span> 
+                        <span className="w-2 h-2 rounded-full bg-indigo-500"></span>
                         Audit Checklist
                       </h4>
-                      <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                      <span className="text-xs font-mono text-zinc-400 uppercase tracking-widest">
                         {activePair.questions.filter((_, i) => checkedItems[`${activeIdx}-${i}`]).length} / {activePair.questions.length} Passed
                       </span>
                     </div>
@@ -305,7 +316,7 @@ export default function FrameworkSection() {
                                 : 'bg-white/5 border-white/5 hover:border-white/20'
                             }`}
                           >
-                            <div className={`w-4.5 h-4.5 rounded-[5px] border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
+                            <span className={`w-4.5 h-4.5 rounded-[5px] border shrink-0 mt-0.5 flex items-center justify-center transition-colors duration-300 ${
                               isChecked 
                                 ? 'bg-indigo-500 border-indigo-500' 
                                 : 'border-zinc-600'
@@ -315,12 +326,12 @@ export default function FrameworkSection() {
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3.5" d="M5 13l4 4L19 7"></path>
                                 </svg>
                               )}
-                            </div>
-                            <p className={`text-[13px] sm:text-[13px] leading-relaxed sm:leading-snug font-medium transition-colors duration-300 ${
+                            </span>
+                            <span className={`text-[13px] sm:text-[13px] leading-relaxed sm:leading-snug font-medium transition-colors duration-300 ${
                               isChecked ? 'text-indigo-200' : 'text-zinc-300'
                             }`}>
                               {q}
-                            </p>
+                            </span>
                           </button>
                         );
                       })}
@@ -338,13 +349,13 @@ export default function FrameworkSection() {
                     {/* Header contextual awareness */}
                     <div className="xl:hidden mb-4">
                       <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-2 leading-tight">{activePair.title}</h3>
-                      <p className="text-sm font-bold text-zinc-500 uppercase tracking-widest">{activePair.tagline}</p>
+                      <p className="text-sm font-bold text-zinc-400 uppercase tracking-widest">{activePair.tagline}</p>
                     </div>
 
                     {/* Scholarly Metadata */}
                     <div className="flex flex-wrap gap-2">
                       <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-zinc-800/60 border border-white/5 text-[10px] font-mono text-zinc-400">
-                        <span className="font-sans font-black text-[9px] uppercase tracking-widest text-zinc-600">Adapts</span>
+                        <span className="font-sans font-black text-xs uppercase tracking-widest text-zinc-300">Adapts</span>
                         <span className="w-px h-3 bg-zinc-700 shrink-0"></span>
                         {activePair.nielsenMapping}
                       </div>
@@ -372,7 +383,7 @@ export default function FrameworkSection() {
                     {/* Divider */}
                     <div className="flex items-center gap-4 opacity-60">
                       <div className="h-px flex-1 bg-white/10"></div>
-                      <span className="text-[10px] sm:text-[10px] font-black tracking-widest text-zinc-600 uppercase">Friction Analysis</span>
+                      <span className="text-xs font-black tracking-widest text-zinc-400 uppercase">Friction Analysis</span>
                       <div className="h-px flex-1 bg-white/10"></div>
                     </div>
 
@@ -385,7 +396,7 @@ export default function FrameworkSection() {
                       </div>
                       <div className="flex-1">
                         <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1.5">
-                          <span className="text-zinc-500 font-black text-[10px] sm:text-xs uppercase tracking-widest">Usability Issue</span>
+                          <span className="text-zinc-400 font-black text-xs uppercase tracking-widest">Usability Issue</span>
                           <span className={`px-2 py-0.5 rounded text-[9px] uppercase font-black tracking-widest border ${getSeverityClasses(activePair.severityLevel)}`}>
                             {activePair.severity}
                           </span>
@@ -403,7 +414,7 @@ export default function FrameworkSection() {
               {/* Scientific Foundation - full-width bar below columns */}
               <m.div
                 key={`foundation-${activeIdx}`}
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2, delay: 0.05 }}
                 className="border-t border-white/5 bg-black/20 px-5 sm:px-6 lg:px-8 xl:px-10 py-5 sm:py-5 order-last xl:order-3"
@@ -415,16 +426,16 @@ export default function FrameworkSection() {
                     </svg>
                     <span className="text-[9px] font-black text-indigo-400/60 uppercase tracking-widest whitespace-nowrap">Foundation</span>
                   </div>
-                  <p className="text-zinc-500 text-[13px] leading-relaxed">
+                  <p className="text-zinc-400 text-[13px] leading-relaxed">
                     {activePair.scientificFoundation}
                   </p>
                 </div>
               </m.div>
-          </m.main>
+          </m.div>
         </div>
 
         {/* Overall Audit Progress & Export Button */}
-        <div className="mt-6 flex flex-col items-center">
+        <div className="framework-interactive mt-6 flex flex-col items-center">
           <div className="w-full max-w-xs mb-4">
             <div className="flex items-center justify-between text-[10px] font-mono text-zinc-400 uppercase tracking-widest mb-1.5">
               <span>Total Audit Progress</span>
@@ -456,7 +467,7 @@ export default function FrameworkSection() {
             </svg>
             Download Audit Report
           </button>
-          <p className="text-[10px] text-zinc-500 font-mono mt-2">Export your checklist progress as a .txt file</p>
+          <p className="text-xs text-zinc-400 font-mono mt-2">Export your checklist progress as a .txt file</p>
         </div>
       </div>
     </section>

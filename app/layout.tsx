@@ -36,7 +36,7 @@ export default function RootLayout({
           </>
         ) : null}
       </head>
-      <body className="text-white overflow-x-hidden font-sans">
+      <body className="text-white overflow-x-clip font-sans">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

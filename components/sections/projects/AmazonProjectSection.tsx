@@ -36,7 +36,7 @@ export default function AmazonProjectSection() {
         {/* === PROJECT 1: NEUROIMAGING, COGNITIVE LOAD & PATENT === */}
         <m.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start"
@@ -47,10 +47,13 @@ export default function AmazonProjectSection() {
               <div className="media-frame aspect-video group media-card">
                 <div className="absolute -inset-4 bg-purple-500/6 blur-[60px] rounded-full pointer-events-none"></div>
                 <LazyVideo
-                  sources={[{ src: "/assets/fnirs.webm", type: "video/webm" }]}
+                  sources={[
+                    { src: "/assets/fnirs.mp4", type: "video/mp4" },
+                    { src: "/assets/fnirs.webm", type: "video/webm" },
+                  ]}
                   poster="/assets/fnirs-poster.webp"
                   ariaLabel="Measuring cognitive load via fNIRS neuroimaging"
-                  className="relative object-cover w-full h-full opacity-70 grayscale-20 group-hover:opacity-90 group-hover:grayscale-0 transition duration-700"
+                  className="w-full h-full"
                 />
               </div>
               <p className="meta-caption">Fig 1. Measuring Cognitive Load via fNIRS</p>
@@ -70,7 +73,7 @@ export default function AmazonProjectSection() {
               <div className="mb-6 p-4 info-card border-purple-500/30 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-6">
                 <div className="shrink-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
                     <span className="text-[10px] font-mono text-purple-400 uppercase tracking-wider">Product Reach</span>
                   </div>
                   <div className="text-3xl font-bold text-purple-400">75M+</div>
@@ -91,7 +94,7 @@ export default function AmazonProjectSection() {
               </ProjectTimelineItem>
               <ProjectTimelineItem title="Context-Aware Interaction Patent">
                 Beyond neuroimaging, I co-invented a context-aware interaction system — where the same physical input routes to contextually appropriate actions based on active UI state — granted as{" "}
-                <a href={SITE_LINKS.patent} target="_blank" rel="noopener noreferrer" data-analytics-cta="patent_link" data-analytics-location="amazon_section" data-analytics-id="US12532040B1" className="text-blue-400 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
+                <a href={SITE_LINKS.patent} target="_blank" rel="noopener noreferrer" data-analytics-cta="patent_link" data-analytics-location="amazon_section" data-analytics-id="US12532040B1" className="text-blue-400 underline underline-offset-4 hover:text-blue-300 transition-colors">US Patent 12,532,040 B1</a>{" "}
                 in January 2026.
               </ProjectTimelineItem>
             </div>
@@ -101,7 +104,7 @@ export default function AmazonProjectSection() {
         {/* === PROJECT 2: PERCEPTION SCIENCE & $50M IMPACT === */}
         <m.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start pb-16 md:pb-24"
@@ -116,7 +119,7 @@ export default function AmazonProjectSection() {
               {/* --- MOBILE ONLY: KEY METRIC --- */}
               <div className="block md:hidden mb-6 p-4 info-card border-green-500/30">
                 <div className="flex items-center gap-2 mb-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
                   <span className="text-[10px] font-mono text-green-400 uppercase tracking-wider">Projected Operational Value</span>
                 </div>
                 <div className="text-3xl font-bold text-green-400">$50M</div>
@@ -140,23 +143,24 @@ export default function AmazonProjectSection() {
 
           {/* RIGHT: DATA VISUALIZATION */}
           <m.div variants={fadeInFromRight} className="relative z-10 lg:col-span-6 flex flex-col justify-center h-full pt-8 lg:pt-0">
-            <div className="media-frame max-w-2xl mx-auto aspect-16/11 md:aspect-16/10 p-5 md:p-8 group media-card">
+            <div className="media-frame max-w-2xl mx-auto p-5 md:p-8 group media-card">
 
               <div className="flex justify-between items-start mb-6 md:mb-8 z-20 relative">
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
-                    <h4 className="text-[8px] md:text-[10px] font-mono text-zinc-400 uppercase tracking-widest">NVA Model</h4>
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
+                    <h4 className="text-xs font-mono text-zinc-400 uppercase tracking-widest">NVA Model</h4>
                   </div>
                   <div className="text-white font-bold text-base md:text-xl tracking-tight">Alexa Latency vs. User Satisfaction</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-[8px] md:text-[10px] font-mono text-zinc-500 uppercase">Impact</div>
+                  <div className="text-xs font-mono text-zinc-400 uppercase">Impact</div>
                   <div className="text-green-400 font-mono font-bold text-lg md:text-xl">$50M</div>
                 </div>
               </div>
 
-              <div className="relative w-full h-[60%] md:h-[65%]">
+              <p className="mb-3 text-xs font-medium text-zinc-300">1,000ms High Satisfaction Threshold</p>
+              <div className="relative w-full h-36 sm:h-44 md:h-52">
                 <div className="hidden md:flex absolute inset-0 z-0 flex-col justify-between opacity-40">
                   <div className="w-full h-px bg-white/10"></div>
                   <div className="w-full h-px bg-white/10"></div>
@@ -164,7 +168,7 @@ export default function AmazonProjectSection() {
                   <div className="w-full h-px bg-white/10"></div>
                 </div>
 
-                <svg className="absolute inset-0 w-full h-full overflow-visible z-10" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <svg className="absolute inset-0 w-full h-full overflow-visible z-10" preserveAspectRatio="none" viewBox="0 0 100 100" role="img" aria-label="Illustrative curve: satisfaction decreases sharply beyond the 1,000 millisecond threshold.">
                   <defs>
                     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#4ade80" />
@@ -174,67 +178,35 @@ export default function AmazonProjectSection() {
                     </linearGradient>
                   </defs>
                   <line x1="33" y1="0" x2="33" y2="100" stroke="white" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
-                  <m.path
+                  <path
                     d="M0,15 C 15,15 25,18 33,45 C 45,90 70,95 100,98"
                     fill="none"
                     stroke="url(#lineGradient)"
                     strokeWidth="4"
                     strokeLinecap="round"
-                    initial={{ pathLength: 0 }}
-                    whileInView={{ pathLength: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.8, ease: "easeInOut" }}
                     style={{ filter: "drop-shadow(0px 0px 8px rgba(74, 222, 128, 0.3))" }}
                   />
-                  <circle
-                    cx="33"
-                    cy="45"
-                    r="8"
-                    fill="none"
-                    stroke="#fff"
-                    strokeWidth="1"
-                    opacity="0.5"
-                    className="hst-pulse-ring"
-                  />
-                  <m.circle cx="33" cy="45" r="4" fill="#18181b" stroke="#fff" strokeWidth="2"
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ delay: 1.4, type: "spring" }}
-                  />
+                  <circle cx="33" cy="45" r="4" fill="#18181b" stroke="#fff" strokeWidth="2" />
                 </svg>
-
-                <m.div
-                  initial={{ opacity: 0, y: -10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.6 }}
-                  className="absolute top-[2%] md:top-[5%] left-[15%] md:left-[26%] bg-zinc-800 border border-zinc-600 px-2 py-1 md:px-3 md:py-1.5 rounded shadow-xl z-20"
-                >
-                  <div className="text-[9px] md:text-xs font-bold text-white whitespace-nowrap">1,000ms Threshold</div>
-                  <div className="text-[7px] md:text-[9px] text-zinc-300 text-center">HST</div>
-                </m.div>
-
-                <div className="absolute bottom-2 left-0 md:bottom-6 md:left-6">
-                  <div className="text-[8px] md:text-[10px] font-mono text-green-400 uppercase tracking-wider mb-0.5 md:mb-1">Safe Zone</div>
-                  <div className="text-[9px] md:text-xs text-zinc-300 max-w-20 md:max-w-30 leading-tight font-medium">Revenue opportunity</div>
-                </div>
-                <div className="absolute top-2 right-0 md:top-6 md:right-6 text-right">
-                  <div className="text-[8px] md:text-[10px] font-mono text-red-400 uppercase tracking-wider mb-0.5 md:mb-1">Dissatisfaction Zone</div>
-                  <div className="text-[9px] md:text-xs text-zinc-300 max-w-22.5 md:max-w-35 leading-tight font-medium">Churn risk increases</div>
-                </div>
               </div>
 
-              <div className="flex justify-between mt-4 md:mt-8 text-[8px] md:text-[10px] font-mono text-zinc-600 uppercase tracking-widest border-t border-white/5 pt-3">
+              <div className="flex justify-between gap-1 mt-4 text-xs font-mono text-zinc-400 border-t border-white/5 pt-3">
                 <span>0ms</span>
-                <span className="text-zinc-300 relative left-[2%]">1000ms</span>
+                <span className="text-zinc-300">1000ms</span>
                 <span>2000ms</span>
                 <span>3000ms</span>
               </div>
+              <div className="flex justify-between gap-4 mt-4 text-xs">
+                <div><span className="text-green-400">Safe Zone</span><p className="text-zinc-300">Revenue opportunity</p></div>
+                <div className="text-right"><span className="text-red-400">Dissatisfaction Zone</span><p className="text-zinc-300">Churn risk increases</p></div>
+              </div>
+              <p className="mt-3 text-xs text-zinc-400">Illustrative relationship</p>
             </div>
 
             <p className="meta-caption">
               Fig 2. High Satisfaction Threshold (HST): Ratings of &quot;not slow&quot; fall sharply beyond 1,000ms
             </p>
-            <p className="mt-1 text-center text-[9px] font-mono text-zinc-600 tracking-wide">
+            <p className="mt-1 text-center text-xs font-mono text-zinc-400 tracking-wide">
               Source: Alexa Response Latency Research — Devices Design Group, April 2021
             </p>
           </m.div>

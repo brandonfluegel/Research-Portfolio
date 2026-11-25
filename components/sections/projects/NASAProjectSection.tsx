@@ -31,7 +31,7 @@ export default function NASAProjectSection() {
 
         <m.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           className="flex flex-col items-center"

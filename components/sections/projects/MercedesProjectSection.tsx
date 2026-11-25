@@ -34,7 +34,7 @@ export default function MercedesProjectSection() {
 
         <m.div
           variants={staggerContainer}
-          initial="hidden"
+          initial={false}
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           className="relative isolate grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-start"
@@ -44,6 +44,7 @@ export default function MercedesProjectSection() {
              <div className="media-frame max-w-md mx-auto aspect-4/5 group media-card">
                 <LazyVideo
                   sources={[
+                    { src: "/assets/drive.mp4", type: "video/mp4" },
                     { src: "/assets/drive.webm", type: "video/webm" },
                   ]}
                   poster="/assets/drive-poster.webp"

@@ -22,23 +22,23 @@ const LinkedinIcon = () => (
 
 export default function Footer() {
   return (
-    <footer className="relative w-full py-20 px-6 mt-20 border-t border-white/10 bg-black">
+    <footer className="relative w-full pt-20 pb-[max(5rem,env(safe-area-inset-bottom))] px-6 mt-20 border-t border-white/10 bg-black">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         
         {/* Headline */}
         <m.h2 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-3xl md:text-5xl font-bold text-white tracking-tight"
         >
           Connecting perceptual science to engineering decisions <br />
-          <span className="text-zinc-500">and measurable product outcomes.</span>
+          <span className="text-zinc-400">and measurable product outcomes.</span>
         </m.h2>
 
         {/* Sub-text */}
         <m.p 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
@@ -49,7 +49,7 @@ export default function Footer() {
 
         {/* CTA Buttons */}
         <m.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
@@ -80,11 +80,11 @@ export default function Footer() {
 
         {/* Copyright */}
         <m.div 
-          initial={{ opacity: 0 }}
+          initial={false}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4 }}
-          className="pt-16 text-zinc-600 text-sm"
+          className="pt-16 text-zinc-400 text-sm"
         >
           © {new Date().getFullYear()} {PROFILE_NAME}, PhD. All Rights Reserved.
         </m.div>

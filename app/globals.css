@@ -5,7 +5,7 @@
   --foreground: #ffffff;
   --content-max-width: 72rem;
   --section-gap: clamp(4rem, 9vw, 6rem);
-  --caption-font-size: clamp(0.625rem, 0.75vw, 0.75rem);
+  --caption-font-size: 0.75rem;
 }
 
 html {
@@ -23,7 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.02em;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   padding: 0;
 }
 
@@ -63,11 +63,6 @@ p {
 }
 
 .deferred-section {
-  /* NOTE: content-visibility:auto was removed. It caused scroll-to-section to
-     land in the wrong place because the browser uses contain-intrinsic-size
-     for off-screen layout — so scrollHeight stays flat even after React mounts
-     real content, making our stability poll fire too early with stale positions.
-     React's IntersectionObserver lazy mounting already handles performance. */
   scroll-margin-top: calc(80px + env(safe-area-inset-top));
 }
 
@@ -76,7 +71,7 @@ p {
   text-align: center;
   font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: var(--caption-font-size);
-  color: rgb(113 113 122);
+  color: rgb(161 161 170);
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

@@ -24,7 +24,7 @@ test("production HTML exposes the profile and research summaries without JavaScr
   assert.match(visibleHtml, /Senior Human Factors Design Engineer at Intuitive Surgical/);
   assert.match(overview[0], /Old Dominion University/);
   assert.match(overview[0], /US Patent 12,532,040 B1/);
-  assert.match(overview[0], /outcomes below are reported in my portfolio/i);
+  assert.match(overview[0], /outcomes in this portfolio are self-reported/i);
   assert.equal((overview[0].match(/<article\b/g) ?? []).length, 4);
 
   for (const id of ["amazon-section", "nasa-section", "mercedes-section", "agent-trust"]) {

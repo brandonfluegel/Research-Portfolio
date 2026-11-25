@@ -29,7 +29,7 @@ export function ProjectSectionHeader({
 }: ProjectSectionHeaderProps) {
   return (
     <m.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       className="relative z-10 mb-12 md:mb-24 max-w-7xl mx-auto px-6 border-b border-white/10 pb-6 md:pb-8 flex flex-col md:flex-row md:items-end justify-between gap-6"
@@ -46,7 +46,7 @@ export function ProjectSectionHeader({
         <div className={`h-8 w-px bg-white/10 ${compactMobile ? "hidden md:block" : ""}`} />
         <div className={compactMobile ? "hidden md:block" : ""}>
           <h2 className="text-lg text-white font-medium tracking-tight">{title}</h2>
-          <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest">{role}</p>
+          <p className="text-xs font-mono text-zinc-400 uppercase tracking-widest">{role}</p>
         </div>
       </div>
 

@@ -1,0 +1,149 @@
+import { expect, test } from "@playwright/test";
+import { readFile } from "node:fs/promises";
+
+test.use({ viewport: { width: 390, height: 844 }, reducedMotion: "reduce" });
+
+test("the mobile menu contains focus, fits landscape, and preserves link navigation", async ({ page }) => {
+  await page.goto("/");
+  await page.setViewportSize({ width: 568, height: 320 });
+  const trigger = page.getByRole("button", { name: "Open Menu" });
+  await trigger.click();
+  const dialog = page.getByRole("dialog", { name: "Main menu" });
+  await expect(dialog).toBeVisible();
+  await expect(page.getByRole("button", { name: "Close Menu" })).toBeFocused();
+
+  for (let i = 0; i < 6; i++) {
+    await page.keyboard.press("Tab");
+    expect(await page.evaluate(() => !!document.activeElement?.closest("dialog"))).toBe(true);
+  }
+  await page.getByRole("button", { name: "Close Menu" }).focus();
+  await page.keyboard.press("Shift+Tab");
+  await expect(dialog.getByRole("link").last()).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(page.getByRole("button", { name: "Close Menu" })).toBeFocused();
+
+  for (const link of await dialog.getByRole("link").all()) {
+    const box = await link.boundingBox();
+    expect(box).not.toBeNull();
+    expect(box!.y).toBeGreaterThanOrEqual(0);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(320);
+  }
+
+  await page.keyboard.press("Escape");
+  await expect(dialog).not.toBeVisible();
+  await expect(trigger).toBeFocused();
+  await trigger.click();
+  await dialog.getByRole("link", { name: "NASA" }).click();
+  await expect(page).toHaveURL(/#nasa-section$/);
+  await expect(dialog).not.toBeVisible();
+  await expect.poll(() => page.evaluate(() => {
+    const target = document.getElementById("nasa-section");
+    const nav = document.querySelector("nav");
+    return Math.abs((target?.getBoundingClientRect().top ?? 0) - (nav?.getBoundingClientRect().bottom ?? 0));
+  })).toBeLessThan(3);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/$/);
+});
+
+test("the latency chart stays inside its frame at narrow widths", async ({ page }) => {
+  await page.goto("/");
+  for (const width of [320, 375, 390, 430]) {
+    await page.setViewportSize({ width, height: 800 });
+    const chart = page.locator(".media-frame").filter({ hasText: "Alexa Latency vs. User Satisfaction" });
+    await chart.scrollIntoViewIfNeeded();
+    const frame = await chart.boundingBox();
+    expect(frame).not.toBeNull();
+    for (const label of ["0ms", "1000ms", "2000ms", "3000ms"]) {
+      const box = await chart.getByText(label, { exact: true }).boundingBox();
+      expect(box).not.toBeNull();
+      expect(box!.x).toBeGreaterThanOrEqual(frame!.x);
+      expect(box!.x + box!.width).toBeLessThanOrEqual(frame!.x + frame!.width);
+      expect(box!.y + box!.height).toBeLessThanOrEqual(frame!.y + frame!.height);
+    }
+  }
+});
+
+test("the framework sidebar sticks while its section has room", async ({ page }) => {
+  await page.setViewportSize({ width: 1100, height: 800 });
+  await page.goto("/");
+  const top = await page.evaluate(() => {
+    const sidebar = document.querySelector<HTMLElement>('[data-analytics-section="agent-trust"] aside')!;
+    window.scrollTo({ top: sidebar.getBoundingClientRect().top + window.scrollY - 120, behavior: "instant" });
+    window.scrollBy({ top: 200, behavior: "instant" });
+    return sidebar.getBoundingClientRect().top;
+  });
+  expect(top).toBeGreaterThanOrEqual(95);
+  expect(top).toBeLessThanOrEqual(97);
+});
+
+test("videos honor reduced motion and can be played and paused", async ({ page }) => {
+  await page.goto("/");
+  const video = page.locator("video").first();
+  await video.scrollIntoViewIfNeeded();
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
+  await page.getByRole("button", { name: "Play Measuring cognitive load via fNIRS neuroimaging" }).click();
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => !element.paused)).toBe(true);
+  await page.getByRole("button", { name: "Pause Measuring cognitive load via fNIRS neuroimaging" }).click();
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
+});
+
+test("videos respond to motion preference changes while visible", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+  const video = page.locator("video").first();
+  await video.scrollIntoViewIfNeeded();
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => !element.paused)).toBe(true);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
+});
+
+test("video playback failures are reported", async ({ page }) => {
+  await page.addInitScript(() => {
+    HTMLMediaElement.prototype.play = () => Promise.reject(new DOMException("Playback failed", "NotSupportedError"));
+  });
+  await page.goto("/");
+  await page.locator("video").first().scrollIntoViewIfNeeded();
+  await page.getByRole("button", { name: "Play Measuring cognitive load via fNIRS neuroimaging" }).click();
+  await expect(page.getByRole("status").filter({ hasText: /Playback (paused|unavailable)|Video unavailable/ })).toBeVisible();
+});
+
+test("the framework exports the checked audit", async ({ page }) => {
+  await page.goto("/#agent-trust");
+  await page.getByRole("checkbox", { name: "Are the agent's tools and access rights visible to the user upfront?" }).click();
+  const downloadPromise = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download Audit Report" }).click();
+  const download = await downloadPromise;
+  const report = await readFile(await download.path(), "utf8");
+  expect(report).toContain("[x] Are the agent's tools and access rights visible to the user upfront?");
+  expect(report).toContain("Final Score: 1 / 20 Checks Passed");
+});
+
+test.describe("without JavaScript", () => {
+  test.use({ javaScriptEnabled: false });
+
+  test("case studies and all framework principles remain visible", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.getByRole("heading", { name: "Mapping Cognitive Load to Echo Device Design" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Reducing Astronaut Cognitive Load" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "Trust in Semi-Autonomous Driving" })).toBeVisible();
+    await expect(page.locator("noscript article")).toHaveCount(6);
+    await expect(page.locator("noscript article").first()).toBeVisible();
+    await expect(page.getByRole("button", { name: "Open Menu" })).toBeHidden();
+    await expect(page.locator(".video-playback-control").first()).toBeDisabled();
+  });
+
+  test("mobile section links do not leave their targets behind the navigation", async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 800 });
+    await page.goto("/");
+    const nav = page.getByRole("navigation", { name: "Main navigation" });
+    const heading = page.getByRole("heading", { name: "Brandon Allan Fluegel" });
+    expect((await heading.boundingBox())!.y).toBeGreaterThanOrEqual((await nav.boundingBox())!.height);
+    await nav.getByRole("link", { name: "NASA" }).click();
+    await expect(page).toHaveURL(/#nasa-section$/);
+    await expect.poll(() => page.evaluate(() => {
+      const target = document.getElementById("nasa-section")!;
+      const nav = document.querySelector("nav")!;
+      return target.getBoundingClientRect().top - nav.getBoundingClientRect().bottom;
+    })).toBeGreaterThanOrEqual(0);
+  });
+});

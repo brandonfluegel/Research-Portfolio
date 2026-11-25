@@ -8,9 +8,9 @@ import { RESEARCH_HIGHLIGHTS } from "@/lib/data/researchHighlights";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen px-4 sm:px-8 bg-black overflow-hidden selection:bg-white/20">
+    <main className="relative min-h-screen pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] bg-black overflow-x-clip selection:bg-white/20">
       {/* Hero Section */}
-      <section aria-labelledby="hero-name" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-24 sm:pt-28 md:pt-36 lg:pt-40 pb-4 md:pb-8">
+      <section aria-labelledby="hero-name" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-[calc(6rem+env(safe-area-inset-top))] sm:pt-[calc(7rem+env(safe-area-inset-top))] md:pt-[calc(9rem+env(safe-area-inset-top))] lg:pt-[calc(10rem+env(safe-area-inset-top))] pb-4 md:pb-8">
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-2 text-center sm:px-6">
           <h1 id="hero-name" className="text-balance text-[clamp(1.6rem,3.2vw,2.56rem)] font-bold leading-[1.08] tracking-tight text-white">
             {PROFILE_NAME}
@@ -52,7 +52,7 @@ export default function Home() {
             </a>.
           </p>
           <p className="mt-3 text-sm text-zinc-400">
-            Project outcomes below are reported in my portfolio; the patent links to a public record.
+            Project outcomes in this portfolio are self-reported; the patent links to a public record.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-2">
