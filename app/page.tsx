@@ -20,7 +20,7 @@ export default function Home() {
             {PROFILE_ROLE}
           </p>
           <p className="mt-2 max-w-2xl text-balance text-sm leading-[1.5] text-zinc-400 sm:mt-3 sm:text-base sm:leading-relaxed">
-            Focused on surgical robotics, with prior Alexa latency research at Amazon Devices and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
+            Focused on surgical robotics, with prior research at Amazon Devices Design Group and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
           </p>
 
           <a
