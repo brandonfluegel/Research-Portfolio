@@ -15,7 +15,7 @@ test("production HTML exposes the profile and research summaries without JavaScr
   const overview = visibleHtml.match(/<section aria-labelledby="research-overview"[\s\S]*?<\/section>/);
   assert.ok(hero, "server-rendered hero is missing");
   assert.doesNotMatch(hero[0], /Brandon Allan Fluegel/);
-  assert.match(hero[0], /Senior Human Factors Design Engineer at Intuitive Surgical/);
+  assert.match(hero[0].replace(/<[^>]*>/g, ""), /Senior Human Factors Design Engineer at Intuitive Surgical/);
   assert.match(hero[0], /surgical robotics/);
   assert.match(hero[0], /Human Factors Ph\.D\. internship projects at NASA and Mercedes-Benz/);
   assert.ok(hero[0].includes('href="#amazon-section"'), "hero must link to the case studies");

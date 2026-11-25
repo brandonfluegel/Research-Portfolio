@@ -2,23 +2,29 @@
 import HomeClientSections from "@/components/home/HomeClientSections";
 import ResearchHighlightLink from "@/components/home/ResearchHighlightLink";
 import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 import { SITE_LINKS } from "@/lib/constants/site";
-import { PROFILE_ROLE } from "@/lib/data/profile";
+import { PROFILE } from "@/lib/data/profile";
 import { RESEARCH_HIGHLIGHTS } from "@/lib/data/researchHighlights";
 
 export default function Home() {
   return (
+    <>
+    <Navbar />
     <main className="relative min-h-screen pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:pl-[max(2rem,env(safe-area-inset-left))] sm:pr-[max(2rem,env(safe-area-inset-right))] bg-black overflow-x-clip selection:bg-white/20">
       {/* Hero Section */}
-      <section aria-labelledby="hero-title" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[46svh] sm:min-h-[52svh] md:min-h-[58svh] lg:min-h-[62svh] pt-[calc(6rem+env(safe-area-inset-top))] sm:pt-[calc(7rem+env(safe-area-inset-top))] md:pt-[calc(9rem+env(safe-area-inset-top))] lg:pt-[calc(10rem+env(safe-area-inset-top))] pb-6 md:pb-8">
+      <section aria-labelledby="hero-title" className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center min-h-[38svh] sm:min-h-[42svh] md:min-h-[48svh] lg:min-h-[52svh] pt-8 md:pt-12 lg:pt-16 pb-6 md:pb-8">
         <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-2 text-center sm:px-6">
-          <h1 id="hero-title" className="max-w-3xl text-balance text-[clamp(1.75rem,5vw,3rem)] font-bold leading-[1.12] tracking-tight text-white">
-            {PROFILE_ROLE}
+          <h1 id="hero-title" className="max-w-3xl text-balance text-[clamp(1.25rem,3vw,1.625rem)] font-semibold leading-snug tracking-tight text-white">
+            {PROFILE.role}{" "}
+            <span className="mt-3 block text-base font-medium leading-6 tracking-normal text-zinc-300 sm:mt-4 sm:text-lg">
+              at {PROFILE.employer}
+            </span>
           </h1>
-          <p className="mt-4 max-w-2xl text-balance text-sm leading-relaxed text-zinc-400 sm:hidden">
+          <p className="mt-4 max-w-[34ch] text-balance text-[0.9375rem] leading-relaxed text-zinc-400 sm:hidden">
             Surgical robotics and Amazon research, with Ph.D. internships at NASA and Mercedes-Benz.
           </p>
-          <p className="mt-5 hidden max-w-2xl text-balance text-base leading-relaxed text-zinc-400 sm:block">
+          <p className="mt-5 hidden max-w-[55ch] text-balance text-base leading-relaxed text-zinc-400 sm:block">
             Focused on surgical robotics, with prior research at Amazon Devices Design Group and Human Factors Ph.D. internship projects at NASA and Mercedes-Benz.
           </p>
 
@@ -70,5 +76,6 @@ export default function Home() {
 
       <Footer />
     </main>
+    </>
   );
 }

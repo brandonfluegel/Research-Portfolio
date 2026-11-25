@@ -5,9 +5,11 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useScrolledPast } from "@/hooks/useScrollMetrics";
+import useActiveSection from "@/hooks/useActiveSection";
 import { NAV_SECTIONS } from "@/lib/constants/sections";
 
-export default function Navbar({ activeSection = "" }: { activeSection?: string }) {
+export default function Navbar() {
+  const activeSection = useActiveSection();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -47,7 +49,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
   return (
     <nav
       aria-label="Main navigation"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] ${
+      className={`sticky top-0 z-50 transition-all duration-300 border-b pb-3 pt-[max(0.75rem,env(safe-area-inset-top))] ${
         isScrolled
           ? "bg-black/80 backdrop-blur-xl border-white/10"
           : "bg-black/50 backdrop-blur-sm border-transparent"
@@ -111,8 +113,7 @@ export default function Navbar({ activeSection = "" }: { activeSection?: string 
         <style>{`
           .menu-trigger, .video-playback-control { display: none !important; }
           @media (max-width: 63.999rem) {
-            nav[aria-label="Main navigation"] { position: absolute; }
-            section[aria-labelledby="hero-title"] { padding-top: calc(10rem + env(safe-area-inset-top)); }
+            nav[aria-label="Main navigation"] { position: static; }
           }
         `}</style>
         <ul className="lg:hidden flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 pb-2 text-sm">

@@ -20,6 +20,19 @@ test("the hero presents the role without repeating the name or overlapping navig
   }
 });
 
+test("the hero stays below a taller mobile navigation and the navigation remains pinned", async ({ page }) => {
+  await page.goto("/");
+  const nav = page.getByRole("navigation", { name: "Main navigation" });
+  const heading = page.getByRole("heading", { level: 1 });
+  await nav.evaluate((element) => { element.style.paddingTop = "59px"; });
+  await expect(nav).toHaveCSS("padding-top", "59px");
+  const navBox = await nav.boundingBox();
+  const headingBox = await heading.boundingBox();
+  expect(headingBox!.y - (navBox!.y + navBox!.height)).toBeGreaterThanOrEqual(24);
+  await page.evaluate(() => window.scrollTo(0, 500));
+  await expect.poll(async () => (await nav.boundingBox())!.y).toBe(0);
+});
+
 test("the first case study visual appears before its details on mobile", async ({ page }) => {
   await page.goto("/");
   for (const width of [320, 390, 430]) {

@@ -1,7 +1,6 @@
 // v3 - Winter 2026
 "use client";
 
-import Navbar from "@/components/layout/Navbar";
 import AmazonProjectSection from "@/components/sections/projects/AmazonProjectSection";
 import NASAProjectSection from "@/components/sections/projects/NASAProjectSection";
 import MercedesProjectSection from "@/components/sections/projects/MercedesProjectSection";
@@ -9,15 +8,11 @@ import FrameworkSection from "@/components/sections/FrameworkSection";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import SectionDivider from "@/components/ui/SectionDivider";
-import useActiveSection from "@/hooks/useActiveSection";
 
 export default function HomeClientSections() {
-  const activeSection = useActiveSection();
-
   return (
     <>
       <ScrollProgress />
-      <Navbar activeSection={activeSection} />
       <ScrollToTop />
 
       <div className="w-full max-w-6xl mx-auto mb-8 md:mb-16 mt-0">
