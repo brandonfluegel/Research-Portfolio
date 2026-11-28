@@ -28,7 +28,7 @@ A single-page research portfolio built from scratch — no templates. Each secti
 
 **Scroll-based active section tracking** — `useActiveSection` uses `IntersectionObserver` with calibrated thresholds rather than `scroll` event listeners, keeping the navbar highlight accurate without polling.
 
-**Video and motion** — Videos use `preload="none"` and start near the viewport, with H.264 sources and WebM fallbacks, a visible play/pause control, and reduced-motion support. Decorative continuous animations are disabled.
+**Video and motion** — Videos use `preload="none"` and start near the viewport, with H.264 sources and WebM fallbacks. They pause outside the viewport or when reduced motion is enabled. Decorative continuous animations are disabled.
 
 **Tree-shaken animation** — `MotionProvider` wraps `LazyMotion` with `domAnimation` features only, keeping the Framer Motion bundle minimal.
 

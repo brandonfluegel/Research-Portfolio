@@ -111,7 +111,7 @@ export default function Navbar() {
 
       <noscript>
         <style>{`
-          .menu-trigger, .video-playback-control { display: none !important; }
+          .menu-trigger { display: none !important; }
           @media (max-width: 63.999rem) {
             nav[aria-label="Main navigation"] { position: static; }
           }

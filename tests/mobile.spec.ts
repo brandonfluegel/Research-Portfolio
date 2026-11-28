@@ -116,21 +116,27 @@ test("the framework sidebar sticks while its section has room", async ({ page })
   expect(top).toBeLessThanOrEqual(97);
 });
 
-test("videos honor reduced motion and can be played and paused", async ({ page }) => {
+test("videos have no playback buttons and honor reduced motion", async ({ page }) => {
   await page.goto("/");
-  const video = page.locator("video").first();
+  const videos = page.locator("video");
+  await expect(videos).not.toHaveCount(0);
+  for (const video of await videos.all()) {
+    await expect(video.locator("..").getByRole("button")).toHaveCount(0);
+    await expect(video).not.toHaveAttribute("controls");
+  }
+  const video = videos.first();
   await video.scrollIntoViewIfNeeded();
-  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
-  await page.getByRole("button", { name: "Play Measuring cognitive load via fNIRS neuroimaging" }).click();
-  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => !element.paused)).toBe(true);
-  await page.getByRole("button", { name: "Pause Measuring cognitive load via fNIRS neuroimaging" }).click();
   await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
 });
 
-test("videos respond to motion preference changes while visible", async ({ page }) => {
+test("videos respond to visibility and motion preference changes", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
   const video = page.locator("video").first();
+  await video.scrollIntoViewIfNeeded();
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => !element.paused)).toBe(true);
+  await page.evaluate(() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }));
+  await expect.poll(() => video.evaluate((element: HTMLVideoElement) => element.paused)).toBe(true);
   await video.scrollIntoViewIfNeeded();
   await expect.poll(() => video.evaluate((element: HTMLVideoElement) => !element.paused)).toBe(true);
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -138,13 +144,13 @@ test("videos respond to motion preference changes while visible", async ({ page 
 });
 
 test("video playback failures are reported", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.addInitScript(() => {
     HTMLMediaElement.prototype.play = () => Promise.reject(new DOMException("Playback failed", "NotSupportedError"));
   });
   await page.goto("/");
   await page.locator("video").first().scrollIntoViewIfNeeded();
-  await page.getByRole("button", { name: "Play Measuring cognitive load via fNIRS neuroimaging" }).click();
-  await expect(page.getByRole("status").filter({ hasText: /Playback (paused|unavailable)|Video unavailable/ })).toBeVisible();
+  await expect(page.getByRole("status").filter({ hasText: /Playback unavailable|Video unavailable/ }).first()).toBeVisible();
 });
 
 test("the framework exports the checked audit", async ({ page }) => {
@@ -169,7 +175,7 @@ test.describe("without JavaScript", () => {
     await expect(page.locator("noscript article")).toHaveCount(6);
     await expect(page.locator("noscript article").first()).toBeVisible();
     await expect(page.getByRole("button", { name: "Open Menu" })).toBeHidden();
-    await expect(page.locator(".video-playback-control").first()).toBeDisabled();
+    await expect(page.locator(".video-playback-control")).toHaveCount(0);
   });
 
   test("mobile section links do not leave their targets behind the navigation", async ({ page }) => {
